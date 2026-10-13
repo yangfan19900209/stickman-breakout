@@ -1,0 +1,62 @@
+/** Units: design pixels, seconds. All combat/movement tuning lives here. */
+export const GameConfig = {
+  width: 1280,
+  height: 720,
+  fps: 60,
+  fixedStep: 1 / 120,
+  maxFrameDelta: 0.1,
+  player: {
+    maxHealth: 5,
+    speed: 280,
+    acceleration: 2600,
+    deceleration: 3200,
+    jumpVelocity: 550,
+    gravity: 1200,
+    height: 74,
+    halfWidth: 13,
+    invincibility: 1.15,
+    coyoteTime: 0.085,
+    jumpBuffer: 0.11,
+    deathDuration: 0.9,
+  },
+  weapons: {
+    rifle: {
+      id: "rifle",
+      interval: 0.14,
+      speed: 1100,
+      damage: 1,
+      range: 980,
+      muzzleHeight: 44,
+    },
+  },
+  enemies: {
+    melee: {
+      health: 3,
+      speed: 100,
+      range: 39,
+      interval: 1.15,
+      notice: 620,
+      damage: 1,
+    },
+    ranged: {
+      health: 4,
+      speed: 54,
+      range: 570,
+      interval: 1.35,
+      notice: 690,
+      damage: 1,
+    },
+    guard: {
+      health: 18,
+      speed: 42,
+      range: 700,
+      interval: 0.7,
+      notice: 800,
+      damage: 1,
+    },
+  },
+  enemyProjectile: { speed: 430, range: 1000 },
+  pools: { projectiles: 96, particles: 160 },
+  rendering: { lineWidth: 3.3, headRadius: 10, corpseDuration: 0.8 },
+} as const;
+export type WeaponId = keyof typeof GameConfig.weapons;

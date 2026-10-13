@@ -1,0 +1,110 @@
+{
+  "snapshot": {
+    "state": "complete",
+    "time": 16.51666666666637,
+    "player": {
+      "x": 3832.569444444503,
+      "y": 261,
+      "vx": 280,
+      "vy": 180,
+      "health": 2,
+      "grounded": false,
+      "facing": 1,
+      "animation": "Jump"
+    },
+    "cameraX": 2719.999999999997,
+    "kills": 4,
+    "remaining": 6,
+    "guardHealth": 0,
+    "exitOpen": true,
+    "bullets": 2,
+    "shots": 123,
+    "hits": 36,
+    "peakBullets": 8,
+    "droppedBullets": 0,
+    "enemies": [
+      {
+        "id": "m1",
+        "x": 817.6666087818157,
+        "y": 150,
+        "health": 2,
+        "state": "Idle",
+        "windup": 0
+      },
+      {
+        "id": "r1",
+        "x": 849.4828208770645,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "windup": 0
+      },
+      {
+        "id": "r2",
+        "x": 1293.846147217624,
+        "y": 262,
+        "health": 0,
+        "state": "Dead",
+        "windup": 0
+      },
+      {
+        "id": "m2",
+        "x": 1676.0833333333157,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "windup": 0
+      },
+      {
+        "id": "r3",
+        "x": 1936.3650000000025,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "windup": 0
+      },
+      {
+        "id": "m3",
+        "x": 2974.58333333335,
+        "y": 200,
+        "health": 3,
+        "state": "Patrol",
+        "windup": 0
+      },
+      {
+        "id": "r4",
+        "x": 2493.413349528689,
+        "y": 282,
+        "health": 0,
+        "state": "Dead",
+        "windup": 0
+      },
+      {
+        "id": "m4",
+        "x": 3342.8333333334126,
+        "y": 150,
+        "health": 3,
+        "state": "Chase",
+        "windup": 0
+      },
+      {
+        "id": "r5",
+        "x": 3221.3582175635865,
+        "y": 150,
+        "health": 2,
+        "state": "Chase",
+        "windup": 0
+      },
+      {
+        "id": "gate-guard",
+        "x": 3649.2102770955603,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "windup": 0
+      }
+    ]
+  },
+  "jumps": 10,
+  "errors": []
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>线条突围 · Stickman Breakout</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="<%= cssUrl %>">
+  <style>html,body{background:#faf9f5;margin:0;overflow:hidden;touch-action:none}canvas{outline:none;touch-action:none}</style>
+</head>
+<body>
+  <div id="GameDiv" cc_exact_fit_screen="true">
+    <div id="Cocos3dGameContainer">
+      <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+    </div>
+  </div>
+  <%- include(cocosTemplate, {}) %>
+  <!-- Browser shell only: gameplay, input and UI all run through Cocos. -->
+  <script>document.getElementById('GameCanvas').focus({preventScroll:true});</script>
+</body>
+</html>

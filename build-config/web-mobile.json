@@ -1,0 +1,15 @@
+{
+  "name": "stickman-breakout",
+  "platform": "web-mobile",
+  "buildPath": "project://build",
+  "debug": true,
+  "mainBundleCompressionType": "merge_dep",
+  "engineModulesConfigKey": "defaultConfig",
+  "startScene": "c723c407-96af-4c6d-a138-e4912b9cac8a",
+  "scenes": [
+    {
+      "url": "db://assets/scenes/Main.scene",
+      "uuid": "c723c407-96af-4c6d-a138-e4912b9cac8a"
+    }
+  ]
+}

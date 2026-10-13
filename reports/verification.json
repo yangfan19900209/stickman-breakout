@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-13",
+  "creator": "3.8.8",
+  "design": {
+    "width": 1280,
+    "height": 720,
+    "targetFPS": 60
+  },
+  "sourceModules": 22,
+  "sourceSHA256": "8e202e2e858ec62f412cc019a76718758abf943b26a0c4489ba1ac09ba67e0ca",
+  "typecheck": "passed",
+  "logicTests": {
+    "passed": 17,
+    "failed": 0
+  },
+  "browserTests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "web": {
+    "files": 19,
+    "bytes": 4294700,
+    "entry": "build/web-mobile/index.html",
+    "creatorExitCode": 36
+  },
+  "wechat": {
+    "files": 24,
+    "bytes": 1796072,
+    "entry": "build/wechatgame/game.js",
+    "creatorExitCode": 36,
+    "orientation": "landscape",
+    "testAppID": "wx6ac3f5090a6b99c5",
+    "runtimeVerified": false
+  },
+  "fullRun": {
+    "state": "complete",
+    "seconds": 16.51666666666637,
+    "health": 2,
+    "kills": 4,
+    "guardHealth": 0,
+    "cameraX": 2719.999999999997,
+    "peakBullets": 8,
+    "droppedBullets": 0,
+    "applicationErrors": []
+  },
+  "touchCancellation": {
+    "inputReleased": true,
+    "engineDiagnostics": [
+      "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted."
+    ],
+    "applicationErrors": []
+  },
+  "engineModules": [
+    "2d",
+    "base",
+    "custom-pipeline",
+    "gfx-webgl",
+    "gfx-webgl2",
+    "graphics",
+    "profiler",
+    "ui",
+    "ui-skew"
+  ],
+  "unverified": [
+    "WeChat developer-tools runtime",
+    "Android/iOS/WeChat real devices",
+    "Real-device 60FPS and memory",
+    "Editor GUI manual inspection"
+  ]
+}

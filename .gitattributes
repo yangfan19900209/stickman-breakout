@@ -1,0 +1,5 @@
+* text=auto
+# Preserve the exact Cocos build bytes, including generated line endings.
+docs/** -text
+*.png binary
+*.bin binary
