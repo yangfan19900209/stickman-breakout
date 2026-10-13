@@ -61,5 +61,7 @@
 
 ## 版本与部署
 
+最终验收：严格 TypeScript 检查通过；42/42 逻辑测试、9/9 浏览器测试通过。实际键盘通关约 64.49 游戏秒，剩余 5 HP，战车 0 HP，三种武器及战车两个阶段均经过，吊桥已降下、升降区已通过；子弹峰值 10、溢出 0。Web 35 文件 / 4,566,144 字节；微信 40 文件 / 1,932,997 字节，横屏，构建成功。35 个线上 Cocos 文件逐字节一致，公开站点的键盘、暂停和三指输入验证通过，应用错误与请求失败均为 0。
+
 V0.1 已保留于 Git 历史（`e163c5b`）和测试夹具；当前源码版本为 0.2.0。发布流程依旧是 Creator Web 构建 → 验证 → `pages:prepare` → `main/docs` → GitHub Pages。线上包和源码指纹可通过 `docs/version.json` 核对。首次 V0.1 部署使用 HTTPS，源码仓库为 [yangfan19900209/stickman-breakout](https://github.com/yangfan19900209/stickman-breakout)。V0.2 线上检查结果保存在 `reports/github-pages-verification.json`。
 
