@@ -1,0 +1,35 @@
+{
+  "size": {
+    "width": 740,
+    "height": 360,
+    "dpr": 3
+  },
+  "display": {
+    "width": 1480,
+    "height": 720,
+    "portrait": false,
+    "zoom": 1.4,
+    "combatZoom": 1.4,
+    "worldVisibleWidth": 1057.142857142857,
+    "cameraY": 0,
+    "frameWidth": 740,
+    "frameHeight": 360,
+    "orientationPaused": false
+  },
+  "canvas": {
+    "x": 0,
+    "y": 0,
+    "width": 740,
+    "height": 360
+  },
+  "actualPixelRatio": 2,
+  "hitPixels": {
+    "joystick": 112,
+    "jump": 76,
+    "shoot": 90,
+    "grenade": 60,
+    "pause": 44
+  },
+  "heroHeightCSS": 51.8,
+  "shots": 1
+}

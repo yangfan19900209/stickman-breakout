@@ -21,7 +21,7 @@ export class SceneryArt {
     );
   }
   static tower(g: Ink, x: number, y: number): void {
-    const c = colors.muted;
+    const c = colors.mid;
     g.line(
       [
         { x: x - 35, y },
@@ -46,8 +46,8 @@ export class SceneryArt {
     g.segment(x + 15, y + 147, x + 5, y + 130, 2, c);
   }
   static bunker(g: Ink, x: number, y: number, width = 280): void {
-    const c = colors.muted;
-    g.rect(x, y, width, 152, c, colors.paper, 2);
+    const c = colors.mid;
+    g.rect(x, y, width, 152, c, colors.wall, 2);
     g.line(
       [
         { x: x - 10, y: y + 152 },
@@ -75,7 +75,7 @@ export class SceneryArt {
     g.segment(x + 15, y + 229, x + 55, y + 229, 1.5, c);
   }
   static factory(g: Ink, x: number, y: number): void {
-    const c = colors.muted;
+    const c = colors.mid;
     g.rect(x, y, 340, 244, c, colors.paper, 2);
     for (let n = 0; n < 3; n++) {
       const px = x + 36 + n * 82;
@@ -115,7 +115,7 @@ export class SceneryArt {
     g.segment(x - 75, y + 137, x - 75, y + 7, 1.5, c);
   }
   static crane(g: Ink, x: number, y: number): void {
-    const c = colors.muted;
+    const c = colors.mid;
     g.rect(x, y, 35, 280, c, undefined, 2);
     g.rect(x + 270, y, 35, 280, c, undefined, 2);
     for (let h = 0; h < 270; h += 35) {
@@ -158,5 +158,37 @@ export class SceneryArt {
     g.rect(x + 122, y + 47, 22, 23, c, undefined, 1);
     g.circle(x + 27, y + 17, 14, c, undefined, 1.5);
     g.circle(x + 130, y + 17, 14, c, undefined, 1.5);
+  }
+  /** Non-colliding midground machinery uses gray silhouettes, never black platform edges. */
+  static serviceBay(g: Ink, x: number, y: number): void {
+    const c = colors.mid;
+    g.rect(x, y, 126, 88, c, colors.wall, 3.6);
+    g.rect(x + 15, y + 17, 49, 51, c, colors.paper, 2);
+    for (let n = 0; n < 4; n++)
+      g.segment(x + 22, y + 27 + n * 9, x + 56, y + 27 + n * 9, 2, c);
+    g.circle(x + 94, y + 45, 16, c, colors.paper, 3.6);
+    g.segment(x + 80, y + 45, x + 108, y + 45, 2, c);
+    g.segment(x + 94, y + 31, x + 94, y + 59, 2, c);
+    g.line(
+      [
+        { x: x + 24, y: y + 88 },
+        { x: x + 24, y: y + 125 },
+        { x: x + 143, y: y + 125 },
+        { x: x + 143, y: y + 45 },
+      ],
+      8,
+      colors.wall,
+    );
+    g.line(
+      [
+        { x: x + 24, y: y + 88 },
+        { x: x + 24, y: y + 125 },
+        { x: x + 143, y: y + 125 },
+        { x: x + 143, y: y + 45 },
+      ],
+      2.4,
+      c,
+    );
+    g.rect(x - 10, y - 6, 148, 6, c, colors.wall, 2);
   }
 }

@@ -1,4 +1,4 @@
-import { Color, Label, Node, EventTouch } from "cc";
+import { Color, Label, Node, EventTouch, UITransform } from "cc";
 import { GameConfig as C } from "../core/GameConfig";
 import { GameSession } from "../core/GameSession";
 import { InputManager } from "../core/InputManager";
@@ -47,7 +47,7 @@ function button(
     h,
     colors.ink,
     dark ? colors.ink : colors.paper,
-    2,
+    4,
   );
   text(n, title, 0, 0, 22, dark ? colors.paper : colors.ink, w - 12);
   n.on(Node.EventType.TOUCH_START, (e: EventTouch) => {
@@ -78,6 +78,14 @@ export class HUDController {
   private lastExit = false;
   private progress = -1;
   private rotateNote: Node;
+  private rotateInk: Ink;
+  private rotateTitle: Label;
+  private rotateSub: Label;
+  private panelInk = new Map<GameState, Ink>();
+  private levelLabel: Label;
+  private width = 1280;
+  private height = 720;
+  private insets: SafeInsets = { left: 0, right: 0, top: 0, bottom: 0 };
   private joystick: JoystickView;
   private weaponLabel: Label;
   private message: Label;
@@ -94,22 +102,28 @@ export class HUDController {
   ) {
     this.hud = node(parent, "HUD");
     this.hudInk = new Ink(this.hud);
-    text(this.hud, "线条突围", 92, 687, 23, colors.ink, 160);
-    text(this.hud, "生命", 220, 686, 14, colors.muted, 80);
-    text(this.hud, "废弃前哨站", 1050, 689, 22, colors.ink, 185);
-    this.pauseButton = button(this.hud, "Ⅱ", 1204, 686, 54, 44, onPause);
+    this.levelLabel = text(
+      this.hud,
+      "废弃前哨站",
+      995,
+      678,
+      34,
+      colors.ink,
+      350,
+    );
+    this.pauseButton = button(this.hud, "Ⅱ", 1214, 666, 88, 88, onPause);
     this.objective = text(
       this.hud,
       "向右推进 · 击败出口守卫",
-      982,
+      920,
+      590,
+      26,
+      colors.ink,
       620,
-      16,
-      colors.muted,
-      480,
     );
-    this.stats = text(this.hud, "", 112, 620, 15, colors.muted, 170);
-    this.weaponLabel = text(this.hud, "", 680, 686, 17, colors.ink, 450);
-    this.message = text(parent, "", 640, 560, 22, colors.ink, 750);
+    this.stats = text(this.hud, "", 170, 590, 26, colors.ink, 320);
+    this.weaponLabel = text(this.hud, "", 300, 640, 32, colors.ink, 570);
+    this.message = text(parent, "", 640, 534, 30, colors.ink, 750);
     this.guardNode = node(parent, "Guard health");
     this.guardInk = new Ink(this.guardNode);
     this.guardLabel = text(
@@ -117,7 +131,7 @@ export class HUDController {
       "出口守卫",
       640,
       595,
-      17,
+      28,
       colors.ink,
       350,
     );
@@ -137,21 +151,9 @@ export class HUDController {
       this.touchButtons.push({ action, ink, held: false });
       this.paintTouch(ink, action, false);
     };
-    touch("jump", 1034, 170, 48);
-    touch("shoot", 1162, 100, 58);
-    touch("grenade", 934, 92, 38);
-    text(
-      this.controls,
-      "拖动移动 · 下蹲 / 上瞄",
-      160,
-      15,
-      12,
-      colors.muted,
-      280,
-    );
-    text(this.controls, "按住高跳", 1034, 111, 12, colors.muted, 100);
-    text(this.controls, "按住 J", 1162, 25, 12, colors.muted, 100);
-    text(this.controls, "手雷 K", 934, 42, 12, colors.muted, 100);
+    touch("jump", this.layout.jump.x, this.layout.jump.y, 70);
+    touch("shoot", this.layout.shoot.x, this.layout.shoot.y, 84);
+    touch("grenade", this.layout.grenade.x, this.layout.grenade.y, 54);
     const panel = (state: GameState): Node => {
       const n = node(parent, `Panel:${state}`, 640, 360, C.width, C.height),
         ink = new Ink(n);
@@ -169,6 +171,7 @@ export class HUDController {
       });
       n.active = false;
       this.panels.set(state, n);
+      this.panelInk.set(state, ink);
       return n;
     };
     const title = panel("title"),
@@ -249,7 +252,7 @@ export class HUDController {
       colors.muted,
       760,
     );
-    text(title, "V0.2  /  墨线行动", -368, -270, 13, colors.muted, 390);
+    text(title, "V0.2.1  /  墨线行动", -368, -270, 16, colors.muted, 390);
     const paused = panel("paused");
     text(paused, "暂停一下", 0, 103, 52);
     text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -276,21 +279,43 @@ export class HUDController {
       button(p, "返回首页", 0, -167, 300, 54, onHome);
     }
     this.rotateNote = node(parent, "Rotate device hint");
-    const hintInk = new Ink(this.rotateNote);
-    hintInk.rect(320, 480, 640, 50, colors.ink, colors.paper, 1);
-    text(this.rotateNote, "横屏体验更好，请旋转设备", 640, 505, 21);
+    this.rotateInk = new Ink(this.rotateNote);
+    this.rotateTitle = text(
+      this.rotateNote,
+      "请旋转设备\n横屏游玩",
+      360,
+      700,
+      54,
+      colors.ink,
+      620,
+    );
+    this.rotateTitle.node.getComponent(UITransform)!.setContentSize(620, 160);
+    this.rotateSub = text(
+      this.rotateNote,
+      "战斗已暂停\n旋转后自动恢复",
+      360,
+      540,
+      30,
+      colors.muted,
+      600,
+    );
+    this.rotateSub.node.getComponent(UITransform)!.setContentSize(600, 100);
+    this.rotateNote.on(Node.EventType.TOUCH_START, (e: EventTouch) => {
+      e.propagationStopped = true;
+    });
+    this.applyInsets(this.insets);
   }
   private paintTouch(ink: Ink, action: InputAction, held: boolean): void {
     ink.clear();
-    const radius = action === "shoot" ? 57 : action === "grenade" ? 35 : 47,
-      color = held ? colors.paper : new Color(24, 24, 24, 170);
+    const radius = action === "shoot" ? 76 : action === "grenade" ? 48 : 62,
+      color = held ? colors.paper : colors.ink;
     ink.circle(
       0,
       0,
       radius,
-      new Color(24, 24, 24, 140),
-      held ? new Color(24, 24, 24, 210) : new Color(250, 249, 245, 205),
-      2,
+      new Color(24, 24, 24, 230),
+      held ? new Color(24, 24, 24, 230) : new Color(250, 249, 245, 222),
+      5,
     );
     if (action === "grenade") {
       ink.circle(0, -3, 12, color, undefined, 3);
@@ -384,9 +409,19 @@ export class HUDController {
         color,
       );
     }
+    const label =
+      action === "shoot" ? "射击" : action === "grenade" ? "手雷" : "跳跃";
+    // Labels live inside the visual circle, and share its position on every layout.
+    let l = ink.node.getComponentInChildren(Label);
+    if (!l)
+      l = text(ink.node, label, 0, -radius * 0.55, 23, color, radius * 1.8);
+    l.color = color;
   }
-  applyInsets(insets: SafeInsets): void {
-    this.layout = controlLayout(insets);
+  applyInsets(insets: SafeInsets, width = 1280, height = 720): void {
+    this.width = width;
+    this.height = height;
+    this.insets = insets;
+    this.layout = controlLayout(insets, width, height);
     this.joystick.node.setPosition(
       this.layout.joystick.x,
       this.layout.joystick.y,
@@ -399,13 +434,55 @@ export class HUDController {
             ? this.layout.shoot
             : this.layout.grenade;
       b.ink.node.setPosition(p.x, p.y);
+      b.ink.node.getComponent(UITransform)!.setContentSize(p.hit, p.hit);
     }
     this.pauseButton.setPosition(this.layout.pause.x, this.layout.pause.y);
+    const top = height - insets.top;
+    this.weaponLabel.node.setPosition(300 + insets.left, top - 80);
+    this.levelLabel.node.setPosition(width - 320 - insets.right, top - 40);
+    this.objective.node.setPosition(width - 342 - insets.right, top - 132);
+    this.stats.node.setPosition(174 + insets.left, top - 132);
+    this.message.node.setPosition(width / 2, top - 188);
+    this.guardLabel.node.setPosition(width / 2, top - 155);
+    this.guardNode.setPosition(width / 2 - 640, top - 720);
+    this.guardLabel.node.setPosition(640, 565);
+    for (const [state, p] of this.panels) {
+      p.setPosition(width / 2, height / 2);
+      const ink = this.panelInk.get(state)!;
+      ink.clear();
+      ink.rect(
+        -width / 2,
+        -height / 2,
+        width,
+        height,
+        colors.paper,
+        colors.paper,
+        1,
+      );
+    }
+    this.rotateNote.getComponent(UITransform)!.setContentSize(width, height);
+    this.rotateNote.getComponent(UITransform)!.setAnchorPoint(0, 0);
+    this.rotateInk.clear();
+    this.rotateInk.rect(0, 0, width, height, colors.paper, colors.paper, 1);
+    const cx = width / 2,
+      cy = height / 2;
+    this.rotateInk.rect(cx - 52, cy + 170, 104, 170, colors.ink, undefined, 7);
+    this.rotateInk.line(
+      [
+        { x: cx + 84, y: cy + 292 },
+        { x: cx + 124, y: cy + 240 },
+        { x: cx + 84, y: cy + 208 },
+      ],
+      7,
+    );
+    this.rotateTitle.node.setPosition(cx, cy + 30);
+    this.rotateSub.node.setPosition(cx, cy - 140);
+    this.lastHealth = this.progress = -1;
   }
   update(s: GameSession, input: InputManager, portrait: boolean): void {
     this.hud.active =
       s.state === "playing" || s.state === "dying" || s.state === "paused";
-    this.controls.active = s.state === "playing";
+    this.controls.active = s.state === "playing" && !portrait;
     this.weaponLabel.string = `${s.weapon.id === "rifle" ? "自动步枪" : s.weapon.id === "shotgun" ? "霰弹枪" : "火箭筒"}  ${s.weapon.ammo < 0 ? "∞" : s.weapon.ammo}   ·   手雷 ${s.player.grenades}`;
     this.message.node.active =
       s.state === "playing" && (s.pickups.messageTime > 0 || s.combo > 1);
@@ -413,16 +490,25 @@ export class HUDController {
       s.pickups.messageTime > 0 ? s.pickups.lastMessage : `COMBO × ${s.combo}`;
     this.joystick.update(input);
     this.rotateNote.active = portrait;
+    if (portrait) {
+      this.hud.active =
+        this.guardNode.active =
+        this.message.node.active =
+          false;
+      for (const p of this.panels.values()) p.active = false;
+      this.lastState = null;
+      return;
+    }
     this.guardNode.active =
       s.state === "playing" && s.level.arenaEntered && s.spawner.guard.alive;
     if (this.guardNode.active) {
       this.guardInk.clear();
-      this.guardInk.rect(470, 569, 340, 5, colors.muted, colors.paper, 1);
+      this.guardInk.rect(470, 539, 340, 12, colors.ink, colors.paper, 3);
       this.guardInk.rect(
         470,
-        569,
+        539,
         (340 * s.spawner.guard.health) / s.spawner.guard.maxHealth,
-        5,
+        12,
         colors.ink,
         colors.ink,
         1,
@@ -433,21 +519,22 @@ export class HUDController {
       for (const [state, p] of this.panels) p.active = state === s.state;
       this.lastState = s.state;
     }
-    const progress = Math.floor((s.player.x / s.level.data.width) * 1280);
+    const progress = Math.floor((s.player.x / s.level.data.width) * this.width);
     if (this.lastHealth !== s.player.health || this.progress !== progress) {
       this.hudInk.clear();
-      this.hudInk.rect(0, 654, 1280, 66, colors.far, colors.paper, 1);
-      this.hudInk.line(
-        [
-          { x: 180, y: 675 },
-          { x: 180, y: 700 },
-        ],
-        1,
+      const top = this.height - this.insets.top;
+      this.hudInk.rect(
+        0,
+        top - 108,
+        this.width,
+        108,
         colors.far,
+        colors.paper,
+        2,
       );
       for (let i = 0; i < C.player.maxHealth; i++) {
-        const x = 270 + i * 33,
-          y = 683;
+        const x = 70 + this.insets.left + i * 42,
+          y = top - 40;
         const points = [
           { x: x - 9, y: y + 3 },
           { x: x - 9, y: y + 9 },
@@ -462,16 +549,16 @@ export class HUDController {
         if (i < s.player.health) this.hudInk.polygon(points);
         this.hudInk.line(
           points,
-          2,
+          4,
           i < s.player.health ? colors.ink : colors.far,
         );
       }
       this.hudInk.line(
         [
-          { x: 0, y: 654 },
-          { x: progress, y: 654 },
+          { x: 0, y: top - 108 },
+          { x: progress, y: top - 108 },
         ],
-        2,
+        5,
         colors.ink,
       );
       this.lastHealth = s.player.health;

@@ -184,8 +184,9 @@ test("tank defeat has an explosion sequence, then unlocks a reachable exit and r
 });
 test("safe insets move touch controls inward without changing their ownership model", () => {
   const l = controlLayout({ left: 40, right: 30, top: 20, bottom: 10 });
-  assert.equal(l.joystick.x, 180);
-  assert.equal(l.shoot.x, 1132);
-  assert.equal(l.jump.y, 180);
-  assert.equal(l.pause.y, 666);
+  const base = controlLayout();
+  assert.equal(l.joystick.x, base.joystick.x + 40);
+  assert.equal(l.shoot.x, base.shoot.x - 30);
+  assert.equal(l.jump.y, base.jump.y + 10);
+  assert.equal(l.pause.y, base.pause.y - 20);
 });

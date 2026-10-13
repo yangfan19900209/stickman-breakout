@@ -73,7 +73,7 @@ try {
   });
   await desktop.keyboard.up("KeyD");
   await desktop.keyboard.up("KeyJ");
-  await desktop.keyboard.up('Space');
+  await desktop.keyboard.up("Space");
   const keyboard = await snapshot(desktop);
   await desktop.screenshot({ path: "reports/github-pages-desktop.png" });
   await desktop.keyboard.press("KeyP");
@@ -96,22 +96,27 @@ try {
   const mobile = await boot(mobileContext);
   async function point(x, y) {
     const b = await mobile.locator("#GameCanvas").boundingBox();
-    const scale = Math.min(b.width / 1280, b.height / 720);
+    const d = (await snapshot(mobile)).display;
+    const scale = Math.min(b.width / d.width, b.height / d.height);
     return {
-      x: b.x + (b.width - 1280 * scale) / 2 + x * scale,
-      y: b.y + (b.height - 720 * scale) / 2 + (720 - y) * scale,
+      x: b.x + x * scale,
+      y: b.y + (d.height - y) * scale,
     };
   }
-  const start = await point(760, 232);
+  const d = (await snapshot(mobile)).display;
+  const start = await point(d.width / 2 + 120, d.height / 2 - 128);
   await mobile.touchscreen.tap(start.x, start.y);
   await mobile.waitForFunction(
     () => globalThis.__BREAKOUT__.snapshot().state === "playing",
   );
   const cdp = await mobileContext.newCDPSession(mobile);
-  const layout=(await snapshot(mobile)).controls.layout;
-  const right = await point(layout.joystick.x+layout.joystick.r,layout.joystick.y),
-    shoot = await point(layout.shoot.x,layout.shoot.y),
-    jump = await point(layout.jump.x,layout.jump.y);
+  const layout = (await snapshot(mobile)).controls.layout;
+  const right = await point(
+      layout.joystick.x + layout.joystick.r,
+      layout.joystick.y,
+    ),
+    shoot = await point(layout.shoot.x, layout.shoot.y),
+    jump = await point(layout.jump.x, layout.jump.y);
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchStart",
     touchPoints: [
@@ -136,6 +141,22 @@ try {
   const settled = await snapshot(mobile);
   assert.ok(Math.abs(settled.player.x - released.player.x) < 2);
   assert.equal(settled.shots, released.shots);
+  const mobileCanvas = await mobile.locator("#GameCanvas").boundingBox();
+  assert.ok(
+    mobileCanvas.width >= 844 * 0.98 && mobileCanvas.height >= 390 * 0.98,
+  );
+  await mobile.setViewportSize({ width: 390, height: 844 });
+  await mobile.waitForFunction(
+    () => globalThis.__BREAKOUT__.snapshot().display.portrait,
+  );
+  const portrait = await snapshot(mobile);
+  await mobile.waitForTimeout(200);
+  assert.equal((await snapshot(mobile)).time, portrait.time);
+  await mobile.screenshot({ path: "reports/github-pages-portrait.png" });
+  await mobile.setViewportSize({ width: 844, height: 390 });
+  await mobile.waitForFunction(
+    () => globalThis.__BREAKOUT__.snapshot().state === "playing",
+  );
   assert.deepEqual(applicationErrors, []);
   assert.deepEqual(failedRequests, []);
   const result = {
@@ -158,6 +179,9 @@ try {
       playerY: touch.player.y,
       shots: touch.shots,
       releaseVerified: true,
+      fullViewport: true,
+      portraitFrozen: true,
+      rotationResume: true,
     },
     applicationErrors,
     failedRequests,

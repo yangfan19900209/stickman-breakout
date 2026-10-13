@@ -73,9 +73,15 @@ test("barrel damage creates a bounded chain that kills nearby enemies", () => {
     second = s.level.objects.objects.find((o) => o.id === "barrel-02");
   first.takeDamage(3, 1);
   s.update(1 / 120, idle);
+  assert.equal(first.solid, false);
+  assert.equal(s.explosions.total, 0);
+  assert.equal(second.alive, true);
+  tick(s, 12);
   assert.equal(second.alive, false);
   assert.equal(near.alive, false);
   assert.ok(near.vy > 0);
+  assert.equal(s.explosions.total, 1);
+  tick(s, 12);
   assert.equal(s.explosions.total, 2);
   tick(s, 180);
   assert.equal(s.explosions.total, 2);

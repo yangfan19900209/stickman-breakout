@@ -149,18 +149,29 @@ System.register("chunks:///_virtual/CameraFollow.ts", ['./rollupPluginModLoBabel
         function CameraFollow() {
           _classCallCheck(this, CameraFollow);
           _defineProperty(this, "x", 0);
+          _defineProperty(this, "y", 0);
+          _defineProperty(this, "visibleWidth", GameConfig.width);
+          _defineProperty(this, "zoom", 1);
         }
         _createClass(CameraFollow, [{
           key: "reset",
           value: function reset() {
-            this.x = 0;
+            this.x = this.zoom > 1 ? -110 : 0;
+            this.y = 0;
           }
         }, {
           key: "update",
           value: function update(playerX, dt, mapWidth) {
-            var target = clamp(playerX - GameConfig.width * 0.38, 0, mapWidth - GameConfig.width);
+            var facing = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+            var playerY = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 150;
+            var arenaStart = arguments.length > 5 ? arguments[5] : undefined;
+            var min = arenaStart !== null && arenaStart !== void 0 ? arenaStart : this.zoom > 1 ? -110 : 0;
+            var max = Math.max(min, mapWidth - this.visibleWidth);
+            var target = clamp(playerX - this.visibleWidth * (facing > 0 ? 0.36 : 0.64), min, max);
             this.x += (target - this.x) * (1 - Math.exp(-dt * 8));
-            this.x = clamp(this.x, 0, mapWidth - GameConfig.width);
+            this.x = clamp(this.x, min, max);
+            var vertical = clamp(playerY - 260, 0, 220);
+            this.y += (vertical - this.y) * (1 - Math.exp(-dt * 3));
           }
         }]);
         return CameraFollow;
@@ -204,7 +215,8 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
             var armed = a.kind !== "melee",
               pose = this.animator.sample(a.animation, a.animationTime, a.recoil, armed, a.deadTime, (_a$aimPitch = a.aimPitch) !== null && _a$aimPitch !== void 0 ? _a$aimPitch : 0);
             var alpha = a.animation === "Dead" ? Math.max(0, 1 - a.deadTime / 1.25) : a.invincible && Math.floor(a.invincible * 14) % 2 === 0 ? 0.3 : 1;
-            this.color.a = alpha * 255;
+            var hit = a.animation === "Hit" && Math.floor(a.animationTime * 35) % 2 === 0;
+            this.color.set(hit ? 150 : 24, hit ? 150 : 24, hit ? 146 : 24, alpha * 255);
             this.shade.a = alpha * 255;
             var color = this.color,
               shade = this.shade;
@@ -213,13 +225,14 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
               baseY = a.y,
               dir = a.facing,
               fx = dir * scale;
+            var weight = a.kind ? GameConfig.rendering.lineWidths.enemy : GameConfig.rendering.lineWidths.hero;
             var line = function line(v, w) {
-              var width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : GameConfig.rendering.lineWidth;
-              return ink.segment(baseX + v.x * fx, baseY + v.y * scale, baseX + w.x * fx, baseY + w.y * scale, width, color);
+              var width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3.3;
+              return ink.segment(baseX + v.x * fx, baseY + v.y * scale, baseX + w.x * fx, baseY + w.y * scale, width / 3.3 * weight, color);
             };
             var local = function local(x, y, x2, y2) {
               var width = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 2;
-              return ink.segment(baseX + x * fx, baseY + y * scale, baseX + x2 * fx, baseY + y2 * scale, width, color);
+              return ink.segment(baseX + x * fx, baseY + y * scale, baseX + x2 * fx, baseY + y2 * scale, Math.max(GameConfig.rendering.lineWidths.detail, width * 1.3), color);
             };
             var circle = function circle(x, y, r, fill) {
               return ink.circle(baseX + x * fx, baseY + y * scale, r * scale, color, fill, 2);
@@ -228,7 +241,7 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
             // Backpack and shoulder strap sit behind the rig, remaining recognizable in both directions.
             var torso = pose.torso,
               neck = pose.neck;
-            ink.ellipse(baseX + (torso.x - 9) * fx, baseY + (torso.y + 10) * scale, 8 * scale, 12 * scale, color, shade, 2);
+            ink.ellipse(baseX + (torso.x - 9) * fx, baseY + (torso.y + 10) * scale, 8 * scale, 12 * scale, color, shade, weight * 0.65);
             local(torso.x - 12, torso.y + 15, neck.x + 3, neck.y - 5, 1.5);
             line(pose.neck, pose.torso, 3.6);
             line(pose.leftShoulder, pose.leftElbow);
@@ -249,7 +262,7 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
             var head = pose.head,
               hx = baseX + head.x * fx,
               hy = baseY + head.y * scale;
-            ink.ellipse(hx, hy, 10.5 * scale, 11 * scale, color, colors.paper, 3);
+            ink.ellipse(hx, hy, 10.5 * scale, 11 * scale, color, colors.paper, weight * 0.85);
             if (!a.kind) {
               local(head.x - 10, head.y + 5, head.x + 10, head.y + 5, 2.7);
               local(head.x - 10, head.y + 5, head.x - 15, head.y + 3, 2);
@@ -273,7 +286,7 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
             local(torso.x - 4, torso.y + 2, torso.x + 5, torso.y + 2, 2);
             if (a.kind === "shield" && ((_a$shieldHealth = a.shieldHealth) !== null && _a$shieldHealth !== void 0 ? _a$shieldHealth : 0) > 0 && a.animation !== "Dead") {
               var bx = baseX + 26 * dir;
-              ink.ellipse(bx, baseY + 35, 13, 31, color, shade, 3.5);
+              ink.ellipse(bx, baseY + 35, 13, 31, color, shade, weight);
               ink.ellipse(bx, baseY + 35, 5, 8, color, colors.paper, 2);
               ink.segment(bx - 8, baseY + 55, bx + 8, baseY + 55, 2);
             }
@@ -287,7 +300,7 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
               var gun = function gun(x, y, x2, y2) {
                 var width = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 3;
                 var tint = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : color;
-                return ink.segment(baseX + (hand.x + x * cs - y * sn) * fx, baseY + (hand.y + x * sn + y * cs) * scale, baseX + (hand.x + x2 * cs - y2 * sn) * fx, baseY + (hand.y + x2 * sn + y2 * cs) * scale, width, tint);
+                return ink.segment(baseX + (hand.x + x * cs - y * sn) * fx, baseY + (hand.y + x * sn + y * cs) * scale, baseX + (hand.x + x2 * cs - y2 * sn) * fx, baseY + (hand.y + x2 * sn + y2 * cs) * scale, tint === colors.paper ? width : width * 1.35, tint);
               };
               gun(-13, 0, GameConfig.weapons[weapon].muzzleLength, 0, weapon === "rocket" ? 10 : 5.5);
               gun(-12, 0, -21, -3, 5);
@@ -313,8 +326,8 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
   };
 });
 
-System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, input, Input, KeyCode, Vec2, Node, GameConfig;
+System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, input, Input, KeyCode, Vec2, Node, view;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -328,12 +341,10 @@ System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLo
       KeyCode = module.KeyCode;
       Vec2 = module.Vec2;
       Node = module.Node;
-    }, function (module) {
-      GameConfig = module.GameConfig;
+      view = module.view;
     }],
     execute: function () {
       cclegacy._RF.push({}, "0bcc4SPVYPR8dHAAgg/hEdQ", "CocosInputAdapter", undefined);
-
       /** Cocos events are the only device event boundary. Touch IDs retain independent ownership. */
       var CocosInputAdapter = exports('CocosInputAdapter', /*#__PURE__*/function () {
         function CocosInputAdapter(state, onEnter) {
@@ -405,8 +416,9 @@ System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLo
             var location = new Vec2();
             var coordinates = function coordinates(e) {
               e.getUILocation(location);
-              location.x -= stick.worldPosition.x + GameConfig.width / 2;
-              location.y -= stick.worldPosition.y + GameConfig.height / 2;
+              var design = view.getDesignResolutionSize();
+              location.x -= stick.worldPosition.x + design.width / 2;
+              location.y -= stick.worldPosition.y + design.height / 2;
             };
             var start = function start(e) {
               coordinates(e);
@@ -518,18 +530,44 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
         function CombatRenderer() {
           _classCallCheck(this, CombatRenderer);
           _defineProperty(this, "tint", new Color(24, 24, 24));
+          _defineProperty(this, "smoke", new Color(30, 30, 30));
+          _defineProperty(this, "points", Array.from({
+            length: 25
+          }, function () {
+            return {
+              x: 0,
+              y: 0
+            };
+          }));
         }
         _createClass(CombatRenderer, [{
+          key: "shape",
+          value: function shape(ink, x, y, rx, ry, seed, jagged, fill) {
+            var stroke = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : fill;
+            var width = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : 2;
+            for (var n = 0; n < 24; n++) {
+              var a = n * Math.PI / 12;
+              var r = jagged ? n % 2 ? 0.42 : 1 + Math.sin(n * 2.4 + seed) * 0.18 : 0.88 + Math.sin(n * 1.9 + seed) * 0.1;
+              this.points[n].x = x + Math.cos(a) * rx * r;
+              this.points[n].y = y + Math.sin(a) * ry * r;
+            }
+            this.points[24].x = this.points[0].x;
+            this.points[24].y = this.points[0].y;
+            ink.polygon(this.points, fill);
+            ink.line(this.points, width, stroke);
+          }
+        }, {
           key: "draw",
           value: function draw(ink, session) {
             ink.clear();
-            var cam = session.camera.x;
+            var cam = session.camera.x,
+              visible = session.camera.visibleWidth;
             var _iterator = _createForOfIteratorHelper(session.projectiles.marks),
               _step;
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
                 var m = _step.value;
-                if (m.active && m.x > cam - 10 && m.x < cam + 1290) {
+                if (m.active && m.x > cam - 10 && m.x < cam + visible + 10) {
                   ink.circle(m.x - cam, m.y, 1.6, colors.muted, colors.muted, 1);
                   ink.segment(m.x - cam - 3, m.y + 3, m.x - cam + 2, m.y - 2, 1, colors.muted);
                 }
@@ -554,7 +592,7 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
             try {
               for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                 var p = _step2.value;
-                if (p.active && p.x > cam - 30 && p.x < cam + 1310) {
+                if (p.active && p.x > cam - 30 && p.x < cam + visible + 30) {
                   var _x = p.x - cam,
                     length = Math.hypot(p.vx, p.vy) || 1,
                     trail = p.kind === "rocket" ? 24 : 15;
@@ -600,25 +638,34 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
             try {
               for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
                 var b = _step4.value;
-                if (b.active && b.x > cam - b.radius && b.x < cam + 1280 + b.radius) {
+                if (b.active && b.x > cam - b.radius && b.x < cam + visible + b.radius) {
                   var _x3 = b.x - cam,
-                    amount = b.age / 0.65,
-                    shade = new Color(80, 80, 76, Math.max(0, 1 - amount) * 160);
-                  ink.circle(_x3, b.y, b.radius * (0.15 + amount * 0.8), shade, undefined, 2);
-                  for (var _n = 0; _n < 7; _n++) {
-                    var angle = _n * Math.PI * 2 / 7,
-                      r = b.radius * amount * 0.35;
-                    ink.circle(_x3 + Math.cos(angle) * r, b.y + Math.sin(angle) * r + amount * 30, 12 + amount * 25, shade, new Color(235, 235, 230, (1 - amount) * 155), 1.5);
+                    age = b.age,
+                    t = age / 0.85,
+                    radius = b.radius;
+                  // A fast shock front separates from the slower, rising ink cloud.
+                  if (age < 0.34) {
+                    this.tint.set(24, 24, 24, 240 * (1 - age / 0.34));
+                    ink.circle(_x3, b.y, radius * Math.sqrt(age / 0.34), this.tint, undefined, 7 * (1 - age / 0.34) + 1);
+                    if (b.y - radius < 155) ink.ellipse(_x3, 155, radius * Math.sqrt(age / 0.34), 12 + age * 18, this.tint, undefined, 4);
                   }
-                  if (amount < 0.35) for (var _n2 = 0; _n2 < 8; _n2++) {
-                    var a = _n2 * Math.PI / 4;
-                    ink.line([{
-                      x: _x3 + Math.cos(a) * 12,
-                      y: b.y + Math.sin(a) * 12
-                    }, {
-                      x: _x3 + Math.cos(a) * 55,
-                      y: b.y + Math.sin(a) * 55
-                    }], 3);
+                  if (age > 0.045) for (var _n = 0; _n < 6; _n++) {
+                    var a = _n * Math.PI / 3 + Math.sin(b.x) * 0.3;
+                    var reach = radius * (0.08 + t * 0.24),
+                      size = radius * (0.12 + t * 0.14);
+                    this.smoke.set(32 + _n * 7, 32 + _n * 7, 30 + _n * 7, 235 * Math.min(1, (0.85 - age) / 0.3));
+                    this.shape(ink, _x3 + Math.cos(a) * reach, b.y + Math.sin(a) * reach + t * 72, size, size * 1.05, _n + b.x, false, this.smoke, this.smoke, 2);
+                  }
+                  if (age < 0.16) {
+                    var r = radius * (0.5 + age * 1.7);
+                    this.shape(ink, _x3, b.y, r, r * 0.9, b.x, true, colors.ink);
+                    this.shape(ink, _x3, b.y, r * 0.78, r * 0.7, b.x, true, colors.white, colors.white, 1);
+                    ink.circle(_x3, b.y, radius * 0.18, colors.white, colors.white, 1);
+                  }
+                  if (age < 0.24) for (var _n2 = 0; _n2 < 9; _n2++) {
+                    var _a = _n2 * Math.PI * 2 / 9,
+                      _r = radius * (0.35 + age * 1.8);
+                    ink.segment(_x3 + Math.cos(_a) * _r, b.y + Math.sin(_a) * _r, _x3 + Math.cos(_a) * (_r + 22), b.y + Math.sin(_a) * (_r + 22), 4);
                   }
                 }
               }
@@ -632,11 +679,35 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
             try {
               for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
                 var _p = _step5.value;
-                if (_p.active && _p.x > cam - 80 && _p.x < cam + 1360) {
+                if (_p.active && _p.x > cam - 80 && _p.x < cam + visible + 80) {
                   var color = this.tint,
-                    _amount = 1 - _p.life / _p.maxLife;
+                    amount = 1 - _p.life / _p.maxLife;
                   color.set(_p.kind === "smoke" ? 140 : 24, _p.kind === "smoke" ? 140 : 24, _p.kind === "smoke" ? 135 : 24, 255 * _p.life / _p.maxLife);
-                  if (_p.kind === "smoke" || _p.kind === "dust") ink.ellipse(_p.x - cam, _p.y, _p.size + _amount * (_p.kind === "smoke" ? 14 : 7), _p.size * 0.65 + _amount * 5, color, undefined, 1.5);else if (_p.kind === "shell" || _p.kind === "wood") {
+                  if (_p.kind === "impact") {
+                    var _r2 = _p.size * (0.5 + amount * 0.7);
+                    this.shape(ink, _p.x - cam, _p.y, _r2, _p.material === "metal" ? _r2 * 0.5 : _r2, _p.spin, true, color);
+                    this.shape(ink, _p.x - cam, _p.y, _r2 * 0.55, _r2 * 0.55, _p.spin, true, colors.white);
+                  } else if (_p.kind === "smoke" || _p.kind === "dust") ink.ellipse(_p.x - cam, _p.y, _p.size + amount * (_p.kind === "smoke" ? 14 : 7), _p.size * 0.65 + amount * 5, color, color, 2);else if (_p.kind === "wood" || _p.kind === "metal") {
+                    var _x4 = _p.x - cam,
+                      y = _p.y,
+                      cs = Math.cos(_p.spin),
+                      sn = Math.sin(_p.spin),
+                      _r3 = _p.size * 2.2;
+                    ink.polygon([{
+                      x: _x4 - _r3 * cs,
+                      y: y - _r3 * sn
+                    }, {
+                      x: _x4 + 3 * sn,
+                      y: y - 3 * cs
+                    }, {
+                      x: _x4 + _r3 * cs,
+                      y: y + _r3 * sn
+                    }, {
+                      x: _x4 - 3 * sn,
+                      y: y + 3 * cs
+                    }], color);
+                    if (_p.kind === "wood") ink.segment(_x4 - _r3 * cs * 0.65, y - _r3 * sn * 0.65, _x4 + _r3 * cs * 0.65, y + _r3 * sn * 0.65, 1, colors.paper);
+                  } else if (_p.kind === "shell") {
                     var _length = _p.kind === "shell" ? 3 : 7;
                     ink.segment(_p.x - cam - Math.cos(_p.spin) * _length, _p.y - Math.sin(_p.spin) * _length, _p.x - cam + Math.cos(_p.spin) * _length, _p.y + Math.sin(_p.spin) * _length, _p.size, color);
                   } else ink.segment(_p.x - cam, _p.y, _p.x - cam - _p.vx * 0.018, _p.y - _p.vy * 0.018, _p.size, color);
@@ -668,7 +739,7 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
               }, {
                 x: x + 3 * d,
                 y: y + 5
-              }], 2, colors.ink);
+              }], 4, colors.ink);
               ink.line([{
                 x: x + 18 * d,
                 y: y + 7
@@ -683,19 +754,19 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
             try {
               for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
                 var e = _step6.value;
-                if (e.x < cam - 60 || e.x > cam + 1340) continue;
+                if (e.x < cam - 60 || e.x > cam + visible + 60) continue;
                 flash(e.weapon);
                 if (e.windup > 0 && e.alive) {
-                  var _x4 = e.x - cam,
-                    y = e.y + 91;
+                  var _x5 = e.x - cam,
+                    _y = e.y + 91;
                   ink.line([{
-                    x: _x4,
-                    y: y + 6
+                    x: _x5,
+                    y: _y + 6
                   }, {
-                    x: _x4,
-                    y: y + 16
+                    x: _x5,
+                    y: _y + 16
                   }], 2);
-                  ink.circle(_x4, y, 1, colors.ink, colors.ink, 1);
+                  ink.circle(_x5, _y, 1, colors.ink, colors.ink, 1);
                 }
                 if (e.alive && e.health < e.maxHealth) {
                   ink.rect(e.x - cam - 18, e.y + 84, 36, 3, colors.muted, colors.paper, 1);
@@ -734,31 +805,42 @@ System.register("chunks:///_virtual/ControlLayout.ts", ['cc', './Types.ts'], fun
           top: 0,
           bottom: 0
         };
-        var l = clamp(insets.left, 0, 90),
-          r = clamp(insets.right, 0, 90),
-          b = clamp(insets.bottom, 0, 45),
-          t = clamp(insets.top, 0, 45);
+        var width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1280;
+        var height = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 720;
+        var sideLimit = Math.min(180, 90 + Math.max(0, width - 960) / 2);
+        var l = clamp(insets.left, 0, sideLimit),
+          r = clamp(insets.right, 0, sideLimit),
+          b = clamp(insets.bottom, 0, 120),
+          t = clamp(insets.top, 0, 120);
         return {
           joystick: {
-            x: 140 + l,
-            y: 105 + b,
-            r: 66
+            x: 158 + l,
+            y: 128 + b,
+            r: 92,
+            hit: 224
           },
           jump: {
-            x: 1034 - r,
-            y: 170 + b
+            x: width - 292 - r,
+            y: 170 + b,
+            r: 62,
+            hit: 152
           },
           shoot: {
-            x: 1162 - r,
-            y: 100 + b
+            x: width - 116 - r,
+            y: 126 + b,
+            r: 76,
+            hit: 180
           },
           grenade: {
-            x: 934 - r,
-            y: 92 + b
+            x: width - 436 - r,
+            y: 90 + b,
+            r: 48,
+            hit: 120
           },
           pause: {
-            x: 1204 - r,
-            y: 686 - t
+            x: width - 66 - r,
+            y: height - 54 - t,
+            hit: 88
           }
         };
       }
@@ -1285,8 +1367,64 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
           _defineProperty(this, "count", 0);
           _defineProperty(this, "total", 0);
           _defineProperty(this, "dropped", 0);
+          _defineProperty(this, "pending", Array.from({
+            length: 32
+          }, function () {
+            return {
+              active: false,
+              delay: 0,
+              x: 0,
+              y: 0,
+              radius: 0,
+              damage: 0,
+              owner: "neutral"
+            };
+          }));
         }
         _createClass(ExplosionSystem, [{
+          key: "schedule",
+          value: function schedule(x, y, radius, damage, owner) {
+            var delay = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0.09;
+            var p = this.pending.find(function (p) {
+              return !p.active;
+            });
+            if (!p) {
+              this.dropped++;
+              return;
+            }
+            Object.assign(p, {
+              active: true,
+              delay: delay,
+              x: x,
+              y: y,
+              radius: radius,
+              damage: damage,
+              owner: owner
+            });
+          }
+        }, {
+          key: "advance",
+          value: function advance(dt) {
+            var _iterator = _createForOfIteratorHelper(this.pending),
+              _step;
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                var p = _step.value;
+                if (p.active) {
+                  p.delay -= dt;
+                  if (p.delay <= 0) {
+                    p.active = false;
+                    this.enqueue(p.x, p.y, p.radius, p.damage, p.owner);
+                  }
+                }
+              }
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
+          }
+        }, {
           key: "enqueue",
           value: function enqueue(x, y, radius, damage, owner) {
             if (this.count === this.queue.length) {
@@ -1334,36 +1472,48 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
         }, {
           key: "update",
           value: function update(dt) {
-            var _iterator = _createForOfIteratorHelper(this.items),
-              _step;
-            try {
-              for (_iterator.s(); !(_step = _iterator.n()).done;) {
-                var b = _step.value;
-                if (b.active) {
-                  b.age += dt;
-                  if (b.age > 0.65) b.active = false;
-                }
-              }
-            } catch (err) {
-              _iterator.e(err);
-            } finally {
-              _iterator.f();
-            }
-          }
-        }, {
-          key: "reset",
-          value: function reset() {
             var _iterator2 = _createForOfIteratorHelper(this.items),
               _step2;
             try {
               for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                 var b = _step2.value;
-                b.active = false;
+                if (b.active) {
+                  b.age += dt;
+                  if (b.age > 0.85) b.active = false;
+                }
               }
             } catch (err) {
               _iterator2.e(err);
             } finally {
               _iterator2.f();
+            }
+          }
+        }, {
+          key: "reset",
+          value: function reset() {
+            var _iterator3 = _createForOfIteratorHelper(this.items),
+              _step3;
+            try {
+              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                var b = _step3.value;
+                b.active = false;
+              }
+            } catch (err) {
+              _iterator3.e(err);
+            } finally {
+              _iterator3.f();
+            }
+            var _iterator4 = _createForOfIteratorHelper(this.pending),
+              _step4;
+            try {
+              for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+                var p = _step4.value;
+                p.active = false;
+              }
+            } catch (err) {
+              _iterator4.e(err);
+            } finally {
+              _iterator4.f();
             }
             this.head = this.count = this.total = this.dropped = 0;
           }
@@ -1391,7 +1541,7 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
         fixedStep: 1 / 120,
         maxFrameDelta: 0.1,
         input: {
-          joystickRadius: 66,
+          joystickRadius: 92,
           deadZone: 0.16,
           crouchThreshold: -0.52,
           aimThreshold: 0.52
@@ -1540,9 +1690,19 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
           particles: 320
         },
         rendering: {
-          lineWidth: 3.3,
+          lineWidth: 6.4,
           headRadius: 10,
-          corpseDuration: 0.8
+          corpseDuration: 0.8,
+          lineWidths: {
+            hero: 6.4,
+            enemy: 5.6,
+            interactive: 4.5,
+            platform: 5.8,
+            structure: 3.6,
+            background: 1.25,
+            ui: 4.5,
+            detail: 2
+          }
         }
       });
       cclegacy._RF.pop();
@@ -1550,8 +1710,8 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './InputManager.ts', './GameSession.ts', './Ink.ts', './StickmanRenderer.ts', './LevelRenderer.ts', './PlatformBridge.ts', './CombatRenderer.ts', './CocosInputAdapter.ts', './HUDController.ts', './ObjectRenderer.ts', './AudioBridge.ts'], function (exports) {
-  var _inherits, _createSuper, _classCallCheck, _defineProperty, _assertThisInitialized, _createClass, _objectSpread2, _createForOfIteratorHelper, cclegacy, _decorator, view, ResolutionPolicy, game, profiler, Canvas, Camera, Layers, Color, UITransform, Component, GameConfig, InputManager, GameSession, node, Ink, StickmanRenderer, LevelRenderer, PlatformBridge, CombatRenderer, CocosInputAdapter, HUDController, ObjectRenderer, AudioBridge;
+System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './InputManager.ts', './GameSession.ts', './Ink.ts', './StickmanRenderer.ts', './LevelRenderer.ts', './PlatformBridge.ts', './CombatRenderer.ts', './CocosInputAdapter.ts', './HUDController.ts', './ObjectRenderer.ts', './AudioBridge.ts', './ViewportLayout.ts'], function (exports) {
+  var _inherits, _createSuper, _classCallCheck, _defineProperty, _assertThisInitialized, _createClass, _objectSpread2, _createForOfIteratorHelper, cclegacy, _decorator, view, ResolutionPolicy, game, profiler, Canvas, Camera, Layers, Color, UITransform, Component, GameConfig, InputManager, GameSession, node, Ink, StickmanRenderer, LevelRenderer, PlatformBridge, CombatRenderer, CocosInputAdapter, HUDController, ObjectRenderer, AudioBridge, viewportLayout;
   return {
     setters: [function (module) {
       _inherits = module.inherits;
@@ -1600,6 +1760,8 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
       ObjectRenderer = module.ObjectRenderer;
     }, function (module) {
       AudioBridge = module.AudioBridge;
+    }, function (module) {
+      viewportLayout = module.viewportLayout;
     }],
     execute: function () {
       var _dec, _class;
@@ -1633,6 +1795,12 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
           _defineProperty(_assertThisInitialized(_this), "lastState", _this.session.state);
           _defineProperty(_assertThisInitialized(_this), "frameWidth", 0);
           _defineProperty(_assertThisInitialized(_this), "frameHeight", 0);
+          _defineProperty(_assertThisInitialized(_this), "board", void 0);
+          _defineProperty(_assertThisInitialized(_this), "canvasNode", void 0);
+          _defineProperty(_assertThisInitialized(_this), "camera", void 0);
+          _defineProperty(_assertThisInitialized(_this), "portrait", false);
+          _defineProperty(_assertThisInitialized(_this), "orientationPaused", false);
+          _defineProperty(_assertThisInitialized(_this), "display", viewportLayout(GameConfig.width, GameConfig.height));
           return _this;
         }
         _createClass(GameManager, [{
@@ -1641,7 +1809,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
             try {
               this.initialize();
               this.ready = true;
-              console.info("[Breakout] V0.2 ready; fixed simulation 120Hz, render 60FPS.");
+              console.info("[Breakout] V0.2.1 ready; responsive viewport, independent HUD and combat framing.");
             } catch (error) {
               console.error("[Breakout] Initialization failed", error);
               throw error;
@@ -1651,7 +1819,8 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
           key: "initialize",
           value: function initialize() {
             var _this2 = this;
-            view.setDesignResolutionSize(GameConfig.width, GameConfig.height, ResolutionPolicy.SHOW_ALL);
+            view.resizeWithBrowserSize(true);
+            view.setDesignResolutionSize(GameConfig.width, GameConfig.height, ResolutionPolicy.FIXED_HEIGHT);
             game.frameRate = GameConfig.fps;
             profiler.hideStats();
             var canvasNode = node(this.node, "Canvas", 0, 0, GameConfig.width, GameConfig.height),
@@ -1665,8 +1834,11 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
             camera.clearColor = new Color(250, 249, 245);
             camera.clearFlags = Camera.ClearFlag.SOLID_COLOR;
             canvas.cameraComponent = camera;
+            this.canvasNode = canvasNode;
+            this.camera = camera;
             var board = node(canvasNode, "Screen", -GameConfig.width / 2, -GameConfig.height / 2, GameConfig.width, GameConfig.height);
             board.getComponent(UITransform).setAnchorPoint(0, 0);
+            this.board = board;
             this.world = node(board, "World presentation");
             this.map = new LevelRenderer(this.world, this.session.level);
             this.objects = new ObjectRenderer(this.world);
@@ -1696,6 +1868,14 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
               return _objectSpread2(_objectSpread2({}, _this2.session.snapshot()), {}, {
                 audio: _this2.audio.status(),
                 visibleChunks: _this2.map.visibleChunks,
+                display: _objectSpread2(_objectSpread2({}, _this2.display), {}, {
+                  combatZoom: _this2.session.camera.zoom,
+                  worldVisibleWidth: _this2.session.camera.visibleWidth,
+                  cameraY: _this2.session.camera.y,
+                  frameWidth: _this2.frameWidth,
+                  frameHeight: _this2.frameHeight,
+                  orientationPaused: _this2.orientationPaused
+                }),
                 controls: {
                   stick: {
                     x: _this2.controls.joystick.x,
@@ -1712,11 +1892,13 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
         }, {
           key: "enter",
           value: function enter() {
+            if (this.portrait) return;
             if (this.session.state === "title" || this.session.state === "gameover" || this.session.state === "complete") this.startRun();else if (this.session.state === "paused") this.resume();
           }
         }, {
           key: "startRun",
           value: function startRun() {
+            if (this.portrait) return;
             this.adapter.clear();
             this.accumulator = 0;
             this.session.reset();
@@ -1732,6 +1914,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
         }, {
           key: "resume",
           value: function resume() {
+            if (this.portrait) return;
             this.adapter.clear();
             this.accumulator = 0;
             this.session.resume();
@@ -1739,6 +1922,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
         }, {
           key: "togglePause",
           value: function togglePause() {
+            if (this.portrait) return;
             if (this.session.state === "paused") this.resume();else {
               this.session.pause();
               this.adapter.clear();
@@ -1753,8 +1937,37 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
             if (frame.width !== this.frameWidth || frame.height !== this.frameHeight) {
               this.frameWidth = frame.width;
               this.frameHeight = frame.height;
-              this.hud.applyInsets(this.platform.safeInsets());
-              this.adapter.clear();
+              this.display = viewportLayout(frame.width, frame.height);
+              var _this$display = this.display,
+                width = _this$display.width,
+                height = _this$display.height,
+                portrait = _this$display.portrait,
+                zoom = _this$display.zoom;
+              view.setDesignResolutionSize(width, height, portrait ? ResolutionPolicy.FIXED_WIDTH : ResolutionPolicy.FIXED_HEIGHT);
+              this.canvasNode.getComponent(UITransform).setContentSize(width, height);
+              this.camera.orthoHeight = height / 2;
+              this.board.setPosition(-width / 2, -height / 2);
+              this.board.getComponent(UITransform).setContentSize(width, height);
+              this.session.camera.visibleWidth = width / zoom;
+              this.session.camera.zoom = zoom;
+              this.world.setScale(zoom, zoom, 1);
+              this.hud.applyInsets(this.platform.safeInsets(width, height), width, height);
+              this.adapter.hidden();
+              if (portrait && !this.portrait) {
+                this.orientationPaused = this.session.state === "playing" || this.session.state === "dying";
+                this.session.pause();
+              } else if (!portrait && this.portrait && this.orientationPaused) {
+                this.session.resume();
+                this.orientationPaused = false;
+              }
+              this.portrait = portrait;
+              this.world.active = !portrait;
+              this.accumulator = 0;
+            }
+            if (this.portrait) {
+              this.adapter.hidden();
+              this.hud.update(this.session, this.controls, true);
+              return;
             }
             if (this.controls.consumePause()) this.togglePause();
             if (this.session.hitStop > 0 && (this.session.state === "playing" || this.session.state === "dying")) {
@@ -1768,10 +1981,16 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
               }
             } else this.accumulator = 0;
             var s = this.session;
+            var targetZoom = s.level.arenaEntered ? Math.min(this.display.zoom, this.display.width / 1250) : this.display.zoom;
+            s.camera.zoom += (targetZoom - s.camera.zoom) * (1 - Math.exp(-Math.min(dt, 0.1) * 4));
+            s.camera.visibleWidth = this.display.width / s.camera.zoom;
+            this.world.setScale(s.camera.zoom, s.camera.zoom, 1);
             var shake = s.shakeTime > 0 ? s.shakePower * Math.min(1, s.shakeTime / 0.12) : 0;
-            this.world.setPosition(Math.sin(s.time * 103) * shake, Math.cos(s.time * 119) * shake * 0.6);
+            this.world.setPosition(Math.sin(s.time * 103) * shake,
+            // Keep the ground above the thumb controls even when the boss view pulls back.
+            Math.cos(s.time * 119) * shake * 0.6 + 260 - (150 + s.camera.y) * s.camera.zoom);
             this.audio.update(s);
-            this.map.update(s.camera.x, s.level.guardDefeated);
+            this.map.update(s.camera.x, s.level.guardDefeated, s.camera.visibleWidth);
             this.objects.draw(s);
             this.actors.clear();
             var _iterator = _createForOfIteratorHelper(s.spawner.enemies),
@@ -1779,7 +1998,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
                 var e = _step.value;
-                if (e.x > s.camera.x - 100 && e.x < s.camera.x + GameConfig.width + 100 && e.deadTime < (e.kind === "guard" ? 2.6 : GameConfig.rendering.corpseDuration)) this.renderer.draw(this.actors, e, s.camera.x);
+                if (e.x > s.camera.x - 100 && e.x < s.camera.x + s.camera.visibleWidth + 100 && e.deadTime < (e.kind === "guard" ? 2.6 : GameConfig.rendering.corpseDuration)) this.renderer.draw(this.actors, e, s.camera.x);
               }
             } catch (err) {
               _iterator.e(err);
@@ -1927,6 +2146,7 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
             var _this2 = this;
             if (this.state !== "playing" && this.state !== "dying") return;
             this.time += dt;
+            this.explosions.advance(dt);
             this.shakeTime = Math.max(0, this.shakeTime - dt);
             this.comboTime = Math.max(0, this.comboTime - dt);
             if (this.comboTime === 0) this.combo = 0;
@@ -1959,9 +2179,9 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
             }
             this.projectiles.update(dt, this.player, this.spawner.enemies, this.level.solids, function (target) {
               if ("state" in target) {
-                _this2.hitStop = Math.max(_this2.hitStop, 0.018);
-                _this2.shakePower = 1.6;
-                _this2.shakeTime = 0.08;
+                _this2.hitStop = Math.max(_this2.hitStop, 0.024);
+                _this2.shakePower = Math.max(_this2.shakePower, 2.2);
+                _this2.shakeTime = Math.max(_this2.shakeTime, 0.09);
               }
             }, this.level.objects.objects);
             this.level.objects.flushHits();
@@ -2030,7 +2250,7 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
               this.state = "dying";
               if (this.player.deadTime >= GameConfig.player.deathDuration) this.state = "gameover";
             } else if (this.level.reachedExit(this.player.x)) this.state = "complete";
-            if (this.level.arenaEntered && this.level.data.arena) this.camera.x += (this.level.data.arena.start - this.camera.x) * (1 - Math.exp(-dt * 7));else this.camera.update(this.player.x, dt, this.level.data.width);
+            this.camera.update(this.player.x, dt, this.level.data.width, this.player.facing, this.player.y, this.level.arenaEntered && this.level.data.arena ? this.level.data.arena.start - this.camera.visibleWidth * 0.25 : undefined);
           }
         }, {
           key: "snapshot",
@@ -2060,6 +2280,31 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
               grenadesThrown: this.grenades.thrown,
               destroyedObjects: this.level.objects.destroyed,
               explosions: this.explosions.total,
+              feedback: {
+                shakeTime: this.shakeTime,
+                shakePower: this.shakePower,
+                hitStop: this.hitStop,
+                blasts: this.explosions.items.filter(function (b) {
+                  return b.active;
+                }).map(function (b) {
+                  return {
+                    x: b.x,
+                    y: b.y,
+                    age: b.age,
+                    radius: b.radius
+                  };
+                }),
+                particles: this.particles.items.filter(function (p) {
+                  return p.active;
+                }).map(function (p) {
+                  return {
+                    kind: p.kind,
+                    material: p.material
+                  };
+                }),
+                peakParticles: this.particles.peak,
+                droppedParticles: this.particles.dropped
+              },
               combo: this.combo,
               bestCombo: this.bestCombo,
               objects: this.level.objects.objects.map(function (o) {
@@ -2165,7 +2410,7 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
           value: function objectHit(o, destroyed) {
             this.particles.burst(o.x + o.w / 2, o.y + o.h / 2, destroyed ? 16 : 5, o.kind === "wood" || o.kind === "hanging" ? "wood" : "spark");
             if (destroyed) {
-              if (o.kind === "barrel") this.explosions.enqueue(o.x + o.w / 2, o.y + o.h / 2, 155, 7, "neutral");
+              if (o.kind === "barrel") this.explosions.schedule(o.x + o.w / 2, o.y + o.h / 2, 155, 7, "neutral");
               if (o.data.drop) {
                 var _o$data$dropChance;
                 this.dropSeed = this.dropSeed * 1664525 + 1013904223 >>> 0;
@@ -2176,10 +2421,10 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
         }, {
           key: "applyBlast",
           value: function applyBlast(x, y, radius, damage, owner) {
-            this.particles.burst(x, y, 20);
-            this.shakeTime = 0.22;
-            this.shakePower = 5;
-            this.hitStop = 0.045;
+            this.particles.blast(x, y, radius);
+            this.shakeTime = Math.max(this.shakeTime, 0.28);
+            this.shakePower = Math.max(this.shakePower, 7);
+            this.hitStop = Math.max(this.hitStop, 0.05);
             if (damage === 0) return;
             var hit = function hit(target, amount) {
               if (!target.alive) return false;
@@ -2360,7 +2605,7 @@ System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabe
 });
 
 System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanRenderer.ts', './JoystickView.ts', './ControlLayout.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, Color, Label, Node, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout;
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, UITransform, Node, Color, Label, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -2370,9 +2615,10 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
       _slicedToArray = module.slicedToArray;
     }, function (module) {
       cclegacy = module.cclegacy;
+      UITransform = module.UITransform;
+      Node = module.Node;
       Color = module.Color;
       Label = module.Label;
-      Node = module.Node;
     }, function (module) {
       GameConfig = module.GameConfig;
     }, function (module) {
@@ -2406,7 +2652,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
         var dark = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
         var n = node(parent, title, x, y, w, h),
           ink = new Ink(n);
-        ink.rect(-w / 2, -h / 2, w, h, colors.ink, dark ? colors.ink : colors.paper, 2);
+        ink.rect(-w / 2, -h / 2, w, h, colors.ink, dark ? colors.ink : colors.paper, 4);
         text(n, title, 0, 0, 22, dark ? colors.paper : colors.ink, w - 12);
         n.on(Node.EventType.TOUCH_START, function (e) {
           e.propagationStopped = true;
@@ -2440,6 +2686,19 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           _defineProperty(this, "lastExit", false);
           _defineProperty(this, "progress", -1);
           _defineProperty(this, "rotateNote", void 0);
+          _defineProperty(this, "rotateInk", void 0);
+          _defineProperty(this, "rotateTitle", void 0);
+          _defineProperty(this, "rotateSub", void 0);
+          _defineProperty(this, "panelInk", new Map());
+          _defineProperty(this, "levelLabel", void 0);
+          _defineProperty(this, "width", 1280);
+          _defineProperty(this, "height", 720);
+          _defineProperty(this, "insets", {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0
+          });
           _defineProperty(this, "joystick", void 0);
           _defineProperty(this, "weaponLabel", void 0);
           _defineProperty(this, "message", void 0);
@@ -2447,17 +2706,15 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           _defineProperty(this, "pauseButton", void 0);
           this.hud = node(parent, "HUD");
           this.hudInk = new Ink(this.hud);
-          text(this.hud, "线条突围", 92, 687, 23, colors.ink, 160);
-          text(this.hud, "生命", 220, 686, 14, colors.muted, 80);
-          text(this.hud, "废弃前哨站", 1050, 689, 22, colors.ink, 185);
-          this.pauseButton = button(this.hud, "Ⅱ", 1204, 686, 54, 44, onPause);
-          this.objective = text(this.hud, "向右推进 · 击败出口守卫", 982, 620, 16, colors.muted, 480);
-          this.stats = text(this.hud, "", 112, 620, 15, colors.muted, 170);
-          this.weaponLabel = text(this.hud, "", 680, 686, 17, colors.ink, 450);
-          this.message = text(parent, "", 640, 560, 22, colors.ink, 750);
+          this.levelLabel = text(this.hud, "废弃前哨站", 995, 678, 34, colors.ink, 350);
+          this.pauseButton = button(this.hud, "Ⅱ", 1214, 666, 88, 88, onPause);
+          this.objective = text(this.hud, "向右推进 · 击败出口守卫", 920, 590, 26, colors.ink, 620);
+          this.stats = text(this.hud, "", 170, 590, 26, colors.ink, 320);
+          this.weaponLabel = text(this.hud, "", 300, 640, 32, colors.ink, 570);
+          this.message = text(parent, "", 640, 534, 30, colors.ink, 750);
           this.guardNode = node(parent, "Guard health");
           this.guardInk = new Ink(this.guardNode);
-          this.guardLabel = text(this.guardNode, "出口守卫", 640, 595, 17, colors.ink, 350);
+          this.guardLabel = text(this.guardNode, "出口守卫", 640, 595, 28, colors.ink, 350);
           this.controls = node(parent, "Touch controls");
           this.joystick = new JoystickView(this.controls, adapter);
           var touch = function touch(action, x, y, r) {
@@ -2471,13 +2728,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             });
             _this.paintTouch(ink, action, false);
           };
-          touch("jump", 1034, 170, 48);
-          touch("shoot", 1162, 100, 58);
-          touch("grenade", 934, 92, 38);
-          text(this.controls, "拖动移动 · 下蹲 / 上瞄", 160, 15, 12, colors.muted, 280);
-          text(this.controls, "按住高跳", 1034, 111, 12, colors.muted, 100);
-          text(this.controls, "按住 J", 1162, 25, 12, colors.muted, 100);
-          text(this.controls, "手雷 K", 934, 42, 12, colors.muted, 100);
+          touch("jump", this.layout.jump.x, this.layout.jump.y, 70);
+          touch("shoot", this.layout.shoot.x, this.layout.shoot.y, 84);
+          touch("grenade", this.layout.grenade.x, this.layout.grenade.y, 54);
           var panel = function panel(state) {
             var n = node(parent, "Panel:".concat(state), 640, 360, GameConfig.width, GameConfig.height),
               ink = new Ink(n);
@@ -2487,6 +2740,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             });
             n.active = false;
             _this.panels.set(state, n);
+            _this.panelInk.set(state, ink);
             return n;
           };
           var title = panel("title"),
@@ -2538,7 +2792,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           button(title, "开始突围  →", 120, -128, 300, 62, onStart, true);
           text(title, "A D 移动   ·   Space 跳跃   ·   按住 J 射击", 120, -204, 17, colors.muted, 760);
           text(title, "P / Esc 暂停   ·   手机支持多点触控   ·   Enter 开始", 120, -239, 14, colors.muted, 760);
-          text(title, "V0.2  /  墨线行动", -368, -270, 13, colors.muted, 390);
+          text(title, "V0.2.1  /  墨线行动", -368, -270, 16, colors.muted, 390);
           var paused = panel("paused");
           text(paused, "暂停一下", 0, 103, 52);
           text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -2565,17 +2819,23 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             _iterator.f();
           }
           this.rotateNote = node(parent, "Rotate device hint");
-          var hintInk = new Ink(this.rotateNote);
-          hintInk.rect(320, 480, 640, 50, colors.ink, colors.paper, 1);
-          text(this.rotateNote, "横屏体验更好，请旋转设备", 640, 505, 21);
+          this.rotateInk = new Ink(this.rotateNote);
+          this.rotateTitle = text(this.rotateNote, "请旋转设备\n横屏游玩", 360, 700, 54, colors.ink, 620);
+          this.rotateTitle.node.getComponent(UITransform).setContentSize(620, 160);
+          this.rotateSub = text(this.rotateNote, "战斗已暂停\n旋转后自动恢复", 360, 540, 30, colors.muted, 600);
+          this.rotateSub.node.getComponent(UITransform).setContentSize(600, 100);
+          this.rotateNote.on(Node.EventType.TOUCH_START, function (e) {
+            e.propagationStopped = true;
+          });
+          this.applyInsets(this.insets);
         }
         _createClass(HUDController, [{
           key: "paintTouch",
           value: function paintTouch(ink, action, held) {
             ink.clear();
-            var radius = action === "shoot" ? 57 : action === "grenade" ? 35 : 47,
-              color = held ? colors.paper : new Color(24, 24, 24, 170);
-            ink.circle(0, 0, radius, new Color(24, 24, 24, 140), held ? new Color(24, 24, 24, 210) : new Color(250, 249, 245, 205), 2);
+            var radius = action === "shoot" ? 76 : action === "grenade" ? 48 : 62,
+              color = held ? colors.paper : colors.ink;
+            ink.circle(0, 0, radius, new Color(24, 24, 24, 230), held ? new Color(24, 24, 24, 230) : new Color(250, 249, 245, 222), 5);
             if (action === "grenade") {
               ink.circle(0, -3, 12, color, undefined, 3);
               ink.line([{
@@ -2666,11 +2926,21 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                 y: 23
               }], 2, color);
             }
+            var label = action === "shoot" ? "射击" : action === "grenade" ? "手雷" : "跳跃";
+            // Labels live inside the visual circle, and share its position on every layout.
+            var l = ink.node.getComponentInChildren(Label);
+            if (!l) l = text(ink.node, label, 0, -radius * 0.55, 23, color, radius * 1.8);
+            l.color = color;
           }
         }, {
           key: "applyInsets",
           value: function applyInsets(insets) {
-            this.layout = controlLayout(insets);
+            var width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1280;
+            var height = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 720;
+            this.width = width;
+            this.height = height;
+            this.insets = insets;
+            this.layout = controlLayout(insets, width, height);
             this.joystick.node.setPosition(this.layout.joystick.x, this.layout.joystick.y);
             var _iterator2 = _createForOfIteratorHelper(this.touchButtons),
               _step2;
@@ -2679,6 +2949,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                 var b = _step2.value;
                 var p = b.action === "jump" ? this.layout.jump : b.action === "shoot" ? this.layout.shoot : this.layout.grenade;
                 b.ink.node.setPosition(p.x, p.y);
+                b.ink.node.getComponent(UITransform).setContentSize(p.hit, p.hit);
               }
             } catch (err) {
               _iterator2.e(err);
@@ -2686,56 +2957,113 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               _iterator2.f();
             }
             this.pauseButton.setPosition(this.layout.pause.x, this.layout.pause.y);
+            var top = height - insets.top;
+            this.weaponLabel.node.setPosition(300 + insets.left, top - 80);
+            this.levelLabel.node.setPosition(width - 320 - insets.right, top - 40);
+            this.objective.node.setPosition(width - 342 - insets.right, top - 132);
+            this.stats.node.setPosition(174 + insets.left, top - 132);
+            this.message.node.setPosition(width / 2, top - 188);
+            this.guardLabel.node.setPosition(width / 2, top - 155);
+            this.guardNode.setPosition(width / 2 - 640, top - 720);
+            this.guardLabel.node.setPosition(640, 565);
+            var _iterator3 = _createForOfIteratorHelper(this.panels),
+              _step3;
+            try {
+              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                var _step3$value = _slicedToArray(_step3.value, 2),
+                  state = _step3$value[0],
+                  _p = _step3$value[1];
+                _p.setPosition(width / 2, height / 2);
+                var ink = this.panelInk.get(state);
+                ink.clear();
+                ink.rect(-width / 2, -height / 2, width, height, colors.paper, colors.paper, 1);
+              }
+            } catch (err) {
+              _iterator3.e(err);
+            } finally {
+              _iterator3.f();
+            }
+            this.rotateNote.getComponent(UITransform).setContentSize(width, height);
+            this.rotateNote.getComponent(UITransform).setAnchorPoint(0, 0);
+            this.rotateInk.clear();
+            this.rotateInk.rect(0, 0, width, height, colors.paper, colors.paper, 1);
+            var cx = width / 2,
+              cy = height / 2;
+            this.rotateInk.rect(cx - 52, cy + 170, 104, 170, colors.ink, undefined, 7);
+            this.rotateInk.line([{
+              x: cx + 84,
+              y: cy + 292
+            }, {
+              x: cx + 124,
+              y: cy + 240
+            }, {
+              x: cx + 84,
+              y: cy + 208
+            }], 7);
+            this.rotateTitle.node.setPosition(cx, cy + 30);
+            this.rotateSub.node.setPosition(cx, cy - 140);
+            this.lastHealth = this.progress = -1;
           }
         }, {
           key: "update",
           value: function update(s, input, portrait) {
             var _zone$name;
             this.hud.active = s.state === "playing" || s.state === "dying" || s.state === "paused";
-            this.controls.active = s.state === "playing";
+            this.controls.active = s.state === "playing" && !portrait;
             this.weaponLabel.string = "".concat(s.weapon.id === "rifle" ? "自动步枪" : s.weapon.id === "shotgun" ? "霰弹枪" : "火箭筒", "  ").concat(s.weapon.ammo < 0 ? "∞" : s.weapon.ammo, "   \xB7   \u624B\u96F7 ").concat(s.player.grenades);
             this.message.node.active = s.state === "playing" && (s.pickups.messageTime > 0 || s.combo > 1);
             this.message.string = s.pickups.messageTime > 0 ? s.pickups.lastMessage : "COMBO \xD7 ".concat(s.combo);
             this.joystick.update(input);
             this.rotateNote.active = portrait;
+            if (portrait) {
+              this.hud.active = this.guardNode.active = this.message.node.active = false;
+              var _iterator4 = _createForOfIteratorHelper(this.panels.values()),
+                _step4;
+              try {
+                for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+                  var p = _step4.value;
+                  p.active = false;
+                }
+              } catch (err) {
+                _iterator4.e(err);
+              } finally {
+                _iterator4.f();
+              }
+              this.lastState = null;
+              return;
+            }
             this.guardNode.active = s.state === "playing" && s.level.arenaEntered && s.spawner.guard.alive;
             if (this.guardNode.active) {
               this.guardInk.clear();
-              this.guardInk.rect(470, 569, 340, 5, colors.muted, colors.paper, 1);
-              this.guardInk.rect(470, 569, 340 * s.spawner.guard.health / s.spawner.guard.maxHealth, 5, colors.ink, colors.ink, 1);
+              this.guardInk.rect(470, 539, 340, 12, colors.ink, colors.paper, 3);
+              this.guardInk.rect(470, 539, 340 * s.spawner.guard.health / s.spawner.guard.maxHealth, 12, colors.ink, colors.ink, 1);
               this.guardLabel.string = "\u5C65\u5E26\u6218\u8F66 \xB7 \u9636\u6BB5 ".concat(s.spawner.guard.phase, "  ").concat(Math.ceil(s.spawner.guard.health), " / ").concat(s.spawner.guard.maxHealth);
             }
             if (this.lastState !== s.state) {
-              var _iterator3 = _createForOfIteratorHelper(this.panels),
-                _step3;
+              var _iterator5 = _createForOfIteratorHelper(this.panels),
+                _step5;
               try {
-                for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-                  var _step3$value = _slicedToArray(_step3.value, 2),
-                    state = _step3$value[0],
-                    p = _step3$value[1];
-                  p.active = state === s.state;
+                for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+                  var _step5$value = _slicedToArray(_step5.value, 2),
+                    state = _step5$value[0],
+                    _p2 = _step5$value[1];
+                  _p2.active = state === s.state;
                 }
               } catch (err) {
-                _iterator3.e(err);
+                _iterator5.e(err);
               } finally {
-                _iterator3.f();
+                _iterator5.f();
               }
               this.lastState = s.state;
             }
-            var progress = Math.floor(s.player.x / s.level.data.width * 1280);
+            var progress = Math.floor(s.player.x / s.level.data.width * this.width);
             if (this.lastHealth !== s.player.health || this.progress !== progress) {
               this.hudInk.clear();
-              this.hudInk.rect(0, 654, 1280, 66, colors.far, colors.paper, 1);
-              this.hudInk.line([{
-                x: 180,
-                y: 675
-              }, {
-                x: 180,
-                y: 700
-              }], 1, colors.far);
+              var top = this.height - this.insets.top;
+              this.hudInk.rect(0, top - 108, this.width, 108, colors.far, colors.paper, 2);
               for (var i = 0; i < GameConfig.player.maxHealth; i++) {
-                var x = 270 + i * 33,
-                  y = 683;
+                var x = 70 + this.insets.left + i * 42,
+                  y = top - 40;
                 var points = [{
                   x: x - 9,
                   y: y + 3
@@ -2765,51 +3093,51 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                   y: y + 3
                 }];
                 if (i < s.player.health) this.hudInk.polygon(points);
-                this.hudInk.line(points, 2, i < s.player.health ? colors.ink : colors.far);
+                this.hudInk.line(points, 4, i < s.player.health ? colors.ink : colors.far);
               }
               this.hudInk.line([{
                 x: 0,
-                y: 654
+                y: top - 108
               }, {
                 x: progress,
-                y: 654
-              }], 2, colors.ink);
+                y: top - 108
+              }], 5, colors.ink);
               this.lastHealth = s.player.health;
               this.progress = progress;
             }
             var zone = s.level.zone;
             var remaining = 0;
-            var _iterator4 = _createForOfIteratorHelper(s.spawner.enemies),
-              _step4;
-            try {
-              for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-                var e = _step4.value;
-                if (e.alive && zone && e.spawn.x >= zone.start && e.spawn.x < zone.end) remaining++;
-              }
-            } catch (err) {
-              _iterator4.e(err);
-            } finally {
-              _iterator4.f();
-            }
-            this.objective.string = s.level.guardDefeated ? "战车已击毁 · 抵达出口 →" : s.level.arenaEntered ? "躲开落点预警 · 击毁机械战车" : "".concat((_zone$name = zone === null || zone === void 0 ? void 0 : zone.name) !== null && _zone$name !== void 0 ? _zone$name : "向右推进", " \xB7 ").concat(remaining, " \u540D\u654C\u4EBA \xB7 \u6E05\u654C\u89E3\u9664\u5C01\u9501");
-            this.stats.string = "\u51FB\u8D25  ".concat(s.spawner.kills, " / ").concat(s.spawner.enemies.length);
-            var _iterator5 = _createForOfIteratorHelper(this.resultStats),
-              _step5;
-            try {
-              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-                var stat = _step5.value;
-                stat.string = "\u8017\u65F6 ".concat(Math.floor(s.time), " \u79D2    \xB7    \u51FB\u8D25 ").concat(s.spawner.kills, " \u540D\u654C\u4EBA");
-              }
-            } catch (err) {
-              _iterator5.e(err);
-            } finally {
-              _iterator5.f();
-            }
-            var _iterator6 = _createForOfIteratorHelper(this.touchButtons),
+            var _iterator6 = _createForOfIteratorHelper(s.spawner.enemies),
               _step6;
             try {
               for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-                var b = _step6.value;
+                var e = _step6.value;
+                if (e.alive && zone && e.spawn.x >= zone.start && e.spawn.x < zone.end) remaining++;
+              }
+            } catch (err) {
+              _iterator6.e(err);
+            } finally {
+              _iterator6.f();
+            }
+            this.objective.string = s.level.guardDefeated ? "战车已击毁 · 抵达出口 →" : s.level.arenaEntered ? "躲开落点预警 · 击毁机械战车" : "".concat((_zone$name = zone === null || zone === void 0 ? void 0 : zone.name) !== null && _zone$name !== void 0 ? _zone$name : "向右推进", " \xB7 ").concat(remaining, " \u540D\u654C\u4EBA \xB7 \u6E05\u654C\u89E3\u9664\u5C01\u9501");
+            this.stats.string = "\u51FB\u8D25  ".concat(s.spawner.kills, " / ").concat(s.spawner.enemies.length);
+            var _iterator7 = _createForOfIteratorHelper(this.resultStats),
+              _step7;
+            try {
+              for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+                var stat = _step7.value;
+                stat.string = "\u8017\u65F6 ".concat(Math.floor(s.time), " \u79D2    \xB7    \u51FB\u8D25 ").concat(s.spawner.kills, " \u540D\u654C\u4EBA");
+              }
+            } catch (err) {
+              _iterator7.e(err);
+            } finally {
+              _iterator7.f();
+            }
+            var _iterator8 = _createForOfIteratorHelper(this.touchButtons),
+              _step8;
+            try {
+              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+                var b = _step8.value;
                 var held = input.isHeld(b.action);
                 if (held !== b.held) {
                   b.ink.node.setScale(held ? 0.94 : 1, held ? 0.94 : 1, 1);
@@ -2818,9 +3146,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                 }
               }
             } catch (err) {
-              _iterator6.e(err);
+              _iterator8.e(err);
             } finally {
-              _iterator6.f();
+              _iterator8.f();
             }
           }
         }]);
@@ -2853,6 +3181,8 @@ System.register("chunks:///_virtual/Ink.ts", ['./rollupPluginModLoBabelHelpers.j
         ink: new Color(24, 24, 24),
         paper: new Color(250, 249, 245),
         muted: new Color(126, 126, 122),
+        mid: new Color(175, 175, 168),
+        wall: new Color(237, 237, 231),
         far: new Color(215, 215, 209),
         white: new Color(255, 255, 255)
       });
@@ -2872,6 +3202,8 @@ System.register("chunks:///_virtual/Ink.ts", ['./rollupPluginModLoBabelHelpers.j
         function Ink(node) {
           _classCallCheck(this, Ink);
           _defineProperty(this, "g", void 0);
+          /** Per-layer style, never a global multiplier for both foreground and scenery. */
+          _defineProperty(this, "strokeScale", 1);
           this.node = node;
           this.g = node.addComponent(Graphics);
           this.g.lineCap = Graphics.LineCap.ROUND;
@@ -2888,7 +3220,7 @@ System.register("chunks:///_virtual/Ink.ts", ['./rollupPluginModLoBabelHelpers.j
             var width = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 3;
             var color = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : colors.ink;
             this.g.strokeColor = color;
-            this.g.lineWidth = width;
+            this.g.lineWidth = width * this.strokeScale;
             this.g.moveTo(x1, y1);
             this.g.lineTo(x2, y2);
             this.g.stroke();
@@ -2900,7 +3232,7 @@ System.register("chunks:///_virtual/Ink.ts", ['./rollupPluginModLoBabelHelpers.j
             var fill = arguments.length > 5 ? arguments[5] : undefined;
             var width = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 2;
             this.g.strokeColor = stroke;
-            this.g.lineWidth = width;
+            this.g.lineWidth = width * this.strokeScale;
             this.g.ellipse(x, y, rx, ry);
             if (fill) {
               this.g.fillColor = fill;
@@ -2926,7 +3258,7 @@ System.register("chunks:///_virtual/Ink.ts", ['./rollupPluginModLoBabelHelpers.j
             var color = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : colors.ink;
             if (points.length < 2) return;
             this.g.strokeColor = color;
-            this.g.lineWidth = width;
+            this.g.lineWidth = width * this.strokeScale;
             this.g.moveTo(points[0].x, points[0].y);
             for (var i = 1; i < points.length; i++) this.g.lineTo(points[i].x, points[i].y);
             this.g.stroke();
@@ -2937,7 +3269,7 @@ System.register("chunks:///_virtual/Ink.ts", ['./rollupPluginModLoBabelHelpers.j
             var stroke = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : colors.ink;
             var fill = arguments.length > 5 ? arguments[5] : undefined;
             var width = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 2;
-            this.g.lineWidth = width;
+            this.g.lineWidth = width * this.strokeScale;
             this.g.strokeColor = stroke;
             this.g.rect(x, y, w, h);
             if (fill) {
@@ -2953,7 +3285,7 @@ System.register("chunks:///_virtual/Ink.ts", ['./rollupPluginModLoBabelHelpers.j
             var fill = arguments.length > 4 ? arguments[4] : undefined;
             var width = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 3;
             this.g.strokeColor = stroke;
-            this.g.lineWidth = width;
+            this.g.lineWidth = width * this.strokeScale;
             this.g.circle(x, y, r);
             if (fill) {
               this.g.fillColor = fill;
@@ -3102,7 +3434,7 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
           _defineProperty(this, "lastX", 999);
           _defineProperty(this, "lastY", 999);
           _defineProperty(this, "active", false);
-          this.node = node(parent, "Virtual joystick", 140, 105, 190, 190);
+          this.node = node(parent, "Virtual joystick", 158, 128, 224, 224);
           this.ink = new Ink(this.node);
           adapter.bindJoystick(this.node);
         }
@@ -3116,8 +3448,8 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
             this.lastY = s.y;
             this.active = active;
             this.ink.clear();
-            this.ink.circle(0, 0, 72, new Color(25, 25, 25, 130), new Color(250, 249, 245, 165), 2);
-            this.ink.circle(0, 0, 61, new Color(25, 25, 25, 75), undefined, 1);
+            this.ink.circle(0, 0, 96, new Color(25, 25, 25, 220), new Color(250, 249, 245, 210), 5);
+            this.ink.circle(0, 0, 80, new Color(25, 25, 25, 125), undefined, 3);
             this.ink.line([{
               x: -44,
               y: 0
@@ -3132,8 +3464,8 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
               x: 0,
               y: 44
             }], 1, new Color(25, 25, 25, 45));
-            this.ink.circle(s.x, s.y, 27, colors.ink, active ? new Color(35, 35, 35, 200) : new Color(250, 249, 245, 225), 2.5);
-            this.ink.circle(s.x, s.y, 20, active ? colors.paper : colors.far, undefined, 1);
+            this.ink.circle(s.x, s.y, 38, colors.ink, active ? new Color(35, 35, 35, 200) : new Color(250, 249, 245, 225), 5);
+            this.ink.circle(s.x, s.y, 27, active ? colors.paper : colors.far, undefined, 2);
           }
         }]);
         return JoystickView;
@@ -3920,8 +4252,8 @@ System.register("chunks:///_virtual/LevelData.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts', './SceneryArt.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Label, node, Ink, colors, SceneryArt;
+System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts', './SceneryArt.ts', './GameConfig.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Label, node, Ink, colors, SceneryArt, GameConfig;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -3937,6 +4269,8 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
       colors = module.colors;
     }, function (module) {
       SceneryArt = module.SceneryArt;
+    }, function (module) {
+      GameConfig = module.GameConfig;
     }],
     execute: function () {
       cclegacy._RF.push({}, "ce266XwPE5kjMxHJkBriZYn", "LevelRenderer", undefined);
@@ -3947,6 +4281,7 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
           _defineProperty(this, "gate", void 0);
           _defineProperty(this, "visibleChunks", 0);
           _defineProperty(this, "exitX", 0);
+          _defineProperty(this, "lastUnlocked", null);
           for (var _i = 0, _arr = [0.16, 0.42, 1]; _i < _arr.length; _i++) {
             var factor = _arr[_i];
             for (var x = -800; x < level.data.width + 1600; x += 800) {
@@ -3958,6 +4293,7 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
                 x: x,
                 factor: factor
               });
+              if (factor === 1) g.strokeScale = GameConfig.rendering.lineWidths.platform / 3;
               if (factor === 0.16) {
                 for (var i = 0; i < 3; i++) SceneryArt.cloud(g, 30 + i * 260, 490 + (index + i + 9) % 3 * 47, 0.8 + (index + i + 8) % 2 * 0.3);
                 g.line([{
@@ -3997,6 +4333,7 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
               } else if (factor === 0.42) {
                 if ((index + 9) % 3 === 0) SceneryArt.bunker(g, 180, 150, 300);else if ((index + 9) % 3 === 1) SceneryArt.factory(g, 120, 150);else SceneryArt.crane(g, 300, 150);
                 SceneryArt.tower(g, 690, 150);
+                SceneryArt.serviceBay(g, 480, 150);
                 g.segment(24, 150, 24, 390, 2, colors.muted);
                 g.segment(6, 363, 46, 363, 2, colors.muted);
                 g.line([{
@@ -4033,7 +4370,6 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
                       g.g.rect(left, s.y, right - left, s.h);
                       g.g.fill();
                       for (var _px2 = left; _px2 < right; _px2 += 32) g.segment(_px2, s.y + s.h + Math.sin((x + _px2) * 0.15) * 0.65, Math.min(right, _px2 + 32), s.y + s.h + Math.sin((x + _px2 + 32) * 0.15) * 0.65, 3);
-                      g.segment(left, 50, right, 50, 2);
                       for (var _px3 = left + 12; _px3 < right; _px3 += 63) {
                         g.line([{
                           x: _px3,
@@ -4102,6 +4438,7 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
         }, {
           key: "update",
           value: function update(cameraX, unlocked) {
+            var visibleWidth = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1280;
             this.visibleChunks = 0;
             var _iterator2 = _createForOfIteratorHelper(this.chunks),
               _step2;
@@ -4110,7 +4447,7 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
                 var c = _step2.value;
                 var _px5 = c.x - cameraX * c.factor;
                 c.node.setPosition(_px5, 0);
-                c.node.active = _px5 < 1350 && _px5 + 820 > -70;
+                c.node.active = _px5 < visibleWidth + 70 && _px5 + 820 > -70;
                 if (c.node.active) this.visibleChunks++;
               }
             } catch (err) {
@@ -4119,6 +4456,9 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
               _iterator2.f();
             }
             this.gate.node.setPosition(-cameraX, 0);
+            this.gate.node.active = this.exitX - cameraX < visibleWidth + 100;
+            if (this.lastUnlocked === unlocked) return;
+            this.lastUnlocked = unlocked;
             this.gate.clear();
             var x = this.exitX;
             this.gate.line([{
@@ -4153,9 +4493,9 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -4383,6 +4723,7 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
           _defineProperty(this, "ink", void 0);
           _defineProperty(this, "labels", []);
           this.ink = new Ink(node(parent, "Destructibles and pickups"));
+          this.ink.strokeScale = 1.8;
           for (var i = 0; i < 32; i++) {
             var n = node(parent, "Pickup glyph", 0, 0, 44, 40),
               l = n.addComponent(Label);
@@ -4404,23 +4745,40 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
                 var o = _step.value;
-                if (o.x + o.w < cam - 50 || o.x > cam + 1330) continue;
+                if (o.x + o.w < cam - 50 || o.x > cam + s.camera.visibleWidth + 50) continue;
                 var _x = o.x - cam,
                   _y = o.y,
                   w = o.w,
                   h = o.h;
                 if (!o.alive) {
-                  if (o.deadTime < 0.55) {
-                    for (var n = 0; n < 5; n++) {
-                      var dx = _x + w / 2 + (n - 2) * o.deadTime * 75,
-                        dy = _y + 18 + Math.sin(n * 2) * o.deadTime * 70 - o.deadTime * o.deadTime * 170;
-                      ink.line([{
-                        x: dx,
-                        y: dy
+                  if (o.kind === "barrel" && o.deadTime < 0.09) {
+                    ink.rect(_x - 2, _y - 2, w + 4, h + 4, colors.ink, colors.white, 4);
+                    ink.segment(_x, _y, _x + w, _y + h, 4);
+                    ink.segment(_x + w, _y, _x, _y + h, 4);
+                  } else if (o.deadTime < 0.75) {
+                    for (var n = 0; n < 6; n++) {
+                      var age = o.deadTime,
+                        dx = _x + w / 2 + (n - 2.5) * age * 80,
+                        dy = _y + h * 0.5 + (90 + n % 3 * 65) * age - age * age * 310;
+                      var angle = n + age * (n % 2 ? 6 : -6),
+                        cs = Math.cos(angle),
+                        sn = Math.sin(angle);
+                      var pts = [{
+                        x: dx - 12 * cs + 4 * sn,
+                        y: dy - 12 * sn - 4 * cs
                       }, {
-                        x: dx + 10,
-                        y: dy + 5
-                      }], 2, colors.muted);
+                        x: dx + 12 * cs + 4 * sn,
+                        y: dy + 12 * sn - 4 * cs
+                      }, {
+                        x: dx + 10 * cs - 4 * sn,
+                        y: dy + 10 * sn + 4 * cs
+                      }, {
+                        x: dx - 10 * cs - 4 * sn,
+                        y: dy - 10 * sn + 4 * cs
+                      }];
+                      ink.polygon(pts, o.kind === "wood" || o.kind === "hanging" ? colors.paper : colors.mid);
+                      pts.push(pts[0]);
+                      ink.line(pts, 2.5);
                     }
                   }
                   continue;
@@ -4554,7 +4912,7 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                 var m = _step2.value;
                 var r = m.rect,
                   _x2 = r.x - cam;
-                if (_x2 + r.w < 0 || _x2 > 1280) continue;
+                if (_x2 + r.w < 0 || _x2 > s.camera.visibleWidth) continue;
                 ink.rect(_x2, r.y, r.w, r.h, colors.ink, colors.paper, 3);
                 for (var _t = 12; _t < r.w - 8; _t += 24) ink.circle(_x2 + _t, r.y + r.h / 2, 2, colors.ink, colors.ink, 1);
                 if (m.data.kind === "lift") {
@@ -4578,7 +4936,7 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                 var z = _step3.value;
                 if (z.id === "D" || s.level.clearedZones.has(z.id)) continue;
                 var _x3 = z.end - cam;
-                if (_x3 < 0 || _x3 > 1280) continue;
+                if (_x3 < 0 || _x3 > s.camera.visibleWidth) continue;
                 ink.segment(_x3, 150, _x3, 530, 4);
                 ink.rect(_x3 - 10, 510, 32, 28, colors.ink, colors.paper, 3);
                 ink.circle(_x3 + 6, 524, 5, colors.ink, colors.ink, 1);
@@ -4592,7 +4950,7 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
             for (var i = 0; i < s.pickups.items.length; i++) {
               var p = s.pickups.items[i],
                 l = this.labels[i],
-                visible = p.active && p.x > cam - 30 && p.x < cam + 1310;
+                visible = p.active && p.x > cam - 30 && p.x < cam + s.camera.visibleWidth + 30;
               l.node.active = visible;
               if (!visible) continue;
               var x = p.x - cam,
@@ -4696,9 +5054,10 @@ System.register("chunks:///_virtual/ParticlePool.ts", ['./rollupPluginModLoBabel
                 y: y,
                 vx: Math.cos(a) * speed,
                 vy: Math.sin(a) * speed,
-                life: 0.18 + this.random() * 0.2,
-                size: 1 + this.random() * 2,
+                life: (kind === "wood" || kind === "metal" ? 0.45 : 0.18) + this.random() * 0.22,
+                size: (kind === "wood" ? 3 : 1.5) + this.random() * 2,
                 kind: kind,
+                material: undefined,
                 gravity: kind === "smoke" ? -30 : 500,
                 spin: this.random() * 6
               });
@@ -4728,6 +5087,7 @@ System.register("chunks:///_virtual/ParticlePool.ts", ['./rollupPluginModLoBabel
               vx: vx,
               vy: vy,
               kind: kind,
+              material: undefined,
               life: life,
               maxLife: life,
               size: kind === "smoke" ? 7 : kind === "dust" ? 4 : 2,
@@ -4737,6 +5097,29 @@ System.register("chunks:///_virtual/ParticlePool.ts", ['./rollupPluginModLoBabel
             this.peak = Math.max(this.peak, this.items.reduce(function (n, p) {
               return n + Number(p.active);
             }, 0));
+          }
+        }, {
+          key: "impact",
+          value: function impact(x, y, material) {
+            this.emit(x, y, "impact");
+            var p = this.items.find(function (p) {
+              return p.active && p.kind === "impact" && p.x === x && p.y === y && !p.material;
+            });
+            if (p) {
+              p.material = material;
+              p.size = material === "enemy" ? 22 : material === "metal" ? 18 : 15;
+              p.life = p.maxLife = 0.14;
+              p.gravity = 0;
+            }
+            this.burst(x, y, material === "enemy" ? 7 : 5, material === "wood" ? "wood" : "spark");
+            if (material === "metal") this.burst(x, y, 3, "metal");
+          }
+        }, {
+          key: "blast",
+          value: function blast(x, y, radius) {
+            this.burst(x, y, 12, "metal");
+            this.burst(x, y, 8, "wood");
+            if (y - radius < 155) for (var n = 0; n < 8; n++) this.emit(x + (n - 3.5) * 12, 156, "dust", (n - 3.5) * 58, 35 + n % 3 * 15);
           }
         }, {
           key: "update",
@@ -4926,16 +5309,20 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
         _createClass(PlatformBridge, [{
           key: "safeInsets",
           value: function safeInsets() {
+            var _BREAKOUT_SAFE_AREA_, _ref, _browserInsets$left, _browserInsets$right, _browserInsets$bottom, _browserInsets$top;
+            var width = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1280;
+            var height = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 720;
             var frame = view.getFrameSize(),
               r = sys.getSafeAreaRect(false),
-              scale = Math.min(frame.width / 1280, frame.height / 720);
-            var mx = (frame.width - 1280 * scale) / 2,
-              my = (frame.height - 720 * scale) / 2;
+              scale = Math.min(frame.width / width, frame.height / height);
+            var mx = (frame.width - width * scale) / 2,
+              my = (frame.height - height * scale) / 2;
+            var browserInsets = (_BREAKOUT_SAFE_AREA_ = (_ref = globalThis).__BREAKOUT_SAFE_AREA__) === null || _BREAKOUT_SAFE_AREA_ === void 0 ? void 0 : _BREAKOUT_SAFE_AREA_.call(_ref);
             return {
-              left: Math.max(0, (r.x - mx) / scale),
-              right: Math.max(0, (frame.width - r.x - r.width - mx) / scale),
-              bottom: Math.max(0, (r.y - my) / scale),
-              top: Math.max(0, (frame.height - r.y - r.height - my) / scale)
+              left: Math.max(0, (r.x - mx) / scale, ((_browserInsets$left = browserInsets === null || browserInsets === void 0 ? void 0 : browserInsets.left) !== null && _browserInsets$left !== void 0 ? _browserInsets$left : 0) / scale),
+              right: Math.max(0, (frame.width - r.x - r.width - mx) / scale, ((_browserInsets$right = browserInsets === null || browserInsets === void 0 ? void 0 : browserInsets.right) !== null && _browserInsets$right !== void 0 ? _browserInsets$right : 0) / scale),
+              bottom: Math.max(0, (r.y - my) / scale, ((_browserInsets$bottom = browserInsets === null || browserInsets === void 0 ? void 0 : browserInsets.bottom) !== null && _browserInsets$bottom !== void 0 ? _browserInsets$bottom : 0) / scale),
+              top: Math.max(0, (frame.height - r.y - r.height - my) / scale, ((_browserInsets$top = browserInsets === null || browserInsets === void 0 ? void 0 : browserInsets.top) !== null && _browserInsets$top !== void 0 ? _browserInsets$top : 0) / scale)
             };
           }
         }, {
@@ -4944,7 +5331,7 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
             this.onHide = onHide;
             game.on(Game.EVENT_HIDE, onHide);
             globalThis.__BREAKOUT__ = {
-              version: "0.2.0",
+              version: "0.2.1",
               snapshot: snapshot
             };
           }
@@ -5319,7 +5706,8 @@ System.register("chunks:///_virtual/ProjectileManager.ts", ['./rollupPluginModLo
                   p.x = start.x + (end.x - start.x) * nearest;
                   p.y = start.y + (end.y - start.y) * nearest;
                   p.active = false;
-                  this.particles.burst(p.x, p.y, _target ? 9 : 4);
+                  var material = _target && "kind" in _target ? _target.kind : undefined;
+                  this.particles.impact(p.x, p.y, material === "wood" || material === "hanging" ? "wood" : material === "steel" || material === "barrel" || material === "guard" || material === "turret" || material === "shield" ? "metal" : _target && !("category" in _target) ? "enemy" : "stone");
                   if (!_target || "category" in _target && _target.category === "indestructible") {
                     var m = this.marks[this.markCursor++ % this.marks.length];
                     m.active = true;
@@ -5417,7 +5805,7 @@ System.register("chunks:///_virtual/SceneryArt.ts", ['./rollupPluginModLoBabelHe
         }, {
           key: "tower",
           value: function tower(g, x, y) {
-            var c = colors.muted;
+            var c = colors.mid;
             g.line([{
               x: x - 35,
               y: y
@@ -5450,8 +5838,8 @@ System.register("chunks:///_virtual/SceneryArt.ts", ['./rollupPluginModLoBabelHe
           key: "bunker",
           value: function bunker(g, x, y) {
             var width = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 280;
-            var c = colors.muted;
-            g.rect(x, y, width, 152, c, colors.paper, 2);
+            var c = colors.mid;
+            g.rect(x, y, width, 152, c, colors.wall, 2);
             g.line([{
               x: x - 10,
               y: y + 152
@@ -5483,7 +5871,7 @@ System.register("chunks:///_virtual/SceneryArt.ts", ['./rollupPluginModLoBabelHe
         }, {
           key: "factory",
           value: function factory(g, x, y) {
-            var c = colors.muted;
+            var c = colors.mid;
             g.rect(x, y, 340, 244, c, colors.paper, 2);
             for (var n = 0; n < 3; n++) {
               var px = x + 36 + n * 82;
@@ -5530,7 +5918,7 @@ System.register("chunks:///_virtual/SceneryArt.ts", ['./rollupPluginModLoBabelHe
         }, {
           key: "crane",
           value: function crane(g, x, y) {
-            var c = colors.muted;
+            var c = colors.mid;
             g.rect(x, y, 35, 280, c, undefined, 2);
             g.rect(x + 270, y, 35, 280, c, undefined, 2);
             for (var h = 0; h < 270; h += 35) {
@@ -5580,6 +5968,45 @@ System.register("chunks:///_virtual/SceneryArt.ts", ['./rollupPluginModLoBabelHe
             g.rect(x + 122, y + 47, 22, 23, c, undefined, 1);
             g.circle(x + 27, y + 17, 14, c, undefined, 1.5);
             g.circle(x + 130, y + 17, 14, c, undefined, 1.5);
+          }
+          /** Non-colliding midground machinery uses gray silhouettes, never black platform edges. */
+        }, {
+          key: "serviceBay",
+          value: function serviceBay(g, x, y) {
+            var c = colors.mid;
+            g.rect(x, y, 126, 88, c, colors.wall, 3.6);
+            g.rect(x + 15, y + 17, 49, 51, c, colors.paper, 2);
+            for (var n = 0; n < 4; n++) g.segment(x + 22, y + 27 + n * 9, x + 56, y + 27 + n * 9, 2, c);
+            g.circle(x + 94, y + 45, 16, c, colors.paper, 3.6);
+            g.segment(x + 80, y + 45, x + 108, y + 45, 2, c);
+            g.segment(x + 94, y + 31, x + 94, y + 59, 2, c);
+            g.line([{
+              x: x + 24,
+              y: y + 88
+            }, {
+              x: x + 24,
+              y: y + 125
+            }, {
+              x: x + 143,
+              y: y + 125
+            }, {
+              x: x + 143,
+              y: y + 45
+            }], 8, colors.wall);
+            g.line([{
+              x: x + 24,
+              y: y + 88
+            }, {
+              x: x + 24,
+              y: y + 125
+            }, {
+              x: x + 143,
+              y: y + 125
+            }, {
+              x: x + 143,
+              y: y + 45
+            }], 2.4, c);
+            g.rect(x - 10, y - 6, 148, 6, c, colors.wall, 2);
           }
         }]);
         return SceneryArt;
@@ -5743,7 +6170,11 @@ System.register("chunks:///_virtual/StickmanRenderer.ts", ['./rollupPluginModLoB
         _createClass(StickmanRenderer, [{
           key: "draw",
           value: function draw(ink, actor, cameraX) {
-            if (actor.kind === "turret" || actor.kind === "guard") this.machines.draw(ink, actor, cameraX);else this.art.draw(ink, actor, cameraX);
+            if (actor.kind === "turret" || actor.kind === "guard") {
+              ink.strokeScale = 1.5;
+              this.machines.draw(ink, actor, cameraX);
+              ink.strokeScale = 1;
+            } else this.art.draw(ink, actor, cameraX);
           }
         }]);
         return StickmanRenderer;
@@ -5955,6 +6386,32 @@ System.register("chunks:///_virtual/Types.ts", ['cc'], function (exports) {
           if (enter > leave) return null;
         }
         return enter;
+      }
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ViewportLayout.ts", ['cc'], function (exports) {
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      exports('viewportLayout', viewportLayout);
+      cclegacy._RF.push({}, "541f0Fn6aRy0o38BwFOvME3", "ViewportLayout", undefined);
+      /** Screen layout and combat framing are independent. No device/DOM dependency. */
+      function viewportLayout(frameWidth, frameHeight) {
+        var portrait = frameHeight > frameWidth;
+        var height = portrait ? 720 * frameHeight / Math.max(1, frameWidth) : 720;
+        var width = portrait ? 720 : 720 * frameWidth / Math.max(1, frameHeight);
+        return {
+          width: width,
+          height: height,
+          portrait: portrait,
+          zoom: width < 1100 ? 1.25 : 1.4
+        };
       }
       cclegacy._RF.pop();
     }

@@ -1,21 +1,35 @@
-# 线条突围 / Stickman Breakout V0.2
+# 线条突围 / Stickman Breakout V0.2.1
 
 原创黑白手绘横版动作射击游戏。沿用真实 **Cocos Creator 3.8.8 + TypeScript** 工程，Graphics 程序化绘制，1280×720 横屏。移动、武器、敌人、破坏物、机关与游戏状态仍是独立模块，核心不使用 DOM 或浏览器存储。
 
 在线试玩：[GitHub Pages](https://yangfan19900209.github.io/stickman-breakout/)。本地试玩：安装 Node.js 22/24 后双击 **试玩.cmd**，或运行 `npm run preview`，打开 http://127.0.0.1:4190。Cocos 模块需要 HTTP 加载，不能使用 `file://`。
 
+## V0.2.1 手机显示与视觉修正
+
+横屏采用 720 逻辑高度与按实际比例计算的宽度（`FIXED_HEIGHT`），基准为 1280×720。竖屏改用独立 720 宽度的全高旋转引导层，隐藏战场、停止模拟、清空输入；旋转回来只恢复因旋转而暂停的战斗，手动暂停仍保留。网页使用 `100dvh`、`viewport-fit=cover` 和外壳 CSS 安全区桥；微信使用 Cocos 官方安全区。游戏核心不使用 DOM。
+
+HUD 与世界镜头独立。生命/武器在左上，关卡在右上；HUD 高 108、字号 32–34、暂停触区 88。摇杆外圈半径 96、拖动半径 92、触区 224。射击/跳跃/手雷视觉半径 76/62/48、触区 180/152/120；在 667×375 上触区约 94/79/63px，暂停约 46px。按钮避开安全区，保留间距，文字随按钮移动，支持三指、松手和取消。DPR 2/3 检查实际画布像素密度。
+
+普通战斗世界缩放 1.4，窄屏平板 1.25，HUD 不随之缩放。主角在 844×390 上约 56px 高。镜头按面朝方向前视、指数平滑跟随；跳跃在垂直死区内不追随，高台才缓慢抬镜头。BOSS 入场平滑拉远，显示至少约 1250 世界单位。横屏覆盖主要可视区域，超宽屏增加左右视野。
+
+统一线宽配置在 `GameConfig.rendering.lineWidths`：主角 6.4、敌人 5.6、交互物 4.5、平台 5.8、中景结构 3.6、背景约 1.25、UI 4–5、细节约 2。角色主线较原版约 1.7–1.9 倍；深黑人物与平台、中灰机械墙面、浅灰远景分别绘制。维修机组、阀门与管道补充中景，没有增加敌人或玩法。
+
+敌人命中为白心墨迹爆点、火花、后仰闪烁和 24ms 顿挫；木材有木屑、累积裂纹和旋转碎板；金属使用扁平爆点、弹开火花和碎屑。油桶闪裂约 90ms 后引爆，碰撞死亡即移除，连锁只调度一次。爆炸包含白色核心、锯齿墨迹边缘、快速冲击波、慢速上浮的深色不规则烟团、碎片、地面扬尘，带 50ms 顿挫和最多 7 逻辑像素震屏；HUD 保持稳定。破坏碎板演出约 750ms，掉落和范围伤害保留，频繁特效仍使用固定池。
+
+本次截图与观测记录见 `reports/v021-*`。真机微信、地址栏、安全区和持续性能的验证边界见 `DEVELOPMENT.md`。
+
 ## 操作与玩法
 
-| 操作 | 手机横屏 | PC |
-| --- | --- | --- |
-| 移动 | 左侧摇杆，拖动幅度控制速度，松手回中 | A/D 或左右箭头 |
-| 下蹲射击 | 摇杆下拉，同时按射击 | S/↓ + J |
-| 向上瞄准 | 摇杆上拉，斜上为 45°，正上为 90° | W/↑，与方向键配合 |
-| 可变高度跳跃 | 按住跳跃高跳，轻点低跳 | 按住/轻点 Space |
-| 连射 | 按住右下最大准星按钮 | 按住 J |
-| 手雷 | 较小手雷按钮，有数量限制 | K |
-| 暂停/继续 | 右上暂停及面板按钮 | P/Esc |
-| 开始/重新开始 | 面板按钮 | Enter 或按钮 |
+| 操作          | 手机横屏                             | PC                |
+| ------------- | ------------------------------------ | ----------------- |
+| 移动          | 左侧摇杆，拖动幅度控制速度，松手回中 | A/D 或左右箭头    |
+| 下蹲射击      | 摇杆下拉，同时按射击                 | S/↓ + J           |
+| 向上瞄准      | 摇杆上拉，斜上为 45°，正上为 90°     | W/↑，与方向键配合 |
+| 可变高度跳跃  | 按住跳跃高跳，轻点低跳               | 按住/轻点 Space   |
+| 连射          | 按住右下最大准星按钮                 | 按住 J            |
+| 手雷          | 较小手雷按钮，有数量限制             | K                 |
+| 暂停/继续     | 右上暂停及面板按钮                   | P/Esc             |
+| 开始/重新开始 | 面板按钮                             | Enter 或按钮      |
 
 支持摇杆、跳跃和射击三指同时操作；摇杆上推不会触发跳跃。暂停与切后台会清空输入，返回后重新按住操作按钮。暂停面板可以切换音效。
 
@@ -23,7 +37,7 @@
 
 自动步枪弹药不限。霰弹枪一次六颗散射弹丸，近距离伤害和击退更强；火箭筒速度较慢、范围爆炸、对机械敌人更有效。有限弹药用完后回到步枪。玩家接近掉落物会自动拾取：S 为霰弹枪、R 为火箭、G 为手雷，+ 为生命。满血时生命补给会留在原地。
 
-盾兵正面吸收部分弹丸，盾牌可被打碎；绕后或使用爆炸可以越过盾牌防御。炮塔会瞄准并发射慢速重弹。进入战车场后镜头锁定，地面圆环预告炮弹落点；战车半血进入第二阶段并召唤增援。击毁战车、等待爆炸演出，再走到出口完成突围。
+盾兵正面吸收部分弹丸，盾牌可被打碎；绕后或使用爆炸可以越过盾牌防御。炮塔会瞄准并发射慢速重弹。进入战车场后镜头平滑拉远并限制推进范围，地面圆环预告炮弹落点；战车半血进入第二阶段并召唤增援。击毁战车、等待爆炸演出，再走到出口完成突围。
 
 ## 安装、编辑器和构建
 
@@ -85,18 +99,18 @@ npm run pages:check
 
 ## 核心模块
 
-| 模块 | 职责 |
-| --- | --- |
-| `core/InputManager` / `VirtualJoystick` | 输入所有权、死区、模拟量与动作边缘 |
-| `player/PlayerController` | 加减速、可变跳高、土狼时间、缓冲、下蹲和上瞄 |
-| `combat/WeaponSystem` / `ProjectileManager` | 三种武器、扫掠碰撞、贴身命中和子弹池 |
-| `combat/GrenadeSystem` / `ExplosionSystem` | 抛物线、碰撞反弹、范围伤害与有界连锁队列 |
-| `world/DestructibleObject` / `DestructibleManager` / `PickupSystem` | 材质、渐进破坏、真实碰撞体、掉落与拾取 |
-| `enemy/EnemyController` / `TankBoss` / `EnemySpawner` | 步兵、冲锋、盾牌、炮塔、战车两阶段和有界增援 |
-| `level/LevelData` / `LevelController` / `MechanismController` | 四段关卡、封锁区、平台碰撞、升降与吊桥 |
-| `render/CharacterArt` / `MechanicalEnemyArt` / `SceneryArt` | 原创角色、机械结构和多层场景 |
-| `render/LevelRenderer` / `CombatRenderer` / `ObjectRenderer` | 可见分块、战斗效果与可交互物绘图 |
-| `platform/AudioBridge` / `PlatformBridge` / `CocosInputAdapter` | 跨平台音频、生命周期、安全区和设备事件 |
-| `GameManager` / `GameSession` / `HUDController` | 组件装配、模拟流程和持续复用 UI |
+| 模块                                                                | 职责                                         |
+| ------------------------------------------------------------------- | -------------------------------------------- |
+| `core/InputManager` / `VirtualJoystick`                             | 输入所有权、死区、模拟量与动作边缘           |
+| `player/PlayerController`                                           | 加减速、可变跳高、土狼时间、缓冲、下蹲和上瞄 |
+| `combat/WeaponSystem` / `ProjectileManager`                         | 三种武器、扫掠碰撞、贴身命中和子弹池         |
+| `combat/GrenadeSystem` / `ExplosionSystem`                          | 抛物线、碰撞反弹、范围伤害与有界连锁队列     |
+| `world/DestructibleObject` / `DestructibleManager` / `PickupSystem` | 材质、渐进破坏、真实碰撞体、掉落与拾取       |
+| `enemy/EnemyController` / `TankBoss` / `EnemySpawner`               | 步兵、冲锋、盾牌、炮塔、战车两阶段和有界增援 |
+| `level/LevelData` / `LevelController` / `MechanismController`       | 四段关卡、封锁区、平台碰撞、升降与吊桥       |
+| `render/CharacterArt` / `MechanicalEnemyArt` / `SceneryArt`         | 原创角色、机械结构和多层场景                 |
+| `render/LevelRenderer` / `CombatRenderer` / `ObjectRenderer`        | 可见分块、战斗效果与可交互物绘图             |
+| `platform/AudioBridge` / `PlatformBridge` / `CocosInputAdapter`     | 跨平台音频、生命周期、安全区和设备事件       |
+| `GameManager` / `GameSession` / `HUDController`                     | 组件装配、模拟流程和持续复用 UI              |
 
 完整完成状态、遗留问题和 V0.3 计划见 `DEVELOPMENT.md`。

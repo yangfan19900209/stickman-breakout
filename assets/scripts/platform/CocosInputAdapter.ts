@@ -6,10 +6,10 @@ import {
   KeyCode,
   Node,
   Vec2,
+  view,
 } from "cc";
 import { InputManager } from "../core/InputManager";
 import { InputAction } from "../core/Types";
-import { GameConfig as C } from "../core/GameConfig";
 
 /** Cocos events are the only device event boundary. Touch IDs retain independent ownership. */
 export class CocosInputAdapter {
@@ -76,8 +76,9 @@ export class CocosInputAdapter {
     const location = new Vec2();
     const coordinates = (e: EventTouch) => {
       e.getUILocation(location);
-      location.x -= stick.worldPosition.x + C.width / 2;
-      location.y -= stick.worldPosition.y + C.height / 2;
+      const design = view.getDesignResolutionSize();
+      location.x -= stick.worldPosition.x + design.width / 2;
+      location.y -= stick.worldPosition.y + design.height / 2;
     };
     const start = (e: EventTouch) => {
       coordinates(e);

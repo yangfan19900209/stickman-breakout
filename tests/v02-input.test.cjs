@@ -12,16 +12,18 @@ const {
 const {
   LevelController,
 } = require("../.test-build/assets/scripts/level/LevelController.js");
+const R = require("../.test-build/assets/scripts/core/GameConfig.js").GameConfig
+  .input.joystickRadius;
 const idle = { axis: 0, jump: false, shoot: false };
 test("stick has a dead zone, analog mapping, radius clamp and automatic recenter", () => {
   const s = new VirtualJoystick();
   s.start(0, 5, 0);
   assert.equal(s.axis, 0);
-  s.move(0, 40, 0);
+  s.move(0, R * 0.61, 0);
   assert.ok(s.axis > 0.4 && s.axis < 0.65);
   s.move(0, 999, 0);
   assert.equal(s.axis, 1);
-  assert.equal(s.x, 66);
+  assert.equal(s.x, R);
   s.end(0);
   assert.equal(s.owner, null);
   assert.equal(s.axis, 0);
@@ -29,9 +31,9 @@ test("stick has a dead zone, analog mapping, radius clamp and automatic recenter
 });
 test("only the owning touch can move or release the stick", () => {
   const s = new VirtualJoystick();
-  s.start(1, 66, 0);
-  assert.equal(s.start(2, -66, 0), false);
-  s.move(2, -66, 0);
+  s.start(1, R, 0);
+  assert.equal(s.start(2, -R, 0), false);
+  s.move(2, -R, 0);
   s.end(2);
   assert.equal(s.axis, 1);
   s.end(1);
@@ -39,7 +41,7 @@ test("only the owning touch can move or release the stick", () => {
 });
 test("stick and independent shooting/jumping fingers coexist; down/up have distinct semantics", () => {
   const i = new InputManager();
-  i.joystick.start(1, 55, 0);
+  i.joystick.start(1, R * 0.83, 0);
   i.press("touch:2", "shoot");
   i.press("touch:3", "jump");
   let f = i.consume();
@@ -51,11 +53,11 @@ test("stick and independent shooting/jumping fingers coexist; down/up have disti
   f = i.consume();
   assert.equal(f.jumpHeld, false);
   assert.equal(f.shoot, true);
-  i.joystick.move(1, 0, -66);
+  i.joystick.move(1, 0, -R);
   f = i.consume();
   assert.equal(f.crouch, true);
   assert.equal(f.jump, false);
-  i.joystick.move(1, 0, 66);
+  i.joystick.move(1, 0, R);
   f = i.consume();
   assert.equal(f.aimY, 1);
   assert.equal(f.jump, false);

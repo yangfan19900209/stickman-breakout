@@ -29,7 +29,7 @@ test("Cocos startup, keyboard movement and jump", async ({ page }) => {
     () => (globalThis as any).__BREAKOUT__.snapshot().player.y > 200,
   );
   await page.keyboard.up("KeyD");
-  await page.keyboard.up('Space');
+  await page.keyboard.up("Space");
   await page.waitForFunction(
     () => (globalThis as any).__BREAKOUT__.snapshot().player.grounded,
   );

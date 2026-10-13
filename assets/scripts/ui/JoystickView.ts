@@ -9,7 +9,7 @@ export class JoystickView {
   private lastY = 999;
   private active = false;
   constructor(parent: Node, adapter: CocosInputAdapter) {
-    this.node = node(parent, "Virtual joystick", 140, 105, 190, 190);
+    this.node = node(parent, "Virtual joystick", 158, 128, 224, 224);
     this.ink = new Ink(this.node);
     adapter.bindJoystick(this.node);
   }
@@ -25,12 +25,12 @@ export class JoystickView {
     this.ink.circle(
       0,
       0,
-      72,
-      new Color(25, 25, 25, 130),
-      new Color(250, 249, 245, 165),
-      2,
+      96,
+      new Color(25, 25, 25, 220),
+      new Color(250, 249, 245, 210),
+      5,
     );
-    this.ink.circle(0, 0, 61, new Color(25, 25, 25, 75), undefined, 1);
+    this.ink.circle(0, 0, 80, new Color(25, 25, 25, 125), undefined, 3);
     this.ink.line(
       [
         { x: -44, y: 0 },
@@ -50,18 +50,18 @@ export class JoystickView {
     this.ink.circle(
       s.x,
       s.y,
-      27,
+      38,
       colors.ink,
       active ? new Color(35, 35, 35, 200) : new Color(250, 249, 245, 225),
-      2.5,
+      5,
     );
     this.ink.circle(
       s.x,
       s.y,
-      20,
+      27,
       active ? colors.paper : colors.far,
       undefined,
-      1,
+      2,
     );
   }
 }

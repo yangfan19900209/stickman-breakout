@@ -6,28 +6,28 @@
     "height": 720,
     "targetFPS": 60
   },
-  "sourceModules": 37,
-  "sourceSHA256": "47cbd3dfaaea2f396ddc2e6e049e0d436955649ba865bd0686b4e672ac39f819",
+  "sourceModules": 38,
+  "sourceSHA256": "788dff68a5634c85fa869faba14fa65e253ef1d78a271645dbde06cab3703875",
   "typecheck": "passed",
   "logicTests": {
-    "tests": 42,
-    "passed": 42,
+    "tests": 46,
+    "passed": 46,
     "failed": 0,
     "exitCode": 0
   },
   "browserTests": {
-    "passed": 9,
+    "passed": 15,
     "failed": 0
   },
   "web": {
     "files": 35,
-    "bytes": 4566144,
+    "bytes": 4589759,
     "entry": "build/web-mobile/index.html",
     "creatorExitCode": 36
   },
   "wechat": {
     "files": 40,
-    "bytes": 1932997,
+    "bytes": 1943377,
     "entry": "build/wechatgame/game.js",
     "creatorExitCode": 36,
     "orientation": "landscape",
@@ -36,12 +36,12 @@
   },
   "fullRun": {
     "state": "complete",
-    "seconds": 64.49166666666406,
-    "health": 5,
+    "seconds": 68.25000000000038,
+    "health": 4,
     "kills": 23,
     "guardHealth": 0,
-    "cameraX": 6839.999999999993,
-    "peakBullets": 10,
+    "cameraX": 6949.999999646102,
+    "peakBullets": 11,
     "droppedBullets": 0,
     "applicationErrors": []
   },
@@ -52,11 +52,262 @@
     ],
     "applicationErrors": []
   },
-  "version": "0.2.0",
+  "mobileLayout": {
+    "rows": [
+      {
+        "size": {
+          "width": 844,
+          "height": 390
+        },
+        "display": {
+          "width": 1558.1538461538462,
+          "height": 720,
+          "portrait": false,
+          "zoom": 1.4,
+          "combatZoom": 1.4,
+          "worldVisibleWidth": 1112.967032967033,
+          "cameraY": 0,
+          "frameWidth": 844,
+          "frameHeight": 390,
+          "orientationPaused": false
+        },
+        "layout": {
+          "joystick": {
+            "x": 158,
+            "y": 128,
+            "r": 92,
+            "hit": 224
+          },
+          "jump": {
+            "x": 1266.1538461538462,
+            "y": 170,
+            "r": 62,
+            "hit": 152
+          },
+          "shoot": {
+            "x": 1442.1538461538462,
+            "y": 126,
+            "r": 76,
+            "hit": 180
+          },
+          "grenade": {
+            "x": 1122.1538461538462,
+            "y": 90,
+            "r": 48,
+            "hit": 120
+          },
+          "pause": {
+            "x": 1492.1538461538462,
+            "y": 666,
+            "hit": 88
+          }
+        },
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390
+        },
+        "heroHeightCSS": 56.11666666666666,
+        "shot": 1
+      }
+    ],
+    "errors": []
+  },
+  "mobileDevices": [
+    {
+      "size": {
+        "width": 667,
+        "height": 375,
+        "dpr": 2
+      },
+      "display": {
+        "width": 1280.64,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 914.7428571428572,
+        "cameraY": 0,
+        "frameWidth": 667,
+        "frameHeight": 375,
+        "orientationPaused": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375
+      },
+      "actualPixelRatio": 2,
+      "hitPixels": {
+        "joystick": 116.66666666666667,
+        "jump": 79.16666666666667,
+        "shoot": 93.75,
+        "grenade": 62.50000000000001,
+        "pause": 45.833333333333336
+      },
+      "heroHeightCSS": 53.958333333333336,
+      "shots": 2
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360,
+        "dpr": 3
+      },
+      "display": {
+        "width": 1480,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1057.142857142857,
+        "cameraY": 0,
+        "frameWidth": 740,
+        "frameHeight": 360,
+        "orientationPaused": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 740,
+        "height": 360
+      },
+      "actualPixelRatio": 2,
+      "hitPixels": {
+        "joystick": 112,
+        "jump": 76,
+        "shoot": 90,
+        "grenade": 60,
+        "pause": 44
+      },
+      "heroHeightCSS": 51.8,
+      "shots": 1
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 2
+      },
+      "display": {
+        "width": 960,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.25,
+        "combatZoom": 1.25,
+        "worldVisibleWidth": 768,
+        "cameraY": 0,
+        "frameWidth": 1024,
+        "frameHeight": 768,
+        "orientationPaused": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 768
+      },
+      "actualPixelRatio": 2,
+      "hitPixels": {
+        "joystick": 238.93333333333334,
+        "jump": 162.13333333333333,
+        "shoot": 192,
+        "grenade": 128,
+        "pause": 93.86666666666666
+      },
+      "heroHeightCSS": 98.66666666666667,
+      "shots": 2
+    }
+  ],
+  "combatFeedback": {
+    "samples": {
+      "materials": [
+        "wood",
+        "metal",
+        "stone",
+        "enemy"
+      ],
+      "kinds": [
+        "shell",
+        "impact",
+        "wood",
+        "spark",
+        "metal",
+        "dust"
+      ],
+      "peakShake": 1.9600000000000002,
+      "blastFrames": 59,
+      "ages": [
+        0.008333333333333333,
+        0.008333333333333333,
+        0.008333333333333333,
+        0.008333333333333333,
+        0.016666666666666666,
+        0.03333333333333333,
+        0.049999999999999996,
+        0.049999999999999996,
+        0.049999999999999996,
+        0.06666666666666667,
+        0.08333333333333333,
+        0.09999999999999999,
+        0.09999999999999999,
+        0.09999999999999999,
+        0.09999999999999999,
+        0.11666666666666665,
+        0.13333333333333333,
+        0.15,
+        0.175,
+        0.19166666666666665,
+        0.20833333333333331,
+        0.22499999999999998,
+        0.24166666666666664,
+        0.26666666666666666,
+        0.2833333333333334,
+        0.3000000000000001,
+        0.3166666666666668,
+        0.33333333333333354,
+        0.35000000000000026,
+        0.366666666666667,
+        0.3833333333333337,
+        0.4000000000000004,
+        0.41666666666666713,
+        0.43333333333333385,
+        0.45000000000000057,
+        0.4666666666666673,
+        0.4666666666666673,
+        0.49166666666666736,
+        0.508333333333334,
+        0.5250000000000006,
+        0.5416666666666672,
+        0.5583333333333338,
+        0.5750000000000004,
+        0.591666666666667,
+        0.6083333333333336,
+        0.6250000000000002,
+        0.6416666666666668,
+        0.6583333333333334,
+        0.675,
+        0.6916666666666667,
+        0.7083333333333333,
+        0.7249999999999999,
+        0.7416666666666665,
+        0.7583333333333331,
+        0.7749999999999997,
+        0.7916666666666663,
+        0.8083333333333329,
+        0.8249999999999995,
+        0.8416666666666661
+      ]
+    },
+    "errors": []
+  },
+  "version": "0.2.1",
   "performance": {
-    "frames": 119,
-    "averageFPS": 39.50469740726744,
-    "slowFramesOver50ms": 3,
+    "frames": 141,
+    "averageFPS": 46.61311117729789,
+    "slowFramesOver50ms": 0,
     "visibleChunks": 9,
     "audio": {
       "loaded": 7,

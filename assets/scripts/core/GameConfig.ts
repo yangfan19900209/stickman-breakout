@@ -6,7 +6,7 @@ export const GameConfig = {
   fixedStep: 1 / 120,
   maxFrameDelta: 0.1,
   input: {
-    joystickRadius: 66,
+    joystickRadius: 92,
     deadZone: 0.16,
     crouchThreshold: -0.52,
     aimThreshold: 0.52,
@@ -148,6 +148,20 @@ export const GameConfig = {
   },
   enemyProjectile: { speed: 430, range: 1000 },
   pools: { projectiles: 96, particles: 320 },
-  rendering: { lineWidth: 3.3, headRadius: 10, corpseDuration: 0.8 },
+  rendering: {
+    lineWidth: 6.4,
+    headRadius: 10,
+    corpseDuration: 0.8,
+    lineWidths: {
+      hero: 6.4,
+      enemy: 5.6,
+      interactive: 4.5,
+      platform: 5.8,
+      structure: 3.6,
+      background: 1.25,
+      ui: 4.5,
+      detail: 2,
+    },
+  },
 } as const;
 export type WeaponId = keyof typeof GameConfig.weapons;

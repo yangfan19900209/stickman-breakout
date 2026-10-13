@@ -30,6 +30,40 @@ export class ExplosionSystem {
   private count = 0;
   total = 0;
   dropped = 0;
+  private pending = Array.from({ length: 32 }, () => ({
+    active: false,
+    delay: 0,
+    x: 0,
+    y: 0,
+    radius: 0,
+    damage: 0,
+    owner: "neutral" as DamageOwner,
+  }));
+  schedule(
+    x: number,
+    y: number,
+    radius: number,
+    damage: number,
+    owner: DamageOwner,
+    delay = 0.09,
+  ): void {
+    const p = this.pending.find((p) => !p.active);
+    if (!p) {
+      this.dropped++;
+      return;
+    }
+    Object.assign(p, { active: true, delay, x, y, radius, damage, owner });
+  }
+  advance(dt: number): void {
+    for (const p of this.pending)
+      if (p.active) {
+        p.delay -= dt;
+        if (p.delay <= 0) {
+          p.active = false;
+          this.enqueue(p.x, p.y, p.radius, p.damage, p.owner);
+        }
+      }
+  }
   enqueue(
     x: number,
     y: number,
@@ -84,11 +118,12 @@ export class ExplosionSystem {
     for (const b of this.items)
       if (b.active) {
         b.age += dt;
-        if (b.age > 0.65) b.active = false;
+        if (b.age > 0.85) b.active = false;
       }
   }
   reset(): void {
     for (const b of this.items) b.active = false;
+    for (const p of this.pending) p.active = false;
     this.head = this.count = this.total = this.dropped = 0;
   }
 }

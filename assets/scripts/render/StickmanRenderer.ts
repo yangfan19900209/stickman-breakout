@@ -22,8 +22,10 @@ export class StickmanRenderer {
   private art = new CharacterArt();
   private machines = new MechanicalEnemyArt();
   draw(ink: Ink, actor: RenderActor, cameraX: number): void {
-    if (actor.kind === "turret" || actor.kind === "guard")
+    if (actor.kind === "turret" || actor.kind === "guard") {
+      ink.strokeScale = 1.5;
       this.machines.draw(ink, actor, cameraX);
-    else this.art.draw(ink, actor, cameraX);
+      ink.strokeScale = 1;
+    } else this.art.draw(ink, actor, cameraX);
   }
 }

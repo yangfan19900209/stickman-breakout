@@ -91,12 +91,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4472,
+                  "duration": 4635,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T09:58:31.047Z",
+                  "startTime": "2026-10-13T12:22:15.502Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -106,7 +106,7 @@
           ],
           "id": "a8475ef9564cfbc88065-0ef74fdef85bfa33e20e",
           "file": "gameplay.spec.ts",
-          "line": 11,
+          "line": 40,
           "column": 1
         },
         {
@@ -125,12 +125,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 13730,
+                  "duration": 13949,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T09:58:35.601Z",
+                  "startTime": "2026-10-13T12:22:20.228Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -140,7 +140,7 @@
           ],
           "id": "a8475ef9564cfbc88065-1280c54da069d53858ee",
           "file": "gameplay.spec.ts",
-          "line": 23,
+          "line": 83,
           "column": 1
         },
         {
@@ -159,49 +159,52 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 71969,
+                  "duration": 77732,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Run 5s x=1114 hp=5 kills=3 boss=90\n"
+                      "text": "Run 5s x=1058 hp=5 kills=3 boss=90\n"
                     },
                     {
-                      "text": "Run 10s x=2194 hp=5 kills=7 boss=90\n"
+                      "text": "Run 10s x=2146 hp=5 kills=7 boss=90\n"
                     },
                     {
-                      "text": "Run 15s x=3284 hp=5 kills=10 boss=90\n"
+                      "text": "Run 15s x=3319 hp=5 kills=10 boss=90\n"
                     },
                     {
-                      "text": "Run 20s x=4239 hp=5 kills=12 boss=90\n"
+                      "text": "Run 20s x=4249 hp=5 kills=12 boss=90\n"
                     },
                     {
-                      "text": "Run 25s x=5064 hp=5 kills=14 boss=90\n"
+                      "text": "Run 25s x=5066 hp=4 kills=14 boss=90\n"
                     },
                     {
-                      "text": "Run 30s x=6220 hp=3 kills=17 boss=90\n"
+                      "text": "Run 30s x=5810 hp=4 kills=15 boss=90\n"
                     },
                     {
-                      "text": "Run 35s x=7462 hp=5 kills=18 boss=67\n"
+                      "text": "Run 35s x=6472 hp=4 kills=18 boss=90\n"
                     },
                     {
-                      "text": "Run 40s x=7321 hp=5 kills=18 boss=40\n"
+                      "text": "Run 40s x=7260 hp=5 kills=18 boss=54\n"
                     },
                     {
-                      "text": "Run 45s x=7237 hp=5 kills=20 boss=32\n"
+                      "text": "Run 45s x=7151 hp=5 kills=18 boss=37\n"
                     },
                     {
-                      "text": "Run 50s x=7064 hp=5 kills=20 boss=20\n"
+                      "text": "Run 51s x=7202 hp=5 kills=20 boss=28\n"
                     },
                     {
-                      "text": "Run 55s x=7073 hp=5 kills=20 boss=8\n"
+                      "text": "Run 56s x=6997 hp=5 kills=20 boss=16\n"
                     },
                     {
-                      "text": "Run 60s x=7012 hp=5 kills=22 boss=1\n"
+                      "text": "Run 61s x=7021 hp=5 kills=20 boss=6\n"
+                    },
+                    {
+                      "text": "Run 66s x=7299 hp=4 kills=23 boss=0\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T09:58:49.345Z",
+                  "startTime": "2026-10-13T12:22:34.193Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -211,7 +214,7 @@
           ],
           "id": "a8475ef9564cfbc88065-5b4bc982efa60f615098",
           "file": "gameplay.spec.ts",
-          "line": 29,
+          "line": 101,
           "column": 1
         }
       ]
@@ -238,12 +241,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3831,
+                  "duration": 3772,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T10:00:01.358Z",
+                  "startTime": "2026-10-13T12:23:51.968Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -280,12 +283,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3588,
+                  "duration": 3663,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T10:00:05.221Z",
+                  "startTime": "2026-10-13T12:23:55.769Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -322,12 +325,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4556,
+                  "duration": 4926,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T10:00:08.837Z",
+                  "startTime": "2026-10-13T12:23:59.451Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -364,12 +367,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3925,
+                  "duration": 4219,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T10:00:13.425Z",
+                  "startTime": "2026-10-13T12:24:04.405Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -379,7 +382,7 @@
           ],
           "id": "d28a8f3a7db7525e692f-2b144f50b3b6097c8471",
           "file": "v02-input.spec.ts",
-          "line": 33,
+          "line": 34,
           "column": 1
         },
         {
@@ -398,12 +401,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3736,
+                  "duration": 3856,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T10:00:17.358Z",
+                  "startTime": "2026-10-13T12:24:08.640Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -413,7 +416,7 @@
           ],
           "id": "d28a8f3a7db7525e692f-6f716012678b523ec147",
           "file": "v02-input.spec.ts",
-          "line": 97,
+          "line": 98,
           "column": 1
         }
       ]
@@ -425,7 +428,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "portrait touch mapping, original audio, scene culling and bounded frame work",
+          "title": "original audio, scene culling and bounded frame work; portrait freezes the run",
           "ok": true,
           "tags": [],
           "tests": [
@@ -440,12 +443,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7170,
+                  "duration": 6592,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T10:00:21.115Z",
+                  "startTime": "2026-10-13T12:24:12.515Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -453,9 +456,229 @@
               "status": "expected"
             }
           ],
-          "id": "635a65c579e0c138f1cc-9d0418f7bc56a7a121f8",
+          "id": "635a65c579e0c138f1cc-24c30ba2f4496f1d7386",
           "file": "v02-visual.spec.ts",
           "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v021-feedback.spec.ts",
+      "file": "v021-feedback.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real combat exposes wood/enemy/metal hits and layered blast debris with shake",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5054,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:19.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "eeda592baf3a6fa74788-86adba0616605b7fb94d",
+          "file": "v021-feedback.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v021-layout.spec.ts",
+      "file": "v021-layout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "portrait blocks gameplay; rotating restores full viewport with reachable controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:24.206Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-436a3852c0f53f5a122c",
+          "file": "v021-layout.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "full screen and larger hit areas at 667 / DPR 2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3477,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:27.843Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-57d8612a9899634ed8c8",
+          "file": "v021-layout.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "full screen and larger hit areas at 740 / DPR 3",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3625,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:31.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-9d61d0ed6ea5feec0dca",
+          "file": "v021-layout.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "full screen and larger hit areas at 1024 / DPR 2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5128,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:34.968Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-60f216f159fd098d131f",
+          "file": "v021-layout.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "browser safe-area bridge repositions controls; expanded fire hit region works",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2946,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:40.113Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-5918115abe47ebd7113e",
+          "file": "v021-layout.spec.ts",
+          "line": 216,
           "column": 1
         }
       ]
@@ -463,9 +686,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-13T09:58:30.531Z",
-    "duration": 117881.256,
-    "expected": 9,
+    "startTime": "2026-10-13T12:22:14.840Z",
+    "duration": 148480.378,
+    "expected": 15,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

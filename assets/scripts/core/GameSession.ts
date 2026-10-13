@@ -77,6 +77,7 @@ export class GameSession {
   update(dt: number, input: InputFrame): void {
     if (this.state !== "playing" && this.state !== "dying") return;
     this.time += dt;
+    this.explosions.advance(dt);
     this.shakeTime = Math.max(0, this.shakeTime - dt);
     this.comboTime = Math.max(0, this.comboTime - dt);
     if (this.comboTime === 0) this.combo = 0;
@@ -113,9 +114,9 @@ export class GameSession {
       this.level.solids,
       (target) => {
         if ("state" in target) {
-          this.hitStop = Math.max(this.hitStop, 0.018);
-          this.shakePower = 1.6;
-          this.shakeTime = 0.08;
+          this.hitStop = Math.max(this.hitStop, 0.024);
+          this.shakePower = Math.max(this.shakePower, 2.2);
+          this.shakeTime = Math.max(this.shakeTime, 0.09);
         }
       },
       this.level.objects.objects,
@@ -167,10 +168,16 @@ export class GameSession {
       if (this.player.deadTime >= C.player.deathDuration)
         this.state = "gameover";
     } else if (this.level.reachedExit(this.player.x)) this.state = "complete";
-    if (this.level.arenaEntered && this.level.data.arena)
-      this.camera.x +=
-        (this.level.data.arena.start - this.camera.x) * (1 - Math.exp(-dt * 7));
-    else this.camera.update(this.player.x, dt, this.level.data.width);
+    this.camera.update(
+      this.player.x,
+      dt,
+      this.level.data.width,
+      this.player.facing,
+      this.player.y,
+      this.level.arenaEntered && this.level.data.arena
+        ? this.level.data.arena.start - this.camera.visibleWidth * 0.25
+        : undefined,
+    );
   }
   snapshot() {
     return {
@@ -196,6 +203,19 @@ export class GameSession {
       grenadesThrown: this.grenades.thrown,
       destroyedObjects: this.level.objects.destroyed,
       explosions: this.explosions.total,
+      feedback: {
+        shakeTime: this.shakeTime,
+        shakePower: this.shakePower,
+        hitStop: this.hitStop,
+        blasts: this.explosions.items
+          .filter((b) => b.active)
+          .map((b) => ({ x: b.x, y: b.y, age: b.age, radius: b.radius })),
+        particles: this.particles.items
+          .filter((p) => p.active)
+          .map((p) => ({ kind: p.kind, material: p.material })),
+        peakParticles: this.particles.peak,
+        droppedParticles: this.particles.dropped,
+      },
       combo: this.combo,
       bestCombo: this.bestCombo,
       objects: this.level.objects.objects.map((o) => ({
@@ -286,7 +306,7 @@ export class GameSession {
     );
     if (destroyed) {
       if (o.kind === "barrel")
-        this.explosions.enqueue(
+        this.explosions.schedule(
           o.x + o.w / 2,
           o.y + o.h / 2,
           155,
@@ -308,10 +328,10 @@ export class GameSession {
     damage: number,
     owner: DamageOwner,
   ): void {
-    this.particles.burst(x, y, 20);
-    this.shakeTime = 0.22;
-    this.shakePower = 5;
-    this.hitStop = 0.045;
+    this.particles.blast(x, y, radius);
+    this.shakeTime = Math.max(this.shakeTime, 0.28);
+    this.shakePower = Math.max(this.shakePower, 7);
+    this.hitStop = Math.max(this.hitStop, 0.05);
     if (damage === 0) return;
     const hit = (
       target: {

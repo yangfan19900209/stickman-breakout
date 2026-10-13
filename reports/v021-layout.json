@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "display": {
+        "width": 1558.1538461538462,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1112.967032967033,
+        "cameraY": 0,
+        "frameWidth": 844,
+        "frameHeight": 390,
+        "orientationPaused": false
+      },
+      "layout": {
+        "joystick": {
+          "x": 158,
+          "y": 128,
+          "r": 92,
+          "hit": 224
+        },
+        "jump": {
+          "x": 1266.1538461538462,
+          "y": 170,
+          "r": 62,
+          "hit": 152
+        },
+        "shoot": {
+          "x": 1442.1538461538462,
+          "y": 126,
+          "r": 76,
+          "hit": 180
+        },
+        "grenade": {
+          "x": 1122.1538461538462,
+          "y": 90,
+          "r": 48,
+          "hit": 120
+        },
+        "pause": {
+          "x": 1492.1538461538462,
+          "y": 666,
+          "hit": 88
+        }
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390
+      },
+      "heroHeightCSS": 56.11666666666666,
+      "shot": 1
+    }
+  ],
+  "errors": []
+}

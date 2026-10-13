@@ -24,6 +24,7 @@ import { HUDController } from "./ui/HUDController";
 import { ObjectRenderer } from "./render/ObjectRenderer";
 import { AudioBridge } from "./platform/AudioBridge";
 import { Node } from "cc";
+import { viewportLayout } from "./ui/ViewportLayout";
 const { ccclass } = _decorator;
 @ccclass("GameManager")
 export class GameManager extends Component {
@@ -45,12 +46,18 @@ export class GameManager extends Component {
   private lastState = this.session.state;
   private frameWidth = 0;
   private frameHeight = 0;
+  private board!: Node;
+  private canvasNode!: Node;
+  private camera!: Camera;
+  private portrait = false;
+  private orientationPaused = false;
+  private display = viewportLayout(C.width, C.height);
   onLoad(): void {
     try {
       this.initialize();
       this.ready = true;
       console.info(
-        "[Breakout] V0.2 ready; fixed simulation 120Hz, render 60FPS.",
+        "[Breakout] V0.2.1 ready; responsive viewport, independent HUD and combat framing.",
       );
     } catch (error) {
       console.error("[Breakout] Initialization failed", error);
@@ -58,7 +65,12 @@ export class GameManager extends Component {
     }
   }
   private initialize(): void {
-    view.setDesignResolutionSize(C.width, C.height, ResolutionPolicy.SHOW_ALL);
+    view.resizeWithBrowserSize(true);
+    view.setDesignResolutionSize(
+      C.width,
+      C.height,
+      ResolutionPolicy.FIXED_HEIGHT,
+    );
     game.frameRate = C.fps;
     profiler.hideStats();
     const canvasNode = node(this.node, "Canvas", 0, 0, C.width, C.height),
@@ -72,6 +84,8 @@ export class GameManager extends Component {
     camera.clearColor = new Color(250, 249, 245);
     camera.clearFlags = Camera.ClearFlag.SOLID_COLOR;
     canvas.cameraComponent = camera;
+    this.canvasNode = canvasNode;
+    this.camera = camera;
     const board = node(
       canvasNode,
       "Screen",
@@ -81,6 +95,7 @@ export class GameManager extends Component {
       C.height,
     );
     board.getComponent(UITransform)!.setAnchorPoint(0, 0);
+    this.board = board;
     this.world = node(board, "World presentation");
     this.map = new LevelRenderer(this.world, this.session.level);
     this.objects = new ObjectRenderer(this.world);
@@ -110,6 +125,15 @@ export class GameManager extends Component {
         ...this.session.snapshot(),
         audio: this.audio.status(),
         visibleChunks: this.map.visibleChunks,
+        display: {
+          ...this.display,
+          combatZoom: this.session.camera.zoom,
+          worldVisibleWidth: this.session.camera.visibleWidth,
+          cameraY: this.session.camera.y,
+          frameWidth: this.frameWidth,
+          frameHeight: this.frameHeight,
+          orientationPaused: this.orientationPaused,
+        },
         controls: {
           stick: {
             x: this.controls.joystick.x,
@@ -124,6 +148,7 @@ export class GameManager extends Component {
     );
   }
   private enter(): void {
+    if (this.portrait) return;
     if (
       this.session.state === "title" ||
       this.session.state === "gameover" ||
@@ -133,6 +158,7 @@ export class GameManager extends Component {
     else if (this.session.state === "paused") this.resume();
   }
   private startRun(): void {
+    if (this.portrait) return;
     this.adapter.clear();
     this.accumulator = 0;
     this.session.reset();
@@ -144,11 +170,13 @@ export class GameManager extends Component {
     this.session.reset("title");
   }
   private resume(): void {
+    if (this.portrait) return;
     this.adapter.clear();
     this.accumulator = 0;
     this.session.resume();
   }
   private togglePause(): void {
+    if (this.portrait) return;
     if (this.session.state === "paused") this.resume();
     else {
       this.session.pause();
@@ -162,8 +190,42 @@ export class GameManager extends Component {
     if (frame.width !== this.frameWidth || frame.height !== this.frameHeight) {
       this.frameWidth = frame.width;
       this.frameHeight = frame.height;
-      this.hud.applyInsets(this.platform.safeInsets());
-      this.adapter.clear();
+      this.display = viewportLayout(frame.width, frame.height);
+      const { width, height, portrait, zoom } = this.display;
+      view.setDesignResolutionSize(
+        width,
+        height,
+        portrait ? ResolutionPolicy.FIXED_WIDTH : ResolutionPolicy.FIXED_HEIGHT,
+      );
+      this.canvasNode.getComponent(UITransform)!.setContentSize(width, height);
+      this.camera.orthoHeight = height / 2;
+      this.board.setPosition(-width / 2, -height / 2);
+      this.board.getComponent(UITransform)!.setContentSize(width, height);
+      this.session.camera.visibleWidth = width / zoom;
+      this.session.camera.zoom = zoom;
+      this.world.setScale(zoom, zoom, 1);
+      this.hud.applyInsets(
+        this.platform.safeInsets(width, height),
+        width,
+        height,
+      );
+      this.adapter.hidden();
+      if (portrait && !this.portrait) {
+        this.orientationPaused =
+          this.session.state === "playing" || this.session.state === "dying";
+        this.session.pause();
+      } else if (!portrait && this.portrait && this.orientationPaused) {
+        this.session.resume();
+        this.orientationPaused = false;
+      }
+      this.portrait = portrait;
+      this.world.active = !portrait;
+      this.accumulator = 0;
+    }
+    if (this.portrait) {
+      this.adapter.hidden();
+      this.hud.update(this.session, this.controls, true);
+      return;
     }
     if (this.controls.consumePause()) this.togglePause();
     if (
@@ -183,20 +245,30 @@ export class GameManager extends Component {
       }
     } else this.accumulator = 0;
     const s = this.session;
+    const targetZoom = s.level.arenaEntered
+      ? Math.min(this.display.zoom, this.display.width / 1250)
+      : this.display.zoom;
+    s.camera.zoom +=
+      (targetZoom - s.camera.zoom) * (1 - Math.exp(-Math.min(dt, 0.1) * 4));
+    s.camera.visibleWidth = this.display.width / s.camera.zoom;
+    this.world.setScale(s.camera.zoom, s.camera.zoom, 1);
     const shake =
       s.shakeTime > 0 ? s.shakePower * Math.min(1, s.shakeTime / 0.12) : 0;
     this.world.setPosition(
       Math.sin(s.time * 103) * shake,
-      Math.cos(s.time * 119) * shake * 0.6,
+      // Keep the ground above the thumb controls even when the boss view pulls back.
+      Math.cos(s.time * 119) * shake * 0.6 +
+        260 -
+        (150 + s.camera.y) * s.camera.zoom,
     );
     this.audio.update(s);
-    this.map.update(s.camera.x, s.level.guardDefeated);
+    this.map.update(s.camera.x, s.level.guardDefeated, s.camera.visibleWidth);
     this.objects.draw(s);
     this.actors.clear();
     for (const e of s.spawner.enemies)
       if (
         e.x > s.camera.x - 100 &&
-        e.x < s.camera.x + C.width + 100 &&
+        e.x < s.camera.x + s.camera.visibleWidth + 100 &&
         e.deadTime < (e.kind === "guard" ? 2.6 : C.rendering.corpseDuration)
       )
         this.renderer.draw(this.actors, e, s.camera.x);

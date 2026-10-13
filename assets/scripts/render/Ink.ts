@@ -4,6 +4,8 @@ export const colors = {
   ink: new Color(24, 24, 24),
   paper: new Color(250, 249, 245),
   muted: new Color(126, 126, 122),
+  mid: new Color(175, 175, 168),
+  wall: new Color(237, 237, 231),
   far: new Color(215, 215, 209),
   white: new Color(255, 255, 255),
 };
@@ -24,6 +26,8 @@ export function node(
 }
 export class Ink {
   readonly g: Graphics;
+  /** Per-layer style, never a global multiplier for both foreground and scenery. */
+  strokeScale = 1;
   constructor(readonly node: Node) {
     this.g = node.addComponent(Graphics);
     this.g.lineCap = Graphics.LineCap.ROUND;
@@ -41,7 +45,7 @@ export class Ink {
     color = colors.ink,
   ): void {
     this.g.strokeColor = color;
-    this.g.lineWidth = width;
+    this.g.lineWidth = width * this.strokeScale;
     this.g.moveTo(x1, y1);
     this.g.lineTo(x2, y2);
     this.g.stroke();
@@ -56,7 +60,7 @@ export class Ink {
     width = 2,
   ): void {
     this.g.strokeColor = stroke;
-    this.g.lineWidth = width;
+    this.g.lineWidth = width * this.strokeScale;
     this.g.ellipse(x, y, rx, ry);
     if (fill) {
       this.g.fillColor = fill;
@@ -76,7 +80,7 @@ export class Ink {
   line(points: Vec[], width = 3, color = colors.ink): void {
     if (points.length < 2) return;
     this.g.strokeColor = color;
-    this.g.lineWidth = width;
+    this.g.lineWidth = width * this.strokeScale;
     this.g.moveTo(points[0].x, points[0].y);
     for (let i = 1; i < points.length; i++)
       this.g.lineTo(points[i].x, points[i].y);
@@ -91,7 +95,7 @@ export class Ink {
     fill?: Color,
     width = 2,
   ): void {
-    this.g.lineWidth = width;
+    this.g.lineWidth = width * this.strokeScale;
     this.g.strokeColor = stroke;
     this.g.rect(x, y, w, h);
     if (fill) {
@@ -109,7 +113,7 @@ export class Ink {
     width = 3,
   ): void {
     this.g.strokeColor = stroke;
-    this.g.lineWidth = width;
+    this.g.lineWidth = width * this.strokeScale;
     this.g.circle(x, y, r);
     if (fill) {
       this.g.fillColor = fill;

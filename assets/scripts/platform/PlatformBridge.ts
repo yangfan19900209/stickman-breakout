@@ -7,17 +7,34 @@ export interface DebugHandle {
 }
 /** All platform integration stays here. No storage/ads/network needed for V0.1. */
 export class PlatformBridge {
-  safeInsets(): SafeInsets {
+  safeInsets(width = 1280, height = 720): SafeInsets {
     const frame = view.getFrameSize(),
       r = sys.getSafeAreaRect(false),
-      scale = Math.min(frame.width / 1280, frame.height / 720);
-    const mx = (frame.width - 1280 * scale) / 2,
-      my = (frame.height - 720 * scale) / 2;
+      scale = Math.min(frame.width / width, frame.height / height);
+    const mx = (frame.width - width * scale) / 2,
+      my = (frame.height - height * scale) / 2;
+    const browserInsets = (
+      globalThis as typeof globalThis & {
+        __BREAKOUT_SAFE_AREA__?: () => SafeInsets;
+      }
+    ).__BREAKOUT_SAFE_AREA__?.();
     return {
-      left: Math.max(0, (r.x - mx) / scale),
-      right: Math.max(0, (frame.width - r.x - r.width - mx) / scale),
-      bottom: Math.max(0, (r.y - my) / scale),
-      top: Math.max(0, (frame.height - r.y - r.height - my) / scale),
+      left: Math.max(0, (r.x - mx) / scale, (browserInsets?.left ?? 0) / scale),
+      right: Math.max(
+        0,
+        (frame.width - r.x - r.width - mx) / scale,
+        (browserInsets?.right ?? 0) / scale,
+      ),
+      bottom: Math.max(
+        0,
+        (r.y - my) / scale,
+        (browserInsets?.bottom ?? 0) / scale,
+      ),
+      top: Math.max(
+        0,
+        (frame.height - r.y - r.height - my) / scale,
+        (browserInsets?.top ?? 0) / scale,
+      ),
     };
   }
   private onHide?: () => void;
@@ -27,7 +44,7 @@ export class PlatformBridge {
     if (DEBUG)
       (
         globalThis as typeof globalThis & { __BREAKOUT__?: DebugHandle }
-      ).__BREAKOUT__ = { version: "0.2.0", snapshot };
+      ).__BREAKOUT__ = { version: "0.2.1", snapshot };
   }
   destroy(): void {
     if (this.onHide) game.off(Game.EVENT_HIDE, this.onHide);

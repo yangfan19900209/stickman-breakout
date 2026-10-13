@@ -178,7 +178,22 @@ export class ProjectileManager {
         p.x = start.x + (end.x - start.x) * nearest;
         p.y = start.y + (end.y - start.y) * nearest;
         p.active = false;
-        this.particles.burst(p.x, p.y, target ? 9 : 4);
+        const material = target && "kind" in target ? target.kind : undefined;
+        this.particles.impact(
+          p.x,
+          p.y,
+          material === "wood" || material === "hanging"
+            ? "wood"
+            : material === "steel" ||
+                material === "barrel" ||
+                material === "guard" ||
+                material === "turret" ||
+                material === "shield"
+              ? "metal"
+              : target && !("category" in target)
+                ? "enemy"
+                : "stone",
+        );
         if (
           !target ||
           ("category" in target && target.category === "indestructible")

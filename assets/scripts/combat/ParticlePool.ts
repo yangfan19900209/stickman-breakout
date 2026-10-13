@@ -1,4 +1,5 @@
 import { GameConfig as C } from "../core/GameConfig";
+export type ImpactMaterial = "enemy" | "wood" | "metal" | "stone";
 export interface Particle {
   active: boolean;
   x: number;
@@ -8,7 +9,8 @@ export interface Particle {
   life: number;
   maxLife: number;
   size: number;
-  kind: "spark" | "wood" | "shell" | "smoke" | "dust";
+  kind: "spark" | "wood" | "metal" | "shell" | "smoke" | "dust" | "impact";
+  material?: ImpactMaterial;
   gravity: number;
   spin: number;
 }
@@ -62,9 +64,12 @@ export class ParticlePool {
         y,
         vx: Math.cos(a) * speed,
         vy: Math.sin(a) * speed,
-        life: 0.18 + this.random() * 0.2,
-        size: 1 + this.random() * 2,
+        life:
+          (kind === "wood" || kind === "metal" ? 0.45 : 0.18) +
+          this.random() * 0.22,
+        size: (kind === "wood" ? 3 : 1.5) + this.random() * 2,
         kind,
+        material: undefined,
         gravity: kind === "smoke" ? -30 : 500,
         spin: this.random() * 6,
       });
@@ -89,6 +94,7 @@ export class ParticlePool {
       vx,
       vy,
       kind,
+      material: undefined,
       life,
       maxLife: life,
       size: kind === "smoke" ? 7 : kind === "dust" ? 4 : 2,
@@ -99,6 +105,43 @@ export class ParticlePool {
       this.peak,
       this.items.reduce((n, p) => n + Number(p.active), 0),
     );
+  }
+  impact(x: number, y: number, material: ImpactMaterial): void {
+    this.emit(x, y, "impact");
+    const p = this.items.find(
+      (p) =>
+        p.active &&
+        p.kind === "impact" &&
+        p.x === x &&
+        p.y === y &&
+        !p.material,
+    );
+    if (p) {
+      p.material = material;
+      p.size = material === "enemy" ? 22 : material === "metal" ? 18 : 15;
+      p.life = p.maxLife = 0.14;
+      p.gravity = 0;
+    }
+    this.burst(
+      x,
+      y,
+      material === "enemy" ? 7 : 5,
+      material === "wood" ? "wood" : "spark",
+    );
+    if (material === "metal") this.burst(x, y, 3, "metal");
+  }
+  blast(x: number, y: number, radius: number): void {
+    this.burst(x, y, 12, "metal");
+    this.burst(x, y, 8, "wood");
+    if (y - radius < 155)
+      for (let n = 0; n < 8; n++)
+        this.emit(
+          x + (n - 3.5) * 12,
+          156,
+          "dust",
+          (n - 3.5) * 58,
+          35 + (n % 3) * 15,
+        );
   }
   update(dt: number): void {
     for (const p of this.items)

@@ -26,7 +26,9 @@ export class CharacterArt {
         : a.invincible && Math.floor(a.invincible * 14) % 2 === 0
           ? 0.3
           : 1;
-    this.color.a = alpha * 255;
+    const hit =
+      a.animation === "Hit" && Math.floor(a.animationTime * 35) % 2 === 0;
+    this.color.set(hit ? 150 : 24, hit ? 150 : 24, hit ? 146 : 24, alpha * 255);
     this.shade.a = alpha * 255;
     const color = this.color,
       shade = this.shade;
@@ -35,13 +37,16 @@ export class CharacterArt {
       baseY = a.y,
       dir = a.facing,
       fx = dir * scale;
-    const line = (v: Vec, w: Vec, width: number = C.rendering.lineWidth) =>
+    const weight = a.kind
+      ? C.rendering.lineWidths.enemy
+      : C.rendering.lineWidths.hero;
+    const line = (v: Vec, w: Vec, width = 3.3) =>
       ink.segment(
         baseX + v.x * fx,
         baseY + v.y * scale,
         baseX + w.x * fx,
         baseY + w.y * scale,
-        width,
+        (width / 3.3) * weight,
         color,
       );
     const local = (x: number, y: number, x2: number, y2: number, width = 2) =>
@@ -50,7 +55,7 @@ export class CharacterArt {
         baseY + y * scale,
         baseX + x2 * fx,
         baseY + y2 * scale,
-        width,
+        Math.max(C.rendering.lineWidths.detail, width * 1.3),
         color,
       );
     const circle = (x: number, y: number, r: number, fill?: Color) =>
@@ -67,7 +72,7 @@ export class CharacterArt {
       12 * scale,
       color,
       shade,
-      2,
+      weight * 0.65,
     );
     local(torso.x - 12, torso.y + 15, neck.x + 3, neck.y - 5, 1.5);
     line(pose.neck, pose.torso, 3.6);
@@ -96,7 +101,15 @@ export class CharacterArt {
     const head = pose.head,
       hx = baseX + head.x * fx,
       hy = baseY + head.y * scale;
-    ink.ellipse(hx, hy, 10.5 * scale, 11 * scale, color, colors.paper, 3);
+    ink.ellipse(
+      hx,
+      hy,
+      10.5 * scale,
+      11 * scale,
+      color,
+      colors.paper,
+      weight * 0.85,
+    );
     if (!a.kind) {
       local(head.x - 10, head.y + 5, head.x + 10, head.y + 5, 2.7);
       local(head.x - 10, head.y + 5, head.x - 15, head.y + 3, 2);
@@ -124,7 +137,7 @@ export class CharacterArt {
       a.animation !== "Dead"
     ) {
       const bx = baseX + 26 * dir;
-      ink.ellipse(bx, baseY + 35, 13, 31, color, shade, 3.5);
+      ink.ellipse(bx, baseY + 35, 13, 31, color, shade, weight);
       ink.ellipse(bx, baseY + 35, 5, 8, color, colors.paper, 2);
       ink.segment(bx - 8, baseY + 55, bx + 8, baseY + 55, 2);
     }
@@ -147,7 +160,7 @@ export class CharacterArt {
           baseY + (hand.y + x * sn + y * cs) * scale,
           baseX + (hand.x + x2 * cs - y2 * sn) * fx,
           baseY + (hand.y + x2 * sn + y2 * cs) * scale,
-          width,
+          tint === colors.paper ? width : width * 1.35,
           tint,
         );
       gun(

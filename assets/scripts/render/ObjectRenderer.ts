@@ -6,6 +6,7 @@ export class ObjectRenderer {
   private labels: Label[] = [];
   constructor(parent: Node) {
     this.ink = new Ink(node(parent, "Destructibles and pickups"));
+    this.ink.strokeScale = 1.8;
     for (let i = 0; i < 32; i++) {
       const n = node(parent, "Pickup glyph", 0, 0, 44, 40),
         l = n.addComponent(Label);
@@ -20,28 +21,39 @@ export class ObjectRenderer {
       cam = s.camera.x;
     ink.clear();
     for (const o of s.level.objects.objects) {
-      if (o.x + o.w < cam - 50 || o.x > cam + 1330) continue;
+      if (o.x + o.w < cam - 50 || o.x > cam + s.camera.visibleWidth + 50)
+        continue;
       const x = o.x - cam,
         y = o.y,
         w = o.w,
         h = o.h;
       if (!o.alive) {
-        if (o.deadTime < 0.55) {
-          for (let n = 0; n < 5; n++) {
-            const dx = x + w / 2 + (n - 2) * o.deadTime * 75,
-              dy =
-                y +
-                18 +
-                Math.sin(n * 2) * o.deadTime * 70 -
-                o.deadTime * o.deadTime * 170;
-            ink.line(
-              [
-                { x: dx, y: dy },
-                { x: dx + 10, y: dy + 5 },
-              ],
-              2,
-              colors.muted,
+        if (o.kind === "barrel" && o.deadTime < 0.09) {
+          ink.rect(x - 2, y - 2, w + 4, h + 4, colors.ink, colors.white, 4);
+          ink.segment(x, y, x + w, y + h, 4);
+          ink.segment(x + w, y, x, y + h, 4);
+        } else if (o.deadTime < 0.75) {
+          for (let n = 0; n < 6; n++) {
+            const age = o.deadTime,
+              dx = x + w / 2 + (n - 2.5) * age * 80,
+              dy = y + h * 0.5 + (90 + (n % 3) * 65) * age - age * age * 310;
+            const angle = n + age * (n % 2 ? 6 : -6),
+              cs = Math.cos(angle),
+              sn = Math.sin(angle);
+            const pts = [
+              { x: dx - 12 * cs + 4 * sn, y: dy - 12 * sn - 4 * cs },
+              { x: dx + 12 * cs + 4 * sn, y: dy + 12 * sn - 4 * cs },
+              { x: dx + 10 * cs - 4 * sn, y: dy + 10 * sn + 4 * cs },
+              { x: dx - 10 * cs - 4 * sn, y: dy - 10 * sn + 4 * cs },
+            ];
+            ink.polygon(
+              pts,
+              o.kind === "wood" || o.kind === "hanging"
+                ? colors.paper
+                : colors.mid,
             );
+            pts.push(pts[0]);
+            ink.line(pts, 2.5);
           }
         }
         continue;
@@ -186,7 +198,7 @@ export class ObjectRenderer {
     for (const m of s.level.mechanisms) {
       const r = m.rect,
         x = r.x - cam;
-      if (x + r.w < 0 || x > 1280) continue;
+      if (x + r.w < 0 || x > s.camera.visibleWidth) continue;
       ink.rect(x, r.y, r.w, r.h, colors.ink, colors.paper, 3);
       for (let t = 12; t < r.w - 8; t += 24)
         ink.circle(x + t, r.y + r.h / 2, 2, colors.ink, colors.ink, 1);
@@ -216,7 +228,7 @@ export class ObjectRenderer {
     for (const z of s.level.data.zones ?? []) {
       if (z.id === "D" || s.level.clearedZones.has(z.id)) continue;
       const x = z.end - cam;
-      if (x < 0 || x > 1280) continue;
+      if (x < 0 || x > s.camera.visibleWidth) continue;
       ink.segment(x, 150, x, 530, 4);
       ink.rect(x - 10, 510, 32, 28, colors.ink, colors.paper, 3);
       ink.circle(x + 6, 524, 5, colors.ink, colors.ink, 1);
@@ -226,7 +238,8 @@ export class ObjectRenderer {
     for (let i = 0; i < s.pickups.items.length; i++) {
       const p = s.pickups.items[i],
         l = this.labels[i],
-        visible = p.active && p.x > cam - 30 && p.x < cam + 1310;
+        visible =
+          p.active && p.x > cam - 30 && p.x < cam + s.camera.visibleWidth + 30;
       l.node.active = visible;
       if (!visible) continue;
       const x = p.x - cam,

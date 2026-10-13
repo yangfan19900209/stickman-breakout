@@ -1,5 +1,5 @@
 import { test, expect, Page } from "@playwright/test";
-import {writeFileSync} from 'node:fs';
+import { writeFileSync } from "node:fs";
 async function boot(page: Page) {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -24,10 +24,11 @@ const read = (page: Page) =>
 async function point(page: Page, x: number, y: number) {
   const b = await page.locator("#GameCanvas").boundingBox();
   if (!b) throw Error("No canvas");
-  const s = Math.min(b.width / 1280, b.height / 720);
+  const d = (await read(page)).display;
+  const s = Math.min(b.width / d.width, b.height / d.height);
   return {
-    x: b.x + (b.width - 1280 * s) / 2 + x * s,
-    y: b.y + (b.height - 720 * s) / 2 + (720 - y) * s,
+    x: b.x + x * s,
+    y: b.y + (d.height - y) * s,
   };
 }
 test("actual analog drag, dead zone, three fingers and automatic recenter", async ({
@@ -41,7 +42,7 @@ test("actual analog drag, dead zone, three fingers and automatic recenter", asyn
     c = layout.joystick;
   const center = await point(page, c.x, c.y),
     dead = await point(page, c.x + 6, c.y),
-    partial = await point(page, c.x + 35, c.y);
+    partial = await point(page, c.x + c.r * 0.53, c.y);
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchStart",
     touchPoints: [{ id: 1, ...center }],

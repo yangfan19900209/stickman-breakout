@@ -2,6 +2,7 @@ import { Label, Node } from "cc";
 import { LevelController } from "../level/LevelController";
 import { Ink, colors, node } from "./Ink";
 import { SceneryArt as Art } from "./SceneryArt";
+import { GameConfig as C } from "../core/GameConfig";
 interface Chunk {
   node: Node;
   x: number;
@@ -18,6 +19,7 @@ export class LevelRenderer {
           g = new Ink(n),
           index = Math.floor(x / 800);
         this.chunks.push({ node: n, x, factor });
+        if (factor === 1) g.strokeScale = C.rendering.lineWidths.platform / 3;
         if (factor === 0.16) {
           for (let i = 0; i < 3; i++)
             Art.cloud(
@@ -54,6 +56,7 @@ export class LevelRenderer {
           else if ((index + 9) % 3 === 1) Art.factory(g, 120, 150);
           else Art.crane(g, 300, 150);
           Art.tower(g, 690, 150);
+          Art.serviceBay(g, 480, 150);
           g.segment(24, 150, 24, 390, 2, colors.muted);
           g.segment(6, 363, 46, 363, 2, colors.muted);
           g.line(
@@ -88,7 +91,6 @@ export class LevelRenderer {
                   s.y + s.h + Math.sin((x + px + 32) * 0.15) * 0.65,
                   3,
                 );
-              g.segment(left, 50, right, 50, 2);
               for (let px = left + 12; px < right; px += 63) {
                 g.line(
                   [
@@ -173,15 +175,19 @@ export class LevelRenderer {
     l.color = colors.muted;
     l.fontFamily = "sans-serif";
   }
-  update(cameraX: number, unlocked: boolean): void {
+  private lastUnlocked: boolean | null = null;
+  update(cameraX: number, unlocked: boolean, visibleWidth = 1280): void {
     this.visibleChunks = 0;
     for (const c of this.chunks) {
       const px = c.x - cameraX * c.factor;
       c.node.setPosition(px, 0);
-      c.node.active = px < 1350 && px + 820 > -70;
+      c.node.active = px < visibleWidth + 70 && px + 820 > -70;
       if (c.node.active) this.visibleChunks++;
     }
     this.gate.node.setPosition(-cameraX, 0);
+    this.gate.node.active = this.exitX - cameraX < visibleWidth + 100;
+    if (this.lastUnlocked === unlocked) return;
+    this.lastUnlocked = unlocked;
     this.gate.clear();
     const x = this.exitX;
     this.gate.line(
