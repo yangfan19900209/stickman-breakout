@@ -103,6 +103,8 @@ git push origin main
 
 `pages:prepare` 会检查构建文件数量/字节数、逐文件验证复制内容，只清理此前由该脚本生成的发布文件。GitHub 在推送后自动部署 Pages；可在仓库 Actions 中查看 `pages build and deployment` 的结果。`docs/version.json` 提供线上包指纹。
 
+部署完成后运行 `npm run pages:check`，可校验线上全部 19 个构建文件、桌面键盘移动/跳跃/射击与暂停，以及手机三指触控。结果保存到 `reports/github-pages-verification.json`。该检查读取状态并使用真实浏览器输入，不修改游戏数据。
+
 ## 源码入口
 
 | 文件 / 目录 | 职责 |

@@ -57,3 +57,13 @@
 当前扩展入口：`GameConfig.weapons` 与 `WeaponSystem` 的武器 ID；`EnemyKind` / 配置 / 生成数据；`LevelData`；`PlatformBridge` 的平台功能边界。接口入口不代表已有对应玩法。
 
 后续优先：微信开发者工具和两类手机的端到端验收 → 帧率/包体/安全区专项测试 → 根据试玩反馈调平衡和动作表现 → 少量音效与关卡节奏。保持当前结构，避免先增加大型系统。
+
+## GitHub Pages 部署记录
+
+- 公开仓库：[yangfan19900209/stickman-breakout](https://github.com/yangfan19900209/stickman-breakout)。
+- 在线试玩：[GitHub Pages](https://yangfan19900209.github.io/stickman-breakout/)。
+- 发布来源：`main` 分支 `/docs`，通过 `.nojekyll` 保持 Cocos 静态文件原样，HTTPS 已启用。
+- 首次部署提交：`19d28064e8fc5bc5924ad96a78ed8a8366bf96fa`；GitHub Pages 构建和部署成功。
+- 线上 Web 包指纹：`1c86c7eb83f40139c3a8e3a5310198879a0ef50fa8ac2976a944dfc6ff3238fd`。
+- 2026-10-13 已逐字节核对 19 个公开构建文件；线上键盘移动、跳跃、射击、暂停/继续，以及 844×390 下的三指移动/跳跃/射击和释放均通过，应用错误 0、请求失败 0。
+- 证据：`reports/github-pages-verification.json` 与对应桌面/手机截图。此次上线验证不会替代微信开发者工具和手机真机验收。

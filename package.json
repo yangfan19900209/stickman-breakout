@@ -16,6 +16,7 @@
     "test:browser": "playwright test",
     "verify:delivery": "node scripts/verify-delivery.mjs",
     "pages:prepare": "node scripts/prepare-pages.mjs",
+    "pages:check": "node scripts/check-pages.mjs",
     "format": "prettier --write assets/scripts tests scripts build-config",
     "meta": "node scripts/meta.mjs"
   },
