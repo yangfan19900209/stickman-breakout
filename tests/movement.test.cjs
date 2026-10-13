@@ -71,7 +71,11 @@ test("multitouch/key aliases have independent ownership and edges", () => {
   input.release("a");
   input.press("touch1", "shoot");
   input.press("touch2", "jump");
-  assert.deepEqual(input.consume(), { axis: -1, shoot: true, jump: true });
+  const { axis, shoot, jump } = input.consume();
+  assert.deepEqual(
+    { axis, shoot, jump },
+    { axis: -1, shoot: true, jump: true },
+  );
   assert.equal(input.consume().jump, false);
   input.release("touch1");
   assert.equal(input.consume().shoot, false);

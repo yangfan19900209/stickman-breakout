@@ -11,6 +11,8 @@ export interface ArmedSource {
   recoil: number;
   deadTime: number;
   kind?: string;
+  aimPitch?: number;
+  weaponId?: WeaponId;
 }
 /** Weapon selection seam for future weapon definitions. V0.1 only implements rifle. */
 export class WeaponSystem {
@@ -20,9 +22,20 @@ export class WeaponSystem {
   flashY = 0;
   flashFacing: Facing = 1;
   private animator = new StickmanAnimator();
-  constructor(readonly id: WeaponId = "rifle") {}
+  ammo: number = -1;
+  shots = 0;
+  constructor(public id: WeaponId = "rifle") {
+    this.equip(id);
+  }
+  equip(id: WeaponId): void {
+    this.id = id;
+    this.ammo = C.weapons[id].ammo;
+    this.cooldown = 0;
+  }
   reset(): void {
     this.cooldown = this.flash = 0;
+    this.equip("rifle");
+    this.shots = 0;
   }
   update(dt: number): void {
     this.cooldown = Math.max(0, this.cooldown - dt);
@@ -35,29 +48,63 @@ export class WeaponSystem {
     interval?: number,
   ): boolean {
     if (this.cooldown > 0) return false;
+    if (owner === "player" && this.ammo === 0) this.equip("rifle");
     const config = C.weapons[this.id],
       scale = source.kind === "guard" ? 1.08 : 1;
     const pose = this.animator.sample(
       source.animation,
       source.animationTime,
-      1,
+      config.recoil,
       true,
       source.deadTime,
+      source.aimPitch ?? 0,
     );
-    const x = source.x + (pose.rightHand.x + 17) * source.facing * scale,
-      y = source.y + pose.rightHand.y * scale;
-    const fired = projectiles.spawn({
-      owner,
-      x,
-      y,
-      direction: source.facing,
-      speed: owner === "player" ? config.speed : C.enemyProjectile.speed,
-      damage: config.damage,
-      range: owner === "player" ? config.range : C.enemyProjectile.range,
-    });
+    const pitch = source.aimPitch ?? 0;
+    const x =
+        source.x +
+        (pose.rightHand.x + config.muzzleLength * Math.cos(pitch)) *
+          source.facing *
+          scale,
+      y =
+        source.y +
+        (pose.rightHand.y + config.muzzleLength * Math.sin(pitch)) * scale;
+    let fired = false;
+    for (let i = 0; i < config.pellets; i++)
+      fired =
+        projectiles.spawn({
+          owner,
+          x,
+          y,
+          direction: source.facing,
+          speed: owner === "player" ? config.speed : C.enemyProjectile.speed,
+          damage: config.damage,
+          range: owner === "player" ? config.range : C.enemyProjectile.range,
+          pitch: pitch + (i - (config.pellets - 1) / 2) * config.spread,
+          kind:
+            this.id === "rocket"
+              ? "rocket"
+              : this.id === "shotgun"
+                ? "pellet"
+                : "bullet",
+          blastRadius: config.blastRadius,
+          knockback: config.knockback,
+          originX: source.x,
+          originY: y,
+        }) || fired;
     if (!fired) return false;
-    source.recoil = 1;
-    this.flash = 0.045;
+    source.recoil = config.recoil;
+    if (source.weaponId !== undefined) source.weaponId = this.id;
+    if (this.id !== "rocket")
+      projectiles.particles.emit(
+        source.x - 4 * source.facing,
+        source.y + 42,
+        "shell",
+        -source.facing * 90,
+        160,
+      );
+    if (owner === "player" && this.ammo > 0) this.ammo--;
+    this.shots++;
+    this.flash = this.id === "rifle" ? 0.06 : 0.1;
     this.flashX = x;
     this.flashY = y;
     this.flashFacing = source.facing;

@@ -6,6 +6,7 @@ import {
   Facing,
   Rect,
   segmentRect,
+  DamageKind,
 } from "../core/Types";
 import { EnemySpawn } from "../level/LevelData";
 import { LevelController } from "../level/LevelController";
@@ -19,11 +20,11 @@ export class EnemyController {
   vx = 0;
   vy = 0;
   grounded = true;
-  readonly halfWidth = 13;
-  readonly height = 74;
+  halfWidth: number = 13;
+  height: number = 74;
   readonly kind: EnemyKind;
   readonly id: string;
-  readonly maxHealth: number;
+  maxHealth: number;
   health: number;
   state: EnemyState = "Idle";
   facing: Facing = -1;
@@ -33,25 +34,35 @@ export class EnemyController {
   recoil = 0;
   attackCooldown = 0.8;
   windup = 0;
+  aimPitch = 0;
+  shieldHealth = 0;
+  shieldHit = 0;
+  deathEffectPlayed = false;
+  private turnTime = 0;
   private patrolDirection: Facing = -1;
   readonly weapon = new WeaponSystem();
+  private hurtbox: Rect = { x: 0, y: 0, w: 26, h: 65 };
   constructor(readonly spawn: EnemySpawn) {
     this.x = spawn.x;
     this.y = spawn.y;
     this.kind = spawn.kind;
     this.id = spawn.id;
-    this.health = this.maxHealth = C.enemies[this.kind].health;
+    this.health = this.maxHealth = spawn.health ?? C.enemies[this.kind].health;
+    if (this.kind === "shield") this.shieldHealth = 8;
+    if (this.kind === "turret") {
+      this.halfWidth = 28;
+      this.height = 70;
+    }
   }
   get alive(): boolean {
     return this.health > 0;
   }
   get bounds(): Rect {
-    return {
-      x: this.x - 13,
-      y: this.y + 3,
-      w: 26,
-      h: this.kind === "guard" ? 72 : 65,
-    };
+    this.hurtbox.x = this.x - (this.kind === "shield" ? 22 : this.halfWidth);
+    this.hurtbox.y = this.y + 3;
+    this.hurtbox.h = this.kind === "guard" ? 72 : 65;
+    this.hurtbox.w = this.kind === "shield" ? 44 : this.halfWidth * 2;
+    return this.hurtbox;
   }
   get animation(): AnimationState {
     if (!this.alive) return "Dead";
@@ -61,13 +72,27 @@ export class EnemyController {
     if (Math.abs(this.vx) > 4) return "Run";
     return "Idle";
   }
-  takeDamage(amount: number, direction: Facing): boolean {
+  takeDamage(
+    amount: number,
+    direction: Facing,
+    kind: DamageKind = "bullet",
+  ): boolean {
     if (!this.alive) return false;
+    const blocked =
+      this.kind === "shield" &&
+      this.shieldHealth > 0 &&
+      direction === -this.facing &&
+      kind !== "explosion";
+    if (blocked) {
+      this.shieldHealth = Math.max(0, this.shieldHealth - amount);
+      this.shieldHit = 0.16;
+      amount *= 0.2;
+    }
     this.health = Math.max(0, this.health - amount);
-    this.hitTime = 0.13;
+    this.hitTime = blocked ? 0.025 : 0.13;
     this.vx = direction * 65;
     this.state = this.alive ? "Hit" : "Dead";
-    this.windup = 0;
+    if (!blocked) this.windup = 0;
     return true;
   }
   update(
@@ -81,13 +106,14 @@ export class EnemyController {
     this.recoil = Math.max(0, this.recoil - dt * 8);
     this.attackCooldown = Math.max(0, this.attackCooldown - dt);
     this.hitTime = Math.max(0, this.hitTime - dt);
+    this.shieldHit = Math.max(0, this.shieldHit - dt);
     const config = C.enemies[this.kind],
       dx = player.x - this.x,
       dy = player.y - this.y;
     if (!this.alive) {
       this.state = "Dead";
       this.deadTime += dt;
-      this.vx *= Math.exp(-dt * 10);
+      this.vx *= Math.exp(-dt * 3);
     } else if (this.hitTime > 0) {
       this.state = "Hit";
       this.vx *= Math.exp(-dt * 5);
@@ -100,12 +126,23 @@ export class EnemyController {
         this.state === "Patrol" ? this.patrolDirection * config.speed * 0.3 : 0;
       if (this.vx) this.facing = this.vx > 0 ? 1 : -1;
     } else {
-      this.facing = dx >= 0 ? 1 : -1;
+      const desired: Facing = dx >= 0 ? 1 : -1;
+      if (this.kind === "shield" && desired !== this.facing) {
+        this.turnTime += dt;
+        if (this.turnTime >= 0.45) {
+          this.facing = desired;
+          this.turnTime = 0;
+        }
+      } else {
+        this.facing = desired;
+        this.turnTime = 0;
+      }
       const close =
         Math.abs(dx) <= config.range &&
         Math.abs(dy) < (this.kind === "melee" ? 50 : 110);
       const sight = !level.solids.some(
         (s) =>
+          !s.entityId &&
           segmentRect(
             { x: this.x, y: this.y + 44 },
             { x: player.x, y: player.y + 44 },
@@ -114,9 +151,19 @@ export class EnemyController {
       );
       if (close && (this.kind === "melee" || sight)) {
         this.state = "Attack";
-        this.vx = 0;
+        this.vx =
+          this.kind === "ranged" && this.spawn.y === 150
+            ? (Math.abs(dx) < 220 ? -this.facing : this.facing) *
+              config.speed *
+              0.4
+            : 0;
+        this.aimPitch =
+          this.kind === "turret"
+            ? Math.max(-0.3, Math.min(0.65, Math.atan2(dy - 12, Math.abs(dx))))
+            : 0;
         if (this.attackCooldown === 0 && this.windup === 0)
-          this.windup = this.kind === "melee" ? 0.28 : 0.34;
+          this.windup =
+            this.kind === "melee" ? 0.38 : this.kind === "turret" ? 0.7 : 0.4;
         if (this.windup > 0) {
           this.windup = Math.max(0, this.windup - dt);
           if (this.windup === 0) {
@@ -126,6 +173,20 @@ export class EnemyController {
                 Math.abs(player.y - this.y) < 50
               )
                 player.takeDamage(config.damage, this.facing);
+            } else if (this.kind === "turret") {
+              projectiles.spawn({
+                owner: "enemy",
+                x: this.x + this.facing * 36 * Math.cos(this.aimPitch),
+                y: this.y + 50 + 36 * Math.sin(this.aimPitch),
+                direction: this.facing,
+                pitch: this.aimPitch,
+                speed: 260,
+                damage: 2,
+                range: 1150,
+                kind: "cannon",
+                blastRadius: 55,
+              });
+              this.recoil = 1.5;
             } else
               this.weapon.fire(this, projectiles, "enemy", config.interval);
             this.attackCooldown = config.interval;
@@ -135,7 +196,7 @@ export class EnemyController {
         this.state = "Chase";
         this.windup = 0;
         this.vx =
-          this.kind === "melee" || Math.abs(dx) > config.range
+          this.kind === "melee" || !sight || Math.abs(dx) > config.range
             ? this.facing * config.speed
             : 0;
       }

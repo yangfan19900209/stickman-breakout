@@ -1623,7 +1623,7 @@ System.register([], (function (exports, module) {
         return _cachedProxy;
       }
 
-      var _class$1h;
+      var _class$1j;
       var NonUuidMark = '.';
       var IDGenerator = function () {
         function IDGenerator(category) {
@@ -1636,8 +1636,8 @@ System.register([], (function (exports, module) {
         };
         return IDGenerator;
       }();
-      _class$1h = IDGenerator;
-      IDGenerator.global = new _class$1h('global');
+      _class$1j = IDGenerator;
+      IDGenerator.global = new _class$1j('global');
 
       var tempCIDGenerator = new IDGenerator('TmpCId.');
       var aliasesTag = typeof Symbol === 'undefined' ? '__aliases__' : Symbol('[[Aliases]]');
@@ -4131,7 +4131,7 @@ System.register([], (function (exports, module) {
       }
       legacyCC.v4 = v4;
 
-      var _class$1g;
+      var _class$1i;
       var abs$5 = Math.abs;
       var _max$2 = Math.max;
       var _min$2 = Math.min;
@@ -4747,7 +4747,7 @@ System.register([], (function (exports, module) {
         };
         return Vec3;
       }(ValueType));
-      _class$1g = Vec3;
+      _class$1i = Vec3;
       Vec3.UNIT_X = freezeVec3(1, 0, 0);
       Vec3.UNIT_Y = freezeVec3(0, 1, 0);
       Vec3.UNIT_Z = freezeVec3(0, 0, 1);
@@ -4758,47 +4758,47 @@ System.register([], (function (exports, module) {
       Vec3.ONE = freezeVec3(1, 1, 1);
       Vec3.NEG_ONE = freezeVec3(-1, -1, -1);
       Vec3.slerp = function () {
-        var cacheV1 = new _class$1g();
-        var cacheV2 = new _class$1g();
-        var cacheV3 = new _class$1g();
+        var cacheV1 = new _class$1i();
+        var cacheV2 = new _class$1i();
+        var cacheV3 = new _class$1i();
         return function (out, from, to, t) {
           var EPSILON = 1e-5;
-          var lenFrom = _class$1g.len(from);
-          var lenTo = _class$1g.len(to);
+          var lenFrom = _class$1i.len(from);
+          var lenTo = _class$1i.len(to);
           if (lenFrom < EPSILON || lenTo < EPSILON) {
-            return _class$1g.lerp(out, from, to, t);
+            return _class$1i.lerp(out, from, to, t);
           }
           var lenLerped = lerp(lenFrom, lenTo, t);
-          var dot = _class$1g.dot(from, to) / (lenFrom * lenTo);
+          var dot = _class$1i.dot(from, to) / (lenFrom * lenTo);
           if (dot > 1.0 - EPSILON) {
-            return _class$1g.lerp(out, from, to, t);
+            return _class$1i.lerp(out, from, to, t);
           } else if (dot < -1 + EPSILON) {
-            var fromNormalized = _class$1g.multiplyScalar(cacheV1, from, 1.0 / lenFrom);
-            var _axis = _class$1g.generateOrthogonal(cacheV2, fromNormalized);
+            var fromNormalized = _class$1i.multiplyScalar(cacheV1, from, 1.0 / lenFrom);
+            var _axis = _class$1i.generateOrthogonal(cacheV2, fromNormalized);
             var _angle = PI$4 * t;
             rotateAxisAngle(cacheV3, fromNormalized, _axis, _angle);
-            _class$1g.multiplyScalar(out, cacheV3, lenLerped);
+            _class$1i.multiplyScalar(out, cacheV3, lenLerped);
             return out;
           } else {
             var dotClamped = dot;
             var theta = acos$4(dotClamped) * t;
-            var _fromNormalized = _class$1g.multiplyScalar(cacheV1, from, 1.0 / lenFrom);
-            var toNormalized = _class$1g.multiplyScalar(cacheV2, to, 1.0 / lenTo);
-            _class$1g.scaleAndAdd(cacheV3, toNormalized, _fromNormalized, -dotClamped);
-            _class$1g.normalize(cacheV3, cacheV3);
-            _class$1g.multiplyScalar(cacheV3, cacheV3, sin$5(theta));
-            _class$1g.scaleAndAdd(cacheV3, cacheV3, _fromNormalized, cos$6(theta));
-            _class$1g.multiplyScalar(out, cacheV3, lenLerped);
+            var _fromNormalized = _class$1i.multiplyScalar(cacheV1, from, 1.0 / lenFrom);
+            var toNormalized = _class$1i.multiplyScalar(cacheV2, to, 1.0 / lenTo);
+            _class$1i.scaleAndAdd(cacheV3, toNormalized, _fromNormalized, -dotClamped);
+            _class$1i.normalize(cacheV3, cacheV3);
+            _class$1i.multiplyScalar(cacheV3, cacheV3, sin$5(theta));
+            _class$1i.scaleAndAdd(cacheV3, cacheV3, _fromNormalized, cos$6(theta));
+            _class$1i.multiplyScalar(out, cacheV3, lenLerped);
             return out;
           }
         };
       }();
       Vec3.signedAngle = function () {
-        var cacheCross = new _class$1g();
+        var cacheCross = new _class$1i();
         return function (a, b, normal) {
-          var angle = _class$1g.angle(a, b);
-          var cross = _class$1g.cross(cacheCross, a, b);
-          var dot = _class$1g.dot(cross, normal);
+          var angle = _class$1i.angle(a, b);
+          var cross = _class$1i.cross(cacheCross, a, b);
+          var dot = _class$1i.dot(cross, normal);
           return dot < 0 ? -angle : angle;
         };
       }();
@@ -5332,7 +5332,7 @@ System.register([], (function (exports, module) {
         return new Vec4(encode_rounded.x / 255.0, encode_rounded.y / 255.0, encode_rounded.z / 255.0, e / 255.0);
       }
 
-      var _class$1f;
+      var _class$1h;
       var abs$4 = Math.abs;
       var max$9 = Math.max;
       var Mat3 = exports("Mat3", function (_ValueType) {
@@ -6073,8 +6073,8 @@ System.register([], (function (exports, module) {
         };
         return Mat3;
       }(ValueType));
-      _class$1f = Mat3;
-      Mat3.IDENTITY = Object.freeze(new _class$1f());
+      _class$1h = Mat3;
+      Mat3.IDENTITY = Object.freeze(new _class$1h());
       var v3_1$4 = new Vec3();
       var v3_2$1 = new Vec3();
       CCClass.fastDefine('cc.Mat3', Mat3, {
@@ -6090,7 +6090,7 @@ System.register([], (function (exports, module) {
       });
       legacyCC.Mat3 = Mat3;
 
-      var _class$1e;
+      var _class$1g;
       var abs$3 = Math.abs;
       var max$8 = Math.max;
       var min$6 = Math.min;
@@ -6632,8 +6632,8 @@ System.register([], (function (exports, module) {
         };
         return Quat;
       }(ValueType));
-      _class$1e = Quat;
-      Quat.IDENTITY = Object.freeze(new _class$1e());
+      _class$1g = Quat;
+      Quat.IDENTITY = Object.freeze(new _class$1g());
       var qt_1$1 = new Quat();
       var qt_2 = new Quat();
       var v3_1$3 = new Vec3();
@@ -6663,7 +6663,7 @@ System.register([], (function (exports, module) {
       }
       legacyCC.quat = quat;
 
-      var _class$1d;
+      var _class$1f;
       var objectFreeze = Object.freeze;
       var preTransforms = exports("preTransforms", objectFreeze([objectFreeze([1, 0, 0, 1]), objectFreeze([0, 1, -1, 0]), objectFreeze([-1, 0, 0, -1]), objectFreeze([0, -1, 1, 0])]));
       var abs$2 = Math.abs;
@@ -8366,8 +8366,8 @@ System.register([], (function (exports, module) {
         };
         return Mat4;
       }(ValueType));
-      _class$1d = Mat4;
-      Mat4.IDENTITY = Object.freeze(new _class$1d());
+      _class$1f = Mat4;
+      Mat4.IDENTITY = Object.freeze(new _class$1f());
       var v3_1$2 = new Vec3();
       var m3_1$1 = new Mat3();
       CCClass.fastDefine('cc.Mat4', Mat4, {
@@ -9163,7 +9163,7 @@ System.register([], (function (exports, module) {
         targetName: 'Mat4'
       }]);
 
-      var _class$1c;
+      var _class$1e;
       var Size$1 = exports("Size", function (_ValueType) {
         _inheritsLoose(Size, _ValueType);
         Size.lerp = function lerp(out, from, to, ratio) {
@@ -9230,9 +9230,9 @@ System.register([], (function (exports, module) {
         }]);
         return Size;
       }(ValueType));
-      _class$1c = Size$1;
-      Size$1.ZERO = Object.freeze(new _class$1c(0, 0));
-      Size$1.ONE = Object.freeze(new _class$1c(1, 1));
+      _class$1e = Size$1;
+      Size$1.ZERO = Object.freeze(new _class$1e(0, 0));
+      Size$1.ONE = Object.freeze(new _class$1e(1, 1));
       CCClass.fastDefine('cc.Size', Size$1, {
         width: 0,
         height: 0
@@ -14374,7 +14374,7 @@ System.register([], (function (exports, module) {
       });
       exports("_decorator", _decorator);
 
-      var _dec$1b, _class$1b, _class2$Y, _initializer$T, _initializer2$G, _initializer3$z, _initializer4$u, _class3$v, _BuiltinElementTypeTr;
+      var _dec$1d, _class$1d, _class2$$, _initializer$V, _initializer2$H, _initializer3$A, _initializer4$v, _class3$y, _BuiltinElementTypeTr;
       var StorageUnit = {
         Uint8: 0,
         Uint16: 1,
@@ -14403,12 +14403,12 @@ System.register([], (function (exports, module) {
           elementType: combined >> elementTypeBits
         };
       }
-      var CompactValueTypeArray = exports("CompactValueTypeArray", (_dec$1b = ccclass$4('cc.CompactValueTypeArray'), _dec$1b(_class$1b = (_class2$Y = (_class3$v = function () {
+      var CompactValueTypeArray = exports("CompactValueTypeArray", (_dec$1d = ccclass$4('cc.CompactValueTypeArray'), _dec$1d(_class$1d = (_class2$$ = (_class3$y = function () {
         function CompactValueTypeArray() {
-          this._byteOffset = _initializer$T && _initializer$T();
-          this._unitCount = _initializer2$G && _initializer2$G();
-          this._unitElement = _initializer3$z && _initializer3$z();
-          this._length = _initializer4$u && _initializer4$u();
+          this._byteOffset = _initializer$V && _initializer$V();
+          this._unitCount = _initializer2$H && _initializer2$H();
+          this._unitElement = _initializer3$A && _initializer3$A();
+          this._length = _initializer4$v && _initializer4$v();
         }
         CompactValueTypeArray.lengthFor = function lengthFor(values, elementType, unit) {
           var elementTraits = getElementTraits(elementType);
@@ -14444,15 +14444,15 @@ System.register([], (function (exports, module) {
           return result;
         };
         return CompactValueTypeArray;
-      }(), _class3$v.StorageUnit = StorageUnit, _class3$v.ElementType = ElementType, _class3$v), (_initializer$T = applyDecoratedInitializer(_class2$Y.prototype, "_byteOffset", [serializable$3], function () {
+      }(), _class3$y.StorageUnit = StorageUnit, _class3$y.ElementType = ElementType, _class3$y), (_initializer$V = applyDecoratedInitializer(_class2$$.prototype, "_byteOffset", [serializable$3], function () {
         return 0;
-      }), _initializer2$G = applyDecoratedInitializer(_class2$Y.prototype, "_unitCount", [serializable$3], function () {
+      }), _initializer2$H = applyDecoratedInitializer(_class2$$.prototype, "_unitCount", [serializable$3], function () {
         return 0;
-      }), _initializer3$z = applyDecoratedInitializer(_class2$Y.prototype, "_unitElement", [serializable$3], function () {
+      }), _initializer3$A = applyDecoratedInitializer(_class2$$.prototype, "_unitElement", [serializable$3], function () {
         return combineStorageUnitElementType(0, 0);
-      }), _initializer4$u = applyDecoratedInitializer(_class2$Y.prototype, "_length", [serializable$3], function () {
+      }), _initializer4$v = applyDecoratedInitializer(_class2$$.prototype, "_length", [serializable$3], function () {
         return 0;
-      })), _class2$Y)) || _class$1b));
+      })), _class2$$)) || _class$1d));
       function getElementTraits(elementType) {
         return BuiltinElementTypeTraits[elementType];
       }
@@ -15479,38 +15479,38 @@ System.register([], (function (exports, module) {
       }
       legacyCC.bezierByTime = bezierByTime;
 
-      var _dec$1a, _class$1a, _class2$X, _initializer$S, _initializer2$F, _initializer3$y, _dec2$K, _class4$5, _class5$4, _initializer4$t, _initializer5$n;
+      var _dec$1c, _class$1c, _class2$_, _initializer$U, _initializer2$G, _initializer3$z, _dec2$L, _class4$5, _class5$4, _initializer4$u, _initializer5$n;
       var QuatInterpolationMode = exports("QuatInterpolationMode", {
         SLERP: 0,
         CONSTANT: 1
       });
-      var QuatKeyframeValue = (_dec$1a = ccclass$4('cc.QuatKeyframeValue'), _dec$1a(_class$1a = uniquelyReferenced(_class$1a = (_class2$X = function QuatKeyframeValue(_temp) {
+      var QuatKeyframeValue = (_dec$1c = ccclass$4('cc.QuatKeyframeValue'), _dec$1c(_class$1c = uniquelyReferenced(_class$1c = (_class2$_ = function QuatKeyframeValue(_temp) {
         var _ref = _temp === undefined ? {} : _temp,
           value = _ref.value,
           interpolationMode = _ref.interpolationMode,
           easingMethod = _ref.easingMethod;
-        this.interpolationMode = _initializer$S && _initializer$S();
-        this.value = _initializer2$F && _initializer2$F();
-        this.easingMethod = _initializer3$y && _initializer3$y();
+        this.interpolationMode = _initializer$U && _initializer$U();
+        this.value = _initializer2$G && _initializer2$G();
+        this.easingMethod = _initializer3$z && _initializer3$z();
         this.value = value ? Quat.clone(value) : this.value;
         this.interpolationMode = interpolationMode !== null && interpolationMode !== undefined ? interpolationMode : this.interpolationMode;
         this.easingMethod = easingMethod !== null && easingMethod !== undefined ? easingMethod : this.easingMethod;
-      }, (_initializer$S = applyDecoratedInitializer(_class2$X.prototype, "interpolationMode", [serializable$3], function () {
+      }, (_initializer$U = applyDecoratedInitializer(_class2$_.prototype, "interpolationMode", [serializable$3], function () {
         return 0;
-      }), _initializer2$F = applyDecoratedInitializer(_class2$X.prototype, "value", [serializable$3], function () {
+      }), _initializer2$G = applyDecoratedInitializer(_class2$_.prototype, "value", [serializable$3], function () {
         return Quat.clone(Quat.IDENTITY);
-      }), _initializer3$y = applyDecoratedInitializer(_class2$X.prototype, "easingMethod", [serializable$3], function () {
+      }), _initializer3$z = applyDecoratedInitializer(_class2$_.prototype, "easingMethod", [serializable$3], function () {
         return 0;
-      })), _class2$X)) || _class$1a) || _class$1a);
+      })), _class2$_)) || _class$1c) || _class$1c);
       function createQuatKeyframeValue(params) {
         return new QuatKeyframeValue(params);
       }
-      var QuatCurve = exports("QuatCurve", (_dec2$K = ccclass$4('cc.QuatCurve'), _dec2$K(_class4$5 = (_class5$4 = function (_KeyframeCurve) {
+      var QuatCurve = exports("QuatCurve", (_dec2$L = ccclass$4('cc.QuatCurve'), _dec2$L(_class4$5 = (_class5$4 = function (_KeyframeCurve) {
         _inheritsLoose(QuatCurve, _KeyframeCurve);
         function QuatCurve() {
           var _this;
           _this = _KeyframeCurve.call(this) || this;
-          _this.preExtrapolation = _initializer4$t && _initializer4$t();
+          _this.preExtrapolation = _initializer4$u && _initializer4$u();
           _this.postExtrapolation = _initializer5$n && _initializer5$n();
           return _this;
         }
@@ -15744,7 +15744,7 @@ System.register([], (function (exports, module) {
           this._values = keyframeValues;
         };
         return QuatCurve;
-      }(KeyframeCurve), (_initializer4$t = applyDecoratedInitializer(_class5$4.prototype, "preExtrapolation", [serializable$3], function () {
+      }(KeyframeCurve), (_initializer4$u = applyDecoratedInitializer(_class5$4.prototype, "preExtrapolation", [serializable$3], function () {
         return 1;
       }), _initializer5$n = applyDecoratedInitializer(_class5$4.prototype, "postExtrapolation", [serializable$3], function () {
         return 1;
@@ -15758,8 +15758,8 @@ System.register([], (function (exports, module) {
       var EASING_METHOD_BEZIER_TAG = 255;
       var EASING_METHOD_BEZIER_COMPONENT_BYTES = 4;
 
-      var _dec$19, _class$19;
-      var ObjectCurve = exports("ObjectCurve", (_dec$19 = ccclass$4('cc.ObjectCurve'), _dec$19(_class$19 = function (_KeyframeCurve) {
+      var _dec$1b, _class$1b;
+      var ObjectCurve = exports("ObjectCurve", (_dec$1b = ccclass$4('cc.ObjectCurve'), _dec$1b(_class$1b = function (_KeyframeCurve) {
         _inheritsLoose(ObjectCurve, _KeyframeCurve);
         function ObjectCurve() {
           return _KeyframeCurve.apply(this, arguments) || this;
@@ -15774,7 +15774,7 @@ System.register([], (function (exports, module) {
           return this._values[iPrev];
         };
         return ObjectCurve;
-      }(KeyframeCurve)) || _class$19));
+      }(KeyframeCurve)) || _class$1b));
 
       var GradientMode = {
         Blend: 0,
@@ -23208,11 +23208,11 @@ System.register([], (function (exports, module) {
         transform: transform
       });
 
-      var _dec$18, _class$18, _class2$W, _initializer$R;
+      var _dec$1a, _class$1a, _class2$Z, _initializer$T;
       var ccclass$3 = ccclass$4,
         serializable$2 = serializable$3,
         property = property$1;
-      var Asset = exports("Asset", (_dec$18 = ccclass$3('cc.Asset'), _dec$18(_class$18 = (_class2$W = function (_Eventify) {
+      var Asset = exports("Asset", (_dec$1a = ccclass$3('cc.Asset'), _dec$1a(_class$1a = (_class2$Z = function (_Eventify) {
         _inheritsLoose(Asset, _Eventify);
         Asset.deserialize = function deserialize(data) {
           return cclegacy.deserialize(data);
@@ -23221,7 +23221,7 @@ System.register([], (function (exports, module) {
           var _this;
           _this = _Eventify.call(this, name) || this;
           _this.loaded = true;
-          _this._native = _initializer$R && _initializer$R();
+          _this._native = _initializer$T && _initializer$T();
           _this._nativeUrl = '';
           _this._file = null;
           _this._ref = 0;
@@ -23337,13 +23337,13 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Asset;
-      }(Eventify(CCObject)), (_initializer$R = applyDecoratedInitializer(_class2$W.prototype, "_native", [serializable$2], function () {
+      }(Eventify(CCObject)), (_initializer$T = applyDecoratedInitializer(_class2$Z.prototype, "_native", [serializable$2], function () {
         return '';
-      }), _applyDecoratedDescriptor(_class2$W.prototype, "_nativeAsset", [property], Object.getOwnPropertyDescriptor(_class2$W.prototype, "_nativeAsset"), _class2$W.prototype)), _class2$W)) || _class$18));
+      }), _applyDecoratedDescriptor(_class2$Z.prototype, "_nativeAsset", [property], Object.getOwnPropertyDescriptor(_class2$Z.prototype, "_nativeAsset"), _class2$Z.prototype)), _class2$Z)) || _class$1a));
       Asset.prototype.createNode = null;
       cclegacy.Asset = Asset;
 
-      var _dec$17, _class$17, _class2$V, _class3$u;
+      var _dec$19, _class$19, _class2$Y, _class3$x;
       var COMPRESSED_HEADER_LENGTH = 4;
       var COMPRESSED_MIPMAP_DATA_SIZE_LENGTH = 4;
       var COMPRESSED_MIPMAP_LEVEL_COUNT_LENGTH = 4;
@@ -23422,7 +23422,7 @@ System.register([], (function (exports, module) {
       function isNativeImage(imageSource) {
         return imageSource instanceof HTMLImageElement || imageSource instanceof HTMLCanvasElement || isImageBitmap(imageSource);
       }
-      var ImageAsset = exports("ImageAsset", (_dec$17 = ccclass$4('cc.ImageAsset'), _dec$17(_class$17 = (_class2$V = (_class3$u = function (_Asset) {
+      var ImageAsset = exports("ImageAsset", (_dec$19 = ccclass$4('cc.ImageAsset'), _dec$19(_class$19 = (_class2$Y = (_class3$x = function (_Asset) {
         _inheritsLoose(ImageAsset, _Asset);
         ImageAsset.mergeCompressedTextureMips = function mergeCompressedTextureMips(files) {
           var out = new Uint8Array(0);
@@ -23795,7 +23795,7 @@ System.register([], (function (exports, module) {
           }
         }]);
         return ImageAsset;
-      }(Asset), _class3$u.extnames = ['.png', '.jpg', '.jpeg', '.bmp', '.webp', '.pvr', '.pkm', '.astc'], _class3$u._sharedPlaceHolderCanvas = null, _class3$u), (_applyDecoratedDescriptor(_class2$V.prototype, "_nativeAsset", [override], Object.getOwnPropertyDescriptor(_class2$V.prototype, "_nativeAsset"), _class2$V.prototype)), _class2$V)) || _class$17));
+      }(Asset), _class3$x.extnames = ['.png', '.jpg', '.jpeg', '.bmp', '.webp', '.pvr', '.pkm', '.astc'], _class3$x._sharedPlaceHolderCanvas = null, _class3$x), (_applyDecoratedDescriptor(_class2$Y.prototype, "_nativeAsset", [override], Object.getOwnPropertyDescriptor(_class2$Y.prototype, "_nativeAsset"), _class2$Y.prototype)), _class2$Y)) || _class$19));
       function _getGlobalDevice() {
         return deviceManager.gfxDevice;
       }
@@ -23850,18 +23850,18 @@ System.register([], (function (exports, module) {
         NEAREST: 1
       };
 
-      var _dec$16, _class$16, _class2$U, _initializer$Q, _initializer2$E, _initializer3$x, _initializer4$s, _initializer5$m, _initializer6$g, _initializer7$e, _initializer8$e, _class3$t;
+      var _dec$18, _class$18, _class2$X, _initializer$S, _initializer2$F, _initializer3$y, _initializer4$t, _initializer5$m, _initializer6$g, _initializer7$e, _initializer8$e, _class3$w;
       ccenum(Format);
       var idGenerator$2 = new IDGenerator('Tex');
-      var TextureBase = (_dec$16 = ccclass$4('cc.TextureBase'), _dec$16(_class$16 = (_class2$U = (_class3$t = function (_Asset) {
+      var TextureBase = (_dec$18 = ccclass$4('cc.TextureBase'), _dec$18(_class$18 = (_class2$X = (_class3$w = function (_Asset) {
         _inheritsLoose(TextureBase, _Asset);
         function TextureBase(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
-          _this._format = _initializer$Q && _initializer$Q();
-          _this._minFilter = _initializer2$E && _initializer2$E();
-          _this._magFilter = _initializer3$x && _initializer3$x();
-          _this._mipFilter = _initializer4$s && _initializer4$s();
+          _this._format = _initializer$S && _initializer$S();
+          _this._minFilter = _initializer2$F && _initializer2$F();
+          _this._magFilter = _initializer3$y && _initializer3$y();
+          _this._mipFilter = _initializer4$t && _initializer4$t();
           _this._wrapS = _initializer5$m && _initializer5$m();
           _this._wrapT = _initializer6$g && _initializer6$g();
           _this._wrapR = _initializer7$e && _initializer7$e();
@@ -24007,58 +24007,58 @@ System.register([], (function (exports, module) {
           }
         }]);
         return TextureBase;
-      }(Asset), _class3$t.PixelFormat = PixelFormat, _class3$t.WrapMode = WrapMode, _class3$t.Filter = TextureFilter, _class3$t), (_initializer$Q = applyDecoratedInitializer(_class2$U.prototype, "_format", [serializable$3], function () {
+      }(Asset), _class3$w.PixelFormat = PixelFormat, _class3$w.WrapMode = WrapMode, _class3$w.Filter = TextureFilter, _class3$w), (_initializer$S = applyDecoratedInitializer(_class2$X.prototype, "_format", [serializable$3], function () {
         return 35;
-      }), _initializer2$E = applyDecoratedInitializer(_class2$U.prototype, "_minFilter", [serializable$3], function () {
+      }), _initializer2$F = applyDecoratedInitializer(_class2$X.prototype, "_minFilter", [serializable$3], function () {
         return 2;
-      }), _initializer3$x = applyDecoratedInitializer(_class2$U.prototype, "_magFilter", [serializable$3], function () {
+      }), _initializer3$y = applyDecoratedInitializer(_class2$X.prototype, "_magFilter", [serializable$3], function () {
         return 2;
-      }), _initializer4$s = applyDecoratedInitializer(_class2$U.prototype, "_mipFilter", [serializable$3], function () {
+      }), _initializer4$t = applyDecoratedInitializer(_class2$X.prototype, "_mipFilter", [serializable$3], function () {
         return 0;
-      }), _initializer5$m = applyDecoratedInitializer(_class2$U.prototype, "_wrapS", [serializable$3], function () {
+      }), _initializer5$m = applyDecoratedInitializer(_class2$X.prototype, "_wrapS", [serializable$3], function () {
         return 0;
-      }), _initializer6$g = applyDecoratedInitializer(_class2$U.prototype, "_wrapT", [serializable$3], function () {
+      }), _initializer6$g = applyDecoratedInitializer(_class2$X.prototype, "_wrapT", [serializable$3], function () {
         return 0;
-      }), _initializer7$e = applyDecoratedInitializer(_class2$U.prototype, "_wrapR", [serializable$3], function () {
+      }), _initializer7$e = applyDecoratedInitializer(_class2$X.prototype, "_wrapR", [serializable$3], function () {
         return 0;
-      }), _initializer8$e = applyDecoratedInitializer(_class2$U.prototype, "_anisotropy", [serializable$3], function () {
+      }), _initializer8$e = applyDecoratedInitializer(_class2$X.prototype, "_anisotropy", [serializable$3], function () {
         return 0;
-      })), _class2$U)) || _class$16);
+      })), _class2$X)) || _class$18);
       cclegacy.TextureBase = TextureBase;
 
-      var _dec$15, _class$15, _dec2$J, _class2$T, _dec3$y, _class3$s;
-      var Script = exports("Script", (_dec$15 = ccclass$4('cc.Script'), _dec$15(_class$15 = function (_Asset) {
+      var _dec$17, _class$17, _dec2$K, _class2$W, _dec3$z, _class3$v;
+      var Script = exports("Script", (_dec$17 = ccclass$4('cc.Script'), _dec$17(_class$17 = function (_Asset) {
         _inheritsLoose(Script, _Asset);
         function Script(name) {
           return _Asset.call(this, name) || this;
         }
         return Script;
-      }(Asset)) || _class$15));
+      }(Asset)) || _class$17));
       cclegacy._Script = Script;
-      var JavaScript = exports("JavaScript", (_dec2$J = ccclass$4('cc.JavaScript'), _dec2$J(_class2$T = function (_Script) {
+      var JavaScript = exports("JavaScript", (_dec2$K = ccclass$4('cc.JavaScript'), _dec2$K(_class2$W = function (_Script) {
         _inheritsLoose(JavaScript, _Script);
         function JavaScript(name) {
           return _Script.call(this, name) || this;
         }
         return JavaScript;
-      }(Script)) || _class2$T));
+      }(Script)) || _class2$W));
       cclegacy._JavaScript = JavaScript;
-      var TypeScript = exports("TypeScript", (_dec3$y = ccclass$4('cc.TypeScript'), _dec3$y(_class3$s = function (_Script2) {
+      var TypeScript = exports("TypeScript", (_dec3$z = ccclass$4('cc.TypeScript'), _dec3$z(_class3$v = function (_Script2) {
         _inheritsLoose(TypeScript, _Script2);
         function TypeScript(name) {
           return _Script2.call(this, name) || this;
         }
         return TypeScript;
-      }(Script)) || _class3$s));
+      }(Script)) || _class3$v));
       cclegacy._TypeScript = TypeScript;
 
-      var _dec$14, _class$14, _class2$S, _initializer$P, _initializer2$D, _initializer3$w, _initializer4$r, _initializer5$l;
-      var EventHandler = exports("EventHandler", (_dec$14 = ccclass$4('cc.ClickEvent'), _dec$14(_class$14 = (_class2$S = function () {
+      var _dec$16, _class$16, _class2$V, _initializer$R, _initializer2$E, _initializer3$x, _initializer4$s, _initializer5$l;
+      var EventHandler = exports("EventHandler", (_dec$16 = ccclass$4('cc.ClickEvent'), _dec$16(_class$16 = (_class2$V = function () {
         function EventHandler() {
-          this.target = _initializer$P && _initializer$P();
-          this.component = _initializer2$D && _initializer2$D();
-          this._componentId = _initializer3$w && _initializer3$w();
-          this.handler = _initializer4$r && _initializer4$r();
+          this.target = _initializer$R && _initializer$R();
+          this.component = _initializer2$E && _initializer2$E();
+          this._componentId = _initializer3$x && _initializer3$x();
+          this.handler = _initializer4$s && _initializer4$s();
           this.customEventData = _initializer5$l && _initializer5$l();
         }
         EventHandler.emitEvents = function emitEvents(events) {
@@ -24120,30 +24120,30 @@ System.register([], (function (exports, module) {
           }
         }]);
         return EventHandler;
-      }(), (_initializer$P = applyDecoratedInitializer(_class2$S.prototype, "target", [serializable$3], function () {
+      }(), (_initializer$R = applyDecoratedInitializer(_class2$V.prototype, "target", [serializable$3], function () {
         return null;
-      }), _initializer2$D = applyDecoratedInitializer(_class2$S.prototype, "component", [serializable$3], function () {
+      }), _initializer2$E = applyDecoratedInitializer(_class2$V.prototype, "component", [serializable$3], function () {
         return '';
-      }), _initializer3$w = applyDecoratedInitializer(_class2$S.prototype, "_componentId", [serializable$3], function () {
+      }), _initializer3$x = applyDecoratedInitializer(_class2$V.prototype, "_componentId", [serializable$3], function () {
         return '';
-      }), _initializer4$r = applyDecoratedInitializer(_class2$S.prototype, "handler", [serializable$3], function () {
+      }), _initializer4$s = applyDecoratedInitializer(_class2$V.prototype, "handler", [serializable$3], function () {
         return '';
-      }), _initializer5$l = applyDecoratedInitializer(_class2$S.prototype, "customEventData", [serializable$3], function () {
+      }), _initializer5$l = applyDecoratedInitializer(_class2$V.prototype, "customEventData", [serializable$3], function () {
         return '';
-      })), _class2$S)) || _class$14));
+      })), _class2$V)) || _class$16));
 
-      var _dec$13, _dec2$I, _class$13, _class2$R, _initializer$O, _initializer2$C, _initializer3$v, _class3$r;
+      var _dec$15, _dec2$J, _class$15, _class2$U, _initializer$Q, _initializer2$D, _initializer3$w, _class3$u;
       var idGenerator$1 = new IDGenerator('Comp');
       var IsOnLoadCalled$1 = 16384;
       var NullNode = null;
-      var Component = exports("Component", (_dec$13 = ccclass$4('cc.Component'), _dec2$I = type$3(Script), _dec$13(_class$13 = (_class2$R = (_class3$r = function (_CCObject) {
+      var Component = exports("Component", (_dec$15 = ccclass$4('cc.Component'), _dec2$J = type$3(Script), _dec$15(_class$15 = (_class2$U = (_class3$u = function (_CCObject) {
         _inheritsLoose(Component, _CCObject);
         function Component() {
           var _this;
           _this = _CCObject.call(this) || this;
-          _this.node = _initializer$O && _initializer$O();
-          _this._enabled = _initializer2$C && _initializer2$C();
-          _this.__prefab = _initializer3$v && _initializer3$v();
+          _this.node = _initializer$Q && _initializer$Q();
+          _this._enabled = _initializer2$D && _initializer2$D();
+          _this.__prefab = _initializer3$w && _initializer3$w();
           _this._sceneGetter = null;
           _this._id = idGenerator$1.getNewId();
           return _this;
@@ -24327,13 +24327,13 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Component;
-      }(CCObject), _class3$r.EventHandler = EventHandler, _class3$r._executionOrder = 0, _class3$r._requireComponent = null, _class3$r.system = null, _class3$r), (_applyDecoratedDescriptor(_class2$R.prototype, "__scriptAsset", [_dec2$I], Object.getOwnPropertyDescriptor(_class2$R.prototype, "__scriptAsset"), _class2$R.prototype), _initializer$O = applyDecoratedInitializer(_class2$R.prototype, "node", [serializable$3], function () {
+      }(CCObject), _class3$u.EventHandler = EventHandler, _class3$u._executionOrder = 0, _class3$u._requireComponent = null, _class3$u.system = null, _class3$u), (_applyDecoratedDescriptor(_class2$U.prototype, "__scriptAsset", [_dec2$J], Object.getOwnPropertyDescriptor(_class2$U.prototype, "__scriptAsset"), _class2$U.prototype), _initializer$Q = applyDecoratedInitializer(_class2$U.prototype, "node", [serializable$3], function () {
         return NullNode;
-      }), _initializer2$C = applyDecoratedInitializer(_class2$R.prototype, "_enabled", [serializable$3], function () {
+      }), _initializer2$D = applyDecoratedInitializer(_class2$U.prototype, "_enabled", [serializable$3], function () {
         return true;
-      }), _initializer3$v = applyDecoratedInitializer(_class2$R.prototype, "__prefab", [serializable$3], function () {
+      }), _initializer3$w = applyDecoratedInitializer(_class2$U.prototype, "__prefab", [serializable$3], function () {
         return null;
-      })), _class2$R)) || _class$13));
+      })), _class2$U)) || _class$15));
       value(Component, '_registerEditorProps', function (cls, props) {
         var reqComp = props.requireComponent;
         if (reqComp) {
@@ -24349,8 +24349,8 @@ System.register([], (function (exports, module) {
       });
       legacyCC.Component = Component;
 
-      var _dec$12, _class$12, _class2$Q, _initializer$N;
-      var MissingScript = exports("MissingScript", (_dec$12 = ccclass$4('cc.MissingScript'), _dec$12(_class$12 = (_class2$Q = function (_Component) {
+      var _dec$14, _class$14, _class2$T, _initializer$P;
+      var MissingScript = exports("MissingScript", (_dec$14 = ccclass$4('cc.MissingScript'), _dec$14(_class$14 = (_class2$T = function (_Component) {
         _inheritsLoose(MissingScript, _Component);
         MissingScript.safeFindClass = function safeFindClass(id) {
           var cls = getClassById(id);
@@ -24363,7 +24363,7 @@ System.register([], (function (exports, module) {
         function MissingScript() {
           var _this;
           _this = _Component.call(this) || this;
-          _this._$erialized = _initializer$N && _initializer$N();
+          _this._$erialized = _initializer$P && _initializer$P();
           return _this;
         }
         var _proto = MissingScript.prototype;
@@ -24371,9 +24371,9 @@ System.register([], (function (exports, module) {
           warnID(4600, this.node.name);
         };
         return MissingScript;
-      }(Component), (_initializer$N = applyDecoratedInitializer(_class2$Q.prototype, "_$erialized", [serializable$3, editorOnly], function () {
+      }(Component), (_initializer$P = applyDecoratedInitializer(_class2$T.prototype, "_$erialized", [serializable$3, editorOnly], function () {
         return null;
-      })), _class2$Q)) || _class$12));
+      })), _class2$T)) || _class$14));
       cclegacy._MissingScript = MissingScript;
       try {
         var props = MissingScript.__values__;
@@ -25840,7 +25840,7 @@ System.register([], (function (exports, module) {
       DependUtil._instance = undefined;
       var dependUtil = DependUtil.instance;
 
-      var _dec$11, _class$11;
+      var _dec$13, _class$13;
       var _regions = [new BufferTextureCopy()];
       function getMipLevel(width, height) {
         var size = Math.max(width, height);
@@ -25861,7 +25861,7 @@ System.register([], (function (exports, module) {
         }
         return true;
       }
-      var SimpleTexture = (_dec$11 = ccclass$4('cc.SimpleTexture'), _dec$11(_class$11 = function (_TextureBase) {
+      var SimpleTexture = (_dec$13 = ccclass$4('cc.SimpleTexture'), _dec$13(_class$13 = function (_TextureBase) {
         _inheritsLoose(SimpleTexture, _TextureBase);
         function SimpleTexture(name) {
           var _this;
@@ -26037,16 +26037,16 @@ System.register([], (function (exports, module) {
           }
         }]);
         return SimpleTexture;
-      }(TextureBase)) || _class$11);
+      }(TextureBase)) || _class$13);
       cclegacy.SimpleTexture = SimpleTexture;
 
-      var _dec$10, _dec2$H, _class$10, _class2$P, _initializer$M;
-      var Texture2D = exports("Texture2D", (_dec$10 = ccclass$4('cc.Texture2D'), _dec2$H = type$3([ImageAsset]), _dec$10(_class$10 = (_class2$P = function (_SimpleTexture) {
+      var _dec$12, _dec2$I, _class$12, _class2$S, _initializer$O;
+      var Texture2D = exports("Texture2D", (_dec$12 = ccclass$4('cc.Texture2D'), _dec2$I = type$3([ImageAsset]), _dec$12(_class$12 = (_class2$S = function (_SimpleTexture) {
         _inheritsLoose(Texture2D, _SimpleTexture);
         function Texture2D(name) {
           var _this;
           _this = _SimpleTexture.call(this, name) || this;
-          _this._mipmaps = _initializer$M && _initializer$M();
+          _this._mipmaps = _initializer$O && _initializer$O();
           _this._generatedMipmaps = [];
           return _this;
         }
@@ -26218,9 +26218,9 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Texture2D;
-      }(SimpleTexture), (_initializer$M = applyDecoratedInitializer(_class2$P.prototype, "_mipmaps", [_dec2$H], function () {
+      }(SimpleTexture), (_initializer$O = applyDecoratedInitializer(_class2$S.prototype, "_mipmaps", [_dec2$I], function () {
         return [];
-      })), _class2$P)) || _class$10));
+      })), _class2$S)) || _class$12));
       cclegacy.Texture2D = Texture2D;
 
       var space$1 = 2;
@@ -27822,7 +27822,7 @@ System.register([], (function (exports, module) {
         }
       }
 
-      var _dec$$, _dec2$G, _dec3$x, _class$$, _class2$O, _initializer$L, _initializer2$B, _initializer3$u, _initializer4$q, _initializer5$k, _initializer6$f, _initializer7$d, _initializer8$d, _initializer9$d, _initializer10$d, _initializer11$c, _class3$q;
+      var _dec$11, _dec2$H, _dec3$y, _class$11, _class2$R, _initializer$N, _initializer2$C, _initializer3$v, _initializer4$r, _initializer5$k, _initializer6$f, _initializer7$d, _initializer8$d, _initializer9$d, _initializer10$d, _initializer11$c, _class3$t;
       var Destroying = 128;
       var DontDestroy = 64;
       var Deactivating$1 = 256;
@@ -27853,7 +27853,7 @@ System.register([], (function (exports, module) {
       var reserveContentsForAllSyncablePrefabTag = Symbol('ReserveContentsForAllSyncablePrefab');
       var globalFlagChangeVersion = 0;
       var skewCompCount = 0;
-      var Node$1 = (_dec$$ = ccclass$4('cc.Node'), _dec2$G = type$3(Vec3), _dec3$x = type$3(MobilityMode), _dec$$(_class$$ = (_class2$O = (_class3$q = function (_CCObject) {
+      var Node$1 = (_dec$11 = ccclass$4('cc.Node'), _dec2$H = type$3(Vec3), _dec3$y = type$3(MobilityMode), _dec$11(_class$11 = (_class2$R = (_class3$t = function (_CCObject) {
         _inheritsLoose(Node, _CCObject);
         var _proto = Node.prototype;
         _proto._setActiveInHierarchy = function _setActiveInHierarchy(v) {
@@ -28417,10 +28417,10 @@ System.register([], (function (exports, module) {
           var _this;
           if (name === undefined) name = 'New Node';
           _this = _CCObject.call(this, name) || this;
-          _this._parent = _initializer$L && _initializer$L();
-          _this._children = _initializer2$B && _initializer2$B();
-          _this._active = _initializer3$u && _initializer3$u();
-          _this._components = _initializer4$q && _initializer4$q();
+          _this._parent = _initializer$N && _initializer$N();
+          _this._children = _initializer2$C && _initializer2$C();
+          _this._active = _initializer3$v && _initializer3$v();
+          _this._components = _initializer4$r && _initializer4$r();
           _this._prefab = _initializer5$k && _initializer5$k();
           _this._scene = null;
           _this._activeInHierarchy = false;
@@ -29312,32 +29312,32 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Node;
-      }(CCObject), _class3$q.idGenerator = idGenerator, _class3$q._stacks = [[]], _class3$q._stackId = 0, _class3$q.EventType = NodeEventType, _class3$q.NodeSpace = NodeSpace, _class3$q.TransformDirtyBit = TransformBit, _class3$q.TransformBit = TransformBit, _class3$q.reserveContentsForAllSyncablePrefabTag = reserveContentsForAllSyncablePrefabTag, _class3$q.ClearFrame = 0, _class3$q.ClearRound = 1000, _class3$q), (_applyDecoratedDescriptor(_class2$O.prototype, "_persistNode", [property$1], Object.getOwnPropertyDescriptor(_class2$O.prototype, "_persistNode"), _class2$O.prototype), _initializer$L = applyDecoratedInitializer(_class2$O.prototype, "_parent", [serializable$3], function () {
+      }(CCObject), _class3$t.idGenerator = idGenerator, _class3$t._stacks = [[]], _class3$t._stackId = 0, _class3$t.EventType = NodeEventType, _class3$t.NodeSpace = NodeSpace, _class3$t.TransformDirtyBit = TransformBit, _class3$t.TransformBit = TransformBit, _class3$t.reserveContentsForAllSyncablePrefabTag = reserveContentsForAllSyncablePrefabTag, _class3$t.ClearFrame = 0, _class3$t.ClearRound = 1000, _class3$t), (_applyDecoratedDescriptor(_class2$R.prototype, "_persistNode", [property$1], Object.getOwnPropertyDescriptor(_class2$R.prototype, "_persistNode"), _class2$R.prototype), _initializer$N = applyDecoratedInitializer(_class2$R.prototype, "_parent", [serializable$3], function () {
         return null;
-      }), _initializer2$B = applyDecoratedInitializer(_class2$O.prototype, "_children", [serializable$3], function () {
+      }), _initializer2$C = applyDecoratedInitializer(_class2$R.prototype, "_children", [serializable$3], function () {
         return [];
-      }), _initializer3$u = applyDecoratedInitializer(_class2$O.prototype, "_active", [serializable$3], function () {
+      }), _initializer3$v = applyDecoratedInitializer(_class2$R.prototype, "_active", [serializable$3], function () {
         return true;
-      }), _initializer4$q = applyDecoratedInitializer(_class2$O.prototype, "_components", [serializable$3], function () {
+      }), _initializer4$r = applyDecoratedInitializer(_class2$R.prototype, "_components", [serializable$3], function () {
         return [];
-      }), _initializer5$k = applyDecoratedInitializer(_class2$O.prototype, "_prefab", [serializable$3], function () {
+      }), _initializer5$k = applyDecoratedInitializer(_class2$R.prototype, "_prefab", [serializable$3], function () {
         return null;
-      }), _initializer6$f = applyDecoratedInitializer(_class2$O.prototype, "_lpos", [serializable$3], function () {
+      }), _initializer6$f = applyDecoratedInitializer(_class2$R.prototype, "_lpos", [serializable$3], function () {
         return new Vec3();
-      }), _initializer7$d = applyDecoratedInitializer(_class2$O.prototype, "_lrot", [serializable$3], function () {
+      }), _initializer7$d = applyDecoratedInitializer(_class2$R.prototype, "_lrot", [serializable$3], function () {
         return new Quat();
-      }), _initializer8$d = applyDecoratedInitializer(_class2$O.prototype, "_lscale", [serializable$3], function () {
+      }), _initializer8$d = applyDecoratedInitializer(_class2$R.prototype, "_lscale", [serializable$3], function () {
         return new Vec3(1, 1, 1);
-      }), _initializer9$d = applyDecoratedInitializer(_class2$O.prototype, "_mobility", [serializable$3], function () {
+      }), _initializer9$d = applyDecoratedInitializer(_class2$R.prototype, "_mobility", [serializable$3], function () {
         return MobilityMode.Static;
-      }), _initializer10$d = applyDecoratedInitializer(_class2$O.prototype, "_layer", [serializable$3], function () {
+      }), _initializer10$d = applyDecoratedInitializer(_class2$R.prototype, "_layer", [serializable$3], function () {
         return Layers.Enum.DEFAULT;
-      }), _initializer11$c = applyDecoratedInitializer(_class2$O.prototype, "_euler", [serializable$3], function () {
+      }), _initializer11$c = applyDecoratedInitializer(_class2$R.prototype, "_euler", [serializable$3], function () {
         return new Vec3();
-      }), _applyDecoratedDescriptor(_class2$O.prototype, "eulerAngles", [_dec2$G], Object.getOwnPropertyDescriptor(_class2$O.prototype, "eulerAngles"), _class2$O.prototype), _applyDecoratedDescriptor(_class2$O.prototype, "mobility", [_dec3$x], Object.getOwnPropertyDescriptor(_class2$O.prototype, "mobility"), _class2$O.prototype)), _class2$O)) || _class$$); exports({ Node: Node$1, BaseNode: Node$1 });
+      }), _applyDecoratedDescriptor(_class2$R.prototype, "eulerAngles", [_dec2$H], Object.getOwnPropertyDescriptor(_class2$R.prototype, "eulerAngles"), _class2$R.prototype), _applyDecoratedDescriptor(_class2$R.prototype, "mobility", [_dec3$y], Object.getOwnPropertyDescriptor(_class2$R.prototype, "mobility"), _class2$R.prototype)), _class2$R)) || _class$11); exports({ Node: Node$1, BaseNode: Node$1 });
       cclegacy.Node = Node$1;
 
-      var _dec$_, _class$_, _class2$N, _initializer$K, _initializer2$A, _initializer3$t, _initializer4$p, _class3$p;
+      var _dec$10, _class$10, _class2$Q, _initializer$M, _initializer2$B, _initializer3$u, _initializer4$q, _class3$s;
       var FaceIndex = {
         right: 0,
         left: 1,
@@ -29346,15 +29346,15 @@ System.register([], (function (exports, module) {
         front: 4,
         back: 5
       };
-      var TextureCube = exports("TextureCube", (_dec$_ = ccclass$4('cc.TextureCube'), _dec$_(_class$_ = (_class2$N = (_class3$p = function (_SimpleTexture) {
+      var TextureCube = exports("TextureCube", (_dec$10 = ccclass$4('cc.TextureCube'), _dec$10(_class$10 = (_class2$Q = (_class3$s = function (_SimpleTexture) {
         _inheritsLoose(TextureCube, _SimpleTexture);
         function TextureCube(name) {
           var _this;
           _this = _SimpleTexture.call(this, name) || this;
-          _this.isRGBE = _initializer$K && _initializer$K();
-          _this._mipmapAtlas = _initializer2$A && _initializer2$A();
-          _this._mipmapMode = _initializer3$t && _initializer3$t();
-          _this._mipmaps = _initializer4$p && _initializer4$p();
+          _this.isRGBE = _initializer$M && _initializer$M();
+          _this._mipmapAtlas = _initializer2$B && _initializer2$B();
+          _this._mipmapMode = _initializer3$u && _initializer3$u();
+          _this._mipmaps = _initializer4$q && _initializer4$q();
           _this._generatedMipmaps = [];
           return _this;
         }
@@ -29704,15 +29704,15 @@ System.register([], (function (exports, module) {
           }
         }]);
         return TextureCube;
-      }(SimpleTexture), _class3$p.FaceIndex = FaceIndex, _class3$p), (_initializer$K = applyDecoratedInitializer(_class2$N.prototype, "isRGBE", [serializable$3], function () {
+      }(SimpleTexture), _class3$s.FaceIndex = FaceIndex, _class3$s), (_initializer$M = applyDecoratedInitializer(_class2$Q.prototype, "isRGBE", [serializable$3], function () {
         return false;
-      }), _initializer2$A = applyDecoratedInitializer(_class2$N.prototype, "_mipmapAtlas", [serializable$3], function () {
+      }), _initializer2$B = applyDecoratedInitializer(_class2$Q.prototype, "_mipmapAtlas", [serializable$3], function () {
         return null;
-      }), _initializer3$t = applyDecoratedInitializer(_class2$N.prototype, "_mipmapMode", [serializable$3], function () {
+      }), _initializer3$u = applyDecoratedInitializer(_class2$Q.prototype, "_mipmapMode", [serializable$3], function () {
         return 0;
-      }), _initializer4$p = applyDecoratedInitializer(_class2$N.prototype, "_mipmaps", [serializable$3], function () {
+      }), _initializer4$q = applyDecoratedInitializer(_class2$Q.prototype, "_mipmaps", [serializable$3], function () {
         return [];
-      })), _class2$N)) || _class$_));
+      })), _class2$Q)) || _class$10));
       legacyCC.TextureCube = TextureCube;
       function _forEachFace(mipmap, callback) {
         callback(mipmap.front, 4);
@@ -29816,7 +29816,7 @@ System.register([], (function (exports, module) {
       Ambient.SKY_ILLUM = 20000.0;
       cclegacy.Ambient = Ambient;
 
-      var _class$Z, _class2$M, _class3$o, _class4$4, _class5$3, _class6$1, _class7$2, _class8$2, _class10$2, _class11$2, _class12, _class13$2, _class14$2, _class15;
+      var _class$$, _class2$P, _class3$r, _class4$4, _class5$3, _class6$1, _class7$2, _class8$2, _class10$2, _class11$2, _class12, _class13$2, _class14$2, _class15;
       var PIPELINE_FLOW_MAIN = 'MainFlow';
       var PIPELINE_FLOW_FORWARD = 'ForwardFlow';
       var PIPELINE_FLOW_SHADOW = 'ShadowFlow';
@@ -29892,7 +29892,7 @@ System.register([], (function (exports, module) {
         SIZE: 80
       };
       var UBOGlobal = function UBOGlobal() {};
-      _class$Z = UBOGlobal;
+      _class$$ = UBOGlobal;
       UBOGlobal.TIME_OFFSET = 0;
       UBOGlobal.SCREEN_SIZE_OFFSET = 4;
       UBOGlobal.NATIVE_SIZE_OFFSET = 8;
@@ -29902,8 +29902,8 @@ System.register([], (function (exports, module) {
       UBOGlobal.SIZE = 80;
       UBOGlobal.NAME = 'CCGlobal';
       UBOGlobal.BINDING = 0;
-      UBOGlobal.DESCRIPTOR = new DescriptorSetLayoutBinding(_class$Z.BINDING, 1, 1, 63);
-      UBOGlobal.LAYOUT = new UniformBlock(0, _class$Z.BINDING, _class$Z.NAME, [new Uniform('cc_time', 16, 1), new Uniform('cc_screenSize', 16, 1), new Uniform('cc_nativeSize', 16, 1), new Uniform('cc_probeInfo', 16, 1), new Uniform('cc_debug_view_mode', 16, 1)], 1);
+      UBOGlobal.DESCRIPTOR = new DescriptorSetLayoutBinding(_class$$.BINDING, 1, 1, 63);
+      UBOGlobal.LAYOUT = new UniformBlock(0, _class$$.BINDING, _class$$.NAME, [new Uniform('cc_time', 16, 1), new Uniform('cc_screenSize', 16, 1), new Uniform('cc_nativeSize', 16, 1), new Uniform('cc_probeInfo', 16, 1), new Uniform('cc_debug_view_mode', 16, 1)], 1);
       globalDescriptorSetLayout.layouts[UBOGlobal.NAME] = UBOGlobal.LAYOUT;
       globalDescriptorSetLayout.bindings[UBOGlobal.BINDING] = UBOGlobal.DESCRIPTOR;
       var UBOCameraEnum = {
@@ -29930,7 +29930,7 @@ System.register([], (function (exports, module) {
         SIZE: 592
       };
       var UBOCamera = function UBOCamera() {};
-      _class2$M = UBOCamera;
+      _class2$P = UBOCamera;
       UBOCamera.MAT_VIEW_OFFSET = 0;
       UBOCamera.MAT_VIEW_INV_OFFSET = 16;
       UBOCamera.MAT_PROJ_OFFSET = 32;
@@ -29954,8 +29954,8 @@ System.register([], (function (exports, module) {
       UBOCamera.SIZE = 592;
       UBOCamera.NAME = 'CCCamera';
       UBOCamera.BINDING = 1;
-      UBOCamera.DESCRIPTOR = new DescriptorSetLayoutBinding(_class2$M.BINDING, 1, 1, 63);
-      UBOCamera.LAYOUT = new UniformBlock(0, _class2$M.BINDING, _class2$M.NAME, [new Uniform('cc_matView', 25, 1), new Uniform('cc_matViewInv', 25, 1), new Uniform('cc_matProj', 25, 1), new Uniform('cc_matProjInv', 25, 1), new Uniform('cc_matViewProj', 25, 1), new Uniform('cc_matViewProjInv', 25, 1), new Uniform('cc_cameraPos', 16, 1), new Uniform('cc_surfaceTransform', 16, 1), new Uniform('cc_screenScale', 16, 1), new Uniform('cc_exposure', 16, 1), new Uniform('cc_mainLitDir', 16, 1), new Uniform('cc_mainLitColor', 16, 1), new Uniform('cc_ambientSky', 16, 1), new Uniform('cc_ambientGround', 16, 1), new Uniform('cc_fogColor', 16, 1), new Uniform('cc_fogBase', 16, 1), new Uniform('cc_fogAdd', 16, 1), new Uniform('cc_nearFar', 16, 1), new Uniform('cc_viewPort', 16, 1)], 1);
+      UBOCamera.DESCRIPTOR = new DescriptorSetLayoutBinding(_class2$P.BINDING, 1, 1, 63);
+      UBOCamera.LAYOUT = new UniformBlock(0, _class2$P.BINDING, _class2$P.NAME, [new Uniform('cc_matView', 25, 1), new Uniform('cc_matViewInv', 25, 1), new Uniform('cc_matProj', 25, 1), new Uniform('cc_matProjInv', 25, 1), new Uniform('cc_matViewProj', 25, 1), new Uniform('cc_matViewProjInv', 25, 1), new Uniform('cc_cameraPos', 16, 1), new Uniform('cc_surfaceTransform', 16, 1), new Uniform('cc_screenScale', 16, 1), new Uniform('cc_exposure', 16, 1), new Uniform('cc_mainLitDir', 16, 1), new Uniform('cc_mainLitColor', 16, 1), new Uniform('cc_ambientSky', 16, 1), new Uniform('cc_ambientGround', 16, 1), new Uniform('cc_fogColor', 16, 1), new Uniform('cc_fogBase', 16, 1), new Uniform('cc_fogAdd', 16, 1), new Uniform('cc_nearFar', 16, 1), new Uniform('cc_viewPort', 16, 1)], 1);
       globalDescriptorSetLayout.layouts[UBOCamera.NAME] = UBOCamera.LAYOUT;
       globalDescriptorSetLayout.bindings[UBOCamera.BINDING] = UBOCamera.DESCRIPTOR;
       var UBOShadowEnum = {
@@ -29973,7 +29973,7 @@ System.register([], (function (exports, module) {
         SIZE: 256
       };
       var UBOShadow = function UBOShadow() {};
-      _class3$o = UBOShadow;
+      _class3$r = UBOShadow;
       UBOShadow.MAT_LIGHT_VIEW_OFFSET = 0;
       UBOShadow.MAT_LIGHT_VIEW_PROJ_OFFSET = 16;
       UBOShadow.SHADOW_INV_PROJ_DEPTH_INFO_OFFSET = 32;
@@ -29988,8 +29988,8 @@ System.register([], (function (exports, module) {
       UBOShadow.SIZE = 256;
       UBOShadow.NAME = 'CCShadow';
       UBOShadow.BINDING = 2;
-      UBOShadow.DESCRIPTOR = new DescriptorSetLayoutBinding(_class3$o.BINDING, 1, 1, 63);
-      UBOShadow.LAYOUT = new UniformBlock(0, _class3$o.BINDING, _class3$o.NAME, [new Uniform('cc_matLightView', 25, 1), new Uniform('cc_matLightViewProj', 25, 1), new Uniform('cc_shadowInvProjDepthInfo', 16, 1), new Uniform('cc_shadowProjDepthInfo', 16, 1), new Uniform('cc_shadowProjInfo', 16, 1), new Uniform('cc_shadowNFLSInfo', 16, 1), new Uniform('cc_shadowWHPBInfo', 16, 1), new Uniform('cc_shadowLPNNInfo', 16, 1), new Uniform('cc_shadowColor', 16, 1), new Uniform('cc_planarNDInfo', 16, 1)], 1);
+      UBOShadow.DESCRIPTOR = new DescriptorSetLayoutBinding(_class3$r.BINDING, 1, 1, 63);
+      UBOShadow.LAYOUT = new UniformBlock(0, _class3$r.BINDING, _class3$r.NAME, [new Uniform('cc_matLightView', 25, 1), new Uniform('cc_matLightViewProj', 25, 1), new Uniform('cc_shadowInvProjDepthInfo', 16, 1), new Uniform('cc_shadowProjDepthInfo', 16, 1), new Uniform('cc_shadowProjInfo', 16, 1), new Uniform('cc_shadowNFLSInfo', 16, 1), new Uniform('cc_shadowWHPBInfo', 16, 1), new Uniform('cc_shadowLPNNInfo', 16, 1), new Uniform('cc_shadowColor', 16, 1), new Uniform('cc_planarNDInfo', 16, 1)], 1);
       globalDescriptorSetLayout.layouts[UBOShadow.NAME] = UBOShadow.LAYOUT;
       globalDescriptorSetLayout.bindings[UBOShadow.BINDING] = UBOShadow.DESCRIPTOR;
       var UBOCSMEnum = {
@@ -31071,9 +31071,9 @@ System.register([], (function (exports, module) {
       var programLib$1 = new ProgramLib();
       cclegacy.programLib = programLib$1;
 
-      var _dec$Z, _class$Y, _class2$L, _initializer$J, _initializer2$z, _initializer3$s, _initializer4$o, _class3$n;
+      var _dec$$, _class$_, _class2$O, _initializer$L, _initializer2$A, _initializer3$t, _initializer4$p, _class3$q;
       var legacyBuiltinEffectNames = ['planar-shadow', 'skybox', 'deferred-lighting', 'bloom', 'hbao', 'copy-pass', 'post-process', 'profiler', 'splash-screen', 'unlit', 'sprite', 'particle', 'particle-gpu', 'particle-trail', 'billboard', 'terrain', 'graphics', 'clear-stencil', 'spine', 'occlusion-query', 'geometry-renderer', 'debug-renderer', 'ssss-blur', 'float-output-process'];
-      var EffectAsset = exports("EffectAsset", (_dec$Z = ccclass$4('cc.EffectAsset'), _dec$Z(_class$Y = (_class2$L = (_class3$n = function (_Asset) {
+      var EffectAsset = exports("EffectAsset", (_dec$$ = ccclass$4('cc.EffectAsset'), _dec$$(_class$_ = (_class2$O = (_class3$q = function (_Asset) {
         _inheritsLoose(EffectAsset, _Asset);
         EffectAsset.register = function register(asset) {
           EffectAsset._effects[asset.name] = asset;
@@ -31123,10 +31123,10 @@ System.register([], (function (exports, module) {
         function EffectAsset(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
-          _this.techniques = _initializer$J && _initializer$J();
-          _this.shaders = _initializer2$z && _initializer2$z();
-          _this.combinations = _initializer3$s && _initializer3$s();
-          _this.hideInEditor = _initializer4$o && _initializer4$o();
+          _this.techniques = _initializer$L && _initializer$L();
+          _this.shaders = _initializer2$A && _initializer2$A();
+          _this.combinations = _initializer3$t && _initializer3$t();
+          _this.hideInEditor = _initializer4$p && _initializer4$p();
           return _this;
         }
         var _proto = EffectAsset.prototype;
@@ -31182,15 +31182,15 @@ System.register([], (function (exports, module) {
           return this.techniques.length > 0 && this.shaders.length > 0;
         };
         return EffectAsset;
-      }(Asset), _class3$n._effects = {}, _class3$n._layoutValid = true, _class3$n), (_initializer$J = applyDecoratedInitializer(_class2$L.prototype, "techniques", [serializable$3], function () {
+      }(Asset), _class3$q._effects = {}, _class3$q._layoutValid = true, _class3$q), (_initializer$L = applyDecoratedInitializer(_class2$O.prototype, "techniques", [serializable$3], function () {
         return [];
-      }), _initializer2$z = applyDecoratedInitializer(_class2$L.prototype, "shaders", [serializable$3], function () {
+      }), _initializer2$A = applyDecoratedInitializer(_class2$O.prototype, "shaders", [serializable$3], function () {
         return [];
-      }), _initializer3$s = applyDecoratedInitializer(_class2$L.prototype, "combinations", [serializable$3], function () {
+      }), _initializer3$t = applyDecoratedInitializer(_class2$O.prototype, "combinations", [serializable$3], function () {
         return [];
-      }), _initializer4$o = applyDecoratedInitializer(_class2$L.prototype, "hideInEditor", [serializable$3, editorOnly], function () {
+      }), _initializer4$p = applyDecoratedInitializer(_class2$O.prototype, "hideInEditor", [serializable$3, editorOnly], function () {
         return false;
-      })), _class2$L)) || _class$Y));
+      })), _class2$O)) || _class$_));
       cclegacy.EffectAsset = EffectAsset;
 
       var isMatchByWord = function isMatchByWord(path, test) {
@@ -32548,23 +32548,23 @@ System.register([], (function (exports, module) {
       var downloader = Downloader.instance;
       var downloader$1 = Downloader.instance;
 
-      var _dec$Y, _class$X, _class2$K, _initializer$I;
-      var JsonAsset = exports("JsonAsset", (_dec$Y = ccclass$4('cc.JsonAsset'), _dec$Y(_class$X = (_class2$K = function (_Asset) {
+      var _dec$_, _class$Z, _class2$N, _initializer$K;
+      var JsonAsset = exports("JsonAsset", (_dec$_ = ccclass$4('cc.JsonAsset'), _dec$_(_class$Z = (_class2$N = function (_Asset) {
         _inheritsLoose(JsonAsset, _Asset);
         function JsonAsset(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
-          _this.json = _initializer$I && _initializer$I();
+          _this.json = _initializer$K && _initializer$K();
           return _this;
         }
         return JsonAsset;
-      }(Asset), (_initializer$I = applyDecoratedInitializer(_class2$K.prototype, "json", [serializable$3], function () {
+      }(Asset), (_initializer$K = applyDecoratedInitializer(_class2$N.prototype, "json", [serializable$3], function () {
         return null;
-      })), _class2$K)) || _class$X));
+      })), _class2$N)) || _class$Z));
       cclegacy.JsonAsset = JsonAsset;
 
-      var _dec$X, _class$W, _class2$J, _initializer$H;
-      var TextAsset = exports("TextAsset", (_dec$X = ccclass$4('cc.TextAsset'), _dec$X(_class$W = (_class2$J = function (_Asset) {
+      var _dec$Z, _class$Y, _class2$M, _initializer$J;
+      var TextAsset = exports("TextAsset", (_dec$Z = ccclass$4('cc.TextAsset'), _dec$Z(_class$Y = (_class2$M = function (_Asset) {
         _inheritsLoose(TextAsset, _Asset);
         var _proto = TextAsset.prototype;
         _proto.toString = function toString() {
@@ -32573,17 +32573,17 @@ System.register([], (function (exports, module) {
         function TextAsset(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
-          _this.text = _initializer$H && _initializer$H();
+          _this.text = _initializer$J && _initializer$J();
           return _this;
         }
         return TextAsset;
-      }(Asset), (_initializer$H = applyDecoratedInitializer(_class2$J.prototype, "text", [serializable$3], function () {
+      }(Asset), (_initializer$J = applyDecoratedInitializer(_class2$M.prototype, "text", [serializable$3], function () {
         return '';
-      })), _class2$J)) || _class$W));
+      })), _class2$M)) || _class$Y));
       cclegacy.TextAsset = TextAsset;
 
-      var _dec$W, _class$V, _class2$I;
-      var BufferAsset = exports("BufferAsset", (_dec$W = ccclass$4('cc.BufferAsset'), _dec$W(_class$V = (_class2$I = function (_Asset) {
+      var _dec$Y, _class$X, _class2$L;
+      var BufferAsset = exports("BufferAsset", (_dec$Y = ccclass$4('cc.BufferAsset'), _dec$Y(_class$X = (_class2$L = function (_Asset) {
         _inheritsLoose(BufferAsset, _Asset);
         function BufferAsset(name) {
           var _this;
@@ -32613,7 +32613,7 @@ System.register([], (function (exports, module) {
           }
         }]);
         return BufferAsset;
-      }(Asset), (_applyDecoratedDescriptor(_class2$I.prototype, "_nativeAsset", [override], Object.getOwnPropertyDescriptor(_class2$I.prototype, "_nativeAsset"), _class2$I.prototype)), _class2$I)) || _class$V));
+      }(Asset), (_applyDecoratedDescriptor(_class2$L.prototype, "_nativeAsset", [override], Object.getOwnPropertyDescriptor(_class2$L.prototype, "_nativeAsset"), _class2$L.prototype)), _class2$L)) || _class$X));
       cclegacy.BufferAsset = BufferAsset;
 
       function createImageAsset(id, data, options, onComplete) {
@@ -35232,9 +35232,9 @@ System.register([], (function (exports, module) {
         }
       }
 
-      var _dec$V, _dec2$F, _class$U, _class2$H, _initializer$G, _initializer2$y, _initializer3$r, _initializer4$n, _initializer5$j;
+      var _dec$X, _dec2$G, _class$W, _class2$K, _initializer$I, _initializer2$z, _initializer3$s, _initializer4$o, _initializer5$j;
       var v4_1 = new Vec4();
-      var Material = exports("Material", (_dec$V = ccclass$4('cc.Material'), _dec2$F = type$3(EffectAsset), _dec$V(_class$U = (_class2$H = function (_Asset) {
+      var Material = exports("Material", (_dec$X = ccclass$4('cc.Material'), _dec2$G = type$3(EffectAsset), _dec$X(_class$W = (_class2$K = function (_Asset) {
         _inheritsLoose(Material, _Asset);
         Material.getHash = function getHash(material) {
           var hash = 0;
@@ -35247,10 +35247,10 @@ System.register([], (function (exports, module) {
         function Material(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
-          _this._effectAsset = _initializer$G && _initializer$G();
-          _this._techIdx = _initializer2$y && _initializer2$y();
-          _this._defines = _initializer3$r && _initializer3$r();
-          _this._states = _initializer4$n && _initializer4$n();
+          _this._effectAsset = _initializer$I && _initializer$I();
+          _this._techIdx = _initializer2$z && _initializer2$z();
+          _this._defines = _initializer3$s && _initializer3$s();
+          _this._states = _initializer4$o && _initializer4$o();
           _this._props = _initializer5$j && _initializer5$j();
           _this._passes = [];
           _this._hash = 0;
@@ -35562,17 +35562,17 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Material;
-      }(Asset), (_initializer$G = applyDecoratedInitializer(_class2$H.prototype, "_effectAsset", [_dec2$F], function () {
+      }(Asset), (_initializer$I = applyDecoratedInitializer(_class2$K.prototype, "_effectAsset", [_dec2$G], function () {
         return null;
-      }), _initializer2$y = applyDecoratedInitializer(_class2$H.prototype, "_techIdx", [serializable$3], function () {
+      }), _initializer2$z = applyDecoratedInitializer(_class2$K.prototype, "_techIdx", [serializable$3], function () {
         return 0;
-      }), _initializer3$r = applyDecoratedInitializer(_class2$H.prototype, "_defines", [serializable$3], function () {
+      }), _initializer3$s = applyDecoratedInitializer(_class2$K.prototype, "_defines", [serializable$3], function () {
         return [];
-      }), _initializer4$n = applyDecoratedInitializer(_class2$H.prototype, "_states", [serializable$3], function () {
+      }), _initializer4$o = applyDecoratedInitializer(_class2$K.prototype, "_states", [serializable$3], function () {
         return [];
-      }), _initializer5$j = applyDecoratedInitializer(_class2$H.prototype, "_props", [serializable$3], function () {
+      }), _initializer5$j = applyDecoratedInitializer(_class2$K.prototype, "_props", [serializable$3], function () {
         return [];
-      })), _class2$H)) || _class$U));
+      })), _class2$K)) || _class$W));
       cclegacy.Material = Material;
 
       var ShadowSize = Enum({
@@ -36431,7 +36431,7 @@ System.register([], (function (exports, module) {
         return PostSettings;
       }();
 
-      var _dec$U, _dec2$E, _dec3$w, _dec4$l, _dec5$i, _class$T, _class2$G, _initializer$F, _initializer2$x, _initializer3$q, _initializer4$m, _initializer5$i, _initializer6$e, _dec6$c, _dec7$b, _dec8$8, _dec9$8, _dec10$5, _dec11$3, _dec12$3, _dec13$3, _dec14$2, _dec15$2, _dec16$1, _dec17$1, _dec18$1, _dec19$1, _dec20$1, _class4$3, _class5$2, _initializer7$c, _initializer8$c, _initializer9$c, _initializer10$c, _initializer11$b, _initializer12$a, _initializer13$9, _initializer14$8, _initializer15$6, _initializer16$6, _initializer17$5, _dec21$1, _dec22$1, _dec23$1, _dec24$1, _dec25$1, _dec26$1, _dec27$1, _dec28$1, _class7$1, _class8$1, _initializer18$5, _initializer19$4, _initializer20$4, _initializer21$4, _initializer22$3, _initializer23$2, _initializer24$2, _initializer25$1, _initializer26$1, _initializer27, _class9, _dec29, _dec30, _dec31, _dec32, _dec33, _dec34, _class10$1, _class11$1, _initializer28, _initializer29, _initializer30, _initializer31, _initializer32, _initializer33, _initializer34, _initializer35, _dec35, _dec36, _class13$1, _class14$1, _initializer36, _initializer37, _initializer38, _initializer39, _dec37, _dec38, _dec39, _class16$1, _class17$1, _initializer40, _initializer41, _initializer42, _dec40, _dec41, _class19$1, _class20$1, _initializer43, _dec42, _dec43, _dec44, _dec45, _dec46, _dec47, _class22$1, _class23$1, _initializer44, _initializer45, _initializer46, _initializer47, _initializer48, _initializer49, _initializer50, _initializer51, _initializer52, _dec48, _dec49, _class25, _class26, _initializer53, _initializer54, _initializer55, _initializer56, _initializer57, _initializer58, _initializer59, _initializer60, _initializer61, _initializer62;
+      var _dec$W, _dec2$F, _dec3$x, _dec4$l, _dec5$i, _class$V, _class2$J, _initializer$H, _initializer2$y, _initializer3$r, _initializer4$n, _initializer5$i, _initializer6$e, _dec6$c, _dec7$b, _dec8$8, _dec9$8, _dec10$5, _dec11$3, _dec12$3, _dec13$3, _dec14$2, _dec15$2, _dec16$1, _dec17$1, _dec18$1, _dec19$1, _dec20$1, _class4$3, _class5$2, _initializer7$c, _initializer8$c, _initializer9$c, _initializer10$c, _initializer11$b, _initializer12$a, _initializer13$9, _initializer14$8, _initializer15$6, _initializer16$6, _initializer17$5, _dec21$1, _dec22$1, _dec23$1, _dec24$1, _dec25$1, _dec26$1, _dec27$1, _dec28$1, _class7$1, _class8$1, _initializer18$5, _initializer19$4, _initializer20$4, _initializer21$4, _initializer22$3, _initializer23$2, _initializer24$2, _initializer25$1, _initializer26$1, _initializer27, _class9, _dec29, _dec30, _dec31, _dec32, _dec33, _dec34, _class10$1, _class11$1, _initializer28, _initializer29, _initializer30, _initializer31, _initializer32, _initializer33, _initializer34, _initializer35, _dec35, _dec36, _class13$1, _class14$1, _initializer36, _initializer37, _initializer38, _initializer39, _dec37, _dec38, _dec39, _class16$1, _class17$1, _initializer40, _initializer41, _initializer42, _dec40, _dec41, _class19$1, _class20$1, _initializer43, _dec42, _dec43, _dec44, _dec45, _dec46, _dec47, _class22$1, _class23$1, _initializer44, _initializer45, _initializer46, _initializer47, _initializer48, _initializer49, _initializer50, _initializer51, _initializer52, _dec48, _dec49, _class25, _class26, _initializer53, _initializer54, _initializer55, _initializer56, _initializer57, _initializer58, _initializer59, _initializer60, _initializer61, _initializer62;
       var _up = new Vec3(0, 1, 0);
       var _v3$1 = new Vec3();
       var _v4 = new Vec4();
@@ -36445,12 +36445,12 @@ System.register([], (function (exports, module) {
           color.z *= intensity;
         }
       };
-      var AmbientInfo = exports("AmbientInfo", (_dec$U = ccclass$4('cc.AmbientInfo'), _dec2$E = type$3(CCFloat), _dec3$w = formerlySerializedAs$1('_skyColor'), _dec4$l = formerlySerializedAs$1('_skyIllum'), _dec5$i = formerlySerializedAs$1('_groundAlbedo'), _dec$U(_class$T = (_class2$G = function () {
+      var AmbientInfo = exports("AmbientInfo", (_dec$W = ccclass$4('cc.AmbientInfo'), _dec2$F = type$3(CCFloat), _dec3$x = formerlySerializedAs$1('_skyColor'), _dec4$l = formerlySerializedAs$1('_skyIllum'), _dec5$i = formerlySerializedAs$1('_groundAlbedo'), _dec$W(_class$V = (_class2$J = function () {
         function AmbientInfo() {
-          this._skyColorHDR = _initializer$F && _initializer$F();
-          this._skyIllumHDR = _initializer2$x && _initializer2$x();
-          this._groundAlbedoHDR = _initializer3$q && _initializer3$q();
-          this._skyColorLDR = _initializer4$m && _initializer4$m();
+          this._skyColorHDR = _initializer$H && _initializer$H();
+          this._skyIllumHDR = _initializer2$y && _initializer2$y();
+          this._groundAlbedoHDR = _initializer3$r && _initializer3$r();
+          this._skyColorLDR = _initializer4$n && _initializer4$n();
           this._skyIllumLDR = _initializer5$i && _initializer5$i();
           this._groundAlbedoLDR = _initializer6$e && _initializer6$e();
           this._resource = null;
@@ -36573,19 +36573,19 @@ System.register([], (function (exports, module) {
           }
         }]);
         return AmbientInfo;
-      }(), (_applyDecoratedDescriptor(_class2$G.prototype, "skyIllum", [_dec2$E], Object.getOwnPropertyDescriptor(_class2$G.prototype, "skyIllum"), _class2$G.prototype), _initializer$F = applyDecoratedInitializer(_class2$G.prototype, "_skyColorHDR", [serializable$3, _dec3$w], function () {
+      }(), (_applyDecoratedDescriptor(_class2$J.prototype, "skyIllum", [_dec2$F], Object.getOwnPropertyDescriptor(_class2$J.prototype, "skyIllum"), _class2$J.prototype), _initializer$H = applyDecoratedInitializer(_class2$J.prototype, "_skyColorHDR", [serializable$3, _dec3$x], function () {
         return new Vec4(0.2, 0.5, 0.8, 1.0);
-      }), _initializer2$x = applyDecoratedInitializer(_class2$G.prototype, "_skyIllumHDR", [serializable$3, _dec4$l], function () {
+      }), _initializer2$y = applyDecoratedInitializer(_class2$J.prototype, "_skyIllumHDR", [serializable$3, _dec4$l], function () {
         return Ambient.SKY_ILLUM;
-      }), _initializer3$q = applyDecoratedInitializer(_class2$G.prototype, "_groundAlbedoHDR", [serializable$3, _dec5$i], function () {
+      }), _initializer3$r = applyDecoratedInitializer(_class2$J.prototype, "_groundAlbedoHDR", [serializable$3, _dec5$i], function () {
         return new Vec4(0.2, 0.2, 0.2, 1.0);
-      }), _initializer4$m = applyDecoratedInitializer(_class2$G.prototype, "_skyColorLDR", [serializable$3], function () {
+      }), _initializer4$n = applyDecoratedInitializer(_class2$J.prototype, "_skyColorLDR", [serializable$3], function () {
         return new Vec4(0.2, 0.5, 0.8, 1.0);
-      }), _initializer5$i = applyDecoratedInitializer(_class2$G.prototype, "_skyIllumLDR", [serializable$3], function () {
+      }), _initializer5$i = applyDecoratedInitializer(_class2$J.prototype, "_skyIllumLDR", [serializable$3], function () {
         return Ambient.SKY_ILLUM;
-      }), _initializer6$e = applyDecoratedInitializer(_class2$G.prototype, "_groundAlbedoLDR", [serializable$3], function () {
+      }), _initializer6$e = applyDecoratedInitializer(_class2$J.prototype, "_groundAlbedoLDR", [serializable$3], function () {
         return new Vec4(0.2, 0.2, 0.2, 1.0);
-      })), _class2$G)) || _class$T));
+      })), _class2$J)) || _class$V));
       legacyCC.AmbientInfo = AmbientInfo;
       var SkyboxInfo = exports("SkyboxInfo", (_dec6$c = ccclass$4('cc.SkyboxInfo'), _dec7$b = type$3(EnvironmentLightingType), _dec8$8 = type$3(TextureCube), _dec9$8 = type$3(CCFloat), _dec10$5 = type$3(TextureCube), _dec11$3 = type$3(TextureCube), _dec12$3 = type$3(Material), _dec13$3 = type$3(TextureCube), _dec14$2 = formerlySerializedAs$1('_envmap'), _dec15$2 = type$3(TextureCube), _dec16$1 = type$3(TextureCube), _dec17$1 = type$3(TextureCube), _dec18$1 = type$3(Material), _dec19$1 = type$3(TextureCube), _dec20$1 = type$3(TextureCube), _dec6$c(_class4$3 = (_class5$2 = function () {
         function SkyboxInfo() {
@@ -37661,23 +37661,23 @@ System.register([], (function (exports, module) {
       })), _class26)) || _class25));
       legacyCC.SceneGlobals = SceneGlobals;
 
-      var _dec$T, _dec2$D, _class$S, _class2$F, _initializer$E, _dec3$v, _dec4$k, _dec5$h, _dec6$b, _dec7$a, _dec8$7, _class4$2, _class5$1, _initializer2$w, _initializer3$p, _initializer4$l, _initializer5$h, _initializer6$d, _dec9$7, _class7, _class8, _initializer7$b, _dec10$4, _dec11$2, _dec12$2, _class10, _class11, _initializer8$b, _initializer9$b, _initializer10$b, _dec13$2, _dec14$1, _dec15$1, _class13, _class14, _initializer11$a, _initializer12$9, _dec16, _dec17, _dec18, _class16, _class17, _initializer13$8, _initializer14$7, _dec19, _dec20, _dec21, _dec22, _dec23, _dec24, _class19, _class20, _initializer15$5, _initializer16$5, _initializer17$4, _initializer18$4, _initializer19$3, _initializer20$3, _dec25, _dec26, _dec27, _dec28, _class22, _class23, _initializer21$3, _initializer22$2, _initializer23$1, _initializer24$1, _initializer25, _initializer26;
-      var TargetInfo = (_dec$T = ccclass$4('cc.TargetInfo'), _dec2$D = type$3([CCString]), _dec$T(_class$S = (_class2$F = function TargetInfo() {
-        this.localID = _initializer$E && _initializer$E();
-      }, (_initializer$E = applyDecoratedInitializer(_class2$F.prototype, "localID", [serializable$3, _dec2$D], function () {
+      var _dec$V, _dec2$E, _class$U, _class2$I, _initializer$G, _dec3$w, _dec4$k, _dec5$h, _dec6$b, _dec7$a, _dec8$7, _class4$2, _class5$1, _initializer2$x, _initializer3$q, _initializer4$m, _initializer5$h, _initializer6$d, _dec9$7, _class7, _class8, _initializer7$b, _dec10$4, _dec11$2, _dec12$2, _class10, _class11, _initializer8$b, _initializer9$b, _initializer10$b, _dec13$2, _dec14$1, _dec15$1, _class13, _class14, _initializer11$a, _initializer12$9, _dec16, _dec17, _dec18, _class16, _class17, _initializer13$8, _initializer14$7, _dec19, _dec20, _dec21, _dec22, _dec23, _dec24, _class19, _class20, _initializer15$5, _initializer16$5, _initializer17$4, _initializer18$4, _initializer19$3, _initializer20$3, _dec25, _dec26, _dec27, _dec28, _class22, _class23, _initializer21$3, _initializer22$2, _initializer23$1, _initializer24$1, _initializer25, _initializer26;
+      var TargetInfo = (_dec$V = ccclass$4('cc.TargetInfo'), _dec2$E = type$3([CCString]), _dec$V(_class$U = (_class2$I = function TargetInfo() {
+        this.localID = _initializer$G && _initializer$G();
+      }, (_initializer$G = applyDecoratedInitializer(_class2$I.prototype, "localID", [serializable$3, _dec2$E], function () {
         return [];
-      })), _class2$F)) || _class$S);
-      var TargetOverrideInfo = (_dec3$v = ccclass$4('cc.TargetOverrideInfo'), _dec4$k = type$3(CCObject), _dec5$h = type$3(TargetInfo), _dec6$b = type$3([CCString]), _dec7$a = type$3(Node$1), _dec8$7 = type$3(TargetInfo), _dec3$v(_class4$2 = (_class5$1 = function TargetOverrideInfo() {
-        this.source = _initializer2$w && _initializer2$w();
-        this.sourceInfo = _initializer3$p && _initializer3$p();
-        this.propertyPath = _initializer4$l && _initializer4$l();
+      })), _class2$I)) || _class$U);
+      var TargetOverrideInfo = (_dec3$w = ccclass$4('cc.TargetOverrideInfo'), _dec4$k = type$3(CCObject), _dec5$h = type$3(TargetInfo), _dec6$b = type$3([CCString]), _dec7$a = type$3(Node$1), _dec8$7 = type$3(TargetInfo), _dec3$w(_class4$2 = (_class5$1 = function TargetOverrideInfo() {
+        this.source = _initializer2$x && _initializer2$x();
+        this.sourceInfo = _initializer3$q && _initializer3$q();
+        this.propertyPath = _initializer4$m && _initializer4$m();
         this.target = _initializer5$h && _initializer5$h();
         this.targetInfo = _initializer6$d && _initializer6$d();
-      }, (_initializer2$w = applyDecoratedInitializer(_class5$1.prototype, "source", [serializable$3, _dec4$k], function () {
+      }, (_initializer2$x = applyDecoratedInitializer(_class5$1.prototype, "source", [serializable$3, _dec4$k], function () {
         return null;
-      }), _initializer3$p = applyDecoratedInitializer(_class5$1.prototype, "sourceInfo", [serializable$3, _dec5$h], function () {
+      }), _initializer3$q = applyDecoratedInitializer(_class5$1.prototype, "sourceInfo", [serializable$3, _dec5$h], function () {
         return null;
-      }), _initializer4$l = applyDecoratedInitializer(_class5$1.prototype, "propertyPath", [serializable$3, _dec6$b], function () {
+      }), _initializer4$m = applyDecoratedInitializer(_class5$1.prototype, "propertyPath", [serializable$3, _dec6$b], function () {
         return [];
       }), _initializer5$h = applyDecoratedInitializer(_class5$1.prototype, "target", [serializable$3, _dec7$a], function () {
         return null;
@@ -38110,8 +38110,8 @@ System.register([], (function (exports, module) {
         getTarget: getTarget
       });
 
-      var _dec$S, _class$R, _class2$E, _initializer$D, _initializer2$v;
-      var Scene = exports("Scene", (_dec$S = ccclass$4('cc.Scene'), _dec$S(_class$R = (_class2$E = function (_Node) {
+      var _dec$U, _class$T, _class2$H, _initializer$F, _initializer2$w;
+      var Scene = exports("Scene", (_dec$U = ccclass$4('cc.Scene'), _dec$U(_class$T = (_class2$H = function (_Node) {
         _inheritsLoose(Scene, _Node);
         var _proto = Scene.prototype;
         _proto._updateScene = function _updateScene() {
@@ -38120,8 +38120,8 @@ System.register([], (function (exports, module) {
         function Scene(name) {
           var _this;
           _this = _Node.call(this, name) || this;
-          _this.autoReleaseAssets = _initializer$D && _initializer$D();
-          _this._globals = _initializer2$v && _initializer2$v();
+          _this.autoReleaseAssets = _initializer$F && _initializer$F();
+          _this._globals = _initializer2$w && _initializer2$w();
           _this.dependAssets = null;
           _this._renderScene = null;
           _this._prefabSyncedInLiveReload = false;
@@ -38191,20 +38191,20 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Scene;
-      }(Node$1), (_initializer$D = applyDecoratedInitializer(_class2$E.prototype, "autoReleaseAssets", [serializable$3], function () {
+      }(Node$1), (_initializer$F = applyDecoratedInitializer(_class2$H.prototype, "autoReleaseAssets", [serializable$3], function () {
         return false;
-      }), _initializer2$v = applyDecoratedInitializer(_class2$E.prototype, "_globals", [serializable$3], function () {
+      }), _initializer2$w = applyDecoratedInitializer(_class2$H.prototype, "_globals", [serializable$3], function () {
         return new SceneGlobals();
-      })), _class2$E)) || _class$R));
+      })), _class2$H)) || _class$T));
       legacyCC.Scene = Scene;
 
-      var _dec$R, _class$Q, _class2$D, _initializer$C;
-      var SceneAsset = exports("SceneAsset", (_dec$R = ccclass$4('cc.SceneAsset'), _dec$R(_class$Q = (_class2$D = function (_Asset) {
+      var _dec$T, _class$S, _class2$G, _initializer$E;
+      var SceneAsset = exports("SceneAsset", (_dec$T = ccclass$4('cc.SceneAsset'), _dec$T(_class$S = (_class2$G = function (_Asset) {
         _inheritsLoose(SceneAsset, _Asset);
         function SceneAsset(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
-          _this.scene = _initializer$C && _initializer$C();
+          _this.scene = _initializer$E && _initializer$E();
           return _this;
         }
         var _proto = SceneAsset.prototype;
@@ -38216,9 +38216,9 @@ System.register([], (function (exports, module) {
           return !!this.scene;
         };
         return SceneAsset;
-      }(Asset), (_initializer$C = applyDecoratedInitializer(_class2$D.prototype, "scene", [serializable$3], function () {
+      }(Asset), (_initializer$E = applyDecoratedInitializer(_class2$G.prototype, "scene", [serializable$3], function () {
         return null;
-      })), _class2$D)) || _class$Q));
+      })), _class2$G)) || _class$S));
       cclegacy.SceneAsset = SceneAsset;
 
       deprecateModuleExportedName({
@@ -43726,7 +43726,7 @@ System.register([], (function (exports, module) {
         return RangedDirectionalLight;
       }(Light);
 
-      var _dec$Q, _class$P;
+      var _dec$S, _class$R;
       var _colorAttachment = new ColorAttachment();
       _colorAttachment.format = 35;
       var _depthStencilAttachment = new DepthStencilAttachment();
@@ -43737,7 +43737,7 @@ System.register([], (function (exports, module) {
         height: 1,
         renderPassInfo: passInfo
       };
-      var RenderTexture = exports("RenderTexture", (_dec$Q = ccclass$4('cc.RenderTexture'), _dec$Q(_class$P = function (_TextureBase) {
+      var RenderTexture = exports("RenderTexture", (_dec$S = ccclass$4('cc.RenderTexture'), _dec$S(_class$R = function (_TextureBase) {
         _inheritsLoose(RenderTexture, _TextureBase);
         function RenderTexture(name) {
           var _this;
@@ -43852,7 +43852,7 @@ System.register([], (function (exports, module) {
           }
         }]);
         return RenderTexture;
-      }(TextureBase)) || _class$P));
+      }(TextureBase)) || _class$R));
       cclegacy.RenderTexture = RenderTexture;
 
       var ProbeClearFlag = {
@@ -45662,7 +45662,7 @@ System.register([], (function (exports, module) {
       CCClass.Attr.setClassAttr(EventHandler, 'target', 'type', 'Object');
       CCClass.Attr.setClassAttr(EventHandler, 'target', 'ctor', Node$1);
 
-      var _dec$P, _class$O;
+      var _dec$R, _class$Q;
       replaceProperty(Node$1.prototype, 'Node', [{
         name: 'childrenCount',
         newName: 'children.length',
@@ -45859,7 +45859,7 @@ System.register([], (function (exports, module) {
       }]);
       var HideInHierarchy = 1024;
       var DontSave = 8;
-      var PrivateNode = exports("PrivateNode", (_dec$P = ccclass$4('cc.PrivateNode'), _dec$P(_class$O = function (_Node) {
+      var PrivateNode = exports("PrivateNode", (_dec$R = ccclass$4('cc.PrivateNode'), _dec$R(_class$Q = function (_Node) {
         _inheritsLoose(PrivateNode, _Node);
         function PrivateNode(name) {
           var _this;
@@ -45869,7 +45869,7 @@ System.register([], (function (exports, module) {
           return _this;
         }
         return PrivateNode;
-      }(Node$1)) || _class$O));
+      }(Node$1)) || _class$Q));
       replaceProperty(SystemEventType, 'SystemEventType', ['MOUSE_ENTER', 'MOUSE_LEAVE', 'TRANSFORM_CHANGED', 'SCENE_CHANGED_FOR_PERSISTS', 'SIZE_CHANGED', 'ANCHOR_CHANGED', 'COLOR_CHANGED', 'CHILD_ADDED', 'CHILD_REMOVED', 'PARENT_CHANGED', 'NODE_DESTROYED', 'LAYER_CHANGED', 'SIBLING_ORDER_CHANGED'].map(function (name) {
         return {
           name: name,
@@ -46761,20 +46761,20 @@ System.register([], (function (exports, module) {
         return parser.result;
       }
 
-      var _dec$O, _class$N, _class2$C, _initializer$B, _initializer2$u, _initializer3$o, _class3$m;
+      var _dec$Q, _class$P, _class2$F, _initializer$D, _initializer2$v, _initializer3$p, _class3$p;
       var OptimizationPolicy = Enum({
         AUTO: 0,
         SINGLE_INSTANCE: 1,
         MULTI_INSTANCE: 2
       });
-      var Prefab = exports("Prefab", (_dec$O = ccclass$4('cc.Prefab'), _dec$O(_class$N = (_class2$C = (_class3$m = function (_Asset) {
+      var Prefab = exports("Prefab", (_dec$Q = ccclass$4('cc.Prefab'), _dec$Q(_class$P = (_class2$F = (_class3$p = function (_Asset) {
         _inheritsLoose(Prefab, _Asset);
         function Prefab() {
           var _this;
           _this = _Asset.call(this) || this;
-          _this.data = _initializer$B && _initializer$B();
-          _this.optimizationPolicy = _initializer2$u && _initializer2$u();
-          _this.persistent = _initializer3$o && _initializer3$o();
+          _this.data = _initializer$D && _initializer$D();
+          _this.optimizationPolicy = _initializer2$v && _initializer2$v();
+          _this.persistent = _initializer3$p && _initializer3$p();
           _this._createFunction = null;
           _this._instantiatedTimes = 0;
           return _this;
@@ -46838,13 +46838,13 @@ System.register([], (function (exports, module) {
           applyTargetOverrides(rootNode);
         };
         return Prefab;
-      }(Asset), _class3$m.OptimizationPolicy = OptimizationPolicy, _class3$m.OptimizationPolicyThreshold = 3, _class3$m), (_initializer$B = applyDecoratedInitializer(_class2$C.prototype, "data", [serializable$3], function () {
+      }(Asset), _class3$p.OptimizationPolicy = OptimizationPolicy, _class3$p.OptimizationPolicyThreshold = 3, _class3$p), (_initializer$D = applyDecoratedInitializer(_class2$F.prototype, "data", [serializable$3], function () {
         return null;
-      }), _initializer2$u = applyDecoratedInitializer(_class2$C.prototype, "optimizationPolicy", [serializable$3], function () {
+      }), _initializer2$v = applyDecoratedInitializer(_class2$F.prototype, "optimizationPolicy", [serializable$3], function () {
         return OptimizationPolicy.AUTO;
-      }), _initializer3$o = applyDecoratedInitializer(_class2$C.prototype, "persistent", [serializable$3], function () {
+      }), _initializer3$p = applyDecoratedInitializer(_class2$F.prototype, "persistent", [serializable$3], function () {
         return false;
-      })), _class2$C)) || _class$N));
+      })), _class2$F)) || _class$P));
       value(Prefab, '_utils', utils);
       legacyCC.Prefab = Prefab;
       {
@@ -51482,7 +51482,7 @@ System.register([], (function (exports, module) {
       _p.Inflate.BufferType = _p.Inflate["BufferType"];
       _p.Inflate.prototype.decompress = _p.Inflate.prototype["decompress"];
 
-      var _dec$N, _class$M, _class2$B, _initializer$A, _initializer2$t, _initializer3$n;
+      var _dec$P, _class$O, _class2$E, _initializer$C, _initializer2$u, _initializer3$o;
       var vec3Add = Vec3.add;
       var vec3MultiplyScalar = Vec3.multiplyScalar;
       var vec3Subtract = Vec3.subtract;
@@ -51507,17 +51507,17 @@ System.register([], (function (exports, module) {
       var v3_1$1 = new Vec3();
       var v3_2 = new Vec3();
       var globalEmptyMeshBuffer = new Uint8Array();
-      var Mesh = (_dec$N = ccclass$4('cc.Mesh'), _dec$N(_class$M = (_class2$B = function (_Asset) {
+      var Mesh = (_dec$P = ccclass$4('cc.Mesh'), _dec$P(_class$O = (_class2$E = function (_Asset) {
         _inheritsLoose(Mesh, _Asset);
         function Mesh(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
           _this.morphRendering = null;
-          _this._struct = _initializer$A && _initializer$A();
-          _this._hash = _initializer2$t && _initializer2$t();
+          _this._struct = _initializer$C && _initializer$C();
+          _this._hash = _initializer2$u && _initializer2$u();
           _this._data = globalEmptyMeshBuffer;
           _this._initialized = false;
-          _this._allowDataAccess = _initializer3$n && _initializer3$n();
+          _this._allowDataAccess = _initializer3$o && _initializer3$o();
           _this._isMeshDataUploaded = false;
           _this._renderingSubMeshes = null;
           _this._boneSpaceBounds = new Map();
@@ -52317,16 +52317,16 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Mesh;
-      }(Asset), (_initializer$A = applyDecoratedInitializer(_class2$B.prototype, "_struct", [serializable$3], function () {
+      }(Asset), (_initializer$C = applyDecoratedInitializer(_class2$E.prototype, "_struct", [serializable$3], function () {
         return {
           vertexBundles: [],
           primitives: []
         };
-      }), _initializer2$t = applyDecoratedInitializer(_class2$B.prototype, "_hash", [serializable$3], function () {
+      }), _initializer2$u = applyDecoratedInitializer(_class2$E.prototype, "_hash", [serializable$3], function () {
         return 0;
-      }), _initializer3$n = applyDecoratedInitializer(_class2$B.prototype, "_allowDataAccess", [serializable$3], function () {
+      }), _initializer3$o = applyDecoratedInitializer(_class2$E.prototype, "_allowDataAccess", [serializable$3], function () {
         return true;
-      })), _class2$B)) || _class$M);
+      })), _class2$E)) || _class$O);
       cclegacy.Mesh = Mesh;
       function getOffset(attributes, attributeIndex) {
         var result = 0;
@@ -52901,7 +52901,7 @@ System.register([], (function (exports, module) {
         return out;
       }
 
-      var _dec$M, _class$L, _class2$A;
+      var _dec$O, _class$N, _class2$D;
       var INSET_LEFT = 0;
       var INSET_TOP = 1;
       var INSET_RIGHT = 2;
@@ -52930,7 +52930,7 @@ System.register([], (function (exports, module) {
       var SpriteFrameEvent = exports("SpriteFrameEvent", {
         UV_UPDATED: "uv_updated"
       });
-      var SpriteFrame = exports("SpriteFrame", (_dec$M = ccclass$4('cc.SpriteFrame'), _dec$M(_class$L = (_class2$A = function (_Asset) {
+      var SpriteFrame = exports("SpriteFrame", (_dec$O = ccclass$4('cc.SpriteFrame'), _dec$O(_class$N = (_class2$D = function (_Asset) {
         _inheritsLoose(SpriteFrame, _Asset);
         SpriteFrame.createWithImage = function createWithImage(imageSourceOrImageAsset) {
           var img = imageSourceOrImageAsset instanceof ImageAsset ? imageSourceOrImageAsset : new ImageAsset(imageSourceOrImageAsset);
@@ -53733,16 +53733,16 @@ System.register([], (function (exports, module) {
           }
         }]);
         return SpriteFrame;
-      }(Asset), _class2$A.EVENT_UV_UPDATED = "uv_updated", _class2$A.MeshType = MeshType, _class2$A)) || _class$L));
+      }(Asset), _class2$D.EVENT_UV_UPDATED = "uv_updated", _class2$D.MeshType = MeshType, _class2$D)) || _class$N));
       cclegacy.SpriteFrame = SpriteFrame;
 
-      var _dec$L, _class$K, _class2$z, _initializer$z;
-      var SpriteAtlas = exports("SpriteAtlas", (_dec$L = ccclass$4('cc.SpriteAtlas'), _dec$L(_class$K = (_class2$z = function (_Asset) {
+      var _dec$N, _class$M, _class2$C, _initializer$B;
+      var SpriteAtlas = exports("SpriteAtlas", (_dec$N = ccclass$4('cc.SpriteAtlas'), _dec$N(_class$M = (_class2$C = function (_Asset) {
         _inheritsLoose(SpriteAtlas, _Asset);
         function SpriteAtlas(name) {
           var _this;
           _this = _Asset.call(this, name) || this;
-          _this.spriteFrames = _initializer$z && _initializer$z();
+          _this.spriteFrames = _initializer$B && _initializer$B();
           return _this;
         }
         var _proto = SpriteAtlas.prototype;
@@ -53786,28 +53786,28 @@ System.register([], (function (exports, module) {
           }
         };
         return SpriteAtlas;
-      }(Asset), (_initializer$z = applyDecoratedInitializer(_class2$z.prototype, "spriteFrames", [serializable$3], function () {
+      }(Asset), (_initializer$B = applyDecoratedInitializer(_class2$C.prototype, "spriteFrames", [serializable$3], function () {
         return createMap();
-      })), _class2$z)) || _class$K));
+      })), _class2$C)) || _class$M));
       cclegacy.SpriteAtlas = SpriteAtlas;
 
-      var _dec$K, _class$J;
-      var Font = exports("Font", (_dec$K = ccclass$4('cc.Font'), _dec$K(_class$J = function (_Asset) {
+      var _dec$M, _class$L;
+      var Font = exports("Font", (_dec$M = ccclass$4('cc.Font'), _dec$M(_class$L = function (_Asset) {
         _inheritsLoose(Font, _Asset);
         function Font(name) {
           return _Asset.call(this, name) || this;
         }
         return Font;
-      }(Asset)) || _class$J));
+      }(Asset)) || _class$L));
       cclegacy.Font = Font;
 
-      var _dec$J, _class$I, _class2$y, _initializer$y;
-      var TTFFont = exports("TTFFont", (_dec$J = ccclass$4('cc.TTFFont'), _dec$J(_class$I = (_class2$y = function (_Font) {
+      var _dec$L, _class$K, _class2$B, _initializer$A;
+      var TTFFont = exports("TTFFont", (_dec$L = ccclass$4('cc.TTFFont'), _dec$L(_class$K = (_class2$B = function (_Font) {
         _inheritsLoose(TTFFont, _Font);
         function TTFFont() {
           var _this;
           _this = _Font.call(this) || this;
-          _this._fontFamily = _initializer$y && _initializer$y();
+          _this._fontFamily = _initializer$A && _initializer$A();
           return _this;
         }
         var _proto = TTFFont.prototype;
@@ -53835,9 +53835,9 @@ System.register([], (function (exports, module) {
           }
         }]);
         return TTFFont;
-      }(Font), (_initializer$y = applyDecoratedInitializer(_class2$y.prototype, "_fontFamily", [serializable$3], function () {
+      }(Font), (_initializer$A = applyDecoratedInitializer(_class2$B.prototype, "_fontFamily", [serializable$3], function () {
         return null;
-      }), _applyDecoratedDescriptor(_class2$y.prototype, "_nativeAsset", [override, string], Object.getOwnPropertyDescriptor(_class2$y.prototype, "_nativeAsset"), _class2$y.prototype), _applyDecoratedDescriptor(_class2$y.prototype, "_nativeDep", [override], Object.getOwnPropertyDescriptor(_class2$y.prototype, "_nativeDep"), _class2$y.prototype)), _class2$y)) || _class$I));
+      }), _applyDecoratedDescriptor(_class2$B.prototype, "_nativeAsset", [override, string], Object.getOwnPropertyDescriptor(_class2$B.prototype, "_nativeAsset"), _class2$B.prototype), _applyDecoratedDescriptor(_class2$B.prototype, "_nativeDep", [override], Object.getOwnPropertyDescriptor(_class2$B.prototype, "_nativeDep"), _class2$B.prototype)), _class2$B)) || _class$K));
       cclegacy.TTFFont = TTFFont;
 
       var minigame = {};
@@ -54718,7 +54718,7 @@ System.register([], (function (exports, module) {
         return HtmlTextParser;
       }());
 
-      var _dec$I, _dec2$C, _class3$l, _class4$1, _initializer$x, _initializer2$s, _initializer3$m, _initializer4$k;
+      var _dec$K, _dec2$D, _class3$o, _class4$1, _initializer$z, _initializer2$t, _initializer3$n, _initializer4$l;
       var FontLetterDefinition = function FontLetterDefinition() {
         this.u = 0;
         this.v = 0;
@@ -54788,15 +54788,15 @@ System.register([], (function (exports, module) {
         }]);
         return FontAtlas;
       }();
-      var BitmapFont = exports("BitmapFont", (_dec$I = ccclass$4('cc.BitmapFont'), _dec2$C = type$3(SpriteFrame), _dec$I(_class3$l = (_class4$1 = function (_Font) {
+      var BitmapFont = exports("BitmapFont", (_dec$K = ccclass$4('cc.BitmapFont'), _dec2$D = type$3(SpriteFrame), _dec$K(_class3$o = (_class4$1 = function (_Font) {
         _inheritsLoose(BitmapFont, _Font);
         function BitmapFont() {
           var _this;
           _this = _Font.call(this) || this;
-          _this.fntDataStr = _initializer$x && _initializer$x();
-          _this.spriteFrame = _initializer2$s && _initializer2$s();
-          _this.fontSize = _initializer3$m && _initializer3$m();
-          _this.fntConfig = _initializer4$k && _initializer4$k();
+          _this.fntDataStr = _initializer$z && _initializer$z();
+          _this.spriteFrame = _initializer2$t && _initializer2$t();
+          _this.fontSize = _initializer3$n && _initializer3$n();
+          _this.fntConfig = _initializer4$l && _initializer4$l();
           return _this;
         }
         var _proto2 = BitmapFont.prototype;
@@ -54827,25 +54827,25 @@ System.register([], (function (exports, module) {
           }
         };
         return BitmapFont;
-      }(Font), (_initializer$x = applyDecoratedInitializer(_class4$1.prototype, "fntDataStr", [serializable$3], function () {
+      }(Font), (_initializer$z = applyDecoratedInitializer(_class4$1.prototype, "fntDataStr", [serializable$3], function () {
         return '';
-      }), _initializer2$s = applyDecoratedInitializer(_class4$1.prototype, "spriteFrame", [_dec2$C], function () {
+      }), _initializer2$t = applyDecoratedInitializer(_class4$1.prototype, "spriteFrame", [_dec2$D], function () {
         return null;
-      }), _initializer3$m = applyDecoratedInitializer(_class4$1.prototype, "fontSize", [serializable$3], function () {
+      }), _initializer3$n = applyDecoratedInitializer(_class4$1.prototype, "fontSize", [serializable$3], function () {
         return -1;
-      }), _initializer4$k = applyDecoratedInitializer(_class4$1.prototype, "fntConfig", [serializable$3], function () {
+      }), _initializer4$l = applyDecoratedInitializer(_class4$1.prototype, "fntConfig", [serializable$3], function () {
         return null;
-      })), _class4$1)) || _class3$l));
+      })), _class4$1)) || _class3$o));
       cclegacy.BitmapFont = BitmapFont;
 
-      var _dec$H, _class$H;
-      var LabelAtlas = exports("LabelAtlas", (_dec$H = ccclass$4('cc.LabelAtlas'), _dec$H(_class$H = function (_BitmapFont) {
+      var _dec$J, _class$J;
+      var LabelAtlas = exports("LabelAtlas", (_dec$J = ccclass$4('cc.LabelAtlas'), _dec$J(_class$J = function (_BitmapFont) {
         _inheritsLoose(LabelAtlas, _BitmapFont);
         function LabelAtlas() {
           return _BitmapFont.apply(this, arguments) || this;
         }
         return LabelAtlas;
-      }(BitmapFont)) || _class$H));
+      }(BitmapFont)) || _class$J));
       cclegacy.LabelAtlas = LabelAtlas;
 
       var _canvasPool;
@@ -56322,7 +56322,7 @@ System.register([], (function (exports, module) {
         return MeshRenderData;
       }(BaseRenderData));
 
-      var _dec$G, _dec2$B, _class$G, _class2$x, _initializer$w, _initializer2$r, _class3$k;
+      var _dec$I, _dec2$C, _class$I, _class2$A, _initializer$y, _initializer2$s, _class3$n;
       var _vec2a = new Vec2();
       var _vec2b = new Vec2();
       var _vec3a = new Vec3();
@@ -56331,14 +56331,14 @@ System.register([], (function (exports, module) {
       var _worldMatrix$1 = new Mat4();
       var _zeroMatrix = new Mat4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
       var _rect = new Rect$1();
-      var UITransform = (_dec$G = ccclass$4('cc.UITransform'), _dec2$B = executionOrder$1(110), _dec$G(_class$G = _dec2$B(_class$G = disallowMultiple$1(_class$G = (_class2$x = (_class3$k = function (_Component) {
+      var UITransform = (_dec$I = ccclass$4('cc.UITransform'), _dec2$C = executionOrder$1(110), _dec$I(_class$I = _dec2$C(_class$I = disallowMultiple$1(_class$I = (_class2$A = (_class3$n = function (_Component) {
         _inheritsLoose(UITransform, _Component);
         function UITransform() {
           var _this;
           _this = _Component.call(this) || this;
           _this._priority = 0;
-          _this._contentSize = _initializer$w && _initializer$w();
-          _this._anchorPoint = _initializer2$r && _initializer2$r();
+          _this._contentSize = _initializer$y && _initializer$y();
+          _this._anchorPoint = _initializer2$s && _initializer2$s();
           return _this;
         }
         var _proto = UITransform.prototype;
@@ -56774,15 +56774,15 @@ System.register([], (function (exports, module) {
           }
         }]);
         return UITransform;
-      }(Component), _class3$k.EventType = NodeEventType, _class3$k.priorityChangeNodeMap = new Map(), _class3$k), (_initializer$w = applyDecoratedInitializer(_class2$x.prototype, "_contentSize", [serializable$3], function () {
+      }(Component), _class3$n.EventType = NodeEventType, _class3$n.priorityChangeNodeMap = new Map(), _class3$n), (_initializer$y = applyDecoratedInitializer(_class2$A.prototype, "_contentSize", [serializable$3], function () {
         return new Size$1(100, 100);
-      }), _initializer2$r = applyDecoratedInitializer(_class2$x.prototype, "_anchorPoint", [serializable$3], function () {
+      }), _initializer2$s = applyDecoratedInitializer(_class2$A.prototype, "_anchorPoint", [serializable$3], function () {
         return new Vec2(0.5, 0.5);
-      })), _class2$x)) || _class$G) || _class$G) || _class$G); exports({ UITransform: UITransform, UITransformComponent: UITransform });
+      })), _class2$A)) || _class$I) || _class$I) || _class$I); exports({ UITransform: UITransform, UITransformComponent: UITransform });
       director.on("director_after_update", UITransform._sortSiblings);
       director.on("director_before_scene_launch", UITransform._cleanChangeMap);
 
-      var _dec$F, _dec2$A, _dec3$u, _class$F, _class2$w, _initializer$v;
+      var _dec$H, _dec2$B, _dec3$v, _class$H, _class2$z, _initializer$x;
       var _matInsInfo = {
         parent: null,
         owner: null,
@@ -56791,12 +56791,12 @@ System.register([], (function (exports, module) {
       var ccclass$2 = ccclass$4,
         disallowMultiple = disallowMultiple$1,
         type$2 = type$3;
-      var Renderer = exports("Renderer", (_dec$F = ccclass$2('cc.Renderer'), _dec2$A = type$2(Material), _dec3$u = type$2([Material]), _dec$F(_class$F = disallowMultiple(_class$F = (_class2$w = function (_Component) {
+      var Renderer = exports("Renderer", (_dec$H = ccclass$2('cc.Renderer'), _dec2$B = type$2(Material), _dec3$v = type$2([Material]), _dec$H(_class$H = disallowMultiple(_class$H = (_class2$z = function (_Component) {
         _inheritsLoose(Renderer, _Component);
         function Renderer() {
           var _this;
           _this = _Component.call(this) || this;
-          _this._materials = _initializer$v && _initializer$v();
+          _this._materials = _initializer$x && _initializer$x();
           _this._materialInstances = [];
           return _this;
         }
@@ -56929,9 +56929,9 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Renderer;
-      }(Component), (_applyDecoratedDescriptor(_class2$w.prototype, "sharedMaterials", [_dec2$A], Object.getOwnPropertyDescriptor(_class2$w.prototype, "sharedMaterials"), _class2$w.prototype), _initializer$v = applyDecoratedInitializer(_class2$w.prototype, "_materials", [_dec3$u], function () {
+      }(Component), (_applyDecoratedDescriptor(_class2$z.prototype, "sharedMaterials", [_dec2$B], Object.getOwnPropertyDescriptor(_class2$z.prototype, "sharedMaterials"), _class2$z.prototype), _initializer$x = applyDecoratedInitializer(_class2$z.prototype, "_materials", [_dec3$v], function () {
         return [];
-      })), _class2$w)) || _class$F) || _class$F));
+      })), _class2$z)) || _class$H) || _class$H));
 
       var RenderEntity = function () {
         var _proto = RenderEntity.prototype;
@@ -57135,7 +57135,7 @@ System.register([], (function (exports, module) {
       SortingLayers.indexMap = new Map();
       SortingLayers.Enum = Enum(SortingLayer);
 
-      var _dec$E, _dec2$z, _dec3$t, _dec4$j, _class$E, _class2$v, _initializer$u, _initializer2$q, _initializer3$l, _initializer4$j, _initializer5$g, _class3$j;
+      var _dec$G, _dec2$A, _dec3$u, _dec4$j, _class$G, _class2$y, _initializer$w, _initializer2$r, _initializer3$m, _initializer4$k, _initializer5$g, _class3$m;
       ccenum(BlendFactor);
       ccenum(BlendOp);
       ccenum(ColorMask);
@@ -57146,16 +57146,16 @@ System.register([], (function (exports, module) {
         USE_ALPHA_SEPARATED: 3,
         USE_ALPHA_SEPARATED_AND_GRAY: 4
       });
-      var UIRenderer = (_dec$E = ccclass$4('cc.UIRenderer'), _dec2$z = requireComponent(UITransform), _dec3$t = type$3(Material), _dec4$j = type$3(Material), _dec$E(_class$E = _dec2$z(_class$E = (_class2$v = (_class3$j = function (_Renderer) {
+      var UIRenderer = (_dec$G = ccclass$4('cc.UIRenderer'), _dec2$A = requireComponent(UITransform), _dec3$u = type$3(Material), _dec4$j = type$3(Material), _dec$G(_class$G = _dec2$A(_class$G = (_class2$y = (_class3$m = function (_Renderer) {
         _inheritsLoose(UIRenderer, _Renderer);
         function UIRenderer() {
           var _this;
           _this = _Renderer.call(this) || this;
           _this._renderData = null;
-          _this._materials = _initializer$u && _initializer$u();
-          _this._customMaterial = _initializer2$q && _initializer2$q();
-          _this._srcBlendFactor = _initializer3$l && _initializer3$l();
-          _this._dstBlendFactor = _initializer4$j && _initializer4$j();
+          _this._materials = _initializer$w && _initializer$w();
+          _this._customMaterial = _initializer2$r && _initializer2$r();
+          _this._srcBlendFactor = _initializer3$m && _initializer3$m();
+          _this._dstBlendFactor = _initializer4$k && _initializer4$k();
           _this._color = _initializer5$g && _initializer5$g();
           _this._stencilStage = 0;
           _this._assembler = null;
@@ -57508,17 +57508,17 @@ System.register([], (function (exports, module) {
           }
         }]);
         return UIRenderer;
-      }(Renderer), _class3$j.BlendState = BlendFactor, _class3$j.Assembler = null, _class3$j.PostAssembler = null, _class3$j), (_applyDecoratedDescriptor(_class2$v.prototype, "sharedMaterials", [override], Object.getOwnPropertyDescriptor(_class2$v.prototype, "sharedMaterials"), _class2$v.prototype), _applyDecoratedDescriptor(_class2$v.prototype, "customMaterial", [_dec3$t], Object.getOwnPropertyDescriptor(_class2$v.prototype, "customMaterial"), _class2$v.prototype), _initializer$u = applyDecoratedInitializer(_class2$v.prototype, "_materials", [override], function () {
+      }(Renderer), _class3$m.BlendState = BlendFactor, _class3$m.Assembler = null, _class3$m.PostAssembler = null, _class3$m), (_applyDecoratedDescriptor(_class2$y.prototype, "sharedMaterials", [override], Object.getOwnPropertyDescriptor(_class2$y.prototype, "sharedMaterials"), _class2$y.prototype), _applyDecoratedDescriptor(_class2$y.prototype, "customMaterial", [_dec3$u], Object.getOwnPropertyDescriptor(_class2$y.prototype, "customMaterial"), _class2$y.prototype), _initializer$w = applyDecoratedInitializer(_class2$y.prototype, "_materials", [override], function () {
         return [];
-      }), _initializer2$q = applyDecoratedInitializer(_class2$v.prototype, "_customMaterial", [_dec4$j], function () {
+      }), _initializer2$r = applyDecoratedInitializer(_class2$y.prototype, "_customMaterial", [_dec4$j], function () {
         return null;
-      }), _initializer3$l = applyDecoratedInitializer(_class2$v.prototype, "_srcBlendFactor", [serializable$3], function () {
+      }), _initializer3$m = applyDecoratedInitializer(_class2$y.prototype, "_srcBlendFactor", [serializable$3], function () {
         return 2;
-      }), _initializer4$j = applyDecoratedInitializer(_class2$v.prototype, "_dstBlendFactor", [serializable$3], function () {
+      }), _initializer4$k = applyDecoratedInitializer(_class2$y.prototype, "_dstBlendFactor", [serializable$3], function () {
         return 4;
-      }), _initializer5$g = applyDecoratedInitializer(_class2$v.prototype, "_color", [serializable$3], function () {
+      }), _initializer5$g = applyDecoratedInitializer(_class2$y.prototype, "_color", [serializable$3], function () {
         return Color$1.WHITE.clone();
-      })), _class2$v)) || _class$E) || _class$E); exports({ UIRenderer: UIRenderer, RenderComponent: UIRenderer, UIRenderable: UIRenderer, Renderable2D: UIRenderer });
+      })), _class2$y)) || _class$G) || _class$G); exports({ UIRenderer: UIRenderer, RenderComponent: UIRenderer, UIRenderable: UIRenderer, Renderable2D: UIRenderer });
       cclegacy.internal.UIRenderer = UIRenderer;
 
       var TextStyle = function () {
@@ -57649,7 +57649,7 @@ System.register([], (function (exports, module) {
         return TextOutputRenderData;
       }();
 
-      var _dec$D, _dec2$y, _dec3$s, _dec4$i, _dec5$g, _dec6$a, _dec7$9, _class$D, _class2$u, _initializer$t, _initializer2$p, _initializer3$k, _initializer4$i, _initializer5$f, _initializer6$c, _initializer7$a, _initializer8$a, _initializer9$a, _initializer10$a, _initializer11$9, _initializer12$8, _initializer13$7, _initializer14$6, _initializer15$4, _initializer16$4, _initializer17$3, _initializer18$3, _initializer19$2, _initializer20$2, _initializer21$2, _initializer22$1, _initializer23, _initializer24, _class3$i;
+      var _dec$F, _dec2$z, _dec3$t, _dec4$i, _dec5$g, _dec6$a, _dec7$9, _class$F, _class2$x, _initializer$v, _initializer2$q, _initializer3$l, _initializer4$j, _initializer5$f, _initializer6$c, _initializer7$a, _initializer8$a, _initializer9$a, _initializer10$a, _initializer11$9, _initializer12$8, _initializer13$7, _initializer14$6, _initializer15$4, _initializer16$4, _initializer17$3, _initializer18$3, _initializer19$2, _initializer20$2, _initializer21$2, _initializer22$1, _initializer23, _initializer24, _class3$l;
       Color$1.WHITE.clone();
       var HorizontalTextAlignment = exports("HorizontalTextAlignment", {
         LEFT: 0,
@@ -57676,15 +57676,15 @@ System.register([], (function (exports, module) {
         CHAR: 2
       });
       ccenum(CacheMode);
-      var Label = (_dec$D = ccclass$4('cc.Label'), _dec2$y = executionOrder$1(110), _dec3$s = type$3(HorizontalTextAlignment), _dec4$i = type$3(VerticalTextAlignment), _dec5$g = type$3(Overflow), _dec6$a = type$3(Font), _dec7$9 = type$3(CacheMode), _dec$D(_class$D = _dec2$y(_class$D = (_class2$u = (_class3$i = function (_UIRenderer) {
+      var Label = (_dec$F = ccclass$4('cc.Label'), _dec2$z = executionOrder$1(110), _dec3$t = type$3(HorizontalTextAlignment), _dec4$i = type$3(VerticalTextAlignment), _dec5$g = type$3(Overflow), _dec6$a = type$3(Font), _dec7$9 = type$3(CacheMode), _dec$F(_class$F = _dec2$z(_class$F = (_class2$x = (_class3$l = function (_UIRenderer) {
         _inheritsLoose(Label, _UIRenderer);
         function Label() {
           var _this;
           _this = _UIRenderer.call(this) || this;
-          _this._string = _initializer$t && _initializer$t();
-          _this._horizontalAlign = _initializer2$p && _initializer2$p();
-          _this._verticalAlign = _initializer3$k && _initializer3$k();
-          _this._actualFontSize = _initializer4$i && _initializer4$i();
+          _this._string = _initializer$v && _initializer$v();
+          _this._horizontalAlign = _initializer2$q && _initializer2$q();
+          _this._verticalAlign = _initializer3$l && _initializer3$l();
+          _this._actualFontSize = _initializer4$j && _initializer4$j();
           _this._fontSize = _initializer5$f && _initializer5$f();
           _this._fontFamily = _initializer6$c && _initializer6$c();
           _this._lineHeight = _initializer7$a && _initializer7$a();
@@ -58243,58 +58243,58 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Label;
-      }(UIRenderer), _class3$i.HorizontalAlign = HorizontalTextAlignment, _class3$i.VerticalAlign = VerticalTextAlignment, _class3$i.Overflow = Overflow, _class3$i.CacheMode = CacheMode, _class3$i._canvasPool = CanvasPool.getInstance(), _class3$i), (_applyDecoratedDescriptor(_class2$u.prototype, "horizontalAlign", [_dec3$s], Object.getOwnPropertyDescriptor(_class2$u.prototype, "horizontalAlign"), _class2$u.prototype), _applyDecoratedDescriptor(_class2$u.prototype, "verticalAlign", [_dec4$i], Object.getOwnPropertyDescriptor(_class2$u.prototype, "verticalAlign"), _class2$u.prototype), _applyDecoratedDescriptor(_class2$u.prototype, "overflow", [_dec5$g], Object.getOwnPropertyDescriptor(_class2$u.prototype, "overflow"), _class2$u.prototype), _applyDecoratedDescriptor(_class2$u.prototype, "font", [_dec6$a], Object.getOwnPropertyDescriptor(_class2$u.prototype, "font"), _class2$u.prototype), _applyDecoratedDescriptor(_class2$u.prototype, "cacheMode", [_dec7$9], Object.getOwnPropertyDescriptor(_class2$u.prototype, "cacheMode"), _class2$u.prototype), _initializer$t = applyDecoratedInitializer(_class2$u.prototype, "_string", [serializable$3], function () {
+      }(UIRenderer), _class3$l.HorizontalAlign = HorizontalTextAlignment, _class3$l.VerticalAlign = VerticalTextAlignment, _class3$l.Overflow = Overflow, _class3$l.CacheMode = CacheMode, _class3$l._canvasPool = CanvasPool.getInstance(), _class3$l), (_applyDecoratedDescriptor(_class2$x.prototype, "horizontalAlign", [_dec3$t], Object.getOwnPropertyDescriptor(_class2$x.prototype, "horizontalAlign"), _class2$x.prototype), _applyDecoratedDescriptor(_class2$x.prototype, "verticalAlign", [_dec4$i], Object.getOwnPropertyDescriptor(_class2$x.prototype, "verticalAlign"), _class2$x.prototype), _applyDecoratedDescriptor(_class2$x.prototype, "overflow", [_dec5$g], Object.getOwnPropertyDescriptor(_class2$x.prototype, "overflow"), _class2$x.prototype), _applyDecoratedDescriptor(_class2$x.prototype, "font", [_dec6$a], Object.getOwnPropertyDescriptor(_class2$x.prototype, "font"), _class2$x.prototype), _applyDecoratedDescriptor(_class2$x.prototype, "cacheMode", [_dec7$9], Object.getOwnPropertyDescriptor(_class2$x.prototype, "cacheMode"), _class2$x.prototype), _initializer$v = applyDecoratedInitializer(_class2$x.prototype, "_string", [serializable$3], function () {
         return 'label';
-      }), _initializer2$p = applyDecoratedInitializer(_class2$u.prototype, "_horizontalAlign", [serializable$3], function () {
+      }), _initializer2$q = applyDecoratedInitializer(_class2$x.prototype, "_horizontalAlign", [serializable$3], function () {
         return 1;
-      }), _initializer3$k = applyDecoratedInitializer(_class2$u.prototype, "_verticalAlign", [serializable$3], function () {
+      }), _initializer3$l = applyDecoratedInitializer(_class2$x.prototype, "_verticalAlign", [serializable$3], function () {
         return 1;
-      }), _initializer4$i = applyDecoratedInitializer(_class2$u.prototype, "_actualFontSize", [serializable$3], function () {
+      }), _initializer4$j = applyDecoratedInitializer(_class2$x.prototype, "_actualFontSize", [serializable$3], function () {
         return 0;
-      }), _initializer5$f = applyDecoratedInitializer(_class2$u.prototype, "_fontSize", [serializable$3], function () {
+      }), _initializer5$f = applyDecoratedInitializer(_class2$x.prototype, "_fontSize", [serializable$3], function () {
         return 40;
-      }), _initializer6$c = applyDecoratedInitializer(_class2$u.prototype, "_fontFamily", [serializable$3], function () {
+      }), _initializer6$c = applyDecoratedInitializer(_class2$x.prototype, "_fontFamily", [serializable$3], function () {
         return 'Arial';
-      }), _initializer7$a = applyDecoratedInitializer(_class2$u.prototype, "_lineHeight", [serializable$3], function () {
+      }), _initializer7$a = applyDecoratedInitializer(_class2$x.prototype, "_lineHeight", [serializable$3], function () {
         return 40;
-      }), _initializer8$a = applyDecoratedInitializer(_class2$u.prototype, "_overflow", [serializable$3], function () {
+      }), _initializer8$a = applyDecoratedInitializer(_class2$x.prototype, "_overflow", [serializable$3], function () {
         return 0;
-      }), _initializer9$a = applyDecoratedInitializer(_class2$u.prototype, "_enableWrapText", [serializable$3], function () {
+      }), _initializer9$a = applyDecoratedInitializer(_class2$x.prototype, "_enableWrapText", [serializable$3], function () {
         return true;
-      }), _initializer10$a = applyDecoratedInitializer(_class2$u.prototype, "_font", [serializable$3], function () {
+      }), _initializer10$a = applyDecoratedInitializer(_class2$x.prototype, "_font", [serializable$3], function () {
         return null;
-      }), _initializer11$9 = applyDecoratedInitializer(_class2$u.prototype, "_isSystemFontUsed", [serializable$3], function () {
+      }), _initializer11$9 = applyDecoratedInitializer(_class2$x.prototype, "_isSystemFontUsed", [serializable$3], function () {
         return true;
-      }), _initializer12$8 = applyDecoratedInitializer(_class2$u.prototype, "_spacingX", [serializable$3], function () {
+      }), _initializer12$8 = applyDecoratedInitializer(_class2$x.prototype, "_spacingX", [serializable$3], function () {
         return 0;
-      }), _initializer13$7 = applyDecoratedInitializer(_class2$u.prototype, "_isItalic", [serializable$3], function () {
+      }), _initializer13$7 = applyDecoratedInitializer(_class2$x.prototype, "_isItalic", [serializable$3], function () {
         return false;
-      }), _initializer14$6 = applyDecoratedInitializer(_class2$u.prototype, "_isBold", [serializable$3], function () {
+      }), _initializer14$6 = applyDecoratedInitializer(_class2$x.prototype, "_isBold", [serializable$3], function () {
         return false;
-      }), _initializer15$4 = applyDecoratedInitializer(_class2$u.prototype, "_isUnderline", [serializable$3], function () {
+      }), _initializer15$4 = applyDecoratedInitializer(_class2$x.prototype, "_isUnderline", [serializable$3], function () {
         return false;
-      }), _initializer16$4 = applyDecoratedInitializer(_class2$u.prototype, "_underlineHeight", [serializable$3], function () {
+      }), _initializer16$4 = applyDecoratedInitializer(_class2$x.prototype, "_underlineHeight", [serializable$3], function () {
         return 2;
-      }), _initializer17$3 = applyDecoratedInitializer(_class2$u.prototype, "_cacheMode", [serializable$3], function () {
+      }), _initializer17$3 = applyDecoratedInitializer(_class2$x.prototype, "_cacheMode", [serializable$3], function () {
         return 0;
-      }), _initializer18$3 = applyDecoratedInitializer(_class2$u.prototype, "_enableOutline", [serializable$3], function () {
+      }), _initializer18$3 = applyDecoratedInitializer(_class2$x.prototype, "_enableOutline", [serializable$3], function () {
         return false;
-      }), _initializer19$2 = applyDecoratedInitializer(_class2$u.prototype, "_outlineColor", [serializable$3], function () {
+      }), _initializer19$2 = applyDecoratedInitializer(_class2$x.prototype, "_outlineColor", [serializable$3], function () {
         return new Color$1(0, 0, 0, 255);
-      }), _initializer20$2 = applyDecoratedInitializer(_class2$u.prototype, "_outlineWidth", [serializable$3], function () {
+      }), _initializer20$2 = applyDecoratedInitializer(_class2$x.prototype, "_outlineWidth", [serializable$3], function () {
         return 2;
-      }), _initializer21$2 = applyDecoratedInitializer(_class2$u.prototype, "_enableShadow", [serializable$3], function () {
+      }), _initializer21$2 = applyDecoratedInitializer(_class2$x.prototype, "_enableShadow", [serializable$3], function () {
         return false;
-      }), _initializer22$1 = applyDecoratedInitializer(_class2$u.prototype, "_shadowColor", [serializable$3], function () {
+      }), _initializer22$1 = applyDecoratedInitializer(_class2$x.prototype, "_shadowColor", [serializable$3], function () {
         return new Color$1(0, 0, 0, 255);
-      }), _initializer23 = applyDecoratedInitializer(_class2$u.prototype, "_shadowOffset", [serializable$3], function () {
+      }), _initializer23 = applyDecoratedInitializer(_class2$x.prototype, "_shadowOffset", [serializable$3], function () {
         return new Vec2(2, 2);
-      }), _initializer24 = applyDecoratedInitializer(_class2$u.prototype, "_shadowBlur", [serializable$3], function () {
+      }), _initializer24 = applyDecoratedInitializer(_class2$x.prototype, "_shadowBlur", [serializable$3], function () {
         return 2;
-      })), _class2$u)) || _class$D) || _class$D); exports({ Label: Label, LabelComponent: Label });
+      })), _class2$x)) || _class$F) || _class$F); exports({ Label: Label, LabelComponent: Label });
       cclegacy.Label = Label;
 
-      var _dec$C, _dec2$x, _dec3$r, _dec4$h, _dec5$f, _dec6$9, _dec7$8, _class$C, _class2$t, _initializer$s, _initializer2$o, _initializer3$j, _initializer4$h, _initializer5$e, _initializer6$b, _initializer7$9, _initializer8$9, _initializer9$9, _initializer10$9, _class3$h;
+      var _dec$E, _dec2$y, _dec3$s, _dec4$h, _dec5$f, _dec6$9, _dec7$8, _class$E, _class2$w, _initializer$u, _initializer2$p, _initializer3$k, _initializer4$i, _initializer5$e, _initializer6$b, _initializer7$9, _initializer8$9, _initializer9$9, _initializer10$9, _class3$k;
       var SpriteType = {
         SIMPLE: 0,
         SLICED: 1,
@@ -58317,15 +58317,15 @@ System.register([], (function (exports, module) {
       var SpriteEventType = {
         SPRITE_FRAME_CHANGED: "spriteframe-changed"
       };
-      var Sprite = (_dec$C = ccclass$4('cc.Sprite'), _dec2$x = executionOrder$1(110), _dec3$r = type$3(SpriteAtlas), _dec4$h = type$3(SpriteFrame), _dec5$f = type$3(SpriteType), _dec6$9 = type$3(FillType), _dec7$8 = type$3(SizeMode$1), _dec$C(_class$C = _dec2$x(_class$C = (_class2$t = (_class3$h = function (_UIRenderer) {
+      var Sprite = (_dec$E = ccclass$4('cc.Sprite'), _dec2$y = executionOrder$1(110), _dec3$s = type$3(SpriteAtlas), _dec4$h = type$3(SpriteFrame), _dec5$f = type$3(SpriteType), _dec6$9 = type$3(FillType), _dec7$8 = type$3(SizeMode$1), _dec$E(_class$E = _dec2$y(_class$E = (_class2$w = (_class3$k = function (_UIRenderer) {
         _inheritsLoose(Sprite, _UIRenderer);
         function Sprite() {
           var _this;
           _this = _UIRenderer.call(this) || this;
-          _this._spriteFrame = _initializer$s && _initializer$s();
-          _this._type = _initializer2$o && _initializer2$o();
-          _this._fillType = _initializer3$j && _initializer3$j();
-          _this._sizeMode = _initializer4$h && _initializer4$h();
+          _this._spriteFrame = _initializer$u && _initializer$u();
+          _this._type = _initializer2$p && _initializer2$p();
+          _this._fillType = _initializer3$k && _initializer3$k();
+          _this._sizeMode = _initializer4$i && _initializer4$i();
           _this._fillCenter = _initializer5$e && _initializer5$e();
           _this._fillStart = _initializer6$b && _initializer6$b();
           _this._fillRange = _initializer7$9 && _initializer7$9();
@@ -58644,31 +58644,31 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Sprite;
-      }(UIRenderer), _class3$h.FillType = FillType, _class3$h.Type = SpriteType, _class3$h.SizeMode = SizeMode$1, _class3$h.EventType = SpriteEventType, _class3$h), (_applyDecoratedDescriptor(_class2$t.prototype, "spriteAtlas", [_dec3$r], Object.getOwnPropertyDescriptor(_class2$t.prototype, "spriteAtlas"), _class2$t.prototype), _applyDecoratedDescriptor(_class2$t.prototype, "spriteFrame", [_dec4$h], Object.getOwnPropertyDescriptor(_class2$t.prototype, "spriteFrame"), _class2$t.prototype), _applyDecoratedDescriptor(_class2$t.prototype, "type", [_dec5$f], Object.getOwnPropertyDescriptor(_class2$t.prototype, "type"), _class2$t.prototype), _applyDecoratedDescriptor(_class2$t.prototype, "fillType", [_dec6$9], Object.getOwnPropertyDescriptor(_class2$t.prototype, "fillType"), _class2$t.prototype), _applyDecoratedDescriptor(_class2$t.prototype, "sizeMode", [_dec7$8], Object.getOwnPropertyDescriptor(_class2$t.prototype, "sizeMode"), _class2$t.prototype), _initializer$s = applyDecoratedInitializer(_class2$t.prototype, "_spriteFrame", [serializable$3], function () {
+      }(UIRenderer), _class3$k.FillType = FillType, _class3$k.Type = SpriteType, _class3$k.SizeMode = SizeMode$1, _class3$k.EventType = SpriteEventType, _class3$k), (_applyDecoratedDescriptor(_class2$w.prototype, "spriteAtlas", [_dec3$s], Object.getOwnPropertyDescriptor(_class2$w.prototype, "spriteAtlas"), _class2$w.prototype), _applyDecoratedDescriptor(_class2$w.prototype, "spriteFrame", [_dec4$h], Object.getOwnPropertyDescriptor(_class2$w.prototype, "spriteFrame"), _class2$w.prototype), _applyDecoratedDescriptor(_class2$w.prototype, "type", [_dec5$f], Object.getOwnPropertyDescriptor(_class2$w.prototype, "type"), _class2$w.prototype), _applyDecoratedDescriptor(_class2$w.prototype, "fillType", [_dec6$9], Object.getOwnPropertyDescriptor(_class2$w.prototype, "fillType"), _class2$w.prototype), _applyDecoratedDescriptor(_class2$w.prototype, "sizeMode", [_dec7$8], Object.getOwnPropertyDescriptor(_class2$w.prototype, "sizeMode"), _class2$w.prototype), _initializer$u = applyDecoratedInitializer(_class2$w.prototype, "_spriteFrame", [serializable$3], function () {
         return null;
-      }), _initializer2$o = applyDecoratedInitializer(_class2$t.prototype, "_type", [serializable$3], function () {
+      }), _initializer2$p = applyDecoratedInitializer(_class2$w.prototype, "_type", [serializable$3], function () {
         return 0;
-      }), _initializer3$j = applyDecoratedInitializer(_class2$t.prototype, "_fillType", [serializable$3], function () {
+      }), _initializer3$k = applyDecoratedInitializer(_class2$w.prototype, "_fillType", [serializable$3], function () {
         return 0;
-      }), _initializer4$h = applyDecoratedInitializer(_class2$t.prototype, "_sizeMode", [serializable$3], function () {
+      }), _initializer4$i = applyDecoratedInitializer(_class2$w.prototype, "_sizeMode", [serializable$3], function () {
         return 1;
-      }), _initializer5$e = applyDecoratedInitializer(_class2$t.prototype, "_fillCenter", [serializable$3], function () {
+      }), _initializer5$e = applyDecoratedInitializer(_class2$w.prototype, "_fillCenter", [serializable$3], function () {
         return new Vec2(0, 0);
-      }), _initializer6$b = applyDecoratedInitializer(_class2$t.prototype, "_fillStart", [serializable$3], function () {
+      }), _initializer6$b = applyDecoratedInitializer(_class2$w.prototype, "_fillStart", [serializable$3], function () {
         return 0;
-      }), _initializer7$9 = applyDecoratedInitializer(_class2$t.prototype, "_fillRange", [serializable$3], function () {
+      }), _initializer7$9 = applyDecoratedInitializer(_class2$w.prototype, "_fillRange", [serializable$3], function () {
         return 0;
-      }), _initializer8$9 = applyDecoratedInitializer(_class2$t.prototype, "_isTrimmedMode", [serializable$3], function () {
+      }), _initializer8$9 = applyDecoratedInitializer(_class2$w.prototype, "_isTrimmedMode", [serializable$3], function () {
         return true;
-      }), _initializer9$9 = applyDecoratedInitializer(_class2$t.prototype, "_useGrayscale", [serializable$3], function () {
+      }), _initializer9$9 = applyDecoratedInitializer(_class2$w.prototype, "_useGrayscale", [serializable$3], function () {
         return false;
-      }), _initializer10$9 = applyDecoratedInitializer(_class2$t.prototype, "_atlas", [serializable$3], function () {
+      }), _initializer10$9 = applyDecoratedInitializer(_class2$w.prototype, "_atlas", [serializable$3], function () {
         return null;
-      })), _class2$t)) || _class$C) || _class$C); exports({ Sprite: Sprite, SpriteComponent: Sprite });
+      })), _class2$w)) || _class$E) || _class$E); exports({ Sprite: Sprite, SpriteComponent: Sprite });
       cclegacy.Sprite = Sprite;
 
-      var _dec$B, _dec2$w, _class$B;
-      var UIMeshRenderer = (_dec$B = ccclass$4('cc.UIMeshRenderer'), _dec2$w = executionOrder$1(110), _dec$B(_class$B = _dec2$w(_class$B = function (_Component) {
+      var _dec$D, _dec2$x, _class$D;
+      var UIMeshRenderer = (_dec$D = ccclass$4('cc.UIMeshRenderer'), _dec2$x = executionOrder$1(110), _dec$D(_class$D = _dec2$x(_class$D = function (_Component) {
         _inheritsLoose(UIMeshRenderer, _Component);
         function UIMeshRenderer() {
           var _this;
@@ -58796,11 +58796,11 @@ System.register([], (function (exports, module) {
           }
         }]);
         return UIMeshRenderer;
-      }(Component)) || _class$B) || _class$B); exports({ UIMeshRenderer: UIMeshRenderer, UIModelComponent: UIMeshRenderer });
+      }(Component)) || _class$D) || _class$D); exports({ UIMeshRenderer: UIMeshRenderer, UIModelComponent: UIMeshRenderer });
       cclegacy.UIMeshRenderer = UIMeshRenderer;
 
-      var _dec$A, _dec2$v, _dec3$q, _class$A;
-      var LabelOutline = (_dec$A = ccclass$4('cc.LabelOutline'), _dec2$v = executionOrder$1(110), _dec3$q = requireComponent(Label), _dec$A(_class$A = _dec2$v(_class$A = _dec3$q(_class$A = function (_Component) {
+      var _dec$C, _dec2$w, _dec3$r, _class$C;
+      var LabelOutline = (_dec$C = ccclass$4('cc.LabelOutline'), _dec2$w = executionOrder$1(110), _dec3$r = requireComponent(Label), _dec$C(_class$C = _dec2$w(_class$C = _dec3$r(_class$C = function (_Component) {
         _inheritsLoose(LabelOutline, _Component);
         function LabelOutline() {
           return _Component.apply(this, arguments) || this;
@@ -58842,7 +58842,7 @@ System.register([], (function (exports, module) {
           }
         }]);
         return LabelOutline;
-      }(Component)) || _class$A) || _class$A) || _class$A); exports({ LabelOutline: LabelOutline, LabelOutlineComponent: LabelOutline });
+      }(Component)) || _class$C) || _class$C) || _class$C); exports({ LabelOutline: LabelOutline, LabelOutlineComponent: LabelOutline });
       cclegacy.LabelOutline = LabelOutline;
 
       var UI_VIS_FLAG = Layers.Enum.NONE | Layers.Enum.UI_3D;
@@ -58914,8 +58914,8 @@ System.register([], (function (exports, module) {
         return DrawBatch2D;
       }();
 
-      var _dec$z, _dec2$u, _class$z, _class2$s;
-      var UIStaticBatch = (_dec$z = ccclass$4('cc.UIStaticBatch'), _dec2$u = executionOrder$1(110), _dec$z(_class$z = _dec2$u(_class$z = (_class2$s = function (_UIRenderer) {
+      var _dec$B, _dec2$v, _class$B, _class2$v;
+      var UIStaticBatch = (_dec$B = ccclass$4('cc.UIStaticBatch'), _dec2$v = executionOrder$1(110), _dec$B(_class$B = _dec2$v(_class$B = (_class2$v = function (_UIRenderer) {
         _inheritsLoose(UIStaticBatch, _UIRenderer);
         function UIStaticBatch() {
           var _this;
@@ -58972,10 +58972,10 @@ System.register([], (function (exports, module) {
           }
         }]);
         return UIStaticBatch;
-      }(UIRenderer), (_applyDecoratedDescriptor(_class2$s.prototype, "color", [override], Object.getOwnPropertyDescriptor(_class2$s.prototype, "color"), _class2$s.prototype)), _class2$s)) || _class$z) || _class$z); exports({ UIStaticBatch: UIStaticBatch, UIStaticBatchComponent: UIStaticBatch });
+      }(UIRenderer), (_applyDecoratedDescriptor(_class2$v.prototype, "color", [override], Object.getOwnPropertyDescriptor(_class2$v.prototype, "color"), _class2$v.prototype)), _class2$v)) || _class$B) || _class$B); exports({ UIStaticBatch: UIStaticBatch, UIStaticBatchComponent: UIStaticBatch });
 
-      var _dec$y, _dec2$t, _dec3$p, _class$y;
-      var LabelShadow = exports("LabelShadow", (_dec$y = ccclass$4('cc.LabelShadow'), _dec2$t = executionOrder$1(110), _dec3$p = requireComponent(Label), _dec$y(_class$y = _dec2$t(_class$y = _dec3$p(_class$y = function (_Component) {
+      var _dec$A, _dec2$u, _dec3$q, _class$A;
+      var LabelShadow = exports("LabelShadow", (_dec$A = ccclass$4('cc.LabelShadow'), _dec2$u = executionOrder$1(110), _dec3$q = requireComponent(Label), _dec$A(_class$A = _dec2$u(_class$A = _dec3$q(_class$A = function (_Component) {
         _inheritsLoose(LabelShadow, _Component);
         function LabelShadow() {
           return _Component.apply(this, arguments) || this;
@@ -59029,15 +59029,15 @@ System.register([], (function (exports, module) {
           }
         }]);
         return LabelShadow;
-      }(Component)) || _class$y) || _class$y) || _class$y));
+      }(Component)) || _class$A) || _class$A) || _class$A));
 
-      var _dec$x, _dec2$s, _class$x, _class2$r, _initializer$r;
-      var UIOpacity = (_dec$x = ccclass$4('cc.UIOpacity'), _dec2$s = executionOrder$1(110), _dec$x(_class$x = _dec2$s(_class$x = disallowMultiple$1(_class$x = (_class2$r = function (_Component) {
+      var _dec$z, _dec2$t, _class$z, _class2$u, _initializer$t;
+      var UIOpacity = (_dec$z = ccclass$4('cc.UIOpacity'), _dec2$t = executionOrder$1(110), _dec$z(_class$z = _dec2$t(_class$z = disallowMultiple$1(_class$z = (_class2$u = function (_Component) {
         _inheritsLoose(UIOpacity, _Component);
         function UIOpacity() {
           var _this;
           _this = _Component.call(this) || this;
-          _this._opacity = _initializer$r && _initializer$r();
+          _this._opacity = _initializer$t && _initializer$t();
           return _this;
         }
         var _proto = UIOpacity.prototype;
@@ -59065,9 +59065,9 @@ System.register([], (function (exports, module) {
           }
         }]);
         return UIOpacity;
-      }(Component), (_initializer$r = applyDecoratedInitializer(_class2$r.prototype, "_opacity", [serializable$3], function () {
+      }(Component), (_initializer$t = applyDecoratedInitializer(_class2$u.prototype, "_opacity", [serializable$3], function () {
         return 255;
-      })), _class2$r)) || _class$x) || _class$x) || _class$x); exports({ UIOpacity: UIOpacity, UIOpacityComponent: UIOpacity });
+      })), _class2$u)) || _class$z) || _class$z) || _class$z); exports({ UIOpacity: UIOpacity, UIOpacityComponent: UIOpacity });
 
       function createIA(device, data) {
         if (!data.positions) {
@@ -59903,21 +59903,21 @@ System.register([], (function (exports, module) {
         return Impl;
       }();
 
-      var _dec$w, _dec2$r, _dec3$o, _dec4$g, _class$w, _class2$q, _initializer$q, _initializer2$n, _initializer3$i, _initializer4$g, _initializer5$d, _initializer6$a, _class3$g;
+      var _dec$y, _dec2$s, _dec3$p, _dec4$g, _class$y, _class2$t, _initializer$s, _initializer2$o, _initializer3$j, _initializer4$h, _initializer5$d, _initializer6$a, _class3$j;
       var attributes = vfmtPosColor.concat([new Attribute('a_dist', 11)]);
       var componentPerVertex = getComponentPerVertex(attributes);
       var stride = getAttributeStride(attributes);
-      var Graphics = (_dec$w = ccclass$4('cc.Graphics'), _dec2$r = executionOrder$1(110), _dec3$o = type$3(LineJoin), _dec4$g = type$3(LineCap), _dec$w(_class$w = _dec2$r(_class$w = (_class2$q = (_class3$g = function (_UIRenderer) {
+      var Graphics = (_dec$y = ccclass$4('cc.Graphics'), _dec2$s = executionOrder$1(110), _dec3$p = type$3(LineJoin), _dec4$g = type$3(LineCap), _dec$y(_class$y = _dec2$s(_class$y = (_class2$t = (_class3$j = function (_UIRenderer) {
         _inheritsLoose(Graphics, _UIRenderer);
         function Graphics() {
           var _this;
           _this = _UIRenderer.call(this) || this;
           _this.impl = null;
           _this.model = null;
-          _this._lineWidth = _initializer$q && _initializer$q();
-          _this._strokeColor = _initializer2$n && _initializer2$n();
-          _this._lineJoin = _initializer3$i && _initializer3$i();
-          _this._lineCap = _initializer4$g && _initializer4$g();
+          _this._lineWidth = _initializer$s && _initializer$s();
+          _this._strokeColor = _initializer2$o && _initializer2$o();
+          _this._lineJoin = _initializer3$j && _initializer3$j();
+          _this._lineCap = _initializer4$h && _initializer4$h();
           _this._fillColor = _initializer5$d && _initializer5$d();
           _this._miterLimit = _initializer6$a && _initializer6$a();
           _this._isDrawing = false;
@@ -60239,22 +60239,22 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Graphics;
-      }(UIRenderer), _class3$g.LineJoin = LineJoin, _class3$g.LineCap = LineCap, _class3$g), (_applyDecoratedDescriptor(_class2$q.prototype, "lineJoin", [_dec3$o], Object.getOwnPropertyDescriptor(_class2$q.prototype, "lineJoin"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "lineCap", [_dec4$g], Object.getOwnPropertyDescriptor(_class2$q.prototype, "lineCap"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "color", [override], Object.getOwnPropertyDescriptor(_class2$q.prototype, "color"), _class2$q.prototype), _initializer$q = applyDecoratedInitializer(_class2$q.prototype, "_lineWidth", [serializable$3], function () {
+      }(UIRenderer), _class3$j.LineJoin = LineJoin, _class3$j.LineCap = LineCap, _class3$j), (_applyDecoratedDescriptor(_class2$t.prototype, "lineJoin", [_dec3$p], Object.getOwnPropertyDescriptor(_class2$t.prototype, "lineJoin"), _class2$t.prototype), _applyDecoratedDescriptor(_class2$t.prototype, "lineCap", [_dec4$g], Object.getOwnPropertyDescriptor(_class2$t.prototype, "lineCap"), _class2$t.prototype), _applyDecoratedDescriptor(_class2$t.prototype, "color", [override], Object.getOwnPropertyDescriptor(_class2$t.prototype, "color"), _class2$t.prototype), _initializer$s = applyDecoratedInitializer(_class2$t.prototype, "_lineWidth", [serializable$3], function () {
         return 1;
-      }), _initializer2$n = applyDecoratedInitializer(_class2$q.prototype, "_strokeColor", [serializable$3], function () {
+      }), _initializer2$o = applyDecoratedInitializer(_class2$t.prototype, "_strokeColor", [serializable$3], function () {
         return Color$1.BLACK.clone();
-      }), _initializer3$i = applyDecoratedInitializer(_class2$q.prototype, "_lineJoin", [serializable$3], function () {
+      }), _initializer3$j = applyDecoratedInitializer(_class2$t.prototype, "_lineJoin", [serializable$3], function () {
         return 2;
-      }), _initializer4$g = applyDecoratedInitializer(_class2$q.prototype, "_lineCap", [serializable$3], function () {
+      }), _initializer4$h = applyDecoratedInitializer(_class2$t.prototype, "_lineCap", [serializable$3], function () {
         return 0;
-      }), _initializer5$d = applyDecoratedInitializer(_class2$q.prototype, "_fillColor", [serializable$3], function () {
+      }), _initializer5$d = applyDecoratedInitializer(_class2$t.prototype, "_fillColor", [serializable$3], function () {
         return Color$1.WHITE.clone();
-      }), _initializer6$a = applyDecoratedInitializer(_class2$q.prototype, "_miterLimit", [serializable$3], function () {
+      }), _initializer6$a = applyDecoratedInitializer(_class2$t.prototype, "_miterLimit", [serializable$3], function () {
         return 10;
-      })), _class2$q)) || _class$w) || _class$w); exports({ GraphicsComponent: Graphics, Graphics: Graphics });
+      })), _class2$t)) || _class$y) || _class$y); exports({ GraphicsComponent: Graphics, Graphics: Graphics });
       cclegacy.Graphics = Graphics;
 
-      var _dec$v, _dec2$q, _dec3$n, _class$v, _class2$p, _initializer$p, _initializer2$m, _initializer3$h, _initializer4$f, _class3$f;
+      var _dec$x, _dec2$r, _dec3$o, _class$x, _class2$s, _initializer$r, _initializer2$n, _initializer3$i, _initializer4$g, _class3$i;
       var _worldMatrix = new Mat4();
       var _vec2_temp = new Vec2();
       var _mat4_temp = new Mat4();
@@ -60276,15 +60276,15 @@ System.register([], (function (exports, module) {
       ccenum(MaskType);
       var SEGMENTS_MIN = 3;
       var SEGMENTS_MAX = 10000;
-      var Mask = exports("MaskComponent", (_dec$v = ccclass$4('cc.Mask'), _dec2$q = executionOrder$1(110), _dec3$n = type$3(MaskType), _dec$v(_class$v = _dec2$q(_class$v = (_class2$p = (_class3$f = function (_Component) {
+      var Mask = exports("MaskComponent", (_dec$x = ccclass$4('cc.Mask'), _dec2$r = executionOrder$1(110), _dec3$o = type$3(MaskType), _dec$x(_class$x = _dec2$r(_class$x = (_class2$s = (_class3$i = function (_Component) {
         _inheritsLoose(Mask, _Component);
         function Mask() {
           var _this;
           _this = _Component.call(this) || this;
-          _this._type = _initializer$p && _initializer$p();
-          _this._inverted = _initializer2$m && _initializer2$m();
-          _this._segments = _initializer3$h && _initializer3$h();
-          _this._alphaThreshold = _initializer4$f && _initializer4$f();
+          _this._type = _initializer$r && _initializer$r();
+          _this._inverted = _initializer2$n && _initializer2$n();
+          _this._segments = _initializer3$i && _initializer3$i();
+          _this._alphaThreshold = _initializer4$g && _initializer4$g();
           _this._sprite = null;
           _this._graphics = null;
           _this._stencilStage = 0;
@@ -60671,15 +60671,15 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Mask;
-      }(Component), _class3$f.Type = MaskType, _class3$f), (_applyDecoratedDescriptor(_class2$p.prototype, "type", [_dec3$n], Object.getOwnPropertyDescriptor(_class2$p.prototype, "type"), _class2$p.prototype), _initializer$p = applyDecoratedInitializer(_class2$p.prototype, "_type", [serializable$3], function () {
+      }(Component), _class3$i.Type = MaskType, _class3$i), (_applyDecoratedDescriptor(_class2$s.prototype, "type", [_dec3$o], Object.getOwnPropertyDescriptor(_class2$s.prototype, "type"), _class2$s.prototype), _initializer$r = applyDecoratedInitializer(_class2$s.prototype, "_type", [serializable$3], function () {
         return 0;
-      }), _initializer2$m = applyDecoratedInitializer(_class2$p.prototype, "_inverted", [serializable$3], function () {
+      }), _initializer2$n = applyDecoratedInitializer(_class2$s.prototype, "_inverted", [serializable$3], function () {
         return false;
-      }), _initializer3$h = applyDecoratedInitializer(_class2$p.prototype, "_segments", [serializable$3], function () {
+      }), _initializer3$i = applyDecoratedInitializer(_class2$s.prototype, "_segments", [serializable$3], function () {
         return 64;
-      }), _initializer4$f = applyDecoratedInitializer(_class2$p.prototype, "_alphaThreshold", [serializable$3], function () {
+      }), _initializer4$g = applyDecoratedInitializer(_class2$s.prototype, "_alphaThreshold", [serializable$3], function () {
         return 0.1;
-      })), _class2$p)) || _class$v) || _class$v));
+      })), _class2$s)) || _class$x) || _class$x));
       NodeEventProcessor._maskComp = Mask;
       cclegacy.Mask = Mask;
 
@@ -60717,15 +60717,15 @@ System.register([], (function (exports, module) {
         }
       });
 
-      var _dec$u, _class$u, _class2$o, _initializer$o, _initializer2$l, _initializer3$g, _class3$e;
-      var PostProcess = (_dec$u = ccclass$4('cc.PostProcess'), _dec$u(_class$u = disallowMultiple$1(_class$u = (_class2$o = (_class3$e = function (_Component) {
+      var _dec$w, _class$w, _class2$r, _initializer$q, _initializer2$m, _initializer3$h, _class3$h;
+      var PostProcess = (_dec$w = ccclass$4('cc.PostProcess'), _dec$w(_class$w = disallowMultiple$1(_class$w = (_class2$r = (_class3$h = function (_Component) {
         _inheritsLoose(PostProcess, _Component);
         function PostProcess() {
           var _this;
           _this = _Component.call(this) || this;
-          _this.global = _initializer$o && _initializer$o();
-          _this._shadingScale = _initializer2$l && _initializer2$l();
-          _this.enableShadingScaleInEditor = _initializer3$g && _initializer3$g();
+          _this.global = _initializer$q && _initializer$q();
+          _this._shadingScale = _initializer2$m && _initializer2$m();
+          _this.enableShadingScaleInEditor = _initializer3$h && _initializer3$h();
           _this.settings = new Map();
           return _this;
         }
@@ -60758,15 +60758,15 @@ System.register([], (function (exports, module) {
           }
         }]);
         return PostProcess;
-      }(Component), _class3$e.all = [], _class3$e), (_initializer$o = applyDecoratedInitializer(_class2$o.prototype, "global", [property$1, serializable$3], function () {
+      }(Component), _class3$h.all = [], _class3$h), (_initializer$q = applyDecoratedInitializer(_class2$r.prototype, "global", [property$1, serializable$3], function () {
         return true;
-      }), _initializer2$l = applyDecoratedInitializer(_class2$o.prototype, "_shadingScale", [serializable$3], function () {
+      }), _initializer2$m = applyDecoratedInitializer(_class2$r.prototype, "_shadingScale", [serializable$3], function () {
         return 1;
-      }), _applyDecoratedDescriptor(_class2$o.prototype, "shadingScale", [property$1], Object.getOwnPropertyDescriptor(_class2$o.prototype, "shadingScale"), _class2$o.prototype), _initializer3$g = applyDecoratedInitializer(_class2$o.prototype, "enableShadingScaleInEditor", [property$1, serializable$3], function () {
+      }), _applyDecoratedDescriptor(_class2$r.prototype, "shadingScale", [property$1], Object.getOwnPropertyDescriptor(_class2$r.prototype, "shadingScale"), _class2$r.prototype), _initializer3$h = applyDecoratedInitializer(_class2$r.prototype, "enableShadingScaleInEditor", [property$1, serializable$3], function () {
         return false;
-      })), _class2$o)) || _class$u) || _class$u);
+      })), _class2$r)) || _class$w) || _class$w);
 
-      var _dec$t, _dec2$p, _dec3$m, _dec4$f, _dec5$e, _dec6$8, _dec7$7, _dec8$6, _dec9$6, _dec10$3, _class$t, _class2$n, _initializer$n, _initializer2$k, _initializer3$f, _initializer4$e, _initializer5$c, _initializer6$9, _initializer7$8, _initializer8$8, _initializer9$8, _initializer10$8, _initializer11$8, _initializer12$7, _initializer13$6, _initializer14$5, _initializer15$3, _initializer16$3, _initializer17$2, _initializer18$2, _initializer19$1, _initializer20$1, _initializer21$1, _initializer22, _class3$d;
+      var _dec$v, _dec2$q, _dec3$n, _dec4$f, _dec5$e, _dec6$8, _dec7$7, _dec8$6, _dec9$6, _dec10$3, _class$v, _class2$q, _initializer$p, _initializer2$l, _initializer3$g, _initializer4$f, _initializer5$c, _initializer6$9, _initializer7$8, _initializer8$8, _initializer9$8, _initializer10$8, _initializer11$8, _initializer12$7, _initializer13$6, _initializer14$5, _initializer15$3, _initializer16$3, _initializer17$2, _initializer18$2, _initializer19$1, _initializer20$1, _initializer21$1, _initializer22, _class3$g;
       var _temp_vec3_1 = new Vec3();
       var ProjectionType = Enum(CameraProjection);
       var FOVAxis = Enum(CameraFOVAxis);
@@ -60779,15 +60779,15 @@ System.register([], (function (exports, module) {
         DEPTH_ONLY: 6,
         DONT_CLEAR: 0
       });
-      var Camera = (_dec$t = ccclass$4('cc.Camera'), _dec2$p = type$3(Layers.BitMask), _dec3$m = type$3(ClearFlag), _dec4$f = type$3(ProjectionType), _dec5$e = type$3(FOVAxis), _dec6$8 = type$3(Aperture), _dec7$7 = type$3(Shutter), _dec8$6 = type$3(ISO), _dec9$6 = type$3(RenderTexture), _dec10$3 = type$3(PostProcess), _dec$t(_class$t = (_class2$n = (_class3$d = function (_Component) {
+      var Camera = (_dec$v = ccclass$4('cc.Camera'), _dec2$q = type$3(Layers.BitMask), _dec3$n = type$3(ClearFlag), _dec4$f = type$3(ProjectionType), _dec5$e = type$3(FOVAxis), _dec6$8 = type$3(Aperture), _dec7$7 = type$3(Shutter), _dec8$6 = type$3(ISO), _dec9$6 = type$3(RenderTexture), _dec10$3 = type$3(PostProcess), _dec$v(_class$v = (_class2$q = (_class3$g = function (_Component) {
         _inheritsLoose(Camera, _Component);
         function Camera() {
           var _this;
           _this = _Component.call(this) || this;
-          _this._projection = _initializer$n && _initializer$n();
-          _this._priority = _initializer2$k && _initializer2$k();
-          _this._fov = _initializer3$f && _initializer3$f();
-          _this._fovAxis = _initializer4$e && _initializer4$e();
+          _this._projection = _initializer$p && _initializer$p();
+          _this._priority = _initializer2$l && _initializer2$l();
+          _this._fov = _initializer3$g && _initializer3$g();
+          _this._fovAxis = _initializer4$f && _initializer4$f();
           _this._orthoHeight = _initializer5$c && _initializer5$c();
           _this._near = _initializer6$9 && _initializer6$9();
           _this._far = _initializer7$8 && _initializer7$8();
@@ -61235,55 +61235,55 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Camera;
-      }(Component), _class3$d.ProjectionType = ProjectionType, _class3$d.FOVAxis = FOVAxis, _class3$d.ClearFlag = ClearFlag, _class3$d.Aperture = Aperture, _class3$d.Shutter = Shutter, _class3$d.ISO = ISO, _class3$d.TARGET_TEXTURE_CHANGE = "tex-change", _class3$d), (_initializer$n = applyDecoratedInitializer(_class2$n.prototype, "_projection", [serializable$3], function () {
+      }(Component), _class3$g.ProjectionType = ProjectionType, _class3$g.FOVAxis = FOVAxis, _class3$g.ClearFlag = ClearFlag, _class3$g.Aperture = Aperture, _class3$g.Shutter = Shutter, _class3$g.ISO = ISO, _class3$g.TARGET_TEXTURE_CHANGE = "tex-change", _class3$g), (_initializer$p = applyDecoratedInitializer(_class2$q.prototype, "_projection", [serializable$3], function () {
         return ProjectionType.PERSPECTIVE;
-      }), _initializer2$k = applyDecoratedInitializer(_class2$n.prototype, "_priority", [serializable$3], function () {
+      }), _initializer2$l = applyDecoratedInitializer(_class2$q.prototype, "_priority", [serializable$3], function () {
         return 0;
-      }), _initializer3$f = applyDecoratedInitializer(_class2$n.prototype, "_fov", [serializable$3], function () {
+      }), _initializer3$g = applyDecoratedInitializer(_class2$q.prototype, "_fov", [serializable$3], function () {
         return 45;
-      }), _initializer4$e = applyDecoratedInitializer(_class2$n.prototype, "_fovAxis", [serializable$3], function () {
+      }), _initializer4$f = applyDecoratedInitializer(_class2$q.prototype, "_fovAxis", [serializable$3], function () {
         return FOVAxis.VERTICAL;
-      }), _initializer5$c = applyDecoratedInitializer(_class2$n.prototype, "_orthoHeight", [serializable$3], function () {
+      }), _initializer5$c = applyDecoratedInitializer(_class2$q.prototype, "_orthoHeight", [serializable$3], function () {
         return 10;
-      }), _initializer6$9 = applyDecoratedInitializer(_class2$n.prototype, "_near", [serializable$3], function () {
+      }), _initializer6$9 = applyDecoratedInitializer(_class2$q.prototype, "_near", [serializable$3], function () {
         return 1;
-      }), _initializer7$8 = applyDecoratedInitializer(_class2$n.prototype, "_far", [serializable$3], function () {
+      }), _initializer7$8 = applyDecoratedInitializer(_class2$q.prototype, "_far", [serializable$3], function () {
         return 1000;
-      }), _initializer8$8 = applyDecoratedInitializer(_class2$n.prototype, "_color", [serializable$3], function () {
+      }), _initializer8$8 = applyDecoratedInitializer(_class2$q.prototype, "_color", [serializable$3], function () {
         return new Color$1('#333333');
-      }), _initializer9$8 = applyDecoratedInitializer(_class2$n.prototype, "_depth", [serializable$3], function () {
+      }), _initializer9$8 = applyDecoratedInitializer(_class2$q.prototype, "_depth", [serializable$3], function () {
         return 1;
-      }), _initializer10$8 = applyDecoratedInitializer(_class2$n.prototype, "_stencil", [serializable$3], function () {
+      }), _initializer10$8 = applyDecoratedInitializer(_class2$q.prototype, "_stencil", [serializable$3], function () {
         return 0;
-      }), _initializer11$8 = applyDecoratedInitializer(_class2$n.prototype, "_clearFlags", [serializable$3], function () {
+      }), _initializer11$8 = applyDecoratedInitializer(_class2$q.prototype, "_clearFlags", [serializable$3], function () {
         return ClearFlag.SOLID_COLOR;
-      }), _initializer12$7 = applyDecoratedInitializer(_class2$n.prototype, "_rect", [serializable$3], function () {
+      }), _initializer12$7 = applyDecoratedInitializer(_class2$q.prototype, "_rect", [serializable$3], function () {
         return new Rect$1(0, 0, 1, 1);
-      }), _initializer13$6 = applyDecoratedInitializer(_class2$n.prototype, "_aperture", [serializable$3], function () {
+      }), _initializer13$6 = applyDecoratedInitializer(_class2$q.prototype, "_aperture", [serializable$3], function () {
         return Aperture.F16_0;
-      }), _initializer14$5 = applyDecoratedInitializer(_class2$n.prototype, "_shutter", [serializable$3], function () {
+      }), _initializer14$5 = applyDecoratedInitializer(_class2$q.prototype, "_shutter", [serializable$3], function () {
         return Shutter.D125;
-      }), _initializer15$3 = applyDecoratedInitializer(_class2$n.prototype, "_iso", [serializable$3], function () {
+      }), _initializer15$3 = applyDecoratedInitializer(_class2$q.prototype, "_iso", [serializable$3], function () {
         return ISO.ISO100;
-      }), _initializer16$3 = applyDecoratedInitializer(_class2$n.prototype, "_screenScale", [serializable$3], function () {
+      }), _initializer16$3 = applyDecoratedInitializer(_class2$q.prototype, "_screenScale", [serializable$3], function () {
         return 1;
-      }), _initializer17$2 = applyDecoratedInitializer(_class2$n.prototype, "_visibility", [serializable$3], function () {
+      }), _initializer17$2 = applyDecoratedInitializer(_class2$q.prototype, "_visibility", [serializable$3], function () {
         return CAMERA_DEFAULT_MASK;
-      }), _initializer18$2 = applyDecoratedInitializer(_class2$n.prototype, "_targetTexture", [serializable$3], function () {
+      }), _initializer18$2 = applyDecoratedInitializer(_class2$q.prototype, "_targetTexture", [serializable$3], function () {
         return null;
-      }), _initializer19$1 = applyDecoratedInitializer(_class2$n.prototype, "_postProcess", [serializable$3], function () {
+      }), _initializer19$1 = applyDecoratedInitializer(_class2$q.prototype, "_postProcess", [serializable$3], function () {
         return null;
-      }), _initializer20$1 = applyDecoratedInitializer(_class2$n.prototype, "_usePostProcess", [serializable$3], function () {
+      }), _initializer20$1 = applyDecoratedInitializer(_class2$q.prototype, "_usePostProcess", [serializable$3], function () {
         return false;
-      }), _initializer21$1 = applyDecoratedInitializer(_class2$n.prototype, "_cameraType", [serializable$3], function () {
+      }), _initializer21$1 = applyDecoratedInitializer(_class2$q.prototype, "_cameraType", [serializable$3], function () {
         return -1;
-      }), _initializer22 = applyDecoratedInitializer(_class2$n.prototype, "_trackingType", [serializable$3], function () {
+      }), _initializer22 = applyDecoratedInitializer(_class2$q.prototype, "_trackingType", [serializable$3], function () {
         return 0;
-      }), _applyDecoratedDescriptor(_class2$n.prototype, "visibility", [_dec2$p], Object.getOwnPropertyDescriptor(_class2$n.prototype, "visibility"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "clearFlags", [_dec3$m], Object.getOwnPropertyDescriptor(_class2$n.prototype, "clearFlags"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "projection", [_dec4$f], Object.getOwnPropertyDescriptor(_class2$n.prototype, "projection"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "fovAxis", [_dec5$e], Object.getOwnPropertyDescriptor(_class2$n.prototype, "fovAxis"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "aperture", [_dec6$8], Object.getOwnPropertyDescriptor(_class2$n.prototype, "aperture"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "shutter", [_dec7$7], Object.getOwnPropertyDescriptor(_class2$n.prototype, "shutter"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "iso", [_dec8$6], Object.getOwnPropertyDescriptor(_class2$n.prototype, "iso"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "targetTexture", [_dec9$6], Object.getOwnPropertyDescriptor(_class2$n.prototype, "targetTexture"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "usePostProcess", [property$1], Object.getOwnPropertyDescriptor(_class2$n.prototype, "usePostProcess"), _class2$n.prototype), _applyDecoratedDescriptor(_class2$n.prototype, "postProcess", [_dec10$3], Object.getOwnPropertyDescriptor(_class2$n.prototype, "postProcess"), _class2$n.prototype)), _class2$n)) || _class$t); exports({ Camera: Camera, CameraComponent: Camera });
+      }), _applyDecoratedDescriptor(_class2$q.prototype, "visibility", [_dec2$q], Object.getOwnPropertyDescriptor(_class2$q.prototype, "visibility"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "clearFlags", [_dec3$n], Object.getOwnPropertyDescriptor(_class2$q.prototype, "clearFlags"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "projection", [_dec4$f], Object.getOwnPropertyDescriptor(_class2$q.prototype, "projection"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "fovAxis", [_dec5$e], Object.getOwnPropertyDescriptor(_class2$q.prototype, "fovAxis"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "aperture", [_dec6$8], Object.getOwnPropertyDescriptor(_class2$q.prototype, "aperture"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "shutter", [_dec7$7], Object.getOwnPropertyDescriptor(_class2$q.prototype, "shutter"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "iso", [_dec8$6], Object.getOwnPropertyDescriptor(_class2$q.prototype, "iso"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "targetTexture", [_dec9$6], Object.getOwnPropertyDescriptor(_class2$q.prototype, "targetTexture"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "usePostProcess", [property$1], Object.getOwnPropertyDescriptor(_class2$q.prototype, "usePostProcess"), _class2$q.prototype), _applyDecoratedDescriptor(_class2$q.prototype, "postProcess", [_dec10$3], Object.getOwnPropertyDescriptor(_class2$q.prototype, "postProcess"), _class2$q.prototype)), _class2$q)) || _class$v); exports({ Camera: Camera, CameraComponent: Camera });
       cclegacy.Camera = Camera;
 
-      var _dec$s, _dec2$o, _dec3$l, _class$s;
-      var RenderRoot2D = exports("RenderRoot2D", (_dec$s = ccclass$4('cc.RenderRoot2D'), _dec2$o = executionOrder$1(100), _dec3$l = requireComponent(UITransform), _dec$s(_class$s = _dec2$o(_class$s = _dec3$l(_class$s = disallowMultiple$1(_class$s = function (_Component) {
+      var _dec$u, _dec2$p, _dec3$m, _class$u;
+      var RenderRoot2D = exports("RenderRoot2D", (_dec$u = ccclass$4('cc.RenderRoot2D'), _dec2$p = executionOrder$1(100), _dec3$m = requireComponent(UITransform), _dec$u(_class$u = _dec2$p(_class$u = _dec3$m(_class$u = disallowMultiple$1(_class$u = function (_Component) {
         _inheritsLoose(RenderRoot2D, _Component);
         function RenderRoot2D() {
           return _Component.apply(this, arguments) || this;
@@ -61299,17 +61299,17 @@ System.register([], (function (exports, module) {
           cclegacy.director.root.batcher2D.removeScreen(this);
         };
         return RenderRoot2D;
-      }(Component)) || _class$s) || _class$s) || _class$s) || _class$s));
+      }(Component)) || _class$u) || _class$u) || _class$u) || _class$u));
 
-      var _dec$r, _dec2$n, _dec3$k, _dec4$e, _class$r, _class2$m, _initializer$m, _initializer2$j;
+      var _dec$t, _dec2$o, _dec3$l, _dec4$e, _class$t, _class2$p, _initializer$o, _initializer2$k;
       var _worldPos = new Vec3();
-      var Canvas = (_dec$r = ccclass$4('cc.Canvas'), _dec2$n = executionOrder$1(100), _dec3$k = type$3(Camera), _dec4$e = type$3(Camera), _dec$r(_class$r = _dec2$n(_class$r = disallowMultiple$1(_class$r = (_class2$m = function (_RenderRoot2D) {
+      var Canvas = (_dec$t = ccclass$4('cc.Canvas'), _dec2$o = executionOrder$1(100), _dec3$l = type$3(Camera), _dec4$e = type$3(Camera), _dec$t(_class$t = _dec2$o(_class$t = disallowMultiple$1(_class$t = (_class2$p = function (_RenderRoot2D) {
         _inheritsLoose(Canvas, _RenderRoot2D);
         function Canvas() {
           var _this;
           _this = _RenderRoot2D.call(this) || this;
-          _this._cameraComponent = _initializer$m && _initializer$m();
-          _this._alignCanvasWithScreen = _initializer2$j && _initializer2$j();
+          _this._cameraComponent = _initializer$o && _initializer$o();
+          _this._alignCanvasWithScreen = _initializer2$k && _initializer2$k();
           _this._pos = new Vec3();
           _this._renderMode = 0;
           _this._thisOnCameraResized = _this._onResizeCamera.bind(_assertThisInitialized(_this));
@@ -61405,15 +61405,15 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Canvas;
-      }(RenderRoot2D), (_applyDecoratedDescriptor(_class2$m.prototype, "cameraComponent", [_dec3$k], Object.getOwnPropertyDescriptor(_class2$m.prototype, "cameraComponent"), _class2$m.prototype), _initializer$m = applyDecoratedInitializer(_class2$m.prototype, "_cameraComponent", [_dec4$e], function () {
+      }(RenderRoot2D), (_applyDecoratedDescriptor(_class2$p.prototype, "cameraComponent", [_dec3$l], Object.getOwnPropertyDescriptor(_class2$p.prototype, "cameraComponent"), _class2$p.prototype), _initializer$o = applyDecoratedInitializer(_class2$p.prototype, "_cameraComponent", [_dec4$e], function () {
         return null;
-      }), _initializer2$j = applyDecoratedInitializer(_class2$m.prototype, "_alignCanvasWithScreen", [serializable$3], function () {
+      }), _initializer2$k = applyDecoratedInitializer(_class2$p.prototype, "_alignCanvasWithScreen", [serializable$3], function () {
         return true;
-      })), _class2$m)) || _class$r) || _class$r) || _class$r); exports({ Canvas: Canvas, CanvasComponent: Canvas });
+      })), _class2$p)) || _class$t) || _class$t) || _class$t); exports({ Canvas: Canvas, CanvasComponent: Canvas });
       cclegacy.Canvas = Canvas;
 
-      var _dec$q, _dec2$m, _dec3$j, _class$q;
-      var UIComponent = exports("UIComponent", (_dec$q = ccclass$4('cc.UIComponent'), _dec2$m = requireComponent(UITransform), _dec3$j = executionOrder$1(110), _dec$q(_class$q = _dec2$m(_class$q = _dec3$j(_class$q = disallowMultiple$1(_class$q = function (_Component) {
+      var _dec$s, _dec2$n, _dec3$k, _class$s;
+      var UIComponent = exports("UIComponent", (_dec$s = ccclass$4('cc.UIComponent'), _dec2$n = requireComponent(UITransform), _dec3$k = executionOrder$1(110), _dec$s(_class$s = _dec2$n(_class$s = _dec3$k(_class$s = disallowMultiple$1(_class$s = function (_Component) {
         _inheritsLoose(UIComponent, _Component);
         function UIComponent() {
           var _this;
@@ -61440,7 +61440,7 @@ System.register([], (function (exports, module) {
         _proto.setNodeDirty = function setNodeDirty() {};
         _proto.setTextureDirty = function setTextureDirty() {};
         return UIComponent;
-      }(Component)) || _class$q) || _class$q) || _class$q) || _class$q));
+      }(Component)) || _class$s) || _class$s) || _class$s) || _class$s));
 
       removeProperty(UIComponent.prototype, 'UIComponent', [{
         name: '_visibility'
@@ -61725,14 +61725,14 @@ System.register([], (function (exports, module) {
       intersect.raySubMesh = raySubMesh;
       intersect.rayMesh = rayMesh;
 
-      var _dec$p, _class$p, _class2$l, _initializer$l;
+      var _dec$r, _class$r, _class2$o, _initializer$n;
       getPhaseID$1('specular-pass');
-      var ModelRenderer = (_dec$p = ccclass$4('cc.ModelRenderer'), _dec$p(_class$p = (_class2$l = function (_Renderer) {
+      var ModelRenderer = (_dec$r = ccclass$4('cc.ModelRenderer'), _dec$r(_class$r = (_class2$o = function (_Renderer) {
         _inheritsLoose(ModelRenderer, _Renderer);
         function ModelRenderer() {
           var _this;
           _this = _Renderer.call(this) || this;
-          _this._visFlags = _initializer$l && _initializer$l();
+          _this._visFlags = _initializer$n && _initializer$n();
           _this._models = [];
           _this._priority = 0;
           return _this;
@@ -61775,26 +61775,26 @@ System.register([], (function (exports, module) {
           }
         }]);
         return ModelRenderer;
-      }(Renderer), (_initializer$l = applyDecoratedInitializer(_class2$l.prototype, "_visFlags", [serializable$3], function () {
+      }(Renderer), (_initializer$n = applyDecoratedInitializer(_class2$o.prototype, "_visFlags", [serializable$3], function () {
         return Layers.Enum.NONE;
-      })), _class2$l)) || _class$p); exports({ ModelRenderer: ModelRenderer, RenderableComponent: ModelRenderer });
+      })), _class2$o)) || _class$r); exports({ ModelRenderer: ModelRenderer, RenderableComponent: ModelRenderer });
 
-      var _dec$o, _dec2$l, _class$o, _class2$k, _initializer$k;
+      var _dec$q, _dec2$m, _class$q, _class2$n, _initializer$m;
       var ccclass$1 = ccclass$4,
         serializable$1 = serializable$3,
         type$1 = type$3;
-      var PrefabLink = exports("PrefabLink", (_dec$o = ccclass$1('cc.PrefabLink'), _dec2$l = type$1(Prefab), _dec$o(_class$o = (_class2$k = function (_Component) {
+      var PrefabLink = exports("PrefabLink", (_dec$q = ccclass$1('cc.PrefabLink'), _dec2$m = type$1(Prefab), _dec$q(_class$q = (_class2$n = function (_Component) {
         _inheritsLoose(PrefabLink, _Component);
         function PrefabLink() {
           var _this;
           _this = _Component.call(this) || this;
-          _this.prefab = _initializer$k && _initializer$k();
+          _this.prefab = _initializer$m && _initializer$m();
           return _this;
         }
         return PrefabLink;
-      }(Component), (_initializer$k = applyDecoratedInitializer(_class2$k.prototype, "prefab", [_dec2$l, serializable$1], function () {
+      }(Component), (_initializer$m = applyDecoratedInitializer(_class2$n.prototype, "prefab", [_dec2$m, serializable$1], function () {
         return null;
-      })), _class2$k)) || _class$o));
+      })), _class2$n)) || _class$q));
 
       replaceProperty(Camera, 'Camera', [{
         name: 'CameraClearFlag',
@@ -61819,16 +61819,16 @@ System.register([], (function (exports, module) {
       cclegacy.RenderableComponent = ModelRenderer;
       setClassAlias(ModelRenderer, 'cc.RenderableComponent');
 
-      var _dec$n, _dec2$k, _dec3$i, _class$n, _class2$j, _initializer$j, _initializer2$i, _initializer3$e, _initializer4$d, _initializer5$b, _initializer6$8;
-      var SpriteRenderer = exports("SpriteRenderer", (_dec$n = ccclass$4('cc.SpriteRenderer'), _dec2$k = executionOrder$1(100), _dec3$i = type$3(SpriteFrame), _dec$n(_class$n = _dec2$k(_class$n = (_class2$j = function (_ModelRenderer) {
+      var _dec$p, _dec2$l, _dec3$j, _class$p, _class2$m, _initializer$l, _initializer2$j, _initializer3$f, _initializer4$e, _initializer5$b, _initializer6$8;
+      var SpriteRenderer = exports("SpriteRenderer", (_dec$p = ccclass$4('cc.SpriteRenderer'), _dec2$l = executionOrder$1(100), _dec3$j = type$3(SpriteFrame), _dec$p(_class$p = _dec2$l(_class$p = (_class2$m = function (_ModelRenderer) {
         _inheritsLoose(SpriteRenderer, _ModelRenderer);
         function SpriteRenderer() {
           var _this;
           _this = _ModelRenderer.call(this) || this;
-          _this._spriteFrame = _initializer$j && _initializer$j();
-          _this._mode = _initializer2$i && _initializer2$i();
-          _this._color = _initializer3$e && _initializer3$e();
-          _this._flipX = _initializer4$d && _initializer4$d();
+          _this._spriteFrame = _initializer$l && _initializer$l();
+          _this._mode = _initializer2$j && _initializer2$j();
+          _this._color = _initializer3$f && _initializer3$f();
+          _this._flipX = _initializer4$e && _initializer4$e();
           _this._flipY = _initializer5$b && _initializer5$b();
           _this._size = _initializer6$8 && _initializer6$8();
           _this._model = null;
@@ -61994,21 +61994,21 @@ System.register([], (function (exports, module) {
           }
         }]);
         return SpriteRenderer;
-      }(ModelRenderer), (_applyDecoratedDescriptor(_class2$j.prototype, "spriteFrame", [_dec3$i], Object.getOwnPropertyDescriptor(_class2$j.prototype, "spriteFrame"), _class2$j.prototype), _initializer$j = applyDecoratedInitializer(_class2$j.prototype, "_spriteFrame", [serializable$3], function () {
+      }(ModelRenderer), (_applyDecoratedDescriptor(_class2$m.prototype, "spriteFrame", [_dec3$j], Object.getOwnPropertyDescriptor(_class2$m.prototype, "spriteFrame"), _class2$m.prototype), _initializer$l = applyDecoratedInitializer(_class2$m.prototype, "_spriteFrame", [serializable$3], function () {
         return null;
-      }), _initializer2$i = applyDecoratedInitializer(_class2$j.prototype, "_mode", [serializable$3], function () {
+      }), _initializer2$j = applyDecoratedInitializer(_class2$m.prototype, "_mode", [serializable$3], function () {
         return 0;
-      }), _initializer3$e = applyDecoratedInitializer(_class2$j.prototype, "_color", [serializable$3], function () {
+      }), _initializer3$f = applyDecoratedInitializer(_class2$m.prototype, "_color", [serializable$3], function () {
         return Color$1.WHITE.clone();
-      }), _initializer4$d = applyDecoratedInitializer(_class2$j.prototype, "_flipX", [serializable$3], function () {
+      }), _initializer4$e = applyDecoratedInitializer(_class2$m.prototype, "_flipX", [serializable$3], function () {
         return false;
-      }), _initializer5$b = applyDecoratedInitializer(_class2$j.prototype, "_flipY", [serializable$3], function () {
+      }), _initializer5$b = applyDecoratedInitializer(_class2$m.prototype, "_flipY", [serializable$3], function () {
         return false;
-      }), _initializer6$8 = applyDecoratedInitializer(_class2$j.prototype, "_size", [serializable$3], function () {
+      }), _initializer6$8 = applyDecoratedInitializer(_class2$m.prototype, "_size", [serializable$3], function () {
         return new Vec2();
-      })), _class2$j)) || _class$n) || _class$n));
+      })), _class2$m)) || _class$p) || _class$p));
 
-      var _dec$m, _dec2$j, _dec3$h, _dec4$d, _dec5$d, _dec6$7, _dec7$6, _dec8$5, _dec9$5, _class$m, _class2$i, _initializer$i, _initializer2$h, _initializer3$d, _initializer4$c, _initializer5$a, _initializer6$7, _initializer7$7, _initializer8$7, _initializer9$7, _initializer10$7, _initializer11$7, _initializer12$6, _initializer13$5, _initializer14$4, _class3$c;
+      var _dec$o, _dec2$k, _dec3$i, _dec4$d, _dec5$d, _dec6$7, _dec7$6, _dec8$5, _dec9$5, _class$o, _class2$l, _initializer$k, _initializer2$i, _initializer3$e, _initializer4$d, _initializer5$a, _initializer6$7, _initializer7$7, _initializer8$7, _initializer9$7, _initializer10$7, _initializer11$7, _initializer12$6, _initializer13$5, _initializer14$4, _class3$f;
       var _htmlTextParser = new HtmlTextParser();
       var RichTextChildName = 'RICHTEXT_CHILD';
       var RichTextChildImageName = 'RICHTEXT_Image_CHILD';
@@ -62077,15 +62077,15 @@ System.register([], (function (exports, module) {
         seg.clickHandler = '';
         return seg;
       }
-      var RichText = exports("RichTextComponent", (_dec$m = ccclass$4('cc.RichText'), _dec2$j = requireComponent(UITransform), _dec3$h = executionOrder$1(110), _dec4$d = type$3(HorizontalTextAlignment), _dec5$d = type$3(VerticalTextAlignment), _dec6$7 = type$3(Color$1), _dec7$6 = type$3(Font), _dec8$5 = type$3(CacheMode), _dec9$5 = type$3(SpriteAtlas), _dec$m(_class$m = _dec2$j(_class$m = _dec3$h(_class$m = (_class2$i = (_class3$c = function (_Component) {
+      var RichText = exports("RichTextComponent", (_dec$o = ccclass$4('cc.RichText'), _dec2$k = requireComponent(UITransform), _dec3$i = executionOrder$1(110), _dec4$d = type$3(HorizontalTextAlignment), _dec5$d = type$3(VerticalTextAlignment), _dec6$7 = type$3(Color$1), _dec7$6 = type$3(Font), _dec8$5 = type$3(CacheMode), _dec9$5 = type$3(SpriteAtlas), _dec$o(_class$o = _dec2$k(_class$o = _dec3$i(_class$o = (_class2$l = (_class3$f = function (_Component) {
         _inheritsLoose(RichText, _Component);
         function RichText() {
           var _this;
           _this = _Component.call(this) || this;
-          _this._lineHeight = _initializer$i && _initializer$i();
-          _this._string = _initializer2$h && _initializer2$h();
-          _this._horizontalAlign = _initializer3$d && _initializer3$d();
-          _this._verticalAlign = _initializer4$c && _initializer4$c();
+          _this._lineHeight = _initializer$k && _initializer$k();
+          _this._string = _initializer2$i && _initializer2$i();
+          _this._horizontalAlign = _initializer3$e && _initializer3$e();
+          _this._verticalAlign = _initializer4$d && _initializer4$d();
           _this._fontSize = _initializer5$a && _initializer5$a();
           _this._fontColor = _initializer6$7 && _initializer6$7();
           _this._maxWidth = _initializer7$7 && _initializer7$7();
@@ -62955,35 +62955,35 @@ System.register([], (function (exports, module) {
           }
         }]);
         return RichText;
-      }(Component), _class3$c.HorizontalAlign = HorizontalTextAlignment, _class3$c.VerticalAlign = VerticalTextAlignment, _class3$c), (_applyDecoratedDescriptor(_class2$i.prototype, "horizontalAlign", [_dec4$d], Object.getOwnPropertyDescriptor(_class2$i.prototype, "horizontalAlign"), _class2$i.prototype), _applyDecoratedDescriptor(_class2$i.prototype, "verticalAlign", [_dec5$d], Object.getOwnPropertyDescriptor(_class2$i.prototype, "verticalAlign"), _class2$i.prototype), _applyDecoratedDescriptor(_class2$i.prototype, "fontColor", [_dec6$7], Object.getOwnPropertyDescriptor(_class2$i.prototype, "fontColor"), _class2$i.prototype), _applyDecoratedDescriptor(_class2$i.prototype, "font", [_dec7$6], Object.getOwnPropertyDescriptor(_class2$i.prototype, "font"), _class2$i.prototype), _applyDecoratedDescriptor(_class2$i.prototype, "cacheMode", [_dec8$5], Object.getOwnPropertyDescriptor(_class2$i.prototype, "cacheMode"), _class2$i.prototype), _applyDecoratedDescriptor(_class2$i.prototype, "imageAtlas", [_dec9$5], Object.getOwnPropertyDescriptor(_class2$i.prototype, "imageAtlas"), _class2$i.prototype), _initializer$i = applyDecoratedInitializer(_class2$i.prototype, "_lineHeight", [serializable$3], function () {
+      }(Component), _class3$f.HorizontalAlign = HorizontalTextAlignment, _class3$f.VerticalAlign = VerticalTextAlignment, _class3$f), (_applyDecoratedDescriptor(_class2$l.prototype, "horizontalAlign", [_dec4$d], Object.getOwnPropertyDescriptor(_class2$l.prototype, "horizontalAlign"), _class2$l.prototype), _applyDecoratedDescriptor(_class2$l.prototype, "verticalAlign", [_dec5$d], Object.getOwnPropertyDescriptor(_class2$l.prototype, "verticalAlign"), _class2$l.prototype), _applyDecoratedDescriptor(_class2$l.prototype, "fontColor", [_dec6$7], Object.getOwnPropertyDescriptor(_class2$l.prototype, "fontColor"), _class2$l.prototype), _applyDecoratedDescriptor(_class2$l.prototype, "font", [_dec7$6], Object.getOwnPropertyDescriptor(_class2$l.prototype, "font"), _class2$l.prototype), _applyDecoratedDescriptor(_class2$l.prototype, "cacheMode", [_dec8$5], Object.getOwnPropertyDescriptor(_class2$l.prototype, "cacheMode"), _class2$l.prototype), _applyDecoratedDescriptor(_class2$l.prototype, "imageAtlas", [_dec9$5], Object.getOwnPropertyDescriptor(_class2$l.prototype, "imageAtlas"), _class2$l.prototype), _initializer$k = applyDecoratedInitializer(_class2$l.prototype, "_lineHeight", [serializable$3], function () {
         return 40;
-      }), _initializer2$h = applyDecoratedInitializer(_class2$i.prototype, "_string", [serializable$3], function () {
+      }), _initializer2$i = applyDecoratedInitializer(_class2$l.prototype, "_string", [serializable$3], function () {
         return '<color=#00ff00>Rich</color><color=#0fffff>Text</color>';
-      }), _initializer3$d = applyDecoratedInitializer(_class2$i.prototype, "_horizontalAlign", [serializable$3], function () {
+      }), _initializer3$e = applyDecoratedInitializer(_class2$l.prototype, "_horizontalAlign", [serializable$3], function () {
         return 0;
-      }), _initializer4$c = applyDecoratedInitializer(_class2$i.prototype, "_verticalAlign", [serializable$3], function () {
+      }), _initializer4$d = applyDecoratedInitializer(_class2$l.prototype, "_verticalAlign", [serializable$3], function () {
         return 0;
-      }), _initializer5$a = applyDecoratedInitializer(_class2$i.prototype, "_fontSize", [serializable$3], function () {
+      }), _initializer5$a = applyDecoratedInitializer(_class2$l.prototype, "_fontSize", [serializable$3], function () {
         return 40;
-      }), _initializer6$7 = applyDecoratedInitializer(_class2$i.prototype, "_fontColor", [serializable$3], function () {
+      }), _initializer6$7 = applyDecoratedInitializer(_class2$l.prototype, "_fontColor", [serializable$3], function () {
         return Color$1.WHITE.clone();
-      }), _initializer7$7 = applyDecoratedInitializer(_class2$i.prototype, "_maxWidth", [serializable$3], function () {
+      }), _initializer7$7 = applyDecoratedInitializer(_class2$l.prototype, "_maxWidth", [serializable$3], function () {
         return 0;
-      }), _initializer8$7 = applyDecoratedInitializer(_class2$i.prototype, "_fontFamily", [serializable$3], function () {
+      }), _initializer8$7 = applyDecoratedInitializer(_class2$l.prototype, "_fontFamily", [serializable$3], function () {
         return 'Arial';
-      }), _initializer9$7 = applyDecoratedInitializer(_class2$i.prototype, "_font", [serializable$3], function () {
+      }), _initializer9$7 = applyDecoratedInitializer(_class2$l.prototype, "_font", [serializable$3], function () {
         return null;
-      }), _initializer10$7 = applyDecoratedInitializer(_class2$i.prototype, "_isSystemFontUsed", [serializable$3], function () {
+      }), _initializer10$7 = applyDecoratedInitializer(_class2$l.prototype, "_isSystemFontUsed", [serializable$3], function () {
         return true;
-      }), _initializer11$7 = applyDecoratedInitializer(_class2$i.prototype, "_userDefinedFont", [serializable$3], function () {
+      }), _initializer11$7 = applyDecoratedInitializer(_class2$l.prototype, "_userDefinedFont", [serializable$3], function () {
         return null;
-      }), _initializer12$6 = applyDecoratedInitializer(_class2$i.prototype, "_cacheMode", [serializable$3], function () {
+      }), _initializer12$6 = applyDecoratedInitializer(_class2$l.prototype, "_cacheMode", [serializable$3], function () {
         return 0;
-      }), _initializer13$5 = applyDecoratedInitializer(_class2$i.prototype, "_imageAtlas", [serializable$3], function () {
+      }), _initializer13$5 = applyDecoratedInitializer(_class2$l.prototype, "_imageAtlas", [serializable$3], function () {
         return null;
-      }), _initializer14$4 = applyDecoratedInitializer(_class2$i.prototype, "_handleTouchEvent", [serializable$3], function () {
+      }), _initializer14$4 = applyDecoratedInitializer(_class2$l.prototype, "_handleTouchEvent", [serializable$3], function () {
         return true;
-      })), _class2$i)) || _class$m) || _class$m) || _class$m));
+      })), _class2$l)) || _class$o) || _class$o) || _class$o));
       cclegacy.RichText = RichText;
 
       cclegacy.MaskComponent = Mask;
@@ -67150,16 +67150,16 @@ System.register([], (function (exports, module) {
         MeshRenderData: MeshRenderData
       };
 
-      var _dec$l, _dec2$i, _class$l, _class2$h, _initializer$h, _initializer2$g;
+      var _dec$n, _dec2$j, _class$n, _class2$k, _initializer$j, _initializer2$h;
       var MAX_INT16 = (1 << 15) - 1;
       var MIN_INT16 = -1 << 15;
-      var Sorting = exports("Sorting", (_dec$l = ccclass$4('cc.Sorting'), _dec2$i = type$3(SortingLayers.Enum), _dec$l(_class$l = disallowMultiple$1(_class$l = (_class2$h = function (_Component) {
+      var Sorting = exports("Sorting", (_dec$n = ccclass$4('cc.Sorting'), _dec2$j = type$3(SortingLayers.Enum), _dec$n(_class$n = disallowMultiple$1(_class$n = (_class2$k = function (_Component) {
         _inheritsLoose(Sorting, _Component);
         function Sorting() {
           var _this;
           _this = _Component.call(this) || this;
-          _this._sortingLayer = _initializer$h && _initializer$h();
-          _this._sortingOrder = _initializer2$g && _initializer2$g();
+          _this._sortingLayer = _initializer$j && _initializer$j();
+          _this._sortingOrder = _initializer2$h && _initializer2$h();
           _this._modelRenderer = null;
           return _this;
         }
@@ -67200,11 +67200,1752 @@ System.register([], (function (exports, module) {
           }
         }]);
         return Sorting;
-      }(Component), (_applyDecoratedDescriptor(_class2$h.prototype, "sortingLayer", [_dec2$i], Object.getOwnPropertyDescriptor(_class2$h.prototype, "sortingLayer"), _class2$h.prototype), _initializer$h = applyDecoratedInitializer(_class2$h.prototype, "_sortingLayer", [serializable$3], function () {
+      }(Component), (_applyDecoratedDescriptor(_class2$k.prototype, "sortingLayer", [_dec2$j], Object.getOwnPropertyDescriptor(_class2$k.prototype, "sortingLayer"), _class2$k.prototype), _initializer$j = applyDecoratedInitializer(_class2$k.prototype, "_sortingLayer", [serializable$3], function () {
         return SortingLayers.Enum["default"];
-      }), _initializer2$g = applyDecoratedInitializer(_class2$h.prototype, "_sortingOrder", [serializable$3], function () {
+      }), _initializer2$h = applyDecoratedInitializer(_class2$k.prototype, "_sortingOrder", [serializable$3], function () {
         return 0;
-      })), _class2$h)) || _class$l) || _class$l));
+      })), _class2$k)) || _class$n) || _class$n));
+
+      var AudioEvent;
+      (function (AudioEvent) {
+        AudioEvent["PLAYED"] = "play";
+        AudioEvent["PAUSED"] = "pause";
+        AudioEvent["STOPPED"] = "stop";
+        AudioEvent["SEEKED"] = "seeked";
+        AudioEvent["ENDED"] = "ended";
+        AudioEvent["INTERRUPTION_BEGIN"] = "interruptionBegin";
+        AudioEvent["INTERRUPTION_END"] = "interruptionEnd";
+        AudioEvent["USER_GESTURE"] = "on_gesture";
+      })(AudioEvent || (AudioEvent = {}));
+      var AudioType;
+      (function (AudioType) {
+        AudioType[AudioType["DOM_AUDIO"] = 0] = "DOM_AUDIO";
+        AudioType[AudioType["WEB_AUDIO"] = 1] = "WEB_AUDIO";
+        AudioType[AudioType["MINIGAME_AUDIO"] = 2] = "MINIGAME_AUDIO";
+        AudioType[AudioType["NATIVE_AUDIO"] = 3] = "NATIVE_AUDIO";
+        AudioType[AudioType["UNKNOWN_AUDIO"] = 4] = "UNKNOWN_AUDIO";
+      })(AudioType || (AudioType = {}));
+      var AudioState;
+      (function (AudioState) {
+        AudioState[AudioState["INIT"] = 0] = "INIT";
+        AudioState[AudioState["PLAYING"] = 1] = "PLAYING";
+        AudioState[AudioState["PAUSED"] = 2] = "PAUSED";
+        AudioState[AudioState["STOPPED"] = 3] = "STOPPED";
+        AudioState[AudioState["INTERRUPTED"] = 4] = "INTERRUPTED";
+      })(AudioState || (AudioState = {}));
+      var AudioPCMDataView = exports("AudioPCMDataView", function () {
+        function AudioPCMDataView() {
+          this._bufferView = undefined;
+          this._normalizeFactor = 1;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          if (args.length === 2) {
+            this._bufferView = args[0];
+            this._normalizeFactor = args[1];
+          } else {
+            var _arrayBuffer = args[0];
+            var _Ctor = args[1];
+            var _normalizeFactor = args[2];
+            this._bufferView = new _Ctor(_arrayBuffer);
+            this._normalizeFactor = _normalizeFactor;
+          }
+        }
+        var _proto = AudioPCMDataView.prototype;
+        _proto.getData = function getData(offset) {
+          return this._bufferView[offset] * this._normalizeFactor;
+        };
+        _createClass(AudioPCMDataView, [{
+          key: "length",
+          get: function get() {
+            return this._bufferView.length;
+          }
+        }]);
+        return AudioPCMDataView;
+      }());
+
+      function removeUnneededCalls(instance) {
+        var size = instance._operationQueue.length;
+        var tmpQueue = instance._operationQueue.slice();
+        var reserveOps = [];
+        var seekSearched = false;
+        for (var i = size - 1; i >= 0; i--) {
+          var opInfo = tmpQueue[i];
+          if (opInfo.op === 'stop') {
+            reserveOps.push(opInfo);
+            break;
+          } else if (opInfo.op === 'seek') {
+            if (!seekSearched) {
+              reserveOps.push(opInfo);
+              seekSearched = true;
+            }
+          } else if (seekSearched) {
+            reserveOps.push(opInfo);
+            break;
+          } else if (reserveOps.length === 0) {
+            reserveOps.push(opInfo);
+          }
+        }
+        instance._operationQueue = reserveOps.reverse();
+      }
+      var operationId = 0;
+      function _tryCallingRecursively(target, opInfo) {
+        var _opInfo$func;
+        if (opInfo.invoking) {
+          return;
+        }
+        opInfo.invoking = true;
+        (_opInfo$func = opInfo.func).call.apply(_opInfo$func, [target].concat(opInfo.args)).then(function () {
+          opInfo.invoking = false;
+          target._operationQueue.shift();
+          target._eventTarget.emit(opInfo.id.toString());
+          target._eventTarget.off(opInfo.id.toString());
+          removeUnneededCalls(target);
+          var nextOpInfo = target._operationQueue[0];
+          if (nextOpInfo) {
+            _tryCallingRecursively(target, nextOpInfo);
+          }
+        })["catch"](function (e) {});
+      }
+      function enqueueOperation(target, propertyKey, descriptor) {
+        var originalOperation = descriptor.value;
+        descriptor.value = function () {
+          var _this = this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          return new Promise(function (resolve) {
+            var id = operationId++;
+            var instance = _this;
+            instance._operationQueue.push({
+              op: propertyKey,
+              id: id,
+              func: originalOperation,
+              args: args,
+              invoking: false
+            });
+            instance._eventTarget.once(id.toString(), resolve);
+            var opInfo = instance._operationQueue[0];
+            _tryCallingRecursively(instance, opInfo);
+          });
+        };
+      }
+
+      var _class2$j;
+      function ensurePlaying(domAudio) {
+        return new Promise(function (resolve) {
+          var promise = domAudio.play();
+          if (promise === undefined) {
+            return resolve();
+          }
+          promise.then(resolve)["catch"](function () {
+            var onGesture = function onGesture() {
+              domAudio.play().then(function () {
+                canvas == null ? undefined : canvas.removeEventListener('touchend', onGesture, {
+                  capture: true
+                });
+                canvas == null ? undefined : canvas.removeEventListener('mouseup', onGesture, {
+                  capture: true
+                });
+              })["catch"](function (e) {});
+              resolve();
+            };
+            var canvas = document.getElementById('GameCanvas');
+            canvas == null ? undefined : canvas.addEventListener('touchend', onGesture, {
+              capture: true
+            });
+            canvas == null ? undefined : canvas.addEventListener('mouseup', onGesture, {
+              capture: true
+            });
+          });
+          return null;
+        });
+      }
+      var OneShotAudioDOM = function () {
+        function OneShotAudioDOM(nativeAudio, volume) {
+          this._domAudio = undefined;
+          this._onPlayCb = undefined;
+          this._onEndCb = undefined;
+          this._domAudio = nativeAudio;
+          nativeAudio.volume = volume;
+        }
+        var _proto = OneShotAudioDOM.prototype;
+        _proto.play = function play() {
+          var _this = this;
+          ensurePlaying(this._domAudio).then(function () {
+            _this.onPlay == null ? undefined : _this.onPlay();
+          })["catch"](function (e) {});
+        };
+        _proto.stop = function stop() {
+          this._domAudio.pause();
+        };
+        _createClass(OneShotAudioDOM, [{
+          key: "onPlay",
+          get: function get() {
+            return this._onPlayCb;
+          },
+          set: function set(cb) {
+            this._onPlayCb = cb;
+          }
+        }, {
+          key: "onEnd",
+          get: function get() {
+            return this._onEndCb;
+          },
+          set: function set(cb) {
+            if (this._onEndCb) {
+              this._domAudio.removeEventListener('ended', this._onEndCb);
+            }
+            this._onEndCb = cb;
+            if (cb) {
+              this._domAudio.addEventListener('ended', cb);
+            }
+          }
+        }]);
+        return OneShotAudioDOM;
+      }();
+      var AudioPlayerDOM = (_class2$j = function () {
+        function AudioPlayerDOM(nativeAudio) {
+          var _this2 = this;
+          this._domAudio = undefined;
+          this._state = AudioState.INIT;
+          this._onEnded = undefined;
+          this._eventTarget = new EventTarget();
+          this._operationQueue = [];
+          this._domAudio = nativeAudio;
+          game.on(Game.EVENT_PAUSE, this._onInterruptedBegin, this);
+          game.on(Game.EVENT_RESUME, this._onInterruptedEnd, this);
+          this._onEnded = function () {
+            _this2.seek(0)["catch"](function (e) {});
+            _this2._state = AudioState.INIT;
+            _this2._eventTarget.emit(AudioEvent.ENDED);
+          };
+          this._domAudio.addEventListener('ended', this._onEnded);
+        }
+        var _proto2 = AudioPlayerDOM.prototype;
+        _proto2.destroy = function destroy() {
+          game.off(Game.EVENT_PAUSE, this._onInterruptedBegin, this);
+          game.off(Game.EVENT_RESUME, this._onInterruptedEnd, this);
+          this._domAudio.removeEventListener('ended', this._onEnded);
+          this._domAudio = null;
+        };
+        AudioPlayerDOM.load = function load(url) {
+          return new Promise(function (resolve, reject) {
+            AudioPlayerDOM.loadNative(url).then(function (domAudio) {
+              resolve(new AudioPlayerDOM(domAudio));
+            })["catch"](reject);
+          });
+        };
+        AudioPlayerDOM.loadNative = function loadNative(url) {
+          return new Promise(function (resolve, reject) {
+            var domAudio = document.createElement('audio');
+            var loadedEvent = 'canplaythrough';
+            if (systemInfo.os === OS.IOS) {
+              loadedEvent = 'loadedmetadata';
+            } else if (systemInfo.browserType === BrowserType.FIREFOX) {
+              loadedEvent = 'canplay';
+            }
+            var timer = setTimeout(function () {
+              if (domAudio.readyState === 0) {
+                failure();
+              } else {
+                success();
+              }
+            }, 8000);
+            var clearEvent = function clearEvent() {
+              clearTimeout(timer);
+              domAudio.removeEventListener(loadedEvent, success, false);
+              domAudio.removeEventListener('error', failure, false);
+            };
+            var success = function success() {
+              clearEvent();
+              resolve(domAudio);
+            };
+            var failure = function failure() {
+              clearEvent();
+              var message = "load audio failure - " + url;
+              reject(new Error(message));
+            };
+            domAudio.addEventListener(loadedEvent, success, false);
+            domAudio.addEventListener('error', failure, false);
+            domAudio.src = url;
+          });
+        };
+        AudioPlayerDOM.loadOneShotAudio = function loadOneShotAudio(url, volume) {
+          return new Promise(function (resolve, reject) {
+            AudioPlayerDOM.loadNative(url).then(function (domAudio) {
+              var oneShotAudio = new OneShotAudioDOM(domAudio, volume);
+              resolve(oneShotAudio);
+            })["catch"](reject);
+          });
+        };
+        _proto2._onInterruptedBegin = function _onInterruptedBegin() {
+          var _this3 = this;
+          if (this._state === AudioState.PLAYING) {
+            this.pause().then(function () {
+              _this3._state = AudioState.INTERRUPTED;
+              _this3._eventTarget.emit(AudioEvent.INTERRUPTION_BEGIN);
+            })["catch"](function (e) {});
+          }
+        };
+        _proto2._onInterruptedEnd = function _onInterruptedEnd() {
+          var _this4 = this;
+          if (this._state === AudioState.INTERRUPTED) {
+            this.play().then(function () {
+              _this4._eventTarget.emit(AudioEvent.INTERRUPTION_END);
+            })["catch"](function (e) {});
+          }
+        };
+        _proto2.getPCMData = function getPCMData(channelIndex) {
+          return undefined;
+        };
+        _proto2.seek = function seek(time) {
+          time = clamp$1(time, 0, this.duration);
+          this._domAudio.currentTime = time;
+          return Promise.resolve();
+        };
+        _proto2.play = function play() {
+          var _this5 = this;
+          return new Promise(function (resolve) {
+            ensurePlaying(_this5._domAudio).then(function () {
+              _this5._state = AudioState.PLAYING;
+              resolve();
+            })["catch"](function (e) {});
+          });
+        };
+        _proto2.pause = function pause() {
+          this._domAudio.pause();
+          this._state = AudioState.PAUSED;
+          return Promise.resolve();
+        };
+        _proto2.stop = function stop() {
+          var _this6 = this;
+          return new Promise(function (resolve) {
+            _this6._domAudio.pause();
+            _this6._domAudio.currentTime = 0;
+            _this6._state = AudioState.STOPPED;
+            resolve();
+          });
+        };
+        _proto2.onInterruptionBegin = function onInterruptionBegin(cb) {
+          this._eventTarget.on(AudioEvent.INTERRUPTION_BEGIN, cb);
+        };
+        _proto2.offInterruptionBegin = function offInterruptionBegin(cb) {
+          this._eventTarget.off(AudioEvent.INTERRUPTION_BEGIN, cb);
+        };
+        _proto2.onInterruptionEnd = function onInterruptionEnd(cb) {
+          this._eventTarget.on(AudioEvent.INTERRUPTION_END, cb);
+        };
+        _proto2.offInterruptionEnd = function offInterruptionEnd(cb) {
+          this._eventTarget.off(AudioEvent.INTERRUPTION_END, cb);
+        };
+        _proto2.onEnded = function onEnded(cb) {
+          this._eventTarget.on(AudioEvent.ENDED, cb);
+        };
+        _proto2.offEnded = function offEnded(cb) {
+          this._eventTarget.off(AudioEvent.ENDED, cb);
+        };
+        _createClass(AudioPlayerDOM, [{
+          key: "src",
+          get: function get() {
+            return this._domAudio ? this._domAudio.src : '';
+          }
+        }, {
+          key: "type",
+          get: function get() {
+            return AudioType.DOM_AUDIO;
+          }
+        }, {
+          key: "state",
+          get: function get() {
+            return this._state;
+          }
+        }, {
+          key: "loop",
+          get: function get() {
+            return this._domAudio.loop;
+          },
+          set: function set(val) {
+            this._domAudio.loop = val;
+          }
+        }, {
+          key: "volume",
+          get: function get() {
+            return this._domAudio.volume;
+          },
+          set: function set(val) {
+            val = clamp01(val);
+            this._domAudio.volume = val;
+          }
+        }, {
+          key: "duration",
+          get: function get() {
+            return this._domAudio.duration;
+          }
+        }, {
+          key: "currentTime",
+          get: function get() {
+            return this._domAudio.currentTime;
+          }
+        }, {
+          key: "sampleRate",
+          get: function get() {
+            return 0;
+          }
+        }]);
+        return AudioPlayerDOM;
+      }(), (_applyDecoratedDescriptor(_class2$j.prototype, "seek", [enqueueOperation], Object.getOwnPropertyDescriptor(_class2$j.prototype, "seek"), _class2$j.prototype), _applyDecoratedDescriptor(_class2$j.prototype, "play", [enqueueOperation], Object.getOwnPropertyDescriptor(_class2$j.prototype, "play"), _class2$j.prototype), _applyDecoratedDescriptor(_class2$j.prototype, "pause", [enqueueOperation], Object.getOwnPropertyDescriptor(_class2$j.prototype, "pause"), _class2$j.prototype), _applyDecoratedDescriptor(_class2$j.prototype, "stop", [enqueueOperation], Object.getOwnPropertyDescriptor(_class2$j.prototype, "stop"), _class2$j.prototype)), _class2$j);
+
+      var AudioTimer = function () {
+        function AudioTimer(nativeAudio) {
+          this._nativeAudio = undefined;
+          this._startTime = 0;
+          this._startOffset = 0;
+          this._isPaused = true;
+          this._nativeAudio = nativeAudio;
+        }
+        var _proto = AudioTimer.prototype;
+        _proto.destroy = function destroy() {
+          this._nativeAudio = undefined;
+        };
+        _proto._now = function _now() {
+          return performance.now() / 1000;
+        };
+        _proto._calculateCurrentTime = function _calculateCurrentTime() {
+          var timePassed = this._now() - this._startTime;
+          var currentTime = this._startOffset + timePassed;
+          if (currentTime >= this.duration) {
+            this._startTime = this._now();
+            this._startOffset = 0;
+          }
+          return currentTime % this.duration;
+        };
+        _proto.start = function start() {
+          this._isPaused = false;
+          this._startTime = this._now();
+        };
+        _proto.pause = function pause() {
+          if (this._isPaused) {
+            return;
+          }
+          this._isPaused = true;
+          this._startOffset = this._calculateCurrentTime();
+        };
+        _proto.stop = function stop() {
+          this._isPaused = true;
+          this._startOffset = 0;
+        };
+        _proto.seek = function seek(time) {
+          this._startTime = this._now();
+          this._startOffset = clamp$1(time, 0, this.duration);
+        };
+        _createClass(AudioTimer, [{
+          key: "duration",
+          get: function get() {
+            return this._nativeAudio.duration;
+          }
+        }, {
+          key: "currentTime",
+          get: function get() {
+            if (this._isPaused) {
+              return this._startOffset;
+            } else {
+              return this._calculateCurrentTime();
+            }
+          }
+        }]);
+        return AudioTimer;
+      }();
+
+      var AudioBufferManager = function () {
+        function AudioBufferManager() {
+          this._audioBufferDataMap = {};
+        }
+        var _proto = AudioBufferManager.prototype;
+        _proto.addCache = function addCache(url, audioBuffer) {
+          var audioBufferData = this._audioBufferDataMap[url];
+          if (audioBufferData) {
+            warnID(5204, url);
+            return;
+          }
+          this._audioBufferDataMap[url] = {
+            usedCount: 1,
+            audioBuffer: audioBuffer
+          };
+        };
+        _proto.retainCache = function retainCache(url) {
+          var audioBufferData = this._audioBufferDataMap[url];
+          if (!audioBufferData) {
+            warnID(5203, url);
+            return;
+          }
+          audioBufferData.usedCount++;
+        };
+        _proto.getCache = function getCache(url) {
+          var audioBufferData = this._audioBufferDataMap[url];
+          return audioBufferData == null ? undefined : audioBufferData.audioBuffer;
+        };
+        _proto.tryReleasingCache = function tryReleasingCache(url) {
+          var audioBufferData = this._audioBufferDataMap[url];
+          if (!audioBufferData) {
+            warnID(5203, url);
+            return;
+          }
+          if (--audioBufferData.usedCount <= 0) {
+            delete this._audioBufferDataMap[url];
+          }
+        };
+        return AudioBufferManager;
+      }();
+      var audioBufferManager = new AudioBufferManager();
+
+      var _class3$e;
+      var AudioContextClass = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+      var _contextRunningEvent = 'on-context-running';
+      var AudioContextAgent = function () {
+        function AudioContextAgent() {
+          var _this = this;
+          this._eventTarget = undefined;
+          this._context = undefined;
+          this._isRunning = false;
+          this._context = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext)();
+          this._eventTarget = new EventTarget();
+          this._context.onstatechange = function () {
+            if (_this._context.state === 'running') {
+              _this._isRunning = true;
+              _this._eventTarget.emit(_contextRunningEvent);
+            } else {
+              _this._isRunning = false;
+            }
+          };
+        }
+        var _proto = AudioContextAgent.prototype;
+        _proto.onceRunning = function onceRunning(cb, target) {
+          this._eventTarget.once(_contextRunningEvent, cb, target);
+        };
+        _proto.offRunning = function offRunning(cb, target) {
+          this._eventTarget.off(_contextRunningEvent, cb, target);
+        };
+        _proto.decodeAudioData = function decodeAudioData(audioData) {
+          var _this2 = this;
+          return new Promise(function (resolve, reject) {
+            var promise = _this2._context.decodeAudioData(audioData, function (audioBuffer) {
+              resolve(audioBuffer);
+            }, function (err) {
+              console.error('failed to load Web Audio', err);
+            });
+            promise == null ? undefined : promise["catch"](reject);
+          });
+        };
+        _proto.runContext = function runContext() {
+          var _this3 = this;
+          return new Promise(function (resolve) {
+            if (_this3.isRunning) {
+              resolve();
+              return;
+            }
+            var context = _this3._context;
+            if (!context.resume) {
+              resolve();
+              return;
+            }
+            if (context.state === 'suspended') {
+              context.resume()["catch"](function (e) {
+                warn('runContext error', e);
+              });
+            } else if (context.state === 'running') {
+              resolve();
+              return;
+            }
+            var canvas = document.getElementById('GameCanvas');
+            var onGesture = function onGesture() {
+              context.resume().then(function () {
+                canvas == null ? undefined : canvas.removeEventListener('touchend', onGesture, {
+                  capture: true
+                });
+                canvas == null ? undefined : canvas.removeEventListener('mouseup', onGesture, {
+                  capture: true
+                });
+                resolve();
+              })["catch"](function (e) {
+                warn('onGesture resume error', e);
+              });
+            };
+            canvas == null ? undefined : canvas.addEventListener('touchend', onGesture, {
+              capture: true
+            });
+            canvas == null ? undefined : canvas.addEventListener('mouseup', onGesture, {
+              capture: true
+            });
+          });
+        };
+        _proto.createBufferSource = function createBufferSource(audioBuffer, loop) {
+          var sourceBufferNode = this._context.createBufferSource();
+          if (audioBuffer !== undefined) {
+            sourceBufferNode.buffer = audioBuffer;
+          }
+          if (loop !== undefined) {
+            sourceBufferNode.loop = loop;
+          }
+          return sourceBufferNode;
+        };
+        _proto.createGain = function createGain(volume) {
+          if (volume === undefined) {
+            volume = 1;
+          }
+          var gainNode = this._context.createGain();
+          this.setGainValue(gainNode, volume);
+          return gainNode;
+        };
+        _proto.setGainValue = function setGainValue(gain, volume) {
+          if (gain.gain.setTargetAtTime) {
+            try {
+              gain.gain.setTargetAtTime(volume, this._context.currentTime, 0);
+            } catch (e) {
+              gain.gain.setTargetAtTime(volume, this._context.currentTime, 0.01);
+            }
+          } else {
+            gain.gain.value = volume;
+          }
+        };
+        _proto.connectContext = function connectContext(audioNode) {
+          if (!this._context) {
+            return;
+          }
+          audioNode.connect(this._context.destination);
+        };
+        _createClass(AudioContextAgent, [{
+          key: "isRunning",
+          get: function get() {
+            return this._isRunning;
+          }
+        }, {
+          key: "currentTime",
+          get: function get() {
+            return this._context.currentTime;
+          }
+        }]);
+        return AudioContextAgent;
+      }();
+      AudioContextAgent.support = !!AudioContextClass;
+      var audioContextAgent;
+      if (AudioContextAgent.support) {
+        audioContextAgent = new AudioContextAgent();
+      }
+      var OneShotAudioWeb = function () {
+        function OneShotAudioWeb(audioBuffer, volume, url) {
+          this._duration = undefined;
+          this._bufferSourceNode = undefined;
+          this._onPlayCb = undefined;
+          this._currentTimer = 0;
+          this._url = undefined;
+          this._onEndCb = undefined;
+          this._duration = audioBuffer.duration;
+          this._url = url;
+          this._bufferSourceNode = audioContextAgent.createBufferSource(audioBuffer, false);
+          var gainNode = audioContextAgent.createGain(volume);
+          this._bufferSourceNode.connect(gainNode);
+          audioContextAgent.connectContext(gainNode);
+        }
+        var _proto2 = OneShotAudioWeb.prototype;
+        _proto2.play = function play() {
+          var _this4 = this;
+          this._bufferSourceNode.start();
+          audioContextAgent.runContext().then(function () {
+            _this4.onPlay == null ? undefined : _this4.onPlay();
+            _this4._currentTimer = window.setTimeout(function () {
+              audioBufferManager.tryReleasingCache(_this4._url);
+              _this4.onEnd == null ? undefined : _this4.onEnd();
+            }, _this4._duration * 1000);
+          })["catch"](function (e) {
+            warn('play error', e);
+          });
+        };
+        _proto2.stop = function stop() {
+          clearTimeout(this._currentTimer);
+          audioBufferManager.tryReleasingCache(this._url);
+          this._bufferSourceNode.stop();
+          this._bufferSourceNode.disconnect();
+          this._bufferSourceNode.buffer = null;
+        };
+        _createClass(OneShotAudioWeb, [{
+          key: "onPlay",
+          get: function get() {
+            return this._onPlayCb;
+          },
+          set: function set(cb) {
+            this._onPlayCb = cb;
+          }
+        }, {
+          key: "onEnd",
+          get: function get() {
+            return this._onEndCb;
+          },
+          set: function set(cb) {
+            this._onEndCb = cb;
+          }
+        }]);
+        return OneShotAudioWeb;
+      }();
+      var AudioPlayerWeb = (_class3$e = function () {
+        function AudioPlayerWeb(audioBuffer, url) {
+          this._src = undefined;
+          this._audioBuffer = undefined;
+          this._sourceNode = undefined;
+          this._gainNode = undefined;
+          this._currentTimer = 0;
+          this._volume = 1;
+          this._loop = false;
+          this._state = AudioState.INIT;
+          this._audioTimer = undefined;
+          this._runningCallback = undefined;
+          this._eventTarget = new EventTarget();
+          this._operationQueue = [];
+          this._audioBuffer = audioBuffer;
+          this._audioTimer = new AudioTimer(audioBuffer);
+          this._gainNode = audioContextAgent.createGain();
+          audioContextAgent.connectContext(this._gainNode);
+          this._src = url;
+          game.on(Game.EVENT_PAUSE, this._onInterruptedBegin, this);
+          game.on(Game.EVENT_RESUME, this._onInterruptedEnd, this);
+        }
+        var _proto3 = AudioPlayerWeb.prototype;
+        _proto3.destroy = function destroy() {
+          window.clearTimeout(this._currentTimer);
+          this._audioTimer.destroy();
+          if (this._audioBuffer) {
+            this._audioBuffer = null;
+          }
+          audioBufferManager.tryReleasingCache(this._src);
+          game.off(Game.EVENT_PAUSE, this._onInterruptedBegin, this);
+          game.off(Game.EVENT_RESUME, this._onInterruptedEnd, this);
+          this.offRunning();
+        };
+        AudioPlayerWeb.load = function load(url) {
+          return new Promise(function (resolve, reject) {
+            AudioPlayerWeb.loadNative(url).then(function (audioBuffer) {
+              resolve(new AudioPlayerWeb(audioBuffer, url));
+            })["catch"](reject);
+          });
+        };
+        AudioPlayerWeb.loadNative = function loadNative(url) {
+          return new Promise(function (resolve, reject) {
+            var cachedAudioBuffer = audioBufferManager.getCache(url);
+            if (cachedAudioBuffer) {
+              audioBufferManager.retainCache(url);
+              resolve(cachedAudioBuffer);
+              return;
+            }
+            var xhr = new XMLHttpRequest();
+            var errInfo = "load audio failed: " + url + ", status: ";
+            xhr.open('GET', url, true);
+            xhr.responseType = 'arraybuffer';
+            xhr.onload = function () {
+              if (xhr.status === 200 || xhr.status === 0) {
+                audioContextAgent.decodeAudioData(xhr.response).then(function (decodedAudioBuffer) {
+                  audioBufferManager.addCache(url, decodedAudioBuffer);
+                  resolve(decodedAudioBuffer);
+                })["catch"](function (e) {
+                  warn('loadNative error', url, e);
+                });
+              } else {
+                reject(new Error("" + errInfo + xhr.status + "(no response)"));
+              }
+            };
+            xhr.onerror = function () {
+              reject(new Error("" + errInfo + xhr.status + "(error)"));
+            };
+            xhr.ontimeout = function () {
+              reject(new Error("" + errInfo + xhr.status + "(time out)"));
+            };
+            xhr.onabort = function () {
+              reject(new Error("" + errInfo + xhr.status + "(abort)"));
+            };
+            xhr.send(null);
+          });
+        };
+        AudioPlayerWeb.loadOneShotAudio = function loadOneShotAudio(url, volume) {
+          return new Promise(function (resolve, reject) {
+            AudioPlayerWeb.loadNative(url).then(function (audioBuffer) {
+              var oneShotAudio = new OneShotAudioWeb(audioBuffer, volume, url);
+              resolve(oneShotAudio);
+            })["catch"](reject);
+          });
+        };
+        _proto3.getPCMData = function getPCMData(channelIndex) {
+          return new AudioPCMDataView(this._audioBuffer.getChannelData(channelIndex), 1);
+        };
+        _proto3._onInterruptedBegin = function _onInterruptedBegin() {
+          var _this5 = this;
+          if (this._state === AudioState.PLAYING) {
+            this.pause().then(function () {
+              _this5._state = AudioState.INTERRUPTED;
+              _this5._eventTarget.emit(AudioEvent.INTERRUPTION_BEGIN);
+            })["catch"](function (e) {
+              warn('_onInterruptedBegin error', e);
+            });
+          }
+        };
+        _proto3._onInterruptedEnd = function _onInterruptedEnd() {
+          var _this6 = this;
+          if (this._state === AudioState.INTERRUPTED) {
+            this.play().then(function () {
+              _this6._eventTarget.emit(AudioEvent.INTERRUPTION_END);
+            })["catch"](function (e) {
+              warn('_onInterruptedEnd error', e);
+            });
+          }
+        };
+        _proto3.offRunning = function offRunning() {
+          if (this._runningCallback) {
+            audioContextAgent.offRunning(this._runningCallback);
+            this._runningCallback = undefined;
+          }
+        };
+        _proto3.seek = function seek(time) {
+          var _this7 = this;
+          return new Promise(function (resolve) {
+            _this7.offRunning();
+            _this7._audioTimer.seek(time);
+            if (_this7._state === AudioState.PLAYING) {
+              _this7._doPlay().then(resolve)["catch"](function (e) {
+                warn('seek error', e);
+              });
+            } else {
+              resolve();
+            }
+          });
+        };
+        _proto3.play = function play() {
+          this.offRunning();
+          return this._doPlay();
+        };
+        _proto3._doPlay = function _doPlay() {
+          var _this8 = this;
+          return new Promise(function (resolve) {
+            if (audioContextAgent.isRunning) {
+              _this8._startSourceNode();
+              resolve();
+            } else {
+              _this8.offRunning();
+              _this8._runningCallback = function () {
+                _this8._startSourceNode();
+                resolve();
+              };
+              audioContextAgent.onceRunning(_this8._runningCallback);
+              audioContextAgent.runContext()["catch"](function (e) {
+                warn('doPlay error', e);
+              });
+            }
+          });
+        };
+        _proto3._startSourceNode = function _startSourceNode() {
+          var _this9 = this;
+          this._stopSourceNode();
+          this._sourceNode = audioContextAgent.createBufferSource(this._audioBuffer, this.loop);
+          this._sourceNode.connect(this._gainNode);
+          this._sourceNode.loop = this._loop;
+          this._sourceNode.start(0, this._audioTimer.currentTime);
+          this._state = AudioState.PLAYING;
+          this._audioTimer.start();
+          var checkEnded = function checkEnded() {
+            if (_this9.loop) {
+              _this9._currentTimer = window.setTimeout(checkEnded, _this9._audioBuffer.duration * 1000);
+            } else {
+              _this9._audioTimer.stop();
+              _this9._eventTarget.emit(AudioEvent.ENDED);
+              _this9._state = AudioState.INIT;
+            }
+          };
+          window.clearTimeout(this._currentTimer);
+          this._currentTimer = window.setTimeout(checkEnded, (this._audioBuffer.duration - this._audioTimer.currentTime) * 1000);
+        };
+        _proto3._stopSourceNode = function _stopSourceNode() {
+          try {
+            if (this._sourceNode) {
+              this._sourceNode.stop();
+              this._sourceNode.disconnect();
+              this._sourceNode.buffer = null;
+              this._sourceNode = undefined;
+            }
+          } catch (e) {}
+        };
+        _proto3.pause = function pause() {
+          this.offRunning();
+          if (this._state !== AudioState.PLAYING || !this._sourceNode) {
+            return Promise.resolve();
+          }
+          this._audioTimer.pause();
+          this._state = AudioState.PAUSED;
+          window.clearTimeout(this._currentTimer);
+          this._stopSourceNode();
+          return Promise.resolve();
+        };
+        _proto3.stop = function stop() {
+          this.offRunning();
+          if (!this._sourceNode) {
+            this._audioTimer.stop();
+            this._state = AudioState.STOPPED;
+            return Promise.resolve();
+          }
+          this._audioTimer.stop();
+          this._state = AudioState.STOPPED;
+          window.clearTimeout(this._currentTimer);
+          this._stopSourceNode();
+          return Promise.resolve();
+        };
+        _proto3.onInterruptionBegin = function onInterruptionBegin(cb) {
+          this._eventTarget.on(AudioEvent.INTERRUPTION_BEGIN, cb);
+        };
+        _proto3.offInterruptionBegin = function offInterruptionBegin(cb) {
+          this._eventTarget.off(AudioEvent.INTERRUPTION_BEGIN, cb);
+        };
+        _proto3.onInterruptionEnd = function onInterruptionEnd(cb) {
+          this._eventTarget.on(AudioEvent.INTERRUPTION_END, cb);
+        };
+        _proto3.offInterruptionEnd = function offInterruptionEnd(cb) {
+          this._eventTarget.off(AudioEvent.INTERRUPTION_END, cb);
+        };
+        _proto3.onEnded = function onEnded(cb) {
+          this._eventTarget.on(AudioEvent.ENDED, cb);
+        };
+        _proto3.offEnded = function offEnded(cb) {
+          this._eventTarget.off(AudioEvent.ENDED, cb);
+        };
+        _createClass(AudioPlayerWeb, [{
+          key: "sampleRate",
+          get: function get() {
+            return this._audioBuffer.sampleRate;
+          }
+        }, {
+          key: "src",
+          get: function get() {
+            return this._src;
+          }
+        }, {
+          key: "type",
+          get: function get() {
+            return AudioType.WEB_AUDIO;
+          }
+        }, {
+          key: "state",
+          get: function get() {
+            return this._state;
+          }
+        }, {
+          key: "loop",
+          get: function get() {
+            return this._loop;
+          },
+          set: function set(val) {
+            this._loop = val;
+            if (this._sourceNode) {
+              this._sourceNode.loop = val;
+            }
+          }
+        }, {
+          key: "volume",
+          get: function get() {
+            return this._volume;
+          },
+          set: function set(val) {
+            val = clamp01(val);
+            this._volume = val;
+            audioContextAgent.setGainValue(this._gainNode, val);
+          }
+        }, {
+          key: "duration",
+          get: function get() {
+            return this._audioBuffer.duration;
+          }
+        }, {
+          key: "currentTime",
+          get: function get() {
+            return this._audioTimer.currentTime;
+          }
+        }]);
+        return AudioPlayerWeb;
+      }(), (_applyDecoratedDescriptor(_class3$e.prototype, "seek", [enqueueOperation], Object.getOwnPropertyDescriptor(_class3$e.prototype, "seek"), _class3$e.prototype), _applyDecoratedDescriptor(_class3$e.prototype, "play", [enqueueOperation], Object.getOwnPropertyDescriptor(_class3$e.prototype, "play"), _class3$e.prototype), _applyDecoratedDescriptor(_class3$e.prototype, "pause", [enqueueOperation], Object.getOwnPropertyDescriptor(_class3$e.prototype, "pause"), _class3$e.prototype), _applyDecoratedDescriptor(_class3$e.prototype, "stop", [enqueueOperation], Object.getOwnPropertyDescriptor(_class3$e.prototype, "stop"), _class3$e.prototype)), _class3$e);
+
+      var OneShotAudio = function () {
+        function OneShotAudio(audio) {
+          this._audio = undefined;
+          this._audio = audio;
+        }
+        var _proto = OneShotAudio.prototype;
+        _proto.play = function play() {
+          this._audio.play();
+        };
+        _proto.stop = function stop() {
+          this._audio.stop();
+        };
+        _createClass(OneShotAudio, [{
+          key: "onPlay",
+          get: function get() {
+            return this._audio.onPlay;
+          },
+          set: function set(v) {
+            this._audio.onPlay = v;
+          }
+        }, {
+          key: "onEnd",
+          get: function get() {
+            return this._audio.onEnd;
+          },
+          set: function set(v) {
+            this._audio.onEnd = v;
+          }
+        }]);
+        return OneShotAudio;
+      }();
+      var AudioPlayer = function () {
+        function AudioPlayer(player) {
+          this._player = undefined;
+          this._player = player;
+        }
+        AudioPlayer.load = function load(url, opts) {
+          return new Promise(function (resolve, reject) {
+            if ((opts == null ? undefined : opts.audioLoadMode) === AudioType.DOM_AUDIO || !AudioContextAgent.support) {
+              if (!AudioContextAgent.support) {
+                warnID(5201);
+              }
+              AudioPlayerDOM.load(url).then(function (domPlayer) {
+                resolve(new AudioPlayer(domPlayer));
+              })["catch"](reject);
+            } else {
+              AudioPlayerWeb.load(url).then(function (webPlayer) {
+                resolve(new AudioPlayer(webPlayer));
+              })["catch"](reject);
+            }
+          });
+        };
+        var _proto2 = AudioPlayer.prototype;
+        _proto2.destroy = function destroy() {
+          this._player.destroy();
+        };
+        AudioPlayer.loadNative = function loadNative(url, opts) {
+          if ((opts == null ? undefined : opts.audioLoadMode) === AudioType.DOM_AUDIO || !AudioContextAgent.support) {
+            if (!AudioContextAgent.support) {
+              warnID(5201);
+            }
+            return AudioPlayerDOM.loadNative(url);
+          }
+          return AudioPlayerWeb.loadNative(url);
+        };
+        AudioPlayer.loadOneShotAudio = function loadOneShotAudio(url, volume, opts) {
+          return new Promise(function (resolve, reject) {
+            if ((opts == null ? undefined : opts.audioLoadMode) === AudioType.DOM_AUDIO || !AudioContextAgent.support) {
+              if (!AudioContextAgent.support) {
+                warnID(5201);
+              }
+              AudioPlayerDOM.loadOneShotAudio(url, volume).then(function (oneShotAudioDOM) {
+                resolve(new OneShotAudio(oneShotAudioDOM));
+              })["catch"](reject);
+            } else {
+              AudioPlayerWeb.loadOneShotAudio(url, volume).then(function (oneShotAudioWeb) {
+                resolve(new OneShotAudio(oneShotAudioWeb));
+              })["catch"](reject);
+            }
+          });
+        };
+        _proto2.getPCMData = function getPCMData(channelIndex) {
+          return this._player.getPCMData(channelIndex);
+        };
+        _proto2.seek = function seek(time) {
+          return this._player.seek(time);
+        };
+        _proto2.play = function play() {
+          return this._player.play();
+        };
+        _proto2.pause = function pause() {
+          return this._player.pause();
+        };
+        _proto2.stop = function stop() {
+          return this._player.stop();
+        };
+        _proto2.onInterruptionBegin = function onInterruptionBegin(cb) {
+          this._player.onInterruptionBegin(cb);
+        };
+        _proto2.offInterruptionBegin = function offInterruptionBegin(cb) {
+          this._player.offInterruptionBegin(cb);
+        };
+        _proto2.onInterruptionEnd = function onInterruptionEnd(cb) {
+          this._player.onInterruptionEnd(cb);
+        };
+        _proto2.offInterruptionEnd = function offInterruptionEnd(cb) {
+          this._player.offInterruptionEnd(cb);
+        };
+        _proto2.onEnded = function onEnded(cb) {
+          this._player.onEnded(cb);
+        };
+        _proto2.offEnded = function offEnded(cb) {
+          this._player.offEnded(cb);
+        };
+        _createClass(AudioPlayer, [{
+          key: "src",
+          get: function get() {
+            return this._player.src;
+          }
+        }, {
+          key: "type",
+          get: function get() {
+            return this._player.type;
+          }
+        }, {
+          key: "state",
+          get: function get() {
+            return this._player.state;
+          }
+        }, {
+          key: "loop",
+          get: function get() {
+            return this._player.loop;
+          },
+          set: function set(val) {
+            this._player.loop = val;
+          }
+        }, {
+          key: "volume",
+          get: function get() {
+            return this._player.volume;
+          },
+          set: function set(val) {
+            this._player.volume = val;
+          }
+        }, {
+          key: "duration",
+          get: function get() {
+            return this._player.duration;
+          }
+        }, {
+          key: "currentTime",
+          get: function get() {
+            return this._player.currentTime;
+          }
+        }, {
+          key: "sampleRate",
+          get: function get() {
+            return this._player.sampleRate;
+          }
+        }]);
+        return AudioPlayer;
+      }();
+      AudioPlayer.maxAudioChannel = 24;
+
+      var _dec$m, _class$m, _class2$i, _initializer$i, _class3$d;
+      var AudioClip = exports("AudioClip", (_dec$m = ccclass$4('cc.AudioClip'), _dec$m(_class$m = (_class2$i = (_class3$d = function (_Asset) {
+        _inheritsLoose(AudioClip, _Asset);
+        function AudioClip(name) {
+          var _this;
+          _this = _Asset.call(this, name) || this;
+          _this._duration = _initializer$i && _initializer$i();
+          _this._loadMode = AudioType.UNKNOWN_AUDIO;
+          _this._meta = null;
+          _this._player = null;
+          return _this;
+        }
+        var _proto = AudioClip.prototype;
+        _proto.destroy = function destroy() {
+          var _this$_player;
+          var destroyResult = _Asset.prototype.destroy.call(this);
+          (_this$_player = this._player) == null ? undefined : _this$_player.destroy();
+          this._player = null;
+          if (this._meta) {
+            this._meta.player = null;
+          }
+          return destroyResult;
+        };
+        _proto.validate = function validate() {
+          return !!this._meta;
+        };
+        _proto.getDuration = function getDuration() {
+          if (this._duration) {
+            return this._duration;
+          }
+          return this._meta ? this._meta.duration : 0;
+        };
+        _proto.getCurrentTime = function getCurrentTime() {
+          return this._player ? this._player.currentTime : 0;
+        };
+        _proto.getVolume = function getVolume() {
+          return this._player ? this._player.volume : 0;
+        };
+        _proto.getLoop = function getLoop() {
+          return this._player ? this._player.loop : false;
+        };
+        _proto.setCurrentTime = function setCurrentTime(time) {
+          var _this$_player2;
+          (_this$_player2 = this._player) == null ? undefined : _this$_player2.seek(time)["catch"](function (e) {});
+        };
+        _proto.setVolume = function setVolume(volume) {
+          if (this._player) {
+            this._player.volume = volume;
+          }
+        };
+        _proto.setLoop = function setLoop(loop) {
+          if (this._player) {
+            this._player.loop = loop;
+          }
+        };
+        _proto.play = function play() {
+          var _this$_player3;
+          (_this$_player3 = this._player) == null ? undefined : _this$_player3.play()["catch"](function (e) {});
+        };
+        _proto.pause = function pause() {
+          var _this$_player4;
+          (_this$_player4 = this._player) == null ? undefined : _this$_player4.pause()["catch"](function (e) {});
+        };
+        _proto.stop = function stop() {
+          var _this$_player5;
+          (_this$_player5 = this._player) == null ? undefined : _this$_player5.stop()["catch"](function (e) {});
+        };
+        _proto.playOneShot = function playOneShot(volume) {
+          if (volume === undefined) {
+            volume = 1;
+          }
+          if (this._nativeAsset) {
+            AudioPlayer.loadOneShotAudio(this._nativeAsset.url, volume).then(function (oneShotAudio) {
+              oneShotAudio.play();
+            })["catch"](function (e) {});
+          }
+        };
+        _createClass(AudioClip, [{
+          key: "duration",
+          set: function set(v) {
+            this._duration = v;
+          }
+        }, {
+          key: "_nativeAsset",
+          get: function get() {
+            return this._meta;
+          },
+          set: function set(meta) {
+            this._meta = meta;
+            if (meta) {
+              this._loadMode = meta.type;
+              this._player = meta.player;
+            } else {
+              this._meta = null;
+              this._loadMode = AudioType.UNKNOWN_AUDIO;
+              this._duration = 0;
+            }
+          }
+        }, {
+          key: "_nativeDep",
+          get: function get() {
+            return {
+              uuid: this._uuid,
+              audioLoadMode: this.loadMode,
+              ext: this._native,
+              __isNative__: true
+            };
+          }
+        }, {
+          key: "loadMode",
+          get: function get() {
+            return this._loadMode;
+          }
+        }, {
+          key: "state",
+          get: function get() {
+            return this._player ? this._player.state : AudioState.INIT;
+          }
+        }]);
+        return AudioClip;
+      }(Asset), _class3$d.AudioType = AudioType, _class3$d), (_initializer$i = applyDecoratedInitializer(_class2$i.prototype, "_duration", [serializable$3], function () {
+        return 0;
+      }), _applyDecoratedDescriptor(_class2$i.prototype, "_nativeDep", [override], Object.getOwnPropertyDescriptor(_class2$i.prototype, "_nativeDep"), _class2$i.prototype)), _class2$i)) || _class$m));
+      cclegacy.AudioClip = AudioClip;
+
+      function loadAudioPlayer(url, options, onComplete) {
+        AudioPlayer.load(url, {
+          audioLoadMode: options.audioLoadMode
+        }).then(function (player) {
+          var audioMeta = {
+            player: player,
+            url: url,
+            duration: player.duration,
+            type: player.type
+          };
+          onComplete(null, audioMeta);
+        })["catch"](function (err) {
+          onComplete(err);
+        });
+      }
+      function createAudioClip(id, data, options, onComplete) {
+        var out = new AudioClip();
+        out._nativeUrl = id;
+        out._nativeAsset = data;
+        out.duration = data.duration;
+        onComplete(null, out);
+      }
+      downloader$1.register({
+        '.mp3': loadAudioPlayer,
+        '.ogg': loadAudioPlayer,
+        '.wav': loadAudioPlayer,
+        '.m4a': loadAudioPlayer
+      });
+      factory.register({
+        '.mp3': createAudioClip,
+        '.ogg': createAudioClip,
+        '.wav': createAudioClip,
+        '.m4a': createAudioClip
+      });
+
+      var AudioManager = function () {
+        function AudioManager() {
+          this._oneShotAudioInfoList = [];
+          this._audioPlayerInfoList = [];
+        }
+        var _proto = AudioManager.prototype;
+        _proto._findIndex = function _findIndex(audioInfoList, audio) {
+          return audioInfoList.findIndex(function (item) {
+            return item.audio === audio;
+          });
+        };
+        _proto._tryAddPlaying = function _tryAddPlaying(audioInfoList, audio) {
+          var idx = this._findIndex(audioInfoList, audio);
+          if (idx > -1) {
+            audioInfoList[idx].playTime = performance.now();
+            return false;
+          }
+          var audioInfo = {
+            audio: audio,
+            playTime: performance.now()
+          };
+          audioInfoList.push(audioInfo);
+          return true;
+        };
+        _proto.addPlaying = function addPlaying(audio) {
+          if (audio instanceof AudioPlayer) {
+            this._tryAddPlaying(this._audioPlayerInfoList, audio);
+          } else {
+            this._tryAddPlaying(this._oneShotAudioInfoList, audio);
+          }
+        };
+        _proto._tryRemovePlaying = function _tryRemovePlaying(audioInfoList, audio) {
+          var idx = this._findIndex(audioInfoList, audio);
+          if (idx === -1) {
+            return false;
+          }
+          fastRemoveAt$2(audioInfoList, idx);
+          return true;
+        };
+        _proto.removePlaying = function removePlaying(audio) {
+          if (audio instanceof AudioPlayer) {
+            this._tryRemovePlaying(this._audioPlayerInfoList, audio);
+          } else {
+            this._tryRemovePlaying(this._oneShotAudioInfoList, audio);
+          }
+        };
+        _proto.discardOnePlayingIfNeeded = function discardOnePlayingIfNeeded() {
+          if (this._audioPlayerInfoList.length + this._oneShotAudioInfoList.length < AudioPlayer.maxAudioChannel) {
+            return;
+          }
+          var audioInfoToDiscard;
+          if (this._oneShotAudioInfoList.length > 0) {
+            this._oneShotAudioInfoList.forEach(function (audioInfo) {
+              if (!audioInfoToDiscard || audioInfo.playTime < audioInfoToDiscard.playTime) {
+                audioInfoToDiscard = audioInfo;
+              }
+            });
+          } else {
+            this._audioPlayerInfoList.forEach(function (audioInfo) {
+              if (!audioInfoToDiscard || audioInfo.playTime < audioInfoToDiscard.playTime) {
+                audioInfoToDiscard = audioInfo;
+              }
+            });
+          }
+          if (audioInfoToDiscard) {
+            audioInfoToDiscard.audio.stop();
+            this.removePlaying(audioInfoToDiscard.audio);
+          }
+        };
+        _proto.pause = function pause() {
+          this._oneShotAudioInfoList.forEach(function (info) {
+            info.audio.stop();
+          });
+          this._audioPlayerInfoList.forEach(function (info) {
+            info.audio.pause()["catch"](function (e) {});
+          });
+        };
+        _proto.resume = function resume() {
+          this._audioPlayerInfoList.forEach(function (info) {
+            info.audio.play()["catch"](function (e) {});
+          });
+        };
+        return AudioManager;
+      }();
+      var audioManager = new AudioManager();
+
+      var _dec$l, _dec2$i, _dec3$h, _class$l, _class2$h, _initializer$h, _initializer2$g, _initializer3$d, _initializer4$c, _class3$c;
+      var _LOADED_EVENT = 'audiosource-loaded';
+      var AudioSourceEventType = {
+        STARTED: "started",
+        ENDED: "ended"
+      };
+      var AudioSource = (_dec$l = ccclass$4('cc.AudioSource'), _dec2$i = type$3(AudioClip), _dec3$h = type$3(AudioClip), _dec$l(_class$l = (_class2$h = (_class3$c = function (_Component) {
+        _inheritsLoose(AudioSource, _Component);
+        function AudioSource() {
+          var _this;
+          _this = _Component.call(this) || this;
+          _this._clip = _initializer$h && _initializer$h();
+          _this._player = null;
+          _this._hasRegisterListener = false;
+          _this._loop = _initializer2$g && _initializer2$g();
+          _this._playOnAwake = _initializer3$d && _initializer3$d();
+          _this._volume = _initializer4$c && _initializer4$c();
+          _this._cachedCurrentTime = -1;
+          _this._operationsBeforeLoading = [];
+          _this._isLoaded = false;
+          _this._lastSetClip = null;
+          return _this;
+        }
+        var _proto = AudioSource.prototype;
+        _proto._resetPlayer = function _resetPlayer() {
+          if (this._player) {
+            audioManager.removePlaying(this._player);
+            this._unregisterListener();
+            this._player.destroy();
+            this._player = null;
+          }
+        };
+        _proto._syncPlayer = function _syncPlayer() {
+          var _this2 = this;
+          var clip = this._clip;
+          if (this._lastSetClip === clip) {
+            return;
+          }
+          if (!clip) {
+            this._lastSetClip = null;
+            this._resetPlayer();
+            return;
+          }
+          if (!clip._nativeAsset) {
+            console.error('Invalid audio clip');
+            return;
+          }
+          this._isLoaded = false;
+          this._lastSetClip = clip;
+          this._operationsBeforeLoading.length = 0;
+          AudioPlayer.load(clip._nativeAsset.url, {
+            audioLoadMode: clip.loadMode
+          }).then(function (player) {
+            var _this2$node;
+            if (_this2._lastSetClip !== clip) {
+              player.destroy();
+              return;
+            }
+            _this2._isLoaded = true;
+            _this2._resetPlayer();
+            _this2._player = player;
+            _this2._syncStates();
+            (_this2$node = _this2.node) == null ? undefined : _this2$node.emit(_LOADED_EVENT);
+          })["catch"](function (e) {});
+        };
+        _proto._registerListener = function _registerListener() {
+          var _this3 = this;
+          if (!this._hasRegisterListener && this._player) {
+            var player = this._player;
+            player.onEnded(function () {
+              var _this3$node;
+              audioManager.removePlaying(player);
+              (_this3$node = _this3.node) == null ? undefined : _this3$node.emit("ended", _this3);
+            });
+            player.onInterruptionBegin(function () {
+              audioManager.removePlaying(player);
+            });
+            player.onInterruptionEnd(function () {
+              if (_this3._player === player) {
+                audioManager.addPlaying(player);
+              }
+            });
+            this._hasRegisterListener = true;
+          }
+        };
+        _proto._unregisterListener = function _unregisterListener() {
+          if (this._player && this._hasRegisterListener) {
+            this._player.offEnded();
+            this._player.offInterruptionBegin();
+            this._player.offInterruptionEnd();
+            this._hasRegisterListener = false;
+          }
+        };
+        _proto.onLoad = function onLoad() {
+          this._syncPlayer();
+        };
+        _proto.onEnable = function onEnable() {
+          if (this._playOnAwake && !this.playing) {
+            this.play();
+          }
+        };
+        _proto.onDisable = function onDisable() {
+          var rootNode = this._getRootNode();
+          if (rootNode != null && rootNode._persistNode) {
+            return;
+          }
+          this.pause();
+        };
+        _proto.onDestroy = function onDestroy() {
+          this.stop();
+          this.clip = null;
+        };
+        _proto.getPCMData = function getPCMData(channelIndex) {
+          var _this4 = this;
+          return new Promise(function (resolve) {
+            if (channelIndex !== 0 && channelIndex !== 1) {
+              warn('Only support channel index 0 or 1 to get buffer');
+              resolve(undefined);
+              return;
+            }
+            if (_this4._player) {
+              resolve(_this4._player.getPCMData(channelIndex));
+            } else {
+              var _this4$node;
+              (_this4$node = _this4.node) == null ? undefined : _this4$node.once(_LOADED_EVENT, function () {
+                var _this4$_player;
+                resolve((_this4$_player = _this4._player) == null ? undefined : _this4$_player.getPCMData(channelIndex));
+              });
+            }
+          });
+        };
+        _proto.getSampleRate = function getSampleRate() {
+          var _this5 = this;
+          return new Promise(function (resolve) {
+            if (_this5._player) {
+              resolve(_this5._player.sampleRate);
+            } else {
+              var _this5$node;
+              (_this5$node = _this5.node) == null ? undefined : _this5$node.once(_LOADED_EVENT, function () {
+                resolve(_this5._player.sampleRate);
+              });
+            }
+          });
+        };
+        _proto._getRootNode = function _getRootNode() {
+          var _currentNode, _currentNode$parent;
+          var currentNode = this.node;
+          var currentGrandparentNode = (_currentNode = currentNode) == null ? undefined : (_currentNode$parent = _currentNode.parent) == null ? undefined : _currentNode$parent.parent;
+          while (currentGrandparentNode) {
+            var _currentNode2, _currentNode3, _currentNode3$parent;
+            currentNode = (_currentNode2 = currentNode) == null ? undefined : _currentNode2.parent;
+            currentGrandparentNode = (_currentNode3 = currentNode) == null ? undefined : (_currentNode3$parent = _currentNode3.parent) == null ? undefined : _currentNode3$parent.parent;
+          }
+          return currentNode;
+        };
+        _proto.play = function play() {
+          var _this6 = this;
+          if (!this._isLoaded && this.clip) {
+            this._operationsBeforeLoading.push({
+              op: "play",
+              params: null
+            });
+            return;
+          }
+          this._registerListener();
+          audioManager.discardOnePlayingIfNeeded();
+          if (this.state === AudioState.PLAYING) {
+            var _this$_player;
+            (_this$_player = this._player) == null ? undefined : _this$_player.stop()["catch"](function (e) {});
+          }
+          var player = this._player;
+          if (player) {
+            player.play().then(function () {
+              var _this6$node;
+              (_this6$node = _this6.node) == null ? undefined : _this6$node.emit("started", _this6);
+            })["catch"](function (e) {
+              audioManager.removePlaying(player);
+            });
+            audioManager.addPlaying(player);
+          }
+        };
+        _proto.pause = function pause() {
+          var _this$_player2;
+          if (!this._isLoaded && this.clip) {
+            this._operationsBeforeLoading.push({
+              op: "pause",
+              params: null
+            });
+            return;
+          }
+          (_this$_player2 = this._player) == null ? undefined : _this$_player2.pause()["catch"](function (e) {});
+        };
+        _proto.stop = function stop() {
+          if (!this._isLoaded && this.clip) {
+            this._operationsBeforeLoading.push({
+              op: "stop",
+              params: null
+            });
+            return;
+          }
+          if (this._player) {
+            this._player.stop()["catch"](function (e) {});
+            audioManager.removePlaying(this._player);
+          }
+        };
+        _proto.playOneShot = function playOneShot(clip, volumeScale) {
+          if (volumeScale === undefined) {
+            volumeScale = 1;
+          }
+          if (!clip._nativeAsset) {
+            console.error('Invalid audio clip');
+            return;
+          }
+          var player;
+          AudioPlayer.loadOneShotAudio(clip._nativeAsset.url, this._volume * volumeScale, {
+            audioLoadMode: clip.loadMode
+          }).then(function (oneShotAudio) {
+            player = oneShotAudio;
+            audioManager.discardOnePlayingIfNeeded();
+            oneShotAudio.onEnd = function () {
+              audioManager.removePlaying(oneShotAudio);
+            };
+            oneShotAudio.play();
+            audioManager.addPlaying(oneShotAudio);
+          })["catch"](function (e) {
+            if (player) {
+              audioManager.removePlaying(player);
+            }
+          });
+        };
+        _proto._syncStates = function _syncStates() {
+          var _this7 = this;
+          if (this._player) {
+            this._player.loop = this._loop;
+            this._player.volume = this._volume;
+            this._operationsBeforeLoading.forEach(function (opInfo) {
+              if (opInfo.op === "seek") {
+                _this7._cachedCurrentTime = opInfo.params && opInfo.params[0];
+                if (_this7._player) {
+                  _this7._player.seek(_this7._cachedCurrentTime)["catch"](function (e) {});
+                }
+              } else {
+                var _this7$opInfo$op;
+                (_this7$opInfo$op = _this7[opInfo.op]) == null ? undefined : _this7$opInfo$op.call(_this7);
+              }
+            });
+            this._operationsBeforeLoading.length = 0;
+          }
+        };
+        _createClass(AudioSource, [{
+          key: "clip",
+          get: function get() {
+            return this._clip;
+          },
+          set: function set(val) {
+            if (val === this._clip) {
+              return;
+            }
+            this._clip = val;
+            this._syncPlayer();
+          }
+        }, {
+          key: "loop",
+          get: function get() {
+            return this._loop;
+          },
+          set: function set(val) {
+            this._loop = val;
+            if (this._player) {
+              this._player.loop = val;
+            }
+          }
+        }, {
+          key: "playOnAwake",
+          get: function get() {
+            return this._playOnAwake;
+          },
+          set: function set(val) {
+            this._playOnAwake = val;
+          }
+        }, {
+          key: "volume",
+          get: function get() {
+            return this._volume;
+          },
+          set: function set(val) {
+            if (Number.isNaN(val)) {
+              warn('illegal audio volume!');
+              return;
+            }
+            val = clamp$1(val, 0, 1);
+            if (this._player) {
+              this._player.volume = val;
+              this._volume = this._player.volume;
+            } else {
+              this._volume = val;
+            }
+          }
+        }, {
+          key: "currentTime",
+          get: function get() {
+            return this._player ? this._player.currentTime : this._cachedCurrentTime < 0 ? 0 : this._cachedCurrentTime;
+          },
+          set: function set(num) {
+            var _this$_player3;
+            if (Number.isNaN(num)) {
+              warn('illegal audio time!');
+              return;
+            }
+            num = clamp$1(num, 0, this.duration);
+            if (!this._isLoaded && this.clip) {
+              this._operationsBeforeLoading.push({
+                op: "seek",
+                params: [num]
+              });
+              return;
+            }
+            this._cachedCurrentTime = num;
+            (_this$_player3 = this._player) == null ? undefined : _this$_player3.seek(this._cachedCurrentTime)["catch"](function (e) {});
+          }
+        }, {
+          key: "duration",
+          get: function get() {
+            var _this$_clip$getDurati, _this$_clip;
+            return (_this$_clip$getDurati = (_this$_clip = this._clip) == null ? undefined : _this$_clip.getDuration()) !== null && _this$_clip$getDurati !== undefined ? _this$_clip$getDurati : this._player ? this._player.duration : 0;
+          }
+        }, {
+          key: "state",
+          get: function get() {
+            return this._player ? this._player.state : AudioState.INIT;
+          }
+        }, {
+          key: "playing",
+          get: function get() {
+            return this.state === AudioSource.AudioState.PLAYING;
+          }
+        }], [{
+          key: "maxAudioChannel",
+          get: function get() {
+            return AudioPlayer.maxAudioChannel;
+          }
+        }]);
+        return AudioSource;
+      }(Component), _class3$c.AudioState = AudioState, _class3$c.EventType = AudioSourceEventType, _class3$c), (_initializer$h = applyDecoratedInitializer(_class2$h.prototype, "_clip", [_dec2$i], function () {
+        return null;
+      }), _initializer2$g = applyDecoratedInitializer(_class2$h.prototype, "_loop", [serializable$3], function () {
+        return false;
+      }), _initializer3$d = applyDecoratedInitializer(_class2$h.prototype, "_playOnAwake", [serializable$3], function () {
+        return true;
+      }), _initializer4$c = applyDecoratedInitializer(_class2$h.prototype, "_volume", [serializable$3], function () {
+        return 1;
+      }), _applyDecoratedDescriptor(_class2$h.prototype, "clip", [_dec3$h], Object.getOwnPropertyDescriptor(_class2$h.prototype, "clip"), _class2$h.prototype)), _class2$h)) || _class$l); exports({ AudioSource: AudioSource, AudioSourceComponent: AudioSource });
+
+      replaceProperty(AudioClip, 'AudioClip', [{
+        name: 'PlayingState',
+        newName: 'AudioState',
+        target: AudioSource,
+        targetName: 'AudioSource'
+      }]);
+      markAsWarning(AudioClip.prototype, 'AudioClip.prototype', ['state', 'play', 'pause', 'stop', 'playOneShot', 'setCurrentTime', 'setVolume', 'setLoop', 'getCurrentTime', 'getVolume', 'getLoop'].map(function (item) {
+        return {
+          name: item,
+          suggest: "please use AudioSource.prototype." + item + " instead"
+        };
+      }));
+
+      cclegacy.AudioSourceComponent = AudioSource;
+      setClassAlias(AudioSource, 'cc.AudioSourceComponent');
 
       legacyCC.log = log;
       legacyCC.warn = warn;

@@ -28,7 +28,9 @@ writeFileSync(".test-build/package.json", '{"type":"commonjs"}');
 const tests = readdirSync("tests")
   .filter((f) => f.endsWith(".test.cjs"))
   .map((f) => `tests/${f}`);
-const r = spawnSync(process.execPath, ["--test", ...tests], {
-  stdio: "inherit",
-});
+const r = spawnSync(process.execPath, ["--test", '--test-reporter=spec', ...tests], {encoding:'utf8'});
+process.stdout.write(r.stdout??'');process.stderr.write(r.stderr??'');
+const clean=(r.stdout??'').replace(/\u001b\[[0-9;]*m/g,'');
+const readCount=label=>Number(clean.match(new RegExp(`ℹ ${label} (\\d+)`))?.[1]??0);
+mkdirSync('reports',{recursive:true});writeFileSync('reports/logic-results.json',JSON.stringify({tests:readCount('tests'),passed:readCount('pass'),failed:readCount('fail'),exitCode:r.status},null,2));
 process.exitCode = r.status ?? 1;

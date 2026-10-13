@@ -1,29 +1,53 @@
 import { InputAction, InputFrame } from "./Types";
+import { VirtualJoystick } from "./VirtualJoystick";
+import { GameConfig as C } from "./GameConfig";
 
 /** Device independent. Multiple keyboard keys and touch IDs can hold an action. */
 export class InputManager {
   private held = new Map<string, InputAction>();
   private jumpQueued = false;
   private pauseQueued = false;
+  private grenadeQueued = false;
+  readonly joystick = new VirtualJoystick();
+  private readonly frame: InputFrame = {
+    axis: 0,
+    jump: false,
+    shoot: false,
+    jumpHeld: false,
+    crouch: false,
+    aimY: 0,
+    grenade: false,
+  };
   press(source: string, action: InputAction): void {
     if (this.held.has(source)) return;
     this.held.set(source, action);
     if (action === "jump") this.jumpQueued = true;
     if (action === "pause") this.pauseQueued = true;
+    if (action === "grenade") this.grenadeQueued = true;
   }
   release(source: string): void {
     this.held.delete(source);
   }
   isHeld(action: InputAction): boolean {
-    return [...this.held.values()].includes(action);
+    for (const held of this.held.values()) if (held === action) return true;
+    return false;
   }
   consume(): InputFrame {
-    const frame = {
-      axis: Number(this.isHeld("right")) - Number(this.isHeld("left")),
-      jump: this.jumpQueued,
-      shoot: this.isHeld("shoot"),
-    };
+    const keyboard = Number(this.isHeld("right")) - Number(this.isHeld("left"));
+    const frame = this.frame;
+    frame.axis = keyboard || this.joystick.axis;
+    frame.jump = this.jumpQueued;
+    frame.shoot = this.isHeld("shoot");
+    frame.jumpHeld = this.isHeld("jump");
+    frame.crouch =
+      this.isHeld("crouch") || this.joystick.vertical < C.input.crouchThreshold;
+    frame.aimY =
+      this.isHeld("aimUp") || this.joystick.vertical > C.input.aimThreshold
+        ? 1
+        : 0;
+    frame.grenade = this.grenadeQueued;
     this.jumpQueued = false;
+    this.grenadeQueued = false;
     return frame;
   }
   consumePause(): boolean {
@@ -35,5 +59,7 @@ export class InputManager {
     this.held.clear();
     this.jumpQueued = false;
     this.pauseQueued = false;
+    this.grenadeQueued = false;
+    this.joystick.reset();
   }
 }

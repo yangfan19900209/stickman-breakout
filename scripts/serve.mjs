@@ -16,6 +16,7 @@ const types = {
   ".jpg": "image/jpeg",
   ".woff": "font/woff",
   ".woff2": "font/woff2",
+  ".wav": "audio/wav",
 };
 const server = createServer((req, res) => {
   try {
@@ -50,13 +51,20 @@ const server = createServer((req, res) => {
   }
 });
 function openBrowser() {
-  spawn("powershell.exe", ["-NoProfile", "-Command", `Start-Process 'http://127.0.0.1:${port}'`], {
-    windowsHide: true, stdio: "ignore",
-  });
+  spawn(
+    "powershell.exe",
+    ["-NoProfile", "-Command", `Start-Process 'http://127.0.0.1:${port}'`],
+    {
+      windowsHide: true,
+      stdio: "ignore",
+    },
+  );
 }
 server.on("error", (e) => {
   if (e.code === "EADDRINUSE" && process.argv.includes("--open")) {
-    console.log(`Preview port ${port} is already in use; opening the existing preview.`);
+    console.log(
+      `Preview port ${port} is already in use; opening the existing preview.`,
+    );
     openBrowser();
     return;
   }

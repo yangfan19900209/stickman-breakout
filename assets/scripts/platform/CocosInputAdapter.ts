@@ -1,6 +1,15 @@
-import { EventKeyboard, EventTouch, input, Input, KeyCode, Node } from "cc";
+import {
+  EventKeyboard,
+  EventTouch,
+  input,
+  Input,
+  KeyCode,
+  Node,
+  Vec2,
+} from "cc";
 import { InputManager } from "../core/InputManager";
 import { InputAction } from "../core/Types";
+import { GameConfig as C } from "../core/GameConfig";
 
 /** Cocos events are the only device event boundary. Touch IDs retain independent ownership. */
 export class CocosInputAdapter {
@@ -9,6 +18,7 @@ export class CocosInputAdapter {
     node: Node;
     start: (e: EventTouch) => void;
     end: (e: EventTouch) => void;
+    move?: (e: EventTouch) => void;
   }[] = [];
   constructor(
     readonly state: InputManager,
@@ -31,6 +41,14 @@ export class CocosInputAdapter {
         return "jump";
       case KeyCode.KEY_J:
         return "shoot";
+      case KeyCode.KEY_S:
+      case KeyCode.ARROW_DOWN:
+        return "crouch";
+      case KeyCode.KEY_W:
+      case KeyCode.ARROW_UP:
+        return "aimUp";
+      case KeyCode.KEY_K:
+        return "grenade";
       case KeyCode.KEY_P:
       case KeyCode.ESCAPE:
         return "pause";
@@ -51,6 +69,37 @@ export class CocosInputAdapter {
   }
   private touchEnd(e: EventTouch): void {
     this.state.release(`touch:${e.getID()}`);
+    const id = e.getID();
+    if (id !== null) this.state.joystick.end(id);
+  }
+  bindJoystick(stick: Node): void {
+    const location = new Vec2();
+    const coordinates = (e: EventTouch) => {
+      e.getUILocation(location);
+      location.x -= stick.worldPosition.x + C.width / 2;
+      location.y -= stick.worldPosition.y + C.height / 2;
+    };
+    const start = (e: EventTouch) => {
+      coordinates(e);
+      const id = e.getID();
+      if (id !== null) this.state.joystick.start(id, location.x, location.y);
+      e.propagationStopped = true;
+    };
+    const move = (e: EventTouch) => {
+      coordinates(e);
+      const id = e.getID();
+      if (id !== null) this.state.joystick.move(id, location.x, location.y);
+      e.propagationStopped = true;
+    };
+    const end = (e: EventTouch) => {
+      this.touchEnd(e);
+      e.propagationStopped = true;
+    };
+    stick.on(Node.EventType.TOUCH_START, start);
+    stick.on(Node.EventType.TOUCH_MOVE, move);
+    stick.on(Node.EventType.TOUCH_END, end);
+    stick.on(Node.EventType.TOUCH_CANCEL, end);
+    this.bindings.push({ node: stick, start, move, end });
   }
   bindButton(button: Node, action: InputAction): void {
     const start = (e: EventTouch) => {
@@ -82,6 +131,7 @@ export class CocosInputAdapter {
       b.node.off(Node.EventType.TOUCH_START, b.start);
       b.node.off(Node.EventType.TOUCH_END, b.end);
       b.node.off(Node.EventType.TOUCH_CANCEL, b.end);
+      if (b.move) b.node.off(Node.EventType.TOUCH_MOVE, b.move);
     }
   }
 }

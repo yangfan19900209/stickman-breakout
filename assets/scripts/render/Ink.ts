@@ -32,6 +32,38 @@ export class Ink {
   clear(): void {
     this.g.clear();
   }
+  segment(
+    x1: number,
+    y1: number,
+    x2: number,
+    y2: number,
+    width = 3,
+    color = colors.ink,
+  ): void {
+    this.g.strokeColor = color;
+    this.g.lineWidth = width;
+    this.g.moveTo(x1, y1);
+    this.g.lineTo(x2, y2);
+    this.g.stroke();
+  }
+  ellipse(
+    x: number,
+    y: number,
+    rx: number,
+    ry: number,
+    stroke = colors.ink,
+    fill?: Color,
+    width = 2,
+  ): void {
+    this.g.strokeColor = stroke;
+    this.g.lineWidth = width;
+    this.g.ellipse(x, y, rx, ry);
+    if (fill) {
+      this.g.fillColor = fill;
+      this.g.fill();
+    }
+    this.g.stroke();
+  }
   polygon(points: Vec[], color = colors.ink): void {
     if (points.length < 3) return;
     this.g.fillColor = color;

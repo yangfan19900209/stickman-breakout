@@ -1,0 +1,63 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "resources",
+    "deps": [],
+    "uuids": [
+        "421888f5-544b-c554-20e1-3fad24581ebb",
+        "4c79c3a2-0311-be5e-7b7b-056315dfcf7f",
+        "562cf6c2-84eb-745b-d5f6-1819884fdfa1",
+        "9b662c6b-6b69-4c32-d7b8-68362ed1a786",
+        "d9da93be-3cba-8dd6-4ada-38bd8ddc53f0",
+        "e042d8e9-17f4-5d59-e76f-6243161162e5",
+        "f3109b18-22ac-7dd8-dc23-a4936f08d13e"
+    ],
+    "paths": {
+        "9b662c6b-6b69-4c32-d7b8-68362ed1a786": [
+            "audio/blast",
+            "cc.AudioClip",
+            1
+        ],
+        "e042d8e9-17f4-5d59-e76f-6243161162e5": [
+            "audio/hit",
+            "cc.AudioClip",
+            1
+        ],
+        "f3109b18-22ac-7dd8-dc23-a4936f08d13e": [
+            "audio/pickup",
+            "cc.AudioClip",
+            1
+        ],
+        "d9da93be-3cba-8dd6-4ada-38bd8ddc53f0": [
+            "audio/rifle",
+            "cc.AudioClip",
+            1
+        ],
+        "421888f5-544b-c554-20e1-3fad24581ebb": [
+            "audio/rocket",
+            "cc.AudioClip",
+            1
+        ],
+        "4c79c3a2-0311-be5e-7b7b-056315dfcf7f": [
+            "audio/shotgun",
+            "cc.AudioClip",
+            1
+        ],
+        "562cf6c2-84eb-745b-d5f6-1819884fdfa1": [
+            "audio/step",
+            "cc.AudioClip",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {},
+    "hasPreloadScript": true,
+    "dependencyRelationships": {}
+}

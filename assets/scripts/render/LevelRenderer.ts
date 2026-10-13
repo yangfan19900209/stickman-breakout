@@ -1,195 +1,207 @@
 import { Label, Node } from "cc";
 import { LevelController } from "../level/LevelController";
 import { Ink, colors, node } from "./Ink";
+import { SceneryArt as Art } from "./SceneryArt";
+interface Chunk {
+  node: Node;
+  x: number;
+  factor: number;
+}
 export class LevelRenderer {
-  private far: Node;
-  private mid: Node;
-  private terrain: Node;
+  private chunks: Chunk[] = [];
   private gate: Ink;
+  visibleChunks = 0;
   constructor(parent: Node, level: LevelController) {
-    this.far = node(parent, "Distant skyline");
-    this.mid = node(parent, "Wires and buildings");
-    this.terrain = node(parent, "Terrain");
-    const far = new Ink(this.far),
-      mid = new Ink(this.mid),
-      ground = new Ink(this.terrain);
-    for (let x = -400; x < 4800; x += 270) {
-      const h = 110 + (Math.abs(x * 17) % 140);
-      far.rect(x, 150, 180, h, colors.far, undefined, 1.5);
-      far.line(
-        [
-          { x: x - 10, y: 150 + h },
-          { x: x + 70, y: 170 + h },
-          { x: x + 190, y: 150 + h },
-        ],
-        1.5,
-        colors.far,
-      );
-      for (let wy = 185; wy < 150 + h - 15; wy += 35)
-        for (let wx = x + 20; wx < x + 165; wx += 40)
-          far.rect(wx, wy, 16, 19, colors.far, undefined, 1);
-    }
-    for (let x = 0; x < 4400; x += 520) {
-      mid.line(
-        [
-          { x: x + 160, y: 150 },
-          { x: x + 160, y: 410 },
-          { x: x + 150, y: 414 },
-        ],
-        2,
-        colors.muted,
-      );
-      mid.line(
-        [
-          { x: x + 128, y: 386 },
-          { x: x + 190, y: 386 },
-        ],
-        2,
-        colors.muted,
-      );
-      mid.line(
-        [
-          { x: x + 160, y: 395 },
-          { x: x + 320, y: 353 },
-          { x: x + 500, y: 353 },
-          { x: x + 680, y: 395 },
-        ],
-        1,
-        colors.far,
-      );
-    }
-    for (const x of [820, 1660, 2820, 3430]) {
-      mid.rect(x, 150, 360, 220, colors.far, undefined, 2);
-      mid.line(
-        [
-          { x: x - 12, y: 370 },
-          { x: x + 380, y: 370 },
-        ],
-        3,
-        colors.far,
-      );
-      mid.rect(x + 70, 150, 76, 106, colors.far, undefined, 2);
-      mid.rect(x + 220, 240, 70, 48, colors.far, undefined, 2);
-    }
-    for (const s of level.solids) {
-      ground.rect(
-        s.x,
-        s.y,
-        s.w,
-        s.h,
-        colors.ink,
-        colors.paper,
-        s.kind === "ground" ? 3 : 2.5,
-      );
-      if (s.kind === "crate") {
-        ground.line(
-          [
-            { x: s.x + 7, y: s.y + 7 },
-            { x: s.x + s.w - 7, y: s.y + s.h - 7 },
-          ],
-          2,
-        );
-        ground.line(
-          [
-            { x: s.x + 7, y: s.y + s.h - 7 },
-            { x: s.x + s.w - 7, y: s.y + 7 },
-          ],
-          2,
-        );
-        ground.rect(
-          s.x + 5,
-          s.y + 5,
-          s.w - 10,
-          s.h - 10,
-          colors.ink,
-          undefined,
-          1,
-        );
-      } else {
-        for (let x = s.x + 12; x < s.x + s.w; x += 24)
-          ground.line(
+    for (const factor of [0.16, 0.42, 1])
+      for (let x = -800; x < level.data.width + 1600; x += 800) {
+        const n = node(parent, `Scenery ${factor}/${x}`, x, 0, 820, 650),
+          g = new Ink(n),
+          index = Math.floor(x / 800);
+        this.chunks.push({ node: n, x, factor });
+        if (factor === 0.16) {
+          for (let i = 0; i < 3; i++)
+            Art.cloud(
+              g,
+              30 + i * 260,
+              490 + ((index + i + 9) % 3) * 47,
+              0.8 + ((index + i + 8) % 2) * 0.3,
+            );
+          g.line(
             [
-              { x, y: s.y + s.h - 6 },
-              { x: x - 7, y: s.y + s.h - 15 },
+              { x: -10, y: 240 },
+              { x: 70, y: 333 },
+              { x: 140, y: 291 },
+              { x: 260, y: 403 },
+              { x: 380, y: 290 },
+              { x: 470, y: 350 },
+              { x: 580, y: 303 },
+              { x: 700, y: 377 },
+              { x: 810, y: 240 },
+            ],
+            1.5,
+            colors.far,
+          );
+          for (let i = 0; i < 2; i++) {
+            const bx = 170 + i * 340;
+            g.rect(bx, 150, 190, 160 + i * 40, colors.far, undefined, 1);
+            for (let wy = 185; wy < 290; wy += 37)
+              for (let wx = bx + 18; wx < bx + 176; wx += 40)
+                g.rect(wx, wy, 16, 22, colors.far, undefined, 1);
+          }
+          Art.truck(g, 590, 158);
+        } else if (factor === 0.42) {
+          if ((index + 9) % 3 === 0) Art.bunker(g, 180, 150, 300);
+          else if ((index + 9) % 3 === 1) Art.factory(g, 120, 150);
+          else Art.crane(g, 300, 150);
+          Art.tower(g, 690, 150);
+          g.segment(24, 150, 24, 390, 2, colors.muted);
+          g.segment(6, 363, 46, 363, 2, colors.muted);
+          g.line(
+            [
+              { x: 24, y: 377 },
+              { x: 165, y: 346 },
+              { x: 315, y: 328 },
+              { x: 490, y: 345 },
+              { x: 700, y: 377 },
             ],
             1,
             colors.muted,
           );
+          for (let px = 25; px < 770; px += 80) {
+            g.segment(px, 150, px, 212, 1.2, colors.far);
+            g.segment(px, 195, px + 80, 195, 1, colors.far);
+          }
+        } else {
+          for (const s of level.staticSolids) {
+            if (s.x + s.w <= x || s.x >= x + 800) continue;
+            const left = Math.max(s.x, x) - x,
+              right = Math.min(s.x + s.w, x + 800) - x;
+            if (s.kind === "ground") {
+              g.g.fillColor = colors.paper;
+              g.g.rect(left, s.y, right - left, s.h);
+              g.g.fill();
+              for (let px = left; px < right; px += 32)
+                g.segment(
+                  px,
+                  s.y + s.h + Math.sin((x + px) * 0.15) * 0.65,
+                  Math.min(right, px + 32),
+                  s.y + s.h + Math.sin((x + px + 32) * 0.15) * 0.65,
+                  3,
+                );
+              g.segment(left, 50, right, 50, 2);
+              for (let px = left + 12; px < right; px += 63) {
+                g.line(
+                  [
+                    { x: px, y: 132 },
+                    { x: px + 10, y: 126 },
+                    { x: px + 26, y: 130 },
+                  ],
+                  1,
+                  colors.muted,
+                );
+                g.ellipse(px + 30, 145, 5, 2, colors.muted, undefined, 1);
+              }
+            } else {
+              g.rect(left, s.y, right - left, s.h, colors.ink, colors.paper, 3);
+              g.segment(
+                left,
+                s.y + s.h - 5,
+                right,
+                s.y + s.h - 5,
+                1,
+                colors.muted,
+              );
+              for (let px = left + 10; px < right - 6; px += 30) {
+                g.circle(
+                  px,
+                  s.y + Math.min(s.h / 2, 9),
+                  1.8,
+                  colors.ink,
+                  colors.ink,
+                  1,
+                );
+              }
+              if (s.kind === "platform")
+                for (const wx of [s.x + 12, s.x + s.w - 12])
+                  if (wx >= x && wx < x + 800) {
+                    g.segment(wx - x, 150, wx - x, s.y, 2, colors.muted);
+                    for (let h = 160; h < s.y - 20; h += 25)
+                      g.segment(
+                        wx - x - 6,
+                        h,
+                        wx - x + 6,
+                        h + 20,
+                        1,
+                        colors.muted,
+                      );
+                  }
+            }
+          }
+          for (let px = 80; px < 790; px += 220) {
+            g.ellipse(px, 137, 9, 4, colors.muted, undefined, 1.5);
+            g.segment(px - 20, 119, px - 13, 117, 1.2, colors.muted);
+            g.segment(px + 35, 126, px + 39, 128, 1.2, colors.muted);
+          }
+          if (index === 0) {
+            this.label(n, "废弃前哨站 / SECTOR 01", 250, 423, 19);
+            g.rect(102, 354, 170, 45, colors.ink, colors.paper, 2);
+            this.label(n, "注意：可破坏补给箱", 188, 376, 14);
+            g.segment(115, 150, 115, 354, 3, colors.muted);
+            g.segment(261, 150, 261, 354, 3, colors.muted);
+          }
+        }
       }
-      if (s.kind === "platform")
-        for (const x of [s.x + 20, s.x + s.w - 20])
-          ground.line(
-            [
-              { x, y: 150 },
-              { x, y: s.y },
-            ],
-            2,
-            colors.muted,
-          );
+    const exitRoot = node(parent, "Exit gate"),
+      exit = level.data.exit.x;
+    this.gate = new Ink(exitRoot);
+    this.label(exitRoot, "出口 / EXIT", exit, 327, 23);
+    this.gate.node.setPosition(0, 0);
+    this.exitX = exit;
+  }
+  private exitX = 0;
+  private label(
+    parent: Node,
+    value: string,
+    x: number,
+    y: number,
+    size: number,
+  ): void {
+    const n = node(parent, value, x, y, 500, 42),
+      l = n.addComponent(Label);
+    l.string = value;
+    l.fontSize = size;
+    l.color = colors.muted;
+    l.fontFamily = "sans-serif";
+  }
+  update(cameraX: number, unlocked: boolean): void {
+    this.visibleChunks = 0;
+    for (const c of this.chunks) {
+      const px = c.x - cameraX * c.factor;
+      c.node.setPosition(px, 0);
+      c.node.active = px < 1350 && px + 820 > -70;
+      if (c.node.active) this.visibleChunks++;
     }
-    for (let x = 50; x < 4000; x += 103)
-      ground.line(
-        [
-          { x, y: 131 },
-          { x: x + 15, y: 127 },
-          { x: x + 32, y: 131 },
-        ],
-        1,
-        colors.far,
-      );
-    const sign = (text: string, x: number, y: number, size = 16) => {
-      const n = node(this.terrain, text, x, y, 220, 36);
-      const l = n.addComponent(Label);
-      l.string = text;
-      l.fontSize = size;
-      l.color = colors.muted;
-      l.fontFamily = "sans-serif";
-    };
-    sign("01 / ABANDONED BASE", 240, 310);
-    sign("仓储区 →", 1120, 427, 22);
-    sign("限制区域", 3180, 340, 22);
-    sign("出口  /  EXIT", 3850, 336, 22);
-    ground.line(
+    this.gate.node.setPosition(-cameraX, 0);
+    this.gate.clear();
+    const x = this.exitX;
+    this.gate.line(
       [
-        { x: 3780, y: 150 },
-        { x: 3780, y: 300 },
-        { x: 3920, y: 300 },
-        { x: 3920, y: 150 },
+        { x: x - 75, y: 150 },
+        { x: x - 75, y: 298 },
+        { x: x + 75, y: 298 },
+        { x: x + 75, y: 150 },
       ],
       4,
     );
-    ground.line(
-      [
-        { x: 3840, y: 265 },
-        { x: 3870, y: 265 },
-        { x: 3860, y: 276 },
-      ],
-      2,
-    );
-    this.gate = new Ink(node(this.terrain, "Exit gate"));
-    this.update(0, false);
-  }
-  update(cameraX: number, unlocked: boolean): void {
-    this.far.setPosition(-cameraX * 0.18, 0);
-    this.mid.setPosition(-cameraX * 0.45, 0);
-    this.terrain.setPosition(-cameraX, 0);
-    this.gate.clear();
     if (!unlocked)
-      for (let x = 3800; x < 3920; x += 22)
-        this.gate.line(
-          [
-            { x, y: 154 },
-            { x, y: 292 },
-          ],
-          2,
-          colors.muted,
-        );
+      for (let px = x - 55; px < x + 70; px += 22)
+        this.gate.segment(px, 154, px, 291, 2, colors.muted);
     else
       this.gate.line(
         [
-          { x: 3800, y: 208 },
-          { x: 3828, y: 190 },
-          { x: 3878, y: 235 },
+          { x: x - 42, y: 210 },
+          { x: x - 14, y: 192 },
+          { x: x + 40, y: 241 },
         ],
         4,
       );

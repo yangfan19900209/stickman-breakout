@@ -6,6 +6,8 @@ import { GameState, InputAction } from "../core/Types";
 import { CocosInputAdapter } from "../platform/CocosInputAdapter";
 import { Ink, colors, node } from "../render/Ink";
 import { StickmanRenderer } from "../render/StickmanRenderer";
+import { JoystickView } from "./JoystickView";
+import { controlLayout, SafeInsets } from "./ControlLayout";
 
 function text(
   parent: Node,
@@ -76,6 +78,11 @@ export class HUDController {
   private lastExit = false;
   private progress = -1;
   private rotateNote: Node;
+  private joystick: JoystickView;
+  private weaponLabel: Label;
+  private message: Label;
+  layout = controlLayout();
+  private pauseButton!: Node;
   constructor(
     parent: Node,
     adapter: CocosInputAdapter,
@@ -83,13 +90,14 @@ export class HUDController {
     onPause: () => void,
     onResume: () => void,
     onHome: () => void,
+    onMute: () => void = () => {},
   ) {
     this.hud = node(parent, "HUD");
     this.hudInk = new Ink(this.hud);
     text(this.hud, "线条突围", 92, 687, 23, colors.ink, 160);
     text(this.hud, "生命", 220, 686, 14, colors.muted, 80);
-    text(this.hud, "废弃基地", 1050, 689, 22, colors.ink, 185);
-    button(this.hud, "Ⅱ", 1204, 686, 54, 44, onPause);
+    text(this.hud, "废弃前哨站", 1050, 689, 22, colors.ink, 185);
+    this.pauseButton = button(this.hud, "Ⅱ", 1204, 686, 54, 44, onPause);
     this.objective = text(
       this.hud,
       "向右推进 · 击败出口守卫",
@@ -100,6 +108,8 @@ export class HUDController {
       480,
     );
     this.stats = text(this.hud, "", 112, 620, 15, colors.muted, 170);
+    this.weaponLabel = text(this.hud, "", 680, 686, 17, colors.ink, 450);
+    this.message = text(parent, "", 640, 560, 22, colors.ink, 750);
     this.guardNode = node(parent, "Guard health");
     this.guardInk = new Ink(this.guardNode);
     this.guardLabel = text(
@@ -112,6 +122,7 @@ export class HUDController {
       350,
     );
     this.controls = node(parent, "Touch controls");
+    this.joystick = new JoystickView(this.controls, adapter);
     const touch = (action: InputAction, x: number, y: number, r: number) => {
       const n = node(
           this.controls,
@@ -126,13 +137,21 @@ export class HUDController {
       this.touchButtons.push({ action, ink, held: false });
       this.paintTouch(ink, action, false);
     };
-    touch("left", 105, 72, 48);
-    touch("right", 225, 72, 48);
-    touch("jump", 1022, 78, 48);
-    touch("shoot", 1162, 78, 55);
-    text(this.controls, "A / ←     D / →", 166, 13, 12, colors.muted, 230);
-    text(this.controls, "Space", 1022, 13, 12, colors.muted, 100);
-    text(this.controls, "按住 J", 1162, 13, 12, colors.muted, 100);
+    touch("jump", 1034, 170, 48);
+    touch("shoot", 1162, 100, 58);
+    touch("grenade", 934, 92, 38);
+    text(
+      this.controls,
+      "拖动移动 · 下蹲 / 上瞄",
+      160,
+      15,
+      12,
+      colors.muted,
+      280,
+    );
+    text(this.controls, "按住高跳", 1034, 111, 12, colors.muted, 100);
+    text(this.controls, "按住 J", 1162, 25, 12, colors.muted, 100);
+    text(this.controls, "手雷 K", 934, 42, 12, colors.muted, 100);
     const panel = (state: GameState): Node => {
       const n = node(parent, `Panel:${state}`, 640, 360, C.width, C.height),
         ink = new Ink(n);
@@ -201,10 +220,10 @@ export class HUDController {
     text(title, "STICKMAN BREAKOUT", -341, 155, 15, colors.muted, 450);
     text(title, "线条突围", 120, 122, 72, colors.ink, 660);
     text(title, "一根线，也能冲出包围。", 120, 46, 23, colors.muted, 640);
-    text(title, "01 / 废弃基地", 116, -17, 18, colors.ink, 520);
+    text(title, "01 / 废弃前哨站", 116, -17, 18, colors.ink, 520);
     text(
       title,
-      "跨越障碍，击败守卫，抵达出口。",
+      "击碎箱子，引爆油桶，冲出前哨站。",
       122,
       -56,
       18,
@@ -230,14 +249,15 @@ export class HUDController {
       colors.muted,
       760,
     );
-    text(title, "V0.1  /  原创程序化绘制", -368, -270, 13, colors.muted, 390);
+    text(title, "V0.2  /  墨线行动", -368, -270, 13, colors.muted, 390);
     const paused = panel("paused");
     text(paused, "暂停一下", 0, 103, 52);
     text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
     button(paused, "继续突围", 0, -34, 280, 60, onResume, true);
     button(paused, "重新开始", -153, -122, 280, 56, onStart);
     button(paused, "返回首页", 153, -122, 280, 56, onHome);
-    text(paused, "P / Esc 继续", 0, -201, 15, colors.muted);
+    button(paused, "切换音效开关", 0, -204, 280, 48, onMute);
+    text(paused, "P / Esc 继续", 0, -269, 15, colors.muted);
     for (const state of ["gameover", "complete"] as const) {
       const p = panel(state);
       text(p, state === "complete" ? "突围成功" : "突围失败", 0, 114, 58);
@@ -262,7 +282,7 @@ export class HUDController {
   }
   private paintTouch(ink: Ink, action: InputAction, held: boolean): void {
     ink.clear();
-    const radius = action === "shoot" ? 53 : 47,
+    const radius = action === "shoot" ? 57 : action === "grenade" ? 35 : 47,
       color = held ? colors.paper : new Color(24, 24, 24, 170);
     ink.circle(
       0,
@@ -272,7 +292,27 @@ export class HUDController {
       held ? new Color(24, 24, 24, 210) : new Color(250, 249, 245, 205),
       2,
     );
-    if (action === "left" || action === "right") {
+    if (action === "grenade") {
+      ink.circle(0, -3, 12, color, undefined, 3);
+      ink.line(
+        [
+          { x: -4, y: 9 },
+          { x: -4, y: 17 },
+          { x: 5, y: 17 },
+          { x: 5, y: 9 },
+        ],
+        2,
+        color,
+      );
+      ink.line(
+        [
+          { x: 5, y: 16 },
+          { x: 14, y: 22 },
+        ],
+        2,
+        color,
+      );
+    } else if (action === "left" || action === "right") {
       const d = action === "left" ? -1 : 1;
       ink.line(
         [
@@ -345,13 +385,36 @@ export class HUDController {
       );
     }
   }
+  applyInsets(insets: SafeInsets): void {
+    this.layout = controlLayout(insets);
+    this.joystick.node.setPosition(
+      this.layout.joystick.x,
+      this.layout.joystick.y,
+    );
+    for (const b of this.touchButtons) {
+      const p =
+        b.action === "jump"
+          ? this.layout.jump
+          : b.action === "shoot"
+            ? this.layout.shoot
+            : this.layout.grenade;
+      b.ink.node.setPosition(p.x, p.y);
+    }
+    this.pauseButton.setPosition(this.layout.pause.x, this.layout.pause.y);
+  }
   update(s: GameSession, input: InputManager, portrait: boolean): void {
     this.hud.active =
       s.state === "playing" || s.state === "dying" || s.state === "paused";
     this.controls.active = s.state === "playing";
+    this.weaponLabel.string = `${s.weapon.id === "rifle" ? "自动步枪" : s.weapon.id === "shotgun" ? "霰弹枪" : "火箭筒"}  ${s.weapon.ammo < 0 ? "∞" : s.weapon.ammo}   ·   手雷 ${s.player.grenades}`;
+    this.message.node.active =
+      s.state === "playing" && (s.pickups.messageTime > 0 || s.combo > 1);
+    this.message.string =
+      s.pickups.messageTime > 0 ? s.pickups.lastMessage : `COMBO × ${s.combo}`;
+    this.joystick.update(input);
     this.rotateNote.active = portrait;
     this.guardNode.active =
-      s.state === "playing" && s.player.x > 2850 && s.spawner.guard.alive;
+      s.state === "playing" && s.level.arenaEntered && s.spawner.guard.alive;
     if (this.guardNode.active) {
       this.guardInk.clear();
       this.guardInk.rect(470, 569, 340, 5, colors.muted, colors.paper, 1);
@@ -364,13 +427,13 @@ export class HUDController {
         colors.ink,
         1,
       );
-      this.guardLabel.string = `出口守卫  ${s.spawner.guard.health} / ${s.spawner.guard.maxHealth}`;
+      this.guardLabel.string = `履带战车 · 阶段 ${s.spawner.guard.phase}  ${Math.ceil(s.spawner.guard.health)} / ${s.spawner.guard.maxHealth}`;
     }
     if (this.lastState !== s.state) {
       for (const [state, p] of this.panels) p.active = state === s.state;
       this.lastState = s.state;
     }
-    const progress = Math.floor((s.player.x / 4000) * 1280);
+    const progress = Math.floor((s.player.x / s.level.data.width) * 1280);
     if (this.lastHealth !== s.player.health || this.progress !== progress) {
       this.hudInk.clear();
       this.hudInk.rect(0, 654, 1280, 66, colors.far, colors.paper, 1);
@@ -414,18 +477,23 @@ export class HUDController {
       this.lastHealth = s.player.health;
       this.progress = progress;
     }
-    if (this.lastExit !== s.level.guardDefeated) {
-      this.objective.string = s.level.guardDefeated
-        ? "守卫已击败 · 抵达出口 →"
-        : "向右推进 · 击败出口守卫";
-      this.lastExit = s.level.guardDefeated;
-    }
+    const zone = s.level.zone;
+    let remaining = 0;
+    for (const e of s.spawner.enemies)
+      if (e.alive && zone && e.spawn.x >= zone.start && e.spawn.x < zone.end)
+        remaining++;
+    this.objective.string = s.level.guardDefeated
+      ? "战车已击毁 · 抵达出口 →"
+      : s.level.arenaEntered
+        ? "躲开落点预警 · 击毁机械战车"
+        : `${zone?.name ?? "向右推进"} · ${remaining} 名敌人 · 清敌解除封锁`;
     this.stats.string = `击败  ${s.spawner.kills} / ${s.spawner.enemies.length}`;
     for (const stat of this.resultStats)
       stat.string = `耗时 ${Math.floor(s.time)} 秒    ·    击败 ${s.spawner.kills} 名敌人`;
     for (const b of this.touchButtons) {
       const held = input.isHeld(b.action);
       if (held !== b.held) {
+        b.ink.node.setScale(held ? 0.94 : 1, held ? 0.94 : 1, 1);
         this.paintTouch(b.ink, b.action, held);
         b.held = held;
       }

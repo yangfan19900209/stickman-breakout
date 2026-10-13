@@ -6,26 +6,28 @@
     "height": 720,
     "targetFPS": 60
   },
-  "sourceModules": 22,
-  "sourceSHA256": "8e202e2e858ec62f412cc019a76718758abf943b26a0c4489ba1ac09ba67e0ca",
+  "sourceModules": 37,
+  "sourceSHA256": "47cbd3dfaaea2f396ddc2e6e049e0d436955649ba865bd0686b4e672ac39f819",
   "typecheck": "passed",
   "logicTests": {
-    "passed": 17,
-    "failed": 0
+    "tests": 42,
+    "passed": 42,
+    "failed": 0,
+    "exitCode": 0
   },
   "browserTests": {
-    "passed": 6,
+    "passed": 9,
     "failed": 0
   },
   "web": {
-    "files": 19,
-    "bytes": 4294700,
+    "files": 35,
+    "bytes": 4566144,
     "entry": "build/web-mobile/index.html",
     "creatorExitCode": 36
   },
   "wechat": {
-    "files": 24,
-    "bytes": 1796072,
+    "files": 40,
+    "bytes": 1932997,
     "entry": "build/wechatgame/game.js",
     "creatorExitCode": 36,
     "orientation": "landscape",
@@ -34,12 +36,12 @@
   },
   "fullRun": {
     "state": "complete",
-    "seconds": 16.51666666666637,
-    "health": 2,
-    "kills": 4,
+    "seconds": 64.49166666666406,
+    "health": 5,
+    "kills": 23,
     "guardHealth": 0,
-    "cameraX": 2719.999999999997,
-    "peakBullets": 8,
+    "cameraX": 6839.999999999993,
+    "peakBullets": 10,
     "droppedBullets": 0,
     "applicationErrors": []
   },
@@ -50,8 +52,22 @@
     ],
     "applicationErrors": []
   },
+  "version": "0.2.0",
+  "performance": {
+    "frames": 119,
+    "averageFPS": 39.50469740726744,
+    "slowFramesOver50ms": 3,
+    "visibleChunks": 9,
+    "audio": {
+      "loaded": 7,
+      "played": 6,
+      "muted": false,
+      "loadErrors": []
+    }
+  },
   "engineModules": [
     "2d",
+    "audio",
     "base",
     "custom-pipeline",
     "gfx-webgl",

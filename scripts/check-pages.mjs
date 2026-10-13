@@ -66,13 +66,14 @@ try {
   );
   await desktop.keyboard.down("KeyD");
   await desktop.keyboard.down("KeyJ");
-  await desktop.keyboard.press("Space");
+  await desktop.keyboard.down("Space");
   await desktop.waitForFunction(() => {
     const s = globalThis.__BREAKOUT__.snapshot();
     return s.player.x > 150 && s.player.y > 200 && s.shots > 1;
   });
   await desktop.keyboard.up("KeyD");
   await desktop.keyboard.up("KeyJ");
+  await desktop.keyboard.up('Space');
   const keyboard = await snapshot(desktop);
   await desktop.screenshot({ path: "reports/github-pages-desktop.png" });
   await desktop.keyboard.press("KeyP");
@@ -107,9 +108,10 @@ try {
     () => globalThis.__BREAKOUT__.snapshot().state === "playing",
   );
   const cdp = await mobileContext.newCDPSession(mobile);
-  const right = await point(225, 72),
-    shoot = await point(1162, 78),
-    jump = await point(1022, 78);
+  const layout=(await snapshot(mobile)).controls.layout;
+  const right = await point(layout.joystick.x+layout.joystick.r,layout.joystick.y),
+    shoot = await point(layout.shoot.x,layout.shoot.y),
+    jump = await point(layout.jump.x,layout.jump.y);
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchStart",
     touchPoints: [

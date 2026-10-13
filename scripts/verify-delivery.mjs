@@ -12,7 +12,7 @@ const json = (file) => JSON.parse(readFileSync(file, "utf8"));
 const browser = json("reports/browser-results.json"),
   run = json("reports/full-run.json");
 assert.equal(browser.stats.unexpected, 0, "Browser suite has failing tests");
-assert.equal(browser.stats.expected, 6, "Expected all six browser checks");
+assert.ok(browser.stats.expected>=8, "Expected the V0.2 browser suite");
 assert.equal(
   run.snapshot.state,
   "complete",
@@ -61,7 +61,7 @@ assert.ok(
 );
 const engineModules = json("settings/v2/packages/engine.json").modules.configs
   .defaultConfig.includeModules;
-assert.ok(!engineModules.some((name) => /physics|spine|3d|audio/.test(name)));
+assert.ok(!engineModules.some((name) => /physics|spine|3d/.test(name)));assert.ok(engineModules.includes('audio'));
 const fingerprint = createHash("sha256");
 for (const file of source.sort())
   fingerprint.update(file).update(readFileSync(file));
@@ -72,7 +72,7 @@ const record = {
   sourceModules: source.length,
   sourceSHA256: fingerprint.digest("hex"),
   typecheck: "passed",
-  logicTests: { passed: 17, failed: 0 },
+  logicTests: json('reports/logic-results.json'),
   browserTests: {
     passed: browser.stats.expected,
     failed: browser.stats.unexpected,
@@ -98,6 +98,8 @@ const record = {
     applicationErrors: run.errors,
   },
   touchCancellation: json("reports/mobile-cancellation.json"),
+  version:json('package.json').version,
+  performance:json('reports/v02-browser-performance.json'),
   engineModules,
   unverified: [
     "WeChat developer-tools runtime",

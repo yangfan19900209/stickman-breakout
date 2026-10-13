@@ -42,13 +42,30 @@ function meta(file, dir = false) {
     file + ".meta",
     JSON.stringify(
       {
-        ver: dir ? "1.2.0" : ext === ".scene" ? "1.1.50" : "4.0.24",
-        importer: dir ? "directory" : ext === ".scene" ? "scene" : "typescript",
+        ver: dir
+          ? "1.2.0"
+          : ext === ".scene"
+            ? "1.1.50"
+            : ext === ".wav"
+              ? "1.0.0"
+              : "4.0.24",
+        importer: dir
+          ? "directory"
+          : ext === ".scene"
+            ? "scene"
+            : ext === ".wav"
+              ? "audio-clip"
+              : "typescript",
         imported: true,
         uuid,
-        files: ext === ".scene" ? [".json"] : [],
+        files:
+          ext === ".scene"
+            ? [".json"]
+            : ext === ".wav"
+              ? [".json", ".wav"]
+              : [],
         subMetas: {},
-        userData: {},
+        userData: ext === ".wav" ? { downloadMode: 0 } : {},
       },
       null,
       2,

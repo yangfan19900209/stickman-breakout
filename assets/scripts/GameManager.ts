@@ -21,6 +21,9 @@ import { PlatformBridge } from "./platform/PlatformBridge";
 import { CombatRenderer } from "./render/CombatRenderer";
 import { CocosInputAdapter } from "./platform/CocosInputAdapter";
 import { HUDController } from "./ui/HUDController";
+import { ObjectRenderer } from "./render/ObjectRenderer";
+import { AudioBridge } from "./platform/AudioBridge";
+import { Node } from "cc";
 const { ccclass } = _decorator;
 @ccclass("GameManager")
 export class GameManager extends Component {
@@ -32,17 +35,22 @@ export class GameManager extends Component {
   private actors!: Ink;
   private effects!: Ink;
   private map!: LevelRenderer;
+  private objects!: ObjectRenderer;
+  private world!: Node;
+  private audio!: AudioBridge;
   private renderer = new StickmanRenderer();
   private combatRenderer = new CombatRenderer();
   private accumulator = 0;
   private ready = false;
   private lastState = this.session.state;
+  private frameWidth = 0;
+  private frameHeight = 0;
   onLoad(): void {
     try {
       this.initialize();
       this.ready = true;
       console.info(
-        "[Breakout] V0.1 ready; fixed simulation 120Hz, render 60FPS.",
+        "[Breakout] V0.2 ready; fixed simulation 120Hz, render 60FPS.",
       );
     } catch (error) {
       console.error("[Breakout] Initialization failed", error);
@@ -73,9 +81,13 @@ export class GameManager extends Component {
       C.height,
     );
     board.getComponent(UITransform)!.setAnchorPoint(0, 0);
-    this.map = new LevelRenderer(board, this.session.level);
-    this.actors = new Ink(node(board, "Stickmen"));
-    this.effects = new Ink(node(board, "Combat effects"));
+    this.world = node(board, "World presentation");
+    this.map = new LevelRenderer(this.world, this.session.level);
+    this.objects = new ObjectRenderer(this.world);
+    this.actors = new Ink(node(this.world, "Stickmen"));
+    this.effects = new Ink(node(this.world, "Combat effects"));
+    this.audio = new AudioBridge(this.node);
+    void this.audio.load();
     this.adapter = new CocosInputAdapter(this.controls, () => this.enter());
     this.hud = new HUDController(
       board,
@@ -84,6 +96,9 @@ export class GameManager extends Component {
       () => this.togglePause(),
       () => this.resume(),
       () => this.home(),
+      () => {
+        this.audio.muted = !this.audio.muted;
+      },
     );
     this.platform.install(
       () => {
@@ -91,7 +106,21 @@ export class GameManager extends Component {
         this.session.pause();
         this.accumulator = 0;
       },
-      () => this.session.snapshot(),
+      () => ({
+        ...this.session.snapshot(),
+        audio: this.audio.status(),
+        visibleChunks: this.map.visibleChunks,
+        controls: {
+          stick: {
+            x: this.controls.joystick.x,
+            y: this.controls.joystick.y,
+            axis: this.controls.joystick.axis,
+            vertical: this.controls.joystick.vertical,
+            owner: this.controls.joystick.owner,
+          },
+          layout: this.hud.layout,
+        },
+      }),
     );
   }
   private enter(): void {
@@ -129,8 +158,24 @@ export class GameManager extends Component {
   }
   update(dt: number): void {
     if (!this.ready) return;
+    const frame = view.getFrameSize();
+    if (frame.width !== this.frameWidth || frame.height !== this.frameHeight) {
+      this.frameWidth = frame.width;
+      this.frameHeight = frame.height;
+      this.hud.applyInsets(this.platform.safeInsets());
+      this.adapter.clear();
+    }
     if (this.controls.consumePause()) this.togglePause();
-    if (this.session.state === "playing" || this.session.state === "dying") {
+    if (
+      this.session.hitStop > 0 &&
+      (this.session.state === "playing" || this.session.state === "dying")
+    ) {
+      this.session.hitStop = Math.max(0, this.session.hitStop - dt);
+      this.accumulator = 0;
+    } else if (
+      this.session.state === "playing" ||
+      this.session.state === "dying"
+    ) {
       this.accumulator += Math.min(C.maxFrameDelta, Math.max(0, dt));
       while (this.accumulator >= C.fixedStep) {
         this.session.update(C.fixedStep, this.controls.consume());
@@ -138,13 +183,21 @@ export class GameManager extends Component {
       }
     } else this.accumulator = 0;
     const s = this.session;
+    const shake =
+      s.shakeTime > 0 ? s.shakePower * Math.min(1, s.shakeTime / 0.12) : 0;
+    this.world.setPosition(
+      Math.sin(s.time * 103) * shake,
+      Math.cos(s.time * 119) * shake * 0.6,
+    );
+    this.audio.update(s);
     this.map.update(s.camera.x, s.level.guardDefeated);
+    this.objects.draw(s);
     this.actors.clear();
     for (const e of s.spawner.enemies)
       if (
         e.x > s.camera.x - 100 &&
         e.x < s.camera.x + C.width + 100 &&
-        e.deadTime < C.rendering.corpseDuration
+        e.deadTime < (e.kind === "guard" ? 2.6 : C.rendering.corpseDuration)
       )
         this.renderer.draw(this.actors, e, s.camera.x);
     this.renderer.draw(this.actors, s.player, s.camera.x);
@@ -162,5 +215,6 @@ export class GameManager extends Component {
   onDestroy(): void {
     this.adapter?.destroy();
     this.platform.destroy();
+    this.audio?.destroy();
   }
 }

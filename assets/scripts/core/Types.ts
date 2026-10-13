@@ -1,6 +1,8 @@
 export type Vec = { x: number; y: number };
 export type Rect = { x: number; y: number; w: number; h: number };
 export type Facing = -1 | 1;
+export type DamageKind = "bullet" | "explosion";
+export type DamageOwner = "player" | "enemy" | "neutral";
 export type AnimationState =
   | "Idle"
   | "Run"
@@ -8,6 +10,8 @@ export type AnimationState =
   | "Fall"
   | "Shoot"
   | "Hit"
+  | "Crouch"
+  | "Land"
   | "Dead";
 export type EnemyState =
   | "Idle"
@@ -16,7 +20,7 @@ export type EnemyState =
   | "Attack"
   | "Hit"
   | "Dead";
-export type EnemyKind = "melee" | "ranged" | "guard";
+export type EnemyKind = "melee" | "ranged" | "shield" | "turret" | "guard";
 export type GameState =
   | "title"
   | "playing"
@@ -24,18 +28,30 @@ export type GameState =
   | "dying"
   | "gameover"
   | "complete";
-export type InputAction = "left" | "right" | "jump" | "shoot" | "pause";
+export type InputAction =
+  | "left"
+  | "right"
+  | "jump"
+  | "shoot"
+  | "pause"
+  | "crouch"
+  | "aimUp"
+  | "grenade";
 export interface InputFrame {
   axis: number;
   jump: boolean;
   shoot: boolean;
+  jumpHeld?: boolean;
+  crouch?: boolean;
+  aimY?: number;
+  grenade?: boolean;
 }
 export interface Damageable {
   x: number;
   y: number;
   alive: boolean;
   bounds: Rect;
-  takeDamage(amount: number, direction: Facing): boolean;
+  takeDamage(amount: number, direction: Facing, kind?: DamageKind): boolean;
 }
 export const clamp = (v: number, lo: number, hi: number): number =>
   Math.max(lo, Math.min(hi, v));
@@ -53,17 +69,22 @@ export function segmentRect(
 ): number | null {
   let enter = 0,
     leave = 1;
-  for (const [start, delta, min, max] of [
-    [a.x, b.x - a.x, r.x - radius, r.x + r.w + radius],
-    [a.y, b.y - a.y, r.y - radius, r.y + r.h + radius],
-  ]) {
+  for (let axis = 0; axis < 2; axis++) {
+    const start = axis === 0 ? a.x : a.y,
+      delta = axis === 0 ? b.x - a.x : b.y - a.y,
+      min = (axis === 0 ? r.x : r.y) - radius,
+      max = axis === 0 ? r.x + r.w + radius : r.y + r.h + radius;
     if (Math.abs(delta) < 1e-8) {
       if (start < min || start > max) return null;
       continue;
     }
     let t1 = (min - start) / delta,
       t2 = (max - start) / delta;
-    if (t1 > t2) [t1, t2] = [t2, t1];
+    if (t1 > t2) {
+      const swap = t1;
+      t1 = t2;
+      t2 = swap;
+    }
     enter = Math.max(enter, t1);
     leave = Math.min(leave, t2);
     if (enter > leave) return null;

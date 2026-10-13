@@ -16,11 +16,17 @@ const {
   GameConfig: C,
 } = require("../.test-build/assets/scripts/core/GameConfig.js");
 const idle = { axis: 0, jump: false, shoot: false };
+const legacy = require("./fixtures/legacy-level.cjs");
+const {
+  GameSession: BaseSession,
+} = require("../.test-build/assets/scripts/core/GameSession.js");
+// The original V0.1 combat route stays a regression fixture as the shipped level evolves.
+const createSession = () => new BaseSession(legacy);
 function step(s, n, input = idle) {
   for (let i = 0; i < n; i++) s.update(1 / 120, input);
 }
 test("holding rifle respects 0.14s interval and pools stay bounded", () => {
-  const s = new GameSession();
+  const s = createSession();
   s.reset();
   step(s, 120, { ...idle, shoot: true });
   assert.ok(s.projectiles.fired >= 7 && s.projectiles.fired <= 8);
@@ -87,7 +93,7 @@ test("pool reuses slots, expiry recycles, overload is bounded", () => {
   assert.equal(pm.spawn(shot), true);
 });
 test("player has 5 health, invincibility blocks repeated hits, death and restart reset session", () => {
-  const s = new GameSession();
+  const s = createSession();
   s.reset();
   assert.equal(s.player.health, 5);
   assert.equal(s.player.takeDamage(1, 1), true);
@@ -106,7 +112,7 @@ test("player has 5 health, invincibility blocks repeated hits, death and restart
   assert.equal(s.state, "playing");
 });
 test("pause freezes simulation and resumes original state", () => {
-  const s = new GameSession();
+  const s = createSession();
   s.reset();
   step(s, 60);
   const before = s.snapshot();
@@ -120,8 +126,10 @@ test("pause freezes simulation and resumes original state", () => {
 });
 test("melee and ranged enemies both damage player through their attack pipeline", () => {
   for (const kind of ["melee", "ranged"]) {
-    const s = new GameSession();
+    const s = createSession();
     s.reset();
+    s.level.objects.reset([]);
+    s.level.refreshSolids();
     s.spawner.enemies = [
       new EnemyController({
         id: "test",
@@ -137,7 +145,7 @@ test("melee and ranged enemies both damage player through their attack pipeline"
   }
 });
 test("exit stays locked while guard lives, killing guard unlocks completion", () => {
-  const s = new GameSession();
+  const s = createSession();
   s.reset();
   s.player.x = 3870;
   step(s, 1);
@@ -147,7 +155,7 @@ test("exit stays locked while guard lives, killing guard unlocks completion", ()
   assert.equal(s.state, "complete");
 });
 test("a full 4000-unit route is winnable using movement/jump/fire only", () => {
-  const s = new GameSession();
+  const s = createSession();
   s.reset();
   let jumps = 0;
   for (let tick = 0; tick < 120 * 50 && s.state === "playing"; tick++) {
@@ -172,7 +180,7 @@ test("a full 4000-unit route is winnable using movement/jump/fire only", () => {
   assert.equal(s.projectiles.dropped, 0);
 });
 test("hundreds of reset/combat cycles leave fixed pool capacity", () => {
-  const s = new GameSession();
+  const s = createSession();
   for (let run = 0; run < 100; run++) {
     s.reset();
     step(s, 120, { ...idle, shoot: true });

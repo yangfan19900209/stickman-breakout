@@ -19,6 +19,14 @@ export interface Pose {
 const p = (x: number, y: number): Vec => ({ x, y });
 
 export class StickmanAnimator {
+  private readonly points: Vec[] = Array.from({ length: 64 }, () => p(0, 0));
+  private cursor = 0;
+  private point = (x: number, y: number): Vec => {
+    const v = this.points[this.cursor++];
+    v.x = x;
+    v.y = y;
+    return v;
+  };
   /** Local coordinates face right, origin at feet. Upper body remains aimed while running. */
   sample(
     state: AnimationState,
@@ -26,13 +34,16 @@ export class StickmanAnimator {
     recoil: number,
     armed: boolean,
     deadTime = 0,
+    aimPitch = 0,
   ): Pose {
+    this.cursor = 0;
+    const p = this.point;
     const run = state === "Run",
       air = state === "Jump" || state === "Fall";
     const wave = Math.sin(time * 15),
       breathe = Math.sin(time * 3) * 0.8;
     const bob = run ? Math.abs(Math.cos(time * 15)) * 2 : breathe;
-    const lean = run ? 4 : state === "Hit" ? -10 : 0;
+    const lean = (run ? 5 : state === "Hit" ? -12 : 0) - recoil * 1.8;
     const kick = recoil * 4;
     const pose: Pose = {
       head: p(lean, 64 + bob),
@@ -67,6 +78,27 @@ export class StickmanAnimator {
         state === "Shoot" ? 36 : run ? wave * 20 : 13,
         state === "Shoot" ? 43 : 27 + bob,
       );
+    }
+    if (state === "Crouch" || state === "Land") {
+      const amount = state === "Crouch" ? 0.6 : 0.88;
+      for (const joint of Object.values(pose)) joint.y *= amount;
+      pose.leftKnee = p(-12, 12);
+      pose.rightKnee = p(15, 12);
+      pose.leftAnkle = p(-17, 0);
+      pose.rightAnkle = p(18, 0);
+    }
+    if (armed && aimPitch > 0) {
+      const base = state === "Crouch" ? 26 : 44 + bob;
+      pose.rightHand = p(
+        20 + 5 * Math.cos(aimPitch) - kick,
+        base + 22 * Math.sin(aimPitch),
+      );
+      pose.leftHand = p(
+        16 + 6 * Math.cos(aimPitch) - kick,
+        base + 15 * Math.sin(aimPitch),
+      );
+      pose.rightElbow = p(24, base + 5);
+      pose.leftElbow = p(11, base - 4);
     }
     if (air) {
       pose.leftKnee = p(11, 21);

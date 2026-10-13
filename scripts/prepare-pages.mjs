@@ -103,7 +103,7 @@ writeFileSync(
 );
 const version = {
   project: "stickman-breakout",
-  version: "0.1.0",
+  version: JSON.parse(readFileSync('package.json','utf8')).version,
   creator: "3.8.8",
   sourceSHA256: verification.sourceSHA256,
   webBuildSHA256: fingerprint.digest("hex"),
