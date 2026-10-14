@@ -38,6 +38,8 @@ SceneryArt 用带弧度的不规则岩壁、侵蚀裂纹、破损屋顶、拱门
 
 构建结束后单独复测 Chromium 153 / SwiftShader 软件渲染，3 秒抽样为 18.87 FPS、22 个 >50ms 长帧，本机未达到 60FPS。人物曲线细节仍逐帧生成，下一步应先缓存装备/头部等可复用绘图并进行手机性能校准；此轮不声称真机帧率达标。
 
+GitHub Pages 已发布 V0.4.2（游戏源码提交 5db9894），公开站点的 41 个 Cocos 文件逐字节匹配本地包。线上桌面移动/跳跃/射击/暂停，以及 844×390 三指触控、独立释放、浮动摇杆、右侧空白射击、全视口、竖屏冻结和旋转恢复全部通过，应用错误与失败请求均为 0。证据见 reports/github-pages-verification.json。
+
 最终计数、整局结果与包体以 reports/verification.json 为准。新增漏敌路线以 reports/v042-bypass.json 为准；坡面实操位置与高度见 reports/v042-terrain.json。图像证据仍复用已有视觉回归的 reports/v041-_.png、v021-blast-_.png，并新增 v042-bypassed-boss.png、v042-road-running.png、v042-road-return.png。
 
 ## 验证边界与后续
