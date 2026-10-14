@@ -91,12 +91,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4635,
+                  "duration": 5888,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:22:15.502Z",
+                  "startTime": "2026-10-14T01:11:12.881Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -125,12 +125,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 13949,
+                  "duration": 14104,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:22:20.228Z",
+                  "startTime": "2026-10-14T01:11:18.863Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -159,52 +159,46 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 77732,
+                  "duration": 68858,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Run 5s x=1058 hp=5 kills=3 boss=90\n"
+                      "text": "Run 5s x=1089 hp=5 kills=3 boss=90\n"
                     },
                     {
-                      "text": "Run 10s x=2146 hp=5 kills=7 boss=90\n"
+                      "text": "Run 10s x=2174 hp=5 kills=7 boss=90\n"
                     },
                     {
-                      "text": "Run 15s x=3319 hp=5 kills=10 boss=90\n"
+                      "text": "Run 15s x=3305 hp=5 kills=10 boss=90\n"
                     },
                     {
-                      "text": "Run 20s x=4249 hp=5 kills=12 boss=90\n"
+                      "text": "Run 20s x=4146 hp=5 kills=12 boss=90\n"
                     },
                     {
-                      "text": "Run 25s x=5066 hp=4 kills=14 boss=90\n"
+                      "text": "Run 25s x=5101 hp=4 kills=14 boss=90\n"
                     },
                     {
-                      "text": "Run 30s x=5810 hp=4 kills=15 boss=90\n"
+                      "text": "Run 30s x=5715 hp=2 kills=15 boss=90\n"
                     },
                     {
-                      "text": "Run 35s x=6472 hp=4 kills=18 boss=90\n"
+                      "text": "Run 35s x=6478 hp=1 kills=18 boss=90\n"
                     },
                     {
-                      "text": "Run 40s x=7260 hp=5 kills=18 boss=54\n"
+                      "text": "Run 40s x=7284 hp=3 kills=18 boss=64\n"
                     },
                     {
-                      "text": "Run 45s x=7151 hp=5 kills=18 boss=37\n"
+                      "text": "Run 46s x=7440 hp=3 kills=18 boss=29\n"
                     },
                     {
-                      "text": "Run 51s x=7202 hp=5 kills=20 boss=28\n"
+                      "text": "Run 51s x=7235 hp=3 kills=20 boss=17\n"
                     },
                     {
-                      "text": "Run 56s x=6997 hp=5 kills=20 boss=16\n"
-                    },
-                    {
-                      "text": "Run 61s x=7021 hp=5 kills=20 boss=6\n"
-                    },
-                    {
-                      "text": "Run 66s x=7299 hp=4 kills=23 boss=0\n"
+                      "text": "Run 56s x=7196 hp=3 kills=21 boss=0\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:22:34.193Z",
+                  "startTime": "2026-10-14T01:11:32.986Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -241,12 +235,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3772,
+                  "duration": 4566,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:23:51.968Z",
+                  "startTime": "2026-10-14T01:12:41.899Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -283,12 +277,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3663,
+                  "duration": 4369,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:23:55.769Z",
+                  "startTime": "2026-10-14T01:12:46.521Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -325,12 +319,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4926,
+                  "duration": 5831,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:23:59.451Z",
+                  "startTime": "2026-10-14T01:12:50.910Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -367,12 +361,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4219,
+                  "duration": 6742,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:04.405Z",
+                  "startTime": "2026-10-14T01:12:56.764Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -401,12 +395,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3856,
+                  "duration": 5454,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:08.640Z",
+                  "startTime": "2026-10-14T01:13:03.521Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -443,12 +437,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6592,
+                  "duration": 6839,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:12.515Z",
+                  "startTime": "2026-10-14T01:13:08.996Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -485,12 +479,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5054,
+                  "duration": 5744,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:19.125Z",
+                  "startTime": "2026-10-14T01:13:15.858Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -527,12 +521,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3628,
+                  "duration": 5106,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:24.206Z",
+                  "startTime": "2026-10-14T01:13:21.636Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -561,12 +555,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3477,
+                  "duration": 4866,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:27.843Z",
+                  "startTime": "2026-10-14T01:13:26.759Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -576,7 +570,7 @@
           ],
           "id": "da35d7eec63874ce7844-57d8612a9899634ed8c8",
           "file": "v021-layout.spec.ts",
-          "line": 133,
+          "line": 141,
           "column": 3
         },
         {
@@ -595,12 +589,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3625,
+                  "duration": 5188,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:31.331Z",
+                  "startTime": "2026-10-14T01:13:31.640Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -610,7 +604,7 @@
           ],
           "id": "da35d7eec63874ce7844-9d61d0ed6ea5feec0dca",
           "file": "v021-layout.spec.ts",
-          "line": 133,
+          "line": 141,
           "column": 3
         },
         {
@@ -629,12 +623,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5128,
+                  "duration": 6849,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:34.968Z",
+                  "startTime": "2026-10-14T01:13:36.843Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -644,7 +638,7 @@
           ],
           "id": "da35d7eec63874ce7844-60f216f159fd098d131f",
           "file": "v021-layout.spec.ts",
-          "line": 133,
+          "line": 141,
           "column": 3
         },
         {
@@ -663,12 +657,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2946,
+                  "duration": 3902,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-13T12:24:40.113Z",
+                  "startTime": "2026-10-14T01:13:43.705Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -678,7 +672,413 @@
           ],
           "id": "da35d7eec63874ce7844-5918115abe47ebd7113e",
           "file": "v021-layout.spec.ts",
-          "line": 216,
+          "line": 232,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-actions.spec.ts",
+      "file": "v04-actions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "blank right tap and hold share the weapon; jump/grenade never cause extra shots",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6929,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:13:47.643Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00fb0fbd98d12a6f4680-91e7d31f520d4723c6fe",
+          "file": "v04-actions.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-floating.spec.ts",
+      "file": "v04-floating.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "left blank touch summons neutral floating stick, edge clamp and second finger ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6505,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:13:54.602Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4fa44e53287673ee7f70-f8c5a7a22fb33f6b81dd",
+          "file": "v04-floating.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-mobile.spec.ts",
+      "file": "v04-mobile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4141,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:01.142Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-a93cdbfbfce7f9008110",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 852x393",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3979,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:05.296Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-4763f38d53d4390f652f",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 932x430",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4109,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:09.338Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-79fb0392a602ad3b27bb",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 1280x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4292,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:13.463Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-b00d5e78c9736317a119",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "movement, fire, grenade, HUD priority and simultaneous release stay independent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4473,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:17.769Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-2254e2b7a031150ef242",
+          "file": "v04-mobile.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "viewport height changes retain fingers; browser blur signal clears input and pauses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3943,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:22.255Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-e926a7a51250ed514c17",
+          "file": "v04-mobile.spec.ts",
+          "line": 179,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-platform.spec.ts",
+      "file": "v04-platform.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "subpath manifest, icons, viewport, real fullscreen entry and exit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4349,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:26.220Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-d2a2ed0678940dd634be",
+          "file": "v04-platform.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "unsupported fullscreen and standalone detection safely fall back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:30.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-81caeacc50093e494703",
+          "file": "v04-platform.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "service worker preserves subpath offline startup after an online visit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T01:14:37.165Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-05d55c8f449d55195021",
+          "file": "v04-platform.spec.ts",
+          "line": 101,
           "column": 1
         }
       ]
@@ -686,9 +1086,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-13T12:22:14.840Z",
-    "duration": 148480.378,
-    "expected": 15,
+    "startTime": "2026-10-14T01:11:12.096Z",
+    "duration": 213811.115,
+    "expected": 26,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

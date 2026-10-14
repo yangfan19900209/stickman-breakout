@@ -102,10 +102,15 @@ test("dragging down crouches and dragging up aims without triggering a jump", as
   const errors = await boot(page),
     cdp = await context.newCDPSession(page),
     c = (await read(page)).controls.layout.joystick;
-  const down = await point(page, c.x, c.y - c.r),
+  const center = await point(page, c.x, c.y),
+    down = await point(page, c.x, c.y - c.r),
     up = await point(page, c.x, c.y + c.r);
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchStart",
+    touchPoints: [{ id: 1, ...center }],
+  });
+  await cdp.send("Input.dispatchTouchEvent", {
+    type: "touchMove",
     touchPoints: [{ id: 1, ...down }],
   });
   await page.waitForFunction(

@@ -1,37 +1,531 @@
 {
   "snapshot": {
     "state": "playing",
-    "time": 65.59166666666493,
+    "time": 55.658333333330816,
     "player": {
-      "x": 7298.847222221854,
+      "x": 7195.791666666518,
       "y": 150,
-      "vx": 280,
+      "vx": 183.33333333333331,
       "vy": 0,
-      "health": 4,
+      "health": 3,
       "grounded": true,
       "facing": 1,
       "animation": "Run",
       "crouched": false,
       "aimPitch": 0
     },
-    "cameraX": 6815.004464205251,
-    "kills": 23,
+    "cameraX": 6663.881773597611,
+    "kills": 21,
     "weapon": "rifle",
     "ammo": -1,
     "grenades": 4,
     "grenadesThrown": 3,
-    "destroyedObjects": 21,
-    "explosions": 51,
+    "destroyedObjects": 20,
+    "explosions": 45,
     "feedback": {
-      "shakeTime": 0,
+      "shakeTime": 0.04666666666666666,
       "shakePower": 7,
       "hitStop": 0,
-      "blasts": [],
-      "particles": [],
-      "peakParticles": 171,
+      "blasts": [
+        {
+          "x": 7451.106882255257,
+          "y": 151.5,
+          "age": 0.7666666666666664,
+          "radius": 85
+        },
+        {
+          "x": 7770,
+          "y": 185,
+          "age": 0.24166666666666664,
+          "radius": 130
+        },
+        {
+          "x": 7805,
+          "y": 240,
+          "age": 0.24166666666666664,
+          "radius": 130
+        },
+        {
+          "x": 7840,
+          "y": 185,
+          "age": 0.24166666666666664,
+          "radius": 130
+        },
+        {
+          "x": 7875,
+          "y": 240,
+          "age": 0.24166666666666664,
+          "radius": 130
+        },
+        {
+          "x": 7910,
+          "y": 185,
+          "age": 0.24166666666666664,
+          "radius": 130
+        }
+      ],
+      "particles": [
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        },
+        {
+          "kind": "dust"
+        }
+      ],
+      "peakParticles": 175,
       "droppedParticles": 0
     },
-    "combo": 3,
+    "combo": 1,
     "bestCombo": 7,
     "objects": [
       {
@@ -101,10 +595,10 @@
         "y": 410,
         "w": 54,
         "h": 48,
-        "health": 0,
-        "alive": false,
+        "health": 0.5,
+        "alive": true,
         "solid": false,
-        "triggered": true
+        "triggered": false
       },
       {
         "id": "crate-02",
@@ -161,7 +655,7 @@
         "y": 150,
         "w": 58,
         "h": 62,
-        "health": 0.41133654744661285,
+        "health": 0.3801116147623178,
         "alive": true,
         "solid": true,
         "triggered": false
@@ -347,17 +841,50 @@
         "y": 160
       }
     ],
-    "projectileStates": [],
+    "projectileStates": [
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 6789.874999999833,
+        "y": 195.98300417169577,
+        "vx": -1100,
+        "vy": 0
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 7847.208333333199,
+        "y": 195.26482588432293,
+        "vx": 1100,
+        "vy": 0
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 6914.99999999984,
+        "y": 194.82235078996007,
+        "vx": -1100,
+        "vy": 0
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 6320.33333333315,
+        "y": 195.95079679779178,
+        "vx": -1100,
+        "vy": 0
+      }
+    ],
     "remaining": 0,
     "guardHealth": 0,
     "boss": {
       "phase": 2,
       "active": true,
       "mode": "destroyed",
-      "warningX": 7091.180555555229,
+      "warningX": 7304.374999999847,
       "warningTime": 0,
-      "windup": 0,
-      "summons": 4
+      "windup": 0.4116666666666671,
+      "summons": 2
     },
     "levelWidth": 8200,
     "exitX": 8070,
@@ -407,7 +934,7 @@
         "id": "lift-C",
         "kind": "lift",
         "x": 5000,
-        "y": 211.83333333333195,
+        "y": 192.3333333333323,
         "w": 142,
         "h": 16,
         "released": false,
@@ -545,22 +1072,22 @@
       },
       {
         "x": 5000,
-        "y": 211.83333333333195,
+        "y": 192.3333333333323,
         "w": 142,
         "h": 16,
         "kind": "platform"
       }
     ],
     "exitOpen": false,
-    "bullets": 0,
-    "shots": 350,
-    "hits": 142,
-    "peakBullets": 11,
+    "bullets": 4,
+    "shots": 266,
+    "hits": 118,
+    "peakBullets": 9,
     "droppedBullets": 0,
     "enemies": [
       {
         "id": "m1",
-        "x": 414.9972222511574,
+        "x": 421.45555558449087,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -570,7 +1097,7 @@
       },
       {
         "id": "r1",
-        "x": 886.8910068992344,
+        "x": 884.4160068992345,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -580,7 +1107,7 @@
       },
       {
         "id": "r2",
-        "x": 1322.8084044937814,
+        "x": 1320.6034044937812,
         "y": 262,
         "health": 0,
         "state": "Dead",
@@ -590,7 +1117,7 @@
       },
       {
         "id": "m2",
-        "x": 1388.0831597674298,
+        "x": 1394.5414931007635,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -600,7 +1127,7 @@
       },
       {
         "id": "r3",
-        "x": 1968.5310068992176,
+        "x": 1967.9910068992174,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -630,7 +1157,7 @@
       },
       {
         "id": "m4",
-        "x": 2658.6206597674322,
+        "x": 2663.7873264340983,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -640,7 +1167,7 @@
       },
       {
         "id": "r5",
-        "x": 3258.876006899224,
+        "x": 3257.796006899225,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -680,7 +1207,7 @@
       },
       {
         "id": "charge-C",
-        "x": 4624.666493100836,
+        "x": 4602.06232643416,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -690,7 +1217,7 @@
       },
       {
         "id": "rifle-C1",
-        "x": 4953.091006899218,
+        "x": 4956.781006899217,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -720,17 +1247,17 @@
       },
       {
         "id": "shield-C2",
-        "x": 6156.2337380137,
+        "x": 6110.805531135719,
         "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "shield",
-        "shield": 0,
+        "shield": 8,
         "windup": 0
       },
       {
         "id": "rifle-C3",
-        "x": 6513.451622557889,
+        "x": 6469.036622557841,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -746,11 +1273,11 @@
         "state": "Dead",
         "kind": "guard",
         "shield": 0,
-        "windup": 0
+        "windup": 0.4116666666666671
       },
       {
         "id": "reinforce-19",
-        "x": 7514.88089952213,
+        "x": 7581.501622557932,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -760,27 +1287,7 @@
       },
       {
         "id": "reinforce-20",
-        "x": 7472.505508785851,
-        "y": 150,
-        "health": 0,
-        "state": "Dead",
-        "kind": "melee",
-        "shield": 0,
-        "windup": 0
-      },
-      {
-        "id": "reinforce-21",
-        "x": 7508.379536763794,
-        "y": 150,
-        "health": 0,
-        "state": "Dead",
-        "kind": "ranged",
-        "shield": 0,
-        "windup": 0
-      },
-      {
-        "id": "reinforce-22",
-        "x": 7429.6797806153945,
+        "x": 7566.79717545254,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -789,26 +1296,35 @@
         "windup": 0
       }
     ],
+    "playerShots": 204,
     "audio": {
       "loaded": 7,
-      "played": 483,
+      "played": 389,
       "muted": false,
       "loadErrors": []
     },
-    "visibleChunks": 9,
+    "visibleChunks": 7,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false
+    },
     "display": {
       "width": 1280,
       "height": 720,
       "portrait": false,
       "zoom": 1.4,
-      "combatZoom": 1.0240000000000007,
-      "worldVisibleWidth": 1249.999999999999,
-      "cameraY": 0.0021128371396634455,
+      "combatZoom": 1.0240000000000005,
+      "worldVisibleWidth": 1249.9999999999995,
+      "cameraY": 6.127645138149037e-9,
       "frameWidth": 1280,
       "frameHeight": 720,
       "orientationPaused": false
     },
     "controls": {
+      "shootHeld": false,
+      "hudHeight": 52,
       "stick": {
         "x": 0,
         "y": 0,
@@ -818,140 +1334,134 @@
       },
       "layout": {
         "joystick": {
-          "x": 158,
-          "y": 128,
-          "r": 92,
-          "hit": 224
+          "x": 98,
+          "y": 94,
+          "r": 58,
+          "baseR": 78,
+          "knobR": 38,
+          "hit": 156,
+          "unit": 1
         },
         "jump": {
-          "x": 988,
-          "y": 170,
-          "r": 62,
-          "hit": 152
+          "x": 1076,
+          "y": 136.8,
+          "r": 38,
+          "hit": 88
         },
         "shoot": {
-          "x": 1164,
-          "y": 126,
-          "r": 76,
-          "hit": 180
+          "x": 1196,
+          "y": 78,
+          "r": 59,
+          "hit": 132
         },
         "grenade": {
-          "x": 844,
-          "y": 90,
-          "r": 48,
-          "hit": 120
+          "x": 1206,
+          "y": 191,
+          "r": 33,
+          "hit": 78
         },
         "pause": {
-          "x": 1214,
-          "y": 666,
-          "hit": 88
+          "x": 1248,
+          "y": 690,
+          "hit": 48
         }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 330,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
       }
     }
   },
   "trace": [
     {
-      "time": 5.008333333333372,
-      "x": 1058.4166666666667,
-      "y": 256.8500000000002,
+      "time": 5.025000000000039,
+      "x": 1088.749999999999,
+      "y": 238,
       "health": 5,
       "kills": 3,
       "boss": 90
     },
     {
-      "time": 10.05000000000007,
-      "x": 2146.0277777777533,
-      "y": 255.8249999999999,
+      "time": 10.075000000000069,
+      "x": 2173.8333333333103,
+      "y": 245,
       "health": 5,
       "kills": 7,
       "boss": 90
     },
     {
-      "time": 15.116666666666449,
-      "x": 3318.527777777793,
+      "time": 15.124999999999782,
+      "x": 3304.527777777792,
       "y": 150,
       "health": 5,
       "kills": 10,
       "boss": 90
     },
     {
-      "time": 20.258333333332825,
-      "x": 4249.083333333321,
-      "y": 261.4375,
+      "time": 20.15833333333283,
+      "x": 4146.486111111167,
+      "y": 239.91666666666666,
       "health": 5,
       "kills": 12,
       "boss": 90
     },
     {
-      "time": 25.383333333332533,
-      "x": 5066.374999999903,
-      "y": 222.54166666666603,
+      "time": 25.308333333332538,
+      "x": 5101.23611111101,
+      "y": 235,
       "health": 4,
       "kills": 14,
       "boss": 90
     },
     {
-      "time": 30.399999999998915,
-      "x": 5809.763888888703,
-      "y": 150,
-      "health": 4,
+      "time": 30.391666666665582,
+      "x": 5714.888888888718,
+      "y": 278.31249999999955,
+      "health": 2,
       "kills": 15,
       "boss": 90
     },
     {
-      "time": 35.44999999999863,
-      "x": 6472.208333333072,
+      "time": 35.4166666666653,
+      "x": 6477.708333333272,
       "y": 150,
-      "health": 4,
+      "health": 1,
       "kills": 18,
       "boss": 90
     },
     {
       "time": 40.46666666666501,
-      "x": 7259.7083333329665,
+      "x": 7283.569444444279,
       "y": 150,
-      "health": 5,
+      "health": 3,
       "kills": 18,
-      "boss": 53.236250000000005
+      "boss": 63.37264112903225
     },
     {
-      "time": 45.49166666666473,
-      "x": 7150.70833333298,
+      "time": 45.55833333333139,
+      "x": 7439.805555555374,
       "y": 150,
-      "health": 5,
+      "health": 3,
       "kills": 18,
-      "boss": 36.854375000000005
+      "boss": 28.60889112903225
     },
     {
-      "time": 50.50833333333111,
-      "x": 7202.263888888533,
-      "y": 244.5,
-      "health": 5,
-      "kills": 20,
-      "boss": 27.854375000000005
-    },
-    {
-      "time": 55.51666666666416,
-      "x": 6996.62499999967,
+      "time": 50.57499999999777,
+      "x": 7234.833333333175,
       "y": 150,
-      "health": 5,
+      "health": 3,
       "kills": 20,
-      "boss": 15.854375000000005
+      "boss": 16.60889112903225
     },
     {
-      "time": 60.5749999999972,
-      "x": 7020.972222221891,
+      "time": 55.658333333330816,
+      "x": 7195.791666666518,
       "y": 150,
-      "health": 5,
-      "kills": 20,
-      "boss": 5.8543750000000045
-    },
-    {
-      "time": 65.59166666666493,
-      "x": 7298.847222221854,
-      "y": 150,
-      "health": 4,
-      "kills": 23,
+      "health": 3,
+      "kills": 21,
       "boss": 0
     }
   ]

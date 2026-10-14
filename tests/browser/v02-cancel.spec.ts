@@ -34,7 +34,17 @@ test("cancelling active joystick and firing fingers releases all input ownership
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchStart",
     touchPoints: [
-      { id: 1, ...xy(layout.joystick.x + 50, layout.joystick.y) },
+      { id: 1, ...xy(layout.joystick.x, layout.joystick.y) },
+      { id: 2, ...xy(layout.shoot.x, layout.shoot.y) },
+    ],
+  });
+  await cdp.send("Input.dispatchTouchEvent", {
+    type: "touchMove",
+    touchPoints: [
+      {
+        id: 1,
+        ...xy(layout.joystick.x + layout.joystick.r, layout.joystick.y),
+      },
       { id: 2, ...xy(layout.shoot.x, layout.shoot.y) },
     ],
   });

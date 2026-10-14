@@ -57,7 +57,7 @@ export class GameManager extends Component {
       this.initialize();
       this.ready = true;
       console.info(
-        "[Breakout] V0.2.1 ready; responsive viewport, independent HUD and combat framing.",
+        "[Breakout] V0.4 ready; floating touch controls, fullscreen/PWA platform adapter.",
       );
     } catch (error) {
       console.error("[Breakout] Initialization failed", error);
@@ -114,17 +114,21 @@ export class GameManager extends Component {
       () => {
         this.audio.muted = !this.audio.muted;
       },
+      this.platform.adapter,
     );
     this.platform.install(
       () => {
+        this.orientationPaused = false;
         this.adapter.hidden();
         this.session.pause();
         this.accumulator = 0;
       },
       () => ({
         ...this.session.snapshot(),
+        playerShots: this.session.weapon.shots,
         audio: this.audio.status(),
         visibleChunks: this.map.visibleChunks,
+        platform: this.platform.adapter.status(),
         display: {
           ...this.display,
           combatZoom: this.session.camera.zoom,
@@ -135,6 +139,8 @@ export class GameManager extends Component {
           orientationPaused: this.orientationPaused,
         },
         controls: {
+          shootHeld: this.controls.isHeld("shoot"),
+          hudHeight: this.adapter.touch.hudHeight,
           stick: {
             x: this.controls.joystick.x,
             y: this.controls.joystick.y,
@@ -143,6 +149,16 @@ export class GameManager extends Component {
             owner: this.controls.joystick.owner,
           },
           layout: this.hud.layout,
+          floating: {
+            originX: this.adapter.touch.originX,
+            originY: this.adapter.touch.originY,
+            baseX: this.adapter.touch.baseX,
+            baseY: this.adapter.touch.baseY,
+            owners: [...this.adapter.touch.owners].map(([id, o]) => ({
+              id,
+              role: o.role,
+            })),
+          },
         },
       }),
     );
@@ -186,7 +202,13 @@ export class GameManager extends Component {
   }
   update(dt: number): void {
     if (!this.ready) return;
-    const frame = view.getFrameSize();
+    const frame = this.platform.adapter.frame();
+    const engineFrame = view.getFrameSize();
+    if (
+      frame.width !== engineFrame.width ||
+      frame.height !== engineFrame.height
+    )
+      view.setFrameSize(frame.width, frame.height);
     if (frame.width !== this.frameWidth || frame.height !== this.frameHeight) {
       this.frameWidth = frame.width;
       this.frameHeight = frame.height;
@@ -209,7 +231,7 @@ export class GameManager extends Component {
         width,
         height,
       );
-      this.adapter.hidden();
+      if (portrait !== this.portrait) this.adapter.hidden();
       if (portrait && !this.portrait) {
         this.orientationPaused =
           this.session.state === "playing" || this.session.state === "dying";

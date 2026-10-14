@@ -8,6 +8,7 @@ export class InputManager {
   private jumpQueued = false;
   private pauseQueued = false;
   private grenadeQueued = false;
+  private shootQueued = false;
   readonly joystick = new VirtualJoystick();
   private readonly frame: InputFrame = {
     axis: 0,
@@ -24,6 +25,7 @@ export class InputManager {
     if (action === "jump") this.jumpQueued = true;
     if (action === "pause") this.pauseQueued = true;
     if (action === "grenade") this.grenadeQueued = true;
+    if (action === "shoot") this.shootQueued = true;
   }
   release(source: string): void {
     this.held.delete(source);
@@ -37,7 +39,7 @@ export class InputManager {
     const frame = this.frame;
     frame.axis = keyboard || this.joystick.axis;
     frame.jump = this.jumpQueued;
-    frame.shoot = this.isHeld("shoot");
+    frame.shoot = this.isHeld("shoot") || this.shootQueued;
     frame.jumpHeld = this.isHeld("jump");
     frame.crouch =
       this.isHeld("crouch") || this.joystick.vertical < C.input.crouchThreshold;
@@ -48,6 +50,7 @@ export class InputManager {
     frame.grenade = this.grenadeQueued;
     this.jumpQueued = false;
     this.grenadeQueued = false;
+    this.shootQueued = false;
     return frame;
   }
   consumePause(): boolean {
@@ -60,6 +63,7 @@ export class InputManager {
     this.jumpQueued = false;
     this.pauseQueued = false;
     this.grenadeQueued = false;
+    this.shootQueued = false;
     this.joystick.reset();
   }
 }

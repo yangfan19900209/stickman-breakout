@@ -1,4 +1,27 @@
-# 线条突围 V0.2.1 开发记录
+# 线条突围 V0.4 开发记录
+
+更新日期：2026-10-14。V0.4 在原有 Creator 3.8.8 工程中完成全屏/PWA 和操作层重构，保留关卡、武器、敌人、BOSS、物理和美术。下文的 V0.2.1 记录为历史。
+
+## V0.4 实现与验证边界
+
+- 平台：新增 PlatformAdapter；Web shell 处理动态视口、visualViewport、CSS 安全区、浏览器 Fullscreen API、横屏锁定尝试、blur/visibility/pagehide。manifest 的 start_url/scope 为 ./，适配 GitHub Pages 子路径；原创程序化 192/512/180 PNG 图标，standalone 与普通网页分别检测。联网优先 Service Worker 已支持访问过的资源离线回退。
+- 左侧：TouchInputManager 明确持有触摸 ID，左半屏空白处浮动起点；死区/方向归一化/幅度映射保留，边缘只限制可视底座，不改变原始输入方向，拖动越圈仍有效，其他手指不会抢占。
+- 右侧：右半屏空白点击/长按与原有普攻共用 InputManager/WeaponSystem。跳跃左上、手雷上方；触区不重叠，UI → 跳跃 → 手雷 → 普攻 → 空白区按明确优先级判定。短按射击保留一个输入边沿，避免在模拟帧之间被吞掉，没有复制武器代码。
+- 多指：全局 EventTouch.getTouches() 逐一处理所有变化触点，修复只释放首根手指的问题；菜单同样由集中命中测试管理，不依赖事件冒泡。支持鼠标菜单，兼容鼠标事件不会重复触发触摸动作。
+- 显示：一行约 52 CSS px HUD，不跟随世界；按钮常态/按下/禁用/冷却。844×390 下摇杆底座约146px、内圈70px、拖动半径52px、普攻110px。同方向视口高度变化会重算触摸原点并保留持有动作，横竖屏切换、状态切换和失焦清理输入。
+- 主要改动：GameManager、InputManager、VirtualJoystick、TouchInputManager、CocosInputAdapter、PlatformAdapter、PlatformBridge、ControlLayout、JoystickView、HUDController、Web 构建模板、web-shell、Web shell 打包和测试脚本。武器、敌人、BOSS、LevelData、PlayerController、CameraFollow、战斗绘图和音频资源未修改。
+
+按顺序完成网页全屏/PWA、浮动摇杆、右侧普攻/按钮群、统一多点触控/HUD，再回归与构建。阶段中分别执行 Creator 构建和真实 Cocos 浏览器触摸测试。
+
+测试覆盖指定四个横屏尺寸与竖屏，并保留 DPR 2/3、平板、安全区、原始桌面键盘、失败重开、完整关卡、爆炸反馈回归。独立模式检测、blur 信号和安全区为受控浏览器模拟；实际 Chromium 全屏 API 进入/退出、子路径资源与离线启动均有测试。
+
+未验证：真实 iPhone/iPad Safari 普通页面工具栏变化、从主屏幕安装后独立启动、系统状态栏/手势区、实际 iOS 横屏锁定；微信开发者工具和真机；手机持续 60FPS、温度与内存。普通 Safari 不支持的全屏/方向锁定不能强制启用，不能把 PWA 配置成功当成真机验收。原生微信包仍使用测试 AppID，未发布到微信。
+
+最终计数、包体与整局结果以 reports/verification.json 为准；v04-device-_.json、v04-platform.json、v04-actions.json 与 v04-landscape-_.png 为本轮证据。README 已写明 iOS 添加到主屏幕步骤、普通 Safari/standalone/微信模式差异及复现方法。
+
+## 历史 V0.2.1
+
+V0.4 最终本机验证：严格 TypeScript 检查、50/50 逻辑和 26/26 浏览器测试通过。真实键盘通关 58.69 游戏秒，剩余 3 HP，21 次击杀，战车 0 HP，子弹峰值 9、溢出 0。Creator Web 41 文件 / 4,625,403 字节；微信 40 文件 / 1,954,760 字节，均成功构建，微信运行仍未验证。性能样本以 reports/v02-browser-performance.json 的最新结果为准，不声称真机 60FPS。
 
 更新日期：2026-10-13。工程继续使用 Cocos Creator 3.8.8、TypeScript、Graphics 和 120Hz 固定模拟步长，没有更换引擎。升级复用了 V0.1 的控制器、扫掠碰撞、状态机、池、相机和持续 UI；V0.1 的路线另存为测试夹具，用于回归。
 

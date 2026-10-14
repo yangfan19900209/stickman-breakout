@@ -8,7 +8,7 @@ export class VirtualJoystick {
   y = 0;
   axis = 0;
   vertical = 0;
-  readonly radius = C.input.joystickRadius;
+  radius: number = C.input.joystickRadius;
   start(id: number, x: number, y: number): boolean {
     if (this.owner !== null) return false;
     this.owner = id;

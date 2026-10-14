@@ -1,23 +1,22 @@
 import { DEBUG } from "cc/env";
 import { Game, game, sys, view } from "cc";
 import { SafeInsets } from "../ui/ControlLayout";
+import { PlatformAdapter } from "./PlatformAdapter";
 export interface DebugHandle {
   version: string;
   snapshot: () => unknown;
 }
 /** All platform integration stays here. No storage/ads/network needed for V0.1. */
 export class PlatformBridge {
+  readonly adapter = new PlatformAdapter();
+  private unsubscribe?: () => void;
   safeInsets(width = 1280, height = 720): SafeInsets {
     const frame = view.getFrameSize(),
       r = sys.getSafeAreaRect(false),
       scale = Math.min(frame.width / width, frame.height / height);
     const mx = (frame.width - width * scale) / 2,
       my = (frame.height - height * scale) / 2;
-    const browserInsets = (
-      globalThis as typeof globalThis & {
-        __BREAKOUT_SAFE_AREA__?: () => SafeInsets;
-      }
-    ).__BREAKOUT_SAFE_AREA__?.();
+    const browserInsets = this.adapter.browserSafeInsets();
     return {
       left: Math.max(0, (r.x - mx) / scale, (browserInsets?.left ?? 0) / scale),
       right: Math.max(
@@ -41,13 +40,15 @@ export class PlatformBridge {
   install(onHide: () => void, snapshot: () => unknown): void {
     this.onHide = onHide;
     game.on(Game.EVENT_HIDE, onHide);
+    this.unsubscribe = this.adapter.subscribeInactive(onHide);
     if (DEBUG)
       (
         globalThis as typeof globalThis & { __BREAKOUT__?: DebugHandle }
-      ).__BREAKOUT__ = { version: "0.2.1", snapshot };
+      ).__BREAKOUT__ = { version: "0.4.0", snapshot };
   }
   destroy(): void {
     if (this.onHide) game.off(Game.EVENT_HIDE, this.onHide);
+    this.unsubscribe?.();
     if (DEBUG)
       delete (globalThis as typeof globalThis & { __BREAKOUT__?: DebugHandle })
         .__BREAKOUT__;

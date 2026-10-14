@@ -12,7 +12,7 @@ const json = (file) => JSON.parse(readFileSync(file, "utf8"));
 const browser = json("reports/browser-results.json"),
   run = json("reports/full-run.json");
 assert.equal(browser.stats.unexpected, 0, "Browser suite has failing tests");
-assert.ok(browser.stats.expected >= 15, "Expected the V0.2.1 browser suite");
+assert.ok(browser.stats.expected >= 26, "Expected the V0.4 browser suite");
 assert.equal(
   run.snapshot.state,
   "complete",
@@ -67,7 +67,7 @@ const fingerprint = createHash("sha256");
 for (const file of source.sort())
   fingerprint.update(file).update(readFileSync(file));
 const record = {
-  date: "2026-10-13",
+  date: "2026-10-14",
   creator: "3.8.8",
   design: { width: 1280, height: 720, targetFPS: 60 },
   sourceModules: source.length,
@@ -104,6 +104,11 @@ const record = {
     json(`reports/v021-device-${w}.json`),
   ),
   combatFeedback: json("reports/v021-feedback.json"),
+  v04Devices: [844, 852, 932, 1280].map((w) =>
+    json(`reports/v04-device-${w}.json`),
+  ),
+  v04Platform: json("reports/v04-platform.json"),
+  v04Actions: json("reports/v04-actions.json"),
   version: json("package.json").version,
   performance: json("reports/v02-browser-performance.json"),
   engineModules,
@@ -112,6 +117,7 @@ const record = {
     "Android/iOS/WeChat real devices",
     "Real-device 60FPS and memory",
     "Editor GUI manual inspection",
+    "Physical iOS Safari fullscreen/PWA installation and browser toolbar behavior",
   ],
 };
 writeFileSync("reports/verification.json", JSON.stringify(record, null, 2));

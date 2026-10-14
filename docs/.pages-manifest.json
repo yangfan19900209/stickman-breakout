@@ -26,15 +26,21 @@
     "assets/resources/native/d9/d9da93be-3cba-8dd6-4ada-38bd8ddc53f0.wav",
     "assets/resources/native/e0/e042d8e9-17f4-5d59-e76f-6243161162e5.wav",
     "assets/resources/native/f3/f3109b18-22ac-7dd8-dc23-a4936f08d13e.wav",
+    "browser-platform.js",
     "cocos-js/cc.js",
+    "icons/apple-touch-icon.png",
+    "icons/icon-192.png",
+    "icons/icon-512.png",
     "index.html",
     "index.js",
+    "manifest.webmanifest",
     "src/chunks/bundle.js",
     "src/effect.bin",
     "src/import-map.json",
     "src/polyfills.bundle.js",
     "src/settings.json",
     "src/system.bundle.js",
-    "style.css"
+    "style.css",
+    "sw.js"
   ]
 }

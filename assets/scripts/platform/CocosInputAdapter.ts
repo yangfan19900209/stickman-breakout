@@ -7,27 +7,41 @@ import {
   Node,
   Vec2,
   view,
+  UITransform,
+  EventMouse,
+  sys,
 } from "cc";
 import { InputManager } from "../core/InputManager";
 import { InputAction } from "../core/Types";
-
-/** Cocos events are the only device event boundary. Touch IDs retain independent ownership. */
+import { TouchInputManager, TouchRegion } from "../core/TouchInputManager";
+interface Binding {
+  node: Node;
+  id: string;
+  action?: InputAction;
+  callback?: () => void;
+  priority: number;
+}
+/** All fingers pass through the same explicit hit test before they acquire an action. */
 export class CocosInputAdapter {
+  readonly touch: TouchInputManager;
+  private location = new Vec2();
   private keys = new Set<KeyCode>();
-  private bindings: {
-    node: Node;
-    start: (e: EventTouch) => void;
-    end: (e: EventTouch) => void;
-    move?: (e: EventTouch) => void;
-  }[] = [];
+  private bindings: Binding[] = [];
+  private lastTouchAt = -Infinity;
   constructor(
     readonly state: InputManager,
     readonly onEnter: () => void,
   ) {
+    this.touch = new TouchInputManager(state);
     input.on(Input.EventType.KEY_DOWN, this.down, this);
     input.on(Input.EventType.KEY_UP, this.up, this);
+    input.on(Input.EventType.TOUCH_START, this.touchStart, this);
+    input.on(Input.EventType.TOUCH_MOVE, this.touchMove, this);
     input.on(Input.EventType.TOUCH_END, this.touchEnd, this);
-    input.on(Input.EventType.TOUCH_CANCEL, this.touchEnd, this);
+    input.on(Input.EventType.TOUCH_CANCEL, this.touchCancel, this);
+    input.on(Input.EventType.MOUSE_DOWN, this.mouseDown, this);
+    input.on(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+    input.on(Input.EventType.MOUSE_UP, this.mouseUp, this);
   }
   private action(code: KeyCode): InputAction | null {
     switch (code) {
@@ -67,72 +81,118 @@ export class CocosInputAdapter {
     this.keys.delete(e.keyCode);
     this.state.release(`key:${e.keyCode}`);
   }
+  private touchStart(e: EventTouch): void {
+    this.lastTouchAt = sys.now();
+    this.refreshRegions();
+    for (const point of e.getTouches()) {
+      point.getUILocation(this.location);
+      this.touch.start(point.getID(), this.location.x, this.location.y);
+    }
+  }
+  private touchMove(e: EventTouch): void {
+    for (const point of e.getTouches()) {
+      point.getUILocation(this.location);
+      this.touch.move(point.getID(), this.location.x, this.location.y);
+    }
+  }
   private touchEnd(e: EventTouch): void {
-    this.state.release(`touch:${e.getID()}`);
-    const id = e.getID();
-    if (id !== null) this.state.joystick.end(id);
+    this.lastTouchAt = sys.now();
+    for (const point of e.getTouches()) {
+      point.getUILocation(this.location);
+      const ui = this.touch.end(
+        point.getID(),
+        this.location.x,
+        this.location.y,
+      );
+      if (ui)
+        this.bindings
+          .find((b) => b.id === ui && b.node.activeInHierarchy)
+          ?.callback?.();
+    }
   }
-  bindJoystick(stick: Node): void {
-    const location = new Vec2();
-    const coordinates = (e: EventTouch) => {
-      e.getUILocation(location);
-      const design = view.getDesignResolutionSize();
-      location.x -= stick.worldPosition.x + design.width / 2;
-      location.y -= stick.worldPosition.y + design.height / 2;
-    };
-    const start = (e: EventTouch) => {
-      coordinates(e);
-      const id = e.getID();
-      if (id !== null) this.state.joystick.start(id, location.x, location.y);
-      e.propagationStopped = true;
-    };
-    const move = (e: EventTouch) => {
-      coordinates(e);
-      const id = e.getID();
-      if (id !== null) this.state.joystick.move(id, location.x, location.y);
-      e.propagationStopped = true;
-    };
-    const end = (e: EventTouch) => {
-      this.touchEnd(e);
-      e.propagationStopped = true;
-    };
-    stick.on(Node.EventType.TOUCH_START, start);
-    stick.on(Node.EventType.TOUCH_MOVE, move);
-    stick.on(Node.EventType.TOUCH_END, end);
-    stick.on(Node.EventType.TOUCH_CANCEL, end);
-    this.bindings.push({ node: stick, start, move, end });
+  private touchCancel(e: EventTouch): void {
+    this.lastTouchAt = sys.now();
+    for (const point of e.getTouches()) {
+      point.getUILocation(this.location);
+      this.touch.end(point.getID(), this.location.x, this.location.y, true);
+    }
   }
-  bindButton(button: Node, action: InputAction): void {
-    const start = (e: EventTouch) => {
-      this.state.press(`touch:${e.getID()}`, action);
-      e.propagationStopped = true;
-    };
-    const end = (e: EventTouch) => {
-      this.touchEnd(e);
-      e.propagationStopped = true;
-    };
-    button.on(Node.EventType.TOUCH_START, start);
-    button.on(Node.EventType.TOUCH_END, end);
-    button.on(Node.EventType.TOUCH_CANCEL, end);
-    this.bindings.push({ node: button, start, end });
+  private mouseDown(e: EventMouse): void {
+    if (e.getButton() !== 0 || sys.now() - this.lastTouchAt < 700) return;
+    e.getUILocation(this.location);
+    this.refreshRegions();
+    this.touch.start(-1, this.location.x, this.location.y);
+  }
+  private mouseMove(e: EventMouse): void {
+    e.getUILocation(this.location);
+    this.touch.move(-1, this.location.x, this.location.y);
+  }
+  private mouseUp(e: EventMouse): void {
+    if (e.getButton() !== 0) return;
+    e.getUILocation(this.location);
+    const ui = this.touch.end(-1, this.location.x, this.location.y);
+    if (ui)
+      this.bindings
+        .find((b) => b.id === ui && b.node.activeInHierarchy)
+        ?.callback?.();
+  }
+  private refreshRegions(): void {
+    const d = view.getDesignResolutionSize(),
+      regions: TouchRegion[] = [];
+    for (const b of this.bindings)
+      if (b.node.activeInHierarchy) {
+        const t = b.node.getComponent(UITransform)!,
+          w = t.width * Math.abs(b.node.worldScale.x),
+          h = t.height * Math.abs(b.node.worldScale.y);
+        regions.push({
+          id: b.id,
+          action: b.action,
+          priority: b.priority,
+          bounds: {
+            x: b.node.worldPosition.x + d.width / 2 - w / 2,
+            y: b.node.worldPosition.y + d.height / 2 - h / 2,
+            w,
+            h,
+          },
+        });
+      }
+    this.touch.setRegions(regions);
+  }
+  bindJoystick(_stick: Node): void {} // Visual only: the whole left half owns movement.
+  bindButton(node: Node, action: InputAction): void {
+    this.bindings.push({
+      node,
+      id: `action:${this.bindings.length}`,
+      action,
+      priority: action === "jump" ? 1 : action === "grenade" ? 2 : 5,
+    });
+  }
+  registerUI(node: Node, callback: () => void): void {
+    this.bindings.push({
+      node,
+      id: `menu:${this.bindings.length}`,
+      callback,
+      priority: 0,
+    });
   }
   clear(): void {
-    this.state.clear();
+    this.keys.clear();
+    this.touch.clear();
   }
   hidden(): void {
-    this.keys.clear();
-    this.state.clear();
+    this.clear();
   }
   destroy(): void {
     input.off(Input.EventType.KEY_DOWN, this.down, this);
     input.off(Input.EventType.KEY_UP, this.up, this);
+    input.off(Input.EventType.TOUCH_START, this.touchStart, this);
+    input.off(Input.EventType.TOUCH_MOVE, this.touchMove, this);
     input.off(Input.EventType.TOUCH_END, this.touchEnd, this);
-    input.off(Input.EventType.TOUCH_CANCEL, this.touchEnd, this);
-    for (const b of this.bindings) {
-      b.node.off(Node.EventType.TOUCH_START, b.start);
-      b.node.off(Node.EventType.TOUCH_END, b.end);
-      b.node.off(Node.EventType.TOUCH_CANCEL, b.end);
-      if (b.move) b.node.off(Node.EventType.TOUCH_MOVE, b.move);
-    }
+    input.off(Input.EventType.TOUCH_CANCEL, this.touchCancel, this);
+    input.off(Input.EventType.MOUSE_DOWN, this.mouseDown, this);
+    input.off(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+    input.off(Input.EventType.MOUSE_UP, this.mouseUp, this);
+    this.bindings.length = 0;
+    this.clear();
   }
 }

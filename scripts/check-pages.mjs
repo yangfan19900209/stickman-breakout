@@ -111,6 +111,7 @@ try {
   );
   const cdp = await mobileContext.newCDPSession(mobile);
   const layout = (await snapshot(mobile)).controls.layout;
+  const center = await point(layout.joystick.x, layout.joystick.y);
   const right = await point(
       layout.joystick.x + layout.joystick.r,
       layout.joystick.y,
@@ -119,6 +120,14 @@ try {
     jump = await point(layout.jump.x, layout.jump.y);
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchStart",
+    touchPoints: [
+      { id: 1, ...center },
+      { id: 2, ...shoot },
+      { id: 3, ...jump },
+    ],
+  });
+  await cdp.send("Input.dispatchTouchEvent", {
+    type: "touchMove",
     touchPoints: [
       { id: 1, ...right },
       { id: 2, ...shoot },
@@ -140,7 +149,9 @@ try {
   await mobile.waitForTimeout(250);
   const settled = await snapshot(mobile);
   assert.ok(Math.abs(settled.player.x - released.player.x) < 2);
-  assert.equal(settled.shots, released.shots);
+  assert.equal(settled.playerShots, released.playerShots);
+  assert.equal(settled.controls.shootHeld, false);
+  assert.equal(settled.controls.floating.owners.length, 0);
   const mobileCanvas = await mobile.locator("#GameCanvas").boundingBox();
   assert.ok(
     mobileCanvas.width >= 844 * 0.98 && mobileCanvas.height >= 390 * 0.98,

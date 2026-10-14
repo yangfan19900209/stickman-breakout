@@ -16,4 +16,8 @@ $process.WaitForExit()
 if ($process.ExitCode -ne 36 -and $process.ExitCode -ne 0) { throw "Creator build failed ($($process.ExitCode)). See $logPath and $stderrPath" }
 $entry = if ($Platform -eq 'web-mobile') { 'index.html' } else { 'game.js' }
 if (-not (Test-Path -LiteralPath (Join-Path $projectPath "build\$Platform\$entry"))) { throw 'Creator exited without a build artifact.' }
+if ($Platform -eq 'web-mobile') {
+  & node (Join-Path $projectPath 'scripts\prepare-web-shell.mjs')
+  if ($LASTEXITCODE -ne 0) { throw 'Web shell packaging failed.' }
+}
 Write-Host "Creator build succeeded: build/$Platform ($($process.ExitCode))"

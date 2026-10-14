@@ -53,6 +53,14 @@ test("portrait blocks gameplay; rotating restores full viewport with reachable c
     await cdp.send("Input.dispatchTouchEvent", {
       type: "touchStart",
       touchPoints: [
+        { id: 1, ...xy(l.joystick) },
+        { id: 2, ...xy(l.shoot) },
+        { id: 3, ...xy(l.jump) },
+      ],
+    });
+    await cdp.send("Input.dispatchTouchEvent", {
+      type: "touchMove",
+      touchPoints: [
         { id: 1, ...xy({ ...l.joystick, x: l.joystick.x + l.joystick.r }) },
         { id: 2, ...xy(l.shoot) },
         { id: 3, ...xy(l.jump) },
@@ -170,6 +178,14 @@ for (const size of [
     const cdp = await context.newCDPSession(page);
     await cdp.send("Input.dispatchTouchEvent", {
       type: "touchStart",
+      touchPoints: [
+        { id: 1, ...xy(l.joystick) },
+        { id: 2, ...xy(l.shoot) },
+        { id: 3, ...xy(l.jump) },
+      ],
+    });
+    await cdp.send("Input.dispatchTouchEvent", {
+      type: "touchMove",
       touchPoints: [
         { id: 1, ...xy({ ...l.joystick, x: l.joystick.x + l.joystick.r }) },
         { id: 2, ...xy(l.shoot) },

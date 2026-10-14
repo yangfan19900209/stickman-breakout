@@ -1,0 +1,52 @@
+{
+  "size": {
+    "width": 1280,
+    "height": 720
+  },
+  "canvas": {
+    "x": 0,
+    "y": 0,
+    "width": 1280,
+    "height": 720
+  },
+  "layout": {
+    "joystick": {
+      "x": 98,
+      "y": 94,
+      "r": 58,
+      "baseR": 78,
+      "knobR": 38,
+      "hit": 156,
+      "unit": 1
+    },
+    "jump": {
+      "x": 1076,
+      "y": 136.8,
+      "r": 38,
+      "hit": 88
+    },
+    "shoot": {
+      "x": 1196,
+      "y": 78,
+      "r": 59,
+      "hit": 132
+    },
+    "grenade": {
+      "x": 1206,
+      "y": 191,
+      "r": 33,
+      "hit": 78
+    },
+    "pause": {
+      "x": 1248,
+      "y": 690,
+      "hit": 48
+    }
+  },
+  "hudHeightCSS": 52,
+  "baseDiameterCSS": 156,
+  "knobDiameterCSS": 76,
+  "dragRadiusCSS": 58,
+  "fireDiameterCSS": 118,
+  "errors": []
+}

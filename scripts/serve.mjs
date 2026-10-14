@@ -10,6 +10,7 @@ const types = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json",
+  ".webmanifest": "application/manifest+json",
   ".css": "text/css",
   ".wasm": "application/wasm",
   ".png": "image/png",
@@ -28,7 +29,7 @@ const server = createServer((req, res) => {
     }
     const file = path.resolve(
       root,
-      decodeURIComponent(url.pathname).replace(/^\//, "") || "index.html",
+      decodeURIComponent(url.pathname).replace(/^\/stickman-breakout\/?/, "/").replace(/^\//, "") || "index.html",
     );
     if (!file.startsWith(root + path.sep) && file !== root) {
       res.writeHead(403);

@@ -34,7 +34,16 @@ test("safe area keeps hit regions inside viewport and action buttons apart", () 
       assert.ok(c.y - c.hit / 2 >= 20);
     }
     assert.ok(l.shoot.x - l.shoot.hit / 2 > l.jump.x + l.jump.hit / 2);
-    assert.ok(l.jump.x - l.jump.hit / 2 > l.grenade.x + l.grenade.hit / 2);
+    const buttons = [l.shoot, l.jump, l.grenade];
+    for (let a = 0; a < buttons.length; a++)
+      for (let b = a + 1; b < buttons.length; b++) {
+        const p = buttons[a],
+          q = buttons[b];
+        assert.ok(
+          Math.abs(p.x - q.x) > (p.hit + q.hit) / 2 ||
+            Math.abs(p.y - q.y) > (p.hit + q.hit) / 2,
+        );
+      }
   }
 });
 test("zoomed camera retains forward space, smooth direction lead, vertical dead zone and arena bounds", () => {

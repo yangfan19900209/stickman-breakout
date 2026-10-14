@@ -14,6 +14,7 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
         applyDecoratedDescriptor: _applyDecoratedDescriptor,
         arrayLikeToArray: _arrayLikeToArray,
         arrayWithHoles: _arrayWithHoles,
+        arrayWithoutHoles: _arrayWithoutHoles,
         assertThisInitialized: _assertThisInitialized,
         asyncToGenerator: _asyncToGenerator,
         classCallCheck: _classCallCheck,
@@ -25,13 +26,16 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
         inherits: _inherits,
         initializerDefineProperty: _initializerDefineProperty,
         isNativeReflectConstruct: _isNativeReflectConstruct,
+        iterableToArray: _iterableToArray,
         iterableToArrayLimit: _iterableToArrayLimit,
         nonIterableRest: _nonIterableRest,
+        nonIterableSpread: _nonIterableSpread,
         objectSpread2: _objectSpread2,
         possibleConstructorReturn: _possibleConstructorReturn,
         regeneratorRuntime: _regeneratorRuntime,
         setPrototypeOf: _setPrototypeOf,
         slicedToArray: _slicedToArray,
+        toConsumableArray: _toConsumableArray,
         toPrimitive: _toPrimitive,
         toPropertyKey: _toPropertyKey,
         unsupportedIterableToArray: _unsupportedIterableToArray
@@ -523,8 +527,17 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
       function _slicedToArray(arr, i) {
         return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
       }
+      function _toConsumableArray(arr) {
+        return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+      }
+      function _arrayWithoutHoles(arr) {
+        if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+      }
       function _arrayWithHoles(arr) {
         if (Array.isArray(arr)) return arr;
+      }
+      function _iterableToArray(iter) {
+        if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
       }
       function _unsupportedIterableToArray(o, minLen) {
         if (!o) return;
@@ -538,6 +551,9 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
         if (len == null || len > arr.length) len = arr.length;
         for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
         return arr2;
+      }
+      function _nonIterableSpread() {
+        throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
       }
       function _nonIterableRest() {
         throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");

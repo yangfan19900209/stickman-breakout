@@ -326,8 +326,8 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
   };
 });
 
-System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, input, Input, KeyCode, Vec2, Node, view;
+System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './TouchInputManager.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Vec2, input, Input, KeyCode, sys, view, UITransform, TouchInputManager;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -336,27 +336,39 @@ System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLo
       _createForOfIteratorHelper = module.createForOfIteratorHelper;
     }, function (module) {
       cclegacy = module.cclegacy;
+      Vec2 = module.Vec2;
       input = module.input;
       Input = module.Input;
       KeyCode = module.KeyCode;
-      Vec2 = module.Vec2;
-      Node = module.Node;
+      sys = module.sys;
       view = module.view;
+      UITransform = module.UITransform;
+    }, function (module) {
+      TouchInputManager = module.TouchInputManager;
     }],
     execute: function () {
       cclegacy._RF.push({}, "0bcc4SPVYPR8dHAAgg/hEdQ", "CocosInputAdapter", undefined);
-      /** Cocos events are the only device event boundary. Touch IDs retain independent ownership. */
+      /** All fingers pass through the same explicit hit test before they acquire an action. */
       var CocosInputAdapter = exports('CocosInputAdapter', /*#__PURE__*/function () {
         function CocosInputAdapter(state, onEnter) {
           _classCallCheck(this, CocosInputAdapter);
+          _defineProperty(this, "touch", void 0);
+          _defineProperty(this, "location", new Vec2());
           _defineProperty(this, "keys", new Set());
           _defineProperty(this, "bindings", []);
+          _defineProperty(this, "lastTouchAt", -Infinity);
           this.state = state;
           this.onEnter = onEnter;
+          this.touch = new TouchInputManager(state);
           input.on(Input.EventType.KEY_DOWN, this.down, this);
           input.on(Input.EventType.KEY_UP, this.up, this);
+          input.on(Input.EventType.TOUCH_START, this.touchStart, this);
+          input.on(Input.EventType.TOUCH_MOVE, this.touchMove, this);
           input.on(Input.EventType.TOUCH_END, this.touchEnd, this);
-          input.on(Input.EventType.TOUCH_CANCEL, this.touchEnd, this);
+          input.on(Input.EventType.TOUCH_CANCEL, this.touchCancel, this);
+          input.on(Input.EventType.MOUSE_DOWN, this.mouseDown, this);
+          input.on(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+          input.on(Input.EventType.MOUSE_UP, this.mouseUp, this);
         }
         _createClass(CocosInputAdapter, [{
           key: "action",
@@ -403,104 +415,192 @@ System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLo
             this.state.release("key:".concat(e.keyCode));
           }
         }, {
-          key: "touchEnd",
-          value: function touchEnd(e) {
-            this.state.release("touch:".concat(e.getID()));
-            var id = e.getID();
-            if (id !== null) this.state.joystick.end(id);
-          }
-        }, {
-          key: "bindJoystick",
-          value: function bindJoystick(stick) {
-            var _this = this;
-            var location = new Vec2();
-            var coordinates = function coordinates(e) {
-              e.getUILocation(location);
-              var design = view.getDesignResolutionSize();
-              location.x -= stick.worldPosition.x + design.width / 2;
-              location.y -= stick.worldPosition.y + design.height / 2;
-            };
-            var start = function start(e) {
-              coordinates(e);
-              var id = e.getID();
-              if (id !== null) _this.state.joystick.start(id, location.x, location.y);
-              e.propagationStopped = true;
-            };
-            var move = function move(e) {
-              coordinates(e);
-              var id = e.getID();
-              if (id !== null) _this.state.joystick.move(id, location.x, location.y);
-              e.propagationStopped = true;
-            };
-            var end = function end(e) {
-              _this.touchEnd(e);
-              e.propagationStopped = true;
-            };
-            stick.on(Node.EventType.TOUCH_START, start);
-            stick.on(Node.EventType.TOUCH_MOVE, move);
-            stick.on(Node.EventType.TOUCH_END, end);
-            stick.on(Node.EventType.TOUCH_CANCEL, end);
-            this.bindings.push({
-              node: stick,
-              start: start,
-              move: move,
-              end: end
-            });
-          }
-        }, {
-          key: "bindButton",
-          value: function bindButton(button, action) {
-            var _this2 = this;
-            var start = function start(e) {
-              _this2.state.press("touch:".concat(e.getID()), action);
-              e.propagationStopped = true;
-            };
-            var end = function end(e) {
-              _this2.touchEnd(e);
-              e.propagationStopped = true;
-            };
-            button.on(Node.EventType.TOUCH_START, start);
-            button.on(Node.EventType.TOUCH_END, end);
-            button.on(Node.EventType.TOUCH_CANCEL, end);
-            this.bindings.push({
-              node: button,
-              start: start,
-              end: end
-            });
-          }
-        }, {
-          key: "clear",
-          value: function clear() {
-            this.state.clear();
-          }
-        }, {
-          key: "hidden",
-          value: function hidden() {
-            this.keys.clear();
-            this.state.clear();
-          }
-        }, {
-          key: "destroy",
-          value: function destroy() {
-            input.off(Input.EventType.KEY_DOWN, this.down, this);
-            input.off(Input.EventType.KEY_UP, this.up, this);
-            input.off(Input.EventType.TOUCH_END, this.touchEnd, this);
-            input.off(Input.EventType.TOUCH_CANCEL, this.touchEnd, this);
-            var _iterator = _createForOfIteratorHelper(this.bindings),
+          key: "touchStart",
+          value: function touchStart(e) {
+            this.lastTouchAt = sys.now();
+            this.refreshRegions();
+            var _iterator = _createForOfIteratorHelper(e.getTouches()),
               _step;
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
-                var b = _step.value;
-                b.node.off(Node.EventType.TOUCH_START, b.start);
-                b.node.off(Node.EventType.TOUCH_END, b.end);
-                b.node.off(Node.EventType.TOUCH_CANCEL, b.end);
-                if (b.move) b.node.off(Node.EventType.TOUCH_MOVE, b.move);
+                var point = _step.value;
+                point.getUILocation(this.location);
+                this.touch.start(point.getID(), this.location.x, this.location.y);
               }
             } catch (err) {
               _iterator.e(err);
             } finally {
               _iterator.f();
             }
+          }
+        }, {
+          key: "touchMove",
+          value: function touchMove(e) {
+            var _iterator2 = _createForOfIteratorHelper(e.getTouches()),
+              _step2;
+            try {
+              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                var point = _step2.value;
+                point.getUILocation(this.location);
+                this.touch.move(point.getID(), this.location.x, this.location.y);
+              }
+            } catch (err) {
+              _iterator2.e(err);
+            } finally {
+              _iterator2.f();
+            }
+          }
+        }, {
+          key: "touchEnd",
+          value: function touchEnd(e) {
+            var _this = this;
+            this.lastTouchAt = sys.now();
+            var _iterator3 = _createForOfIteratorHelper(e.getTouches()),
+              _step3;
+            try {
+              var _loop = function _loop() {
+                var _this$bindings$find, _this$bindings$find$c;
+                var point = _step3.value;
+                point.getUILocation(_this.location);
+                var ui = _this.touch.end(point.getID(), _this.location.x, _this.location.y);
+                if (ui) (_this$bindings$find = _this.bindings.find(function (b) {
+                  return b.id === ui && b.node.activeInHierarchy;
+                })) === null || _this$bindings$find === void 0 || (_this$bindings$find$c = _this$bindings$find.callback) === null || _this$bindings$find$c === void 0 || _this$bindings$find$c.call(_this$bindings$find);
+              };
+              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                _loop();
+              }
+            } catch (err) {
+              _iterator3.e(err);
+            } finally {
+              _iterator3.f();
+            }
+          }
+        }, {
+          key: "touchCancel",
+          value: function touchCancel(e) {
+            this.lastTouchAt = sys.now();
+            var _iterator4 = _createForOfIteratorHelper(e.getTouches()),
+              _step4;
+            try {
+              for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+                var point = _step4.value;
+                point.getUILocation(this.location);
+                this.touch.end(point.getID(), this.location.x, this.location.y, true);
+              }
+            } catch (err) {
+              _iterator4.e(err);
+            } finally {
+              _iterator4.f();
+            }
+          }
+        }, {
+          key: "mouseDown",
+          value: function mouseDown(e) {
+            if (e.getButton() !== 0 || sys.now() - this.lastTouchAt < 700) return;
+            e.getUILocation(this.location);
+            this.refreshRegions();
+            this.touch.start(-1, this.location.x, this.location.y);
+          }
+        }, {
+          key: "mouseMove",
+          value: function mouseMove(e) {
+            e.getUILocation(this.location);
+            this.touch.move(-1, this.location.x, this.location.y);
+          }
+        }, {
+          key: "mouseUp",
+          value: function mouseUp(e) {
+            var _this$bindings$find2, _this$bindings$find2$;
+            if (e.getButton() !== 0) return;
+            e.getUILocation(this.location);
+            var ui = this.touch.end(-1, this.location.x, this.location.y);
+            if (ui) (_this$bindings$find2 = this.bindings.find(function (b) {
+              return b.id === ui && b.node.activeInHierarchy;
+            })) === null || _this$bindings$find2 === void 0 || (_this$bindings$find2$ = _this$bindings$find2.callback) === null || _this$bindings$find2$ === void 0 || _this$bindings$find2$.call(_this$bindings$find2);
+          }
+        }, {
+          key: "refreshRegions",
+          value: function refreshRegions() {
+            var d = view.getDesignResolutionSize(),
+              regions = [];
+            var _iterator5 = _createForOfIteratorHelper(this.bindings),
+              _step5;
+            try {
+              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+                var b = _step5.value;
+                if (b.node.activeInHierarchy) {
+                  var t = b.node.getComponent(UITransform),
+                    w = t.width * Math.abs(b.node.worldScale.x),
+                    h = t.height * Math.abs(b.node.worldScale.y);
+                  regions.push({
+                    id: b.id,
+                    action: b.action,
+                    priority: b.priority,
+                    bounds: {
+                      x: b.node.worldPosition.x + d.width / 2 - w / 2,
+                      y: b.node.worldPosition.y + d.height / 2 - h / 2,
+                      w: w,
+                      h: h
+                    }
+                  });
+                }
+              }
+            } catch (err) {
+              _iterator5.e(err);
+            } finally {
+              _iterator5.f();
+            }
+            this.touch.setRegions(regions);
+          }
+        }, {
+          key: "bindJoystick",
+          value: function bindJoystick(_stick) {} // Visual only: the whole left half owns movement.
+        }, {
+          key: "bindButton",
+          value: function bindButton(node, action) {
+            this.bindings.push({
+              node: node,
+              id: "action:".concat(this.bindings.length),
+              action: action,
+              priority: action === "jump" ? 1 : action === "grenade" ? 2 : 5
+            });
+          }
+        }, {
+          key: "registerUI",
+          value: function registerUI(node, callback) {
+            this.bindings.push({
+              node: node,
+              id: "menu:".concat(this.bindings.length),
+              callback: callback,
+              priority: 0
+            });
+          }
+        }, {
+          key: "clear",
+          value: function clear() {
+            this.keys.clear();
+            this.touch.clear();
+          }
+        }, {
+          key: "hidden",
+          value: function hidden() {
+            this.clear();
+          }
+        }, {
+          key: "destroy",
+          value: function destroy() {
+            input.off(Input.EventType.KEY_DOWN, this.down, this);
+            input.off(Input.EventType.KEY_UP, this.up, this);
+            input.off(Input.EventType.TOUCH_START, this.touchStart, this);
+            input.off(Input.EventType.TOUCH_MOVE, this.touchMove, this);
+            input.off(Input.EventType.TOUCH_END, this.touchEnd, this);
+            input.off(Input.EventType.TOUCH_CANCEL, this.touchCancel, this);
+            input.off(Input.EventType.MOUSE_DOWN, this.mouseDown, this);
+            input.off(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+            input.off(Input.EventType.MOUSE_UP, this.mouseUp, this);
+            this.bindings.length = 0;
+            this.clear();
           }
         }]);
         return CocosInputAdapter;
@@ -807,40 +907,57 @@ System.register("chunks:///_virtual/ControlLayout.ts", ['cc', './Types.ts'], fun
         };
         var width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1280;
         var height = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 720;
+        var cssHeight = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 390;
         var sideLimit = Math.min(180, 90 + Math.max(0, width - 960) / 2);
         var l = clamp(insets.left, 0, sideLimit),
           r = clamp(insets.right, 0, sideLimit),
           b = clamp(insets.bottom, 0, 120),
           t = clamp(insets.top, 0, 120);
+        var k = height / cssHeight,
+          baseR = clamp(cssHeight * 0.375, 136, 156) * k / 2,
+          knobR = clamp(cssHeight * 0.18, 62, 76) * k / 2,
+          dragR = clamp(cssHeight * 0.133, 45, 58) * k;
+        var fireDiameter = clamp(cssHeight * 0.282, 100, 118) * k,
+          jumpDiameter = clamp(cssHeight * 0.18, 64, 76) * k,
+          grenadeDiameter = clamp(cssHeight * 0.152, 54, 66) * k;
+        var fireHit = fireDiameter + 14 * k,
+          jumpHit = jumpDiameter + 12 * k,
+          grenadeHit = grenadeDiameter + 12 * k;
+        var fireX = width - r - 18 * k - fireHit / 2,
+          fireY = b + 12 * k + fireHit / 2;
+        var pauseHit = clamp(cssHeight * 0.11, 44, 48) * k;
         return {
           joystick: {
-            x: 158 + l,
-            y: 128 + b,
-            r: 92,
-            hit: 224
+            x: baseR + 20 * k + l,
+            y: baseR + 16 * k + b,
+            r: dragR,
+            baseR: baseR,
+            knobR: knobR,
+            hit: baseR * 2,
+            unit: k
           },
           jump: {
-            x: width - 292 - r,
-            y: 170 + b,
-            r: 62,
-            hit: 152
+            x: fireX - (fireHit + jumpHit) / 2 - 10 * k,
+            y: fireY + fireHit * 0.4 + 6 * k,
+            r: jumpDiameter / 2,
+            hit: jumpHit
           },
           shoot: {
-            x: width - 116 - r,
-            y: 126 + b,
-            r: 76,
-            hit: 180
+            x: fireX,
+            y: fireY,
+            r: fireDiameter / 2,
+            hit: fireHit
           },
           grenade: {
-            x: width - 436 - r,
-            y: 90 + b,
-            r: 48,
-            hit: 120
+            x: fireX + 10 * k,
+            y: fireY + (fireHit + grenadeHit) / 2 + 8 * k,
+            r: grenadeDiameter / 2,
+            hit: grenadeHit
           },
           pause: {
-            x: width - 66 - r,
-            y: height - 54 - t,
-            hit: 88
+            x: width - r - 8 * k - pauseHit / 2,
+            y: height - t - 6 * k - pauseHit / 2,
+            hit: pauseHit
           }
         };
       }
@@ -1711,7 +1828,7 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
 });
 
 System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './InputManager.ts', './GameSession.ts', './Ink.ts', './StickmanRenderer.ts', './LevelRenderer.ts', './PlatformBridge.ts', './CombatRenderer.ts', './CocosInputAdapter.ts', './HUDController.ts', './ObjectRenderer.ts', './AudioBridge.ts', './ViewportLayout.ts'], function (exports) {
-  var _inherits, _createSuper, _classCallCheck, _defineProperty, _assertThisInitialized, _createClass, _objectSpread2, _createForOfIteratorHelper, cclegacy, _decorator, view, ResolutionPolicy, game, profiler, Canvas, Camera, Layers, Color, UITransform, Component, GameConfig, InputManager, GameSession, node, Ink, StickmanRenderer, LevelRenderer, PlatformBridge, CombatRenderer, CocosInputAdapter, HUDController, ObjectRenderer, AudioBridge, viewportLayout;
+  var _inherits, _createSuper, _classCallCheck, _defineProperty, _assertThisInitialized, _createClass, _objectSpread2, _toConsumableArray, _slicedToArray, _createForOfIteratorHelper, cclegacy, _decorator, view, ResolutionPolicy, game, profiler, Canvas, Camera, Layers, Color, UITransform, Component, GameConfig, InputManager, GameSession, node, Ink, StickmanRenderer, LevelRenderer, PlatformBridge, CombatRenderer, CocosInputAdapter, HUDController, ObjectRenderer, AudioBridge, viewportLayout;
   return {
     setters: [function (module) {
       _inherits = module.inherits;
@@ -1721,6 +1838,8 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
       _assertThisInitialized = module.assertThisInitialized;
       _createClass = module.createClass;
       _objectSpread2 = module.objectSpread2;
+      _toConsumableArray = module.toConsumableArray;
+      _slicedToArray = module.slicedToArray;
       _createForOfIteratorHelper = module.createForOfIteratorHelper;
     }, function (module) {
       cclegacy = module.cclegacy;
@@ -1809,7 +1928,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
             try {
               this.initialize();
               this.ready = true;
-              console.info("[Breakout] V0.2.1 ready; responsive viewport, independent HUD and combat framing.");
+              console.info("[Breakout] V0.4 ready; floating touch controls, fullscreen/PWA platform adapter.");
             } catch (error) {
               console.error("[Breakout] Initialization failed", error);
               throw error;
@@ -1859,15 +1978,18 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
               return _this2.home();
             }, function () {
               _this2.audio.muted = !_this2.audio.muted;
-            });
+            }, this.platform.adapter);
             this.platform.install(function () {
+              _this2.orientationPaused = false;
               _this2.adapter.hidden();
               _this2.session.pause();
               _this2.accumulator = 0;
             }, function () {
               return _objectSpread2(_objectSpread2({}, _this2.session.snapshot()), {}, {
+                playerShots: _this2.session.weapon.shots,
                 audio: _this2.audio.status(),
                 visibleChunks: _this2.map.visibleChunks,
+                platform: _this2.platform.adapter.status(),
                 display: _objectSpread2(_objectSpread2({}, _this2.display), {}, {
                   combatZoom: _this2.session.camera.zoom,
                   worldVisibleWidth: _this2.session.camera.visibleWidth,
@@ -1877,6 +1999,8 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
                   orientationPaused: _this2.orientationPaused
                 }),
                 controls: {
+                  shootHeld: _this2.controls.isHeld("shoot"),
+                  hudHeight: _this2.adapter.touch.hudHeight,
                   stick: {
                     x: _this2.controls.joystick.x,
                     y: _this2.controls.joystick.y,
@@ -1884,7 +2008,22 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
                     vertical: _this2.controls.joystick.vertical,
                     owner: _this2.controls.joystick.owner
                   },
-                  layout: _this2.hud.layout
+                  layout: _this2.hud.layout,
+                  floating: {
+                    originX: _this2.adapter.touch.originX,
+                    originY: _this2.adapter.touch.originY,
+                    baseX: _this2.adapter.touch.baseX,
+                    baseY: _this2.adapter.touch.baseY,
+                    owners: _toConsumableArray(_this2.adapter.touch.owners).map(function (_ref) {
+                      var _ref2 = _slicedToArray(_ref, 2),
+                        id = _ref2[0],
+                        o = _ref2[1];
+                      return {
+                        id: id,
+                        role: o.role
+                      };
+                    })
+                  }
                 }
               });
             });
@@ -1933,7 +2072,9 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
           key: "update",
           value: function update(dt) {
             if (!this.ready) return;
-            var frame = view.getFrameSize();
+            var frame = this.platform.adapter.frame();
+            var engineFrame = view.getFrameSize();
+            if (frame.width !== engineFrame.width || frame.height !== engineFrame.height) view.setFrameSize(frame.width, frame.height);
             if (frame.width !== this.frameWidth || frame.height !== this.frameHeight) {
               this.frameWidth = frame.width;
               this.frameHeight = frame.height;
@@ -1952,7 +2093,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
               this.session.camera.zoom = zoom;
               this.world.setScale(zoom, zoom, 1);
               this.hud.applyInsets(this.platform.safeInsets(width, height), width, height);
-              this.adapter.hidden();
+              if (portrait !== this.portrait) this.adapter.hidden();
               if (portrait && !this.portrait) {
                 this.orientationPaused = this.session.state === "playing" || this.session.state === "dying";
                 this.session.pause();
@@ -2604,8 +2745,8 @@ System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanRenderer.ts', './JoystickView.ts', './ControlLayout.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, UITransform, Node, Color, Label, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout;
+System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanRenderer.ts', './JoystickView.ts', './ControlLayout.ts', './PlatformAdapter.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, UITransform, Color, Label, view, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout, PlatformAdapter;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -2616,9 +2757,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
     }, function (module) {
       cclegacy = module.cclegacy;
       UITransform = module.UITransform;
-      Node = module.Node;
       Color = module.Color;
       Label = module.Label;
+      view = module.view;
     }, function (module) {
       GameConfig = module.GameConfig;
     }, function (module) {
@@ -2631,6 +2772,8 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
       JoystickView = module.JoystickView;
     }, function (module) {
       controlLayout = module.controlLayout;
+    }, function (module) {
+      PlatformAdapter = module.PlatformAdapter;
     }],
     execute: function () {
       cclegacy._RF.push({}, "57cedYylhxGlVuP7wp2UQhx", "HUDController", undefined);
@@ -2648,19 +2791,14 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
         l.overflow = Label.Overflow.SHRINK;
         return l;
       }
-      function button(parent, title, x, y, w, h, onClick) {
+      function createButton(parent, title, x, y, w, h, onClick) {
         var dark = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
+        var adapter = arguments.length > 8 ? arguments[8] : undefined;
         var n = node(parent, title, x, y, w, h),
           ink = new Ink(n);
         ink.rect(-w / 2, -h / 2, w, h, colors.ink, dark ? colors.ink : colors.paper, 4);
         text(n, title, 0, 0, 22, dark ? colors.paper : colors.ink, w - 12);
-        n.on(Node.EventType.TOUCH_START, function (e) {
-          e.propagationStopped = true;
-        });
-        n.on(Node.EventType.TOUCH_END, function (e) {
-          e.propagationStopped = true;
-          onClick();
-        });
+        adapter === null || adapter === void 0 || adapter.registerUI(n, onClick);
         return n;
       }
 
@@ -2669,6 +2807,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
         function HUDController(parent, adapter, onStart, onPause, onResume, onHome) {
           var _this = this;
           var onMute = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : function () {};
+          var platform = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : new PlatformAdapter();
           _classCallCheck(this, HUDController);
           _defineProperty(this, "hud", void 0);
           _defineProperty(this, "hudInk", void 0);
@@ -2704,6 +2843,13 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           _defineProperty(this, "message", void 0);
           _defineProperty(this, "layout", controlLayout());
           _defineProperty(this, "pauseButton", void 0);
+          _defineProperty(this, "platformTools", void 0);
+          _defineProperty(this, "platformHint", void 0);
+          this.adapter = adapter;
+          var button = function button(p, title, x, y, w, h, fn) {
+            var dark = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
+            return createButton(p, title, x, y, w, h, fn, dark, adapter);
+          };
           this.hud = node(parent, "HUD");
           this.hudInk = new Ink(this.hud);
           this.levelLabel = text(this.hud, "废弃前哨站", 995, 678, 34, colors.ink, 350);
@@ -2724,7 +2870,8 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             _this.touchButtons.push({
               action: action,
               ink: ink,
-              held: false
+              held: false,
+              key: ""
             });
             _this.paintTouch(ink, action, false);
           };
@@ -2735,9 +2882,6 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             var n = node(parent, "Panel:".concat(state), 640, 360, GameConfig.width, GameConfig.height),
               ink = new Ink(n);
             ink.rect(-640, -360, 1280, 720, new Color(250, 249, 245, 236), new Color(250, 249, 245, 236), 1);
-            n.on(Node.EventType.TOUCH_START, function (e) {
-              e.propagationStopped = true;
-            });
             n.active = false;
             _this.panels.set(state, n);
             _this.panelInk.set(state, ink);
@@ -2792,7 +2936,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           button(title, "开始突围  →", 120, -128, 300, 62, onStart, true);
           text(title, "A D 移动   ·   Space 跳跃   ·   按住 J 射击", 120, -204, 17, colors.muted, 760);
           text(title, "P / Esc 暂停   ·   手机支持多点触控   ·   Enter 开始", 120, -239, 14, colors.muted, 760);
-          text(title, "V0.2.1  /  墨线行动", -368, -270, 16, colors.muted, 390);
+          text(title, "V0.4  /  移动突围", -368, -270, 16, colors.muted, 390);
           var paused = panel("paused");
           text(paused, "暂停一下", 0, 103, 52);
           text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -2818,119 +2962,91 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           } finally {
             _iterator.f();
           }
+          this.platformTools = node(parent, "Fullscreen and home screen tools");
+          button(this.platformTools, "进入全屏", 140, 0, 200, 54, function () {
+            void platform.enterFullscreen().then(function (result) {
+              return _this.platformHint.string = result.message;
+            });
+          });
+          button(this.platformTools, "主屏幕说明", -100, 0, 230, 54, function () {
+            _this.platformHint.string = platform.status().mode === "standalone" ? "已独立运行；系统状态栏仍由系统管理。" : "iPhone/iPad：Safari 分享 → 添加到主屏幕 → 从游戏图标启动。";
+          });
+          this.platformHint = text(this.platformTools, platform.status().ios && platform.status().mode === "browser" ? "Safari：添加到主屏幕后可独立启动，移除浏览器工具栏。" : "支持的浏览器可进入全屏；主屏幕模式与普通网页不同。", 0, -52, 21, colors.muted, 1000);
           this.rotateNote = node(parent, "Rotate device hint");
           this.rotateInk = new Ink(this.rotateNote);
           this.rotateTitle = text(this.rotateNote, "请旋转设备\n横屏游玩", 360, 700, 54, colors.ink, 620);
           this.rotateTitle.node.getComponent(UITransform).setContentSize(620, 160);
           this.rotateSub = text(this.rotateNote, "战斗已暂停\n旋转后自动恢复", 360, 540, 30, colors.muted, 600);
           this.rotateSub.node.getComponent(UITransform).setContentSize(600, 100);
-          this.rotateNote.on(Node.EventType.TOUCH_START, function (e) {
-            e.propagationStopped = true;
-          });
           this.applyInsets(this.insets);
         }
         _createClass(HUDController, [{
           key: "paintTouch",
           value: function paintTouch(ink, action, held) {
+            var disabled = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+            var cooldown = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+            var count = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : "";
             ink.clear();
-            var radius = action === "shoot" ? 76 : action === "grenade" ? 48 : 62,
-              color = held ? colors.paper : colors.ink;
-            ink.circle(0, 0, radius, new Color(24, 24, 24, 230), held ? new Color(24, 24, 24, 230) : new Color(250, 249, 245, 222), 5);
-            if (action === "grenade") {
-              ink.circle(0, -3, 12, color, undefined, 3);
-              ink.line([{
-                x: -4,
-                y: 9
-              }, {
-                x: -4,
-                y: 17
-              }, {
-                x: 5,
-                y: 17
-              }, {
-                x: 5,
-                y: 9
-              }], 2, color);
-              ink.line([{
-                x: 5,
-                y: 16
-              }, {
-                x: 14,
-                y: 22
-              }], 2, color);
-            } else if (action === "left" || action === "right") {
-              var d = action === "left" ? -1 : 1;
-              ink.line([{
-                x: -13 * d,
-                y: 0
-              }, {
-                x: 13 * d,
-                y: 0
-              }, {
-                x: 2 * d,
-                y: 11
-              }], 3, color);
-              ink.line([{
-                x: 13 * d,
-                y: 0
-              }, {
-                x: 2 * d,
-                y: -11
-              }], 3, color);
+            var p = action === "shoot" ? this.layout.shoot : action === "grenade" ? this.layout.grenade : this.layout.jump,
+              r = p.r,
+              k = this.layout.joystick.unit,
+              color = disabled ? colors.muted : held ? colors.paper : colors.ink;
+            ink.circle(0, 0, r, disabled ? colors.mid : colors.ink, held ? new Color(24, 24, 24, 190) : new Color(250, 249, 245, 165), 4 * k);
+            var q = r * 0.36;
+            if (action === "shoot") {
+              ink.circle(0, 5 * k, q, color, undefined, 2.2 * k);
+              for (var _i = 0, _arr = [-1, 1]; _i < _arr.length; _i++) {
+                var d = _arr[_i];
+                ink.segment(d * q * 0.72, 5 * k, d * q * 1.55, 5 * k, 2.2 * k, color);
+                ink.segment(0, 5 * k + d * q * 0.72, 0, 5 * k + d * q * 1.55, 2.2 * k, color);
+              }
+              ink.circle(0, 5 * k, 2 * k, color, color, 1);
             } else if (action === "jump") {
               ink.line([{
                 x: 0,
-                y: -14
+                y: -q * 0.7
               }, {
                 x: 0,
-                y: 14
+                y: q
               }, {
-                x: -12,
-                y: 2
-              }], 3, color);
-              ink.line([{
-                x: 0,
-                y: 14
-              }, {
-                x: 12,
-                y: 2
-              }], 3, color);
+                x: -q * 0.65,
+                y: q * 0.3
+              }], 3 * k, color);
+              ink.segment(0, q, q * 0.65, q * 0.3, 3 * k, color);
             } else {
-              ink.circle(0, 0, 14, color, undefined, 2.5);
+              ink.ellipse(0, -q * 0.1, q * 0.7, q * 0.85, color, undefined, 2.8 * k);
               ink.line([{
-                x: -23,
-                y: 0
+                x: -q * 0.2,
+                y: q * 0.65
               }, {
-                x: -10,
-                y: 0
-              }], 2, color);
-              ink.line([{
-                x: 10,
-                y: 0
+                x: -q * 0.2,
+                y: q * 1.15
               }, {
-                x: 23,
-                y: 0
-              }], 2, color);
-              ink.line([{
-                x: 0,
-                y: -23
+                x: q * 0.28,
+                y: q * 1.15
               }, {
-                x: 0,
-                y: -10
-              }], 2, color);
-              ink.line([{
-                x: 0,
-                y: 10
-              }, {
-                x: 0,
-                y: 23
-              }], 2, color);
+                x: q * 0.28,
+                y: q * 0.65
+              }], 2.3 * k, color);
+              ink.segment(q * 0.28, q * 1.12, q * 0.9, q * 1.4, 2.3 * k, color);
             }
-            var label = action === "shoot" ? "射击" : action === "grenade" ? "手雷" : "跳跃";
-            // Labels live inside the visual circle, and share its position on every layout.
-            var l = ink.node.getComponentInChildren(Label);
-            if (!l) l = text(ink.node, label, 0, -radius * 0.55, 23, color, radius * 1.8);
-            l.color = color;
+            if (cooldown > 0) {
+              var steps = Math.ceil(cooldown * 24),
+                radius = r - 5 * k;
+              for (var n = 0; n < steps; n++) {
+                var a = Math.PI / 2 - n * Math.PI / 12,
+                  b = a - Math.PI / 12;
+                ink.segment(Math.cos(a) * radius, Math.sin(a) * radius, Math.cos(b) * radius, Math.sin(b) * radius, 3 * k, colors.mid);
+              }
+            }
+            var label = ink.node.getComponentInChildren(Label);
+            if (!label) label = text(ink.node, "", 0, -r * 0.56, 13 * k, color, r * 1.7);
+            label.string = action === "shoot" ? "普攻" : action === "grenade" ? count : "跳跃";
+            label.fontSize = 13 * k;
+            label.lineHeight = 16 * k;
+            label.color = color;
+            label.node.setPosition(0, -r * 0.55);
+            label.node.getComponent(UITransform).setContentSize(r * 1.7, 22 * k);
           }
         }, {
           key: "applyInsets",
@@ -2940,7 +3056,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             this.width = width;
             this.height = height;
             this.insets = insets;
-            this.layout = controlLayout(insets, width, height);
+            this.layout = controlLayout(insets, width, height, view.getFrameSize().height);
+            this.adapter.touch.configure(width, height, this.layout, insets);
+            this.joystick.configure(this.layout.joystick);
             this.joystick.node.setPosition(this.layout.joystick.x, this.layout.joystick.y);
             var _iterator2 = _createForOfIteratorHelper(this.touchButtons),
               _step2;
@@ -2950,6 +3068,8 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                 var p = b.action === "jump" ? this.layout.jump : b.action === "shoot" ? this.layout.shoot : this.layout.grenade;
                 b.ink.node.setPosition(p.x, p.y);
                 b.ink.node.getComponent(UITransform).setContentSize(p.hit, p.hit);
+                b.key = "";
+                this.paintTouch(b.ink, b.action, false);
               }
             } catch (err) {
               _iterator2.e(err);
@@ -2957,15 +3077,33 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               _iterator2.f();
             }
             this.pauseButton.setPosition(this.layout.pause.x, this.layout.pause.y);
+            this.pauseButton.setScale(this.layout.pause.hit / 88, this.layout.pause.hit / 88, 1);
             var top = height - insets.top;
-            this.weaponLabel.node.setPosition(300 + insets.left, top - 80);
-            this.levelLabel.node.setPosition(width - 320 - insets.right, top - 40);
-            this.objective.node.setPosition(width - 342 - insets.right, top - 132);
-            this.stats.node.setPosition(174 + insets.left, top - 132);
-            this.message.node.setPosition(width / 2, top - 188);
-            this.guardLabel.node.setPosition(width / 2, top - 155);
-            this.guardNode.setPosition(width / 2 - 640, top - 720);
+            var k = this.layout.joystick.unit;
+            this.adapter.touch.hudHeight = 52 * k;
+            this.platformTools.setPosition(width / 2, top - 44);
+            this.platformTools.setScale(Math.max(1, 44 * k / 54), Math.max(1, 44 * k / 54), 1);
+            this.weaponLabel.node.setPosition(230 * k + insets.left, top - 26 * k);
+            this.weaponLabel.fontSize = 15 * k;
+            this.weaponLabel.lineHeight = 19 * k;
+            this.weaponLabel.node.getComponent(UITransform).setContentSize(240 * k, 26 * k);
+            this.levelLabel.node.setPosition(width - 125 * k - insets.right, top - 26 * k);
+            this.levelLabel.fontSize = 14 * k;
+            this.levelLabel.lineHeight = 18 * k;
+            this.levelLabel.node.getComponent(UITransform).setContentSize(132 * k, 26 * k);
+            this.objective.node.setPosition(width * 0.64, top - 26 * k);
+            this.objective.fontSize = 12 * k;
+            this.objective.lineHeight = 16 * k;
+            this.objective.node.getComponent(UITransform).setContentSize(180 * k, 25 * k);
+            this.stats.node.active = false;
+            this.message.node.setPosition(width / 2, top - 115 * k);
+            this.message.fontSize = 18 * k;
+            this.message.node.getComponent(UITransform).setContentSize(Math.min(width - 40 * k, 600 * k), 30 * k);
+            this.guardNode.setPosition(width / 2 - 640, top - 70 * k - 565);
             this.guardLabel.node.setPosition(640, 565);
+            this.guardLabel.fontSize = 16 * k;
+            this.guardLabel.lineHeight = 20 * k;
+            this.guardLabel.node.getComponent(UITransform).setContentSize(380 * k, 30 * k);
             var _iterator3 = _createForOfIteratorHelper(this.panels),
               _step3;
             try {
@@ -3010,11 +3148,15 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             var _zone$name;
             this.hud.active = s.state === "playing" || s.state === "dying" || s.state === "paused";
             this.controls.active = s.state === "playing" && !portrait;
-            this.weaponLabel.string = "".concat(s.weapon.id === "rifle" ? "自动步枪" : s.weapon.id === "shotgun" ? "霰弹枪" : "火箭筒", "  ").concat(s.weapon.ammo < 0 ? "∞" : s.weapon.ammo, "   \xB7   \u624B\u96F7 ").concat(s.player.grenades);
+            this.adapter.touch.enabled = this.controls.active;
+            this.weaponLabel.string = "".concat(s.weapon.id === "rifle" ? "步枪" : s.weapon.id === "shotgun" ? "霰弹枪" : "火箭筒", "  ").concat(s.weapon.ammo < 0 ? "∞" : s.weapon.ammo);
+            this.levelLabel.string = "\u5173\u5361 01 \xB7 ".concat(Math.floor(s.player.x / s.level.data.width * 100), "%");
+            this.objective.node.active = this.width / this.layout.joystick.unit >= 800 && !s.level.arenaEntered;
             this.message.node.active = s.state === "playing" && (s.pickups.messageTime > 0 || s.combo > 1);
             this.message.string = s.pickups.messageTime > 0 ? s.pickups.lastMessage : "COMBO \xD7 ".concat(s.combo);
             this.joystick.update(input);
             this.rotateNote.active = portrait;
+            this.platformTools.active = !portrait && (s.state === "title" || s.state === "paused");
             if (portrait) {
               this.hud.active = this.guardNode.active = this.message.node.active = false;
               var _iterator4 = _createForOfIteratorHelper(this.panels.values()),
@@ -3035,8 +3177,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             this.guardNode.active = s.state === "playing" && s.level.arenaEntered && s.spawner.guard.alive;
             if (this.guardNode.active) {
               this.guardInk.clear();
-              this.guardInk.rect(470, 539, 340, 12, colors.ink, colors.paper, 3);
-              this.guardInk.rect(470, 539, 340 * s.spawner.guard.health / s.spawner.guard.maxHealth, 12, colors.ink, colors.ink, 1);
+              var bw = 320 * this.layout.joystick.unit;
+              this.guardInk.rect(640 - bw / 2, 539, bw, 7 * this.layout.joystick.unit, colors.ink, colors.paper, 2);
+              this.guardInk.rect(640 - bw / 2, 539, bw * s.spawner.guard.health / s.spawner.guard.maxHealth, 7 * this.layout.joystick.unit, colors.ink, colors.ink, 1);
               this.guardLabel.string = "\u5C65\u5E26\u6218\u8F66 \xB7 \u9636\u6BB5 ".concat(s.spawner.guard.phase, "  ").concat(Math.ceil(s.spawner.guard.health), " / ").concat(s.spawner.guard.maxHealth);
             }
             if (this.lastState !== s.state) {
@@ -3060,48 +3203,49 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             if (this.lastHealth !== s.player.health || this.progress !== progress) {
               this.hudInk.clear();
               var top = this.height - this.insets.top;
-              this.hudInk.rect(0, top - 108, this.width, 108, colors.far, colors.paper, 2);
+              var k = this.layout.joystick.unit;
+              this.hudInk.rect(0, top - 52 * k, this.width, 52 * k, colors.far, colors.paper, 2);
               for (var i = 0; i < GameConfig.player.maxHealth; i++) {
-                var x = 70 + this.insets.left + i * 42,
-                  y = top - 40;
+                var x = (24 + i * 18) * k + this.insets.left,
+                  y = top - 26 * k;
                 var points = [{
-                  x: x - 9,
-                  y: y + 3
+                  x: x - 6 * k,
+                  y: y + 2 * k
                 }, {
-                  x: x - 9,
-                  y: y + 9
+                  x: x - 6 * k,
+                  y: y + 6 * k
                 }, {
-                  x: x - 5,
-                  y: y + 12
-                }, {
-                  x: x,
-                  y: y + 7
-                }, {
-                  x: x + 5,
-                  y: y + 12
-                }, {
-                  x: x + 9,
-                  y: y + 9
-                }, {
-                  x: x + 9,
-                  y: y + 3
+                  x: x - 3 * k,
+                  y: y + 8 * k
                 }, {
                   x: x,
-                  y: y - 7
+                  y: y + 5 * k
                 }, {
-                  x: x - 9,
-                  y: y + 3
+                  x: x + 3 * k,
+                  y: y + 8 * k
+                }, {
+                  x: x + 6 * k,
+                  y: y + 6 * k
+                }, {
+                  x: x + 6 * k,
+                  y: y + 2 * k
+                }, {
+                  x: x,
+                  y: y - 6 * k
+                }, {
+                  x: x - 6 * k,
+                  y: y + 2 * k
                 }];
                 if (i < s.player.health) this.hudInk.polygon(points);
-                this.hudInk.line(points, 4, i < s.player.health ? colors.ink : colors.far);
+                this.hudInk.line(points, 2 * k, i < s.player.health ? colors.ink : colors.far);
               }
               this.hudInk.line([{
                 x: 0,
-                y: top - 108
+                y: top - 52 * k
               }, {
                 x: progress,
-                y: top - 108
-              }], 5, colors.ink);
+                y: top - 52 * k
+              }], 2 * k, colors.ink);
               this.lastHealth = s.player.health;
               this.progress = progress;
             }
@@ -3119,7 +3263,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             } finally {
               _iterator6.f();
             }
-            this.objective.string = s.level.guardDefeated ? "战车已击毁 · 抵达出口 →" : s.level.arenaEntered ? "躲开落点预警 · 击毁机械战车" : "".concat((_zone$name = zone === null || zone === void 0 ? void 0 : zone.name) !== null && _zone$name !== void 0 ? _zone$name : "向右推进", " \xB7 ").concat(remaining, " \u540D\u654C\u4EBA \xB7 \u6E05\u654C\u89E3\u9664\u5C01\u9501");
+            this.objective.string = s.level.guardDefeated ? "战车已击毁 · 抵达出口 →" : s.level.arenaEntered ? "躲开落点预警 · 击毁机械战车" : "".concat((_zone$name = zone === null || zone === void 0 ? void 0 : zone.name) !== null && _zone$name !== void 0 ? _zone$name : "向右推进", " \xB7 ").concat(remaining, " \u654C\u4EBA");
             this.stats.string = "\u51FB\u8D25  ".concat(s.spawner.kills, " / ").concat(s.spawner.enemies.length);
             var _iterator7 = _createForOfIteratorHelper(this.resultStats),
               _step7;
@@ -3139,10 +3283,13 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
                 var b = _step8.value;
                 var held = input.isHeld(b.action);
-                if (held !== b.held) {
-                  b.ink.node.setScale(held ? 0.94 : 1, held ? 0.94 : 1, 1);
-                  this.paintTouch(b.ink, b.action, held);
+                var disabled = b.action === "grenade" ? s.player.grenades === 0 : b.action === "jump" ? !s.player.grounded : !s.player.alive;
+                var cooldown = b.action === "grenade" ? s.grenades.cooldown / GameConfig.grenade.interval : b.action === "shoot" ? s.weapon.cooldown / GameConfig.weapons[s.weapon.id].interval : 0;
+                var key = "".concat(held, ":").concat(disabled, ":").concat(Math.ceil(cooldown * 8), ":").concat(s.player.grenades);
+                if (key !== b.key) {
+                  this.paintTouch(b.ink, b.action, held, disabled, cooldown, String(s.player.grenades));
                   b.held = held;
+                  b.key = key;
                 }
               }
             } catch (err) {
@@ -3327,6 +3474,7 @@ System.register("chunks:///_virtual/InputManager.ts", ['./rollupPluginModLoBabel
           _defineProperty(this, "jumpQueued", false);
           _defineProperty(this, "pauseQueued", false);
           _defineProperty(this, "grenadeQueued", false);
+          _defineProperty(this, "shootQueued", false);
           _defineProperty(this, "joystick", new VirtualJoystick());
           _defineProperty(this, "frame", {
             axis: 0,
@@ -3346,6 +3494,7 @@ System.register("chunks:///_virtual/InputManager.ts", ['./rollupPluginModLoBabel
             if (action === "jump") this.jumpQueued = true;
             if (action === "pause") this.pauseQueued = true;
             if (action === "grenade") this.grenadeQueued = true;
+            if (action === "shoot") this.shootQueued = true;
           }
         }, {
           key: "release",
@@ -3376,13 +3525,14 @@ System.register("chunks:///_virtual/InputManager.ts", ['./rollupPluginModLoBabel
             var frame = this.frame;
             frame.axis = keyboard || this.joystick.axis;
             frame.jump = this.jumpQueued;
-            frame.shoot = this.isHeld("shoot");
+            frame.shoot = this.isHeld("shoot") || this.shootQueued;
             frame.jumpHeld = this.isHeld("jump");
             frame.crouch = this.isHeld("crouch") || this.joystick.vertical < GameConfig.input.crouchThreshold;
             frame.aimY = this.isHeld("aimUp") || this.joystick.vertical > GameConfig.input.aimThreshold ? 1 : 0;
             frame.grenade = this.grenadeQueued;
             this.jumpQueued = false;
             this.grenadeQueued = false;
+            this.shootQueued = false;
             return frame;
           }
         }, {
@@ -3399,6 +3549,7 @@ System.register("chunks:///_virtual/InputManager.ts", ['./rollupPluginModLoBabel
             this.jumpQueued = false;
             this.pauseQueued = false;
             this.grenadeQueued = false;
+            this.shootQueued = false;
             this.joystick.reset();
           }
         }]);
@@ -3409,8 +3560,8 @@ System.register("chunks:///_virtual/InputManager.ts", ['./rollupPluginModLoBabel
   };
 });
 
-System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, cclegacy, Color, node, Ink, colors;
+System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts', './ControlLayout.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, cclegacy, Color, node, Ink, colors, controlLayout;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -3423,6 +3574,8 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
       node = module.node;
       Ink = module.Ink;
       colors = module.colors;
+    }, function (module) {
+      controlLayout = module.controlLayout;
     }],
     execute: function () {
       cclegacy._RF.push({}, "cc96dLMjMj8ozKsDa3wzzYZ", "JoystickView", undefined);
@@ -3434,22 +3587,31 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
           _defineProperty(this, "lastX", 999);
           _defineProperty(this, "lastY", 999);
           _defineProperty(this, "active", false);
+          _defineProperty(this, "style", controlLayout().joystick);
+          this.adapter = adapter;
           this.node = node(parent, "Virtual joystick", 158, 128, 224, 224);
           this.ink = new Ink(this.node);
           adapter.bindJoystick(this.node);
         }
         _createClass(JoystickView, [{
+          key: "configure",
+          value: function configure(style) {
+            this.style = style;
+            this.lastX = 999;
+          }
+        }, {
           key: "update",
           value: function update(input) {
             var s = input.joystick,
               active = s.owner !== null;
+            this.node.setPosition(active ? this.adapter.touch.baseX : this.style.x, active ? this.adapter.touch.baseY : this.style.y);
             if (s.x === this.lastX && s.y === this.lastY && active === this.active) return;
             this.lastX = s.x;
             this.lastY = s.y;
             this.active = active;
             this.ink.clear();
-            this.ink.circle(0, 0, 96, new Color(25, 25, 25, 220), new Color(250, 249, 245, 210), 5);
-            this.ink.circle(0, 0, 80, new Color(25, 25, 25, 125), undefined, 3);
+            this.ink.circle(0, 0, this.style.baseR, new Color(25, 25, 25, active ? 220 : 70), new Color(250, 249, 245, active ? 210 : 60), 5);
+            this.ink.circle(0, 0, this.style.baseR * 0.82, new Color(25, 25, 25, active ? 125 : 45), undefined, 3);
             this.ink.line([{
               x: -44,
               y: 0
@@ -3464,8 +3626,8 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
               x: 0,
               y: 44
             }], 1, new Color(25, 25, 25, 45));
-            this.ink.circle(s.x, s.y, 38, colors.ink, active ? new Color(35, 35, 35, 200) : new Color(250, 249, 245, 225), 5);
-            this.ink.circle(s.x, s.y, 27, active ? colors.paper : colors.far, undefined, 2);
+            this.ink.circle(s.x, s.y, this.style.knobR, colors.ink, active ? new Color(35, 35, 35, 200) : new Color(250, 249, 245, 85), 5);
+            this.ink.circle(s.x, s.y, this.style.knobR * 0.7, active ? colors.paper : colors.far, undefined, 2);
           }
         }]);
         return JoystickView;
@@ -4493,9 +4655,9 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -5284,8 +5446,77 @@ System.register("chunks:///_virtual/PickupSystem.ts", ['./rollupPluginModLoBabel
   };
 });
 
-System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, cclegacy, view, sys, game, Game;
+System.register("chunks:///_virtual/PlatformAdapter.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _createClass, _classCallCheck, cclegacy, view, sys;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+      _classCallCheck = module.classCallCheck;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      view = module.view;
+      sys = module.sys;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "b8afa8IQ89wR7aDvyLGgpb7", "PlatformAdapter", undefined);
+      /** Browser shell implements this contract; Cocos/WeChat never import browser APIs. */
+      var PlatformAdapter = exports('PlatformAdapter', /*#__PURE__*/function () {
+        function PlatformAdapter() {
+          _classCallCheck(this, PlatformAdapter);
+        }
+        _createClass(PlatformAdapter, [{
+          key: "web",
+          get: function get() {
+            return globalThis.__BREAKOUT_PLATFORM__;
+          }
+        }, {
+          key: "frame",
+          value: function frame() {
+            var _this$web$viewport, _this$web;
+            return (_this$web$viewport = (_this$web = this.web) === null || _this$web === void 0 ? void 0 : _this$web.viewport()) !== null && _this$web$viewport !== void 0 ? _this$web$viewport : view.getFrameSize();
+          }
+        }, {
+          key: "browserSafeInsets",
+          value: function browserSafeInsets() {
+            var _this$web2;
+            return (_this$web2 = this.web) === null || _this$web2 === void 0 ? void 0 : _this$web2.safeInsets();
+          }
+        }, {
+          key: "status",
+          value: function status() {
+            var _this$web$status, _this$web3;
+            return (_this$web$status = (_this$web3 = this.web) === null || _this$web3 === void 0 ? void 0 : _this$web3.status()) !== null && _this$web$status !== void 0 ? _this$web$status : {
+              mode: sys.platform === sys.Platform.WECHAT_GAME ? "wechat-mini-game" : sys.isBrowser ? "browser" : "native",
+              fullscreen: false,
+              fullscreenSupported: false,
+              ios: false
+            };
+          }
+        }, {
+          key: "enterFullscreen",
+          value: function enterFullscreen() {
+            var _this$web$enterFullsc, _this$web4;
+            return (_this$web$enterFullsc = (_this$web4 = this.web) === null || _this$web4 === void 0 ? void 0 : _this$web4.enterFullscreen()) !== null && _this$web$enterFullsc !== void 0 ? _this$web$enterFullsc : Promise.resolve({
+              entered: false,
+              message: "当前平台由系统管理显示方向与全屏。"
+            });
+          }
+        }, {
+          key: "subscribeInactive",
+          value: function subscribeInactive(fn) {
+            var _this$web$subscribeIn, _this$web5;
+            return (_this$web$subscribeIn = (_this$web5 = this.web) === null || _this$web5 === void 0 ? void 0 : _this$web5.subscribeInactive(fn)) !== null && _this$web$subscribeIn !== void 0 ? _this$web$subscribeIn : function () {};
+          }
+        }]);
+        return PlatformAdapter;
+      }());
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './PlatformAdapter.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, cclegacy, view, sys, game, Game, PlatformAdapter;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -5297,6 +5528,8 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
       sys = module.sys;
       game = module.game;
       Game = module.Game;
+    }, function (module) {
+      PlatformAdapter = module.PlatformAdapter;
     }],
     execute: function () {
       cclegacy._RF.push({}, "d600bzHuylURQg/PYNiQ6L5", "PlatformBridge", undefined);
@@ -5304,12 +5537,14 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
       var PlatformBridge = exports('PlatformBridge', /*#__PURE__*/function () {
         function PlatformBridge() {
           _classCallCheck(this, PlatformBridge);
+          _defineProperty(this, "adapter", new PlatformAdapter());
+          _defineProperty(this, "unsubscribe", void 0);
           _defineProperty(this, "onHide", void 0);
         }
         _createClass(PlatformBridge, [{
           key: "safeInsets",
           value: function safeInsets() {
-            var _BREAKOUT_SAFE_AREA_, _ref, _browserInsets$left, _browserInsets$right, _browserInsets$bottom, _browserInsets$top;
+            var _browserInsets$left, _browserInsets$right, _browserInsets$bottom, _browserInsets$top;
             var width = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1280;
             var height = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 720;
             var frame = view.getFrameSize(),
@@ -5317,7 +5552,7 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
               scale = Math.min(frame.width / width, frame.height / height);
             var mx = (frame.width - width * scale) / 2,
               my = (frame.height - height * scale) / 2;
-            var browserInsets = (_BREAKOUT_SAFE_AREA_ = (_ref = globalThis).__BREAKOUT_SAFE_AREA__) === null || _BREAKOUT_SAFE_AREA_ === void 0 ? void 0 : _BREAKOUT_SAFE_AREA_.call(_ref);
+            var browserInsets = this.adapter.browserSafeInsets();
             return {
               left: Math.max(0, (r.x - mx) / scale, ((_browserInsets$left = browserInsets === null || browserInsets === void 0 ? void 0 : browserInsets.left) !== null && _browserInsets$left !== void 0 ? _browserInsets$left : 0) / scale),
               right: Math.max(0, (frame.width - r.x - r.width - mx) / scale, ((_browserInsets$right = browserInsets === null || browserInsets === void 0 ? void 0 : browserInsets.right) !== null && _browserInsets$right !== void 0 ? _browserInsets$right : 0) / scale),
@@ -5330,15 +5565,18 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
           value: function install(onHide, snapshot) {
             this.onHide = onHide;
             game.on(Game.EVENT_HIDE, onHide);
+            this.unsubscribe = this.adapter.subscribeInactive(onHide);
             globalThis.__BREAKOUT__ = {
-              version: "0.2.1",
+              version: "0.4.0",
               snapshot: snapshot
             };
           }
         }, {
           key: "destroy",
           value: function destroy() {
+            var _this$unsubscribe;
             if (this.onHide) game.off(Game.EVENT_HIDE, this.onHide);
+            (_this$unsubscribe = this.unsubscribe) === null || _this$unsubscribe === void 0 || _this$unsubscribe.call(this);
             delete globalThis.__BREAKOUT__;
           }
         }]);
@@ -6337,6 +6575,161 @@ System.register("chunks:///_virtual/TankBoss.ts", ['./rollupPluginModLoBabelHelp
         }]);
         return TankBoss;
       }(EnemyController));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TouchInputManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Types.ts', './ControlLayout.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, cclegacy, clamp, controlLayout;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+      _classCallCheck = module.classCallCheck;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      clamp = module.clamp;
+    }, function (module) {
+      controlLayout = module.controlLayout;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "eec6fZ6/LggsEuIFmD9MNYl", "TouchInputManager", undefined);
+      var contains = function contains(r, x, y) {
+        return x >= r.x && y >= r.y && x <= r.x + r.w && y <= r.y + r.h;
+      };
+      /** Explicit hit-test arbitration and one owner per finger, independent of any event bubbling. */
+      var TouchInputManager = exports('TouchInputManager', /*#__PURE__*/function () {
+        function TouchInputManager(input) {
+          _classCallCheck(this, TouchInputManager);
+          _defineProperty(this, "owners", new Map());
+          _defineProperty(this, "enabled", false);
+          _defineProperty(this, "rightBlankShooting", true);
+          _defineProperty(this, "width", 1280);
+          _defineProperty(this, "height", 720);
+          _defineProperty(this, "hudHeight", 108);
+          _defineProperty(this, "originX", 0);
+          _defineProperty(this, "originY", 0);
+          _defineProperty(this, "baseX", 0);
+          _defineProperty(this, "baseY", 0);
+          _defineProperty(this, "layout", controlLayout());
+          _defineProperty(this, "insets", {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0
+          });
+          _defineProperty(this, "regions", []);
+          this.input = input;
+        }
+        _createClass(TouchInputManager, [{
+          key: "configure",
+          value: function configure(width, height, layout, insets) {
+            var ratio = layout.joystick.unit / this.layout.joystick.unit;
+            var oldHeight = this.height,
+              dx = this.input.joystick.x,
+              dy = this.input.joystick.y,
+              owner = this.input.joystick.owner;
+            this.originX *= ratio;
+            this.originY = height - (oldHeight - this.originY) * ratio;
+            this.width = width;
+            this.height = height;
+            this.layout = layout;
+            this.insets = insets;
+            this.input.joystick.radius = layout.joystick.r;
+            this.hudHeight = 52 * layout.joystick.unit;
+            if (owner !== null) {
+              this.input.joystick.move(owner, dx * ratio, dy * ratio);
+              this.updateBase();
+            }
+          }
+        }, {
+          key: "setRegions",
+          value: function setRegions(regions) {
+            this.regions = regions.sort(function (a, b) {
+              return a.priority - b.priority;
+            });
+          }
+        }, {
+          key: "start",
+          value: function start(id, x, y) {
+            if (this.owners.has(id)) return;
+            var region = this.regions.find(function (r) {
+              return contains(r.bounds, x, y);
+            });
+            if (region) {
+              if (region.action && this.enabled) {
+                this.input.press("touch:".concat(id), region.action);
+                this.owners.set(id, {
+                  role: "action",
+                  region: region
+                });
+              } else this.owners.set(id, {
+                role: region.action ? "ignored" : "ui",
+                region: region
+              });
+              return;
+            }
+            if (!this.enabled || y >= this.height - this.hudHeight - this.insets.top || x < 0 || x > this.width || y < 0 || y > this.height) {
+              this.owners.set(id, {
+                role: "ignored"
+              });
+              return;
+            }
+            if (x < this.width / 2) {
+              if (this.input.joystick.start(id, 0, 0)) {
+                this.originX = x;
+                this.originY = y;
+                this.updateBase();
+                this.owners.set(id, {
+                  role: "move"
+                });
+              } else this.owners.set(id, {
+                role: "ignored"
+              });
+            } else if (this.rightBlankShooting) {
+              this.input.press("touch:".concat(id), "shoot");
+              this.owners.set(id, {
+                role: "action"
+              });
+            } else this.owners.set(id, {
+              role: "ignored"
+            });
+          }
+        }, {
+          key: "move",
+          value: function move(id, x, y) {
+            var _this$owners$get;
+            if (((_this$owners$get = this.owners.get(id)) === null || _this$owners$get === void 0 ? void 0 : _this$owners$get.role) === "move") this.input.joystick.move(id, x - this.originX, y - this.originY);
+          }
+        }, {
+          key: "updateBase",
+          value: function updateBase() {
+            var r = this.layout.joystick.baseR,
+              gap = 6 * this.layout.joystick.unit;
+            this.baseX = clamp(this.originX, this.insets.left + r + gap, this.width / 2 - r - gap);
+            this.baseY = clamp(this.originY, this.insets.bottom + r + gap, this.height - this.hudHeight - this.insets.top - r - gap);
+          }
+        }, {
+          key: "end",
+          value: function end(id, x, y) {
+            var cancelled = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+            var owner = this.owners.get(id);
+            this.owners["delete"](id);
+            this.input.release("touch:".concat(id));
+            this.input.joystick.end(id);
+            return !cancelled && (owner === null || owner === void 0 ? void 0 : owner.role) === "ui" && owner.region && contains(owner.region.bounds, x, y) ? owner.region.id : undefined;
+          }
+        }, {
+          key: "clear",
+          value: function clear() {
+            this.owners.clear();
+            this.input.clear();
+          }
+        }]);
+        return TouchInputManager;
+      }());
       cclegacy._RF.pop();
     }
   };
