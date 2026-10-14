@@ -1,5 +1,6 @@
 import { EnemyKind, Rect } from "../core/Types";
 import { ObjectData } from "../world/DestructibleObject";
+import { road, roadHeight } from "./TerrainProfile";
 export interface Solid extends Rect {
   kind: "ground" | "step" | "crate" | "platform";
   entityId?: string;
@@ -13,6 +14,7 @@ export interface EnemySpawn {
   y: number;
   patrol: number;
   health?: number;
+  onPlatform?: boolean;
 }
 export interface MechanismData {
   id: string;
@@ -50,7 +52,7 @@ export const AbandonedBase: LevelDefinition = {
   spawn: { x: 110, y: 150 },
   exit: { x: 8070, y: 150 },
   solids: [
-    { x: 0, y: 50, w: 8200, h: 100, kind: "ground" },
+    ...road.map((r) => ({ ...r, kind: "ground" as const })),
     { x: 420, y: 150, w: 76, h: 54, kind: "crate" },
     { x: 950, y: 150, w: 92, h: 48, kind: "step" },
     { x: 1042, y: 150, w: 90, h: 88, kind: "step" },
@@ -260,3 +262,13 @@ AbandonedBase.objects.push(
   { id: "arena-sandbag", kind: "sandbag", x: 7410, y: 150, w: 80, h: 40 },
   { id: "arena-barrel", kind: "barrel", x: 7590, y: 150, w: 38, h: 58 },
 );
+
+// Attach ground props to the authored level pads; elevated caches keep their platform heights.
+for (const s of AbandonedBase.solids)
+  if (s.kind !== "ground" && s.y === 150) s.y = roadHeight(s.x + s.w / 2);
+for (const o of AbandonedBase.objects)
+  if (o.y === 150) o.y = roadHeight(o.x + o.w / 2);
+for (const e of AbandonedBase.enemies) {
+  e.onPlatform = e.y > 150;
+  if (!e.onPlatform) e.y = roadHeight(e.x);
+}

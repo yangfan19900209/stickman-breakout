@@ -1,5 +1,5 @@
 import { AbandonedBase, Solid, LevelDefinition } from "./LevelData";
-import { Rect } from "../core/Types";
+import { Rect, surfaceY } from "../core/Types";
 import { DestructibleManager } from "../world/DestructibleManager";
 import { MechanismController } from "./MechanismController";
 import type { PlayerController } from "../player/PlayerController";
@@ -12,6 +12,7 @@ export interface KinematicBody {
   grounded: boolean;
   halfWidth: number;
   height: number;
+  groundSlope?: number;
 }
 
 /** Deterministic kinematic collisions, independent of Box2D and platform/browser APIs. */
@@ -25,7 +26,7 @@ export class LevelController {
   arenaEntered = false;
   mechanisms: MechanismController[] = [];
   clearedZones = new Set<string>();
-  private barriers: Solid[] = [];
+  private playerX = 0;
   constructor(data: LevelDefinition = AbandonedBase) {
     this.data = data;
     this.reset();
@@ -37,16 +38,7 @@ export class LevelController {
     this.mechanisms = (this.data.mechanisms ?? []).map(
       (d) => new MechanismController(d),
     );
-    this.barriers = (this.data.zones ?? [])
-      .filter((z) => z.id !== "D")
-      .map((z) => ({
-        x: z.end,
-        y: 150,
-        w: 12,
-        h: 380,
-        kind: "step",
-        entityId: `gate:${z.id}`,
-      }));
+    this.playerX = this.data.spawn.x;
     this.staticSolids.length = 0;
     for (const s of this.data.solids)
       if (s.kind !== "crate") this.staticSolids.push({ ...s });
@@ -69,8 +61,6 @@ export class LevelController {
           }),
         );
     for (const m of this.mechanisms) this.solids.push(m.rect);
-    for (const b of this.barriers)
-      if (!this.clearedZones.has(b.entityId!.slice(5))) this.solids.push(b);
   }
   updateWorld(
     dt: number,
@@ -108,8 +98,12 @@ export class LevelController {
         changed = true;
       }
     }
-    if (this.data.arena && p.x >= this.data.arena.start + 70)
-      this.arenaEntered = true;
+    this.playerX = p.x;
+    // Clearance is optional. Enter by position; retreat never traps the player.
+    // Hysteresis keeps the camera/encounter stable while moving across the entrance.
+    this.arenaEntered =
+      !!this.data.arena &&
+      p.x >= this.data.arena.start + (this.arenaEntered ? -80 : 30);
     if (changed) {
       this.objectRevision = -1;
       this.refreshSolids();
@@ -117,7 +111,9 @@ export class LevelController {
   }
   get zone() {
     return (
-      (this.data.zones ?? []).find((z) => !this.clearedZones.has(z.id)) ?? null
+      (this.data.zones ?? []).find(
+        (z) => this.playerX >= z.start && this.playerX < z.end,
+      ) ?? null
     );
   }
   bounds(body: KinematicBody): Rect {
@@ -131,9 +127,19 @@ export class LevelController {
   move(body: KinematicBody, dt: number): void {
     const oldX = body.x,
       dx = body.vx * dt;
+    const onTerrain =
+      body.grounded &&
+      body.vy <= 0 &&
+      this.solids.some(
+        (s) =>
+          s.slope &&
+          oldX >= s.x &&
+          oldX <= s.x + s.w &&
+          Math.abs(body.y - surfaceY(s, oldX)) < 0.6,
+      );
     body.x += dx;
     for (const s of this.solids) {
-      if (s.oneWay) continue;
+      if (s.oneWay || s.slope) continue;
       if (body.y >= s.y + s.h - 0.01 || body.y + body.height <= s.y + 0.01)
         continue;
       if (
@@ -156,17 +162,24 @@ export class LevelController {
       dy = body.vy * dt;
     body.y += dy;
     body.grounded = false;
+    body.groundSlope = 0;
     for (const s of this.solids) {
       if (
         body.x + body.halfWidth <= s.x ||
         body.x - body.halfWidth >= s.x + s.w
       )
         continue;
-      const top = s.y + s.h;
-      if (dy <= 0 && oldY >= top - 0.01 && body.y <= top) {
-        body.y = Math.max(body.y, top);
+      if (s.slope && (body.x < s.x || body.x > s.x + s.w)) continue;
+      const top = surfaceY(s, body.x);
+      if (
+        dy <= 0 &&
+        ((onTerrain && s.slope) ||
+          (oldY >= surfaceY(s, oldX) - 0.01 && body.y <= top))
+      ) {
+        body.y = onTerrain && s.slope ? top : Math.max(body.y, top);
         body.vy = 0;
         body.grounded = true;
+        body.groundSlope = s.slope ? (s.slope.right - s.slope.left) / s.w : 0;
       } else if (
         !s.oneWay &&
         dy > 0 &&
@@ -181,11 +194,12 @@ export class LevelController {
       body.halfWidth,
       Math.min(this.data.width - body.halfWidth, body.x),
     );
-    if (this.arenaEntered && this.data.arena && "isPlayer" in body)
-      body.x = Math.max(
-        this.data.arena.start + 30,
-        Math.min(this.data.arena.end - 30, body.x),
-      );
+  }
+  groundY(x: number): number {
+    const s = this.staticSolids.find(
+      (s) => s.kind === "ground" && x >= s.x && x <= s.x + s.w,
+    );
+    return s ? surfaceY(s, x) : 150;
   }
   reachedExit(x: number): boolean {
     return this.guardDefeated && x >= this.data.exit.x - 28;

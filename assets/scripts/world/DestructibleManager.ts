@@ -1,5 +1,5 @@
 import { ObjectData, DestructibleObject } from "./DestructibleObject";
-import { Rect } from "../core/Types";
+import { Rect, surfaceY } from "../core/Types";
 export class DestructibleManager {
   objects: DestructibleObject[] = [];
   revision = 0;
@@ -25,10 +25,10 @@ export class DestructibleManager {
           if (
             o.x + o.w > r.x &&
             o.x < r.x + r.w &&
-            oldY >= r.y + r.h &&
-            o.y <= r.y + r.h
+            oldY >= surfaceY(r, o.x + o.w / 2) &&
+            o.y <= surfaceY(r, o.x + o.w / 2)
           ) {
-            o.y = r.y + r.h;
+            o.y = surfaceY(r, o.x + o.w / 2);
             o.falling = false;
             o.vy = 0;
             this.onHit?.(o, false);

@@ -2,7 +2,7 @@ import { GameConfig as C } from "../core/GameConfig";
 import { PickupKind } from "./DestructibleObject";
 import { PlayerController } from "../player/PlayerController";
 import { WeaponSystem } from "../combat/WeaponSystem";
-import { Rect } from "../core/Types";
+import { Rect, surfaceY } from "../core/Types";
 export interface Pickup {
   active: boolean;
   x: number;
@@ -50,10 +50,10 @@ export class PickupSystem {
         if (
           p.x > s.x - 8 &&
           p.x < s.x + s.w + 8 &&
-          oldY - 10 >= s.y + s.h &&
-          p.y - 10 <= s.y + s.h
+          oldY - 10 >= surfaceY(s, p.x) &&
+          p.y - 10 <= surfaceY(s, p.x)
         ) {
-          p.y = s.y + s.h + 10;
+          p.y = surfaceY(s, p.x) + 10;
           p.vy = 0;
         }
       if (

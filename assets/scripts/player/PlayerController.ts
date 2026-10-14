@@ -32,6 +32,8 @@ export class PlayerController {
   deadTime = 0;
   recoil = 0;
   animationTime = 0;
+  stride = 0;
+  groundSlope = 0;
   private coyote = 0;
   private buffer = 0;
   private hurtbox: Rect = { x: 0, y: 0, w: 26, h: 65 };
@@ -49,7 +51,7 @@ export class PlayerController {
     if (this.hitTime > 0) return "Hit";
     if (!this.grounded) return this.vy > 0 ? "Jump" : "Fall";
     if (this.crouched) return "Crouch";
-    if (this.landTime > 0.05) return "Land";
+    if (this.landTime > 0) return "Land";
     if (Math.abs(this.vx) > 8) return "Run";
     return this.recoil > 0 ? "Shoot" : "Idle";
   }
@@ -66,6 +68,7 @@ export class PlayerController {
     this.crouched = false;
     this.aimPitch = 0;
     this.landTime = 0;
+    this.stride = this.groundSlope = 0;
     this.jumpCut = false;
     this.invincible =
       this.hitTime =
@@ -90,16 +93,18 @@ export class PlayerController {
       const wantsCrouch = !!input.crouch && this.grounded;
       const blockedStanding =
         this.crouched &&
-        level.solids.some((s) =>
-          overlaps(
-            {
-              x: this.x - 13,
-              y: this.y + 0.5,
-              w: 26,
-              h: C.player.height - 0.5,
-            },
-            s,
-          ),
+        level.solids.some(
+          (s) =>
+            !s.slope &&
+            overlaps(
+              {
+                x: this.x - 13,
+                y: this.y + 0.5,
+                w: 26,
+                h: C.player.height - 0.5,
+              },
+              s,
+            ),
         );
       this.crouched = wantsCrouch || blockedStanding;
       this.aimPitch = input.aimY
@@ -134,8 +139,10 @@ export class PlayerController {
     }
     this.vy -= C.player.gravity * dt;
     const wasGrounded = this.grounded;
+    const oldX = this.x;
     level.move(this, dt);
-    if (!wasGrounded && this.grounded) this.landTime = 0.12;
+    if (this.grounded) this.stride += ((this.x - oldX) * this.facing) / 112;
+    if (!wasGrounded && this.grounded) this.landTime = 0.14;
     if (this.y < -200) this.takeDamage(this.health, this.facing);
   }
   takeDamage(amount: number, direction: Facing): boolean {

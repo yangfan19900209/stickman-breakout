@@ -203,7 +203,7 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
     }],
     execute: function () {
       cclegacy._RF.push({}, "5e821lYdrzSBbyKuLk0Gd/G", "CharacterArt", undefined);
-      /** Comic volumes follow the same joint rig used by the actual weapon muzzle. */
+      /** Original rounded comic infantry; volumes track the same joints as the muzzle. */
       var CharacterArt = exports('CharacterArt', /*#__PURE__*/function () {
         function CharacterArt() {
           _classCallCheck(this, CharacterArt);
@@ -217,132 +217,180 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
           key: "draw",
           value: function draw(ink, a, cameraX) {
             var _a$aimPitch, _a$weaponId, _a$aimPitch2, _a$shieldHealth;
-            var armed = a.kind !== "melee",
-              pose = this.animator.sample(a.animation, a.animationTime, a.recoil, armed, a.deadTime, (_a$aimPitch = a.aimPitch) !== null && _a$aimPitch !== void 0 ? _a$aimPitch : 0);
+            var armed = a.kind !== "melee";
+            var pose = this.animator.sample(a.animation, a.animationTime, a.recoil, armed, a.deadTime, (_a$aimPitch = a.aimPitch) !== null && _a$aimPitch !== void 0 ? _a$aimPitch : 0, a);
             var alpha = a.animation === "Dead" ? Math.max(0, 1 - a.deadTime / 1.25) : a.invincible && Math.floor(a.invincible * 14) % 2 === 0 ? 0.35 : 1;
             var hit = a.animation === "Hit" && Math.floor(a.animationTime * 35) % 2 === 0;
-            this.outline.set(hit ? 135 : 24, hit ? 135 : 24, hit ? 135 : 24, alpha * 255);
-            this.paper.set(250, 249, 245, alpha * 255);
-            this.shade.set(175, 175, 170, alpha * 255);
-            var color = this.outline,
-              paper = this.paper,
-              shade = this.shade;
+            this.outline.set(hit ? 120 : 20, hit ? 120 : 20, hit ? 120 : 20, alpha * 255);
+            this.paper.set(253, 253, 251, alpha * 255);
+            this.shade.set(179, 179, 174, alpha * 255);
+            var black = this.outline,
+              white = this.paper,
+              gray = this.shade;
             var x = a.x - cameraX,
               y = a.y,
-              d = a.facing;
-            var outline = (a.kind ? GameConfig.rendering.lineWidths.enemy : GameConfig.rendering.lineWidths.hero) * 0.52;
+              d = a.facing,
+              g = ink.g;
+            var width = (a.kind ? GameConfig.rendering.lineWidths.enemy : GameConfig.rendering.lineWidths.hero) * 0.55;
+            var px = function px(v) {
+                return x + v * d;
+              },
+              py = function py(v) {
+                return y + v;
+              };
             var line = function line(ax, ay, bx, by) {
               var w = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1.7;
-              var tint = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : color;
-              ink.g.lineCap = Graphics.LineCap.BUTT;
-              ink.segment(x + ax * d, y + ay, x + bx * d, y + by, w, tint);
-              ink.g.lineCap = Graphics.LineCap.ROUND;
+              var tint = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : black;
+              g.lineCap = Graphics.LineCap.BUTT;
+              ink.segment(px(ax), py(ay), px(bx), py(by), w, tint);
+              g.lineCap = Graphics.LineCap.ROUND;
             };
-            var shape = function shape(coords) {
-              var fill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : paper;
-              var w = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : outline;
-              var g = ink.g;
-              g.moveTo(x + coords[0] * d, y + coords[1]);
-              for (var i = 2; i < coords.length; i += 2) g.lineTo(x + coords[i] * d, y + coords[i + 1]);
+            var finish = function finish() {
+              var fill = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : white;
+              var w = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : width;
               g.close();
               g.fillColor = fill;
               g.fill();
-              g.strokeColor = color;
+              g.strokeColor = black;
               g.lineWidth = w;
               g.stroke();
             };
-            var limb = function limb(v, u, thickness) {
-              var fill = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : paper;
-              var joint = arguments.length > 4 ? arguments[4] : undefined;
-              // One continuous path per limb avoids duplicated round caps at every elbow/knee.
-              var g = ink.g;
+            var shape = function shape(pts) {
+              var fill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : white;
+              var w = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : width;
+              g.moveTo(px(pts[0]), py(pts[1]));
+              for (var i = 2; i < pts.length; i += 2) g.lineTo(px(pts[i]), py(pts[i + 1]));
+              finish(fill, w);
+            };
+            var curve = function curve(ax, ay, bx, by, cx, cy) {
+              return g.bezierCurveTo(px(ax), py(ay), px(bx), py(by), px(cx), py(cy));
+            };
+            var limb = function limb(start, joint, end, w) {
+              var fill = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : white;
               for (var pass = 0; pass < 2; pass++) {
-                g.moveTo(x + v.x * d, y + v.y);
-                if (joint) g.lineTo(x + joint.x * d, y + joint.y);
-                g.lineTo(x + u.x * d, y + u.y);
-                g.lineWidth = pass === 0 ? thickness + outline * 2 : thickness;
-                g.strokeColor = pass === 0 ? color : fill;
+                g.moveTo(px(start.x), py(start.y));
+                g.lineTo(px(joint.x), py(joint.y));
+                g.lineTo(px(end.x), py(end.y));
+                g.strokeColor = pass ? fill : black;
+                g.lineWidth = pass ? w : w + width * 2;
                 g.stroke();
               }
             };
-            var circle = function circle(cx, cy, r) {
-              var fill = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : paper;
-              var w = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : outline;
-              return ink.circle(x + cx * d, y + cy, r, color, fill, w);
-            };
-            if (a.animation !== "Dead") ink.ellipse(x, y - 2, 21, 3, colors.far, colors.far, 1);
-            limb(pose.leftHip, pose.leftAnkle, 4.5, shade, pose.leftKnee);
             var boot = function boot(v) {
-              shape([v.x - 5, v.y + 6, v.x + 4, v.y + 5, v.x + 10, v.y + 1, v.x + 9, v.y - 2, v.x - 6, v.y - 2], color, 2);
-              line(v.x - 3, v.y + 3, v.x + 3, v.y + 3, 1.4, paper);
+              g.moveTo(px(v.x - 6), py(v.y + 6));
+              curve(v.x - 3, v.y + 9, v.x + 4, v.y + 6, v.x + 5, v.y + 3);
+              curve(v.x + 16, v.y + 3, v.x + 15, v.y - 2, v.x + 10, v.y - 2);
+              g.lineTo(px(v.x - 7), py(v.y - 2));
+              finish(black, 2);
+              line(v.x - 4, v.y + 1, v.x + 9, v.y + 1, 1.6, gray);
             };
+            if (a.animation !== "Dead") ink.ellipse(x, y - 3, 25, 3, colors.far, colors.far, 1);
+            limb(pose.leftHip, pose.leftKnee, pose.leftAnkle, 6, gray);
             boot(pose.leftAnkle);
             var t = pose.torso,
               n = pose.neck;
-            var packX = t.x - (a.kind === "ranged" ? 14 : 12),
-              packY = t.y + 13;
-            ink.ellipse(x + packX * d, y + packY, 9, 13, color, shade, outline);
-            shape([packX - 6, packY + 8, packX + 6, packY + 9, packX + 6, packY + 3, packX - 6, packY + 2], paper, 2);
-            line(packX - 3, packY - 8, packX - 3, packY, 1.6);
-            line(packX + 3, packY - 8, packX + 3, packY, 1.6);
-            limb(pose.leftShoulder, pose.leftHand, 4.2, shade, pose.leftElbow);
-            shape([n.x - 7, n.y - 3, n.x + 7, n.y - 5, t.x + 8, t.y + 1, t.x - 7, t.y - 1, n.x - 8, n.y - 16]);
-            line(n.x - 4, n.y - 5, t.x - 3, t.y + 3, 3, shade);
-            line(n.x + 3, n.y - 8, t.x + 4, t.y + 4, 1.7);
-            shape([t.x - 8, t.y + 3, t.x + 8, t.y + 2, t.x + 8, t.y - 3, t.x - 8, t.y - 3], shade, 2);
-            shape([t.x - 2, t.y + 10, t.x + 5, t.y + 10, t.x + 5, t.y + 4, t.x - 2, t.y + 4], shade, 1.5);
-            limb(pose.rightHip, pose.rightAnkle, 4.5, paper, pose.rightKnee);
+            // A curved pack with a distinct rolled blanket; no rectangular body substitute.
+            var bx = t.x - 15,
+              by = t.y + 13;
+            g.moveTo(px(bx - 9), py(by - 12));
+            curve(bx - 15, by - 5, bx - 14, by + 15, bx - 5, by + 16);
+            curve(bx + 14, by + 20, bx + 13, by - 13, bx + 4, by - 15);
+            curve(bx, by - 17, bx - 6, by - 15, bx - 9, by - 12);
+            finish(gray, 3);
+            ink.ellipse(px(bx - 1), py(by + 13), 12, 5, black, gray, 2.5);
+            line(bx - 7, by + 14, bx + 6, by + 14, 1.8, white);
+            line(bx - 6, by - 9, bx - 3, by + 6, 2.4);
+            line(bx + 2, by - 9, bx + 5, by + 6, 2.4);
+            g.moveTo(px(bx - 8), py(by + 2));
+            curve(bx - 7, by - 4, bx + 4, by - 4, bx + 6, by + 2);
+            g.strokeColor = black;
+            g.lineWidth = 1.6;
+            g.stroke();
+            line(bx - 1, by, bx - 1, by - 4, 2.5);
+            limb(pose.leftShoulder, pose.leftElbow, pose.leftHand, 6, gray);
+            // Vest shoulders and waist form a soft tapered silhouette around the rig.
+            g.moveTo(px(n.x - 9), py(n.y - 2));
+            curve(n.x - 16, n.y - 10, t.x - 12, t.y + 5, t.x - 8, t.y - 1);
+            curve(t.x - 2, t.y - 5, t.x + 9, t.y - 3, t.x + 11, t.y + 2);
+            curve(t.x + 14, t.y + 10, n.x + 15, n.y - 7, n.x + 8, n.y - 3);
+            finish();
+            line(n.x - 6, n.y - 5, t.x - 4, t.y + 3, 3.5, gray);
+            line(t.x - 8, t.y + 1, t.x + 9, t.y + 1, 4.5);
+            shape([t.x - 2, t.y + 3, t.x + 3, t.y + 3, t.x + 3, t.y - 1, t.x - 2, t.y - 1], white, 1.4);
+            shape([t.x + 1, t.y + 12, t.x + 9, t.y + 11, t.x + 8, t.y + 4, t.x, t.y + 4], gray, 2);
+            limb(pose.rightHip, pose.rightKnee, pose.rightAnkle, 6.5);
+            // Cloth folds, articulated knee pad and ankle cuff read as a uniform at phone scale.
+            var k = pose.rightKnee,
+              f = pose.rightAnkle;
+            ink.ellipse(px(k.x + 1), py(k.y), 4.5, 5.5, black, gray, 1.6);
+            line(f.x - 3, f.y + 8, f.x + 4, f.y + 8, 2.1);
+            line(pose.rightHip.x + 1, pose.rightHip.y - 5, k.x - 2, k.y + 8, 1.3, gray);
             boot(pose.rightAnkle);
-            limb(pose.rightShoulder, pose.rightHand, 4.8, paper, pose.rightElbow);
+            limb(pose.rightShoulder, pose.rightElbow, pose.rightHand, 7);
+            ink.ellipse(px(pose.rightShoulder.x), py(pose.rightShoulder.y - 3), 5, 5.5, black, white, 1.7);
+            line(pose.rightShoulder.x - 2, pose.rightShoulder.y - 2, pose.rightShoulder.x + 2, pose.rightShoulder.y - 4, 1.4);
+            // Keep the receiver and magazine visible in front of the sleeve; hand/muzzle still share the rig.
+            if (armed && a.animation !== "Dead") this.weapon.draw(ink, (_a$weaponId = a.weaponId) !== null && _a$weaponId !== void 0 ? _a$weaponId : "rifle", px(pose.rightHand.x), py(pose.rightHand.y), d, (_a$aimPitch2 = a.aimPitch) !== null && _a$aimPitch2 !== void 0 ? _a$aimPitch2 : 0, 1, black, white);
             var h = pose.head;
-            ink.ellipse(x + h.x * d, y + h.y, 11.8, 11.5, color, paper, outline);
+            g.moveTo(px(h.x - 11), py(h.y + 5));
+            curve(h.x - 16, h.y - 5, h.x - 5, h.y - 15, h.x + 4, h.y - 11);
+            curve(h.x + 11, h.y - 11, h.x + 12, h.y - 7, h.x + 12, h.y - 4);
+            curve(h.x + 18, h.y - 3, h.x + 15, h.y + 1, h.x + 12, h.y + 2);
+            curve(h.x + 11, h.y + 15, h.x - 9, h.y + 17, h.x - 11, h.y + 5);
+            finish();
             if (a.kind === "melee") {
-              line(h.x - 11, h.y + 5, h.x + 11, h.y + 5, 5);
-              line(h.x - 11, h.y + 5, h.x - 21, h.y + 2, 2.3);
-              line(h.x - 12, h.y + 3, h.x - 18, h.y - 3, 2.3);
-            } else if (a.kind === "ranged") {
-              shape([h.x - 12, h.y + 5, h.x - 10, h.y + 12, h.x + 5, h.y + 14, h.x + 11, h.y + 8, h.x + 18, h.y + 6, h.x + 13, h.y + 3], shade);
-              line(h.x - 9, h.y + 8, h.x + 8, h.y + 8, 1.4, paper);
+              line(h.x - 13, h.y + 5, h.x + 12, h.y + 5, 5.5);
+              shape([h.x - 11, h.y + 5, h.x - 24, h.y + 9, h.x - 19, h.y + 1, h.x - 24, h.y - 5, h.x - 12, h.y + 2], black, 1);
             } else {
-              shape([h.x - 13, h.y + 3, h.x - 13, h.y + 8, h.x - 7, h.y + 14, h.x + 4, h.y + 15, h.x + 11, h.y + 11, h.x + 13, h.y + 4], a.kind === "shield" ? shade : paper);
-              line(h.x - 12, h.y + 5, h.x + 14, h.y + 5, 3);
-              if (a.kind === "shield") {
-                shape([h.x - 4, h.y + 4, h.x + 11, h.y + 3, h.x + 10, h.y - 7, h.x + 1, h.y - 9, h.x - 4, h.y - 3], shade, 2);
-                line(h.x + 2, h.y, h.x + 8, h.y, 2, paper);
-              } else {
-                shape([h.x - 3, h.y + 8, h.x + 8, h.y + 8, h.x + 10, h.y + 4, h.x - 4, h.y + 4], shade, 1.7);
-                line(h.x - 1, h.y + 7, h.x + 4, h.y + 7, 1.2, paper);
+              // Round steel dome and broad rolled rim; rifle troops use a forward visor.
+              g.moveTo(px(h.x - 15), py(h.y + 5));
+              curve(h.x - 16, h.y + 21, h.x + 12, h.y + 23, h.x + 15, h.y + 6);
+              g.lineTo(px(h.x + (a.kind === "ranged" ? 21 : 15)), py(h.y + 3));
+              g.lineTo(px(h.x - 15), py(h.y + 3));
+              finish(a.kind ? gray : white, width);
+              line(h.x - 13, h.y + 7, h.x + 12, h.y + 7, 2.5);
+              // Hero goggles sit on the rim with a broad pale lens, visibly separate from the face.
+              if (!a.kind) {
+                shape([h.x - 3, h.y + 12, h.x + 7, h.y + 12, h.x + 10, h.y + 7, h.x - 4, h.y + 7], gray, 2.3);
+                line(h.x - 1, h.y + 10, h.x + 5, h.y + 10, 1.6, white);
               }
             }
-            if (a.animation === "Hit" || a.animation === "Dead") {
-              line(h.x + 2, h.y + 2, h.x + 7, h.y - 2);
-              line(h.x + 2, h.y - 2, h.x + 7, h.y + 2);
-            } else if (a.kind !== "shield") {
-              line(h.x + 1, h.y + 2, h.x + 7, h.y + 1, 1.8);
-              circle(h.x + 6, h.y - 1, 1.2, color, 1);
-              line(h.x + 11, h.y - 2, h.x + 13, h.y - 4, 1.5);
-              line(h.x + 3, h.y - 7, h.x + 8, h.y - 6, 1.6);
+            if (a.kind === "shield") {
+              shape([h.x - 4, h.y + 3, h.x + 13, h.y + 2, h.x + 11, h.y - 9, h.x, h.y - 10], gray, 2);
+              line(h.x, h.y - 1, h.x + 8, h.y - 1, 3, white);
+            } else {
+              line(h.x + 1, h.y + 1, h.x + 8, h.y, 2.1);
+              line(h.x + 7, h.y - 1, h.x + 7, h.y - 4, 2.5);
+              line(h.x + 3, h.y - 8, h.x + 9, h.y - 8, 1.8);
+              ink.ellipse(px(h.x - 8), py(h.y - 1), 3, 4, black, white, 1.5);
+              g.moveTo(px(h.x - 10), py(h.y + 3));
+              curve(h.x - 12, h.y - 9, h.x - 1, h.y - 14, h.x + 5, h.y - 11);
+              g.strokeColor = black;
+              g.lineWidth = 1.5;
+              g.stroke();
+              if (a.animation === "Hit" || a.animation === "Dead") line(h.x + 2, h.y - 3, h.x + 8, h.y + 2, 2);
             }
-            if (armed && a.animation !== "Dead") this.weapon.draw(ink, (_a$weaponId = a.weaponId) !== null && _a$weaponId !== void 0 ? _a$weaponId : "rifle", x + pose.rightHand.x * d, y + pose.rightHand.y, d, (_a$aimPitch2 = a.aimPitch) !== null && _a$aimPitch2 !== void 0 ? _a$aimPitch2 : 0, 1, color, paper);else if (a.kind === "melee" && a.animation !== "Dead") {
-              limb(pose.rightHand, {
-                x: pose.rightHand.x + 8,
-                y: pose.rightHand.y + 24
-              }, 3, shade);
+            ink.circle(px(pose.rightHand.x), py(pose.rightHand.y), 3.6, black, white, 2.5);
+            if (armed && a.animation !== "Dead") {
+              ink.ellipse(px(pose.leftHand.x), py(pose.leftHand.y), 4.6, 3.8, black, white, 2);
+              line(pose.leftHand.x - 1, pose.leftHand.y + 1, pose.leftHand.x + 3, pose.leftHand.y + 1, 1.1);
             }
-            circle(pose.leftHand.x, pose.leftHand.y, 3.6, paper, 2);
-            circle(pose.rightHand.x, pose.rightHand.y, 3.8, paper, 2);
+            if (a.kind === "melee" && a.animation !== "Dead") {
+              line(pose.rightHand.x + 2, pose.rightHand.y + 2, pose.rightHand.x + 13, pose.rightHand.y + 29, 7);
+              line(pose.rightHand.x + 4, pose.rightHand.y + 8, pose.rightHand.x + 11, pose.rightHand.y + 26, 2, gray);
+            }
             if (a.kind === "shield" && ((_a$shieldHealth = a.shieldHealth) !== null && _a$shieldHealth !== void 0 ? _a$shieldHealth : 0) > 0 && a.animation !== "Dead") {
-              shape([18, 60, 28, 65, 39, 58, 38, 16, 28, 7, 18, 17], shade, 3.5);
-              shape([23, 49, 34, 49, 34, 43, 23, 43], paper, 2);
-              line(22, 20, 34, 20, 2);
-              line(22, 25, 34, 25, 1.5);
+              shape([18, 60, 30, 66, 44, 58, 43, 15, 30, 6, 18, 17], gray, 4);
+              shape([24, 50, 38, 50, 38, 42, 24, 42], white, 2);
+              line(24, 21, 37, 21, 2.5);
+              line(24, 27, 37, 27, 2);
             }
-            if (a.animation === "Run") {
-              line(-25, 40, -34, 38, 1.6, shade);
-              line(-24, 34, -30, 33, 1.4, shade);
+            if (a.animation === "Run" || a.animation === "Shoot") {
+              line(-32, 44, -43, 42, 2.2, gray);
+              line(-32, 35, -40, 34, 2, gray);
             } else if (a.animation === "Hit") {
-              line(h.x - 17, h.y + 8, h.x - 24, h.y + 13, 2.3);
-              line(h.x - 18, h.y - 2, h.x - 26, h.y - 2, 2);
+              line(h.x - 21, h.y + 8, h.x - 29, h.y + 13, 3);
+              line(h.x - 20, h.y - 2, h.x - 30, h.y - 2, 2.5);
             }
           }
         }]);
@@ -758,20 +806,27 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
                   if (age < shockTime) {
                     this.tint.set(24, 24, 24, 240 * (1 - age / shockTime));
                     ink.circle(_x, b.y, radius * Math.sqrt(age / shockTime), this.tint, undefined, 7 * (1 - age / shockTime) + 1);
-                    if (b.y - radius < 155) ink.ellipse(_x, 155, radius * Math.sqrt(age / shockTime), 12 + age * 18, this.tint, undefined, 4);
+                    var ground = session.level.groundY(b.x) + 5;
+                    if (b.y - radius < ground) ink.ellipse(_x, ground, radius * Math.sqrt(age / shockTime), 12 + age * 18, this.tint, undefined, 4);
                   }
                   if (age > (grenade ? 0.075 : 0.035)) for (var _n = 0; _n < 6; _n++) {
                     var a = _n * Math.PI / 3 + Math.sin(b.x) * 0.3;
-                    var reach = radius * (0.08 + t * 0.24),
-                      size = radius * (0.12 + t * 0.14);
+                    var reach = radius * (0.14 + t * 0.32),
+                      size = radius * (0.18 + t * 0.16);
                     this.smoke.set(32 + _n * 7, 32 + _n * 7, 30 + _n * 7, 235 * Math.min(1, (0.85 - age) / 0.3));
                     this.tint.set(24, 24, 24, this.smoke.a);
-                    this.cloud(ink, _x + Math.cos(a) * reach, b.y + Math.sin(a) * reach + t * (grenade ? 95 : 65), size, size * 1.05, this.smoke, this.tint, _n * 0.4, 3.2);
+                    this.cloud(ink, _x + Math.cos(a) * reach, b.y + Math.abs(Math.sin(a)) * reach + t * (grenade ? 110 : 85), size, size * 1.05, this.smoke, this.tint, _n * 0.4, 4.2);
                   }
                   if (age > 0.08 && age < 0.55) {
                     this.light.set(250, 249, 245, 235 * Math.min(1, (0.55 - age) / 0.2));
                     this.tint.set(24, 24, 24, this.light.a);
-                    this.cloud(ink, _x, b.y + age * 70, radius * (0.28 + age * 0.12), radius * 0.3, this.light, this.tint, 0.4, 3.2);
+                    this.cloud(ink, _x, b.y + age * 70, radius * (0.36 + age * 0.14), radius * 0.35, this.light, this.tint, 0.4, 4);
+                    // Ink flecks inside the pale foreground separate the cloud from a flat white disc.
+                    for (var _n2 = 0; _n2 < 7; _n2++) {
+                      var dx = Math.sin(_n2 * 2.3) * radius * 0.22;
+                      var dy = Math.cos(_n2 * 1.7) * radius * 0.18;
+                      ink.segment(_x + dx, b.y + age * 70 + dy, _x + dx * 1.08 + 2, b.y + age * 70 + dy + 4, 3, this.tint);
+                    }
                   }
                   if (age < (grenade ? 0.2 : 0.16)) {
                     var r = radius * (0.5 + age * 1.7);
@@ -780,8 +835,8 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
                     // Light foreground puff breaks the dark ink crown into a comic blast.
                     this.cloud(ink, _x, b.y + age * 95, radius * 0.23, radius * 0.3, colors.white, colors.ink, 0.4, 3);
                   }
-                  if (age < 0.24) for (var _n2 = 0; _n2 < 9; _n2++) {
-                    var _a = _n2 * Math.PI * 2 / 9,
+                  if (age < 0.24) for (var _n3 = 0; _n3 < 9; _n3++) {
+                    var _a = _n3 * Math.PI * 2 / 9,
                       _r = radius * (0.35 + age * 1.8);
                     ink.segment(_x + Math.cos(_a) * _r, b.y + Math.sin(_a) * _r, _x + Math.cos(_a) * (_r + 22), b.y + Math.sin(_a) * (_r + 22), 4);
                   }
@@ -806,8 +861,8 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
                     this.shape(ink, p.x - cam, p.y, _r2, p.material === "metal" ? _r2 * 0.5 : _r2, p.spin, true, color);
                     this.shape(ink, p.x - cam, p.y, _r2 * 0.55, _r2 * 0.55, p.spin, true, colors.white);
                   } else if (p.kind === "smoke") {
-                    this.smoke.set(24, 24, 24, color.a * 0.65);
-                    this.cloud(ink, p.x - cam, p.y, p.size + amount * 14, p.size * 0.8 + amount * 7, color, this.smoke, p.spin * 0.15, 1.5);
+                    this.smoke.set(24, 24, 24, color.a * 0.85);
+                    this.cloud(ink, p.x - cam, p.y, p.size + amount * 14, p.size * 0.8 + amount * 7, color, this.smoke, p.spin * 0.15, 2.8);
                   } else if (p.kind === "dust") ink.ellipse(p.x - cam, p.y, p.size + amount * 7, p.size * 0.65 + amount * 5, color, color, 1);else if (p.kind === "wood" || p.kind === "metal") {
                     var _x2 = p.x - cam,
                       y = p.y,
@@ -984,7 +1039,7 @@ System.register("chunks:///_virtual/ControlLayout.ts", ['cc', './Types.ts'], fun
           },
           jump: {
             x: fireX - (fireHit + jumpHit) / 2 - 10 * k,
-            y: fireY + fireHit * 0.55 + 6 * k,
+            y: fireY + fireHit * 0.22 + 6 * k,
             r: jumpDiameter / 2,
             hit: jumpHit
           },
@@ -1012,8 +1067,8 @@ System.register("chunks:///_virtual/ControlLayout.ts", ['cc', './Types.ts'], fun
   };
 });
 
-System.register("chunks:///_virtual/DestructibleManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './DestructibleObject.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, DestructibleObject;
+System.register("chunks:///_virtual/DestructibleManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './DestructibleObject.ts', './Types.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, DestructibleObject, surfaceY;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -1024,6 +1079,8 @@ System.register("chunks:///_virtual/DestructibleManager.ts", ['./rollupPluginMod
       cclegacy = module.cclegacy;
     }, function (module) {
       DestructibleObject = module.DestructibleObject;
+    }, function (module) {
+      surfaceY = module.surfaceY;
     }],
     execute: function () {
       cclegacy._RF.push({}, "db109fkB95sPhOnekrsJ6W/", "DestructibleManager", undefined);
@@ -1066,9 +1123,9 @@ System.register("chunks:///_virtual/DestructibleManager.ts", ['./rollupPluginMod
                   try {
                     for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                       var r = _step2.value;
-                      if (o.x + o.w > r.x && o.x < r.x + r.w && oldY >= r.y + r.h && o.y <= r.y + r.h) {
+                      if (o.x + o.w > r.x && o.x < r.x + r.w && oldY >= surfaceY(r, o.x + o.w / 2) && o.y <= surfaceY(r, o.x + o.w / 2)) {
                         var _this$onHit;
-                        o.y = r.y + r.h;
+                        o.y = surfaceY(r, o.x + o.w / 2);
                         o.falling = false;
                         o.vy = 0;
                         (_this$onHit = this.onHit) === null || _this$onHit === void 0 || _this$onHit.call(this, o, false);
@@ -1245,6 +1302,8 @@ System.register("chunks:///_virtual/EnemyController.ts", ['./rollupPluginModLoBa
           _defineProperty(this, "hitTime", 0);
           _defineProperty(this, "deadTime", 0);
           _defineProperty(this, "animationTime", 0);
+          _defineProperty(this, "stride", 0);
+          _defineProperty(this, "groundSlope", 0);
           _defineProperty(this, "recoil", 0);
           _defineProperty(this, "attackCooldown", 0.8);
           _defineProperty(this, "windup", 0);
@@ -1366,7 +1425,7 @@ System.register("chunks:///_virtual/EnemyController.ts", ['./rollupPluginModLoBa
               });
               if (close && (this.kind === "melee" || sight)) {
                 this.state = "Attack";
-                this.vx = this.kind === "ranged" && this.spawn.y === 150 ? (Math.abs(dx) < 220 ? -this.facing : this.facing) * config.speed * 0.4 : 0;
+                this.vx = this.kind === "ranged" && !this.spawn.onPlatform ? (Math.abs(dx) < 220 ? -this.facing : this.facing) * config.speed * 0.4 : 0;
                 this.aimPitch = this.kind === "turret" ? Math.max(-0.3, Math.min(0.65, Math.atan2(dy - 12, Math.abs(dx)))) : 0;
                 if (this.attackCooldown === 0 && this.windup === 0) this.windup = this.kind === "melee" ? 0.38 : this.kind === "turret" ? 0.7 : 0.4;
                 if (this.windup > 0) {
@@ -1399,10 +1458,11 @@ System.register("chunks:///_virtual/EnemyController.ts", ['./rollupPluginModLoBa
               }
             }
             // Ranged platform soldiers remain on their patrol surface. Melee soldiers can negotiate crates.
-            if (this.kind === "ranged" && this.spawn.y > 150 && Math.abs(this.x - this.spawn.x) > this.spawn.patrol) this.vx = 0;
+            if (this.kind === "ranged" && this.spawn.onPlatform && Math.abs(this.x - this.spawn.x) > this.spawn.patrol) this.vx = 0;
             var oldX = this.x;
             this.vy -= GameConfig.player.gravity * dt;
             level.move(this, dt);
+            if (this.grounded) this.stride += (this.x - oldX) * this.facing / 112;
             if (this.alive && this.kind === "melee" && this.state === "Chase" && this.grounded && Math.abs(this.x - oldX) < 0.01 && Math.abs(dx) > 50) this.vy = 480;
           }
         }]);
@@ -1983,7 +2043,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
             try {
               this.initialize();
               this.ready = true;
-              console.info("[Breakout] V0.4.1 ready; comic soldiers and distinct weapon silhouettes.");
+              console.info("[Breakout] V0.4.2 ready; open encounters, reversible boss entry and rounded comic art.");
             } catch (error) {
               console.error("[Breakout] Initialization failed", error);
               throw error;
@@ -2577,6 +2637,7 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
                   w: r.w,
                   h: r.h,
                   kind: r.kind,
+                  slope: r.slope,
                   entityId: r.entityId
                 };
               }),
@@ -2618,7 +2679,7 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
         }, {
           key: "applyBlast",
           value: function applyBlast(x, y, radius, damage, owner) {
-            this.particles.blast(x, y, radius);
+            this.particles.blast(x, y, radius, this.level.groundY(x));
             this.shakeTime = Math.max(this.shakeTime, 0.28);
             this.shakePower = Math.max(this.shakePower, 7);
             this.hitStop = Math.max(this.hitStop, 0.05);
@@ -2672,8 +2733,8 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
   };
 });
 
-System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, GameConfig;
+System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Types.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, GameConfig, surfaceY;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -2684,6 +2745,8 @@ System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabe
       cclegacy = module.cclegacy;
     }, function (module) {
       GameConfig = module.GameConfig;
+    }, function (module) {
+      surfaceY = module.surfaceY;
     }],
     execute: function () {
       cclegacy._RF.push({}, "04390MeeTO/+lsfCruu8TY5", "GrenadeSystem", undefined);
@@ -2772,11 +2835,16 @@ System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabe
                 try {
                   for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
                     var r = _step3.value;
-                    if (g.x + 5 > r.x && g.x - 5 < r.x + r.w && oldY - 5 >= r.y + r.h && g.y - 5 <= r.y + r.h) {
-                      g.y = r.y + r.h + 5;
-                      g.vy = Math.abs(g.vy) * 0.3;
+                    if (g.x + 5 > r.x && g.x - 5 < r.x + r.w && oldY - 5 >= surfaceY(r, oldX) - 0.01 && g.y - 5 <= surfaceY(r, g.x)) {
+                      g.y = surfaceY(r, g.x) + 5;
+                      var slope = r.slope ? (r.slope.right - r.slope.left) / r.w : 0;
+                      var normalSpeed = (g.vy - slope * g.vx) / (1 + slope * slope);
+                      if (normalSpeed < 0) {
+                        g.vx += 1.3 * normalSpeed * slope;
+                        g.vy -= 1.3 * normalSpeed;
+                      }
                       g.vx *= 0.65;
-                    } else if (g.y + 5 > r.y && g.y - 5 < r.y + r.h && (oldX + 5 <= r.x && g.x + 5 >= r.x || oldX - 5 >= r.x + r.w && g.x - 5 <= r.x + r.w)) {
+                    } else if (!r.slope && g.y + 5 > r.y && g.y - 5 < r.y + r.h && (oldX + 5 <= r.x && g.x + 5 >= r.x || oldX - 5 >= r.x + r.w && g.x - 5 <= r.x + r.w)) {
                       g.x = oldX;
                       g.vx *= -0.35;
                     }
@@ -2914,7 +2982,17 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           this.hud = node(parent, "HUD");
           this.hudInk = new Ink(this.hud);
           this.levelLabel = text(this.hud, "废弃前哨站", 995, 678, 34, colors.ink, 350);
-          this.pauseButton = button(this.hud, "Ⅱ", 1214, 666, 88, 88, onPause);
+          this.pauseButton = node(this.hud, "Pause", 1214, 666, 88, 88);
+          var pauseArt = new Ink(this.pauseButton);
+          pauseArt.g.roundRect(-42, -42, 84, 84, 12);
+          pauseArt.g.fillColor = colors.paper;
+          pauseArt.g.fill();
+          pauseArt.g.strokeColor = colors.ink;
+          pauseArt.g.lineWidth = 5;
+          pauseArt.g.stroke();
+          pauseArt.rect(-14, -17, 9, 34, colors.ink, colors.ink, 1);
+          pauseArt.rect(5, -17, 9, 34, colors.ink, colors.ink, 1);
+          adapter.registerUI(this.pauseButton, onPause);
           this.objective = text(this.hud, "向右推进 · 击败出口守卫", 920, 590, 26, colors.ink, 620);
           this.stats = text(this.hud, "", 170, 590, 26, colors.ink, 320);
           this.weaponLabel = text(this.hud, "", 300, 640, 32, colors.ink, 570);
@@ -3000,7 +3078,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           button(title, "开始突围  →", 120, -128, 300, 62, onStart, true);
           text(title, "A D 移动   ·   Space 跳跃   ·   按住 J 射击", 120, -204, 17, colors.muted, 760);
           text(title, "P / Esc 暂停   ·   手机支持多点触控   ·   Enter 开始", 120, -239, 14, colors.muted, 760);
-          text(title, "V0.4.1  /  漫画突围", -368, -270, 16, colors.muted, 390);
+          text(title, "V0.4.2  /  漫画突围", -368, -270, 16, colors.muted, 390);
           var paused = panel("paused");
           text(paused, "暂停一下", 0, 103, 52);
           text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -3054,7 +3132,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               r = p.r,
               k = this.layout.joystick.unit,
               color = disabled ? colors.far : colors.paper;
-            ink.circle(0, 0, r, disabled ? colors.mid : colors.ink, new Color(30, 30, 30, disabled ? 85 : held ? 225 : 155), (action === "shoot" ? 3 : 2.6) * k);
+            ink.circle(0, 0, r, disabled ? colors.mid : colors.ink, new Color(30, 30, 30, disabled ? 115 : held ? 245 : 210), (action === "shoot" ? 3 : 2.6) * k);
             ink.circle(0, 0, r - 5 * k, new Color(250, 249, 245, held ? 200 : 95), undefined, 1 * k);
             var q = r * 0.36;
             if (action === "shoot") {
@@ -3154,8 +3232,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             this.objective.lineHeight = 16 * k;
             this.objective.node.getComponent(UITransform).setContentSize(180 * k, 25 * k);
             this.stats.node.active = false;
-            this.message.node.setPosition(width / 2, top - 115 * k);
-            this.message.fontSize = 18 * k;
+            this.message.node.setPosition(width / 2, top - 63 * k);
+            this.message.fontSize = 13 * k;
+            this.message.lineHeight = 17 * k;
             this.message.node.getComponent(UITransform).setContentSize(Math.min(width - 40 * k, 600 * k), 30 * k);
             this.guardNode.setPosition(width / 2 - 640, top - 70 * k - 565);
             this.guardLabel.node.setPosition(640, 565);
@@ -3215,7 +3294,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             }
             this.levelLabel.string = "\u5173\u5361 01 \xB7 ".concat(Math.floor(s.player.x / s.level.data.width * 100), "%");
             this.objective.node.active = this.width / this.layout.joystick.unit >= 800 && !s.level.arenaEntered;
-            this.message.node.active = s.state === "playing" && (s.pickups.messageTime > 0 || s.combo > 1);
+            this.message.node.active = s.state === "playing" && !s.level.arenaEntered && (s.pickups.messageTime > 0 || s.combo > 1);
             this.message.string = s.pickups.messageTime > 0 ? s.pickups.lastMessage : "COMBO \xD7 ".concat(s.combo);
             this.joystick.update(input);
             this.rotateNote.active = portrait;
@@ -3269,38 +3348,18 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               var k = this.layout.joystick.unit;
               this.hudInk.rect(0, top - 52 * k, this.width, 52 * k, colors.far, colors.paper, 2);
               for (var i = 0; i < GameConfig.player.maxHealth; i++) {
-                var x = (24 + i * 18) * k + this.insets.left,
+                var x = (24 + i * 20) * k + this.insets.left,
                   y = top - 26 * k;
-                var points = [{
-                  x: x - 6 * k,
-                  y: y + 2 * k
-                }, {
-                  x: x - 6 * k,
-                  y: y + 6 * k
-                }, {
-                  x: x - 3 * k,
-                  y: y + 8 * k
-                }, {
-                  x: x,
-                  y: y + 5 * k
-                }, {
-                  x: x + 3 * k,
-                  y: y + 8 * k
-                }, {
-                  x: x + 6 * k,
-                  y: y + 6 * k
-                }, {
-                  x: x + 6 * k,
-                  y: y + 2 * k
-                }, {
-                  x: x,
-                  y: y - 6 * k
-                }, {
-                  x: x - 6 * k,
-                  y: y + 2 * k
-                }];
-                if (i < s.player.health) this.hudInk.polygon(points);
-                this.hudInk.line(points, 2 * k, i < s.player.health ? colors.ink : colors.far);
+                var g = this.hudInk.g;
+                g.moveTo(x, y - 8 * k);
+                g.bezierCurveTo(x - 18 * k, y + 4 * k, x - 7 * k, y + 16 * k, x, y + 7 * k);
+                g.bezierCurveTo(x + 7 * k, y + 16 * k, x + 18 * k, y + 4 * k, x, y - 8 * k);
+                g.close();
+                g.fillColor = i < s.player.health ? colors.ink : colors.paper;
+                g.fill();
+                g.strokeColor = colors.ink;
+                g.lineWidth = 1.5 * k;
+                g.stroke();
               }
               var trackX = this.width - this.insets.right - 182 * k,
                 trackY = top - 37 * k;
@@ -3311,38 +3370,25 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               this.progress = progress;
             }
             var zone = s.level.zone;
-            var remaining = 0;
-            var _iterator6 = _createForOfIteratorHelper(s.spawner.enemies),
+            this.objective.string = s.level.guardDefeated ? "战车已击毁 · 抵达出口 →" : s.level.arenaEntered ? "躲开落点预警 · 击毁机械战车" : "".concat((_zone$name = zone === null || zone === void 0 ? void 0 : zone.name) !== null && _zone$name !== void 0 ? _zone$name : "向右推进", " \xB7 \u5411\u53F3\u7A81\u56F4 \u2192");
+            this.stats.string = "\u51FB\u8D25  ".concat(s.spawner.kills, " / ").concat(s.spawner.enemies.length);
+            var _iterator6 = _createForOfIteratorHelper(this.resultStats),
               _step6;
             try {
               for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-                var e = _step6.value;
-                if (e.alive && zone && e.spawn.x >= zone.start && e.spawn.x < zone.end) remaining++;
+                var stat = _step6.value;
+                stat.string = "\u8017\u65F6 ".concat(Math.floor(s.time), " \u79D2    \xB7    \u51FB\u8D25 ").concat(s.spawner.kills, " \u540D\u654C\u4EBA");
               }
             } catch (err) {
               _iterator6.e(err);
             } finally {
               _iterator6.f();
             }
-            this.objective.string = s.level.guardDefeated ? "战车已击毁 · 抵达出口 →" : s.level.arenaEntered ? "躲开落点预警 · 击毁机械战车" : "".concat((_zone$name = zone === null || zone === void 0 ? void 0 : zone.name) !== null && _zone$name !== void 0 ? _zone$name : "向右推进", " \xB7 ").concat(remaining, " \u654C\u4EBA");
-            this.stats.string = "\u51FB\u8D25  ".concat(s.spawner.kills, " / ").concat(s.spawner.enemies.length);
-            var _iterator7 = _createForOfIteratorHelper(this.resultStats),
+            var _iterator7 = _createForOfIteratorHelper(this.touchButtons),
               _step7;
             try {
               for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-                var stat = _step7.value;
-                stat.string = "\u8017\u65F6 ".concat(Math.floor(s.time), " \u79D2    \xB7    \u51FB\u8D25 ").concat(s.spawner.kills, " \u540D\u654C\u4EBA");
-              }
-            } catch (err) {
-              _iterator7.e(err);
-            } finally {
-              _iterator7.f();
-            }
-            var _iterator8 = _createForOfIteratorHelper(this.touchButtons),
-              _step8;
-            try {
-              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-                var b = _step8.value;
+                var b = _step7.value;
                 var held = input.isHeld(b.action);
                 var disabled = b.action === "grenade" ? s.player.grenades === 0 : b.action === "jump" ? !s.player.grounded : !s.player.alive;
                 var cooldown = b.action === "grenade" ? s.grenades.cooldown / GameConfig.grenade.interval : b.action === "shoot" ? s.weapon.cooldown / GameConfig.weapons[s.weapon.id].interval : 0;
@@ -3357,20 +3403,20 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                   b.cooldownInk.clear();
                   if (bucket > 0) {
                     var r = b.action === "shoot" ? this.layout.shoot.r : this.layout.grenade.r,
-                      g = b.cooldownInk.g,
+                      _g = b.cooldownInk.g,
                       _k = this.layout.joystick.unit;
-                    g.lineWidth = 3 * _k;
-                    g.strokeColor = colors.mid;
-                    g.arc(0, 0, r - 5 * _k, Math.PI / 2, Math.PI / 2 - Math.PI * 2 * bucket / 3, true);
-                    g.stroke();
+                    _g.lineWidth = 3 * _k;
+                    _g.strokeColor = colors.mid;
+                    _g.arc(0, 0, r - 5 * _k, Math.PI / 2, Math.PI / 2 - Math.PI * 2 * bucket / 3, true);
+                    _g.stroke();
                   }
                   b.cooldownBucket = bucket;
                 }
               }
             } catch (err) {
-              _iterator8.e(err);
+              _iterator7.e(err);
             } finally {
-              _iterator8.f();
+              _iterator7.f();
             }
           }
         }]);
@@ -3686,23 +3732,26 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
             this.lastY = s.y;
             this.active = active;
             this.ink.clear();
-            this.ink.circle(0, 0, this.style.baseR, new Color(25, 25, 25, active ? 225 : 130), new Color(200, 200, 196, active ? 130 : 45), 2.6 * this.style.unit);
+            this.ink.circle(0, 0, this.style.baseR, new Color(25, 25, 25, active ? 245 : 185), new Color(223, 223, 220, active ? 140 : 65), 3 * this.style.unit);
             this.ink.circle(0, 0, this.style.baseR * 0.82, new Color(25, 25, 25, active ? 110 : 55), undefined, 1.2 * this.style.unit);
-            this.ink.line([{
-              x: -44,
-              y: 0
-            }, {
-              x: 44,
-              y: 0
-            }], 1, new Color(25, 25, 25, 45));
-            this.ink.line([{
-              x: 0,
-              y: -44
-            }, {
-              x: 0,
-              y: 44
-            }], 1, new Color(25, 25, 25, 45));
-            this.ink.circle(s.x, s.y, this.style.knobR, colors.ink, new Color(45, 45, 45, active ? 220 : 145), 2.6 * this.style.unit);
+            for (var n = 0; n < 4; n++) {
+              var angle = n * Math.PI / 2,
+                cs = Math.cos(angle),
+                sn = Math.sin(angle);
+              var r = this.style.baseR * 0.75,
+                q = this.style.unit * 6;
+              this.ink.polygon([{
+                x: (r + q) * cs,
+                y: (r + q) * sn
+              }, {
+                x: (r - q) * cs - q * sn,
+                y: (r - q) * sn + q * cs
+              }, {
+                x: (r - q) * cs + q * sn,
+                y: (r - q) * sn - q * cs
+              }], new Color(90, 90, 86, active ? 170 : 105));
+            }
+            this.ink.circle(s.x, s.y, this.style.knobR, colors.ink, new Color(35, 35, 35, active ? 245 : 210), 2.6 * this.style.unit);
             this.ink.circle(s.x, s.y, this.style.knobR * 0.7, new Color(250, 249, 245, active ? 190 : 110), undefined, 1.1 * this.style.unit);
             this.ink.segment(s.x - this.style.knobR * 0.35, s.y + this.style.knobR * 0.5, s.x + this.style.knobR * 0.1, s.y + this.style.knobR * 0.58, 2 * this.style.unit, new Color(255, 255, 255, active ? 185 : 100));
           }
@@ -3714,8 +3763,8 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
   };
 });
 
-System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelData.ts', './DestructibleManager.ts', './MechanismController.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _objectSpread2, cclegacy, AbandonedBase, DestructibleManager, MechanismController;
+System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelData.ts', './Types.ts', './DestructibleManager.ts', './MechanismController.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _objectSpread2, cclegacy, AbandonedBase, surfaceY, DestructibleManager, MechanismController;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -3727,6 +3776,8 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
       cclegacy = module.cclegacy;
     }, function (module) {
       AbandonedBase = module.AbandonedBase;
+    }, function (module) {
+      surfaceY = module.surfaceY;
     }, function (module) {
       DestructibleManager = module.DestructibleManager;
     }, function (module) {
@@ -3748,32 +3799,21 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
           _defineProperty(this, "arenaEntered", false);
           _defineProperty(this, "mechanisms", []);
           _defineProperty(this, "clearedZones", new Set());
-          _defineProperty(this, "barriers", []);
+          _defineProperty(this, "playerX", 0);
           this.data = data;
           this.reset();
         }
         _createClass(LevelController, [{
           key: "reset",
           value: function reset() {
-            var _this$data$mechanisms, _this$data$zones;
+            var _this$data$mechanisms;
             this.guardDefeated = false;
             this.arenaEntered = false;
             this.clearedZones.clear();
             this.mechanisms = ((_this$data$mechanisms = this.data.mechanisms) !== null && _this$data$mechanisms !== void 0 ? _this$data$mechanisms : []).map(function (d) {
               return new MechanismController(d);
             });
-            this.barriers = ((_this$data$zones = this.data.zones) !== null && _this$data$zones !== void 0 ? _this$data$zones : []).filter(function (z) {
-              return z.id !== "D";
-            }).map(function (z) {
-              return {
-                x: z.end,
-                y: 150,
-                w: 12,
-                h: 380,
-                kind: "step",
-                entityId: "gate:".concat(z.id)
-              };
-            });
+            this.playerX = this.data.spawn.x;
             this.staticSolids.length = 0;
             var _iterator = _createForOfIteratorHelper(this.data.solids),
               _step;
@@ -3837,31 +3877,19 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
             } finally {
               _iterator4.f();
             }
-            var _iterator5 = _createForOfIteratorHelper(this.barriers),
-              _step5;
-            try {
-              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-                var b = _step5.value;
-                if (!this.clearedZones.has(b.entityId.slice(5))) this.solids.push(b);
-              }
-            } catch (err) {
-              _iterator5.e(err);
-            } finally {
-              _iterator5.f();
-            }
           }
         }, {
           key: "updateWorld",
           value: function updateWorld(dt, p, enemies) {
             var _this = this,
-              _this$data$zones2;
+              _this$data$zones;
             var changed = false;
-            var _iterator6 = _createForOfIteratorHelper(this.mechanisms),
-              _step6;
+            var _iterator5 = _createForOfIteratorHelper(this.mechanisms),
+              _step5;
             try {
               var _loop = function _loop() {
                 var _this$objects$objects;
-                var m = _step6.value;
+                var m = _step5.value;
                 if (m.data.ropeId && !((_this$objects$objects = _this.objects.objects.find(function (o) {
                   return o.id === m.data.ropeId;
                 })) !== null && _this$objects$objects !== void 0 && _this$objects$objects.alive)) m.released = true;
@@ -3872,19 +3900,19 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
                   if (p.grounded && Math.abs(p.y - top) < 1 && p.x + 13 > m.rect.x && p.x - 13 < m.rect.x + m.rect.w) p.y += delta;
                 }
               };
-              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
                 _loop();
               }
             } catch (err) {
-              _iterator6.e(err);
+              _iterator5.e(err);
             } finally {
-              _iterator6.f();
+              _iterator5.f();
             }
-            var _iterator7 = _createForOfIteratorHelper((_this$data$zones2 = this.data.zones) !== null && _this$data$zones2 !== void 0 ? _this$data$zones2 : []),
-              _step7;
+            var _iterator6 = _createForOfIteratorHelper((_this$data$zones = this.data.zones) !== null && _this$data$zones !== void 0 ? _this$data$zones : []),
+              _step6;
             try {
               var _loop2 = function _loop2() {
-                var z = _step7.value;
+                var z = _step6.value;
                 if (z.id === "D" || _this.clearedZones.has(z.id)) return 1; // continue
                 if (!enemies.some(function (e) {
                   return e.alive && e.spawn.x >= z.start && e.spawn.x < z.end;
@@ -3893,15 +3921,18 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
                   changed = true;
                 }
               };
-              for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
                 if (_loop2()) continue;
               }
             } catch (err) {
-              _iterator7.e(err);
+              _iterator6.e(err);
             } finally {
-              _iterator7.f();
+              _iterator6.f();
             }
-            if (this.data.arena && p.x >= this.data.arena.start + 70) this.arenaEntered = true;
+            this.playerX = p.x;
+            // Clearance is optional. Enter by position; retreat never traps the player.
+            // Hysteresis keeps the camera/encounter stable while moving across the entrance.
+            this.arenaEntered = !!this.data.arena && p.x >= this.data.arena.start + (this.arenaEntered ? -80 : 30);
             if (changed) {
               this.objectRevision = -1;
               this.refreshSolids();
@@ -3911,10 +3942,10 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
           key: "zone",
           get: function get() {
             var _find,
-              _this$data$zones3,
+              _this$data$zones2,
               _this2 = this;
-            return (_find = ((_this$data$zones3 = this.data.zones) !== null && _this$data$zones3 !== void 0 ? _this$data$zones3 : []).find(function (z) {
-              return !_this2.clearedZones.has(z.id);
+            return (_find = ((_this$data$zones2 = this.data.zones) !== null && _this$data$zones2 !== void 0 ? _this$data$zones2 : []).find(function (z) {
+              return _this2.playerX >= z.start && _this2.playerX < z.end;
             })) !== null && _find !== void 0 ? _find : null;
           }
         }, {
@@ -3932,13 +3963,16 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
           value: function move(body, dt) {
             var oldX = body.x,
               dx = body.vx * dt;
+            var onTerrain = body.grounded && body.vy <= 0 && this.solids.some(function (s) {
+              return s.slope && oldX >= s.x && oldX <= s.x + s.w && Math.abs(body.y - surfaceY(s, oldX)) < 0.6;
+            });
             body.x += dx;
-            var _iterator8 = _createForOfIteratorHelper(this.solids),
-              _step8;
+            var _iterator7 = _createForOfIteratorHelper(this.solids),
+              _step7;
             try {
-              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-                var s = _step8.value;
-                if (s.oneWay) continue;
+              for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+                var s = _step7.value;
+                if (s.oneWay || s.slope) continue;
                 if (body.y >= s.y + s.h - 0.01 || body.y + body.height <= s.y + 0.01) continue;
                 if (dx > 0 && oldX + body.halfWidth <= s.x + 0.01 && body.x + body.halfWidth >= s.x) {
                   body.x = Math.min(body.x, s.x - body.halfWidth);
@@ -3949,37 +3983,47 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
                 }
               }
             } catch (err) {
-              _iterator8.e(err);
+              _iterator7.e(err);
             } finally {
-              _iterator8.f();
+              _iterator7.f();
             }
             var oldY = body.y,
               dy = body.vy * dt;
             body.y += dy;
             body.grounded = false;
-            var _iterator9 = _createForOfIteratorHelper(this.solids),
-              _step9;
+            body.groundSlope = 0;
+            var _iterator8 = _createForOfIteratorHelper(this.solids),
+              _step8;
             try {
-              for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-                var _s = _step9.value;
+              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+                var _s = _step8.value;
                 if (body.x + body.halfWidth <= _s.x || body.x - body.halfWidth >= _s.x + _s.w) continue;
-                var top = _s.y + _s.h;
-                if (dy <= 0 && oldY >= top - 0.01 && body.y <= top) {
-                  body.y = Math.max(body.y, top);
+                if (_s.slope && (body.x < _s.x || body.x > _s.x + _s.w)) continue;
+                var top = surfaceY(_s, body.x);
+                if (dy <= 0 && (onTerrain && _s.slope || oldY >= surfaceY(_s, oldX) - 0.01 && body.y <= top)) {
+                  body.y = onTerrain && _s.slope ? top : Math.max(body.y, top);
                   body.vy = 0;
                   body.grounded = true;
+                  body.groundSlope = _s.slope ? (_s.slope.right - _s.slope.left) / _s.w : 0;
                 } else if (!_s.oneWay && dy > 0 && oldY + body.height <= _s.y + 0.01 && body.y + body.height >= _s.y) {
                   body.y = Math.min(body.y, _s.y - body.height);
                   body.vy = 0;
                 }
               }
             } catch (err) {
-              _iterator9.e(err);
+              _iterator8.e(err);
             } finally {
-              _iterator9.f();
+              _iterator8.f();
             }
             body.x = Math.max(body.halfWidth, Math.min(this.data.width - body.halfWidth, body.x));
-            if (this.arenaEntered && this.data.arena && "isPlayer" in body) body.x = Math.max(this.data.arena.start + 30, Math.min(this.data.arena.end - 30, body.x));
+          }
+        }, {
+          key: "groundY",
+          value: function groundY(x) {
+            var s = this.staticSolids.find(function (s) {
+              return s.kind === "ground" && x >= s.x && x <= s.x + s.w;
+            });
+            return s ? surfaceY(s, x) : 150;
           }
         }, {
           key: "reachedExit",
@@ -3994,11 +4038,18 @@ System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBa
   };
 });
 
-System.register("chunks:///_virtual/LevelData.ts", ['cc'], function (exports) {
-  var cclegacy;
+System.register("chunks:///_virtual/LevelData.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './TerrainProfile.ts'], function (exports) {
+  var _toConsumableArray, _objectSpread2, _createForOfIteratorHelper, cclegacy, road, roadHeight;
   return {
     setters: [function (module) {
+      _toConsumableArray = module.toConsumableArray;
+      _objectSpread2 = module.objectSpread2;
+      _createForOfIteratorHelper = module.createForOfIteratorHelper;
+    }, function (module) {
       cclegacy = module.cclegacy;
+    }, function (module) {
+      road = module.road;
+      roadHeight = module.roadHeight;
     }],
     execute: function () {
       cclegacy._RF.push({}, "9c49eNdxVQMaAW/JTYg7ErN", "LevelData", undefined);
@@ -4013,13 +4064,11 @@ System.register("chunks:///_virtual/LevelData.ts", ['cc'], function (exports) {
           x: 8070,
           y: 150
         },
-        solids: [{
-          x: 0,
-          y: 50,
-          w: 8200,
-          h: 100,
-          kind: "ground"
-        }, {
+        solids: [].concat(_toConsumableArray(road.map(function (r) {
+          return _objectSpread2(_objectSpread2({}, r), {}, {
+            kind: "ground"
+          });
+        })), [{
           x: 420,
           y: 150,
           w: 76,
@@ -4121,7 +4170,7 @@ System.register("chunks:///_virtual/LevelData.ts", ['cc'], function (exports) {
           w: 180,
           h: 50,
           kind: "step"
-        }],
+        }]),
         enemies: [{
           id: "m1",
           kind: "melee",
@@ -4486,13 +4535,52 @@ System.register("chunks:///_virtual/LevelData.ts", ['cc'], function (exports) {
         w: 38,
         h: 58
       });
+
+      // Attach ground props to the authored level pads; elevated caches keep their platform heights.
+      var _iterator = _createForOfIteratorHelper(AbandonedBase.solids),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var s = _step.value;
+          if (s.kind !== "ground" && s.y === 150) s.y = roadHeight(s.x + s.w / 2);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+      var _iterator2 = _createForOfIteratorHelper(AbandonedBase.objects),
+        _step2;
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var o = _step2.value;
+          if (o.y === 150) o.y = roadHeight(o.x + o.w / 2);
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+      var _iterator3 = _createForOfIteratorHelper(AbandonedBase.enemies),
+        _step3;
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var e = _step3.value;
+          e.onPlatform = e.y > 150;
+          if (!e.onPlatform) e.y = roadHeight(e.x);
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
       cclegacy._RF.pop();
     }
   };
 });
 
-System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts', './SceneryArt.ts', './GameConfig.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Label, node, Ink, colors, SceneryArt, GameConfig;
+System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Types.ts', './Ink.ts', './SceneryArt.ts', './GameConfig.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Label, surfaceY, node, Ink, colors, SceneryArt, GameConfig;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -4502,6 +4590,8 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
     }, function (module) {
       cclegacy = module.cclegacy;
       Label = module.Label;
+    }, function (module) {
+      surfaceY = module.surfaceY;
     }, function (module) {
       node = module.node;
       Ink = module.Ink;
@@ -4515,6 +4605,7 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
       cclegacy._RF.push({}, "ce266XwPE5kjMxHJkBriZYn", "LevelRenderer", undefined);
       var LevelRenderer = exports('LevelRenderer', /*#__PURE__*/function () {
         function LevelRenderer(parent, level) {
+          var _this = this;
           _classCallCheck(this, LevelRenderer);
           _defineProperty(this, "chunks", []);
           _defineProperty(this, "gate", void 0);
@@ -4523,138 +4614,136 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
           _defineProperty(this, "lastUnlocked", null);
           for (var _i = 0, _arr = [0.16, 0.42, 1]; _i < _arr.length; _i++) {
             var factor = _arr[_i];
-            for (var x = -800; x < level.data.width + 1600; x += 800) {
+            var _loop = function _loop(x) {
               var n = node(parent, "Scenery ".concat(factor, "/").concat(x), x, 0, 820, 650),
                 g = new Ink(n),
                 index = Math.floor(x / 800);
-              this.chunks.push({
+              _this.chunks.push({
                 node: n,
                 x: x,
                 factor: factor
               });
               if (factor === 1) g.strokeScale = GameConfig.rendering.lineWidths.platform / 3;
               if (factor === 0.16) {
-                for (var i = 0; i < 3; i++) SceneryArt.cloud(g, 30 + i * 260, 490 + (index + i + 9) % 3 * 47, 0.8 + (index + i + 8) % 2 * 0.3);
-                g.line([{
-                  x: -10,
-                  y: 240
-                }, {
-                  x: 70,
-                  y: 333
-                }, {
-                  x: 140,
-                  y: 291
-                }, {
-                  x: 260,
-                  y: 403
-                }, {
-                  x: 380,
-                  y: 290
-                }, {
-                  x: 470,
-                  y: 350
-                }, {
-                  x: 580,
-                  y: 303
-                }, {
-                  x: 700,
-                  y: 377
-                }, {
-                  x: 810,
-                  y: 240
-                }], 1.5, colors.far);
-                for (var _i2 = 0; _i2 < 2; _i2++) {
-                  var bx = 170 + _i2 * 340;
-                  g.rect(bx, 150, 190, 160 + _i2 * 40, colors.far, undefined, 1);
-                  for (var wy = 185; wy < 290; wy += 37) for (var wx = bx + 18; wx < bx + 176; wx += 40) g.rect(wx, wy, 16, 22, colors.far, undefined, 1);
-                }
+                for (var i = 0; i < 3; i++) SceneryArt.cloud(g, 30 + i * 260, 365 + (index + i + 9) % 3 * 24, 0.8 + (index + i + 8) % 2 * 0.3);
+                SceneryArt.ridge(g, index + 12);
                 SceneryArt.truck(g, 590, 158);
               } else if (factor === 0.42) {
                 if ((index + 9) % 3 === 0) SceneryArt.bunker(g, 180, 150, 300);else if ((index + 9) % 3 === 1) SceneryArt.factory(g, 120, 150);else SceneryArt.crane(g, 300, 150);
-                SceneryArt.tower(g, 690, 150);
-                SceneryArt.serviceBay(g, 480, 150);
-                g.segment(24, 150, 24, 390, 2, colors.muted);
-                g.segment(6, 363, 46, 363, 2, colors.muted);
-                g.line([{
-                  x: 24,
-                  y: 377
-                }, {
-                  x: 165,
-                  y: 346
-                }, {
-                  x: 315,
-                  y: 328
-                }, {
-                  x: 490,
-                  y: 345
-                }, {
-                  x: 700,
-                  y: 377
-                }], 1, colors.muted);
-                for (var px = 25; px < 770; px += 80) {
-                  g.segment(px, 150, px, 212, 1.2, colors.far);
-                  g.segment(px, 195, px + 80, 195, 1, colors.far);
+                if ((index + 9) % 2 === 0) SceneryArt.tower(g, 700, 150);
+                SceneryArt.serviceBay(g, 510, 150);
+                g.segment(24, 150, 21, 344, 2.5, colors.mid);
+                g.segment(3, 329, 44, 327, 3, colors.mid);
+                for (var _i2 = 0, _arr2 = [8, 37]; _i2 < _arr2.length; _i2++) {
+                  var px = _arr2[_i2];
+                  g.ellipse(px, 334, 3, 5, colors.mid, colors.paper, 1.5);
                 }
+                g.g.moveTo(24, 338);
+                g.g.bezierCurveTo(224, 268, 510, 279, 812, 338);
+                g.g.strokeColor = colors.mid;
+                g.g.lineWidth = 1.8;
+                g.g.stroke();
               } else {
                 var _iterator = _createForOfIteratorHelper(level.staticSolids),
                   _step;
                 try {
-                  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  var _loop2 = function _loop2() {
                     var s = _step.value;
-                    if (s.x + s.w <= x || s.x >= x + 800) continue;
+                    if (s.x + s.w <= x || s.x >= x + 800) return 1; // continue
                     var left = Math.max(s.x, x) - x,
                       right = Math.min(s.x + s.w, x + 800) - x;
                     if (s.kind === "ground") {
-                      g.g.fillColor = colors.paper;
-                      g.g.rect(left, s.y, right - left, s.h);
-                      g.g.fill();
-                      for (var _px2 = left; _px2 < right; _px2 += 32) g.segment(_px2, s.y + s.h + Math.sin((x + _px2) * 0.15) * 0.65, Math.min(right, _px2 + 32), s.y + s.h + Math.sin((x + _px2 + 32) * 0.15) * 0.65, 3);
-                      for (var _px3 = left + 12; _px3 < right; _px3 += 63) {
+                      var top = function top(px) {
+                        return surfaceY(s, x + px);
+                      };
+                      var outline = [];
+                      for (var _px = left; _px < right; _px += 14) outline.push({
+                        x: _px,
+                        y: top(_px) + Math.sin((x + _px) * 0.17) * 0.75
+                      });
+                      outline.push({
+                        x: right,
+                        y: top(right) + Math.sin((x + right) * 0.17) * 0.75
+                      });
+                      g.polygon([].concat(outline, [{
+                        x: right,
+                        y: -240
+                      }, {
+                        x: left,
+                        y: -240
+                      }]), colors.paper);
+                      g.line(outline, 3, colors.ink);
+                      // Broken strata follow the actual contour; only the walking edge is solid black.
+                      for (var _px2 = left + 8; _px2 < right - 30; _px2 += 71) {
+                        var py = top(_px2);
                         g.line([{
-                          x: _px3,
-                          y: 132
+                          x: _px2,
+                          y: py - 9
                         }, {
-                          x: _px3 + 10,
-                          y: 126
+                          x: _px2 + 13,
+                          y: py - 12
                         }, {
-                          x: _px3 + 26,
-                          y: 130
-                        }], 1, colors.muted);
-                        g.ellipse(_px3 + 30, 145, 5, 2, colors.muted, undefined, 1);
+                          x: _px2 + 28,
+                          y: top(_px2 + 28) - 10
+                        }], 1.1, colors.muted);
+                        g.line([{
+                          x: _px2 + 14,
+                          y: py - 43
+                        }, {
+                          x: _px2 + 22,
+                          y: py - 48
+                        }, {
+                          x: _px2 + 40,
+                          y: py - 44
+                        }], 0.8, colors.mid);
+                        if (Math.floor((x + _px2) / 71) % 3 === 0) SceneryArt.rock(g, _px2 + 12, py - 3, 0.32, true);
                       }
+                      var count = Math.ceil((right - left) / 13);
+                      for (var _i3 = 0; _i3 < count; _i3++) {
+                        var _px3 = left + (_i3 * 137 + index * 41 + 8000) % (right - left);
+                        g.g.circle(_px3, top(_px3) - 21 - (_i3 * 71 + 19) % 320, _i3 % 7 === 0 ? 1.6 : 0.75);
+                      }
+                      g.g.fillColor = colors.mid;
+                      g.g.fill();
                     } else {
                       g.rect(left, s.y, right - left, s.h, colors.ink, colors.paper, 3);
                       g.segment(left, s.y + s.h - 5, right, s.y + s.h - 5, 1, colors.muted);
                       for (var _px4 = left + 10; _px4 < right - 6; _px4 += 30) {
                         g.circle(_px4, s.y + Math.min(s.h / 2, 9), 1.8, colors.ink, colors.ink, 1);
                       }
-                      if (s.kind === "platform") for (var _i3 = 0, _arr2 = [s.x + 12, s.x + s.w - 12]; _i3 < _arr2.length; _i3++) {
-                        var _wx = _arr2[_i3];
-                        if (_wx >= x && _wx < x + 800) {
-                          g.segment(_wx - x, 150, _wx - x, s.y, 2, colors.muted);
-                          for (var h = 160; h < s.y - 20; h += 25) g.segment(_wx - x - 6, h, _wx - x + 6, h + 20, 1, colors.muted);
+                      if (s.kind === "platform") for (var _i4 = 0, _arr3 = [s.x + 12, s.x + s.w - 12]; _i4 < _arr3.length; _i4++) {
+                        var wx = _arr3[_i4];
+                        if (wx >= x && wx < x + 800) {
+                          g.rect(wx - x - 5, level.groundY(wx), 10, s.y - level.groundY(wx), colors.ink, colors.wall, 1.8);
                         }
                       }
+                      if (s.kind === "platform" && s.x >= x && s.x + s.w <= x + 800) {
+                        var a = s.x - x + 18,
+                          b = s.x - x + s.w - 18;
+                        g.segment(a, level.groundY(x + a) + 3, b, s.y - 4, 6, colors.ink);
+                        g.segment(a, level.groundY(x + a) + 3, b, s.y - 4, 2.6, colors.wall);
+                        g.segment(b, level.groundY(x + b) + 3, a, s.y - 4, 6, colors.ink);
+                        g.segment(b, level.groundY(x + b) + 3, a, s.y - 4, 2.6, colors.wall);
+                      }
                     }
+                  };
+                  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                    if (_loop2()) continue;
                   }
                 } catch (err) {
                   _iterator.e(err);
                 } finally {
                   _iterator.f();
                 }
-                for (var _px = 80; _px < 790; _px += 220) {
-                  g.ellipse(_px, 137, 9, 4, colors.muted, undefined, 1.5);
-                  g.segment(_px - 20, 119, _px - 13, 117, 1.2, colors.muted);
-                  g.segment(_px + 35, 126, _px + 39, 128, 1.2, colors.muted);
-                }
                 if (index === 0) {
-                  this.label(n, "废弃前哨站 / SECTOR 01", 250, 423, 19);
-                  g.rect(102, 354, 170, 45, colors.ink, colors.paper, 2);
-                  this.label(n, "注意：可破坏补给箱", 188, 376, 14);
-                  g.segment(115, 150, 115, 354, 3, colors.muted);
-                  g.segment(261, 150, 261, 354, 3, colors.muted);
+                  g.segment(310, 150, 310, 221, 4, colors.mid);
+                  g.rect(275, 204, 102, 27, colors.mid, colors.paper, 1.4);
+                  _this.label(n, "前哨站  →", 326, 218, 15);
                 }
               }
+            };
+            for (var x = -800; x < level.data.width + 1600; x += 800) {
+              _loop(x);
             }
           }
           var exitRoot = node(parent, "Exit gate"),
@@ -4732,9 +4821,9 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './ProjectileArt.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './WeaponArt.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './TerrainProfile.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './ProjectileArt.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './WeaponArt.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -4975,7 +5064,6 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
         _createClass(ObjectRenderer, [{
           key: "draw",
           value: function draw(s) {
-            var _s$level$data$zones;
             var ink = this.ink,
               cam = s.camera.x;
             ink.clear();
@@ -5027,61 +5115,69 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                   ink.segment(_x + w / 2, _y, _x + w / 2, _y + h, 3);
                   for (var t = _y; t < _y + h; t += 9) ink.segment(_x + w / 2 - 3, t, _x + w / 2 + 3, t + 5, 1, colors.muted);
                 } else if (o.kind === "barrel") {
-                  ink.rect(_x, _y, w, h, colors.ink, shade, 2.5);
-                  ink.line([{
-                    x: _x + 3,
-                    y: _y + 12
-                  }, {
-                    x: _x + w - 3,
-                    y: _y + 12
-                  }], 3);
-                  ink.line([{
-                    x: _x + 3,
-                    y: _y + h - 12
-                  }, {
-                    x: _x + w - 3,
-                    y: _y + h - 12
-                  }], 3);
-                  ink.circle(_x + w / 2, _y + h / 2, 8, colors.ink, undefined, 2);
-                  ink.line([{
-                    x: _x + w / 2 - 4,
-                    y: _y + h / 2 + 4
-                  }, {
-                    x: _x + w / 2 + 4,
-                    y: _y + h / 2 - 4
-                  }], 2);
-                  ink.rect(_x + 5, _y + h - 4, 8, 4, colors.ink, colors.paper, 1);
-                } else if (o.kind === "sandbag") {
-                  for (var row = 0; row < 3; row++) for (var _n = 0; _n < 3; _n++) {
-                    var bx = _x + _n * w / 3 + (row % 2 ? 5 : 0);
-                    // Rounded sacks distinguish soft cover from the box/steel silhouettes.
-                    var g = ink.g;
-                    g.roundRect(bx, _y + row * h / 3, w / 3 - 3, h / 3 - 2, 7);
-                    g.fillColor = shade;
-                    g.fill();
+                  var g = ink.g;
+                  g.roundRect(_x + 2, _y, w - 4, h - 3, 5);
+                  g.fillColor = shade;
+                  g.fill();
+                  g.strokeColor = colors.ink;
+                  g.lineWidth = 4;
+                  g.stroke();
+                  ink.ellipse(_x + w / 2, _y + h - 4, w / 2, 4, colors.ink, shade, 1.8);
+                  for (var _i = 0, _arr = [_y + 10, _y + h - 13]; _i < _arr.length; _i++) {
+                    var ry = _arr[_i];
+                    g.moveTo(_x, ry + 2);
+                    g.bezierCurveTo(_x + w / 3, ry - 2, _x + w * 0.7, ry - 2, _x + w, ry + 2);
                     g.strokeColor = colors.ink;
-                    g.lineWidth = 3.6;
+                    g.lineWidth = 4;
                     g.stroke();
-                    ink.line([{
-                      x: bx + 5,
-                      y: _y + row * h / 3 + 4
-                    }, {
-                      x: bx + 12,
-                      y: _y + row * h / 3 + 6
-                    }], 1, colors.muted);
+                  }
+                  // A filled flame makes the explosive barrel readable without color or text.
+                  var cx = _x + w / 2,
+                    cy = _y + h / 2 - 3;
+                  g.moveTo(cx, cy - 9);
+                  g.bezierCurveTo(cx - 13, cy - 8, cx - 6, cy + 3, cx - 5, cy + 7);
+                  g.bezierCurveTo(cx - 2, cy + 1, cx + 1, cy + 7, cx + 1, cy + 13);
+                  g.bezierCurveTo(cx + 13, cy + 5, cx + 11, cy - 8, cx, cy - 9);
+                  g.fillColor = colors.ink;
+                  g.fill();
+                  ink.segment(cx + 1, cy - 4, cx + 3, cy + 1, 1.8, shade);
+                  ink.ellipse(_x + w - 9, _y + h - 3, 3, 1.4, colors.ink, undefined, 1);
+                } else if (o.kind === "sandbag") {
+                  for (var row = 0; row < 3; row++) {
+                    var count = row === 1 ? 1 : 2,
+                      inset = row === 2 ? 5 : 0;
+                    for (var _n = 0; _n < count; _n++) {
+                      var sw = (w - inset * 2) / count,
+                        bx = _x + inset + _n * sw,
+                        by = _y + row * h / 3;
+                      var sh = h / 3 + 2,
+                        _g = ink.g;
+                      _g.moveTo(bx + 3, by);
+                      _g.bezierCurveTo(bx - 5, by + sh * 0.8, bx + sw * 0.25, by + sh * 1.1, bx + sw * 0.53, by + sh);
+                      _g.bezierCurveTo(bx + sw * 0.9, by + sh * 1.1, bx + sw + 3, by + sh * 0.5, bx + sw - 2, by);
+                      _g.close();
+                      _g.fillColor = shade;
+                      _g.fill();
+                      _g.strokeColor = colors.ink;
+                      _g.lineWidth = 3.6;
+                      _g.stroke();
+                      ink.segment(bx + 6, by + 3, bx + sw - 8, by + 3, 0.8, colors.muted);
+                      for (var j = 8; j < sw - 6; j += 9) ink.segment(bx + j, by + 2, bx + j + 1, by + 4, 0.7, colors.muted);
+                    }
                   }
                 } else {
                   ink.rect(_x, _y, w, h, colors.ink, shade, o.category === "indestructible" ? 5 : 2.5);
                   ink.rect(_x + 5, _y + 5, w - 10, h - 10, colors.muted, undefined, 1);
                   if (o.kind === "wood" || o.kind === "hanging") {
+                    for (var plank = 14; plank < w - 7; plank += 13) ink.segment(_x + plank, _y + 7, _x + plank + 1, _y + h - 7, 0.8, colors.muted);
                     ink.segment(_x + 9, _y + h - 9, _x + w * 0.4, _y + h - 10, 1, colors.muted);
                     ink.segment(_x + w * 0.65, _y + 9, _x + w - 9, _y + 10, 1, colors.muted);
                   }
                   if (o.kind === "steel" || o.kind === "concrete") {
-                    for (var _i = 0, _arr = [8, w - 8]; _i < _arr.length; _i++) {
-                      var a = _arr[_i];
-                      for (var _i2 = 0, _arr2 = [8, h - 8]; _i2 < _arr2.length; _i2++) {
-                        var b = _arr2[_i2];
+                    for (var _i2 = 0, _arr2 = [8, w - 8]; _i2 < _arr2.length; _i2++) {
+                      var a = _arr2[_i2];
+                      for (var _i3 = 0, _arr3 = [8, h - 8]; _i3 < _arr3.length; _i3++) {
+                        var b = _arr3[_i3];
                         ink.circle(_x + a, _y + b, 2, colors.ink, colors.ink, 1);
                       }
                     }
@@ -5093,20 +5189,25 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                       y: _y + h / 2
                     }], 3);
                   } else {
+                    // Broad pale diagonal slats, outlined like drawn timber instead of an X glyph.
+                    ink.segment(_x + 7, _y + 7, _x + w - 7, _y + h - 7, 7, colors.ink);
+                    ink.segment(_x + 7, _y + 7, _x + w - 7, _y + h - 7, 4.5, shade);
+                    ink.segment(_x + 7, _y + h - 7, _x + w - 7, _y + 7, 7, colors.ink);
+                    ink.segment(_x + 7, _y + h - 7, _x + w - 7, _y + 7, 4.5, shade);
                     ink.line([{
                       x: _x + 6,
                       y: _y + 6
                     }, {
                       x: _x + w - 6,
                       y: _y + h - 6
-                    }], 2);
+                    }], 0.6);
                     ink.line([{
                       x: _x + 6,
                       y: _y + h - 6
                     }, {
                       x: _x + w - 6,
                       y: _y + 6
-                    }], 2);
+                    }], 0.6);
                   }
                   if (o.data.drop && !o.data.hidden) {
                     ink.rect(_x + w / 2 - 10, _y + h / 2 - 9, 20, 18, colors.ink, colors.paper, 1.5);
@@ -5178,24 +5279,6 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
               _iterator2.e(err);
             } finally {
               _iterator2.f();
-            }
-            var _iterator3 = _createForOfIteratorHelper((_s$level$data$zones = s.level.data.zones) !== null && _s$level$data$zones !== void 0 ? _s$level$data$zones : []),
-              _step3;
-            try {
-              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-                var z = _step3.value;
-                if (z.id === "D" || s.level.clearedZones.has(z.id)) continue;
-                var _x3 = z.end - cam;
-                if (_x3 < 0 || _x3 > s.camera.visibleWidth) continue;
-                ink.segment(_x3, 150, _x3, 530, 4);
-                ink.rect(_x3 - 10, 510, 32, 28, colors.ink, colors.paper, 3);
-                ink.circle(_x3 + 6, 524, 5, colors.ink, colors.ink, 1);
-                for (var _y2 = 164; _y2 < 510; _y2 += 30) ink.segment(_x3 - 4, _y2, _x3 + 8, _y2 + 17, 2, colors.muted);
-              }
-            } catch (err) {
-              _iterator3.e(err);
-            } finally {
-              _iterator3.f();
             }
             for (var i = 0; i < s.pickups.items.length; i++) {
               var p = s.pickups.items[i],
@@ -5367,9 +5450,10 @@ System.register("chunks:///_virtual/ParticlePool.ts", ['./rollupPluginModLoBabel
         }, {
           key: "blast",
           value: function blast(x, y, radius) {
+            var groundY = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 150;
             this.burst(x, y, 12, "metal");
             this.burst(x, y, 8, "wood");
-            if (y - radius < 155) for (var n = 0; n < 8; n++) this.emit(x + (n - 3.5) * 12, 156, "dust", (n - 3.5) * 58, 35 + n % 3 * 15);
+            if (y - radius < groundY + 5) for (var n = 0; n < 8; n++) this.emit(x + (n - 3.5) * 12, groundY + 6, "dust", (n - 3.5) * 58, 35 + n % 3 * 15);
           }
         }, {
           key: "update",
@@ -5405,8 +5489,8 @@ System.register("chunks:///_virtual/ParticlePool.ts", ['./rollupPluginModLoBabel
   };
 });
 
-System.register("chunks:///_virtual/PickupSystem.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, GameConfig;
+System.register("chunks:///_virtual/PickupSystem.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Types.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, GameConfig, surfaceY;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -5417,6 +5501,8 @@ System.register("chunks:///_virtual/PickupSystem.ts", ['./rollupPluginModLoBabel
       cclegacy = module.cclegacy;
     }, function (module) {
       GameConfig = module.GameConfig;
+    }, function (module) {
+      surfaceY = module.surfaceY;
     }],
     execute: function () {
       cclegacy._RF.push({}, "1b490Er9x9MFaF2YE2O0EbB", "PickupSystem", undefined);
@@ -5492,8 +5578,8 @@ System.register("chunks:///_virtual/PickupSystem.ts", ['./rollupPluginModLoBabel
                 try {
                   for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
                     var s = _step3.value;
-                    if (p.x > s.x - 8 && p.x < s.x + s.w + 8 && oldY - 10 >= s.y + s.h && p.y - 10 <= s.y + s.h) {
-                      p.y = s.y + s.h + 10;
+                    if (p.x > s.x - 8 && p.x < s.x + s.w + 8 && oldY - 10 >= surfaceY(s, p.x) && p.y - 10 <= surfaceY(s, p.x)) {
+                      p.y = surfaceY(s, p.x) + 10;
                       p.vy = 0;
                     }
                   }
@@ -5655,7 +5741,7 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
             game.on(Game.EVENT_HIDE, onHide);
             this.unsubscribe = this.adapter.subscribeInactive(onHide);
             globalThis.__BREAKOUT__ = {
-              version: "0.4.1",
+              version: "0.4.2",
               snapshot: snapshot
             };
           }
@@ -5714,6 +5800,8 @@ System.register("chunks:///_virtual/PlayerController.ts", ['./rollupPluginModLoB
           _defineProperty(this, "deadTime", 0);
           _defineProperty(this, "recoil", 0);
           _defineProperty(this, "animationTime", 0);
+          _defineProperty(this, "stride", 0);
+          _defineProperty(this, "groundSlope", 0);
           _defineProperty(this, "coyote", 0);
           _defineProperty(this, "buffer", 0);
           _defineProperty(this, "hurtbox", {
@@ -5748,7 +5836,7 @@ System.register("chunks:///_virtual/PlayerController.ts", ['./rollupPluginModLoB
             if (this.hitTime > 0) return "Hit";
             if (!this.grounded) return this.vy > 0 ? "Jump" : "Fall";
             if (this.crouched) return "Crouch";
-            if (this.landTime > 0.05) return "Land";
+            if (this.landTime > 0) return "Land";
             if (Math.abs(this.vx) > 8) return "Run";
             return this.recoil > 0 ? "Shoot" : "Idle";
           }
@@ -5767,6 +5855,7 @@ System.register("chunks:///_virtual/PlayerController.ts", ['./rollupPluginModLoB
             this.crouched = false;
             this.aimPitch = 0;
             this.landTime = 0;
+            this.stride = this.groundSlope = 0;
             this.jumpCut = false;
             this.invincible = this.hitTime = this.deadTime = this.recoil = this.animationTime = this.coyote = this.buffer = 0;
           }
@@ -5786,7 +5875,7 @@ System.register("chunks:///_virtual/PlayerController.ts", ['./rollupPluginModLoB
               if (Math.abs(input.axis) > 0.06) this.facing = input.axis > 0 ? 1 : -1;
               var wantsCrouch = !!input.crouch && this.grounded;
               var blockedStanding = this.crouched && level.solids.some(function (s) {
-                return overlaps({
+                return !s.slope && overlaps({
                   x: _this.x - 13,
                   y: _this.y + 0.5,
                   w: 26,
@@ -5816,8 +5905,10 @@ System.register("chunks:///_virtual/PlayerController.ts", ['./rollupPluginModLoB
             }
             this.vy -= GameConfig.player.gravity * dt;
             var wasGrounded = this.grounded;
+            var oldX = this.x;
             level.move(this, dt);
-            if (!wasGrounded && this.grounded) this.landTime = 0.12;
+            if (this.grounded) this.stride += (this.x - oldX) * this.facing / 112;
+            if (!wasGrounded && this.grounded) this.landTime = 0.14;
             if (this.y < -200) this.takeDamage(this.health, this.facing);
           }
         }, {
@@ -5863,7 +5954,7 @@ System.register("chunks:///_virtual/ProjectileArt.ts", ['./rollupPluginModLoBabe
             var x = p.x - cameraX,
               y = p.y,
               length = Math.hypot(p.vx, p.vy) || 1;
-            var visualScale = p.kind === "rocket" ? 1.5 : 1;
+            var visualScale = p.kind === "rocket" ? 1.8 : 1;
             var cs = p.vx / length * visualScale,
               sn = p.vy / length * visualScale;
             var line = function line(a, b, c, d) {
@@ -5888,8 +5979,25 @@ System.register("chunks:///_virtual/ProjectileArt.ts", ['./rollupPluginModLoBabe
               var flame = 8 + Math.sin(time * 63) * 3;
               shape([-32, 4, -41, 6, -39, 2, -49 - flame, 0, -40, -2, -44, -6, -32, -4], colors.white, 2);
               shape([-24, 5, -31, 12, -37, 12, -33, 0, -37, -12, -31, -12, -24, -5]);
-              shape([0, 0, -10, 6, -30, 6, -30, -6, -10, -6]);
-              shape([0, 0, -10, 6, -10, -6], colors.mid, 1.8);
+              var g = ink.g;
+              var px = function px(a, b) {
+                return x + a * cs - b * sn;
+              };
+              var py = function py(a, b) {
+                return y + a * sn + b * cs;
+              };
+              g.moveTo(x, y);
+              g.bezierCurveTo(px(-4, 5), py(-4, 5), px(-10, 7), py(-10, 7), px(-18, 6), py(-18, 6));
+              g.lineTo(px(-30, 5), py(-30, 5));
+              g.lineTo(px(-30, -5), py(-30, -5));
+              g.bezierCurveTo(px(-18, -7), py(-18, -7), px(-6, -7), py(-6, -7), x, y);
+              g.close();
+              g.fillColor = colors.paper;
+              g.fill();
+              g.strokeColor = colors.ink;
+              g.lineWidth = 3;
+              g.stroke();
+              line(-9, -5, -9, 5, 2.2);
               line(-14, -5, -14, 5, 2);
               line(-18, 3, -27, 3, 1.2, colors.mid);
               line(-46, 13, -65, 13, 1.5, colors.muted);
@@ -6180,269 +6288,200 @@ System.register("chunks:///_virtual/ProjectileManager.ts", ['./rollupPluginModLo
 });
 
 System.register("chunks:///_virtual/SceneryArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts'], function (exports) {
-  var _createClass, _classCallCheck, cclegacy, colors;
+  var _createClass, _defineProperty, _classCallCheck, _slicedToArray, cclegacy, Color, colors;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
+      _defineProperty = module.defineProperty;
       _classCallCheck = module.classCallCheck;
+      _slicedToArray = module.slicedToArray;
     }, function (module) {
       cclegacy = module.cclegacy;
+      Color = module.Color;
     }, function (module) {
       colors = module.colors;
     }],
     execute: function () {
       cclegacy._RF.push({}, "d4986IOojGJFuRRCYu743Ir", "SceneryArt", undefined);
-      /** Purposeful industrial silhouettes. No randomly scattered decorative lines. */
+      /** Original ink contours: authored irregular silhouettes, sparse material strokes. */
       var SceneryArt = exports('SceneryArt', /*#__PURE__*/function () {
         function SceneryArt() {
           _classCallCheck(this, SceneryArt);
         }
         _createClass(SceneryArt, null, [{
+          key: "stroke",
+          value: function stroke(g, x, y, points) {
+            var width = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 2;
+            var color = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : colors.mid;
+            var fill = arguments.length > 6 ? arguments[6] : undefined;
+            var smooth = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 0.12;
+            var p = [];
+            for (var i = 0; i < points.length; i += 2) p.push({
+              x: x + points[i],
+              y: y + points[i + 1]
+            });
+            var closed = !!fill,
+              n = p.length,
+              ctx = g.g;
+            ctx.moveTo(p[0].x, p[0].y);
+            for (var _i = 0; _i < (closed ? n : n - 1); _i++) {
+              var a = p[_i],
+                b = p[(_i + 1) % n],
+                prev = p[(_i - 1 + n) % n],
+                next = p[(_i + 2) % n];
+              var before = !closed && _i === 0 ? a : prev,
+                after = !closed && _i === n - 2 ? b : next;
+              ctx.bezierCurveTo(a.x + (b.x - before.x) * smooth, a.y + (b.y - before.y) * smooth, b.x - (after.x - a.x) * smooth, b.y - (after.y - a.y) * smooth, b.x, b.y);
+            }
+            if (fill) {
+              ctx.close();
+              ctx.fillColor = fill;
+              ctx.fill();
+            }
+            ctx.strokeColor = color;
+            ctx.lineWidth = width;
+            ctx.stroke();
+          }
+        }, {
           key: "cloud",
           value: function cloud(g, x, y) {
             var size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
-            var c = colors.far;
-            g.line([{
-              x: x,
-              y: y
-            }, {
-              x: x + 18 * size,
-              y: y
-            }, {
-              x: x + 23 * size,
-              y: y + 7 * size
-            }, {
-              x: x + 38 * size,
-              y: y + 9 * size
-            }, {
-              x: x + 43 * size,
-              y: y + 18 * size
-            }, {
-              x: x + 63 * size,
-              y: y + 20 * size
-            }, {
-              x: x + 77 * size,
-              y: y + 9 * size
-            }, {
-              x: x + 98 * size,
-              y: y + 7 * size
-            }, {
-              x: x + 109 * size,
-              y: y
-            }, {
-              x: x + 126 * size,
-              y: y
-            }], 1.4, c);
+            this.stroke(g, x, y, [0, 0, 4, 8, 21, 9, 28, 20, 42, 20, 50, 14, 64, 29, 82, 26, 90, 13, 107, 16, 112, 7, 126, 5, 129, -1, 93, -3, 42, -2, 0, 0].map(function (v) {
+              return v * size;
+            }), 2, colors.far);
+          }
+        }, {
+          key: "ridge",
+          value: function ridge(g, variant) {
+            // Rounded eroded escarpment; asymmetry and long resting contours avoid triangular mountains.
+            var shift = variant % 3 * 12;
+            this.stroke(g, 0, 0, [-16, 209, 35, 222, 64, 243, 99, 247, 122, 263, 135, 306, 145, 324 + shift, 170, 337 + shift, 209, 335 + shift, 227, 341 + shift, 252, 334, 271, 283, 291, 275, 311, 247, 350, 233, 408, 228, 439, 254, 474, 260, 501, 286, 526, 298, 534, 321, 560, 327, 593, 324, 620, 334, 643, 317, 651, 292, 680, 262, 701, 259, 745, 218, 816, 209], 2.5, this.rockInk);
+            for (var _i2 = 0, _arr = [[154, 325 + shift], [220, 324], [550, 315], [605, 316]]; _i2 < _arr.length; _i2++) {
+              var _arr$_i = _slicedToArray(_arr[_i2], 2),
+                x = _arr$_i[0],
+                y = _arr$_i[1];
+              this.stroke(g, x, y, [0, 0, -4, -25, 2, -41, -8, -68, -5, -89], 1.5, this.rockInk);
+              this.stroke(g, x - 12, y - 42, [0, 0, 18, -3, 32, 0], 1.2, this.rockInk);
+            }
+            this.stroke(g, 0, 0, [-10, 188, 56, 204, 99, 201, 134, 218, 168, 211, 201, 196, 258, 193, 298, 214, 342, 209, 397, 191, 456, 206, 494, 203, 553, 189, 609, 209, 658, 207, 707, 192, 815, 188], 1.8, this.rockInk);
+          }
+        }, {
+          key: "rock",
+          value: function rock(g, x, y) {
+            var size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+            var foreground = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+            var c = foreground ? colors.muted : colors.mid;
+            this.stroke(g, x, y, [-18, 0, -22, 8, -13, 21, 0, 25, 12, 19, 21, 8, 18, 0].map(function (v) {
+              return v * size;
+            }), foreground ? 2.2 : 1.6, c, colors.paper, 0.08);
+            this.stroke(g, x, y, [-12, 18, 0, 15, 7, 5, 18, 1].map(function (v) {
+              return v * size;
+            }), 1.2, c);
           }
         }, {
           key: "tower",
           value: function tower(g, x, y) {
             var c = colors.mid;
-            g.line([{
-              x: x - 35,
-              y: y
-            }, {
-              x: x - 18,
-              y: y + 150
-            }, {
-              x: x,
-              y: y + 210
-            }, {
-              x: x + 18,
-              y: y + 150
-            }, {
-              x: x + 35,
-              y: y
-            }], 2, c);
-            for (var h = 20; h < 165; h += 28) {
-              var w = 34 - h * 0.13;
-              g.segment(x - w, y + h, x + w, y + h, 1, c);
-              g.segment(x - w, y + h, x + w - 4, y + h + 28, 1, c);
-              g.segment(x + w, y + h, x - w + 4, y + h + 28, 1, c);
+            for (var _i3 = 0, _arr2 = [-1, 1]; _i3 < _arr2.length; _i3++) {
+              var side = _arr2[_i3];
+              g.segment(x + side * 36, y, x + side * 27, y + 171, 6, c);
+              g.segment(x + side * 36, y, x + side * 27, y + 171, 2.5, colors.paper);
             }
-            g.segment(x - 32, y + 160, x + 32, y + 160, 2, c);
-            g.segment(x, y + 210, x, y + 250, 1.5, c);
-            g.circle(x, y + 246, 3, c, undefined, 1);
-            g.ellipse(x + 30, y + 155, 18, 8, c, undefined, 2);
-            g.segment(x + 15, y + 147, x + 5, y + 130, 2, c);
+            for (var h = 10; h < 150; h += 48) {
+              g.segment(x - 32, y + h, x + 31, y + h + 43, 2.4, c);
+              g.segment(x + 32, y + h, x - 31, y + h + 43, 2.4, c);
+            }
+            this.stroke(g, x, y, [-42, 171, -42, 183, 42, 184, 42, 170], 2.5, c, colors.paper, 0.025);
+            this.stroke(g, x, y, [-36, 185, -36, 209, 35, 210, 35, 185], 2.5, c);
+            for (var p = -28; p <= 28; p += 18) g.segment(x + p, y + 186, x + p, y + 209, 2, c);
+            g.segment(x + 25, y + 211, x + 25, y + 254, 2.5, c);
+            this.stroke(g, x, y, [26, 249, 41, 245, 48, 247, 46, 231, 37, 229, 26, 233], 2, c, colors.wall);
           }
         }, {
           key: "bunker",
           value: function bunker(g, x, y) {
             var width = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 280;
-            var c = colors.mid;
-            g.rect(x, y, width, 152, c, colors.wall, 2);
-            g.line([{
-              x: x - 10,
-              y: y + 152
-            }, {
-              x: x + 14,
-              y: y + 167
-            }, {
-              x: x + width - 14,
-              y: y + 167
-            }, {
-              x: x + width + 10,
-              y: y + 152
-            }], 2, c);
-            g.rect(x + 20, y, 61, 92, c, undefined, 2);
-            g.rect(x + 26, y + 7, 49, 78, c, undefined, 1);
-            g.circle(x + 67, y + 44, 2, c, c, 1);
-            for (var i = 0; i < 3; i++) {
-              var wx = x + 105 + i * 51;
-              g.rect(wx, y + 78, 37, 39, c, undefined, 1.5);
-              g.segment(wx, y + 98, wx + 37, y + 98, 1, c);
-              g.segment(wx + 18, y + 78, wx + 18, y + 117, 1, c);
+            var s = width / 280,
+              p = function p(a) {
+                return a.map(function (v, i) {
+                  return i % 2 ? v : v * s;
+                });
+              },
+              c = colors.mid;
+            this.stroke(g, x, y, p([0, 0, -2, 91, 2, 145, 25, 148, 26, 166, 53, 172, 94, 172, 111, 163, 178, 163, 179, 146, 226, 147, 237, 136, 277, 136, 280, 58, 277, 0]), 2.6, c, colors.wall, 0.025);
+            this.stroke(g, x, y, p([-7, 146, 26, 150, 27, 163, 61, 166, 98, 165, 110, 157, 175, 157]), 2.2, c);
+            // Recessed arched doorway and a boarded observation window.
+            this.stroke(g, x, y, p([21, 0, 22, 65, 29, 84, 47, 90, 65, 82, 72, 63, 72, 0]), 2.2, c, colors.paper);
+            this.stroke(g, x, y, p([29, 0, 30, 60, 38, 75, 56, 74, 63, 59, 63, 0]), 1.3, c);
+            this.stroke(g, x, y, p([123, 69, 123, 103, 186, 105, 188, 70]), 2, c, colors.paper, 0.035);
+            this.stroke(g, x, y, p([120, 81, 190, 86, 190, 91, 121, 86]), 1.4, c, colors.wall, 0.025);
+            this.stroke(g, x, y, p([232, 135, 221, 112, 232, 98, 217, 83]), 1.7, c);
+            this.stroke(g, x, y, p([246, 32, 230, 35, 221, 26, 212, 30]), 1.5, c);
+            for (var _i4 = 0, _arr3 = [[92, 22], [98, 33], [189, 125], [199, 117]]; _i4 < _arr3.length; _i4++) {
+              var _arr3$_i = _slicedToArray(_arr3[_i4], 2),
+                bx = _arr3$_i[0],
+                by = _arr3$_i[1];
+              g.segment(x + bx * s, y + by, x + (bx + 12) * s, y + by + 1, 1.4, c);
             }
-            g.rect(x + 100, y + 12, width - 119, 39, c, undefined, 1.5);
-            for (var _i = 0; _i < 10; _i++) g.segment(x + 107 + _i * 15, y + 19, x + 107 + _i * 15, y + 44, 1, c);
-            g.rect(x + 25, y + 174, 45, 23, c, undefined, 1.5);
-            g.segment(x + 35, y + 197, x + 35, y + 245, 1.5, c);
-            g.segment(x + 15, y + 229, x + 55, y + 229, 1.5, c);
+            // Curved roof tank and a short bent pipe replace the old window lattice.
+            this.stroke(g, x, y, p([39, 174, 40, 192, 47, 201, 71, 201, 80, 191, 80, 174]), 1.8, c, colors.paper);
+            this.stroke(g, x, y, p([59, 200, 59, 224, 66, 231, 80, 231, 85, 224, 85, 215]), 5, colors.wall);
+            this.stroke(g, x, y, p([59, 200, 59, 224, 66, 231, 80, 231, 85, 224, 85, 215]), 1.8, c);
+            this.rock(g, x + width - 3, y, 0.75);
+            this.rock(g, x + width + 19, y - 1, 0.48);
           }
         }, {
           key: "factory",
           value: function factory(g, x, y) {
+            // A ruined pump house, not a repeated box of identical windows.
+            this.bunker(g, x, y, 250);
             var c = colors.mid;
-            g.rect(x, y, 340, 244, c, colors.paper, 2);
-            for (var n = 0; n < 3; n++) {
-              var px = x + 36 + n * 82;
-              g.rect(px, y + 90, 42, 125, c, undefined, 2);
-              g.ellipse(px + 21, y + 215, 21, 8, c, colors.paper, 2);
-              g.segment(px + 21, y + 224, px + 21, y + 278, 7, colors.far);
-              g.segment(px + 21, y + 224, px + 21, y + 278, 1.5, c);
-            }
-            g.rect(x + 25, y + 14, 150, 52, c, undefined, 2);
-            for (var _n = 0; _n < 8; _n++) g.segment(x + 38 + _n * 17, y + 25, x + 38 + _n * 17, y + 56, 1, c);
-            g.rect(x + 246, y, 63, 126, c, undefined, 2);
-            g.circle(x + 270, y + 88, 9, c, undefined, 1.5);
-            g.segment(x + 271, y + 88, x + 276, y + 94, 1, c);
-            g.line([{
-              x: x + 17,
-              y: y + 79
-            }, {
-              x: x - 28,
-              y: y + 79
-            }, {
-              x: x - 28,
-              y: y + 137
-            }, {
-              x: x - 67,
-              y: y + 137
-            }], 5, colors.far);
-            g.line([{
-              x: x + 17,
-              y: y + 79
-            }, {
-              x: x - 28,
-              y: y + 79
-            }, {
-              x: x - 28,
-              y: y + 137
-            }, {
-              x: x - 67,
-              y: y + 137
-            }], 1.5, c);
-            for (var _n2 = 0; _n2 < 6; _n2++) g.circle(x + 22 + _n2 * 56, y + 232, 2, c, c, 1);
-            g.segment(x - 75, y + 137, x - 75, y + 7, 8, colors.far);
-            g.segment(x - 75, y + 137, x - 75, y + 7, 1.5, c);
+            this.stroke(g, x, y, [212, 138, 211, 202, 206, 214, 212, 238, 226, 244, 242, 239, 247, 225, 242, 202, 244, 138], 2.2, c, colors.paper);
+            this.stroke(g, x, y, [211, 229, 228, 226, 246, 230], 1.7, c);
+            this.stroke(g, x, y, [253, 20, 286, 23, 301, 42, 300, 91, 286, 107, 267, 108], 9, colors.wall);
+            this.stroke(g, x, y, [253, 20, 286, 23, 301, 42, 300, 91, 286, 107, 267, 108], 2, c);
+            g.ellipse(x + 282, y + 60, 13, 15, c, colors.paper, 2);
+            g.segment(x + 271, y + 60, x + 293, y + 60, 1.7, c);
+            this.rock(g, x + 294, y, 1.1);
           }
         }, {
           key: "crane",
           value: function crane(g, x, y) {
+            // Small broken loading gantry; large blank openings keep the battle readable.
             var c = colors.mid;
-            g.rect(x, y, 35, 280, c, undefined, 2);
-            g.rect(x + 270, y, 35, 280, c, undefined, 2);
-            for (var h = 0; h < 270; h += 35) {
-              g.segment(x, y + h, x + 35, y + h + 35, 1, c);
-              g.segment(x + 270, y + h, x + 305, y + h + 35, 1, c);
-            }
-            g.rect(x - 12, y + 280, 330, 24, c, undefined, 2);
-            for (var xx = x; xx < x + 300; xx += 28) g.segment(xx, y + 280, xx + 24, y + 304, 1, c);
-            g.segment(x + 135, y + 280, x + 135, y + 182, 1.5, c);
-            g.segment(x + 152, y + 280, x + 152, y + 180, 1.5, c);
-            g.rect(x + 117, y + 158, 52, 23, c, undefined, 2);
-            g.segment(x + 134, y + 157, x + 134, y + 140, 2, c);
-            g.line([{
-              x: x + 125,
-              y: y + 137
-            }, {
-              x: x + 136,
-              y: y + 125
-            }, {
-              x: x + 148,
-              y: y + 136
-            }], 2, c);
-            g.circle(x + 9, y + 57, 11, c, undefined, 2);
-            g.circle(x + 284, y + 57, 11, c, undefined, 2);
+            this.stroke(g, x, y, [0, 0, 3, 192, 13, 199, 27, 196, 24, 0], 2.4, c, colors.wall, 0.02);
+            this.stroke(g, x, y, [9, 188, 12, 207, 229, 208, 230, 190], 2.5, c, colors.paper, 0.02);
+            this.stroke(g, x, y, [210, 0, 211, 187, 226, 190, 232, 0], 2.3, c, colors.wall, 0.02);
+            g.segment(x + 17, y + 146, x + 70, y + 191, 2, c);
+            this.stroke(g, x, y, [129, 190, 128, 136, 137, 124, 135, 100, 128, 96, 122, 103], 2.3, c);
+            this.stroke(g, x, y, [26, 56, 40, 69, 73, 65, 87, 54, 84, 0, 22, 0], 2, c, colors.wall);
+            this.rock(g, x + 214, y, 0.8);
           }
         }, {
           key: "truck",
           value: function truck(g, x, y) {
             var c = colors.far;
-            g.rect(x, y + 19, 115, 52, c, undefined, 1.5);
-            g.line([{
-              x: x + 115,
-              y: y + 19
-            }, {
-              x: x + 160,
-              y: y + 19
-            }, {
-              x: x + 160,
-              y: y + 54
-            }, {
-              x: x + 145,
-              y: y + 77
-            }, {
-              x: x + 115,
-              y: y + 77
-            }], 1.5, c);
-            g.rect(x + 122, y + 47, 22, 23, c, undefined, 1);
-            g.circle(x + 27, y + 17, 14, c, undefined, 1.5);
-            g.circle(x + 130, y + 17, 14, c, undefined, 1.5);
+            this.stroke(g, x, y, [0, 18, 1, 60, 18, 73, 87, 73, 99, 65, 99, 18], 1.8, c, undefined, 0.04);
+            this.stroke(g, x, y, [100, 19, 149, 19, 148, 53, 132, 69, 103, 68, 100, 19], 1.8, c);
+            g.circle(x + 24, y + 17, 12, c, undefined, 1.5);
+            g.circle(x + 127, y + 17, 12, c, undefined, 1.5);
           }
-          /** Non-colliding midground machinery uses gray silhouettes, never black platform edges. */
         }, {
           key: "serviceBay",
           value: function serviceBay(g, x, y) {
+            // A low weathered wall with vegetation and rubble, not another box machine.
             var c = colors.mid;
-            g.rect(x, y, 126, 88, c, colors.wall, 3.6);
-            g.rect(x + 15, y + 17, 49, 51, c, colors.paper, 2);
-            for (var n = 0; n < 4; n++) g.segment(x + 22, y + 27 + n * 9, x + 56, y + 27 + n * 9, 2, c);
-            g.circle(x + 94, y + 45, 16, c, colors.paper, 3.6);
-            g.segment(x + 80, y + 45, x + 108, y + 45, 2, c);
-            g.segment(x + 94, y + 31, x + 94, y + 59, 2, c);
-            g.line([{
-              x: x + 24,
-              y: y + 88
-            }, {
-              x: x + 24,
-              y: y + 125
-            }, {
-              x: x + 143,
-              y: y + 125
-            }, {
-              x: x + 143,
-              y: y + 45
-            }], 8, colors.wall);
-            g.line([{
-              x: x + 24,
-              y: y + 88
-            }, {
-              x: x + 24,
-              y: y + 125
-            }, {
-              x: x + 143,
-              y: y + 125
-            }, {
-              x: x + 143,
-              y: y + 45
-            }], 2.4, c);
-            g.rect(x - 10, y - 6, 148, 6, c, colors.wall, 2);
+            this.stroke(g, x, y, [0, 0, 0, 44, 12, 49, 23, 43, 31, 51, 56, 48, 63, 30, 83, 34, 95, 25, 113, 28, 119, 0], 2, c, colors.wall, 0.06);
+            this.stroke(g, x, y, [30, 47, 26, 28, 37, 20, 32, 10], 1.6, c);
+            this.rock(g, x + 99, y, 0.9);
+            this.rock(g, x + 119, y, 0.5);
+            this.stroke(g, x - 14, y, [0, 0, -3, 14, -8, 26, -5, 35], 2, c);
+            this.stroke(g, x - 14, y, [-2, 12, 10, 18, 14, 29], 2, c);
           }
         }]);
         return SceneryArt;
       }());
+      _defineProperty(SceneryArt, "rockInk", new Color(198, 198, 192));
       cclegacy._RF.pop();
     }
   };
@@ -6487,34 +6526,49 @@ System.register("chunks:///_virtual/StickmanAnimator.ts", ['./rollupPluginModLoB
           key: "sample",
           value: /** Local coordinates face right, origin at feet. Upper body remains aimed while running. */
           function sample(state, time, recoil, armed) {
+            var _motion$stride;
             var deadTime = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
             var aimPitch = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+            var motion = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};
             this.cursor = 0;
             var p = this.point;
             var run = state === "Run",
               air = state === "Jump" || state === "Fall";
-            var wave = Math.sin(time * 15),
+            var phase = (_motion$stride = motion.stride) !== null && _motion$stride !== void 0 ? _motion$stride : time * 2.5;
+            var wave = Math.sin(phase * Math.PI * 2),
               breathe = Math.sin(time * 3) * 0.8;
-            var bob = run ? Math.abs(Math.cos(time * 15)) * 3 : breathe;
-            var lean = (run ? 7 : state === "Hit" ? -15 : state === "Shoot" ? 3 : 1) - recoil * 2.4;
+            var bob = run ? -1.5 * Math.cos(phase * Math.PI * 4) : breathe;
+            var lean = (run ? 9 : state === "Hit" ? -12 : state === "Shoot" ? 7 : 4) - recoil * 3;
             var kick = recoil * 4.8;
             var pose = {
-              head: p(lean, 64 + bob),
-              neck: p(lean, 53 + bob),
-              torso: p(0, 29 + bob),
-              leftShoulder: p(lean - 2, 49 + bob),
-              rightShoulder: p(lean + 2, 49 + bob),
-              leftElbow: p(8 - kick, 37 + bob),
-              rightElbow: p(15 - kick, 42 + bob),
-              leftHand: p(21 - kick, 44 + bob),
-              rightHand: p(25 - kick, 44 + bob),
-              leftHip: p(-2, 29 + bob),
-              rightHip: p(2, 29 + bob),
-              leftKnee: p(run ? wave * 16 : -6, 15),
-              rightKnee: p(run ? -wave * 16 : 6, 15),
-              leftAnkle: p(run ? wave * 24 : -11, run ? Math.max(0, -wave) * 11 : 0),
-              rightAnkle: p(run ? -wave * 24 : 11, run ? Math.max(0, wave) * 11 : 0)
+              head: p(lean, 68 + bob * 0.65),
+              neck: p(lean, 54 + bob),
+              torso: p(0, 32 + bob),
+              leftShoulder: p(lean - 4, 49 + bob),
+              rightShoulder: p(lean + 4, 49 + bob),
+              leftElbow: p(18 - kick, 34 + bob),
+              rightElbow: p(12 - kick, 36 + bob),
+              leftHand: p(35 - kick, 42 + bob),
+              rightHand: p(25 - kick, 45 + bob),
+              leftHip: p(-3, 32 + bob),
+              rightHip: p(3, 32 + bob),
+              leftKnee: p(run ? wave * 19 : -13, 16),
+              rightKnee: p(run ? -wave * 19 : 15, 17),
+              leftAnkle: p(run ? wave * 28 : -19, run ? Math.max(0, -wave) * 15 : 0),
+              rightAnkle: p(run ? -wave * 28 : 21, run ? Math.max(0, wave) * 15 : 0)
             };
+            if (run) {
+              var foot = function foot(offset) {
+                var u = ((phase + offset) % 1 + 1) % 1;
+                // Stance: constant reverse speed cancels body travel. Swing: eased recovery arc.
+                if (u < 0.56) return p(31.36 - 112 * u, 0);
+                var t = (u - 0.56) / 0.44,
+                  ease = t * t * (3 - 2 * t);
+                return p(-31.36 + 62.72 * ease, Math.sin(t * Math.PI) * 19);
+              };
+              pose.leftAnkle = foot(0.5);
+              pose.rightAnkle = foot(0);
+            }
             if (armed && run) {
               // Counter-swing while carrying a rifle; firing blends back into the aimed pose.
               var swing = wave * (1 - recoil);
@@ -6530,7 +6584,8 @@ System.register("chunks:///_virtual/StickmanAnimator.ts", ['./rollupPluginModLoB
               pose.rightHand = p(state === "Shoot" ? 36 : run ? wave * 20 : 13, state === "Shoot" ? 43 : 27 + bob);
             }
             if (state === "Crouch" || state === "Land") {
-              var amount = state === "Crouch" ? 0.6 : 0.88;
+              var _motion$landTime;
+              var amount = state === "Crouch" ? 0.6 : 1 - 0.16 * Math.sin(Math.min(1, ((_motion$landTime = motion.landTime) !== null && _motion$landTime !== void 0 ? _motion$landTime : 0.08) / 0.14) * Math.PI);
               for (var _i = 0, _Object$values = Object.values(pose); _i < _Object$values.length; _i++) {
                 var joint = _Object$values[_i];
                 joint.y *= amount;
@@ -6557,6 +6612,22 @@ System.register("chunks:///_virtual/StickmanAnimator.ts", ['./rollupPluginModLoB
                 pose.leftAnkle = p(12, 1);
               }
             }
+            if (!air && state !== "Dead") {
+              var _motion$groundSlope, _motion$facing;
+              var slope = ((_motion$groundSlope = motion.groundSlope) !== null && _motion$groundSlope !== void 0 ? _motion$groundSlope : 0) * ((_motion$facing = motion.facing) !== null && _motion$facing !== void 0 ? _motion$facing : 1);
+              pose.leftAnkle.y += pose.leftAnkle.x * slope;
+              pose.rightAnkle.y += pose.rightAnkle.x * slope;
+            }
+            // Two-link knees preserve limb lengths and bend forward instead of swinging rigid sticks.
+            var knee = function knee(hip, ankle) {
+              var dx = ankle.x - hip.x,
+                dy = ankle.y - hip.y;
+              var dist = Math.max(1, Math.hypot(dx, dy));
+              var bend = Math.sqrt(Math.max(0, 24 * 24 - dist * dist / 4));
+              return p((hip.x + ankle.x) / 2 - dy / dist * bend, (hip.y + ankle.y) / 2 + dx / dist * bend);
+            };
+            pose.leftKnee = knee(pose.leftHip, pose.leftAnkle);
+            pose.rightKnee = knee(pose.rightHip, pose.rightAnkle);
             if (state === "Dead") {
               var angle = Math.min(1, deadTime / 0.42) * -Math.PI / 2;
               for (var _i2 = 0, _Object$values2 = Object.values(pose); _i2 < _Object$values2.length; _i2++) {
@@ -6706,6 +6777,10 @@ System.register("chunks:///_virtual/TankBoss.ts", ['./rollupPluginModLoBabelHelp
             this.active = level.data.arena ? level.arenaEntered : Math.abs(p.x - this.x) < 800;
             if (!this.active || !p.alive) {
               this.state = "Idle";
+              this.mode = "dormant";
+              this.windup = 0;
+              this.warningTime = 0;
+              this.secondShell = 0;
               return;
             }
             this.facing = p.x > this.x ? 1 : -1;
@@ -6769,6 +6844,54 @@ System.register("chunks:///_virtual/TankBoss.ts", ['./rollupPluginModLoBabelHelp
         }]);
         return TankBoss;
       }(EnemyController));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TerrainProfile.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Types.ts'], function (exports) {
+  var _slicedToArray, cclegacy, surfaceY;
+  return {
+    setters: [function (module) {
+      _slicedToArray = module.slicedToArray;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      surfaceY = module.surfaceY;
+    }],
+    execute: function () {
+      exports('roadHeight', roadHeight);
+      cclegacy._RF.push({}, "ab20avw7ohERvT6aH3iEdqW", "TerrainProfile", undefined);
+
+      /** Authored road: broad ridges, shallow gullies and level pads for props/platforms.
+       * No pits or one-way terrain. Both directions remain traversable without jumping.
+       * The final tank apron stays level for its existing shell telegraphs.
+       */
+      var points = [[0, 150], [160, 150], [270, 174], [520, 174], [640, 150], [805, 150], [935, 184], [1140, 184], [1300, 156], [1480, 118], [1630, 118], [1740, 150], [2010, 150], [2245, 150], [2370, 128], [2480, 128], [2625, 163], [2820, 163], [2915, 150], [3350, 150], [3460, 178], [3650, 178], [3720, 150], [4010, 150], [4100, 176], [4330, 176], [4490, 134], [4680, 134], [4830, 150], [5200, 150], [5390, 120], [5470, 120], [5560, 150], [6090, 150], [6230, 185], [6350, 185], [6510, 150], [8200, 150]];
+      var road = exports('road', points.slice(1).map(function (_ref, i) {
+        var _ref2 = _slicedToArray(_ref, 2),
+          x = _ref2[0],
+          y = _ref2[1];
+        var _points$i = _slicedToArray(points[i], 2),
+          left = _points$i[0],
+          height = _points$i[1];
+        return {
+          x: left,
+          y: -240,
+          w: x - left,
+          h: Math.max(height, y) + 240,
+          slope: {
+            left: height,
+            right: y
+          }
+        };
+      }));
+      function roadHeight(x) {
+        var r = road.find(function (r) {
+          return x >= r.x && x <= r.x + r.w;
+        });
+        return r ? surfaceY(r, x) : 150;
+      }
       cclegacy._RF.pop();
     }
   };
@@ -6938,9 +7061,14 @@ System.register("chunks:///_virtual/Types.ts", ['cc'], function (exports) {
     execute: function () {
       exports({
         overlaps: overlaps,
-        segmentRect: segmentRect
+        segmentRect: segmentRect,
+        surfaceY: surfaceY
       });
       cclegacy._RF.push({}, "c97b5mmH0TTAryi42viVQS1", "Types", undefined);
+      /** Surface coordinates are shared by walking, falling objects and projectile sweeps. */
+      function surfaceY(r, x) {
+        return r.slope ? r.slope.left + (r.slope.right - r.slope.left) * clamp((x - r.x) / r.w, 0, 1) : r.y + r.h;
+      }
       var clamp = exports('clamp', function clamp(v, lo, hi) {
         return Math.max(lo, Math.min(hi, v));
       });
@@ -6970,6 +7098,18 @@ System.register("chunks:///_virtual/Types.ts", ['cc'], function (exports) {
           }
           enter = Math.max(enter, t1);
           leave = Math.min(leave, t2);
+          if (enter > leave) return null;
+        }
+        if (r.slope) {
+          var m = (r.slope.right - r.slope.left) / r.w;
+          var height = function height(v) {
+            return v.y - r.slope.left - m * (v.x - r.x) - radius * Math.hypot(1, m);
+          };
+          var _start = height(a),
+            _delta = height(b) - _start;
+          if (Math.abs(_delta) < 1e-8) {
+            if (_start > 0) return null;
+          } else if (_delta < 0) enter = Math.max(enter, -_start / _delta);else leave = Math.min(leave, -_start / _delta);
           if (enter > leave) return null;
         }
         return enter;
@@ -7218,7 +7358,7 @@ System.register("chunks:///_virtual/WeaponSystem.ts", ['./rollupPluginModLoBabel
             if (owner === "player" && this.ammo === 0) this.equip("rifle");
             var config = GameConfig.weapons[this.id],
               scale = source.kind === "guard" ? 1.08 : 1;
-            var pose = this.animator.sample(source.animation, source.animationTime, config.recoil, true, source.deadTime, (_source$aimPitch = source.aimPitch) !== null && _source$aimPitch !== void 0 ? _source$aimPitch : 0);
+            var pose = this.animator.sample(source.animation, source.animationTime, config.recoil, true, source.deadTime, (_source$aimPitch = source.aimPitch) !== null && _source$aimPitch !== void 0 ? _source$aimPitch : 0, source);
             var pitch = (_source$aimPitch2 = source.aimPitch) !== null && _source$aimPitch2 !== void 0 ? _source$aimPitch2 : 0;
             var x = source.x + (pose.rightHand.x + config.muzzleLength * Math.cos(pitch)) * source.facing * scale,
               y = source.y + (pose.rightHand.y + config.muzzleLength * Math.sin(pitch)) * scale;

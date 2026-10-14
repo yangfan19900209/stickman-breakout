@@ -31,6 +31,8 @@ export class EnemyController {
   hitTime = 0;
   deadTime = 0;
   animationTime = 0;
+  stride = 0;
+  groundSlope = 0;
   recoil = 0;
   attackCooldown = 0.8;
   windup = 0;
@@ -152,7 +154,7 @@ export class EnemyController {
       if (close && (this.kind === "melee" || sight)) {
         this.state = "Attack";
         this.vx =
-          this.kind === "ranged" && this.spawn.y === 150
+          this.kind === "ranged" && !this.spawn.onPlatform
             ? (Math.abs(dx) < 220 ? -this.facing : this.facing) *
               config.speed *
               0.4
@@ -204,13 +206,14 @@ export class EnemyController {
     // Ranged platform soldiers remain on their patrol surface. Melee soldiers can negotiate crates.
     if (
       this.kind === "ranged" &&
-      this.spawn.y > 150 &&
+      this.spawn.onPlatform &&
       Math.abs(this.x - this.spawn.x) > this.spawn.patrol
     )
       this.vx = 0;
     const oldX = this.x;
     this.vy -= C.player.gravity * dt;
     level.move(this, dt);
+    if (this.grounded) this.stride += ((this.x - oldX) * this.facing) / 112;
     if (
       this.alive &&
       this.kind === "melee" &&

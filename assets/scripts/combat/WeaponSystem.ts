@@ -8,6 +8,9 @@ export interface ArmedSource {
   facing: Facing;
   animation: AnimationState;
   animationTime: number;
+  stride?: number;
+  groundSlope?: number;
+  landTime?: number;
   recoil: number;
   deadTime: number;
   kind?: string;
@@ -59,6 +62,7 @@ export class WeaponSystem {
       true,
       source.deadTime,
       source.aimPitch ?? 0,
+      source,
     );
     const pitch = source.aimPitch ?? 0;
     const x =

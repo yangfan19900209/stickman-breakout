@@ -107,11 +107,15 @@ test("cutting the bridge rope drops the real deck; lift motion carries a grounde
   assert.notEqual(s.player.y, before);
   assert.equal(s.player.y, lift.rect.y + lift.rect.h);
 });
-test("encounter gate blocks the player until actual assigned enemies die", () => {
+test("zone clearance is tracked without blocking progress behind skipped enemies", () => {
   const s = new GameSession();
   s.reset();
   const z = s.level.data.zones[0];
-  assert.ok(s.level.solids.some((r) => r.entityId === "gate:A"));
+  assert.equal(
+    s.level.solids.some((r) => r.entityId?.startsWith("gate:")),
+    false,
+  );
+  assert.equal(s.level.clearedZones.has("A"), false);
   for (const e of s.spawner.enemies)
     if (e.spawn.x < z.end) e.takeDamage(500, 1, "explosion");
   s.update(1 / 120, idle);

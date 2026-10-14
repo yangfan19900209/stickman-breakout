@@ -1,9 +1,9 @@
 {
   "snapshot": {
     "state": "complete",
-    "time": 67.67499999999993,
+    "time": 68.89166666666756,
     "player": {
-      "x": 8043.069444443983,
+      "x": 8042.263888888424,
       "y": 150,
       "vx": 280,
       "vy": 0,
@@ -14,14 +14,23 @@
       "crouched": false,
       "aimPitch": 0
     },
-    "cameraX": 6839.999999999993,
+    "cameraX": 6919.999999790097,
     "kills": 21,
     "weapon": "rifle",
     "ammo": -1,
     "grenades": 5,
     "grenadesThrown": 2,
     "destroyedObjects": 19,
-    "explosions": 44,
+    "explosions": 45,
+    "feedback": {
+      "shakeTime": 0,
+      "shakePower": 7,
+      "hitStop": 0.05,
+      "blasts": [],
+      "particles": [],
+      "peakParticles": 202,
+      "droppedParticles": 0
+    },
     "combo": 0,
     "bestCombo": 9,
     "objects": [
@@ -340,9 +349,9 @@
       "phase": 2,
       "active": true,
       "mode": "destroyed",
-      "warningX": 7280.069444444097,
+      "warningX": 7216.263888888546,
       "warningTime": 0,
-      "windup": 0.26166666666666666,
+      "windup": 0,
       "summons": 2
     },
     "levelWidth": 8200,
@@ -393,7 +402,7 @@
         "id": "lift-C",
         "kind": "lift",
         "x": 5000,
-        "y": 227.29166666666535,
+        "y": 306.37499999999994,
         "w": 142,
         "h": 16,
         "released": false,
@@ -547,7 +556,7 @@
       },
       {
         "x": 5000,
-        "y": 227.29166666666535,
+        "y": 306.37499999999994,
         "w": 142,
         "h": 16,
         "kind": "platform"
@@ -555,8 +564,8 @@
     ],
     "exitOpen": true,
     "bullets": 0,
-    "shots": 313,
-    "hits": 146,
+    "shots": 323,
+    "hits": 147,
     "peakBullets": 10,
     "droppedBullets": 0,
     "enemies": [
@@ -582,7 +591,7 @@
       },
       {
         "id": "r2",
-        "x": 1312.988363691648,
+        "x": 1311.2594444155025,
         "y": 262,
         "health": 0,
         "state": "Dead",
@@ -592,7 +601,7 @@
       },
       {
         "id": "m2",
-        "x": 1384.5637865123742,
+        "x": 1385.855453179041,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -602,7 +611,7 @@
       },
       {
         "id": "r3",
-        "x": 1969.971006899218,
+        "x": 1969.791006899218,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -748,11 +757,11 @@
         "state": "Dead",
         "kind": "guard",
         "shield": 0,
-        "windup": 0.26166666666666666
+        "windup": 0
       },
       {
         "id": "reinforce-19",
-        "x": 7554.501622557888,
+        "x": 7546.941622557876,
         "y": 150,
         "health": 0,
         "state": "Dead",
@@ -965,7 +974,7 @@
     },
     {
       "time": 49.999999999997804,
-      "x": 7256.138888888513,
+      "x": 7284.847222221846,
       "y": 150,
       "health": 4,
       "kills": 18,
@@ -973,7 +982,7 @@
       "weapon": "rocket",
       "boss": 35.60889112903225,
       "input": {
-        "axis": 1,
+        "axis": -1,
         "jump": false,
         "jumpHeld": false,
         "shoot": true,
@@ -984,17 +993,17 @@
     },
     {
       "time": 54.99999999999752,
-      "x": 7195.694444444083,
-      "y": 150,
+      "x": 7136.416666666314,
+      "y": 224.16666666666666,
       "health": 4,
       "kills": 20,
       "zone": "D",
       "weapon": "rifle",
-      "boss": 26.60889112903225,
+      "boss": 27.60889112903225,
       "input": {
         "axis": 1,
         "jump": false,
-        "jumpHeld": false,
+        "jumpHeld": true,
         "shoot": true,
         "crouch": false,
         "aimY": 0,
@@ -1003,13 +1012,13 @@
     },
     {
       "time": 59.999999999997236,
-      "x": 7135.388888888542,
-      "y": 156.96666666666655,
+      "x": 7109.80555555521,
+      "y": 150,
       "health": 4,
       "kills": 20,
       "zone": "D",
       "weapon": "rifle",
-      "boss": 12.608891129032251,
+      "boss": 11.608891129032251,
       "input": {
         "axis": 1,
         "jump": false,
@@ -1022,18 +1031,18 @@
     },
     {
       "time": 64.9999999999978,
-      "x": 7294.069444444081,
+      "x": 7077.374999999663,
       "y": 150,
       "health": 4,
-      "kills": 21,
+      "kills": 20,
       "zone": "D",
       "weapon": "rifle",
-      "boss": 0,
+      "boss": 0.6088911290322514,
       "input": {
-        "axis": 1,
+        "axis": -1,
         "jump": false,
         "jumpHeld": false,
-        "shoot": false,
+        "shoot": true,
         "crouch": false,
         "aimY": 0,
         "grenade": false

@@ -200,9 +200,8 @@ test("complete V0.2 story with real keyboard input, mechanisms and two-phase bos
   ).toBe("complete");
   expect(end.guardHealth).toBe(0);
   expect(end.player.health).toBeGreaterThan(0);
-  expect(
-    end.zones.filter((z: any) => z.id !== "D").every((z: any) => z.cleared),
-  ).toBe(true);
+  // Ordinary-zone clearance is optional; only the defeated boss gates completion.
+  expect(end.exitOpen).toBe(true);
   expect(weapons.has("shotgun")).toBe(true);
   expect(weapons.has("rocket")).toBe(true);
   expect(phases.has(1) && phases.has(2)).toBe(true);

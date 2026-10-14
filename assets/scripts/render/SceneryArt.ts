@@ -1,194 +1,462 @@
+import { Color } from "cc";
+import { Vec } from "../core/Types";
 import { Ink, colors } from "./Ink";
-/** Purposeful industrial silhouettes. No randomly scattered decorative lines. */
+/** Original ink contours: authored irregular silhouettes, sparse material strokes. */
 export class SceneryArt {
+  private static readonly rockInk = new Color(198, 198, 192);
+  private static stroke(
+    g: Ink,
+    x: number,
+    y: number,
+    points: number[],
+    width = 2,
+    color = colors.mid,
+    fill?: Color,
+    smooth = 0.12,
+  ): void {
+    const p: Vec[] = [];
+    for (let i = 0; i < points.length; i += 2)
+      p.push({ x: x + points[i], y: y + points[i + 1] });
+    const closed = !!fill,
+      n = p.length,
+      ctx = g.g;
+    ctx.moveTo(p[0].x, p[0].y);
+    for (let i = 0; i < (closed ? n : n - 1); i++) {
+      const a = p[i],
+        b = p[(i + 1) % n],
+        prev = p[(i - 1 + n) % n],
+        next = p[(i + 2) % n];
+      const before = !closed && i === 0 ? a : prev,
+        after = !closed && i === n - 2 ? b : next;
+      ctx.bezierCurveTo(
+        a.x + (b.x - before.x) * smooth,
+        a.y + (b.y - before.y) * smooth,
+        b.x - (after.x - a.x) * smooth,
+        b.y - (after.y - a.y) * smooth,
+        b.x,
+        b.y,
+      );
+    }
+    if (fill) {
+      ctx.close();
+      ctx.fillColor = fill;
+      ctx.fill();
+    }
+    ctx.strokeColor = color;
+    ctx.lineWidth = width;
+    ctx.stroke();
+  }
   static cloud(g: Ink, x: number, y: number, size = 1): void {
-    const c = colors.far;
-    g.line(
+    this.stroke(
+      g,
+      x,
+      y,
       [
-        { x, y },
-        { x: x + 18 * size, y },
-        { x: x + 23 * size, y: y + 7 * size },
-        { x: x + 38 * size, y: y + 9 * size },
-        { x: x + 43 * size, y: y + 18 * size },
-        { x: x + 63 * size, y: y + 20 * size },
-        { x: x + 77 * size, y: y + 9 * size },
-        { x: x + 98 * size, y: y + 7 * size },
-        { x: x + 109 * size, y },
-        { x: x + 126 * size, y },
+        0, 0, 4, 8, 21, 9, 28, 20, 42, 20, 50, 14, 64, 29, 82, 26, 90, 13, 107,
+        16, 112, 7, 126, 5, 129, -1, 93, -3, 42, -2, 0, 0,
+      ].map((v) => v * size),
+      2,
+      colors.far,
+    );
+  }
+  static ridge(g: Ink, variant: number): void {
+    // Rounded eroded escarpment; asymmetry and long resting contours avoid triangular mountains.
+    const shift = (variant % 3) * 12;
+    this.stroke(
+      g,
+      0,
+      0,
+      [
+        -16,
+        209,
+        35,
+        222,
+        64,
+        243,
+        99,
+        247,
+        122,
+        263,
+        135,
+        306,
+        145,
+        324 + shift,
+        170,
+        337 + shift,
+        209,
+        335 + shift,
+        227,
+        341 + shift,
+        252,
+        334,
+        271,
+        283,
+        291,
+        275,
+        311,
+        247,
+        350,
+        233,
+        408,
+        228,
+        439,
+        254,
+        474,
+        260,
+        501,
+        286,
+        526,
+        298,
+        534,
+        321,
+        560,
+        327,
+        593,
+        324,
+        620,
+        334,
+        643,
+        317,
+        651,
+        292,
+        680,
+        262,
+        701,
+        259,
+        745,
+        218,
+        816,
+        209,
       ],
-      1.4,
+      2.5,
+      this.rockInk,
+    );
+    for (const [x, y] of [
+      [154, 325 + shift],
+      [220, 324],
+      [550, 315],
+      [605, 316],
+    ]) {
+      this.stroke(
+        g,
+        x,
+        y,
+        [0, 0, -4, -25, 2, -41, -8, -68, -5, -89],
+        1.5,
+        this.rockInk,
+      );
+      this.stroke(g, x - 12, y - 42, [0, 0, 18, -3, 32, 0], 1.2, this.rockInk);
+    }
+    this.stroke(
+      g,
+      0,
+      0,
+      [
+        -10, 188, 56, 204, 99, 201, 134, 218, 168, 211, 201, 196, 258, 193, 298,
+        214, 342, 209, 397, 191, 456, 206, 494, 203, 553, 189, 609, 209, 658,
+        207, 707, 192, 815, 188,
+      ],
+      1.8,
+      this.rockInk,
+    );
+  }
+  static rock(
+    g: Ink,
+    x: number,
+    y: number,
+    size = 1,
+    foreground = false,
+  ): void {
+    const c = foreground ? colors.muted : colors.mid;
+    this.stroke(
+      g,
+      x,
+      y,
+      [-18, 0, -22, 8, -13, 21, 0, 25, 12, 19, 21, 8, 18, 0].map(
+        (v) => v * size,
+      ),
+      foreground ? 2.2 : 1.6,
+      c,
+      colors.paper,
+      0.08,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      [-12, 18, 0, 15, 7, 5, 18, 1].map((v) => v * size),
+      1.2,
       c,
     );
   }
   static tower(g: Ink, x: number, y: number): void {
     const c = colors.mid;
-    g.line(
-      [
-        { x: x - 35, y },
-        { x: x - 18, y: y + 150 },
-        { x, y: y + 210 },
-        { x: x + 18, y: y + 150 },
-        { x: x + 35, y },
-      ],
+    for (const side of [-1, 1]) {
+      g.segment(x + side * 36, y, x + side * 27, y + 171, 6, c);
+      g.segment(x + side * 36, y, x + side * 27, y + 171, 2.5, colors.paper);
+    }
+    for (let h = 10; h < 150; h += 48) {
+      g.segment(x - 32, y + h, x + 31, y + h + 43, 2.4, c);
+      g.segment(x + 32, y + h, x - 31, y + h + 43, 2.4, c);
+    }
+    this.stroke(
+      g,
+      x,
+      y,
+      [-42, 171, -42, 183, 42, 184, 42, 170],
+      2.5,
+      c,
+      colors.paper,
+      0.025,
+    );
+    this.stroke(g, x, y, [-36, 185, -36, 209, 35, 210, 35, 185], 2.5, c);
+    for (let p = -28; p <= 28; p += 18)
+      g.segment(x + p, y + 186, x + p, y + 209, 2, c);
+    g.segment(x + 25, y + 211, x + 25, y + 254, 2.5, c);
+    this.stroke(
+      g,
+      x,
+      y,
+      [26, 249, 41, 245, 48, 247, 46, 231, 37, 229, 26, 233],
       2,
       c,
+      colors.wall,
     );
-    for (let h = 20; h < 165; h += 28) {
-      const w = 34 - h * 0.13;
-      g.segment(x - w, y + h, x + w, y + h, 1, c);
-      g.segment(x - w, y + h, x + w - 4, y + h + 28, 1, c);
-      g.segment(x + w, y + h, x - w + 4, y + h + 28, 1, c);
-    }
-    g.segment(x - 32, y + 160, x + 32, y + 160, 2, c);
-    g.segment(x, y + 210, x, y + 250, 1.5, c);
-    g.circle(x, y + 246, 3, c, undefined, 1);
-    g.ellipse(x + 30, y + 155, 18, 8, c, undefined, 2);
-    g.segment(x + 15, y + 147, x + 5, y + 130, 2, c);
   }
   static bunker(g: Ink, x: number, y: number, width = 280): void {
-    const c = colors.mid;
-    g.rect(x, y, width, 152, c, colors.wall, 2);
-    g.line(
-      [
-        { x: x - 10, y: y + 152 },
-        { x: x + 14, y: y + 167 },
-        { x: x + width - 14, y: y + 167 },
-        { x: x + width + 10, y: y + 152 },
-      ],
-      2,
+    const s = width / 280,
+      p = (a: number[]) => a.map((v, i) => (i % 2 ? v : v * s)),
+      c = colors.mid;
+    this.stroke(
+      g,
+      x,
+      y,
+      p([
+        0, 0, -2, 91, 2, 145, 25, 148, 26, 166, 53, 172, 94, 172, 111, 163, 178,
+        163, 179, 146, 226, 147, 237, 136, 277, 136, 280, 58, 277, 0,
+      ]),
+      2.6,
+      c,
+      colors.wall,
+      0.025,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      p([-7, 146, 26, 150, 27, 163, 61, 166, 98, 165, 110, 157, 175, 157]),
+      2.2,
       c,
     );
-    g.rect(x + 20, y, 61, 92, c, undefined, 2);
-    g.rect(x + 26, y + 7, 49, 78, c, undefined, 1);
-    g.circle(x + 67, y + 44, 2, c, c, 1);
-    for (let i = 0; i < 3; i++) {
-      const wx = x + 105 + i * 51;
-      g.rect(wx, y + 78, 37, 39, c, undefined, 1.5);
-      g.segment(wx, y + 98, wx + 37, y + 98, 1, c);
-      g.segment(wx + 18, y + 78, wx + 18, y + 117, 1, c);
-    }
-    g.rect(x + 100, y + 12, width - 119, 39, c, undefined, 1.5);
-    for (let i = 0; i < 10; i++)
-      g.segment(x + 107 + i * 15, y + 19, x + 107 + i * 15, y + 44, 1, c);
-    g.rect(x + 25, y + 174, 45, 23, c, undefined, 1.5);
-    g.segment(x + 35, y + 197, x + 35, y + 245, 1.5, c);
-    g.segment(x + 15, y + 229, x + 55, y + 229, 1.5, c);
+    // Recessed arched doorway and a boarded observation window.
+    this.stroke(
+      g,
+      x,
+      y,
+      p([21, 0, 22, 65, 29, 84, 47, 90, 65, 82, 72, 63, 72, 0]),
+      2.2,
+      c,
+      colors.paper,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      p([29, 0, 30, 60, 38, 75, 56, 74, 63, 59, 63, 0]),
+      1.3,
+      c,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      p([123, 69, 123, 103, 186, 105, 188, 70]),
+      2,
+      c,
+      colors.paper,
+      0.035,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      p([120, 81, 190, 86, 190, 91, 121, 86]),
+      1.4,
+      c,
+      colors.wall,
+      0.025,
+    );
+    this.stroke(g, x, y, p([232, 135, 221, 112, 232, 98, 217, 83]), 1.7, c);
+    this.stroke(g, x, y, p([246, 32, 230, 35, 221, 26, 212, 30]), 1.5, c);
+    for (const [bx, by] of [
+      [92, 22],
+      [98, 33],
+      [189, 125],
+      [199, 117],
+    ])
+      g.segment(x + bx * s, y + by, x + (bx + 12) * s, y + by + 1, 1.4, c);
+    // Curved roof tank and a short bent pipe replace the old window lattice.
+    this.stroke(
+      g,
+      x,
+      y,
+      p([39, 174, 40, 192, 47, 201, 71, 201, 80, 191, 80, 174]),
+      1.8,
+      c,
+      colors.paper,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      p([59, 200, 59, 224, 66, 231, 80, 231, 85, 224, 85, 215]),
+      5,
+      colors.wall,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      p([59, 200, 59, 224, 66, 231, 80, 231, 85, 224, 85, 215]),
+      1.8,
+      c,
+    );
+    this.rock(g, x + width - 3, y, 0.75);
+    this.rock(g, x + width + 19, y - 1, 0.48);
   }
   static factory(g: Ink, x: number, y: number): void {
+    // A ruined pump house, not a repeated box of identical windows.
+    this.bunker(g, x, y, 250);
     const c = colors.mid;
-    g.rect(x, y, 340, 244, c, colors.paper, 2);
-    for (let n = 0; n < 3; n++) {
-      const px = x + 36 + n * 82;
-      g.rect(px, y + 90, 42, 125, c, undefined, 2);
-      g.ellipse(px + 21, y + 215, 21, 8, c, colors.paper, 2);
-      g.segment(px + 21, y + 224, px + 21, y + 278, 7, colors.far);
-      g.segment(px + 21, y + 224, px + 21, y + 278, 1.5, c);
-    }
-    g.rect(x + 25, y + 14, 150, 52, c, undefined, 2);
-    for (let n = 0; n < 8; n++)
-      g.segment(x + 38 + n * 17, y + 25, x + 38 + n * 17, y + 56, 1, c);
-    g.rect(x + 246, y, 63, 126, c, undefined, 2);
-    g.circle(x + 270, y + 88, 9, c, undefined, 1.5);
-    g.segment(x + 271, y + 88, x + 276, y + 94, 1, c);
-    g.line(
+    this.stroke(
+      g,
+      x,
+      y,
       [
-        { x: x + 17, y: y + 79 },
-        { x: x - 28, y: y + 79 },
-        { x: x - 28, y: y + 137 },
-        { x: x - 67, y: y + 137 },
+        212, 138, 211, 202, 206, 214, 212, 238, 226, 244, 242, 239, 247, 225,
+        242, 202, 244, 138,
       ],
-      5,
-      colors.far,
-    );
-    g.line(
-      [
-        { x: x + 17, y: y + 79 },
-        { x: x - 28, y: y + 79 },
-        { x: x - 28, y: y + 137 },
-        { x: x - 67, y: y + 137 },
-      ],
-      1.5,
+      2.2,
       c,
+      colors.paper,
     );
-    for (let n = 0; n < 6; n++) g.circle(x + 22 + n * 56, y + 232, 2, c, c, 1);
-    g.segment(x - 75, y + 137, x - 75, y + 7, 8, colors.far);
-    g.segment(x - 75, y + 137, x - 75, y + 7, 1.5, c);
-  }
-  static crane(g: Ink, x: number, y: number): void {
-    const c = colors.mid;
-    g.rect(x, y, 35, 280, c, undefined, 2);
-    g.rect(x + 270, y, 35, 280, c, undefined, 2);
-    for (let h = 0; h < 270; h += 35) {
-      g.segment(x, y + h, x + 35, y + h + 35, 1, c);
-      g.segment(x + 270, y + h, x + 305, y + h + 35, 1, c);
-    }
-    g.rect(x - 12, y + 280, 330, 24, c, undefined, 2);
-    for (let xx = x; xx < x + 300; xx += 28)
-      g.segment(xx, y + 280, xx + 24, y + 304, 1, c);
-    g.segment(x + 135, y + 280, x + 135, y + 182, 1.5, c);
-    g.segment(x + 152, y + 280, x + 152, y + 180, 1.5, c);
-    g.rect(x + 117, y + 158, 52, 23, c, undefined, 2);
-    g.segment(x + 134, y + 157, x + 134, y + 140, 2, c);
-    g.line(
-      [
-        { x: x + 125, y: y + 137 },
-        { x: x + 136, y: y + 125 },
-        { x: x + 148, y: y + 136 },
-      ],
+    this.stroke(g, x, y, [211, 229, 228, 226, 246, 230], 1.7, c);
+    this.stroke(
+      g,
+      x,
+      y,
+      [253, 20, 286, 23, 301, 42, 300, 91, 286, 107, 267, 108],
+      9,
+      colors.wall,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      [253, 20, 286, 23, 301, 42, 300, 91, 286, 107, 267, 108],
       2,
       c,
     );
-    g.circle(x + 9, y + 57, 11, c, undefined, 2);
-    g.circle(x + 284, y + 57, 11, c, undefined, 2);
+    g.ellipse(x + 282, y + 60, 13, 15, c, colors.paper, 2);
+    g.segment(x + 271, y + 60, x + 293, y + 60, 1.7, c);
+    this.rock(g, x + 294, y, 1.1);
+  }
+  static crane(g: Ink, x: number, y: number): void {
+    // Small broken loading gantry; large blank openings keep the battle readable.
+    const c = colors.mid;
+    this.stroke(
+      g,
+      x,
+      y,
+      [0, 0, 3, 192, 13, 199, 27, 196, 24, 0],
+      2.4,
+      c,
+      colors.wall,
+      0.02,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      [9, 188, 12, 207, 229, 208, 230, 190],
+      2.5,
+      c,
+      colors.paper,
+      0.02,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      [210, 0, 211, 187, 226, 190, 232, 0],
+      2.3,
+      c,
+      colors.wall,
+      0.02,
+    );
+    g.segment(x + 17, y + 146, x + 70, y + 191, 2, c);
+    this.stroke(
+      g,
+      x,
+      y,
+      [129, 190, 128, 136, 137, 124, 135, 100, 128, 96, 122, 103],
+      2.3,
+      c,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      [26, 56, 40, 69, 73, 65, 87, 54, 84, 0, 22, 0],
+      2,
+      c,
+      colors.wall,
+    );
+    this.rock(g, x + 214, y, 0.8);
   }
   static truck(g: Ink, x: number, y: number): void {
     const c = colors.far;
-    g.rect(x, y + 19, 115, 52, c, undefined, 1.5);
-    g.line(
-      [
-        { x: x + 115, y: y + 19 },
-        { x: x + 160, y: y + 19 },
-        { x: x + 160, y: y + 54 },
-        { x: x + 145, y: y + 77 },
-        { x: x + 115, y: y + 77 },
-      ],
-      1.5,
+    this.stroke(
+      g,
+      x,
+      y,
+      [0, 18, 1, 60, 18, 73, 87, 73, 99, 65, 99, 18],
+      1.8,
+      c,
+      undefined,
+      0.04,
+    );
+    this.stroke(
+      g,
+      x,
+      y,
+      [100, 19, 149, 19, 148, 53, 132, 69, 103, 68, 100, 19],
+      1.8,
       c,
     );
-    g.rect(x + 122, y + 47, 22, 23, c, undefined, 1);
-    g.circle(x + 27, y + 17, 14, c, undefined, 1.5);
-    g.circle(x + 130, y + 17, 14, c, undefined, 1.5);
+    g.circle(x + 24, y + 17, 12, c, undefined, 1.5);
+    g.circle(x + 127, y + 17, 12, c, undefined, 1.5);
   }
-  /** Non-colliding midground machinery uses gray silhouettes, never black platform edges. */
   static serviceBay(g: Ink, x: number, y: number): void {
+    // A low weathered wall with vegetation and rubble, not another box machine.
     const c = colors.mid;
-    g.rect(x, y, 126, 88, c, colors.wall, 3.6);
-    g.rect(x + 15, y + 17, 49, 51, c, colors.paper, 2);
-    for (let n = 0; n < 4; n++)
-      g.segment(x + 22, y + 27 + n * 9, x + 56, y + 27 + n * 9, 2, c);
-    g.circle(x + 94, y + 45, 16, c, colors.paper, 3.6);
-    g.segment(x + 80, y + 45, x + 108, y + 45, 2, c);
-    g.segment(x + 94, y + 31, x + 94, y + 59, 2, c);
-    g.line(
+    this.stroke(
+      g,
+      x,
+      y,
       [
-        { x: x + 24, y: y + 88 },
-        { x: x + 24, y: y + 125 },
-        { x: x + 143, y: y + 125 },
-        { x: x + 143, y: y + 45 },
+        0, 0, 0, 44, 12, 49, 23, 43, 31, 51, 56, 48, 63, 30, 83, 34, 95, 25,
+        113, 28, 119, 0,
       ],
-      8,
-      colors.wall,
-    );
-    g.line(
-      [
-        { x: x + 24, y: y + 88 },
-        { x: x + 24, y: y + 125 },
-        { x: x + 143, y: y + 125 },
-        { x: x + 143, y: y + 45 },
-      ],
-      2.4,
+      2,
       c,
+      colors.wall,
+      0.06,
     );
-    g.rect(x - 10, y - 6, 148, 6, c, colors.wall, 2);
+    this.stroke(g, x, y, [30, 47, 26, 28, 37, 20, 32, 10], 1.6, c);
+    this.rock(g, x + 99, y, 0.9);
+    this.rock(g, x + 119, y, 0.5);
+    this.stroke(g, x - 14, y, [0, 0, -3, 14, -8, 26, -5, 35], 2, c);
+    this.stroke(g, x - 14, y, [-2, 12, 10, 18, 14, 29], 2, c);
   }
 }

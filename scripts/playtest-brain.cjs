@@ -95,11 +95,16 @@ class PlaytestBrain {
       } else {
         // Leave the right edge fully; center-based edge decisions can oscillate
         // while the foot collider still overlaps a platform by a few pixels.
-        axis=1;
+        axis = 1;
       }
     }
     // Shoot through real breakable cover on the route; conserve finite weapons in open space.
-    if (enemy && enemy.kind !== "guard" && Math.abs(enemy.y - p.y) < 38) {
+    if (
+      enemy &&
+      enemy.kind !== "guard" &&
+      Math.abs(enemy.x - p.x) < weaponRange &&
+      Math.abs(enemy.y - p.y) < 38
+    ) {
       const direction = enemy.x > p.x ? 1 : -1,
         gunY = p.y + (crouch ? 26 : 44);
       const wall = s.terrain?.some(

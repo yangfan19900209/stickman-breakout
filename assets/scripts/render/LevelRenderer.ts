@@ -1,4 +1,5 @@
 import { Label, Node } from "cc";
+import { surfaceY } from "../core/Types";
 import { LevelController } from "../level/LevelController";
 import { Ink, colors, node } from "./Ink";
 import { SceneryArt as Art } from "./SceneryArt";
@@ -25,84 +26,85 @@ export class LevelRenderer {
             Art.cloud(
               g,
               30 + i * 260,
-              490 + ((index + i + 9) % 3) * 47,
+              365 + ((index + i + 9) % 3) * 24,
               0.8 + ((index + i + 8) % 2) * 0.3,
             );
-          g.line(
-            [
-              { x: -10, y: 240 },
-              { x: 70, y: 333 },
-              { x: 140, y: 291 },
-              { x: 260, y: 403 },
-              { x: 380, y: 290 },
-              { x: 470, y: 350 },
-              { x: 580, y: 303 },
-              { x: 700, y: 377 },
-              { x: 810, y: 240 },
-            ],
-            1.5,
-            colors.far,
-          );
-          for (let i = 0; i < 2; i++) {
-            const bx = 170 + i * 340;
-            g.rect(bx, 150, 190, 160 + i * 40, colors.far, undefined, 1);
-            for (let wy = 185; wy < 290; wy += 37)
-              for (let wx = bx + 18; wx < bx + 176; wx += 40)
-                g.rect(wx, wy, 16, 22, colors.far, undefined, 1);
-          }
+          Art.ridge(g, index + 12);
           Art.truck(g, 590, 158);
         } else if (factor === 0.42) {
           if ((index + 9) % 3 === 0) Art.bunker(g, 180, 150, 300);
           else if ((index + 9) % 3 === 1) Art.factory(g, 120, 150);
           else Art.crane(g, 300, 150);
-          Art.tower(g, 690, 150);
-          Art.serviceBay(g, 480, 150);
-          g.segment(24, 150, 24, 390, 2, colors.muted);
-          g.segment(6, 363, 46, 363, 2, colors.muted);
-          g.line(
-            [
-              { x: 24, y: 377 },
-              { x: 165, y: 346 },
-              { x: 315, y: 328 },
-              { x: 490, y: 345 },
-              { x: 700, y: 377 },
-            ],
-            1,
-            colors.muted,
-          );
-          for (let px = 25; px < 770; px += 80) {
-            g.segment(px, 150, px, 212, 1.2, colors.far);
-            g.segment(px, 195, px + 80, 195, 1, colors.far);
+          if ((index + 9) % 2 === 0) Art.tower(g, 700, 150);
+          Art.serviceBay(g, 510, 150);
+          g.segment(24, 150, 21, 344, 2.5, colors.mid);
+          g.segment(3, 329, 44, 327, 3, colors.mid);
+          for (const px of [8, 37]) {
+            g.ellipse(px, 334, 3, 5, colors.mid, colors.paper, 1.5);
           }
+          g.g.moveTo(24, 338);
+          g.g.bezierCurveTo(224, 268, 510, 279, 812, 338);
+          g.g.strokeColor = colors.mid;
+          g.g.lineWidth = 1.8;
+          g.g.stroke();
         } else {
           for (const s of level.staticSolids) {
             if (s.x + s.w <= x || s.x >= x + 800) continue;
             const left = Math.max(s.x, x) - x,
               right = Math.min(s.x + s.w, x + 800) - x;
             if (s.kind === "ground") {
-              g.g.fillColor = colors.paper;
-              g.g.rect(left, s.y, right - left, s.h);
-              g.g.fill();
-              for (let px = left; px < right; px += 32)
-                g.segment(
-                  px,
-                  s.y + s.h + Math.sin((x + px) * 0.15) * 0.65,
-                  Math.min(right, px + 32),
-                  s.y + s.h + Math.sin((x + px + 32) * 0.15) * 0.65,
-                  3,
-                );
-              for (let px = left + 12; px < right; px += 63) {
+              const top = (px: number) => surfaceY(s, x + px);
+              const outline: { x: number; y: number }[] = [];
+              for (let px = left; px < right; px += 14)
+                outline.push({
+                  x: px,
+                  y: top(px) + Math.sin((x + px) * 0.17) * 0.75,
+                });
+              outline.push({
+                x: right,
+                y: top(right) + Math.sin((x + right) * 0.17) * 0.75,
+              });
+              g.polygon(
+                [...outline, { x: right, y: -240 }, { x: left, y: -240 }],
+                colors.paper,
+              );
+              g.line(outline, 3, colors.ink);
+              // Broken strata follow the actual contour; only the walking edge is solid black.
+              for (let px = left + 8; px < right - 30; px += 71) {
+                const py = top(px);
                 g.line(
                   [
-                    { x: px, y: 132 },
-                    { x: px + 10, y: 126 },
-                    { x: px + 26, y: 130 },
+                    { x: px, y: py - 9 },
+                    { x: px + 13, y: py - 12 },
+                    { x: px + 28, y: top(px + 28) - 10 },
                   ],
-                  1,
+                  1.1,
                   colors.muted,
                 );
-                g.ellipse(px + 30, 145, 5, 2, colors.muted, undefined, 1);
+                g.line(
+                  [
+                    { x: px + 14, y: py - 43 },
+                    { x: px + 22, y: py - 48 },
+                    { x: px + 40, y: py - 44 },
+                  ],
+                  0.8,
+                  colors.mid,
+                );
+                if (Math.floor((x + px) / 71) % 3 === 0)
+                  Art.rock(g, px + 12, py - 3, 0.32, true);
               }
+              const count = Math.ceil((right - left) / 13);
+              for (let i = 0; i < count; i++) {
+                const px =
+                  left + ((i * 137 + index * 41 + 8000) % (right - left));
+                g.g.circle(
+                  px,
+                  top(px) - 21 - ((i * 71 + 19) % 320),
+                  i % 7 === 0 ? 1.6 : 0.75,
+                );
+              }
+              g.g.fillColor = colors.mid;
+              g.g.fill();
             } else {
               g.rect(left, s.y, right - left, s.h, colors.ink, colors.paper, 3);
               g.segment(
@@ -126,30 +128,58 @@ export class LevelRenderer {
               if (s.kind === "platform")
                 for (const wx of [s.x + 12, s.x + s.w - 12])
                   if (wx >= x && wx < x + 800) {
-                    g.segment(wx - x, 150, wx - x, s.y, 2, colors.muted);
-                    for (let h = 160; h < s.y - 20; h += 25)
-                      g.segment(
-                        wx - x - 6,
-                        h,
-                        wx - x + 6,
-                        h + 20,
-                        1,
-                        colors.muted,
-                      );
+                    g.rect(
+                      wx - x - 5,
+                      level.groundY(wx),
+                      10,
+                      s.y - level.groundY(wx),
+                      colors.ink,
+                      colors.wall,
+                      1.8,
+                    );
                   }
+              if (s.kind === "platform" && s.x >= x && s.x + s.w <= x + 800) {
+                const a = s.x - x + 18,
+                  b = s.x - x + s.w - 18;
+                g.segment(
+                  a,
+                  level.groundY(x + a) + 3,
+                  b,
+                  s.y - 4,
+                  6,
+                  colors.ink,
+                );
+                g.segment(
+                  a,
+                  level.groundY(x + a) + 3,
+                  b,
+                  s.y - 4,
+                  2.6,
+                  colors.wall,
+                );
+                g.segment(
+                  b,
+                  level.groundY(x + b) + 3,
+                  a,
+                  s.y - 4,
+                  6,
+                  colors.ink,
+                );
+                g.segment(
+                  b,
+                  level.groundY(x + b) + 3,
+                  a,
+                  s.y - 4,
+                  2.6,
+                  colors.wall,
+                );
+              }
             }
           }
-          for (let px = 80; px < 790; px += 220) {
-            g.ellipse(px, 137, 9, 4, colors.muted, undefined, 1.5);
-            g.segment(px - 20, 119, px - 13, 117, 1.2, colors.muted);
-            g.segment(px + 35, 126, px + 39, 128, 1.2, colors.muted);
-          }
           if (index === 0) {
-            this.label(n, "废弃前哨站 / SECTOR 01", 250, 423, 19);
-            g.rect(102, 354, 170, 45, colors.ink, colors.paper, 2);
-            this.label(n, "注意：可破坏补给箱", 188, 376, 14);
-            g.segment(115, 150, 115, 354, 3, colors.muted);
-            g.segment(261, 150, 261, 354, 3, colors.muted);
+            g.segment(310, 150, 310, 221, 4, colors.mid);
+            g.rect(275, 204, 102, 27, colors.mid, colors.paper, 1.4);
+            this.label(n, "前哨站  →", 326, 218, 15);
           }
         }
       }

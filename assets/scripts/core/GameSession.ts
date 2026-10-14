@@ -283,6 +283,7 @@ export class GameSession {
         w: r.w,
         h: r.h,
         kind: r.kind,
+        slope: r.slope,
         entityId: r.entityId,
       })),
       exitOpen: this.level.guardDefeated,
@@ -334,7 +335,7 @@ export class GameSession {
     damage: number,
     owner: DamageOwner,
   ): void {
-    this.particles.blast(x, y, radius);
+    this.particles.blast(x, y, radius, this.level.groundY(x));
     this.shakeTime = Math.max(this.shakeTime, 0.28);
     this.shakePower = Math.max(this.shakePower, 7);
     this.hitStop = Math.max(this.hitStop, 0.05);

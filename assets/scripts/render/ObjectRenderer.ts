@@ -64,51 +64,84 @@ export class ObjectRenderer {
         for (let t = y; t < y + h; t += 9)
           ink.segment(x + w / 2 - 3, t, x + w / 2 + 3, t + 5, 1, colors.muted);
       } else if (o.kind === "barrel") {
-        ink.rect(x, y, w, h, colors.ink, shade, 2.5);
-        ink.line(
-          [
-            { x: x + 3, y: y + 12 },
-            { x: x + w - 3, y: y + 12 },
-          ],
-          3,
-        );
-        ink.line(
-          [
-            { x: x + 3, y: y + h - 12 },
-            { x: x + w - 3, y: y + h - 12 },
-          ],
-          3,
-        );
-        ink.circle(x + w / 2, y + h / 2, 8, colors.ink, undefined, 2);
-        ink.line(
-          [
-            { x: x + w / 2 - 4, y: y + h / 2 + 4 },
-            { x: x + w / 2 + 4, y: y + h / 2 - 4 },
-          ],
-          2,
-        );
-        ink.rect(x + 5, y + h - 4, 8, 4, colors.ink, colors.paper, 1);
+        const g = ink.g;
+        g.roundRect(x + 2, y, w - 4, h - 3, 5);
+        g.fillColor = shade;
+        g.fill();
+        g.strokeColor = colors.ink;
+        g.lineWidth = 4;
+        g.stroke();
+        ink.ellipse(x + w / 2, y + h - 4, w / 2, 4, colors.ink, shade, 1.8);
+        for (const ry of [y + 10, y + h - 13]) {
+          g.moveTo(x, ry + 2);
+          g.bezierCurveTo(
+            x + w / 3,
+            ry - 2,
+            x + w * 0.7,
+            ry - 2,
+            x + w,
+            ry + 2,
+          );
+          g.strokeColor = colors.ink;
+          g.lineWidth = 4;
+          g.stroke();
+        }
+        // A filled flame makes the explosive barrel readable without color or text.
+        const cx = x + w / 2,
+          cy = y + h / 2 - 3;
+        g.moveTo(cx, cy - 9);
+        g.bezierCurveTo(cx - 13, cy - 8, cx - 6, cy + 3, cx - 5, cy + 7);
+        g.bezierCurveTo(cx - 2, cy + 1, cx + 1, cy + 7, cx + 1, cy + 13);
+        g.bezierCurveTo(cx + 13, cy + 5, cx + 11, cy - 8, cx, cy - 9);
+        g.fillColor = colors.ink;
+        g.fill();
+        ink.segment(cx + 1, cy - 4, cx + 3, cy + 1, 1.8, shade);
+        ink.ellipse(x + w - 9, y + h - 3, 3, 1.4, colors.ink, undefined, 1);
       } else if (o.kind === "sandbag") {
-        for (let row = 0; row < 3; row++)
-          for (let n = 0; n < 3; n++) {
-            const bx = x + (n * w) / 3 + (row % 2 ? 5 : 0);
-            // Rounded sacks distinguish soft cover from the box/steel silhouettes.
-            const g = ink.g;
-            g.roundRect(bx, y + (row * h) / 3, w / 3 - 3, h / 3 - 2, 7);
+        for (let row = 0; row < 3; row++) {
+          const count = row === 1 ? 1 : 2,
+            inset = row === 2 ? 5 : 0;
+          for (let n = 0; n < count; n++) {
+            const sw = (w - inset * 2) / count,
+              bx = x + inset + n * sw,
+              by = y + (row * h) / 3;
+            const sh = h / 3 + 2,
+              g = ink.g;
+            g.moveTo(bx + 3, by);
+            g.bezierCurveTo(
+              bx - 5,
+              by + sh * 0.8,
+              bx + sw * 0.25,
+              by + sh * 1.1,
+              bx + sw * 0.53,
+              by + sh,
+            );
+            g.bezierCurveTo(
+              bx + sw * 0.9,
+              by + sh * 1.1,
+              bx + sw + 3,
+              by + sh * 0.5,
+              bx + sw - 2,
+              by,
+            );
+            g.close();
             g.fillColor = shade;
             g.fill();
             g.strokeColor = colors.ink;
             g.lineWidth = 3.6;
             g.stroke();
-            ink.line(
-              [
-                { x: bx + 5, y: y + (row * h) / 3 + 4 },
-                { x: bx + 12, y: y + (row * h) / 3 + 6 },
-              ],
-              1,
-              colors.muted,
-            );
+            ink.segment(bx + 6, by + 3, bx + sw - 8, by + 3, 0.8, colors.muted);
+            for (let j = 8; j < sw - 6; j += 9)
+              ink.segment(
+                bx + j,
+                by + 2,
+                bx + j + 1,
+                by + 4,
+                0.7,
+                colors.muted,
+              );
           }
+        }
       } else {
         ink.rect(
           x,
@@ -121,6 +154,15 @@ export class ObjectRenderer {
         );
         ink.rect(x + 5, y + 5, w - 10, h - 10, colors.muted, undefined, 1);
         if (o.kind === "wood" || o.kind === "hanging") {
+          for (let plank = 14; plank < w - 7; plank += 13)
+            ink.segment(
+              x + plank,
+              y + 7,
+              x + plank + 1,
+              y + h - 7,
+              0.8,
+              colors.muted,
+            );
           ink.segment(
             x + 9,
             y + h - 9,
@@ -143,19 +185,24 @@ export class ObjectRenderer {
             3,
           );
         } else {
+          // Broad pale diagonal slats, outlined like drawn timber instead of an X glyph.
+          ink.segment(x + 7, y + 7, x + w - 7, y + h - 7, 7, colors.ink);
+          ink.segment(x + 7, y + 7, x + w - 7, y + h - 7, 4.5, shade);
+          ink.segment(x + 7, y + h - 7, x + w - 7, y + 7, 7, colors.ink);
+          ink.segment(x + 7, y + h - 7, x + w - 7, y + 7, 4.5, shade);
           ink.line(
             [
               { x: x + 6, y: y + 6 },
               { x: x + w - 6, y: y + h - 6 },
             ],
-            2,
+            0.6,
           );
           ink.line(
             [
               { x: x + 6, y: y + h - 6 },
               { x: x + w - 6, y: y + 6 },
             ],
-            2,
+            0.6,
           );
         }
         if (o.data.drop && !o.data.hidden) {
@@ -234,16 +281,6 @@ export class ObjectRenderer {
         ink.segment(x + 16, r.y + r.h, x + 16, r.y + 100, 2);
         ink.segment(x + r.w - 16, r.y + r.h, x + r.w - 16, r.y + 100, 2);
       }
-    }
-    for (const z of s.level.data.zones ?? []) {
-      if (z.id === "D" || s.level.clearedZones.has(z.id)) continue;
-      const x = z.end - cam;
-      if (x < 0 || x > s.camera.visibleWidth) continue;
-      ink.segment(x, 150, x, 530, 4);
-      ink.rect(x - 10, 510, 32, 28, colors.ink, colors.paper, 3);
-      ink.circle(x + 6, 524, 5, colors.ink, colors.ink, 1);
-      for (let y = 164; y < 510; y += 30)
-        ink.segment(x - 4, y, x + 8, y + 17, 2, colors.muted);
     }
     for (let i = 0; i < s.pickups.items.length; i++) {
       const p = s.pickups.items[i],

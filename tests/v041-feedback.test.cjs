@@ -18,7 +18,7 @@ test("rocket backblast and rear trail precede a tagged damaging blast; pool reus
     id: "target",
     kind: "melee",
     x: 350,
-    y: 150,
+    y: s.level.groundY(350),
     patrol: 0,
   });
   s.spawner.enemies = [e, s.spawner.guard];

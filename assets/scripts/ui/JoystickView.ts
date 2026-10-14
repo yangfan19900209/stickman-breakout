@@ -40,9 +40,9 @@ export class JoystickView {
       0,
       0,
       this.style.baseR,
-      new Color(25, 25, 25, active ? 225 : 130),
-      new Color(200, 200, 196, active ? 130 : 45),
-      2.6 * this.style.unit,
+      new Color(25, 25, 25, active ? 245 : 185),
+      new Color(223, 223, 220, active ? 140 : 65),
+      3 * this.style.unit,
     );
     this.ink.circle(
       0,
@@ -52,28 +52,27 @@ export class JoystickView {
       undefined,
       1.2 * this.style.unit,
     );
-    this.ink.line(
-      [
-        { x: -44, y: 0 },
-        { x: 44, y: 0 },
-      ],
-      1,
-      new Color(25, 25, 25, 45),
-    );
-    this.ink.line(
-      [
-        { x: 0, y: -44 },
-        { x: 0, y: 44 },
-      ],
-      1,
-      new Color(25, 25, 25, 45),
-    );
+    for (let n = 0; n < 4; n++) {
+      const angle = (n * Math.PI) / 2,
+        cs = Math.cos(angle),
+        sn = Math.sin(angle);
+      const r = this.style.baseR * 0.75,
+        q = this.style.unit * 6;
+      this.ink.polygon(
+        [
+          { x: (r + q) * cs, y: (r + q) * sn },
+          { x: (r - q) * cs - q * sn, y: (r - q) * sn + q * cs },
+          { x: (r - q) * cs + q * sn, y: (r - q) * sn - q * cs },
+        ],
+        new Color(90, 90, 86, active ? 170 : 105),
+      );
+    }
     this.ink.circle(
       s.x,
       s.y,
       this.style.knobR,
       colors.ink,
-      new Color(45, 45, 45, active ? 220 : 145),
+      new Color(35, 35, 35, active ? 245 : 210),
       2.6 * this.style.unit,
     );
     this.ink.circle(

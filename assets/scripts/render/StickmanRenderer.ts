@@ -9,6 +9,10 @@ export interface RenderActor {
   facing: Facing;
   animation: AnimationState;
   animationTime: number;
+  stride?: number;
+  groundSlope?: number;
+  landTime?: number;
+  vx?: number;
   recoil: number;
   deadTime: number;
   invincible?: number;

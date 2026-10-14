@@ -131,7 +131,17 @@ export class HUDController {
       colors.ink,
       350,
     );
-    this.pauseButton = button(this.hud, "Ⅱ", 1214, 666, 88, 88, onPause);
+    this.pauseButton = node(this.hud, "Pause", 1214, 666, 88, 88);
+    const pauseArt = new Ink(this.pauseButton);
+    pauseArt.g.roundRect(-42, -42, 84, 84, 12);
+    pauseArt.g.fillColor = colors.paper;
+    pauseArt.g.fill();
+    pauseArt.g.strokeColor = colors.ink;
+    pauseArt.g.lineWidth = 5;
+    pauseArt.g.stroke();
+    pauseArt.rect(-14, -17, 9, 34, colors.ink, colors.ink, 1);
+    pauseArt.rect(5, -17, 9, 34, colors.ink, colors.ink, 1);
+    adapter.registerUI(this.pauseButton, onPause);
     this.objective = text(
       this.hud,
       "向右推进 · 击败出口守卫",
@@ -277,7 +287,7 @@ export class HUDController {
       colors.muted,
       760,
     );
-    text(title, "V0.4.1  /  漫画突围", -368, -270, 16, colors.muted, 390);
+    text(title, "V0.4.2  /  漫画突围", -368, -270, 16, colors.muted, 390);
     const paused = panel("paused");
     text(paused, "暂停一下", 0, 103, 52);
     text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -372,7 +382,7 @@ export class HUDController {
       0,
       r,
       disabled ? colors.mid : colors.ink,
-      new Color(30, 30, 30, disabled ? 85 : held ? 225 : 155),
+      new Color(30, 30, 30, disabled ? 115 : held ? 245 : 210),
       (action === "shoot" ? 3 : 2.6) * k,
     );
     ink.circle(
@@ -506,8 +516,9 @@ export class HUDController {
       .getComponent(UITransform)!
       .setContentSize(180 * k, 25 * k);
     this.stats.node.active = false;
-    this.message.node.setPosition(width / 2, top - 115 * k);
-    this.message.fontSize = 18 * k;
+    this.message.node.setPosition(width / 2, top - 63 * k);
+    this.message.fontSize = 13 * k;
+    this.message.lineHeight = 17 * k;
     this.message.node
       .getComponent(UITransform)!
       .setContentSize(Math.min(width - 40 * k, 600 * k), 30 * k);
@@ -566,7 +577,9 @@ export class HUDController {
     this.objective.node.active =
       this.width / this.layout.joystick.unit >= 800 && !s.level.arenaEntered;
     this.message.node.active =
-      s.state === "playing" && (s.pickups.messageTime > 0 || s.combo > 1);
+      s.state === "playing" &&
+      !s.level.arenaEntered &&
+      (s.pickups.messageTime > 0 || s.combo > 1);
     this.message.string =
       s.pickups.messageTime > 0 ? s.pickups.lastMessage : `COMBO × ${s.combo}`;
     this.joystick.update(input);
@@ -626,25 +639,32 @@ export class HUDController {
         2,
       );
       for (let i = 0; i < C.player.maxHealth; i++) {
-        const x = (24 + i * 18) * k + this.insets.left,
+        const x = (24 + i * 20) * k + this.insets.left,
           y = top - 26 * k;
-        const points = [
-          { x: x - 6 * k, y: y + 2 * k },
-          { x: x - 6 * k, y: y + 6 * k },
-          { x: x - 3 * k, y: y + 8 * k },
-          { x, y: y + 5 * k },
-          { x: x + 3 * k, y: y + 8 * k },
-          { x: x + 6 * k, y: y + 6 * k },
-          { x: x + 6 * k, y: y + 2 * k },
-          { x, y: y - 6 * k },
-          { x: x - 6 * k, y: y + 2 * k },
-        ];
-        if (i < s.player.health) this.hudInk.polygon(points);
-        this.hudInk.line(
-          points,
-          2 * k,
-          i < s.player.health ? colors.ink : colors.far,
+        const g = this.hudInk.g;
+        g.moveTo(x, y - 8 * k);
+        g.bezierCurveTo(
+          x - 18 * k,
+          y + 4 * k,
+          x - 7 * k,
+          y + 16 * k,
+          x,
+          y + 7 * k,
         );
+        g.bezierCurveTo(
+          x + 7 * k,
+          y + 16 * k,
+          x + 18 * k,
+          y + 4 * k,
+          x,
+          y - 8 * k,
+        );
+        g.close();
+        g.fillColor = i < s.player.health ? colors.ink : colors.paper;
+        g.fill();
+        g.strokeColor = colors.ink;
+        g.lineWidth = 1.5 * k;
+        g.stroke();
       }
       const trackX = this.width - this.insets.right - 182 * k,
         trackY = top - 37 * k;
@@ -676,15 +696,11 @@ export class HUDController {
       this.progress = progress;
     }
     const zone = s.level.zone;
-    let remaining = 0;
-    for (const e of s.spawner.enemies)
-      if (e.alive && zone && e.spawn.x >= zone.start && e.spawn.x < zone.end)
-        remaining++;
     this.objective.string = s.level.guardDefeated
       ? "战车已击毁 · 抵达出口 →"
       : s.level.arenaEntered
         ? "躲开落点预警 · 击毁机械战车"
-        : `${zone?.name ?? "向右推进"} · ${remaining} 敌人`;
+        : `${zone?.name ?? "向右推进"} · 向右突围 →`;
     this.stats.string = `击败  ${s.spawner.kills} / ${s.spawner.enemies.length}`;
     for (const stat of this.resultStats)
       stat.string = `耗时 ${Math.floor(s.time)} 秒    ·    击败 ${s.spawner.kills} 名敌人`;

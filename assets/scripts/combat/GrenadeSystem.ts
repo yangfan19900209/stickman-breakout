@@ -2,6 +2,7 @@ import { GameConfig as C } from "../core/GameConfig";
 import { PlayerController } from "../player/PlayerController";
 import { LevelController } from "../level/LevelController";
 import { ExplosionSystem } from "./ExplosionSystem";
+import { surfaceY } from "../core/Types";
 export interface Grenade {
   active: boolean;
   x: number;
@@ -77,13 +78,19 @@ export class GrenadeSystem {
         if (
           g.x + 5 > r.x &&
           g.x - 5 < r.x + r.w &&
-          oldY - 5 >= r.y + r.h &&
-          g.y - 5 <= r.y + r.h
+          oldY - 5 >= surfaceY(r, oldX) - 0.01 &&
+          g.y - 5 <= surfaceY(r, g.x)
         ) {
-          g.y = r.y + r.h + 5;
-          g.vy = Math.abs(g.vy) * 0.3;
+          g.y = surfaceY(r, g.x) + 5;
+          const slope = r.slope ? (r.slope.right - r.slope.left) / r.w : 0;
+          const normalSpeed = (g.vy - slope * g.vx) / (1 + slope * slope);
+          if (normalSpeed < 0) {
+            g.vx += 1.3 * normalSpeed * slope;
+            g.vy -= 1.3 * normalSpeed;
+          }
           g.vx *= 0.65;
         } else if (
+          !r.slope &&
           g.y + 5 > r.y &&
           g.y - 5 < r.y + r.h &&
           ((oldX + 5 <= r.x && g.x + 5 >= r.x) ||

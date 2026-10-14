@@ -17,6 +17,13 @@ export interface Pose {
   rightAnkle: Vec;
 }
 const p = (x: number, y: number): Vec => ({ x, y });
+export interface MotionPose {
+  stride?: number;
+  groundSlope?: number;
+  facing?: number;
+  landTime?: number;
+  vx?: number;
+}
 
 export class StickmanAnimator {
   private readonly points: Vec[] = Array.from({ length: 64 }, () => p(0, 0));
@@ -35,35 +42,49 @@ export class StickmanAnimator {
     armed: boolean,
     deadTime = 0,
     aimPitch = 0,
+    motion: MotionPose = {},
   ): Pose {
     this.cursor = 0;
     const p = this.point;
     const run = state === "Run",
       air = state === "Jump" || state === "Fall";
-    const wave = Math.sin(time * 15),
+    const phase = motion.stride ?? time * 2.5;
+    const wave = Math.sin(phase * Math.PI * 2),
       breathe = Math.sin(time * 3) * 0.8;
-    const bob = run ? Math.abs(Math.cos(time * 15)) * 3 : breathe;
+    const bob = run ? -1.5 * Math.cos(phase * Math.PI * 4) : breathe;
     const lean =
-      (run ? 7 : state === "Hit" ? -15 : state === "Shoot" ? 3 : 1) -
-      recoil * 2.4;
+      (run ? 9 : state === "Hit" ? -12 : state === "Shoot" ? 7 : 4) -
+      recoil * 3;
     const kick = recoil * 4.8;
     const pose: Pose = {
-      head: p(lean, 64 + bob),
-      neck: p(lean, 53 + bob),
-      torso: p(0, 29 + bob),
-      leftShoulder: p(lean - 2, 49 + bob),
-      rightShoulder: p(lean + 2, 49 + bob),
-      leftElbow: p(8 - kick, 37 + bob),
-      rightElbow: p(15 - kick, 42 + bob),
-      leftHand: p(21 - kick, 44 + bob),
-      rightHand: p(25 - kick, 44 + bob),
-      leftHip: p(-2, 29 + bob),
-      rightHip: p(2, 29 + bob),
-      leftKnee: p(run ? wave * 16 : -6, 15),
-      rightKnee: p(run ? -wave * 16 : 6, 15),
-      leftAnkle: p(run ? wave * 24 : -11, run ? Math.max(0, -wave) * 11 : 0),
-      rightAnkle: p(run ? -wave * 24 : 11, run ? Math.max(0, wave) * 11 : 0),
+      head: p(lean, 68 + bob * 0.65),
+      neck: p(lean, 54 + bob),
+      torso: p(0, 32 + bob),
+      leftShoulder: p(lean - 4, 49 + bob),
+      rightShoulder: p(lean + 4, 49 + bob),
+      leftElbow: p(18 - kick, 34 + bob),
+      rightElbow: p(12 - kick, 36 + bob),
+      leftHand: p(35 - kick, 42 + bob),
+      rightHand: p(25 - kick, 45 + bob),
+      leftHip: p(-3, 32 + bob),
+      rightHip: p(3, 32 + bob),
+      leftKnee: p(run ? wave * 19 : -13, 16),
+      rightKnee: p(run ? -wave * 19 : 15, 17),
+      leftAnkle: p(run ? wave * 28 : -19, run ? Math.max(0, -wave) * 15 : 0),
+      rightAnkle: p(run ? -wave * 28 : 21, run ? Math.max(0, wave) * 15 : 0),
     };
+    if (run) {
+      const foot = (offset: number): Vec => {
+        const u = (((phase + offset) % 1) + 1) % 1;
+        // Stance: constant reverse speed cancels body travel. Swing: eased recovery arc.
+        if (u < 0.56) return p(31.36 - 112 * u, 0);
+        const t = (u - 0.56) / 0.44,
+          ease = t * t * (3 - 2 * t);
+        return p(-31.36 + 62.72 * ease, Math.sin(t * Math.PI) * 19);
+      };
+      pose.leftAnkle = foot(0.5);
+      pose.rightAnkle = foot(0);
+    }
     if (armed && run) {
       // Counter-swing while carrying a rifle; firing blends back into the aimed pose.
       const swing = wave * (1 - recoil);
@@ -82,7 +103,12 @@ export class StickmanAnimator {
       );
     }
     if (state === "Crouch" || state === "Land") {
-      const amount = state === "Crouch" ? 0.6 : 0.88;
+      const amount =
+        state === "Crouch"
+          ? 0.6
+          : 1 -
+            0.16 *
+              Math.sin(Math.min(1, (motion.landTime ?? 0.08) / 0.14) * Math.PI);
       for (const joint of Object.values(pose)) joint.y *= amount;
       pose.leftKnee = p(-12, 12);
       pose.rightKnee = p(15, 12);
@@ -112,6 +138,24 @@ export class StickmanAnimator {
         pose.leftAnkle = p(12, 1);
       }
     }
+    if (!air && state !== "Dead") {
+      const slope = (motion.groundSlope ?? 0) * (motion.facing ?? 1);
+      pose.leftAnkle.y += pose.leftAnkle.x * slope;
+      pose.rightAnkle.y += pose.rightAnkle.x * slope;
+    }
+    // Two-link knees preserve limb lengths and bend forward instead of swinging rigid sticks.
+    const knee = (hip: Vec, ankle: Vec): Vec => {
+      const dx = ankle.x - hip.x,
+        dy = ankle.y - hip.y;
+      const dist = Math.max(1, Math.hypot(dx, dy));
+      const bend = Math.sqrt(Math.max(0, 24 * 24 - (dist * dist) / 4));
+      return p(
+        (hip.x + ankle.x) / 2 - (dy / dist) * bend,
+        (hip.y + ankle.y) / 2 + (dx / dist) * bend,
+      );
+    };
+    pose.leftKnee = knee(pose.leftHip, pose.leftAnkle);
+    pose.rightKnee = knee(pose.rightHip, pose.rightAnkle);
     if (state === "Dead") {
       const angle = (Math.min(1, deadTime / 0.42) * -Math.PI) / 2;
       for (const joint of Object.values(pose)) {

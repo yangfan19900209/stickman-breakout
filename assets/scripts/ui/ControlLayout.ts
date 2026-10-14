@@ -42,7 +42,7 @@ export function controlLayout(
     },
     jump: {
       x: fireX - (fireHit + jumpHit) / 2 - 10 * k,
-      y: fireY + fireHit * 0.55 + 6 * k,
+      y: fireY + fireHit * 0.22 + 6 * k,
       r: jumpDiameter / 2,
       hit: jumpHit,
     },

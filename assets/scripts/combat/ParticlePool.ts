@@ -130,14 +130,14 @@ export class ParticlePool {
     );
     if (material === "metal") this.burst(x, y, 3, "metal");
   }
-  blast(x: number, y: number, radius: number): void {
+  blast(x: number, y: number, radius: number, groundY = 150): void {
     this.burst(x, y, 12, "metal");
     this.burst(x, y, 8, "wood");
-    if (y - radius < 155)
+    if (y - radius < groundY + 5)
       for (let n = 0; n < 8; n++)
         this.emit(
           x + (n - 3.5) * 12,
-          156,
+          groundY + 6,
           "dust",
           (n - 3.5) * 58,
           35 + (n % 3) * 15,

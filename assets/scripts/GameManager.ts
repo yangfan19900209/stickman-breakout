@@ -57,7 +57,7 @@ export class GameManager extends Component {
       this.initialize();
       this.ready = true;
       console.info(
-        "[Breakout] V0.4.1 ready; comic soldiers and distinct weapon silhouettes.",
+        "[Breakout] V0.4.2 ready; open encounters, reversible boss entry and rounded comic art.",
       );
     } catch (error) {
       console.error("[Breakout] Initialization failed", error);

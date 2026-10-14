@@ -138,7 +138,7 @@ test("rocket travels slowly and its impact is a real area explosion", () => {
     id: "rocket-target",
     kind: "melee",
     x: 350,
-    y: 150,
+    y: s.level.groundY(350),
     patrol: 0,
   });
   s.spawner.enemies = [e, s.spawner.guard];

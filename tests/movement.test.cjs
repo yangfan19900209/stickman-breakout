@@ -41,6 +41,7 @@ test("walking stops at a crate, jumping clears it", () => {
   const p = new PlayerController(),
     l = new LevelController();
   p.x = 360;
+  p.y = l.groundY(p.x);
   for (let i = 0; i < 100; i++) p.update(1 / 120, { ...idle, axis: 1 }, l);
   assert.equal(p.x, 407);
   for (let i = 0; i < 120; i++)
@@ -52,10 +53,10 @@ test("ceiling collision cancels upward speed and lands on elevated platform", ()
   const p = new PlayerController(),
     l = new LevelController();
   p.x = 1220;
-  p.y = 150;
+  p.y = l.groundY(p.x);
   p.update(1 / 120, { ...idle, jump: true }, l);
   for (let i = 0; i < 40; i++) p.update(1 / 120, idle, l);
-  assert.equal(p.y, 150);
+  assert.equal(p.y, l.groundY(p.x));
   p.x = 1190;
   p.y = 330;
   p.vy = -60;

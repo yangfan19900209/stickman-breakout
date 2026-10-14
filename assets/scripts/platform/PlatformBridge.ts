@@ -44,7 +44,7 @@ export class PlatformBridge {
     if (DEBUG)
       (
         globalThis as typeof globalThis & { __BREAKOUT__?: DebugHandle }
-      ).__BREAKOUT__ = { version: "0.4.1", snapshot };
+      ).__BREAKOUT__ = { version: "0.4.2", snapshot };
   }
   destroy(): void {
     if (this.onHide) game.off(Game.EVENT_HIDE, this.onHide);

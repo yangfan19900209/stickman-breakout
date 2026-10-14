@@ -68,6 +68,10 @@ export class TankBoss extends EnemyController {
       : Math.abs(p.x - this.x) < 800;
     if (!this.active || !p.alive) {
       this.state = "Idle";
+      this.mode = "dormant";
+      this.windup = 0;
+      this.warningTime = 0;
+      this.secondShell = 0;
       return;
     }
     this.facing = p.x > this.x ? 1 : -1;

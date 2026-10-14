@@ -1,5 +1,18 @@
 export type Vec = { x: number; y: number };
-export type Rect = { x: number; y: number; w: number; h: number };
+export type Rect = {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  slope?: { left: number; right: number };
+};
+/** Surface coordinates are shared by walking, falling objects and projectile sweeps. */
+export function surfaceY(r: Rect, x: number): number {
+  return r.slope
+    ? r.slope.left +
+        (r.slope.right - r.slope.left) * clamp((x - r.x) / r.w, 0, 1)
+    : r.y + r.h;
+}
 export type Facing = -1 | 1;
 export type DamageKind = "bullet" | "explosion";
 export type DamageOwner = "player" | "enemy" | "neutral";
@@ -87,6 +100,18 @@ export function segmentRect(
     }
     enter = Math.max(enter, t1);
     leave = Math.min(leave, t2);
+    if (enter > leave) return null;
+  }
+  if (r.slope) {
+    const m = (r.slope.right - r.slope.left) / r.w;
+    const height = (v: Vec) =>
+      v.y - r.slope!.left - m * (v.x - r.x) - radius * Math.hypot(1, m);
+    const start = height(a),
+      delta = height(b) - start;
+    if (Math.abs(delta) < 1e-8) {
+      if (start > 0) return null;
+    } else if (delta < 0) enter = Math.max(enter, -start / delta);
+    else leave = Math.min(leave, -start / delta);
     if (enter > leave) return null;
   }
   return enter;

@@ -117,10 +117,11 @@ export class CombatRenderer {
             undefined,
             7 * (1 - age / shockTime) + 1,
           );
-          if (b.y - radius < 155)
+          const ground = session.level.groundY(b.x) + 5;
+          if (b.y - radius < ground)
             ink.ellipse(
               x,
-              155,
+              ground,
               radius * Math.sqrt(age / shockTime),
               12 + age * 18,
               this.tint,
@@ -131,8 +132,8 @@ export class CombatRenderer {
         if (age > (grenade ? 0.075 : 0.035))
           for (let n = 0; n < 6; n++) {
             const a = (n * Math.PI) / 3 + Math.sin(b.x) * 0.3;
-            const reach = radius * (0.08 + t * 0.24),
-              size = radius * (0.12 + t * 0.14);
+            const reach = radius * (0.14 + t * 0.32),
+              size = radius * (0.18 + t * 0.16);
             this.smoke.set(
               32 + n * 7,
               32 + n * 7,
@@ -143,13 +144,13 @@ export class CombatRenderer {
             this.cloud(
               ink,
               x + Math.cos(a) * reach,
-              b.y + Math.sin(a) * reach + t * (grenade ? 95 : 65),
+              b.y + Math.abs(Math.sin(a)) * reach + t * (grenade ? 110 : 85),
               size,
               size * 1.05,
               this.smoke,
               this.tint,
               n * 0.4,
-              3.2,
+              4.2,
             );
           }
         if (age > 0.08 && age < 0.55) {
@@ -159,13 +160,26 @@ export class CombatRenderer {
             ink,
             x,
             b.y + age * 70,
-            radius * (0.28 + age * 0.12),
-            radius * 0.3,
+            radius * (0.36 + age * 0.14),
+            radius * 0.35,
             this.light,
             this.tint,
             0.4,
-            3.2,
+            4,
           );
+          // Ink flecks inside the pale foreground separate the cloud from a flat white disc.
+          for (let n = 0; n < 7; n++) {
+            const dx = Math.sin(n * 2.3) * radius * 0.22;
+            const dy = Math.cos(n * 1.7) * radius * 0.18;
+            ink.segment(
+              x + dx,
+              b.y + age * 70 + dy,
+              x + dx * 1.08 + 2,
+              b.y + age * 70 + dy + 4,
+              3,
+              this.tint,
+            );
+          }
         }
         if (age < (grenade ? 0.2 : 0.16)) {
           const r = radius * (0.5 + age * 1.7);
@@ -241,7 +255,7 @@ export class CombatRenderer {
             colors.white,
           );
         } else if (p.kind === "smoke") {
-          this.smoke.set(24, 24, 24, color.a * 0.65);
+          this.smoke.set(24, 24, 24, color.a * 0.85);
           this.cloud(
             ink,
             p.x - cam,
@@ -251,7 +265,7 @@ export class CombatRenderer {
             color,
             this.smoke,
             p.spin * 0.15,
-            1.5,
+            2.8,
           );
         } else if (p.kind === "dust")
           ink.ellipse(

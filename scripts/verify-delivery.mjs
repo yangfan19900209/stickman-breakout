@@ -8,11 +8,29 @@ import {
 } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import ts from "typescript";
 const json = (file) => JSON.parse(readFileSync(file, "utf8"));
 const browser = json("reports/browser-results.json"),
   run = json("reports/full-run.json");
+const logic = json("reports/logic-results.json");
+assert.equal(logic.exitCode, 0, "Logic suite did not complete successfully");
+assert.equal(logic.failed, 0, "Logic suite has failing tests");
+assert.ok(
+  logic.passed >= 61,
+  "Expected the V0.4.2 terrain and progression regressions",
+);
 assert.equal(browser.stats.unexpected, 0, "Browser suite has failing tests");
-assert.ok(browser.stats.expected >= 27, "Expected the V0.4.1 browser suite");
+assert.ok(browser.stats.expected >= 29, "Expected the V0.4.2 browser suite");
+const bypass = json("reports/v042-bypass.json");
+assert.equal(
+  bypass.phase,
+  "done",
+  "Skipped-enemy boss/retreat route did not finish",
+);
+assert.equal(bypass.errors.length, 0);
+assert.ok(
+  bypass.entries[0].skipped.length > 0 && bypass.entries[1].skipped.length > 0,
+);
 assert.equal(
   run.snapshot.state,
   "complete",
@@ -38,7 +56,25 @@ function files(dir) {
 const source = files("assets/scripts").filter((file) => file.endsWith(".ts"));
 assert.ok(
   !source.some((file) =>
-    /\b(window|document|localStorage)\b/.test(readFileSync(file, "utf8")),
+    (() => {
+      const tree = ts.createSourceFile(
+        file,
+        readFileSync(file, "utf8"),
+        ts.ScriptTarget.Latest,
+        true,
+      );
+      let browserAPI = false;
+      const visit = (node) => {
+        if (
+          ts.isIdentifier(node) &&
+          ["window", "document", "localStorage"].includes(node.text)
+        )
+          browserAPI = true;
+        ts.forEachChild(node, visit);
+      };
+      visit(tree);
+      return browserAPI;
+    })(),
   ),
   "Platform-specific browser API leaked into game code",
 );
@@ -73,7 +109,7 @@ const record = {
   sourceModules: source.length,
   sourceSHA256: fingerprint.digest("hex"),
   typecheck: "passed",
-  logicTests: json("reports/logic-results.json"),
+  logicTests: logic,
   browserTests: {
     passed: browser.stats.expected,
     failed: browser.stats.unexpected,
@@ -98,6 +134,12 @@ const record = {
     droppedBullets: run.snapshot.droppedBullets,
     applicationErrors: run.errors,
   },
+  bypassRoute: {
+    phase: bypass.phase,
+    entries: bypass.entries,
+    retreat: bypass.retreat,
+    errors: bypass.errors,
+  },
   touchCancellation: json("reports/mobile-cancellation.json"),
   mobileLayout: json("reports/v021-layout.json"),
   mobileDevices: [667, 740, 1024].map((w) =>
@@ -110,6 +152,7 @@ const record = {
   v04Platform: json("reports/v04-platform.json"),
   v04Actions: json("reports/v04-actions.json"),
   v041Comic: json("reports/v041-comic.json"),
+  roadTraversal: json("reports/v042-terrain.json"),
   version: json("package.json").version,
   performance: json("reports/v02-browser-performance.json"),
   engineModules,

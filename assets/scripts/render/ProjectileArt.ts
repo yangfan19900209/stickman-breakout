@@ -8,7 +8,7 @@ export class ProjectileArt {
     const x = p.x - cameraX,
       y = p.y,
       length = Math.hypot(p.vx, p.vy) || 1;
-    const visualScale = p.kind === "rocket" ? 1.5 : 1;
+    const visualScale = p.kind === "rocket" ? 1.8 : 1;
     const cs = (p.vx / length) * visualScale,
       sn = (p.vy / length) * visualScale;
     const line = (
@@ -53,8 +53,28 @@ export class ProjectileArt {
         2,
       );
       shape([-24, 5, -31, 12, -37, 12, -33, 0, -37, -12, -31, -12, -24, -5]);
-      shape([0, 0, -10, 6, -30, 6, -30, -6, -10, -6]);
-      shape([0, 0, -10, 6, -10, -6], colors.mid, 1.8);
+      const g = ink.g;
+      const px = (a: number, b: number) => x + a * cs - b * sn;
+      const py = (a: number, b: number) => y + a * sn + b * cs;
+      g.moveTo(x, y);
+      g.bezierCurveTo(
+        px(-4, 5),
+        py(-4, 5),
+        px(-10, 7),
+        py(-10, 7),
+        px(-18, 6),
+        py(-18, 6),
+      );
+      g.lineTo(px(-30, 5), py(-30, 5));
+      g.lineTo(px(-30, -5), py(-30, -5));
+      g.bezierCurveTo(px(-18, -7), py(-18, -7), px(-6, -7), py(-6, -7), x, y);
+      g.close();
+      g.fillColor = colors.paper;
+      g.fill();
+      g.strokeColor = colors.ink;
+      g.lineWidth = 3;
+      g.stroke();
+      line(-9, -5, -9, 5, 2.2);
       line(-14, -5, -14, 5, 2);
       line(-18, 3, -27, 3, 1.2, colors.mid);
       line(-46, 13, -65, 13, 1.5, colors.muted);
