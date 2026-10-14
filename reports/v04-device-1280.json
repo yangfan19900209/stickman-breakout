@@ -20,20 +20,20 @@
       "unit": 1
     },
     "jump": {
-      "x": 1076,
-      "y": 136.8,
+      "x": 1072,
+      "y": 174.8,
       "r": 38,
       "hit": 88
     },
     "shoot": {
-      "x": 1196,
-      "y": 78,
-      "r": 59,
-      "hit": 132
+      "x": 1194,
+      "y": 94,
+      "r": 61,
+      "hit": 136
     },
     "grenade": {
-      "x": 1206,
-      "y": 191,
+      "x": 1200,
+      "y": 209,
       "r": 33,
       "hit": 78
     },
@@ -47,6 +47,6 @@
   "baseDiameterCSS": 156,
   "knobDiameterCSS": 76,
   "dragRadiusCSS": 58,
-  "fireDiameterCSS": 118,
+  "fireDiameterCSS": 122,
   "errors": []
 }

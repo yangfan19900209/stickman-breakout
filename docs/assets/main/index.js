@@ -181,8 +181,8 @@ System.register("chunks:///_virtual/CameraFollow.ts", ['./rollupPluginModLoBabel
   };
 });
 
-System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanAnimator.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, cclegacy, Color, GameConfig, colors, StickmanAnimator;
+System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanAnimator.ts', './WeaponArt.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, cclegacy, Color, Graphics, GameConfig, colors, StickmanAnimator, WeaponArt;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -191,131 +191,158 @@ System.register("chunks:///_virtual/CharacterArt.ts", ['./rollupPluginModLoBabel
     }, function (module) {
       cclegacy = module.cclegacy;
       Color = module.Color;
+      Graphics = module.Graphics;
     }, function (module) {
       GameConfig = module.GameConfig;
     }, function (module) {
       colors = module.colors;
     }, function (module) {
       StickmanAnimator = module.StickmanAnimator;
+    }, function (module) {
+      WeaponArt = module.WeaponArt;
     }],
     execute: function () {
       cclegacy._RF.push({}, "5e821lYdrzSBbyKuLk0Gd/G", "CharacterArt", undefined);
-      /** Joint driven drawing. Scratch colors/pose points are reused across every actor. */
+      /** Comic volumes follow the same joint rig used by the actual weapon muzzle. */
       var CharacterArt = exports('CharacterArt', /*#__PURE__*/function () {
         function CharacterArt() {
           _classCallCheck(this, CharacterArt);
           _defineProperty(this, "animator", new StickmanAnimator());
-          _defineProperty(this, "color", new Color(24, 24, 24));
-          _defineProperty(this, "shade", new Color(175, 175, 168));
+          _defineProperty(this, "weapon", new WeaponArt());
+          _defineProperty(this, "outline", new Color());
+          _defineProperty(this, "paper", new Color());
+          _defineProperty(this, "shade", new Color());
         }
         _createClass(CharacterArt, [{
           key: "draw",
           value: function draw(ink, a, cameraX) {
-            var _a$aimPitch, _a$shieldHealth;
+            var _a$aimPitch, _a$weaponId, _a$aimPitch2, _a$shieldHealth;
             var armed = a.kind !== "melee",
               pose = this.animator.sample(a.animation, a.animationTime, a.recoil, armed, a.deadTime, (_a$aimPitch = a.aimPitch) !== null && _a$aimPitch !== void 0 ? _a$aimPitch : 0);
-            var alpha = a.animation === "Dead" ? Math.max(0, 1 - a.deadTime / 1.25) : a.invincible && Math.floor(a.invincible * 14) % 2 === 0 ? 0.3 : 1;
+            var alpha = a.animation === "Dead" ? Math.max(0, 1 - a.deadTime / 1.25) : a.invincible && Math.floor(a.invincible * 14) % 2 === 0 ? 0.35 : 1;
             var hit = a.animation === "Hit" && Math.floor(a.animationTime * 35) % 2 === 0;
-            this.color.set(hit ? 150 : 24, hit ? 150 : 24, hit ? 146 : 24, alpha * 255);
-            this.shade.a = alpha * 255;
-            var color = this.color,
+            this.outline.set(hit ? 135 : 24, hit ? 135 : 24, hit ? 135 : 24, alpha * 255);
+            this.paper.set(250, 249, 245, alpha * 255);
+            this.shade.set(175, 175, 170, alpha * 255);
+            var color = this.outline,
+              paper = this.paper,
               shade = this.shade;
-            var scale = a.kind === "guard" ? 1.08 : 1,
-              baseX = a.x - cameraX,
-              baseY = a.y,
-              dir = a.facing,
-              fx = dir * scale;
-            var weight = a.kind ? GameConfig.rendering.lineWidths.enemy : GameConfig.rendering.lineWidths.hero;
-            var line = function line(v, w) {
-              var width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3.3;
-              return ink.segment(baseX + v.x * fx, baseY + v.y * scale, baseX + w.x * fx, baseY + w.y * scale, width / 3.3 * weight, color);
+            var x = a.x - cameraX,
+              y = a.y,
+              d = a.facing;
+            var outline = (a.kind ? GameConfig.rendering.lineWidths.enemy : GameConfig.rendering.lineWidths.hero) * 0.52;
+            var line = function line(ax, ay, bx, by) {
+              var w = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1.7;
+              var tint = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : color;
+              ink.g.lineCap = Graphics.LineCap.BUTT;
+              ink.segment(x + ax * d, y + ay, x + bx * d, y + by, w, tint);
+              ink.g.lineCap = Graphics.LineCap.ROUND;
             };
-            var local = function local(x, y, x2, y2) {
-              var width = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 2;
-              return ink.segment(baseX + x * fx, baseY + y * scale, baseX + x2 * fx, baseY + y2 * scale, Math.max(GameConfig.rendering.lineWidths.detail, width * 1.3), color);
+            var shape = function shape(coords) {
+              var fill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : paper;
+              var w = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : outline;
+              var g = ink.g;
+              g.moveTo(x + coords[0] * d, y + coords[1]);
+              for (var i = 2; i < coords.length; i += 2) g.lineTo(x + coords[i] * d, y + coords[i + 1]);
+              g.close();
+              g.fillColor = fill;
+              g.fill();
+              g.strokeColor = color;
+              g.lineWidth = w;
+              g.stroke();
             };
-            var circle = function circle(x, y, r, fill) {
-              return ink.circle(baseX + x * fx, baseY + y * scale, r * scale, color, fill, 2);
+            var limb = function limb(v, u, thickness) {
+              var fill = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : paper;
+              var joint = arguments.length > 4 ? arguments[4] : undefined;
+              // One continuous path per limb avoids duplicated round caps at every elbow/knee.
+              var g = ink.g;
+              for (var pass = 0; pass < 2; pass++) {
+                g.moveTo(x + v.x * d, y + v.y);
+                if (joint) g.lineTo(x + joint.x * d, y + joint.y);
+                g.lineTo(x + u.x * d, y + u.y);
+                g.lineWidth = pass === 0 ? thickness + outline * 2 : thickness;
+                g.strokeColor = pass === 0 ? color : fill;
+                g.stroke();
+              }
             };
-            if (a.animation !== "Dead") ink.ellipse(baseX, baseY - 2, 18, 3, colors.far, colors.far, 1);
-            // Backpack and shoulder strap sit behind the rig, remaining recognizable in both directions.
-            var torso = pose.torso,
-              neck = pose.neck;
-            ink.ellipse(baseX + (torso.x - 9) * fx, baseY + (torso.y + 10) * scale, 8 * scale, 12 * scale, color, shade, weight * 0.65);
-            local(torso.x - 12, torso.y + 15, neck.x + 3, neck.y - 5, 1.5);
-            line(pose.neck, pose.torso, 3.6);
-            line(pose.leftShoulder, pose.leftElbow);
-            line(pose.leftElbow, pose.leftHand);
-            line(pose.rightShoulder, pose.rightElbow);
-            line(pose.rightElbow, pose.rightHand);
-            line(pose.leftHip, pose.leftKnee, 3.8);
-            line(pose.leftKnee, pose.leftAnkle, 3.5);
-            line(pose.rightHip, pose.rightKnee, 3.8);
-            line(pose.rightKnee, pose.rightAnkle, 3.5);
-            for (var _i = 0, _arr = [pose.leftAnkle, pose.rightAnkle]; _i < _arr.length; _i++) {
-              var foot = _arr[_i];
-              ink.ellipse(baseX + (foot.x + 3) * fx, baseY + (foot.y + 2) * scale, 8 * scale, 3.5 * scale, color, color, 1);
-              local(foot.x - 2, foot.y + 5, foot.x + 5, foot.y + 5, 1);
-            }
-            circle(pose.leftHand.x, pose.leftHand.y, 3, colors.paper);
-            circle(pose.rightHand.x, pose.rightHand.y, 3, colors.paper);
-            var head = pose.head,
-              hx = baseX + head.x * fx,
-              hy = baseY + head.y * scale;
-            ink.ellipse(hx, hy, 10.5 * scale, 11 * scale, color, colors.paper, weight * 0.85);
-            if (!a.kind) {
-              local(head.x - 10, head.y + 5, head.x + 10, head.y + 5, 2.7);
-              local(head.x - 10, head.y + 5, head.x - 15, head.y + 3, 2);
-              local(head.x - 14, head.y + 4, head.x - 20, head.y - 2, 2);
-              local(head.x - 3, head.y + 11, head.x + 1, head.y + 15, 1.5);
-              local(head.x + 1, head.y + 15, head.x + 3, head.y + 11, 1.5);
+            var circle = function circle(cx, cy, r) {
+              var fill = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : paper;
+              var w = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : outline;
+              return ink.circle(x + cx * d, y + cy, r, color, fill, w);
+            };
+            if (a.animation !== "Dead") ink.ellipse(x, y - 2, 21, 3, colors.far, colors.far, 1);
+            limb(pose.leftHip, pose.leftAnkle, 4.5, shade, pose.leftKnee);
+            var boot = function boot(v) {
+              shape([v.x - 5, v.y + 6, v.x + 4, v.y + 5, v.x + 10, v.y + 1, v.x + 9, v.y - 2, v.x - 6, v.y - 2], color, 2);
+              line(v.x - 3, v.y + 3, v.x + 3, v.y + 3, 1.4, paper);
+            };
+            boot(pose.leftAnkle);
+            var t = pose.torso,
+              n = pose.neck;
+            var packX = t.x - (a.kind === "ranged" ? 14 : 12),
+              packY = t.y + 13;
+            ink.ellipse(x + packX * d, y + packY, 9, 13, color, shade, outline);
+            shape([packX - 6, packY + 8, packX + 6, packY + 9, packX + 6, packY + 3, packX - 6, packY + 2], paper, 2);
+            line(packX - 3, packY - 8, packX - 3, packY, 1.6);
+            line(packX + 3, packY - 8, packX + 3, packY, 1.6);
+            limb(pose.leftShoulder, pose.leftHand, 4.2, shade, pose.leftElbow);
+            shape([n.x - 7, n.y - 3, n.x + 7, n.y - 5, t.x + 8, t.y + 1, t.x - 7, t.y - 1, n.x - 8, n.y - 16]);
+            line(n.x - 4, n.y - 5, t.x - 3, t.y + 3, 3, shade);
+            line(n.x + 3, n.y - 8, t.x + 4, t.y + 4, 1.7);
+            shape([t.x - 8, t.y + 3, t.x + 8, t.y + 2, t.x + 8, t.y - 3, t.x - 8, t.y - 3], shade, 2);
+            shape([t.x - 2, t.y + 10, t.x + 5, t.y + 10, t.x + 5, t.y + 4, t.x - 2, t.y + 4], shade, 1.5);
+            limb(pose.rightHip, pose.rightAnkle, 4.5, paper, pose.rightKnee);
+            boot(pose.rightAnkle);
+            limb(pose.rightShoulder, pose.rightHand, 4.8, paper, pose.rightElbow);
+            var h = pose.head;
+            ink.ellipse(x + h.x * d, y + h.y, 11.8, 11.5, color, paper, outline);
+            if (a.kind === "melee") {
+              line(h.x - 11, h.y + 5, h.x + 11, h.y + 5, 5);
+              line(h.x - 11, h.y + 5, h.x - 21, h.y + 2, 2.3);
+              line(h.x - 12, h.y + 3, h.x - 18, h.y - 3, 2.3);
+            } else if (a.kind === "ranged") {
+              shape([h.x - 12, h.y + 5, h.x - 10, h.y + 12, h.x + 5, h.y + 14, h.x + 11, h.y + 8, h.x + 18, h.y + 6, h.x + 13, h.y + 3], shade);
+              line(h.x - 9, h.y + 8, h.x + 8, h.y + 8, 1.4, paper);
             } else {
-              ink.ellipse(hx, hy + 7 * scale, 12 * scale, 5 * scale, color, shade, 2);
-              local(head.x - 12, head.y + 5, head.x + 13, head.y + 5, 2);
+              shape([h.x - 13, h.y + 3, h.x - 13, h.y + 8, h.x - 7, h.y + 14, h.x + 4, h.y + 15, h.x + 11, h.y + 11, h.x + 13, h.y + 4], a.kind === "shield" ? shade : paper);
+              line(h.x - 12, h.y + 5, h.x + 14, h.y + 5, 3);
+              if (a.kind === "shield") {
+                shape([h.x - 4, h.y + 4, h.x + 11, h.y + 3, h.x + 10, h.y - 7, h.x + 1, h.y - 9, h.x - 4, h.y - 3], shade, 2);
+                line(h.x + 2, h.y, h.x + 8, h.y, 2, paper);
+              } else {
+                shape([h.x - 3, h.y + 8, h.x + 8, h.y + 8, h.x + 10, h.y + 4, h.x - 4, h.y + 4], shade, 1.7);
+                line(h.x - 1, h.y + 7, h.x + 4, h.y + 7, 1.2, paper);
+              }
             }
             if (a.animation === "Hit" || a.animation === "Dead") {
-              local(head.x + 2, head.y - 1, head.x + 7, head.y + 3, 1.7);
-              local(head.x + 2, head.y + 3, head.x + 7, head.y - 1, 1.7);
-              circle(head.x + 4, head.y - 6, 2.6);
-            } else {
-              circle(head.x + 5, head.y + 1, 1.7, color);
-              local(head.x + 1, head.y + 5, head.x + 7, head.y + 4, 1.6);
-              local(head.x + 2, head.y - 6, head.x + 7, head.y - 5, 1.4);
+              line(h.x + 2, h.y + 2, h.x + 7, h.y - 2);
+              line(h.x + 2, h.y - 2, h.x + 7, h.y + 2);
+            } else if (a.kind !== "shield") {
+              line(h.x + 1, h.y + 2, h.x + 7, h.y + 1, 1.8);
+              circle(h.x + 6, h.y - 1, 1.2, color, 1);
+              line(h.x + 11, h.y - 2, h.x + 13, h.y - 4, 1.5);
+              line(h.x + 3, h.y - 7, h.x + 8, h.y - 6, 1.6);
             }
-            local(neck.x - 3, neck.y - 5, neck.x + 5, neck.y - 8, 2);
-            local(torso.x - 4, torso.y + 2, torso.x + 5, torso.y + 2, 2);
+            if (armed && a.animation !== "Dead") this.weapon.draw(ink, (_a$weaponId = a.weaponId) !== null && _a$weaponId !== void 0 ? _a$weaponId : "rifle", x + pose.rightHand.x * d, y + pose.rightHand.y, d, (_a$aimPitch2 = a.aimPitch) !== null && _a$aimPitch2 !== void 0 ? _a$aimPitch2 : 0, 1, color, paper);else if (a.kind === "melee" && a.animation !== "Dead") {
+              limb(pose.rightHand, {
+                x: pose.rightHand.x + 8,
+                y: pose.rightHand.y + 24
+              }, 3, shade);
+            }
+            circle(pose.leftHand.x, pose.leftHand.y, 3.6, paper, 2);
+            circle(pose.rightHand.x, pose.rightHand.y, 3.8, paper, 2);
             if (a.kind === "shield" && ((_a$shieldHealth = a.shieldHealth) !== null && _a$shieldHealth !== void 0 ? _a$shieldHealth : 0) > 0 && a.animation !== "Dead") {
-              var bx = baseX + 26 * dir;
-              ink.ellipse(bx, baseY + 35, 13, 31, color, shade, weight);
-              ink.ellipse(bx, baseY + 35, 5, 8, color, colors.paper, 2);
-              ink.segment(bx - 8, baseY + 55, bx + 8, baseY + 55, 2);
+              shape([18, 60, 28, 65, 39, 58, 38, 16, 28, 7, 18, 17], shade, 3.5);
+              shape([23, 49, 34, 49, 34, 43, 23, 43], paper, 2);
+              line(22, 20, 34, 20, 2);
+              line(22, 25, 34, 25, 1.5);
             }
-            if (armed && a.animation !== "Dead") {
-              var _a$aimPitch2, _a$weaponId;
-              var hand = pose.rightHand,
-                angle = (_a$aimPitch2 = a.aimPitch) !== null && _a$aimPitch2 !== void 0 ? _a$aimPitch2 : 0,
-                cs = Math.cos(angle),
-                sn = Math.sin(angle),
-                weapon = (_a$weaponId = a.weaponId) !== null && _a$weaponId !== void 0 ? _a$weaponId : "rifle";
-              var gun = function gun(x, y, x2, y2) {
-                var width = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 3;
-                var tint = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : color;
-                return ink.segment(baseX + (hand.x + x * cs - y * sn) * fx, baseY + (hand.y + x * sn + y * cs) * scale, baseX + (hand.x + x2 * cs - y2 * sn) * fx, baseY + (hand.y + x2 * sn + y2 * cs) * scale, tint === colors.paper ? width : width * 1.35, tint);
-              };
-              gun(-13, 0, GameConfig.weapons[weapon].muzzleLength, 0, weapon === "rocket" ? 10 : 5.5);
-              gun(-12, 0, -21, -3, 5);
-              gun(0, -1, -2, -8, 4);
-              gun(6, 3, 12, 3, 1.2, colors.paper);
-              if (weapon === "shotgun") {
-                gun(0, 4, 27, 4, 3);
-                gun(8, -5, 17, -5, 3);
-                gun(-5, -3, 2, -3, 2, shade);
-              }
-              if (weapon === "rocket") {
-                gun(-23, 0, -15, 0, 13);
-                gun(-10, 4, 21, 4, 1, colors.paper);
-                gun(5, 5, 5, 11, 2);
-              }
+            if (a.animation === "Run") {
+              line(-25, 40, -34, 38, 1.6, shade);
+              line(-24, 34, -30, 33, 1.4, shade);
+            } else if (a.animation === "Hit") {
+              line(h.x - 17, h.y + 8, h.x - 24, h.y + 13, 2.3);
+              line(h.x - 18, h.y - 2, h.x - 26, h.y - 2, 2);
             }
           }
         }]);
@@ -610,8 +637,8 @@ System.register("chunks:///_virtual/CocosInputAdapter.ts", ['./rollupPluginModLo
   };
 });
 
-System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Color, colors;
+System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts', './ProjectileArt.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Color, Graphics, colors, ProjectileArt;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -621,16 +648,21 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
     }, function (module) {
       cclegacy = module.cclegacy;
       Color = module.Color;
+      Graphics = module.Graphics;
     }, function (module) {
       colors = module.colors;
+    }, function (module) {
+      ProjectileArt = module.ProjectileArt;
     }],
     execute: function () {
       cclegacy._RF.push({}, "7fbc6X82fOQGSvecMSWPscB", "CombatRenderer", undefined);
       var CombatRenderer = exports('CombatRenderer', /*#__PURE__*/function () {
         function CombatRenderer() {
           _classCallCheck(this, CombatRenderer);
+          _defineProperty(this, "projectileArt", new ProjectileArt());
           _defineProperty(this, "tint", new Color(24, 24, 24));
           _defineProperty(this, "smoke", new Color(30, 30, 30));
+          _defineProperty(this, "light", new Color(250, 249, 245));
           _defineProperty(this, "points", Array.from({
             length: 25
           }, function () {
@@ -641,6 +673,28 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
           }));
         }
         _createClass(CombatRenderer, [{
+          key: "cloud",
+          value: /** Scalloped Bezier silhouette, not a pile of overlaid circles. */
+          function cloud(ink, x, y, rx, ry, fill, outline) {
+            var seed = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 0;
+            var width = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : 2.8;
+            var g = ink.g,
+              count = 5,
+              step = Math.PI * 2 / count;
+            g.moveTo(x + Math.cos(seed) * rx * 0.78, y + Math.sin(seed) * ry * 0.78);
+            for (var n = 0; n < count; n++) {
+              var a = seed + n * step,
+                end = a + step;
+              g.bezierCurveTo(x + Math.cos(a + step * 0.2) * rx * 1.32, y + Math.sin(a + step * 0.2) * ry * 1.32, x + Math.cos(a + step * 0.8) * rx * 1.32, y + Math.sin(a + step * 0.8) * ry * 1.32, x + Math.cos(end) * rx * 0.78, y + Math.sin(end) * ry * 0.78);
+            }
+            g.close();
+            g.fillColor = fill;
+            g.fill();
+            g.strokeColor = outline;
+            g.lineWidth = width;
+            g.stroke();
+          }
+        }, {
           key: "shape",
           value: function shape(ink, x, y, rx, ry, seed, jagged, fill) {
             var stroke = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : fill;
@@ -660,6 +714,7 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
           key: "draw",
           value: function draw(ink, session) {
             ink.clear();
+            ink.g.lineCap = Graphics.LineCap.BUTT;
             var cam = session.camera.x,
               visible = session.camera.visibleWidth;
             var _iterator = _createForOfIteratorHelper(session.projectiles.marks),
@@ -687,23 +742,49 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
                 ink.segment(x + 50, 175, x + 40, 183, 2);
               }
             }
-            var _iterator2 = _createForOfIteratorHelper(session.projectiles.items),
+            var _iterator2 = _createForOfIteratorHelper(session.explosions.items),
               _step2;
             try {
               for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-                var p = _step2.value;
-                if (p.active && p.x > cam - 30 && p.x < cam + visible + 30) {
-                  var _x = p.x - cam,
-                    length = Math.hypot(p.vx, p.vy) || 1,
-                    trail = p.kind === "rocket" ? 24 : 15;
-                  ink.line([{
-                    x: _x - p.vx / length * trail,
-                    y: p.y - p.vy / length * trail
-                  }, {
-                    x: _x,
-                    y: p.y
-                  }], p.kind === "rocket" ? 5 : p.kind === "pellet" ? 2 : p.owner === "player" ? 3 : 2, colors.ink);
-                  if (p.owner === "enemy") ink.circle(_x, p.y, p.kind === "cannon" ? 6 : 2, colors.ink, p.kind === "cannon" ? colors.paper : colors.ink, 2);
+                var b = _step2.value;
+                if (b.active && b.x > cam - b.radius && b.x < cam + visible + b.radius) {
+                  var _x = b.x - cam,
+                    age = b.age,
+                    t = age / 0.85,
+                    radius = b.radius;
+                  var grenade = b.style === "grenade",
+                    shockTime = grenade ? 0.4 : 0.28;
+                  // A fast shock front separates from the slower, rising ink cloud.
+                  if (age < shockTime) {
+                    this.tint.set(24, 24, 24, 240 * (1 - age / shockTime));
+                    ink.circle(_x, b.y, radius * Math.sqrt(age / shockTime), this.tint, undefined, 7 * (1 - age / shockTime) + 1);
+                    if (b.y - radius < 155) ink.ellipse(_x, 155, radius * Math.sqrt(age / shockTime), 12 + age * 18, this.tint, undefined, 4);
+                  }
+                  if (age > (grenade ? 0.075 : 0.035)) for (var _n = 0; _n < 6; _n++) {
+                    var a = _n * Math.PI / 3 + Math.sin(b.x) * 0.3;
+                    var reach = radius * (0.08 + t * 0.24),
+                      size = radius * (0.12 + t * 0.14);
+                    this.smoke.set(32 + _n * 7, 32 + _n * 7, 30 + _n * 7, 235 * Math.min(1, (0.85 - age) / 0.3));
+                    this.tint.set(24, 24, 24, this.smoke.a);
+                    this.cloud(ink, _x + Math.cos(a) * reach, b.y + Math.sin(a) * reach + t * (grenade ? 95 : 65), size, size * 1.05, this.smoke, this.tint, _n * 0.4, 3.2);
+                  }
+                  if (age > 0.08 && age < 0.55) {
+                    this.light.set(250, 249, 245, 235 * Math.min(1, (0.55 - age) / 0.2));
+                    this.tint.set(24, 24, 24, this.light.a);
+                    this.cloud(ink, _x, b.y + age * 70, radius * (0.28 + age * 0.12), radius * 0.3, this.light, this.tint, 0.4, 3.2);
+                  }
+                  if (age < (grenade ? 0.2 : 0.16)) {
+                    var r = radius * (0.5 + age * 1.7);
+                    this.shape(ink, _x, b.y, r, r * 0.9, b.x, true, colors.ink);
+                    this.shape(ink, _x, b.y, r * 0.78, r * 0.7, b.x, true, colors.white, colors.white, 1);
+                    // Light foreground puff breaks the dark ink crown into a comic blast.
+                    this.cloud(ink, _x, b.y + age * 95, radius * 0.23, radius * 0.3, colors.white, colors.ink, 0.4, 3);
+                  }
+                  if (age < 0.24) for (var _n2 = 0; _n2 < 9; _n2++) {
+                    var _a = _n2 * Math.PI * 2 / 9,
+                      _r = radius * (0.35 + age * 1.8);
+                    ink.segment(_x + Math.cos(_a) * _r, b.y + Math.sin(_a) * _r, _x + Math.cos(_a) * (_r + 22), b.y + Math.sin(_a) * (_r + 22), 4);
+                  }
                 }
               }
             } catch (err) {
@@ -711,107 +792,72 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
             } finally {
               _iterator2.f();
             }
-            var _iterator3 = _createForOfIteratorHelper(session.grenades.items),
+            var _iterator3 = _createForOfIteratorHelper(session.particles.items),
               _step3;
             try {
               for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-                var g = _step3.value;
-                if (g.active) {
-                  var _x2 = g.x - cam;
-                  ink.circle(_x2, g.y, 6, colors.ink, colors.paper, 2);
-                  ink.line([{
-                    x: _x2,
-                    y: g.y + 6
-                  }, {
-                    x: _x2 + Math.cos(g.spin) * 5,
-                    y: g.y + 10
-                  }], 2);
+                var p = _step3.value;
+                if (p.active && p.x > cam - 80 && p.x < cam + visible + 80) {
+                  var color = this.tint,
+                    amount = 1 - p.life / p.maxLife;
+                  color.set(p.kind === "smoke" ? 225 : 24, p.kind === "smoke" ? 225 : 24, p.kind === "smoke" ? 220 : 24, 255 * p.life / p.maxLife);
+                  if (p.kind === "impact") {
+                    var _r2 = p.size * (0.5 + amount * 0.7);
+                    this.shape(ink, p.x - cam, p.y, _r2, p.material === "metal" ? _r2 * 0.5 : _r2, p.spin, true, color);
+                    this.shape(ink, p.x - cam, p.y, _r2 * 0.55, _r2 * 0.55, p.spin, true, colors.white);
+                  } else if (p.kind === "smoke") {
+                    this.smoke.set(24, 24, 24, color.a * 0.65);
+                    this.cloud(ink, p.x - cam, p.y, p.size + amount * 14, p.size * 0.8 + amount * 7, color, this.smoke, p.spin * 0.15, 1.5);
+                  } else if (p.kind === "dust") ink.ellipse(p.x - cam, p.y, p.size + amount * 7, p.size * 0.65 + amount * 5, color, color, 1);else if (p.kind === "wood" || p.kind === "metal") {
+                    var _x2 = p.x - cam,
+                      y = p.y,
+                      cs = Math.cos(p.spin),
+                      sn = Math.sin(p.spin),
+                      _r3 = p.size * 2.2;
+                    ink.polygon([{
+                      x: _x2 - _r3 * cs,
+                      y: y - _r3 * sn
+                    }, {
+                      x: _x2 + 3 * sn,
+                      y: y - 3 * cs
+                    }, {
+                      x: _x2 + _r3 * cs,
+                      y: y + _r3 * sn
+                    }, {
+                      x: _x2 - 3 * sn,
+                      y: y + 3 * cs
+                    }], color);
+                    if (p.kind === "wood") ink.segment(_x2 - _r3 * cs * 0.65, y - _r3 * sn * 0.65, _x2 + _r3 * cs * 0.65, y + _r3 * sn * 0.65, 1, colors.paper);
+                  } else if (p.kind === "shell") {
+                    var length = p.kind === "shell" ? 3 : 7;
+                    ink.segment(p.x - cam - Math.cos(p.spin) * length, p.y - Math.sin(p.spin) * length, p.x - cam + Math.cos(p.spin) * length, p.y + Math.sin(p.spin) * length, p.size, color);
+                  } else ink.segment(p.x - cam, p.y, p.x - cam - p.vx * 0.018, p.y - p.vy * 0.018, p.size, color);
                 }
               }
+              // Render bodies after their smoke so the special weapon silhouette stays legible.
             } catch (err) {
               _iterator3.e(err);
             } finally {
               _iterator3.f();
             }
-            var _iterator4 = _createForOfIteratorHelper(session.explosions.items),
+            var _iterator4 = _createForOfIteratorHelper(session.projectiles.items),
               _step4;
             try {
               for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-                var b = _step4.value;
-                if (b.active && b.x > cam - b.radius && b.x < cam + visible + b.radius) {
-                  var _x3 = b.x - cam,
-                    age = b.age,
-                    t = age / 0.85,
-                    radius = b.radius;
-                  // A fast shock front separates from the slower, rising ink cloud.
-                  if (age < 0.34) {
-                    this.tint.set(24, 24, 24, 240 * (1 - age / 0.34));
-                    ink.circle(_x3, b.y, radius * Math.sqrt(age / 0.34), this.tint, undefined, 7 * (1 - age / 0.34) + 1);
-                    if (b.y - radius < 155) ink.ellipse(_x3, 155, radius * Math.sqrt(age / 0.34), 12 + age * 18, this.tint, undefined, 4);
-                  }
-                  if (age > 0.045) for (var _n = 0; _n < 6; _n++) {
-                    var a = _n * Math.PI / 3 + Math.sin(b.x) * 0.3;
-                    var reach = radius * (0.08 + t * 0.24),
-                      size = radius * (0.12 + t * 0.14);
-                    this.smoke.set(32 + _n * 7, 32 + _n * 7, 30 + _n * 7, 235 * Math.min(1, (0.85 - age) / 0.3));
-                    this.shape(ink, _x3 + Math.cos(a) * reach, b.y + Math.sin(a) * reach + t * 72, size, size * 1.05, _n + b.x, false, this.smoke, this.smoke, 2);
-                  }
-                  if (age < 0.16) {
-                    var r = radius * (0.5 + age * 1.7);
-                    this.shape(ink, _x3, b.y, r, r * 0.9, b.x, true, colors.ink);
-                    this.shape(ink, _x3, b.y, r * 0.78, r * 0.7, b.x, true, colors.white, colors.white, 1);
-                    ink.circle(_x3, b.y, radius * 0.18, colors.white, colors.white, 1);
-                  }
-                  if (age < 0.24) for (var _n2 = 0; _n2 < 9; _n2++) {
-                    var _a = _n2 * Math.PI * 2 / 9,
-                      _r = radius * (0.35 + age * 1.8);
-                    ink.segment(_x3 + Math.cos(_a) * _r, b.y + Math.sin(_a) * _r, _x3 + Math.cos(_a) * (_r + 22), b.y + Math.sin(_a) * (_r + 22), 4);
-                  }
-                }
+                var _p = _step4.value;
+                if (_p.active && _p.x > cam - 70 && _p.x < cam + visible + 70) this.projectileArt.draw(ink, _p, cam, session.time);
               }
             } catch (err) {
               _iterator4.e(err);
             } finally {
               _iterator4.f();
             }
-            var _iterator5 = _createForOfIteratorHelper(session.particles.items),
+            var _iterator5 = _createForOfIteratorHelper(session.grenades.items),
               _step5;
             try {
               for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-                var _p = _step5.value;
-                if (_p.active && _p.x > cam - 80 && _p.x < cam + visible + 80) {
-                  var color = this.tint,
-                    amount = 1 - _p.life / _p.maxLife;
-                  color.set(_p.kind === "smoke" ? 140 : 24, _p.kind === "smoke" ? 140 : 24, _p.kind === "smoke" ? 135 : 24, 255 * _p.life / _p.maxLife);
-                  if (_p.kind === "impact") {
-                    var _r2 = _p.size * (0.5 + amount * 0.7);
-                    this.shape(ink, _p.x - cam, _p.y, _r2, _p.material === "metal" ? _r2 * 0.5 : _r2, _p.spin, true, color);
-                    this.shape(ink, _p.x - cam, _p.y, _r2 * 0.55, _r2 * 0.55, _p.spin, true, colors.white);
-                  } else if (_p.kind === "smoke" || _p.kind === "dust") ink.ellipse(_p.x - cam, _p.y, _p.size + amount * (_p.kind === "smoke" ? 14 : 7), _p.size * 0.65 + amount * 5, color, color, 2);else if (_p.kind === "wood" || _p.kind === "metal") {
-                    var _x4 = _p.x - cam,
-                      y = _p.y,
-                      cs = Math.cos(_p.spin),
-                      sn = Math.sin(_p.spin),
-                      _r3 = _p.size * 2.2;
-                    ink.polygon([{
-                      x: _x4 - _r3 * cs,
-                      y: y - _r3 * sn
-                    }, {
-                      x: _x4 + 3 * sn,
-                      y: y - 3 * cs
-                    }, {
-                      x: _x4 + _r3 * cs,
-                      y: y + _r3 * sn
-                    }, {
-                      x: _x4 - 3 * sn,
-                      y: y + 3 * cs
-                    }], color);
-                    if (_p.kind === "wood") ink.segment(_x4 - _r3 * cs * 0.65, y - _r3 * sn * 0.65, _x4 + _r3 * cs * 0.65, y + _r3 * sn * 0.65, 1, colors.paper);
-                  } else if (_p.kind === "shell") {
-                    var _length = _p.kind === "shell" ? 3 : 7;
-                    ink.segment(_p.x - cam - Math.cos(_p.spin) * _length, _p.y - Math.sin(_p.spin) * _length, _p.x - cam + Math.cos(_p.spin) * _length, _p.y + Math.sin(_p.spin) * _length, _p.size, color);
-                  } else ink.segment(_p.x - cam, _p.y, _p.x - cam - _p.vx * 0.018, _p.y - _p.vy * 0.018, _p.size, color);
-                }
+                var g = _step5.value;
+                if (g.active && g.x > cam - 30 && g.x < cam + visible + 30) this.projectileArt.grenade(ink, g, cam);
               }
             } catch (err) {
               _iterator5.e(err);
@@ -823,30 +869,28 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
               var x = weapon.flashX - cam,
                 y = weapon.flashY,
                 d = weapon.flashFacing;
-              var size = weapon.id === "rifle" ? 1 : weapon.id === "shotgun" ? 1.6 : 1.3;
-              ink.line([{
-                x: x + 3 * d,
-                y: y + 5
-              }, {
-                x: x + 23 * d * size,
-                y: y
-              }, {
-                x: x + 3 * d,
-                y: y - 5
-              }, {
-                x: x + 7 * d,
-                y: y
-              }, {
-                x: x + 3 * d,
-                y: y + 5
-              }], 4, colors.ink);
-              ink.line([{
-                x: x + 18 * d,
-                y: y + 7
-              }, {
-                x: x + 24 * d,
-                y: y + 9
-              }], 1, colors.muted);
+              var cs = Math.cos(weapon.flashPitch),
+                sn = Math.sin(weapon.flashPitch);
+              var g = ink.g,
+                wide = weapon.id === "shotgun" ? 1.7 : weapon.id === "rocket" ? 1.4 : 1;
+              var points = [0, 0, 6, 8, 13, 5, 26, 12, 20, 2, 33, 0, 19, -3, 25, -11, 12, -5, 6, -8];
+              for (var i = 0; i < points.length; i += 2) {
+                var a = points[i] * wide,
+                  b = points[i + 1] * wide;
+                var px = x + (a * cs - b * sn) * d,
+                  py = y + a * sn + b * cs;
+                if (i === 0) g.moveTo(px, py);else g.lineTo(px, py);
+              }
+              g.close();
+              g.fillColor = colors.white;
+              g.fill();
+              g.strokeColor = colors.ink;
+              g.lineWidth = 2.8;
+              g.stroke();
+              if (weapon.id === "shotgun") for (var _i = 0, _arr = [-1, 1]; _i < _arr.length; _i++) {
+                var side = _arr[_i];
+                ink.segment(x + 22 * d, y + side * 23, x + 40 * d, y + side * 30, 2);
+              }
             };
             flash(session.weapon);
             var _iterator6 = _createForOfIteratorHelper(session.spawner.enemies),
@@ -857,16 +901,16 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
                 if (e.x < cam - 60 || e.x > cam + visible + 60) continue;
                 flash(e.weapon);
                 if (e.windup > 0 && e.alive) {
-                  var _x5 = e.x - cam,
+                  var _x3 = e.x - cam,
                     _y = e.y + 91;
                   ink.line([{
-                    x: _x5,
+                    x: _x3,
                     y: _y + 6
                   }, {
-                    x: _x5,
+                    x: _x3,
                     y: _y + 16
                   }], 2);
-                  ink.circle(_x5, _y, 1, colors.ink, colors.ink, 1);
+                  ink.circle(_x3, _y, 1, colors.ink, colors.ink, 1);
                 }
                 if (e.alive && e.health < e.maxHealth) {
                   ink.rect(e.x - cam - 18, e.y + 84, 36, 3, colors.muted, colors.paper, 1);
@@ -878,6 +922,7 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
             } finally {
               _iterator6.f();
             }
+            ink.g.lineCap = Graphics.LineCap.ROUND;
           }
         }]);
         return CombatRenderer;
@@ -917,14 +962,15 @@ System.register("chunks:///_virtual/ControlLayout.ts", ['cc', './Types.ts'], fun
           baseR = clamp(cssHeight * 0.375, 136, 156) * k / 2,
           knobR = clamp(cssHeight * 0.18, 62, 76) * k / 2,
           dragR = clamp(cssHeight * 0.133, 45, 58) * k;
-        var fireDiameter = clamp(cssHeight * 0.282, 100, 118) * k,
+        var fireDiameter = clamp(cssHeight * 0.3, 108, 122) * k,
           jumpDiameter = clamp(cssHeight * 0.18, 64, 76) * k,
           grenadeDiameter = clamp(cssHeight * 0.152, 54, 66) * k;
         var fireHit = fireDiameter + 14 * k,
           jumpHit = jumpDiameter + 12 * k,
           grenadeHit = grenadeDiameter + 12 * k;
         var fireX = width - r - 18 * k - fireHit / 2,
-          fireY = b + 12 * k + fireHit / 2;
+          // Equal thumb centres balance the persistent left base and the main attack button.
+          fireY = b + Math.max(baseR + 16 * k, 12 * k + fireHit / 2);
         var pauseHit = clamp(cssHeight * 0.11, 44, 48) * k;
         return {
           joystick: {
@@ -938,7 +984,7 @@ System.register("chunks:///_virtual/ControlLayout.ts", ['cc', './Types.ts'], fun
           },
           jump: {
             x: fireX - (fireHit + jumpHit) / 2 - 10 * k,
-            y: fireY + fireHit * 0.4 + 6 * k,
+            y: fireY + fireHit * 0.55 + 6 * k,
             r: jumpDiameter / 2,
             hit: jumpHit
           },
@@ -949,7 +995,7 @@ System.register("chunks:///_virtual/ControlLayout.ts", ['cc', './Types.ts'], fun
             hit: fireHit
           },
           grenade: {
-            x: fireX + 10 * k,
+            x: fireX + 6 * k,
             y: fireY + (fireHit + grenadeHit) / 2 + 8 * k,
             r: grenadeDiameter / 2,
             hit: grenadeHit
@@ -1466,7 +1512,8 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
               radius: 0,
               damage: 0,
               owner: "neutral",
-              age: 0
+              age: 0,
+              style: "barrel"
             };
           }));
           _defineProperty(this, "queue", Array.from({
@@ -1477,7 +1524,8 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
               y: 0,
               radius: 0,
               damage: 0,
-              owner: "neutral"
+              owner: "neutral",
+              style: "barrel"
             };
           }));
           _defineProperty(this, "head", 0);
@@ -1544,6 +1592,7 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
         }, {
           key: "enqueue",
           value: function enqueue(x, y, radius, damage, owner) {
+            var style = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : "barrel";
             if (this.count === this.queue.length) {
               this.dropped++;
               return;
@@ -1553,7 +1602,8 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
               y: y,
               radius: radius,
               damage: damage,
-              owner: owner
+              owner: owner,
+              style: style
             });
             this.count++;
           }
@@ -1569,7 +1619,8 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
                 _y = b.y,
                 _radius = b.radius,
                 _damage = b.damage,
-                _owner = b.owner;
+                _owner = b.owner,
+                style = b.style;
               var visible = this.items.find(function (p) {
                 return !p.active;
               });
@@ -1580,7 +1631,8 @@ System.register("chunks:///_virtual/ExplosionSystem.ts", ['./rollupPluginModLoBa
                 radius: _radius,
                 damage: _damage,
                 owner: _owner,
-                age: 0
+                age: 0,
+                style: style
               });
               this.total++;
               apply(_x, _y, _radius, _damage, _owner);
@@ -1682,6 +1734,7 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
         weapons: {
           rifle: {
             id: "rifle",
+            name: "突击步枪",
             interval: 0.14,
             speed: 1100,
             damage: 1,
@@ -1697,6 +1750,7 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
           },
           shotgun: {
             id: "shotgun",
+            name: "霰弹枪",
             interval: 0.48,
             speed: 880,
             damage: 1.5,
@@ -1712,6 +1766,7 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
           },
           rocket: {
             id: "rocket",
+            name: "火箭筒",
             interval: 0.95,
             speed: 460,
             damage: 9,
@@ -1928,7 +1983,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
             try {
               this.initialize();
               this.ready = true;
-              console.info("[Breakout] V0.4 ready; floating touch controls, fullscreen/PWA platform adapter.");
+              console.info("[Breakout] V0.4.1 ready; comic soldiers and distinct weapon silhouettes.");
             } catch (error) {
               console.error("[Breakout] Initialization failed", error);
               throw error;
@@ -2261,8 +2316,8 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
             this.dropSeed = 1;
             this.shakeTime = this.shakePower = this.hitStop = 0;
             this.bossDeathStarted = false;
-            this.projectiles.onExplosion = function (x, y, radius, damage, owner) {
-              return _this.explosions.enqueue(x, y, radius, damage, owner);
+            this.projectiles.onExplosion = function (x, y, radius, damage, owner, style) {
+              return _this.explosions.enqueue(x, y, radius, damage, owner, style);
             };
             this.level.objects.onHit = function (o, destroyed) {
               return _this.objectHit(o, destroyed);
@@ -2432,7 +2487,8 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
                     x: b.x,
                     y: b.y,
                     age: b.age,
-                    radius: b.radius
+                    radius: b.radius,
+                    style: b.style
                   };
                 }),
                 particles: this.particles.items.filter(function (p) {
@@ -2703,7 +2759,7 @@ System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabe
                 g.spin += dt * 9;
                 if (g.fuse <= 0) {
                   g.active = false;
-                  explosions.enqueue(g.x, g.y, GameConfig.grenade.radius, GameConfig.grenade.damage, "player");
+                  explosions.enqueue(g.x, g.y, GameConfig.grenade.radius, GameConfig.grenade.damage, "player", "grenade");
                   continue;
                 }
                 var oldX = g.x,
@@ -2745,8 +2801,8 @@ System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanRenderer.ts', './JoystickView.ts', './ControlLayout.ts', './PlatformAdapter.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, UITransform, Color, Label, view, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout, PlatformAdapter;
+System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanRenderer.ts', './JoystickView.ts', './ControlLayout.ts', './PlatformAdapter.ts', './WeaponArt.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, UITransform, Color, Label, view, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout, PlatformAdapter, WeaponArt;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -2774,6 +2830,8 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
       controlLayout = module.controlLayout;
     }, function (module) {
       PlatformAdapter = module.PlatformAdapter;
+    }, function (module) {
+      WeaponArt = module.WeaponArt;
     }],
     execute: function () {
       cclegacy._RF.push({}, "57cedYylhxGlVuP7wp2UQhx", "HUDController", undefined);
@@ -2840,6 +2898,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           });
           _defineProperty(this, "joystick", void 0);
           _defineProperty(this, "weaponLabel", void 0);
+          _defineProperty(this, "weaponIcon", void 0);
+          _defineProperty(this, "weaponArt", new WeaponArt());
+          _defineProperty(this, "lastWeapon", "");
           _defineProperty(this, "message", void 0);
           _defineProperty(this, "layout", controlLayout());
           _defineProperty(this, "pauseButton", void 0);
@@ -2857,6 +2918,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           this.objective = text(this.hud, "向右推进 · 击败出口守卫", 920, 590, 26, colors.ink, 620);
           this.stats = text(this.hud, "", 170, 590, 26, colors.ink, 320);
           this.weaponLabel = text(this.hud, "", 300, 640, 32, colors.ink, 570);
+          this.weaponIcon = new Ink(node(this.hud, "Current weapon silhouette"));
           this.message = text(parent, "", 640, 534, 30, colors.ink, 750);
           this.guardNode = node(parent, "Guard health");
           this.guardInk = new Ink(this.guardNode);
@@ -2938,7 +3000,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           button(title, "开始突围  →", 120, -128, 300, 62, onStart, true);
           text(title, "A D 移动   ·   Space 跳跃   ·   按住 J 射击", 120, -204, 17, colors.muted, 760);
           text(title, "P / Esc 暂停   ·   手机支持多点触控   ·   Enter 开始", 120, -239, 14, colors.muted, 760);
-          text(title, "V0.4  /  移动突围", -368, -270, 16, colors.muted, 390);
+          text(title, "V0.4.1  /  漫画突围", -368, -270, 16, colors.muted, 390);
           var paused = panel("paused");
           text(paused, "暂停一下", 0, 103, 52);
           text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -2991,8 +3053,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             var p = action === "shoot" ? this.layout.shoot : action === "grenade" ? this.layout.grenade : this.layout.jump,
               r = p.r,
               k = this.layout.joystick.unit,
-              color = disabled ? colors.muted : held ? colors.paper : colors.ink;
-            ink.circle(0, 0, r, disabled ? colors.mid : colors.ink, held ? new Color(24, 24, 24, 190) : new Color(250, 249, 245, 165), 4 * k);
+              color = disabled ? colors.far : colors.paper;
+            ink.circle(0, 0, r, disabled ? colors.mid : colors.ink, new Color(30, 30, 30, disabled ? 85 : held ? 225 : 155), (action === "shoot" ? 3 : 2.6) * k);
+            ink.circle(0, 0, r - 5 * k, new Color(250, 249, 245, held ? 200 : 95), undefined, 1 * k);
             var q = r * 0.36;
             if (action === "shoot") {
               ink.circle(0, 5 * k, q, color, undefined, 2.2 * k);
@@ -3033,8 +3096,8 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             }
             var label = ink.node.getComponentInChildren(Label);
             if (!label) label = text(ink.node, "", 0, -r * 0.56, 13 * k, color, r * 1.7);
-            label.string = action === "shoot" ? "普攻" : action === "grenade" ? count : "跳跃";
-            label.fontSize = 13 * k;
+            label.string = action === "shoot" ? "普攻" : action === "grenade" ? "\u96F7 ".concat(count) : "跳跃";
+            label.fontSize = (action === "shoot" ? 15 : 13) * k;
             label.lineHeight = 16 * k;
             label.color = color;
             label.node.setPosition(0, -r * 0.55);
@@ -3076,15 +3139,17 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             this.adapter.touch.hudHeight = 52 * k;
             this.platformTools.setPosition(width / 2, top - 44);
             this.platformTools.setScale(Math.max(1, 44 * k / 54), Math.max(1, 44 * k / 54), 1);
-            this.weaponLabel.node.setPosition(230 * k + insets.left, top - 26 * k);
-            this.weaponLabel.fontSize = 15 * k;
-            this.weaponLabel.lineHeight = 19 * k;
-            this.weaponLabel.node.getComponent(UITransform).setContentSize(240 * k, 26 * k);
-            this.levelLabel.node.setPosition(width - 125 * k - insets.right, top - 26 * k);
+            this.weaponIcon.node.setPosition(153 * k + insets.left, top - 22 * k);
+            this.weaponIcon.node.setScale(1.3 * k, 1.3 * k, 1);
+            this.weaponLabel.node.setPosition(250 * k + insets.left, top - 25 * k);
+            this.weaponLabel.fontSize = 14 * k;
+            this.weaponLabel.lineHeight = 18 * k;
+            this.weaponLabel.node.getComponent(UITransform).setContentSize(142 * k, 42 * k);
+            this.levelLabel.node.setPosition(width - 125 * k - insets.right, top - 18 * k);
             this.levelLabel.fontSize = 14 * k;
             this.levelLabel.lineHeight = 18 * k;
             this.levelLabel.node.getComponent(UITransform).setContentSize(132 * k, 26 * k);
-            this.objective.node.setPosition(width * 0.64, top - 26 * k);
+            this.objective.node.setPosition(width * 0.6, top - 25 * k);
             this.objective.fontSize = 12 * k;
             this.objective.lineHeight = 16 * k;
             this.objective.node.getComponent(UITransform).setContentSize(180 * k, 25 * k);
@@ -3142,7 +3207,12 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
             this.hud.active = s.state === "playing" || s.state === "dying" || s.state === "paused";
             this.controls.active = s.state === "playing" && !portrait;
             this.adapter.touch.enabled = this.controls.active;
-            this.weaponLabel.string = "".concat(s.weapon.id === "rifle" ? "步枪" : s.weapon.id === "shotgun" ? "霰弹枪" : "火箭筒", "  ").concat(s.weapon.ammo < 0 ? "∞" : s.weapon.ammo);
+            this.weaponLabel.string = "".concat(GameConfig.weapons[s.weapon.id].name, "\n").concat(s.weapon.ammo < 0 ? "∞  弹药" : "\u5269\u4F59 ".concat(s.weapon.ammo, " \u53D1"));
+            if (this.lastWeapon !== s.weapon.id) {
+              this.weaponIcon.clear();
+              this.weaponArt.draw(this.weaponIcon, s.weapon.id, 0, 0);
+              this.lastWeapon = s.weapon.id;
+            }
             this.levelLabel.string = "\u5173\u5361 01 \xB7 ".concat(Math.floor(s.player.x / s.level.data.width * 100), "%");
             this.objective.node.active = this.width / this.layout.joystick.unit >= 800 && !s.level.arenaEntered;
             this.message.node.active = s.state === "playing" && (s.pickups.messageTime > 0 || s.combo > 1);
@@ -3232,13 +3302,11 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                 if (i < s.player.health) this.hudInk.polygon(points);
                 this.hudInk.line(points, 2 * k, i < s.player.health ? colors.ink : colors.far);
               }
-              this.hudInk.line([{
-                x: 0,
-                y: top - 52 * k
-              }, {
-                x: progress,
-                y: top - 52 * k
-              }], 2 * k, colors.ink);
+              var trackX = this.width - this.insets.right - 182 * k,
+                trackY = top - 37 * k;
+              this.hudInk.segment(trackX, trackY, trackX + 112 * k, trackY, 3 * k, colors.far);
+              this.hudInk.segment(trackX, trackY, trackX + 112 * k * progress / this.width, trackY, 3 * k);
+              for (var n = 0; n < 4; n++) this.hudInk.circle(trackX + n * 112 * k / 3, trackY, 2.5 * k, colors.ink, n / 3 <= progress / this.width ? colors.ink : colors.paper, 1.3 * k);
               this.lastHealth = s.player.health;
               this.progress = progress;
             }
@@ -3611,15 +3679,15 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
           value: function update(input) {
             var s = input.joystick,
               active = s.owner !== null;
-            this.node.setScale(active ? 1 : 0.55, active ? 1 : 0.55, 1);
+            this.node.setScale(1, 1, 1);
             this.node.setPosition(active ? this.adapter.touch.baseX : this.style.x, active ? this.adapter.touch.baseY : this.style.y);
             if (s.x === this.lastX && s.y === this.lastY && active === this.active) return;
             this.lastX = s.x;
             this.lastY = s.y;
             this.active = active;
             this.ink.clear();
-            this.ink.circle(0, 0, this.style.baseR, new Color(25, 25, 25, active ? 220 : 70), new Color(250, 249, 245, active ? 210 : 60), 5);
-            this.ink.circle(0, 0, this.style.baseR * 0.82, new Color(25, 25, 25, active ? 125 : 45), undefined, 3);
+            this.ink.circle(0, 0, this.style.baseR, new Color(25, 25, 25, active ? 225 : 130), new Color(200, 200, 196, active ? 130 : 45), 2.6 * this.style.unit);
+            this.ink.circle(0, 0, this.style.baseR * 0.82, new Color(25, 25, 25, active ? 110 : 55), undefined, 1.2 * this.style.unit);
             this.ink.line([{
               x: -44,
               y: 0
@@ -3634,8 +3702,9 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
               x: 0,
               y: 44
             }], 1, new Color(25, 25, 25, 45));
-            this.ink.circle(s.x, s.y, this.style.knobR, colors.ink, active ? new Color(35, 35, 35, 200) : new Color(250, 249, 245, 85), 5);
-            this.ink.circle(s.x, s.y, this.style.knobR * 0.7, active ? colors.paper : colors.far, undefined, 2);
+            this.ink.circle(s.x, s.y, this.style.knobR, colors.ink, new Color(45, 45, 45, active ? 220 : 145), 2.6 * this.style.unit);
+            this.ink.circle(s.x, s.y, this.style.knobR * 0.7, new Color(250, 249, 245, active ? 190 : 110), undefined, 1.1 * this.style.unit);
+            this.ink.segment(s.x - this.style.knobR * 0.35, s.y + this.style.knobR * 0.5, s.x + this.style.knobR * 0.1, s.y + this.style.knobR * 0.58, 2 * this.style.unit, new Color(255, 255, 255, active ? 185 : 100));
           }
         }]);
         return JoystickView;
@@ -4663,9 +4732,9 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './EnemyController.ts', './EnemySpawner.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './CombatRenderer.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './ObjectRenderer.ts', './ProjectileArt.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './WeaponArt.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -4985,7 +5054,14 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                 } else if (o.kind === "sandbag") {
                   for (var row = 0; row < 3; row++) for (var _n = 0; _n < 3; _n++) {
                     var bx = _x + _n * w / 3 + (row % 2 ? 5 : 0);
-                    ink.rect(bx, _y + row * h / 3, w / 3 - 3, h / 3 - 2, colors.ink, shade, 2);
+                    // Rounded sacks distinguish soft cover from the box/steel silhouettes.
+                    var g = ink.g;
+                    g.roundRect(bx, _y + row * h / 3, w / 3 - 3, h / 3 - 2, 7);
+                    g.fillColor = shade;
+                    g.fill();
+                    g.strokeColor = colors.ink;
+                    g.lineWidth = 3.6;
+                    g.stroke();
                     ink.line([{
                       x: bx + 5,
                       y: _y + row * h / 3 + 4
@@ -4997,6 +5073,10 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                 } else {
                   ink.rect(_x, _y, w, h, colors.ink, shade, o.category === "indestructible" ? 5 : 2.5);
                   ink.rect(_x + 5, _y + 5, w - 10, h - 10, colors.muted, undefined, 1);
+                  if (o.kind === "wood" || o.kind === "hanging") {
+                    ink.segment(_x + 9, _y + h - 9, _x + w * 0.4, _y + h - 10, 1, colors.muted);
+                    ink.segment(_x + w * 0.65, _y + 9, _x + w - 9, _y + 10, 1, colors.muted);
+                  }
                   if (o.kind === "steel" || o.kind === "concrete") {
                     for (var _i = 0, _arr = [8, w - 8]; _i < _arr.length; _i++) {
                       var a = _arr[_i];
@@ -5260,7 +5340,7 @@ System.register("chunks:///_virtual/ParticlePool.ts", ['./rollupPluginModLoBabel
               material: undefined,
               life: life,
               maxLife: life,
-              size: kind === "smoke" ? 7 : kind === "dust" ? 4 : 2,
+              size: kind === "smoke" ? 9 : kind === "dust" ? 4 : 2,
               gravity: kind === "smoke" ? -25 : 650,
               spin: this.random() * 6
             });
@@ -5575,7 +5655,7 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
             game.on(Game.EVENT_HIDE, onHide);
             this.unsubscribe = this.adapter.subscribeInactive(onHide);
             globalThis.__BREAKOUT__ = {
-              version: "0.4.0",
+              version: "0.4.1",
               snapshot: snapshot
             };
           }
@@ -5758,6 +5838,111 @@ System.register("chunks:///_virtual/PlayerController.ts", ['./rollupPluginModLoB
   };
 });
 
+System.register("chunks:///_virtual/ProjectileArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts'], function (exports) {
+  var _createClass, _classCallCheck, cclegacy, colors;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+      _classCallCheck = module.classCallCheck;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      colors = module.colors;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "22769E7gj/khm2ZKyyCe5Hn", "ProjectileArt", undefined);
+
+      /** The nose is at the collision point. All shapes rotate along the actual velocity. */
+      var ProjectileArt = exports('ProjectileArt', /*#__PURE__*/function () {
+        function ProjectileArt() {
+          _classCallCheck(this, ProjectileArt);
+        }
+        _createClass(ProjectileArt, [{
+          key: "draw",
+          value: function draw(ink, p, cameraX, time) {
+            var x = p.x - cameraX,
+              y = p.y,
+              length = Math.hypot(p.vx, p.vy) || 1;
+            var visualScale = p.kind === "rocket" ? 1.5 : 1;
+            var cs = p.vx / length * visualScale,
+              sn = p.vy / length * visualScale;
+            var line = function line(a, b, c, d) {
+              var w = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 2;
+              var tint = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : colors.ink;
+              return ink.segment(x + a * cs - b * sn, y + a * sn + b * cs, x + c * cs - d * sn, y + c * sn + d * cs, w, tint);
+            };
+            var shape = function shape(points) {
+              var fill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : colors.paper;
+              var w = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2.5;
+              var g = ink.g;
+              g.moveTo(x + points[0] * cs - points[1] * sn, y + points[0] * sn + points[1] * cs);
+              for (var i = 2; i < points.length; i += 2) g.lineTo(x + points[i] * cs - points[i + 1] * sn, y + points[i] * sn + points[i + 1] * cs);
+              g.close();
+              g.fillColor = fill;
+              g.fill();
+              g.strokeColor = colors.ink;
+              g.lineWidth = w;
+              g.stroke();
+            };
+            if (p.kind === "rocket") {
+              var flame = 8 + Math.sin(time * 63) * 3;
+              shape([-32, 4, -41, 6, -39, 2, -49 - flame, 0, -40, -2, -44, -6, -32, -4], colors.white, 2);
+              shape([-24, 5, -31, 12, -37, 12, -33, 0, -37, -12, -31, -12, -24, -5]);
+              shape([0, 0, -10, 6, -30, 6, -30, -6, -10, -6]);
+              shape([0, 0, -10, 6, -10, -6], colors.mid, 1.8);
+              line(-14, -5, -14, 5, 2);
+              line(-18, 3, -27, 3, 1.2, colors.mid);
+              line(-46, 13, -65, 13, 1.5, colors.muted);
+              line(-46, -13, -60, -13, 1.5, colors.muted);
+            } else if (p.kind === "pellet") {
+              line(-15, 0, -5, 0, 1.5, colors.muted);
+              ink.circle(x, y, 2.8, colors.ink, colors.paper, 1.7);
+            } else if (p.kind === "cannon") {
+              line(-22, 0, -8, 0, 2, colors.muted);
+              shape([0, 0, -5, 6, -12, 4, -12, -4, -5, -6], colors.paper);
+            } else {
+              line(-23, 0, -12, 0, 1.6, colors.muted);
+              shape([0, 0, -3, 2, -10, 2, -10, -2, -3, -2], colors.paper, 1.8);
+            }
+          }
+        }, {
+          key: "grenade",
+          value: function grenade(ink, p, cameraX) {
+            var x = p.x - cameraX,
+              y = p.y,
+              cs = Math.cos(p.spin),
+              sn = Math.sin(p.spin),
+              g = ink.g;
+            var px = function px(a, b) {
+              return x + a * cs - b * sn;
+            };
+            var py = function py(a, b) {
+              return y + a * sn + b * cs;
+            };
+            ink.circle(x, y, 7, colors.ink, colors.mid, 2.5);
+            g.moveTo(px(-3, 5), py(-3, 5));
+            g.lineTo(px(-3, 10), py(-3, 10));
+            g.lineTo(px(3, 10), py(3, 10));
+            g.lineTo(px(3, 5), py(3, 5));
+            g.close();
+            g.fillColor = colors.paper;
+            g.fill();
+            g.strokeColor = colors.ink;
+            g.lineWidth = 2;
+            g.stroke();
+            ink.segment(px(3, 9), py(3, 9), px(8, 7), py(8, 7), 2);
+            ink.segment(px(-4, 1), py(-4, 1), px(4, 1), py(4, 1), 1.4, colors.paper);
+            ink.segment(x - p.vx * 0.035, y - p.vy * 0.035, x - p.vx * 0.065, y - p.vy * 0.065, 1.5, colors.muted);
+            if (p.fuse < 0.3) ink.segment(px(3, 13), py(3, 13), px(7, 17), py(7, 17), 2);
+          }
+        }]);
+        return ProjectileArt;
+      }());
+      cclegacy._RF.pop();
+    }
+  };
+});
+
 System.register("chunks:///_virtual/ProjectileManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Types.ts'], function (exports) {
   var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, GameConfig, segmentRect;
   return {
@@ -5905,7 +6090,8 @@ System.register("chunks:///_virtual/ProjectileManager.ts", ['./rollupPluginModLo
                 if (p.kind === "rocket") {
                   p.smokeTime -= dt;
                   if (p.smokeTime <= 0) {
-                    this.particles.emit(p.x, p.y, "smoke", -p.vx * 0.05, 20);
+                    var speed = Math.hypot(p.vx, p.vy) || 1;
+                    this.particles.emit(p.x - p.vx / speed * 50, p.y - p.vy / speed * 50, "smoke", -p.vx * 0.05, 20);
                     p.smokeTime = 0.045;
                   }
                 }
@@ -5962,7 +6148,7 @@ System.register("chunks:///_virtual/ProjectileManager.ts", ['./rollupPluginModLo
                   }
                   if (p.blastRadius > 0) {
                     var _this$onExplosion;
-                    (_this$onExplosion = this.onExplosion) === null || _this$onExplosion === void 0 || _this$onExplosion.call(this, p.x, p.y, p.blastRadius, p.damage, p.owner);
+                    (_this$onExplosion = this.onExplosion) === null || _this$onExplosion === void 0 || _this$onExplosion.call(this, p.x, p.y, p.blastRadius, p.damage, p.owner, p.kind === "rocket" ? "rocket" : "cannon");
                   } else if (_target && _target.takeDamage(p.kind === "pellet" && p.distance < 180 ? p.damage * 1.5 : p.damage, p.vx > 0 ? 1 : -1, "bullet")) {
                     this.hits++;
                     var body = _target;
@@ -6309,9 +6495,9 @@ System.register("chunks:///_virtual/StickmanAnimator.ts", ['./rollupPluginModLoB
               air = state === "Jump" || state === "Fall";
             var wave = Math.sin(time * 15),
               breathe = Math.sin(time * 3) * 0.8;
-            var bob = run ? Math.abs(Math.cos(time * 15)) * 2 : breathe;
-            var lean = (run ? 5 : state === "Hit" ? -12 : 0) - recoil * 1.8;
-            var kick = recoil * 4;
+            var bob = run ? Math.abs(Math.cos(time * 15)) * 3 : breathe;
+            var lean = (run ? 7 : state === "Hit" ? -15 : state === "Shoot" ? 3 : 1) - recoil * 2.4;
+            var kick = recoil * 4.8;
             var pose = {
               head: p(lean, 64 + bob),
               neck: p(lean, 53 + bob),
@@ -6324,10 +6510,10 @@ System.register("chunks:///_virtual/StickmanAnimator.ts", ['./rollupPluginModLoB
               rightHand: p(25 - kick, 44 + bob),
               leftHip: p(-2, 29 + bob),
               rightHip: p(2, 29 + bob),
-              leftKnee: p(run ? wave * 13 : -6, 15),
-              rightKnee: p(run ? -wave * 13 : 6, 15),
-              leftAnkle: p(run ? wave * 22 : -10, run ? Math.max(0, -wave) * 8 : 0),
-              rightAnkle: p(run ? -wave * 22 : 10, run ? Math.max(0, wave) * 8 : 0)
+              leftKnee: p(run ? wave * 16 : -6, 15),
+              rightKnee: p(run ? -wave * 16 : 6, 15),
+              leftAnkle: p(run ? wave * 24 : -11, run ? Math.max(0, -wave) * 11 : 0),
+              rightAnkle: p(run ? -wave * 24 : 11, run ? Math.max(0, wave) * 11 : 0)
             };
             if (armed && run) {
               // Counter-swing while carrying a rifle; firing blends back into the aimed pose.
@@ -6887,6 +7073,90 @@ System.register("chunks:///_virtual/VirtualJoystick.ts", ['./rollupPluginModLoBa
   };
 });
 
+System.register("chunks:///_virtual/WeaponArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts'], function (exports) {
+  var _createClass, _classCallCheck, cclegacy, Graphics, colors;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+      _classCallCheck = module.classCallCheck;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      Graphics = module.Graphics;
+    }, function (module) {
+      colors = module.colors;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "8672d7+RNViRBOHEByv8Mr4", "WeaponArt", undefined);
+
+      // Original silhouettes, relative to the firing hand. Tips match GameConfig.muzzleLength.
+      var rifle = [-23, 3, -12, 3, -10, 6, 8, 6, 10, 2, 17, 2, 17, -2, 8, -2, 7, -13, 2, -14, 0, -3, -5, -3, -8, -10, -13, -9, -10, -2, -17, -2, -23, -7];
+      var shotgun = [-25, 3, -12, 4, -7, 6, 27, 6, 27, -1, 1, -1, -3, -8, -9, -8, -8, -2, -17, -2, -25, -7];
+      var launcher = [-25, 8, -20, 5, 20, 5, 26, 8, 26, -8, 20, -5, 4, -5, 2, -12, -3, -12, -2, -5, -20, -5, -25, -8];
+      var WeaponArt = exports('WeaponArt', /*#__PURE__*/function () {
+        function WeaponArt() {
+          _classCallCheck(this, WeaponArt);
+        }
+        _createClass(WeaponArt, [{
+          key: "draw",
+          value: function draw(ink, id, x, y) {
+            var facing = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+            var pitch = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+            var scale = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 1;
+            var outline = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : colors.ink;
+            var fill = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : colors.paper;
+            var cs = Math.cos(pitch),
+              sn = Math.sin(pitch),
+              g = ink.g;
+            var px = function px(a, b) {
+              return x + (a * cs - b * sn) * facing * scale;
+            };
+            var py = function py(a, b) {
+              return y + (a * sn + b * cs) * scale;
+            };
+            var shape = id === "rocket" ? launcher : id === "shotgun" ? shotgun : rifle;
+            g.moveTo(px(shape[0], shape[1]), py(shape[0], shape[1]));
+            for (var i = 2; i < shape.length; i += 2) g.lineTo(px(shape[i], shape[i + 1]), py(shape[i], shape[i + 1]));
+            g.close();
+            g.fillColor = fill;
+            g.fill();
+            g.strokeColor = outline;
+            g.lineWidth = 2.6 * scale * ink.strokeScale;
+            g.stroke();
+            g.lineCap = Graphics.LineCap.BUTT;
+            var line = function line(a, b, c, d) {
+              var width = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1.5;
+              var tint = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : outline;
+              return ink.segment(px(a, b), py(a, b), px(c, d), py(c, d), width * scale, tint);
+            };
+            if (id === "rifle") {
+              line(-7, 8, 8, 8, 2.2);
+              line(-2, 6, -2, 8);
+              line(10, 1, 17, 1);
+              line(3, -7, 6, -7);
+              line(-19, 1, -19, -2);
+            } else if (id === "shotgun") {
+              line(-6, 2, 27, 2);
+              line(8, -2, 19, -2, 5.5, colors.mid);
+              for (var _i = 10; _i < 20; _i += 4) line(_i, -4, _i, 0, 1);
+              line(-22, 0, -14, 0);
+            } else {
+              line(-15, -4, -15, 4, 3, colors.mid);
+              line(15, -4, 15, 4, 3, colors.mid);
+              line(-20, 1, 19, 1, 1, colors.mid);
+              line(4, 6, 4, 12, 2);
+              line(4, 12, 10, 12, 2);
+              line(26, -5, 26, 5, 2);
+            }
+            g.lineCap = Graphics.LineCap.ROUND;
+          }
+        }]);
+        return WeaponArt;
+      }());
+      cclegacy._RF.pop();
+    }
+  };
+});
+
 System.register("chunks:///_virtual/WeaponSystem.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './StickmanAnimator.ts'], function (exports) {
   var _createClass, _classCallCheck, _defineProperty, cclegacy, GameConfig, StickmanAnimator;
   return {
@@ -6903,7 +7173,7 @@ System.register("chunks:///_virtual/WeaponSystem.ts", ['./rollupPluginModLoBabel
     }],
     execute: function () {
       cclegacy._RF.push({}, "cec5fd7ebcCaf/q3h30U5SM", "WeaponSystem", undefined);
-      /** Weapon selection seam for future weapon definitions. V0.1 only implements rifle. */
+      /** Shared weapon definition and firing pipeline for all three silhouettes. */
       var WeaponSystem = exports('WeaponSystem', /*#__PURE__*/function () {
         function WeaponSystem() {
           var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "rifle";
@@ -6913,6 +7183,7 @@ System.register("chunks:///_virtual/WeaponSystem.ts", ['./rollupPluginModLoBabel
           _defineProperty(this, "flashX", 0);
           _defineProperty(this, "flashY", 0);
           _defineProperty(this, "flashFacing", 1);
+          _defineProperty(this, "flashPitch", 0);
           _defineProperty(this, "animator", new StickmanAnimator());
           _defineProperty(this, "ammo", -1);
           _defineProperty(this, "shots", 0);
@@ -6970,13 +7241,16 @@ System.register("chunks:///_virtual/WeaponSystem.ts", ['./rollupPluginModLoBabel
             if (!fired) return false;
             source.recoil = config.recoil;
             if (source.weaponId !== undefined) source.weaponId = this.id;
-            if (this.id !== "rocket") projectiles.particles.emit(source.x - 4 * source.facing, source.y + 42, "shell", -source.facing * 90, 160);
+            if (this.id === "rocket") {
+              for (var n = 0; n < 5; n++) projectiles.particles.emit(source.x - 20 * source.facing, source.y + 45 + (n - 2) * 4, "smoke", -source.facing * (85 + n * 15), 25 + n * 10);
+            } else projectiles.particles.emit(source.x - 4 * source.facing, source.y + 42, "shell", -source.facing * 90, 160);
             if (owner === "player" && this.ammo > 0) this.ammo--;
             this.shots++;
             this.flash = this.id === "rifle" ? 0.06 : 0.1;
             this.flashX = x;
             this.flashY = y;
             this.flashFacing = source.facing;
+            this.flashPitch = pitch;
             this.cooldown = interval !== null && interval !== void 0 ? interval : config.interval;
             return true;
           }

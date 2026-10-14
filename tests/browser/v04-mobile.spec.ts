@@ -40,7 +40,8 @@ for (const size of [
     expect(l.joystick.knobR * 2 * k).toBeGreaterThanOrEqual(62);
     expect(l.joystick.knobR * 2 * k).toBeLessThanOrEqual(76.1);
     expect(l.shoot.r * 2 * k).toBeGreaterThanOrEqual(100);
-    expect(l.shoot.r * 2 * k).toBeLessThanOrEqual(118.1);
+    expect(l.shoot.r * 2 * k).toBeLessThanOrEqual(122.1);
+    expect(l.joystick.y).toBeCloseTo(l.shoot.y, 0);
     expect(l.jump.x).toBeLessThan(l.shoot.x);
     expect(l.jump.y).toBeGreaterThan(l.shoot.y);
     expect(l.grenade.y).toBeGreaterThan(l.shoot.y);

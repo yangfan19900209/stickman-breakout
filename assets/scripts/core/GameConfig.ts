@@ -30,6 +30,7 @@ export const GameConfig = {
   weapons: {
     rifle: {
       id: "rifle",
+      name: "突击步枪",
       interval: 0.14,
       speed: 1100,
       damage: 1,
@@ -45,6 +46,7 @@ export const GameConfig = {
     },
     shotgun: {
       id: "shotgun",
+      name: "霰弹枪",
       interval: 0.48,
       speed: 880,
       damage: 1.5,
@@ -60,6 +62,7 @@ export const GameConfig = {
     },
     rocket: {
       id: "rocket",
+      name: "火箭筒",
       interval: 0.95,
       speed: 460,
       damage: 9,

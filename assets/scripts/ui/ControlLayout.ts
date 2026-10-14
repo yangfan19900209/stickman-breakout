@@ -20,14 +20,15 @@ export function controlLayout(
     baseR = (clamp(cssHeight * 0.375, 136, 156) * k) / 2,
     knobR = (clamp(cssHeight * 0.18, 62, 76) * k) / 2,
     dragR = clamp(cssHeight * 0.133, 45, 58) * k;
-  const fireDiameter = clamp(cssHeight * 0.282, 100, 118) * k,
+  const fireDiameter = clamp(cssHeight * 0.3, 108, 122) * k,
     jumpDiameter = clamp(cssHeight * 0.18, 64, 76) * k,
     grenadeDiameter = clamp(cssHeight * 0.152, 54, 66) * k;
   const fireHit = fireDiameter + 14 * k,
     jumpHit = jumpDiameter + 12 * k,
     grenadeHit = grenadeDiameter + 12 * k;
   const fireX = width - r - 18 * k - fireHit / 2,
-    fireY = b + 12 * k + fireHit / 2;
+    // Equal thumb centres balance the persistent left base and the main attack button.
+    fireY = b + Math.max(baseR + 16 * k, 12 * k + fireHit / 2);
   const pauseHit = clamp(cssHeight * 0.11, 44, 48) * k;
   return {
     joystick: {
@@ -41,13 +42,13 @@ export function controlLayout(
     },
     jump: {
       x: fireX - (fireHit + jumpHit) / 2 - 10 * k,
-      y: fireY + fireHit * 0.4 + 6 * k,
+      y: fireY + fireHit * 0.55 + 6 * k,
       r: jumpDiameter / 2,
       hit: jumpHit,
     },
     shoot: { x: fireX, y: fireY, r: fireDiameter / 2, hit: fireHit },
     grenade: {
-      x: fireX + 10 * k,
+      x: fireX + 6 * k,
       y: fireY + (fireHit + grenadeHit) / 2 + 8 * k,
       r: grenadeDiameter / 2,
       hit: grenadeHit,

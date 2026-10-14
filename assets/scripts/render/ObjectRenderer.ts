@@ -92,15 +92,14 @@ export class ObjectRenderer {
         for (let row = 0; row < 3; row++)
           for (let n = 0; n < 3; n++) {
             const bx = x + (n * w) / 3 + (row % 2 ? 5 : 0);
-            ink.rect(
-              bx,
-              y + (row * h) / 3,
-              w / 3 - 3,
-              h / 3 - 2,
-              colors.ink,
-              shade,
-              2,
-            );
+            // Rounded sacks distinguish soft cover from the box/steel silhouettes.
+            const g = ink.g;
+            g.roundRect(bx, y + (row * h) / 3, w / 3 - 3, h / 3 - 2, 7);
+            g.fillColor = shade;
+            g.fill();
+            g.strokeColor = colors.ink;
+            g.lineWidth = 3.6;
+            g.stroke();
             ink.line(
               [
                 { x: bx + 5, y: y + (row * h) / 3 + 4 },
@@ -121,6 +120,17 @@ export class ObjectRenderer {
           o.category === "indestructible" ? 5 : 2.5,
         );
         ink.rect(x + 5, y + 5, w - 10, h - 10, colors.muted, undefined, 1);
+        if (o.kind === "wood" || o.kind === "hanging") {
+          ink.segment(
+            x + 9,
+            y + h - 9,
+            x + w * 0.4,
+            y + h - 10,
+            1,
+            colors.muted,
+          );
+          ink.segment(x + w * 0.65, y + 9, x + w - 9, y + 10, 1, colors.muted);
+        }
         if (o.kind === "steel" || o.kind === "concrete") {
           for (const a of [8, w - 8])
             for (const b of [8, h - 8])

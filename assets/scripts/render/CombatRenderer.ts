@@ -1,11 +1,49 @@
-import { Color } from "cc";
+import { Color, Graphics } from "cc";
 import { GameSession } from "../core/GameSession";
 import { WeaponSystem } from "../combat/WeaponSystem";
 import { Ink, colors } from "./Ink";
+import { ProjectileArt } from "./ProjectileArt";
 export class CombatRenderer {
+  private projectileArt = new ProjectileArt();
   private tint = new Color(24, 24, 24);
   private smoke = new Color(30, 30, 30);
+  private light = new Color(250, 249, 245);
   private points = Array.from({ length: 25 }, () => ({ x: 0, y: 0 }));
+  /** Scalloped Bezier silhouette, not a pile of overlaid circles. */
+  private cloud(
+    ink: Ink,
+    x: number,
+    y: number,
+    rx: number,
+    ry: number,
+    fill: Color,
+    outline: Color,
+    seed = 0,
+    width = 2.8,
+  ): void {
+    const g = ink.g,
+      count = 5,
+      step = (Math.PI * 2) / count;
+    g.moveTo(x + Math.cos(seed) * rx * 0.78, y + Math.sin(seed) * ry * 0.78);
+    for (let n = 0; n < count; n++) {
+      const a = seed + n * step,
+        end = a + step;
+      g.bezierCurveTo(
+        x + Math.cos(a + step * 0.2) * rx * 1.32,
+        y + Math.sin(a + step * 0.2) * ry * 1.32,
+        x + Math.cos(a + step * 0.8) * rx * 1.32,
+        y + Math.sin(a + step * 0.8) * ry * 1.32,
+        x + Math.cos(end) * rx * 0.78,
+        y + Math.sin(end) * ry * 0.78,
+      );
+    }
+    g.close();
+    g.fillColor = fill;
+    g.fill();
+    g.strokeColor = outline;
+    g.lineWidth = width;
+    g.stroke();
+  }
   private shape(
     ink: Ink,
     x: number,
@@ -35,6 +73,7 @@ export class CombatRenderer {
   }
   draw(ink: Ink, session: GameSession): void {
     ink.clear();
+    ink.g.lineCap = Graphics.LineCap.BUTT;
     const cam = session.camera.x,
       visible = session.camera.visibleWidth;
     for (const m of session.projectiles.marks)
@@ -59,79 +98,37 @@ export class CombatRenderer {
         ink.segment(x + 50, 175, x + 40, 183, 2);
       }
     }
-    for (const p of session.projectiles.items)
-      if (p.active && p.x > cam - 30 && p.x < cam + visible + 30) {
-        const x = p.x - cam,
-          length = Math.hypot(p.vx, p.vy) || 1,
-          trail = p.kind === "rocket" ? 24 : 15;
-        ink.line(
-          [
-            {
-              x: x - (p.vx / length) * trail,
-              y: p.y - (p.vy / length) * trail,
-            },
-            { x, y: p.y },
-          ],
-          p.kind === "rocket"
-            ? 5
-            : p.kind === "pellet"
-              ? 2
-              : p.owner === "player"
-                ? 3
-                : 2,
-          colors.ink,
-        );
-        if (p.owner === "enemy")
-          ink.circle(
-            x,
-            p.y,
-            p.kind === "cannon" ? 6 : 2,
-            colors.ink,
-            p.kind === "cannon" ? colors.paper : colors.ink,
-            2,
-          );
-      }
-    for (const g of session.grenades.items)
-      if (g.active) {
-        const x = g.x - cam;
-        ink.circle(x, g.y, 6, colors.ink, colors.paper, 2);
-        ink.line(
-          [
-            { x, y: g.y + 6 },
-            { x: x + Math.cos(g.spin) * 5, y: g.y + 10 },
-          ],
-          2,
-        );
-      }
     for (const b of session.explosions.items)
       if (b.active && b.x > cam - b.radius && b.x < cam + visible + b.radius) {
         const x = b.x - cam,
           age = b.age,
           t = age / 0.85,
           radius = b.radius;
+        const grenade = b.style === "grenade",
+          shockTime = grenade ? 0.4 : 0.28;
         // A fast shock front separates from the slower, rising ink cloud.
-        if (age < 0.34) {
-          this.tint.set(24, 24, 24, 240 * (1 - age / 0.34));
+        if (age < shockTime) {
+          this.tint.set(24, 24, 24, 240 * (1 - age / shockTime));
           ink.circle(
             x,
             b.y,
-            radius * Math.sqrt(age / 0.34),
+            radius * Math.sqrt(age / shockTime),
             this.tint,
             undefined,
-            7 * (1 - age / 0.34) + 1,
+            7 * (1 - age / shockTime) + 1,
           );
           if (b.y - radius < 155)
             ink.ellipse(
               x,
               155,
-              radius * Math.sqrt(age / 0.34),
+              radius * Math.sqrt(age / shockTime),
               12 + age * 18,
               this.tint,
               undefined,
               4,
             );
         }
-        if (age > 0.045)
+        if (age > (grenade ? 0.075 : 0.035))
           for (let n = 0; n < 6; n++) {
             const a = (n * Math.PI) / 3 + Math.sin(b.x) * 0.3;
             const reach = radius * (0.08 + t * 0.24),
@@ -142,20 +139,35 @@ export class CombatRenderer {
               30 + n * 7,
               235 * Math.min(1, (0.85 - age) / 0.3),
             );
-            this.shape(
+            this.tint.set(24, 24, 24, this.smoke.a);
+            this.cloud(
               ink,
               x + Math.cos(a) * reach,
-              b.y + Math.sin(a) * reach + t * 72,
+              b.y + Math.sin(a) * reach + t * (grenade ? 95 : 65),
               size,
               size * 1.05,
-              n + b.x,
-              false,
               this.smoke,
-              this.smoke,
-              2,
+              this.tint,
+              n * 0.4,
+              3.2,
             );
           }
-        if (age < 0.16) {
+        if (age > 0.08 && age < 0.55) {
+          this.light.set(250, 249, 245, 235 * Math.min(1, (0.55 - age) / 0.2));
+          this.tint.set(24, 24, 24, this.light.a);
+          this.cloud(
+            ink,
+            x,
+            b.y + age * 70,
+            radius * (0.28 + age * 0.12),
+            radius * 0.3,
+            this.light,
+            this.tint,
+            0.4,
+            3.2,
+          );
+        }
+        if (age < (grenade ? 0.2 : 0.16)) {
           const r = radius * (0.5 + age * 1.7);
           this.shape(ink, x, b.y, r, r * 0.9, b.x, true, colors.ink);
           this.shape(
@@ -170,7 +182,18 @@ export class CombatRenderer {
             colors.white,
             1,
           );
-          ink.circle(x, b.y, radius * 0.18, colors.white, colors.white, 1);
+          // Light foreground puff breaks the dark ink crown into a comic blast.
+          this.cloud(
+            ink,
+            x,
+            b.y + age * 95,
+            radius * 0.23,
+            radius * 0.3,
+            colors.white,
+            colors.ink,
+            0.4,
+            3,
+          );
         }
         if (age < 0.24)
           for (let n = 0; n < 9; n++) {
@@ -190,9 +213,9 @@ export class CombatRenderer {
         const color = this.tint,
           amount = 1 - p.life / p.maxLife;
         color.set(
-          p.kind === "smoke" ? 140 : 24,
-          p.kind === "smoke" ? 140 : 24,
-          p.kind === "smoke" ? 135 : 24,
+          p.kind === "smoke" ? 225 : 24,
+          p.kind === "smoke" ? 225 : 24,
+          p.kind === "smoke" ? 220 : 24,
           (255 * p.life) / p.maxLife,
         );
         if (p.kind === "impact") {
@@ -217,15 +240,28 @@ export class CombatRenderer {
             true,
             colors.white,
           );
-        } else if (p.kind === "smoke" || p.kind === "dust")
+        } else if (p.kind === "smoke") {
+          this.smoke.set(24, 24, 24, color.a * 0.65);
+          this.cloud(
+            ink,
+            p.x - cam,
+            p.y,
+            p.size + amount * 14,
+            p.size * 0.8 + amount * 7,
+            color,
+            this.smoke,
+            p.spin * 0.15,
+            1.5,
+          );
+        } else if (p.kind === "dust")
           ink.ellipse(
             p.x - cam,
             p.y,
-            p.size + amount * (p.kind === "smoke" ? 14 : 7),
+            p.size + amount * 7,
             p.size * 0.65 + amount * 5,
             color,
             color,
-            2,
+            1,
           );
         else if (p.kind === "wood" || p.kind === "metal") {
           const x = p.x - cam,
@@ -271,32 +307,42 @@ export class CombatRenderer {
             color,
           );
       }
+    // Render bodies after their smoke so the special weapon silhouette stays legible.
+    for (const p of session.projectiles.items)
+      if (p.active && p.x > cam - 70 && p.x < cam + visible + 70)
+        this.projectileArt.draw(ink, p, cam, session.time);
+    for (const g of session.grenades.items)
+      if (g.active && g.x > cam - 30 && g.x < cam + visible + 30)
+        this.projectileArt.grenade(ink, g, cam);
     const flash = (weapon: WeaponSystem) => {
       if (weapon.flash <= 0) return;
       const x = weapon.flashX - cam,
         y = weapon.flashY,
         d = weapon.flashFacing;
-      const size =
-        weapon.id === "rifle" ? 1 : weapon.id === "shotgun" ? 1.6 : 1.3;
-      ink.line(
-        [
-          { x: x + 3 * d, y: y + 5 },
-          { x: x + 23 * d * size, y },
-          { x: x + 3 * d, y: y - 5 },
-          { x: x + 7 * d, y },
-          { x: x + 3 * d, y: y + 5 },
-        ],
-        4,
-        colors.ink,
-      );
-      ink.line(
-        [
-          { x: x + 18 * d, y: y + 7 },
-          { x: x + 24 * d, y: y + 9 },
-        ],
-        1,
-        colors.muted,
-      );
+      const cs = Math.cos(weapon.flashPitch),
+        sn = Math.sin(weapon.flashPitch);
+      const g = ink.g,
+        wide = weapon.id === "shotgun" ? 1.7 : weapon.id === "rocket" ? 1.4 : 1;
+      const points = [
+        0, 0, 6, 8, 13, 5, 26, 12, 20, 2, 33, 0, 19, -3, 25, -11, 12, -5, 6, -8,
+      ];
+      for (let i = 0; i < points.length; i += 2) {
+        const a = points[i] * wide,
+          b = points[i + 1] * wide;
+        const px = x + (a * cs - b * sn) * d,
+          py = y + a * sn + b * cs;
+        if (i === 0) g.moveTo(px, py);
+        else g.lineTo(px, py);
+      }
+      g.close();
+      g.fillColor = colors.white;
+      g.fill();
+      g.strokeColor = colors.ink;
+      g.lineWidth = 2.8;
+      g.stroke();
+      if (weapon.id === "shotgun")
+        for (const side of [-1, 1])
+          ink.segment(x + 22 * d, y + side * 23, x + 40 * d, y + side * 30, 2);
     };
     flash(session.weapon);
     for (const e of session.spawner.enemies) {
@@ -335,5 +381,6 @@ export class CombatRenderer {
         );
       }
     }
+    ink.g.lineCap = Graphics.LineCap.ROUND;
   }
 }

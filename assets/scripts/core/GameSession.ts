@@ -61,8 +61,8 @@ export class GameSession {
     this.dropSeed = 1;
     this.shakeTime = this.shakePower = this.hitStop = 0;
     this.bossDeathStarted = false;
-    this.projectiles.onExplosion = (x, y, radius, damage, owner) =>
-      this.explosions.enqueue(x, y, radius, damage, owner);
+    this.projectiles.onExplosion = (x, y, radius, damage, owner, style) =>
+      this.explosions.enqueue(x, y, radius, damage, owner, style);
     this.level.objects.onHit = (o, destroyed) => this.objectHit(o, destroyed);
   }
   pause(): void {
@@ -209,7 +209,13 @@ export class GameSession {
         hitStop: this.hitStop,
         blasts: this.explosions.items
           .filter((b) => b.active)
-          .map((b) => ({ x: b.x, y: b.y, age: b.age, radius: b.radius })),
+          .map((b) => ({
+            x: b.x,
+            y: b.y,
+            age: b.age,
+            radius: b.radius,
+            style: b.style,
+          })),
         particles: this.particles.items
           .filter((p) => p.active)
           .map((p) => ({ kind: p.kind, material: p.material })),

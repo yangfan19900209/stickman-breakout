@@ -12,7 +12,7 @@ const json = (file) => JSON.parse(readFileSync(file, "utf8"));
 const browser = json("reports/browser-results.json"),
   run = json("reports/full-run.json");
 assert.equal(browser.stats.unexpected, 0, "Browser suite has failing tests");
-assert.ok(browser.stats.expected >= 26, "Expected the V0.4 browser suite");
+assert.ok(browser.stats.expected >= 27, "Expected the V0.4.1 browser suite");
 assert.equal(
   run.snapshot.state,
   "complete",
@@ -109,6 +109,7 @@ const record = {
   ),
   v04Platform: json("reports/v04-platform.json"),
   v04Actions: json("reports/v04-actions.json"),
+  v041Comic: json("reports/v041-comic.json"),
   version: json("package.json").version,
   performance: json("reports/v02-browser-performance.json"),
   engineModules,

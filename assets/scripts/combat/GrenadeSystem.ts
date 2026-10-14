@@ -64,6 +64,7 @@ export class GrenadeSystem {
           C.grenade.radius,
           C.grenade.damage,
           "player",
+          "grenade",
         );
         continue;
       }

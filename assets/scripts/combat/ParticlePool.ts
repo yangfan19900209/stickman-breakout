@@ -97,7 +97,7 @@ export class ParticlePool {
       material: undefined,
       life,
       maxLife: life,
-      size: kind === "smoke" ? 7 : kind === "dust" ? 4 : 2,
+      size: kind === "smoke" ? 9 : kind === "dust" ? 4 : 2,
       gravity: kind === "smoke" ? -25 : 650,
       spin: this.random() * 6,
     });

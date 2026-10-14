@@ -9,6 +9,7 @@ import { StickmanRenderer } from "../render/StickmanRenderer";
 import { JoystickView } from "./JoystickView";
 import { controlLayout, SafeInsets } from "./ControlLayout";
 import { PlatformAdapter } from "../platform/PlatformAdapter";
+import { WeaponArt } from "../render/WeaponArt";
 
 function text(
   parent: Node,
@@ -91,6 +92,9 @@ export class HUDController {
   private insets: SafeInsets = { left: 0, right: 0, top: 0, bottom: 0 };
   private joystick: JoystickView;
   private weaponLabel: Label;
+  private weaponIcon: Ink;
+  private weaponArt = new WeaponArt();
+  private lastWeapon = "";
   private message: Label;
   layout = controlLayout();
   private pauseButton!: Node;
@@ -139,6 +143,7 @@ export class HUDController {
     );
     this.stats = text(this.hud, "", 170, 590, 26, colors.ink, 320);
     this.weaponLabel = text(this.hud, "", 300, 640, 32, colors.ink, 570);
+    this.weaponIcon = new Ink(node(this.hud, "Current weapon silhouette"));
     this.message = text(parent, "", 640, 534, 30, colors.ink, 750);
     this.guardNode = node(parent, "Guard health");
     this.guardInk = new Ink(this.guardNode);
@@ -272,7 +277,7 @@ export class HUDController {
       colors.muted,
       760,
     );
-    text(title, "V0.4  /  移动突围", -368, -270, 16, colors.muted, 390);
+    text(title, "V0.4.1  /  漫画突围", -368, -270, 16, colors.muted, 390);
     const paused = panel("paused");
     text(paused, "暂停一下", 0, 103, 52);
     text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -361,14 +366,22 @@ export class HUDController {
             : this.layout.jump,
       r = p.r,
       k = this.layout.joystick.unit,
-      color = disabled ? colors.muted : held ? colors.paper : colors.ink;
+      color = disabled ? colors.far : colors.paper;
     ink.circle(
       0,
       0,
       r,
       disabled ? colors.mid : colors.ink,
-      held ? new Color(24, 24, 24, 190) : new Color(250, 249, 245, 165),
-      4 * k,
+      new Color(30, 30, 30, disabled ? 85 : held ? 225 : 155),
+      (action === "shoot" ? 3 : 2.6) * k,
+    );
+    ink.circle(
+      0,
+      0,
+      r - 5 * k,
+      new Color(250, 249, 245, held ? 200 : 95),
+      undefined,
+      1 * k,
     );
     const q = r * 0.36;
     if (action === "shoot") {
@@ -414,8 +427,12 @@ export class HUDController {
     if (!label)
       label = text(ink.node, "", 0, -r * 0.56, 13 * k, color, r * 1.7);
     label.string =
-      action === "shoot" ? "普攻" : action === "grenade" ? count : "跳跃";
-    label.fontSize = 13 * k;
+      action === "shoot"
+        ? "普攻"
+        : action === "grenade"
+          ? `雷 ${count}`
+          : "跳跃";
+    label.fontSize = (action === "shoot" ? 15 : 13) * k;
     label.lineHeight = 16 * k;
     label.color = color;
     label.node.setPosition(0, -r * 0.55);
@@ -465,22 +482,24 @@ export class HUDController {
       Math.max(1, (44 * k) / 54),
       1,
     );
-    this.weaponLabel.node.setPosition(230 * k + insets.left, top - 26 * k);
-    this.weaponLabel.fontSize = 15 * k;
-    this.weaponLabel.lineHeight = 19 * k;
+    this.weaponIcon.node.setPosition(153 * k + insets.left, top - 22 * k);
+    this.weaponIcon.node.setScale(1.3 * k, 1.3 * k, 1);
+    this.weaponLabel.node.setPosition(250 * k + insets.left, top - 25 * k);
+    this.weaponLabel.fontSize = 14 * k;
+    this.weaponLabel.lineHeight = 18 * k;
     this.weaponLabel.node
       .getComponent(UITransform)!
-      .setContentSize(240 * k, 26 * k);
+      .setContentSize(142 * k, 42 * k);
     this.levelLabel.node.setPosition(
       width - 125 * k - insets.right,
-      top - 26 * k,
+      top - 18 * k,
     );
     this.levelLabel.fontSize = 14 * k;
     this.levelLabel.lineHeight = 18 * k;
     this.levelLabel.node
       .getComponent(UITransform)!
       .setContentSize(132 * k, 26 * k);
-    this.objective.node.setPosition(width * 0.64, top - 26 * k);
+    this.objective.node.setPosition(width * 0.6, top - 25 * k);
     this.objective.fontSize = 12 * k;
     this.objective.lineHeight = 16 * k;
     this.objective.node
@@ -537,7 +556,12 @@ export class HUDController {
       s.state === "playing" || s.state === "dying" || s.state === "paused";
     this.controls.active = s.state === "playing" && !portrait;
     this.adapter.touch.enabled = this.controls.active;
-    this.weaponLabel.string = `${s.weapon.id === "rifle" ? "步枪" : s.weapon.id === "shotgun" ? "霰弹枪" : "火箭筒"}  ${s.weapon.ammo < 0 ? "∞" : s.weapon.ammo}`;
+    this.weaponLabel.string = `${C.weapons[s.weapon.id].name}\n${s.weapon.ammo < 0 ? "∞  弹药" : `剩余 ${s.weapon.ammo} 发`}`;
+    if (this.lastWeapon !== s.weapon.id) {
+      this.weaponIcon.clear();
+      this.weaponArt.draw(this.weaponIcon, s.weapon.id, 0, 0);
+      this.lastWeapon = s.weapon.id;
+    }
     this.levelLabel.string = `关卡 01 · ${Math.floor((s.player.x / s.level.data.width) * 100)}%`;
     this.objective.node.active =
       this.width / this.layout.joystick.unit >= 800 && !s.level.arenaEntered;
@@ -622,14 +646,32 @@ export class HUDController {
           i < s.player.health ? colors.ink : colors.far,
         );
       }
-      this.hudInk.line(
-        [
-          { x: 0, y: top - 52 * k },
-          { x: progress, y: top - 52 * k },
-        ],
-        2 * k,
-        colors.ink,
+      const trackX = this.width - this.insets.right - 182 * k,
+        trackY = top - 37 * k;
+      this.hudInk.segment(
+        trackX,
+        trackY,
+        trackX + 112 * k,
+        trackY,
+        3 * k,
+        colors.far,
       );
+      this.hudInk.segment(
+        trackX,
+        trackY,
+        trackX + (112 * k * progress) / this.width,
+        trackY,
+        3 * k,
+      );
+      for (let n = 0; n < 4; n++)
+        this.hudInk.circle(
+          trackX + (n * 112 * k) / 3,
+          trackY,
+          2.5 * k,
+          colors.ink,
+          n / 3 <= progress / this.width ? colors.ink : colors.paper,
+          1.3 * k,
+        );
       this.lastHealth = s.player.health;
       this.progress = progress;
     }

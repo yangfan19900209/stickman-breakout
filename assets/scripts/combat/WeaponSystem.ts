@@ -14,13 +14,14 @@ export interface ArmedSource {
   aimPitch?: number;
   weaponId?: WeaponId;
 }
-/** Weapon selection seam for future weapon definitions. V0.1 only implements rifle. */
+/** Shared weapon definition and firing pipeline for all three silhouettes. */
 export class WeaponSystem {
   cooldown = 0;
   flash = 0;
   flashX = 0;
   flashY = 0;
   flashFacing: Facing = 1;
+  flashPitch = 0;
   private animator = new StickmanAnimator();
   ammo: number = -1;
   shots = 0;
@@ -94,7 +95,16 @@ export class WeaponSystem {
     if (!fired) return false;
     source.recoil = config.recoil;
     if (source.weaponId !== undefined) source.weaponId = this.id;
-    if (this.id !== "rocket")
+    if (this.id === "rocket") {
+      for (let n = 0; n < 5; n++)
+        projectiles.particles.emit(
+          source.x - 20 * source.facing,
+          source.y + 45 + (n - 2) * 4,
+          "smoke",
+          -source.facing * (85 + n * 15),
+          25 + n * 10,
+        );
+    } else
       projectiles.particles.emit(
         source.x - 4 * source.facing,
         source.y + 42,
@@ -108,6 +118,7 @@ export class WeaponSystem {
     this.flashX = x;
     this.flashY = y;
     this.flashFacing = source.facing;
+    this.flashPitch = pitch;
     this.cooldown = interval ?? config.interval;
     return true;
   }

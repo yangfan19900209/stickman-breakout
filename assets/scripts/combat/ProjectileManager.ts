@@ -1,6 +1,7 @@
 import { GameConfig as C } from "../core/GameConfig";
 import { Damageable, Facing, Rect, segmentRect } from "../core/Types";
 import { ParticlePool } from "./ParticlePool";
+import type { BlastStyle } from "./ExplosionSystem";
 export interface Projectile {
   active: boolean;
   owner: "player" | "enemy";
@@ -79,6 +80,7 @@ export class ProjectileManager {
     radius: number,
     damage: number,
     owner: "player" | "enemy",
+    style: BlastStyle,
   ) => void;
   private playerTargets: Damageable[] = [];
   constructor(readonly particles: ParticlePool) {}
@@ -135,7 +137,14 @@ export class ProjectileManager {
       if (p.kind === "rocket") {
         p.smokeTime -= dt;
         if (p.smokeTime <= 0) {
-          this.particles.emit(p.x, p.y, "smoke", -p.vx * 0.05, 20);
+          const speed = Math.hypot(p.vx, p.vy) || 1;
+          this.particles.emit(
+            p.x - (p.vx / speed) * 50,
+            p.y - (p.vy / speed) * 50,
+            "smoke",
+            -p.vx * 0.05,
+            20,
+          );
           p.smokeTime = 0.045;
         }
       }
@@ -204,7 +213,14 @@ export class ProjectileManager {
           m.y = p.y;
         }
         if (p.blastRadius > 0) {
-          this.onExplosion?.(p.x, p.y, p.blastRadius, p.damage, p.owner);
+          this.onExplosion?.(
+            p.x,
+            p.y,
+            p.blastRadius,
+            p.damage,
+            p.owner,
+            p.kind === "rocket" ? "rocket" : "cannon",
+          );
         } else if (
           target &&
           target.takeDamage(

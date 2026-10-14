@@ -2,7 +2,16 @@ import { test, expect } from "@playwright/test";
 import { writeFileSync } from "node:fs";
 test("original audio, scene culling and bounded frame work; portrait freezes the run", async ({
   page,
+  context,
 }) => {
+  const browser = context.browser()!,
+    cdp = await browser.newBrowserCDPSession();
+  const { gpu } = await cdp.send("SystemInfo.getInfo");
+  const environment = {
+    browser: browser.version(),
+    renderer: gpu.auxAttributes?.glRenderer ?? gpu.devices,
+  };
+  await cdp.detach();
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (m) => {
@@ -46,7 +55,7 @@ test("original audio, scene culling and bounded frame work; portrait freezes the
   });
   writeFileSync(
     "reports/v02-browser-performance.json",
-    JSON.stringify(metrics, null, 2),
+    JSON.stringify({ ...metrics, environment }, null, 2),
   );
   expect(metrics.visibleChunks).toBeLessThan(13);
   expect(metrics.audio.loadErrors).toEqual([]);

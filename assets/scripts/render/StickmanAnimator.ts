@@ -42,9 +42,11 @@ export class StickmanAnimator {
       air = state === "Jump" || state === "Fall";
     const wave = Math.sin(time * 15),
       breathe = Math.sin(time * 3) * 0.8;
-    const bob = run ? Math.abs(Math.cos(time * 15)) * 2 : breathe;
-    const lean = (run ? 5 : state === "Hit" ? -12 : 0) - recoil * 1.8;
-    const kick = recoil * 4;
+    const bob = run ? Math.abs(Math.cos(time * 15)) * 3 : breathe;
+    const lean =
+      (run ? 7 : state === "Hit" ? -15 : state === "Shoot" ? 3 : 1) -
+      recoil * 2.4;
+    const kick = recoil * 4.8;
     const pose: Pose = {
       head: p(lean, 64 + bob),
       neck: p(lean, 53 + bob),
@@ -57,10 +59,10 @@ export class StickmanAnimator {
       rightHand: p(25 - kick, 44 + bob),
       leftHip: p(-2, 29 + bob),
       rightHip: p(2, 29 + bob),
-      leftKnee: p(run ? wave * 13 : -6, 15),
-      rightKnee: p(run ? -wave * 13 : 6, 15),
-      leftAnkle: p(run ? wave * 22 : -10, run ? Math.max(0, -wave) * 8 : 0),
-      rightAnkle: p(run ? -wave * 22 : 10, run ? Math.max(0, wave) * 8 : 0),
+      leftKnee: p(run ? wave * 16 : -6, 15),
+      rightKnee: p(run ? -wave * 16 : 6, 15),
+      leftAnkle: p(run ? wave * 24 : -11, run ? Math.max(0, -wave) * 11 : 0),
+      rightAnkle: p(run ? -wave * 24 : 11, run ? Math.max(0, wave) * 11 : 0),
     };
     if (armed && run) {
       // Counter-swing while carrying a rifle; firing blends back into the aimed pose.
