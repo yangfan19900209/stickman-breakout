@@ -152,6 +152,11 @@ try {
   assert.equal(settled.playerShots, released.playerShots);
   assert.equal(settled.controls.shootHeld, false);
   assert.equal(settled.controls.floating.owners.length, 0);
+  await mobile.touchscreen.tap(565, 105);
+  await mobile.waitForFunction(
+    (n) => globalThis.__BREAKOUT__.snapshot().playerShots > n,
+    settled.playerShots,
+  );
   const mobileCanvas = await mobile.locator("#GameCanvas").boundingBox();
   assert.ok(
     mobileCanvas.width >= 844 * 0.98 && mobileCanvas.height >= 390 * 0.98,
@@ -190,6 +195,8 @@ try {
       playerY: touch.player.y,
       shots: touch.shots,
       releaseVerified: true,
+      floatingJoystick: true,
+      rightBlankShooting: true,
       fullViewport: true,
       portraitFrozen: true,
       rotationResume: true,
