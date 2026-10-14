@@ -25,6 +25,7 @@ export class JoystickView {
   update(input: InputManager): void {
     const s = input.joystick,
       active = s.owner !== null;
+    this.node.setScale(active ? 1 : 0.55, active ? 1 : 0.55, 1);
     this.node.setPosition(
       active ? this.adapter.touch.baseX : this.style.x,
       active ? this.adapter.touch.baseY : this.style.y,

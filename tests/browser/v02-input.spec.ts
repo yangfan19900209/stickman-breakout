@@ -79,7 +79,7 @@ test("actual analog drag, dead zone, three fingers and automatic recenter", asyn
   });
   await page.waitForFunction(() => {
     const s = (globalThis as any).__BREAKOUT__.snapshot();
-    return s.player.y > 200 && s.shots > 1 && s.player.vx > 220;
+    return s.player.y > 200 && s.playerShots > 1 && s.player.vx > 220;
   });
   await page.screenshot({ path: "reports/v02-stage1-touch.png" });
   await cdp.send("Input.dispatchTouchEvent", {
@@ -92,7 +92,7 @@ test("actual analog drag, dead zone, three fingers and automatic recenter", asyn
   const b = await read(page);
   expect(b.controls.stick.owner).toBe(null);
   expect(Math.abs(b.player.x - a.player.x)).toBeLessThan(2);
-  expect(b.shots).toBe(a.shots);
+  expect(b.playerShots).toBe(a.playerShots);
   expect(errors).toEqual([]);
 });
 test("dragging down crouches and dragging up aims without triggering a jump", async ({
@@ -127,7 +127,7 @@ test("dragging down crouches and dragging up aims without triggering a jump", as
   expect((await read(page)).player.grounded).toBe(true);
   await page.keyboard.down("KeyJ");
   await page.waitForFunction(
-    () => (globalThis as any).__BREAKOUT__.snapshot().shots > 2,
+    () => (globalThis as any).__BREAKOUT__.snapshot().playerShots > 2,
   );
   await page.screenshot({ path: "reports/v02-stage1-aim.png" });
   await page.keyboard.up("KeyJ");

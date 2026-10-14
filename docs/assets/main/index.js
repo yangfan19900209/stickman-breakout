@@ -2871,7 +2871,9 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               action: action,
               ink: ink,
               held: false,
-              key: ""
+              key: "",
+              cooldownInk: new Ink(node(n, "Cooldown arc")),
+              cooldownBucket: -1
             });
             _this.paintTouch(ink, action, false);
           };
@@ -2984,8 +2986,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
           key: "paintTouch",
           value: function paintTouch(ink, action, held) {
             var disabled = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-            var cooldown = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
-            var count = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : "";
+            var count = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : "";
             ink.clear();
             var p = action === "shoot" ? this.layout.shoot : action === "grenade" ? this.layout.grenade : this.layout.jump,
               r = p.r,
@@ -3030,15 +3031,6 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               }], 2.3 * k, color);
               ink.segment(q * 0.28, q * 1.12, q * 0.9, q * 1.4, 2.3 * k, color);
             }
-            if (cooldown > 0) {
-              var steps = Math.ceil(cooldown * 24),
-                radius = r - 5 * k;
-              for (var n = 0; n < steps; n++) {
-                var a = Math.PI / 2 - n * Math.PI / 12,
-                  b = a - Math.PI / 12;
-                ink.segment(Math.cos(a) * radius, Math.sin(a) * radius, Math.cos(b) * radius, Math.sin(b) * radius, 3 * k, colors.mid);
-              }
-            }
             var label = ink.node.getComponentInChildren(Label);
             if (!label) label = text(ink.node, "", 0, -r * 0.56, 13 * k, color, r * 1.7);
             label.string = action === "shoot" ? "普攻" : action === "grenade" ? count : "跳跃";
@@ -3069,6 +3061,7 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                 b.ink.node.setPosition(p.x, p.y);
                 b.ink.node.getComponent(UITransform).setContentSize(p.hit, p.hit);
                 b.key = "";
+                b.cooldownBucket = -1;
                 this.paintTouch(b.ink, b.action, false);
               }
             } catch (err) {
@@ -3285,11 +3278,25 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
                 var held = input.isHeld(b.action);
                 var disabled = b.action === "grenade" ? s.player.grenades === 0 : b.action === "jump" ? !s.player.grounded : !s.player.alive;
                 var cooldown = b.action === "grenade" ? s.grenades.cooldown / GameConfig.grenade.interval : b.action === "shoot" ? s.weapon.cooldown / GameConfig.weapons[s.weapon.id].interval : 0;
-                var key = "".concat(held, ":").concat(disabled, ":").concat(Math.ceil(cooldown * 8), ":").concat(s.player.grenades);
+                var key = "".concat(held, ":").concat(disabled, ":").concat(b.action === "grenade" ? s.player.grenades : "");
                 if (key !== b.key) {
-                  this.paintTouch(b.ink, b.action, held, disabled, cooldown, String(s.player.grenades));
+                  this.paintTouch(b.ink, b.action, held, disabled, String(s.player.grenades));
                   b.held = held;
                   b.key = key;
+                }
+                var bucket = Math.ceil(cooldown * 3);
+                if (bucket !== b.cooldownBucket) {
+                  b.cooldownInk.clear();
+                  if (bucket > 0) {
+                    var r = b.action === "shoot" ? this.layout.shoot.r : this.layout.grenade.r,
+                      g = b.cooldownInk.g,
+                      _k = this.layout.joystick.unit;
+                    g.lineWidth = 3 * _k;
+                    g.strokeColor = colors.mid;
+                    g.arc(0, 0, r - 5 * _k, Math.PI / 2, Math.PI / 2 - Math.PI * 2 * bucket / 3, true);
+                    g.stroke();
+                  }
+                  b.cooldownBucket = bucket;
                 }
               }
             } catch (err) {
@@ -3604,6 +3611,7 @@ System.register("chunks:///_virtual/JoystickView.ts", ['./rollupPluginModLoBabel
           value: function update(input) {
             var s = input.joystick,
               active = s.owner !== null;
+            this.node.setScale(active ? 1 : 0.55, active ? 1 : 0.55, 1);
             this.node.setPosition(active ? this.adapter.touch.baseX : this.style.x, active ? this.adapter.touch.baseY : this.style.y);
             if (s.x === this.lastX && s.y === this.lastY && active === this.active) return;
             this.lastX = s.x;

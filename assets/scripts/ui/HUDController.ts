@@ -73,6 +73,8 @@ export class HUDController {
     ink: Ink;
     held: boolean;
     key: string;
+    cooldownInk: Ink;
+    cooldownBucket: number;
   }[] = [];
   private lastState: GameState | null = null;
   private lastHealth = -1;
@@ -162,7 +164,14 @@ export class HUDController {
         ),
         ink = new Ink(n);
       adapter.bindButton(n, action);
-      this.touchButtons.push({ action, ink, held: false, key: "" });
+      this.touchButtons.push({
+        action,
+        ink,
+        held: false,
+        key: "",
+        cooldownInk: new Ink(node(n, "Cooldown arc")),
+        cooldownBucket: -1,
+      });
       this.paintTouch(ink, action, false);
     };
     touch("jump", this.layout.jump.x, this.layout.jump.y, 70);
@@ -341,7 +350,6 @@ export class HUDController {
     action: InputAction,
     held: boolean,
     disabled = false,
-    cooldown = 0,
     count = "",
   ): void {
     ink.clear();
@@ -402,22 +410,6 @@ export class HUDController {
       );
       ink.segment(q * 0.28, q * 1.12, q * 0.9, q * 1.4, 2.3 * k, color);
     }
-    if (cooldown > 0) {
-      const steps = Math.ceil(cooldown * 24),
-        radius = r - 5 * k;
-      for (let n = 0; n < steps; n++) {
-        const a = Math.PI / 2 - (n * Math.PI) / 12,
-          b = a - Math.PI / 12;
-        ink.segment(
-          Math.cos(a) * radius,
-          Math.sin(a) * radius,
-          Math.cos(b) * radius,
-          Math.sin(b) * radius,
-          3 * k,
-          colors.mid,
-        );
-      }
-    }
     let label = ink.node.getComponentInChildren(Label);
     if (!label)
       label = text(ink.node, "", 0, -r * 0.56, 13 * k, color, r * 1.7);
@@ -455,6 +447,7 @@ export class HUDController {
       b.ink.node.setPosition(p.x, p.y);
       b.ink.node.getComponent(UITransform)!.setContentSize(p.hit, p.hit);
       b.key = "";
+      b.cooldownBucket = -1;
       this.paintTouch(b.ink, b.action, false);
     }
     this.pauseButton.setPosition(this.layout.pause.x, this.layout.pause.y);
@@ -667,18 +660,41 @@ export class HUDController {
           : b.action === "shoot"
             ? s.weapon.cooldown / C.weapons[s.weapon.id].interval
             : 0;
-      const key = `${held}:${disabled}:${Math.ceil(cooldown * 8)}:${s.player.grenades}`;
+      const key = `${held}:${disabled}:${b.action === "grenade" ? s.player.grenades : ""}`;
       if (key !== b.key) {
         this.paintTouch(
           b.ink,
           b.action,
           held,
           disabled,
-          cooldown,
           String(s.player.grenades),
         );
         b.held = held;
         b.key = key;
+      }
+      const bucket = Math.ceil(cooldown * 3);
+      if (bucket !== b.cooldownBucket) {
+        b.cooldownInk.clear();
+        if (bucket > 0) {
+          const r =
+              b.action === "shoot"
+                ? this.layout.shoot.r
+                : this.layout.grenade.r,
+            g = b.cooldownInk.g,
+            k = this.layout.joystick.unit;
+          g.lineWidth = 3 * k;
+          g.strokeColor = colors.mid;
+          g.arc(
+            0,
+            0,
+            r - 5 * k,
+            Math.PI / 2,
+            Math.PI / 2 - (Math.PI * 2 * bucket) / 3,
+            true,
+          );
+          g.stroke();
+        }
+        b.cooldownBucket = bucket;
       }
     }
   }

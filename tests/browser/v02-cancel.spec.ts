@@ -49,7 +49,7 @@ test("cancelling active joystick and firing fingers releases all input ownership
     ],
   });
   await page.waitForFunction(
-    () => (globalThis as any).__BREAKOUT__.snapshot().shots > 1,
+    () => (globalThis as any).__BREAKOUT__.snapshot().playerShots > 1,
   );
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchCancel",
@@ -64,7 +64,7 @@ test("cancelling active joystick and firing fingers releases all input ownership
     (globalThis as any).__BREAKOUT__.snapshot(),
   );
   expect(z.controls.stick.owner).toBe(null);
-  expect(z.shots).toBe(a.shots);
+  expect(z.playerShots).toBe(a.playerShots);
   expect(Math.abs(z.player.x - a.player.x)).toBeLessThan(2);
   const diagnostic =
     "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.";
