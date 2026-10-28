@@ -2,7 +2,7 @@
 
 真实 **Cocos Creator 3.8.8 + TypeScript** 黑白漫画横版射击工程，1280×720 横屏设计，继续使用原输入、物理、对象池和关卡。
 
-GitHub Pages 发布包（2026-10-28）：V0.5.7 当前Web构建已复制到 `docs`，52个文件逐字节一致，沿用 `main/docs` 发布源。严格类型检查、114项逻辑回归，以及该发布目录的启动、键盘移动/跳跃/射击、暂停恢复、手机横屏三点触控/松手、右侧空白区射击、竖屏暂停和旋转恢复均通过；本地验证见 [记录](reports/github-pages-v057-local-verification.json)。线上入口：[立即试玩](https://yangfan19900209.github.io/stickman-breakout/)。在线部署结果将在推送后单独记录。
+GitHub Pages 已部署（2026-10-28）：[立即试玩 V0.5.7](https://yangfan19900209.github.io/stickman-breakout/)。源码与网页包已推送到 `main`，沿用 `main/docs` 发布源，GitHub Pages构建与部署成功。线上52个文件与已验证Web构建逐字节一致；启动、键盘移动/跳跃/射击、暂停恢复、手机横屏三点触控/松手、右侧空白区射击、竖屏暂停和旋转恢复均通过，应用错误和失败请求为0。见 [线上验证](reports/github-pages-verification.json)、[部署记录](reports/github-pages-deployment-v057.json)及[本地发布目录验证](reports/github-pages-v057-local-verification.json)。本次重新通过严格类型检查和114项逻辑测试；手机检查为浏览器模拟，未测真实手机。
 
 微信上传状态（2026-10-27）：V0.5.7 已成功上传至 AppID `wx7d2aae02691fc088` 的小游戏开发版本，开发者YF、CI机器人1，微信返回整包3,096,380字节。上传前严格类型检查、114项逻辑回归与交付检查通过，源码指纹与已验证构建一致。首次因IP白名单被拒绝，用户添加并保存后使用同一构建重试成功；未提交审核或公开发布，微信真机未测。见 [成功回执](reports/wechat-upload-0.5.7.json)；[首次失败记录](reports/wechat-upload-0.5.7-20261027.json)和[历史0.5.3回执](reports/wechat-upload-0.5.3.json)分别保留。
 

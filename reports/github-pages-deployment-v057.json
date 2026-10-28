@@ -1,0 +1,32 @@
+{
+  "version": "0.5.7",
+  "site": "https://yangfan19900209.github.io/stickman-breakout/",
+  "repository": "https://github.com/yangfan19900209/stickman-breakout",
+  "source": {
+    "branch": "main",
+    "path": "/docs"
+  },
+  "publishedCommit": "c9bd76ae5e5663a76f95fc40f7c7ef803986bdb3",
+  "pagesRun": {
+    "id": 40656640584,
+    "url": "https://github.com/yangfan19900209/stickman-breakout/actions/runs/40656640584",
+    "conclusion": "success"
+  },
+  "checkedAt": "2026-10-28T08:34:59.377Z",
+  "sourceSHA256": "d3593febc2ba33a34b6da551bbba064327f59c311355b7f491aa0300f5adf81a",
+  "webBuildSHA256": "8225e1457a673f3e4a233455b0c575bf527d72d3b4d039e1b873e470e5c80927",
+  "matchedBuildFiles": 52,
+  "logicTests": {
+    "tests": 114,
+    "passed": 114,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserVerification": "reports/github-pages-verification.json",
+  "applicationErrors": [],
+  "failedRequests": [],
+  "limitations": [
+    "Browser mobile viewport and multitouch emulation; no physical mobile device validation.",
+    "Full browser campaign not rerun for this deployment."
+  ]
+}

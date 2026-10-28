@@ -2,13 +2,14 @@
 
 日期：2026-10-20。本轮针对最新4张用户素材，修复武器拼接和地图拼接；原有敌人、物理与战斗数值未削弱。详细映射与验收见 `art/V057-DELIVERY.md`。
 
-### 2026-10-28 GitHub Pages 发布准备
+### 2026-10-28 GitHub Pages 部署成功
 
 - 已确认远程仓库 `yangfan19900209/stickman-breakout` 与本地main同源且没有远程新增提交；Pages沿用 `main/docs`，不更换站点或发布方式。
 - 当前源码与既有V0.5.7浏览器修复验证指纹一致，重新通过严格类型检查、114项逻辑回归和交付检查。Web构建52文件/5,907,141字节，以原样复制到docs；源码和用户给定资源一并上传仓库，代码上传私钥保持工程外且不进入Git。
 - `prepare-pages.mjs` 适配本轮针对性浏览器验证报告，并在替换发布文件前检查源码指纹、构建文件数/总字节及构建时间；新增 `.gitattributes` 使docs内容不经Git换行转换，保持下载字节与Creator输出一致。
 - 发布目录在子路径 `/stickman-breakout/` 完成本地浏览器检查：PC键盘移动/跳跃/射击与暂停、844×390三点触控/松手、右侧空白射击、竖屏暂停/横屏恢复。52文件匹配，应用错误和失败请求均为0，见 `reports/github-pages-v057-local-verification.json`。此次没有重跑浏览器整关，也不代表真机验收。
-- 推送后的线上文件核对与同一操作检查将另存 `reports/github-pages-verification.json`。
+- 发布提交 `c9bd76ae5e5663a76f95fc40f7c7ef803986bdb3` 已推送到origin/main，GitHub Pages构建与部署成功：[运行40656640584](https://github.com/yangfan19900209/stickman-breakout/actions/runs/40656640584)。线上 `version.json` 为0.5.7，Web构建指纹 `8225e1457a673f3e4a233455b0c575bf527d72d3b4d039e1b873e470e5c80927`。
+- 正式站点52个文件全部下载并与本地发布文件逐字节匹配，PC移动/跳跃/射击/暂停、844×390三点触控/松手/右侧空白区射击、竖屏暂停与旋转恢复全部通过，应用错误和失败请求为0。报告 `reports/github-pages-verification.json`，截图 `reports/github-pages-desktop.png`、`reports/github-pages-mobile.png`、`reports/github-pages-portrait.png`；部署回执 `reports/github-pages-deployment-v057.json`。不将浏览器模拟手机视为真实设备验收。
 
 ### 2026-10-27 微信开发版本上传成功
 
