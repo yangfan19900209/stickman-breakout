@@ -111,7 +111,7 @@ test("service worker preserves subpath offline startup after an online visit", a
     { timeout: 45000 },
   );
   await page.waitForFunction(
-    () => (globalThis as any).__BREAKOUT__.snapshot().audio.loaded === 7,
+    () => (globalThis as any).__BREAKOUT__.snapshot().audio.loaded === 9,
   );
   await page.waitForTimeout(300);
   await context.setOffline(true);

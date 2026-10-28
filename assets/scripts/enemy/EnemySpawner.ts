@@ -2,11 +2,16 @@ import { AbandonedBase } from "../level/LevelData";
 import { EnemyController } from "./EnemyController";
 import { EnemySpawn } from "../level/LevelData";
 import { TankBoss } from "./TankBoss";
+import { ColossusBoss } from "./ColossusBoss";
 export class EnemySpawner {
   enemies: EnemyController[] = [];
   reset(data: EnemySpawn[] = AbandonedBase.enemies): void {
     this.enemies = data.map((d) =>
-      d.kind === "guard" ? new TankBoss(d) : new EnemyController(d),
+      d.kind === "colossus"
+        ? new ColossusBoss(d)
+        : d.kind === "guard"
+          ? new TankBoss(d)
+          : new EnemyController(d),
     );
     this.guard.onSummon = (x) => {
       const count = this.enemies.filter(
@@ -31,7 +36,13 @@ export class EnemySpawner {
   get kills(): number {
     return this.enemies.length - this.remaining;
   }
-  get guard(): TankBoss {
-    return this.enemies.find((e) => e.kind === "guard")! as TankBoss;
+  get guard(): TankBoss | ColossusBoss {
+    return (this.enemies.find((e) => e.kind === "colossus") ??
+      this.enemies.find((e) => e.kind === "guard"))! as TankBoss | ColossusBoss;
+  }
+  get miniBoss(): TankBoss | undefined {
+    return this.enemies.find(
+      (e) => e.kind === "guard" && (e as TankBoss).miniBoss,
+    ) as TankBoss | undefined;
   }
 }

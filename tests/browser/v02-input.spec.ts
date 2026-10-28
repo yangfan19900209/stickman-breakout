@@ -1,6 +1,7 @@
 import { test, expect, Page } from "@playwright/test";
 import { writeFileSync } from "node:fs";
-async function boot(page: Page) {
+async function boot(page: Page, fixedClock = false) {
+  if (fixedClock) await page.clock.install({ time: new Date('2026-10-16T00:00:00Z') });
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (m) => {
@@ -13,7 +14,9 @@ async function boot(page: Page) {
     { timeout: 45000 },
   );
   await page.locator("#GameCanvas").focus();
+  if (fixedClock) await page.clock.pauseAt(new Date('2026-10-16T00:00:10Z'));
   await page.keyboard.press("Enter");
+  if (fixedClock) await page.clock.runFor(34);
   await page.waitForFunction(
     () => (globalThis as any).__BREAKOUT__.snapshot().state === "playing",
   );
@@ -36,7 +39,7 @@ test("actual analog drag, dead zone, three fingers and automatic recenter", asyn
   context,
 }) => {
   await page.setViewportSize({ width: 844, height: 390 });
-  const errors = await boot(page),
+  const errors = await boot(page, true),
     cdp = await context.newCDPSession(page);
   const layout = (await read(page)).controls.layout,
     c = layout.joystick;
@@ -51,12 +54,13 @@ test("actual analog drag, dead zone, three fingers and automatic recenter", asyn
     type: "touchMove",
     touchPoints: [{ id: 1, ...dead }],
   });
-  await page.waitForTimeout(120);
+  await page.clock.runFor(120);
   expect((await read(page)).controls.stick.axis).toBe(0);
   await cdp.send("Input.dispatchTouchEvent", {
     type: "touchMove",
     touchPoints: [{ id: 1, ...partial }],
   });
+  await page.clock.runFor(100);
   await page.waitForFunction(() => {
     const s = (globalThis as any).__BREAKOUT__.snapshot();
     return s.controls.stick.axis > 0.3 && s.player.vx > 60;
@@ -77,6 +81,7 @@ test("actual analog drag, dead zone, three fingers and automatic recenter", asyn
       { id: 3, ...jump },
     ],
   });
+  await page.clock.runFor(220);
   await page.waitForFunction(() => {
     const s = (globalThis as any).__BREAKOUT__.snapshot();
     return s.player.y > 200 && s.playerShots > 1 && s.player.vx > 220;
@@ -86,9 +91,11 @@ test("actual analog drag, dead zone, three fingers and automatic recenter", asyn
     type: "touchEnd",
     touchPoints: [],
   });
-  await page.waitForTimeout(300);
+  await page.clock.runFor(300);
   const a = await read(page);
-  await page.waitForTimeout(250);
+  expect(a.controls.stick.axis).toBe(0);
+  expect(a.player.vx).toBe(0);
+  await page.clock.runFor(250);
   const b = await read(page);
   expect(b.controls.stick.owner).toBe(null);
   expect(Math.abs(b.player.x - a.player.x)).toBeLessThan(2);

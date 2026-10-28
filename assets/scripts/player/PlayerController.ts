@@ -25,15 +25,36 @@ export class PlayerController {
   private jumpCut = false;
   health: number = C.player.maxHealth;
   grenades: number = C.grenade.initial;
-  weaponId: WeaponId = "rifle";
+  private standaloneWeapon: WeaponId = "rifle";
+  private equipped?: { readonly id: WeaponId };
+  bindWeapon(source: { readonly id: WeaponId }): void { this.equipped = source; }
+  get weaponId(): WeaponId { return this.equipped?.id ?? this.standaloneWeapon; }
+  // Compatibility for standalone model tests; the session never keeps a second ID.
+  set weaponId(id: WeaponId) { this.standaloneWeapon = id; }
   facing: Facing = 1;
   invincible = 0;
   hitTime = 0;
+  meleeTime = 0;
+  meleeStage = 0;
+  meleeProgress = 0;
+  meleeStance: "stand" | "crouch" | "jump" = "stand";
   deadTime = 0;
   recoil = 0;
   animationTime = 0;
   stride = 0;
   groundSlope = 0;
+  airJumpsRemaining: number = C.player.airJumps;
+  jumpCount = 0;
+  jumpSerial = 0;
+  airJumpTime = 0;
+  throwTime = 0;
+  private jumpWasPressed = false;
+  get canJump(): boolean {
+    return (
+      this.alive &&
+      (this.grounded || this.coyote > 0 || this.airJumpsRemaining > 0)
+    );
+  }
   private coyote = 0;
   private buffer = 0;
   private hurtbox: Rect = { x: 0, y: 0, w: 26, h: 65 };
@@ -56,6 +77,8 @@ export class PlayerController {
     return this.recoil > 0 ? "Shoot" : "Idle";
   }
   reset(x: number, y: number): void {
+    this.meleeTime = 0;
+    this.meleeStage = this.meleeProgress = 0;
     this.x = x;
     this.y = y;
     this.vx = 0;
@@ -69,6 +92,9 @@ export class PlayerController {
     this.aimPitch = 0;
     this.landTime = 0;
     this.stride = this.groundSlope = 0;
+    this.airJumpsRemaining = C.player.airJumps;
+    this.jumpCount = this.jumpSerial = this.airJumpTime = 0;
+    this.jumpWasPressed = false;
     this.jumpCut = false;
     this.invincible =
       this.hitTime =
@@ -81,6 +107,9 @@ export class PlayerController {
   }
   update(dt: number, input: InputFrame, level: LevelController): void {
     this.animationTime += dt;
+    this.airJumpTime = Math.max(0, this.airJumpTime - dt);
+    const jumpPressed = input.jump && !this.jumpWasPressed;
+    this.jumpWasPressed = input.jump;
     this.landTime = Math.max(0, this.landTime - dt);
     this.recoil = Math.max(0, this.recoil - dt * 8);
     this.invincible = Math.max(0, this.invincible - dt);
@@ -120,7 +149,7 @@ export class PlayerController {
       this.coyote = this.grounded
         ? C.player.coyoteTime
         : Math.max(0, this.coyote - dt);
-      this.buffer = input.jump
+      this.buffer = jumpPressed
         ? C.player.jumpBuffer
         : Math.max(0, this.buffer - dt);
       if (this.buffer > 0 && this.coyote > 0) {
@@ -130,6 +159,16 @@ export class PlayerController {
         this.buffer = 0;
         this.jumpCut = false;
         this.crouched = false;
+        this.jumpCount = 1;
+        this.jumpSerial++;
+      } else if (jumpPressed && !this.grounded && this.airJumpsRemaining > 0) {
+        this.vy = C.player.airJumpVelocity;
+        this.airJumpsRemaining--;
+        this.jumpCount = 2;
+        this.jumpSerial++;
+        this.airJumpTime = 0.18;
+        this.buffer = this.coyote = 0;
+        this.jumpCut = this.crouched = false;
       }
       // Legacy simulation frames omit jumpHeld; real device frames always provide it.
       if (input.jumpHeld === false && !this.jumpCut && this.vy > 0) {
@@ -141,7 +180,11 @@ export class PlayerController {
     const wasGrounded = this.grounded;
     const oldX = this.x;
     level.move(this, dt);
-    if (this.grounded) this.stride += ((this.x - oldX) * this.facing) / 112;
+    if (this.grounded) {
+      this.stride += ((this.x - oldX) * this.facing) / C.animation.strideLength;
+      this.airJumpsRemaining = C.player.airJumps;
+      this.jumpCount = 0;
+    }
     if (!wasGrounded && this.grounded) this.landTime = 0.14;
     if (this.y < -200) this.takeDamage(this.health, this.facing);
   }

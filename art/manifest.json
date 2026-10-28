@@ -1,0 +1,7854 @@
+{
+  "version": "0.5.3",
+  "alphaCutoff": 8,
+  "grayscale": false,
+  "padding": 8,
+  "extrusion": 2,
+  "textureSize": [
+    2048,
+    2048
+  ],
+  "textureBytes": 610613,
+  "sources": {
+    "player": {
+      "file": "art/source/v053/卡通士兵动作精灵表.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "07257a0c345b6270f77289616cee3b38101a0483db1a9388c2e0409f538fe61c",
+      "role": "runtime",
+      "transparentPixels": 740085
+    },
+    "enemy": {
+      "file": "art/source/v053/黑白军用角色与坦克精灵图集.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "740f695cd0ddbc27de989aef3c4d77c28a51f2044ab8c27e802e5097daf585ba",
+      "role": "runtime",
+      "transparentPixels": 841928
+    },
+    "fx": {
+      "file": "art/source/v053/卡通射击游戏特效与武器精灵图集.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "09dfee1805f17a1f4db04a85bda5e0b1ba5b6f469c48ed7233f6895c5e15a864",
+      "role": "runtime",
+      "transparentPixels": 760171
+    },
+    "env": {
+      "file": "art/source/v053/黑白平台游戏环境精灵素材表.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "e561545f461e69367d9b33e42ab32a24cb1021ed88a7e3c0b33118daea70181b",
+      "role": "runtime",
+      "transparentPixels": 817503
+    },
+    "reference": {
+      "file": "art/source/v053/黑白涂鸦战场_突击关卡.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "1091bdee4a3d4eb9ec1b52267798dfee540e17935fa1d17f417d47dddda1b163",
+      "role": "reference-only",
+      "transparentPixels": 0
+    }
+  },
+  "frames": [
+    {
+      "id": "player.idle.0",
+      "source": "player",
+      "crop": [
+        96,
+        9,
+        228,
+        145
+      ],
+      "pivot": [
+        157,
+        142
+      ],
+      "state": "player.idle",
+      "muzzle": null,
+      "trim": [
+        18,
+        4,
+        113,
+        135
+      ],
+      "sourceSize": [
+        95,
+        131
+      ],
+      "size": [
+        95,
+        131
+      ],
+      "anchor": [
+        0.45263157894736844,
+        0.01526717557251911
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.idle.0.png",
+      "atlas": [
+        870,
+        279,
+        95,
+        131
+      ]
+    },
+    {
+      "id": "player.idle.1",
+      "source": "player",
+      "crop": [
+        200,
+        9,
+        332,
+        145
+      ],
+      "pivot": [
+        263,
+        142
+      ],
+      "state": "player.idle",
+      "muzzle": null,
+      "trim": [
+        21,
+        6,
+        113,
+        134
+      ],
+      "sourceSize": [
+        92,
+        128
+      ],
+      "size": [
+        92,
+        128
+      ],
+      "anchor": [
+        0.45652173913043476,
+        0.0078125
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.idle.1.png",
+      "atlas": [
+        1181,
+        279,
+        92,
+        128
+      ]
+    },
+    {
+      "id": "player.idle.2",
+      "source": "player",
+      "crop": [
+        304,
+        9,
+        436,
+        145
+      ],
+      "pivot": [
+        363,
+        142
+      ],
+      "state": "player.idle",
+      "muzzle": null,
+      "trim": [
+        18,
+        4,
+        113,
+        134
+      ],
+      "sourceSize": [
+        95,
+        130
+      ],
+      "size": [
+        95,
+        130
+      ],
+      "anchor": [
+        0.43157894736842106,
+        0.007692307692307665
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.idle.2.png",
+      "atlas": [
+        973,
+        279,
+        95,
+        130
+      ]
+    },
+    {
+      "id": "player.idle.3",
+      "source": "player",
+      "crop": [
+        408,
+        9,
+        551,
+        145
+      ],
+      "pivot": [
+        470,
+        142
+      ],
+      "state": "player.idle",
+      "muzzle": null,
+      "trim": [
+        20,
+        3,
+        117,
+        133
+      ],
+      "sourceSize": [
+        97,
+        130
+      ],
+      "size": [
+        97,
+        130
+      ],
+      "anchor": [
+        0.4329896907216495,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.idle.3.png",
+      "atlas": [
+        1076,
+        279,
+        97,
+        130
+      ]
+    },
+    {
+      "id": "player.run.0",
+      "source": "player",
+      "crop": [
+        621,
+        14,
+        758,
+        146
+      ],
+      "pivot": [
+        689,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        9,
+        7,
+        127,
+        129
+      ],
+      "sourceSize": [
+        118,
+        122
+      ],
+      "size": [
+        118,
+        122
+      ],
+      "anchor": [
+        0.5,
+        0.008196721311475419
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.0.png",
+      "atlas": [
+        339,
+        437,
+        118,
+        122
+      ]
+    },
+    {
+      "id": "player.run.1",
+      "source": "player",
+      "crop": [
+        730,
+        14,
+        851,
+        146
+      ],
+      "pivot": [
+        791,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        20,
+        7,
+        111,
+        130
+      ],
+      "sourceSize": [
+        91,
+        123
+      ],
+      "size": [
+        91,
+        123
+      ],
+      "anchor": [
+        0.45054945054945056,
+        0.016260162601625994
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.1.png",
+      "atlas": [
+        130,
+        437,
+        91,
+        123
+      ]
+    },
+    {
+      "id": "player.run.2",
+      "source": "player",
+      "crop": [
+        823,
+        14,
+        943,
+        146
+      ],
+      "pivot": [
+        883,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        23,
+        5,
+        111,
+        131
+      ],
+      "sourceSize": [
+        88,
+        126
+      ],
+      "size": [
+        88,
+        126
+      ],
+      "anchor": [
+        0.42045454545454547,
+        0.023809523809523836
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.2.png",
+      "atlas": [
+        1482,
+        279,
+        88,
+        126
+      ]
+    },
+    {
+      "id": "player.run.3",
+      "source": "player",
+      "crop": [
+        915,
+        14,
+        1037,
+        146
+      ],
+      "pivot": [
+        978,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        15,
+        5,
+        109,
+        130
+      ],
+      "sourceSize": [
+        94,
+        125
+      ],
+      "size": [
+        94,
+        125
+      ],
+      "anchor": [
+        0.5106382978723404,
+        0.016000000000000014
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.3.png",
+      "atlas": [
+        1578,
+        279,
+        94,
+        125
+      ]
+    },
+    {
+      "id": "player.run.4",
+      "source": "player",
+      "crop": [
+        1009,
+        14,
+        1126,
+        146
+      ],
+      "pivot": [
+        1063,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        2,
+        4,
+        102,
+        128
+      ],
+      "sourceSize": [
+        100,
+        124
+      ],
+      "size": [
+        100,
+        124
+      ],
+      "anchor": [
+        0.52,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.4.png",
+      "atlas": [
+        1680,
+        279,
+        100,
+        124
+      ]
+    },
+    {
+      "id": "player.run.5",
+      "source": "player",
+      "crop": [
+        1098,
+        14,
+        1214,
+        146
+      ],
+      "pivot": [
+        1151,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        7,
+        9,
+        97,
+        130
+      ],
+      "sourceSize": [
+        90,
+        121
+      ],
+      "size": [
+        90,
+        121
+      ],
+      "anchor": [
+        0.5111111111111111,
+        0.016528925619834656
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.5.png",
+      "atlas": [
+        706,
+        437,
+        90,
+        121
+      ]
+    },
+    {
+      "id": "player.run.6",
+      "source": "player",
+      "crop": [
+        1186,
+        14,
+        1297,
+        146
+      ],
+      "pivot": [
+        1235,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        7,
+        5,
+        90,
+        129
+      ],
+      "sourceSize": [
+        83,
+        124
+      ],
+      "size": [
+        83,
+        124
+      ],
+      "anchor": [
+        0.5060240963855421,
+        0.008064516129032251
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.6.png",
+      "atlas": [
+        1788,
+        279,
+        83,
+        124
+      ]
+    },
+    {
+      "id": "player.run.7",
+      "source": "player",
+      "crop": [
+        1269,
+        14,
+        1380,
+        146
+      ],
+      "pivot": [
+        1320,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        3,
+        6,
+        90,
+        125
+      ],
+      "sourceSize": [
+        87,
+        119
+      ],
+      "size": [
+        87,
+        119
+      ],
+      "anchor": [
+        0.5517241379310345,
+        -0.025210084033613356
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.7.png",
+      "atlas": [
+        1273,
+        437,
+        87,
+        119
+      ]
+    },
+    {
+      "id": "player.run.8",
+      "source": "player",
+      "crop": [
+        1328,
+        14,
+        1448,
+        146
+      ],
+      "pivot": [
+        1404,
+        142
+      ],
+      "state": "player.run",
+      "muzzle": null,
+      "trim": [
+        11,
+        6,
+        112,
+        128
+      ],
+      "sourceSize": [
+        101,
+        122
+      ],
+      "size": [
+        101,
+        122
+      ],
+      "anchor": [
+        0.6435643564356436,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run.8.png",
+      "atlas": [
+        465,
+        437,
+        101,
+        122
+      ]
+    },
+    {
+      "id": "player.jump.0",
+      "source": "player",
+      "crop": [
+        97,
+        156,
+        285,
+        311
+      ],
+      "pivot": [
+        193,
+        302
+      ],
+      "state": "player.jump",
+      "muzzle": null,
+      "trim": [
+        50,
+        37,
+        163,
+        149
+      ],
+      "sourceSize": [
+        113,
+        112
+      ],
+      "size": [
+        113,
+        112
+      ],
+      "anchor": [
+        0.40707964601769914,
+        0.0267857142857143
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.jump.0.png",
+      "atlas": [
+        660,
+        694,
+        113,
+        112
+      ]
+    },
+    {
+      "id": "player.jump.1",
+      "source": "player",
+      "crop": [
+        257,
+        156,
+        414,
+        311
+      ],
+      "pivot": [
+        338,
+        302
+      ],
+      "state": "player.jump",
+      "muzzle": null,
+      "trim": [
+        24,
+        4,
+        137,
+        121
+      ],
+      "sourceSize": [
+        113,
+        117
+      ],
+      "size": [
+        113,
+        117
+      ],
+      "anchor": [
+        0.504424778761062,
+        -0.21367521367521358
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.jump.1.png",
+      "atlas": [
+        4,
+        569,
+        113,
+        117
+      ]
+    },
+    {
+      "id": "player.jump.2",
+      "source": "player",
+      "crop": [
+        386,
+        156,
+        565,
+        311
+      ],
+      "pivot": [
+        480,
+        302
+      ],
+      "state": "player.jump",
+      "muzzle": null,
+      "trim": [
+        24,
+        18,
+        152,
+        127
+      ],
+      "sourceSize": [
+        128,
+        109
+      ],
+      "size": [
+        128,
+        109
+      ],
+      "anchor": [
+        0.546875,
+        -0.17431192660550465
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.jump.2.png",
+      "atlas": [
+        781,
+        694,
+        128,
+        109
+      ]
+    },
+    {
+      "id": "player.jump.3",
+      "source": "player",
+      "crop": [
+        537,
+        156,
+        705,
+        311
+      ],
+      "pivot": [
+        610,
+        302
+      ],
+      "state": "player.jump",
+      "muzzle": null,
+      "trim": [
+        28,
+        33,
+        135,
+        149
+      ],
+      "sourceSize": [
+        107,
+        116
+      ],
+      "size": [
+        107,
+        116
+      ],
+      "anchor": [
+        0.4205607476635514,
+        0.025862068965517238
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.jump.3.png",
+      "atlas": [
+        676,
+        569,
+        107,
+        116
+      ]
+    },
+    {
+      "id": "player.fall.0",
+      "source": "player",
+      "crop": [
+        794,
+        184,
+        987,
+        294
+      ],
+      "pivot": [
+        887,
+        284
+      ],
+      "state": "player.fall",
+      "muzzle": null,
+      "trim": [
+        37,
+        2,
+        166,
+        93
+      ],
+      "sourceSize": [
+        129,
+        91
+      ],
+      "size": [
+        129,
+        91
+      ],
+      "anchor": [
+        0.43410852713178294,
+        -0.07692307692307687
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.fall.0.png",
+      "atlas": [
+        904,
+        1139,
+        129,
+        91
+      ]
+    },
+    {
+      "id": "player.fall.1",
+      "source": "player",
+      "crop": [
+        959,
+        184,
+        1151,
+        294
+      ],
+      "pivot": [
+        1052,
+        284
+      ],
+      "state": "player.fall",
+      "muzzle": null,
+      "trim": [
+        34,
+        8,
+        164,
+        95
+      ],
+      "sourceSize": [
+        130,
+        87
+      ],
+      "size": [
+        130,
+        87
+      ],
+      "anchor": [
+        0.45384615384615384,
+        -0.05747126436781613
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.fall.1.png",
+      "atlas": [
+        1389,
+        1240,
+        130,
+        87
+      ]
+    },
+    {
+      "id": "player.crouch.0",
+      "source": "player",
+      "crop": [
+        1214,
+        201,
+        1351,
+        311
+      ],
+      "pivot": [
+        1279,
+        304
+      ],
+      "state": "player.crouch",
+      "muzzle": null,
+      "trim": [
+        17,
+        3,
+        122,
+        102
+      ],
+      "sourceSize": [
+        105,
+        99
+      ],
+      "size": [
+        105,
+        99
+      ],
+      "anchor": [
+        0.45714285714285713,
+        -0.010101010101010166
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch.0.png",
+      "atlas": [
+        252,
+        927,
+        105,
+        99
+      ]
+    },
+    {
+      "id": "player.crouch.1",
+      "source": "player",
+      "crop": [
+        1323,
+        201,
+        1448,
+        311
+      ],
+      "pivot": [
+        1390,
+        304
+      ],
+      "state": "player.crouch",
+      "muzzle": null,
+      "trim": [
+        19,
+        15,
+        116,
+        103
+      ],
+      "sourceSize": [
+        97,
+        88
+      ],
+      "size": [
+        97,
+        88
+      ],
+      "anchor": [
+        0.4948453608247423,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch.1.png",
+      "atlas": [
+        923,
+        1240,
+        97,
+        88
+      ]
+    },
+    {
+      "id": "player.crouch-walk.0",
+      "source": "player",
+      "crop": [
+        166,
+        318,
+        310,
+        426
+      ],
+      "pivot": [
+        232,
+        419
+      ],
+      "state": "player.crouch-walk",
+      "muzzle": null,
+      "trim": [
+        20,
+        3,
+        129,
+        102
+      ],
+      "sourceSize": [
+        109,
+        99
+      ],
+      "size": [
+        109,
+        99
+      ],
+      "anchor": [
+        0.42201834862385323,
+        0.010101010101010055
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-walk.0.png",
+      "atlas": [
+        365,
+        927,
+        109,
+        99
+      ]
+    },
+    {
+      "id": "player.crouch-walk.1",
+      "source": "player",
+      "crop": [
+        282,
+        318,
+        435,
+        426
+      ],
+      "pivot": [
+        350,
+        419
+      ],
+      "state": "player.crouch-walk",
+      "muzzle": null,
+      "trim": [
+        32,
+        6,
+        133,
+        101
+      ],
+      "sourceSize": [
+        101,
+        95
+      ],
+      "size": [
+        101,
+        95
+      ],
+      "anchor": [
+        0.3564356435643564,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-walk.1.png",
+      "atlas": [
+        273,
+        1035,
+        101,
+        95
+      ]
+    },
+    {
+      "id": "player.crouch-walk.2",
+      "source": "player",
+      "crop": [
+        407,
+        318,
+        564,
+        426
+      ],
+      "pivot": [
+        478,
+        419
+      ],
+      "state": "player.crouch-walk",
+      "muzzle": null,
+      "trim": [
+        18,
+        5,
+        132,
+        101
+      ],
+      "sourceSize": [
+        114,
+        96
+      ],
+      "size": [
+        114,
+        96
+      ],
+      "anchor": [
+        0.4649122807017544,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-walk.2.png",
+      "atlas": [
+        1679,
+        927,
+        114,
+        96
+      ]
+    },
+    {
+      "id": "player.crouch-walk.3",
+      "source": "player",
+      "crop": [
+        536,
+        318,
+        689,
+        426
+      ],
+      "pivot": [
+        604,
+        419
+      ],
+      "state": "player.crouch-walk",
+      "muzzle": null,
+      "trim": [
+        12,
+        5,
+        138,
+        102
+      ],
+      "sourceSize": [
+        126,
+        97
+      ],
+      "size": [
+        126,
+        97
+      ],
+      "anchor": [
+        0.4444444444444444,
+        0.010309278350515427
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-walk.3.png",
+      "atlas": [
+        1045,
+        927,
+        126,
+        97
+      ]
+    },
+    {
+      "id": "player.crouch-walk.4",
+      "source": "player",
+      "crop": [
+        661,
+        318,
+        816,
+        426
+      ],
+      "pivot": [
+        731,
+        419
+      ],
+      "state": "player.crouch-walk",
+      "muzzle": null,
+      "trim": [
+        14,
+        2,
+        137,
+        102
+      ],
+      "sourceSize": [
+        123,
+        100
+      ],
+      "size": [
+        123,
+        100
+      ],
+      "anchor": [
+        0.45528455284552843,
+        0.010000000000000009
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-walk.4.png",
+      "atlas": [
+        1302,
+        816,
+        123,
+        100
+      ]
+    },
+    {
+      "id": "player.crouch-walk.5",
+      "source": "player",
+      "crop": [
+        788,
+        318,
+        950,
+        426
+      ],
+      "pivot": [
+        858,
+        419
+      ],
+      "state": "player.crouch-walk",
+      "muzzle": null,
+      "trim": [
+        34,
+        2,
+        139,
+        102
+      ],
+      "sourceSize": [
+        105,
+        100
+      ],
+      "size": [
+        105,
+        100
+      ],
+      "anchor": [
+        0.34285714285714286,
+        0.010000000000000009
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-walk.5.png",
+      "atlas": [
+        1433,
+        816,
+        105,
+        100
+      ]
+    },
+    {
+      "id": "player.stand-shoot.0",
+      "source": "player",
+      "crop": [
+        174,
+        438,
+        359,
+        560
+      ],
+      "pivot": [
+        240,
+        554
+      ],
+      "state": "player.stand-shoot",
+      "muzzle": null,
+      "trim": [
+        21,
+        5,
+        130,
+        119
+      ],
+      "sourceSize": [
+        109,
+        114
+      ],
+      "size": [
+        109,
+        114
+      ],
+      "anchor": [
+        0.41284403669724773,
+        0.02631578947368418
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.stand-shoot.0.png",
+      "atlas": [
+        1614,
+        569,
+        109,
+        114
+      ]
+    },
+    {
+      "id": "player.stand-shoot.1",
+      "source": "player",
+      "crop": [
+        331,
+        438,
+        530,
+        560
+      ],
+      "pivot": [
+        398,
+        554
+      ],
+      "state": "player.stand-shoot",
+      "muzzle": null,
+      "trim": [
+        22,
+        3,
+        131,
+        119
+      ],
+      "sourceSize": [
+        109,
+        116
+      ],
+      "size": [
+        109,
+        116
+      ],
+      "anchor": [
+        0.41284403669724773,
+        0.025862068965517238
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.stand-shoot.1.png",
+      "atlas": [
+        791,
+        569,
+        109,
+        116
+      ]
+    },
+    {
+      "id": "player.stand-shoot.2",
+      "source": "player",
+      "crop": [
+        502,
+        438,
+        694,
+        560
+      ],
+      "pivot": [
+        566,
+        554
+      ],
+      "state": "player.stand-shoot",
+      "muzzle": null,
+      "trim": [
+        22,
+        2,
+        131,
+        119
+      ],
+      "sourceSize": [
+        109,
+        117
+      ],
+      "size": [
+        109,
+        117
+      ],
+      "anchor": [
+        0.3853211009174312,
+        0.02564102564102566
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.stand-shoot.2.png",
+      "atlas": [
+        125,
+        569,
+        109,
+        117
+      ]
+    },
+    {
+      "id": "player.stand-shoot.3",
+      "source": "player",
+      "crop": [
+        666,
+        438,
+        878,
+        560
+      ],
+      "pivot": [
+        723,
+        554
+      ],
+      "state": "player.stand-shoot",
+      "muzzle": null,
+      "trim": [
+        20,
+        4,
+        131,
+        118
+      ],
+      "sourceSize": [
+        111,
+        114
+      ],
+      "size": [
+        111,
+        114
+      ],
+      "anchor": [
+        0.3333333333333333,
+        0.01754385964912286
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.stand-shoot.3.png",
+      "atlas": [
+        1731,
+        569,
+        111,
+        114
+      ]
+    },
+    {
+      "id": "player.run-shoot.0",
+      "source": "player",
+      "crop": [
+        160,
+        564,
+        363,
+        695
+      ],
+      "pivot": [
+        245,
+        685
+      ],
+      "state": "player.run-shoot",
+      "muzzle": null,
+      "trim": [
+        13,
+        4,
+        163,
+        123
+      ],
+      "sourceSize": [
+        150,
+        119
+      ],
+      "size": [
+        150,
+        119
+      ],
+      "anchor": [
+        0.48,
+        0.01680672268907568
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run-shoot.0.png",
+      "atlas": [
+        1368,
+        437,
+        150,
+        119
+      ]
+    },
+    {
+      "id": "player.run-shoot.1",
+      "source": "player",
+      "crop": [
+        335,
+        564,
+        528,
+        695
+      ],
+      "pivot": [
+        410,
+        685
+      ],
+      "state": "player.run-shoot",
+      "muzzle": null,
+      "trim": [
+        44,
+        2,
+        157,
+        123
+      ],
+      "sourceSize": [
+        113,
+        121
+      ],
+      "size": [
+        113,
+        121
+      ],
+      "anchor": [
+        0.2743362831858407,
+        0.016528925619834656
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run-shoot.1.png",
+      "atlas": [
+        804,
+        437,
+        113,
+        121
+      ]
+    },
+    {
+      "id": "player.run-shoot.2",
+      "source": "player",
+      "crop": [
+        500,
+        564,
+        680,
+        695
+      ],
+      "pivot": [
+        572,
+        685
+      ],
+      "state": "player.run-shoot",
+      "muzzle": null,
+      "trim": [
+        43,
+        3,
+        156,
+        124
+      ],
+      "sourceSize": [
+        113,
+        121
+      ],
+      "size": [
+        113,
+        121
+      ],
+      "anchor": [
+        0.25663716814159293,
+        0.024793388429752095
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run-shoot.2.png",
+      "atlas": [
+        925,
+        437,
+        113,
+        121
+      ]
+    },
+    {
+      "id": "player.run-shoot.3",
+      "source": "player",
+      "crop": [
+        652,
+        564,
+        821,
+        695
+      ],
+      "pivot": [
+        716,
+        685
+      ],
+      "state": "player.run-shoot",
+      "muzzle": null,
+      "trim": [
+        18,
+        1,
+        142,
+        123
+      ],
+      "sourceSize": [
+        124,
+        122
+      ],
+      "size": [
+        124,
+        122
+      ],
+      "anchor": [
+        0.3709677419354839,
+        0.016393442622950838
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run-shoot.3.png",
+      "atlas": [
+        574,
+        437,
+        124,
+        122
+      ]
+    },
+    {
+      "id": "player.run-shoot.4",
+      "source": "player",
+      "crop": [
+        793,
+        564,
+        972,
+        695
+      ],
+      "pivot": [
+        866,
+        685
+      ],
+      "state": "player.run-shoot",
+      "muzzle": null,
+      "trim": [
+        20,
+        0,
+        133,
+        124
+      ],
+      "sourceSize": [
+        113,
+        124
+      ],
+      "size": [
+        113,
+        124
+      ],
+      "anchor": [
+        0.4690265486725664,
+        0.024193548387096753
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run-shoot.4.png",
+      "atlas": [
+        1879,
+        279,
+        113,
+        124
+      ]
+    },
+    {
+      "id": "player.run-shoot.5",
+      "source": "player",
+      "crop": [
+        944,
+        564,
+        1104,
+        695
+      ],
+      "pivot": [
+        1009,
+        685
+      ],
+      "state": "player.run-shoot",
+      "muzzle": null,
+      "trim": [
+        18,
+        1,
+        120,
+        124
+      ],
+      "sourceSize": [
+        102,
+        123
+      ],
+      "size": [
+        102,
+        123
+      ],
+      "anchor": [
+        0.46078431372549017,
+        0.024390243902439046
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run-shoot.5.png",
+      "atlas": [
+        229,
+        437,
+        102,
+        123
+      ]
+    },
+    {
+      "id": "player.run-shoot.6",
+      "source": "player",
+      "crop": [
+        1076,
+        564,
+        1269,
+        695
+      ],
+      "pivot": [
+        1141,
+        685
+      ],
+      "state": "player.run-shoot",
+      "muzzle": null,
+      "trim": [
+        10,
+        0,
+        128,
+        124
+      ],
+      "sourceSize": [
+        118,
+        124
+      ],
+      "size": [
+        118,
+        124
+      ],
+      "anchor": [
+        0.4661016949152542,
+        0.024193548387096753
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.run-shoot.6.png",
+      "atlas": [
+        4,
+        437,
+        118,
+        124
+      ]
+    },
+    {
+      "id": "player.crouch-shoot.0",
+      "source": "player",
+      "crop": [
+        174,
+        698,
+        381,
+        802
+      ],
+      "pivot": [
+        246,
+        796
+      ],
+      "state": "player.crouch-shoot",
+      "muzzle": null,
+      "trim": [
+        28,
+        9,
+        149,
+        98
+      ],
+      "sourceSize": [
+        121,
+        89
+      ],
+      "size": [
+        121,
+        89
+      ],
+      "anchor": [
+        0.36363636363636365,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-shoot.0.png",
+      "atlas": [
+        522,
+        1240,
+        121,
+        89
+      ]
+    },
+    {
+      "id": "player.crouch-shoot.1",
+      "source": "player",
+      "crop": [
+        353,
+        698,
+        551,
+        802
+      ],
+      "pivot": [
+        417,
+        796
+      ],
+      "state": "player.crouch-shoot",
+      "muzzle": null,
+      "trim": [
+        18,
+        4,
+        139,
+        98
+      ],
+      "sourceSize": [
+        121,
+        94
+      ],
+      "size": [
+        121,
+        94
+      ],
+      "anchor": [
+        0.38016528925619836,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-shoot.1.png",
+      "atlas": [
+        790,
+        1035,
+        121,
+        94
+      ]
+    },
+    {
+      "id": "player.crouch-shoot.2",
+      "source": "player",
+      "crop": [
+        523,
+        698,
+        709,
+        802
+      ],
+      "pivot": [
+        580,
+        796
+      ],
+      "state": "player.crouch-shoot",
+      "muzzle": null,
+      "trim": [
+        26,
+        7,
+        132,
+        98
+      ],
+      "sourceSize": [
+        106,
+        91
+      ],
+      "size": [
+        106,
+        91
+      ],
+      "anchor": [
+        0.29245283018867924,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-shoot.2.png",
+      "atlas": [
+        1041,
+        1139,
+        106,
+        91
+      ]
+    },
+    {
+      "id": "player.crouch-shoot.3",
+      "source": "player",
+      "crop": [
+        681,
+        698,
+        872,
+        802
+      ],
+      "pivot": [
+        739,
+        796
+      ],
+      "state": "player.crouch-shoot",
+      "muzzle": null,
+      "trim": [
+        17,
+        6,
+        123,
+        98
+      ],
+      "sourceSize": [
+        106,
+        92
+      ],
+      "size": [
+        106,
+        92
+      ],
+      "anchor": [
+        0.3867924528301887,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.crouch-shoot.3.png",
+      "atlas": [
+        337,
+        1139,
+        106,
+        92
+      ]
+    },
+    {
+      "id": "player.throw.0",
+      "source": "player",
+      "crop": [
+        198,
+        803,
+        374,
+        924
+      ],
+      "pivot": [
+        285,
+        916
+      ],
+      "state": "player.throw",
+      "muzzle": null,
+      "trim": [
+        33,
+        5,
+        155,
+        118
+      ],
+      "sourceSize": [
+        122,
+        113
+      ],
+      "size": [
+        122,
+        113
+      ],
+      "anchor": [
+        0.4426229508196721,
+        0.04424778761061943
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.throw.0.png",
+      "atlas": [
+        210,
+        694,
+        122,
+        113
+      ]
+    },
+    {
+      "id": "player.throw.1",
+      "source": "player",
+      "crop": [
+        346,
+        803,
+        562,
+        924
+      ],
+      "pivot": [
+        439,
+        916
+      ],
+      "state": "player.throw",
+      "muzzle": null,
+      "trim": [
+        31,
+        2,
+        168,
+        117
+      ],
+      "sourceSize": [
+        137,
+        115
+      ],
+      "size": [
+        137,
+        115
+      ],
+      "anchor": [
+        0.45255474452554745,
+        0.034782608695652195
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.throw.1.png",
+      "atlas": [
+        1330,
+        569,
+        137,
+        115
+      ]
+    },
+    {
+      "id": "player.throw.2",
+      "source": "player",
+      "crop": [
+        534,
+        803,
+        752,
+        924
+      ],
+      "pivot": [
+        600,
+        916
+      ],
+      "state": "player.throw",
+      "muzzle": null,
+      "trim": [
+        9,
+        22,
+        137,
+        118
+      ],
+      "sourceSize": [
+        128,
+        96
+      ],
+      "size": [
+        128,
+        96
+      ],
+      "anchor": [
+        0.4453125,
+        0.05208333333333337
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.throw.2.png",
+      "atlas": [
+        1801,
+        927,
+        128,
+        96
+      ]
+    },
+    {
+      "id": "player.throw.3",
+      "source": "player",
+      "crop": [
+        724,
+        803,
+        912,
+        924
+      ],
+      "pivot": [
+        798,
+        916
+      ],
+      "state": "player.throw",
+      "muzzle": null,
+      "trim": [
+        4,
+        22,
+        150,
+        119
+      ],
+      "sourceSize": [
+        146,
+        97
+      ],
+      "size": [
+        146,
+        97
+      ],
+      "anchor": [
+        0.4794520547945205,
+        0.061855670103092786
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.throw.3.png",
+      "atlas": [
+        1179,
+        927,
+        146,
+        97
+      ]
+    },
+    {
+      "id": "player.throw.4",
+      "source": "player",
+      "crop": [
+        884,
+        803,
+        1054,
+        924
+      ],
+      "pivot": [
+        960,
+        916
+      ],
+      "state": "player.throw",
+      "muzzle": null,
+      "trim": [
+        20,
+        24,
+        137,
+        119
+      ],
+      "sourceSize": [
+        117,
+        95
+      ],
+      "size": [
+        117,
+        95
+      ],
+      "anchor": [
+        0.47863247863247865,
+        0.06315789473684208
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.throw.4.png",
+      "atlas": [
+        382,
+        1035,
+        117,
+        95
+      ]
+    },
+    {
+      "id": "player.hit.0",
+      "source": "player",
+      "crop": [
+        94,
+        910,
+        303,
+        1018
+      ],
+      "pivot": [
+        192,
+        1009
+      ],
+      "state": "player.hit",
+      "muzzle": null,
+      "trim": [
+        43,
+        0,
+        156,
+        103
+      ],
+      "sourceSize": [
+        113,
+        103
+      ],
+      "size": [
+        113,
+        103
+      ],
+      "anchor": [
+        0.48672566371681414,
+        0.03883495145631066
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.hit.0.png",
+      "atlas": [
+        4,
+        816,
+        113,
+        103
+      ]
+    },
+    {
+      "id": "player.hit.1",
+      "source": "player",
+      "crop": [
+        275,
+        910,
+        478,
+        1018
+      ],
+      "pivot": [
+        366,
+        1009
+      ],
+      "state": "player.hit",
+      "muzzle": null,
+      "trim": [
+        42,
+        16,
+        165,
+        108
+      ],
+      "sourceSize": [
+        123,
+        92
+      ],
+      "size": [
+        123,
+        92
+      ],
+      "anchor": [
+        0.3983739837398374,
+        0.09782608695652173
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.hit.1.png",
+      "atlas": [
+        451,
+        1139,
+        123,
+        92
+      ]
+    },
+    {
+      "id": "player.hit.2",
+      "source": "player",
+      "crop": [
+        450,
+        910,
+        654,
+        1018
+      ],
+      "pivot": [
+        534,
+        1009
+      ],
+      "state": "player.hit",
+      "muzzle": null,
+      "trim": [
+        30,
+        17,
+        163,
+        106
+      ],
+      "sourceSize": [
+        133,
+        89
+      ],
+      "size": [
+        133,
+        89
+      ],
+      "anchor": [
+        0.40601503759398494,
+        0.0786516853932584
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.hit.2.png",
+      "atlas": [
+        651,
+        1240,
+        133,
+        89
+      ]
+    },
+    {
+      "id": "player.hit.3",
+      "source": "player",
+      "crop": [
+        626,
+        910,
+        820,
+        1018
+      ],
+      "pivot": [
+        707,
+        1009
+      ],
+      "state": "player.hit",
+      "muzzle": null,
+      "trim": [
+        46,
+        15,
+        167,
+        108
+      ],
+      "sourceSize": [
+        121,
+        93
+      ],
+      "size": [
+        121,
+        93
+      ],
+      "anchor": [
+        0.2892561983471074,
+        0.09677419354838712
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.hit.3.png",
+      "atlas": [
+        1656,
+        1035,
+        121,
+        93
+      ]
+    },
+    {
+      "id": "player.death.0",
+      "source": "player",
+      "crop": [
+        105,
+        1017,
+        315,
+        1086
+      ],
+      "pivot": [
+        202,
+        1080
+      ],
+      "state": "player.death",
+      "muzzle": null,
+      "trim": [
+        36,
+        3,
+        170,
+        68
+      ],
+      "sourceSize": [
+        134,
+        65
+      ],
+      "size": [
+        134,
+        65
+      ],
+      "anchor": [
+        0.4552238805970149,
+        0.07692307692307687
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.death.0.png",
+      "atlas": [
+        4,
+        1429,
+        134,
+        65
+      ]
+    },
+    {
+      "id": "player.death.1",
+      "source": "player",
+      "crop": [
+        287,
+        1017,
+        488,
+        1086
+      ],
+      "pivot": [
+        379,
+        1080
+      ],
+      "state": "player.death",
+      "muzzle": null,
+      "trim": [
+        35,
+        5,
+        165,
+        68
+      ],
+      "sourceSize": [
+        130,
+        63
+      ],
+      "size": [
+        130,
+        63
+      ],
+      "anchor": [
+        0.43846153846153846,
+        0.07936507936507942
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.death.1.png",
+      "atlas": [
+        146,
+        1429,
+        130,
+        63
+      ]
+    },
+    {
+      "id": "player.death.2",
+      "source": "player",
+      "crop": [
+        460,
+        1017,
+        664,
+        1086
+      ],
+      "pivot": [
+        555,
+        1080
+      ],
+      "state": "player.death",
+      "muzzle": null,
+      "trim": [
+        36,
+        20,
+        169,
+        68
+      ],
+      "sourceSize": [
+        133,
+        48
+      ],
+      "size": [
+        133,
+        48
+      ],
+      "anchor": [
+        0.44360902255639095,
+        0.10416666666666663
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.death.2.png",
+      "atlas": [
+        1352,
+        1429,
+        133,
+        48
+      ]
+    },
+    {
+      "id": "player.death.3",
+      "source": "player",
+      "crop": [
+        636,
+        1017,
+        845,
+        1086
+      ],
+      "pivot": [
+        740,
+        1080
+      ],
+      "state": "player.death",
+      "muzzle": null,
+      "trim": [
+        34,
+        19,
+        181,
+        68
+      ],
+      "sourceSize": [
+        147,
+        49
+      ],
+      "size": [
+        147,
+        49
+      ],
+      "anchor": [
+        0.47619047619047616,
+        0.10204081632653061
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.death.3.png",
+      "atlas": [
+        976,
+        1429,
+        147,
+        49
+      ]
+    },
+    {
+      "id": "player.death.4",
+      "source": "player",
+      "crop": [
+        817,
+        1017,
+        1021,
+        1086
+      ],
+      "pivot": [
+        914,
+        1080
+      ],
+      "state": "player.death",
+      "muzzle": null,
+      "trim": [
+        23,
+        22,
+        183,
+        68
+      ],
+      "sourceSize": [
+        160,
+        46
+      ],
+      "size": [
+        160,
+        46
+      ],
+      "anchor": [
+        0.4625,
+        0.10869565217391308
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.death.4.png",
+      "atlas": [
+        1701,
+        1429,
+        160,
+        46
+      ]
+    },
+    {
+      "id": "player.death.5",
+      "source": "player",
+      "crop": [
+        993,
+        1017,
+        1184,
+        1086
+      ],
+      "pivot": [
+        1090,
+        1080
+      ],
+      "state": "player.death",
+      "muzzle": null,
+      "trim": [
+        32,
+        19,
+        156,
+        68
+      ],
+      "sourceSize": [
+        124,
+        49
+      ],
+      "size": [
+        124,
+        49
+      ],
+      "anchor": [
+        0.5241935483870968,
+        0.10204081632653061
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/player.death.5.png",
+      "atlas": [
+        1131,
+        1429,
+        124,
+        49
+      ]
+    },
+    {
+      "id": "rifle.idle.0",
+      "source": "enemy",
+      "crop": [
+        0,
+        101,
+        107,
+        208
+      ],
+      "pivot": [
+        53.5,
+        202
+      ],
+      "state": "rifle.idle",
+      "muzzle": null,
+      "trim": [
+        21,
+        6,
+        87,
+        100
+      ],
+      "sourceSize": [
+        66,
+        94
+      ],
+      "size": [
+        66,
+        94
+      ],
+      "anchor": [
+        0.49242424242424243,
+        -0.010638297872340496
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.idle.0.png",
+      "atlas": [
+        919,
+        1035,
+        66,
+        94
+      ]
+    },
+    {
+      "id": "rifle.idle.1",
+      "source": "enemy",
+      "crop": [
+        79,
+        101,
+        191,
+        208
+      ],
+      "pivot": [
+        135.0,
+        202
+      ],
+      "state": "rifle.idle",
+      "muzzle": null,
+      "trim": [
+        19,
+        7,
+        91,
+        101
+      ],
+      "sourceSize": [
+        72,
+        94
+      ],
+      "size": [
+        72,
+        94
+      ],
+      "anchor": [
+        0.5138888888888888,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.idle.1.png",
+      "atlas": [
+        993,
+        1035,
+        72,
+        94
+      ]
+    },
+    {
+      "id": "rifle.walk.0",
+      "source": "enemy",
+      "crop": [
+        165,
+        101,
+        267,
+        208
+      ],
+      "pivot": [
+        218,
+        202
+      ],
+      "state": "rifle.walk",
+      "muzzle": null,
+      "trim": [
+        24,
+        6,
+        82,
+        100
+      ],
+      "sourceSize": [
+        58,
+        94
+      ],
+      "size": [
+        58,
+        94
+      ],
+      "anchor": [
+        0.5,
+        -0.010638297872340496
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.walk.0.png",
+      "atlas": [
+        1073,
+        1035,
+        58,
+        94
+      ]
+    },
+    {
+      "id": "rifle.walk.1",
+      "source": "enemy",
+      "crop": [
+        239,
+        101,
+        331,
+        208
+      ],
+      "pivot": [
+        282,
+        202
+      ],
+      "state": "rifle.walk",
+      "muzzle": null,
+      "trim": [
+        18,
+        6,
+        72,
+        100
+      ],
+      "sourceSize": [
+        54,
+        94
+      ],
+      "size": [
+        54,
+        94
+      ],
+      "anchor": [
+        0.46296296296296297,
+        -0.010638297872340496
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.walk.1.png",
+      "atlas": [
+        1139,
+        1035,
+        54,
+        94
+      ]
+    },
+    {
+      "id": "rifle.walk.2",
+      "source": "enemy",
+      "crop": [
+        303,
+        101,
+        394,
+        208
+      ],
+      "pivot": [
+        350,
+        202
+      ],
+      "state": "rifle.walk",
+      "muzzle": null,
+      "trim": [
+        18,
+        6,
+        70,
+        100
+      ],
+      "sourceSize": [
+        52,
+        94
+      ],
+      "size": [
+        52,
+        94
+      ],
+      "anchor": [
+        0.5576923076923077,
+        -0.010638297872340496
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.walk.2.png",
+      "atlas": [
+        1201,
+        1035,
+        52,
+        94
+      ]
+    },
+    {
+      "id": "rifle.walk.3",
+      "source": "enemy",
+      "crop": [
+        366,
+        101,
+        482,
+        208
+      ],
+      "pivot": [
+        416,
+        202
+      ],
+      "state": "rifle.walk",
+      "muzzle": null,
+      "trim": [
+        17,
+        7,
+        88,
+        100
+      ],
+      "sourceSize": [
+        71,
+        93
+      ],
+      "size": [
+        71,
+        93
+      ],
+      "anchor": [
+        0.4647887323943662,
+        -0.010752688172043001
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.walk.3.png",
+      "atlas": [
+        1785,
+        1035,
+        71,
+        93
+      ]
+    },
+    {
+      "id": "rifle.shoot.0",
+      "source": "enemy",
+      "crop": [
+        458,
+        101,
+        567,
+        208
+      ],
+      "pivot": [
+        509,
+        202
+      ],
+      "state": "rifle.shoot",
+      "muzzle": null,
+      "trim": [
+        22,
+        9,
+        96,
+        101
+      ],
+      "sourceSize": [
+        74,
+        92
+      ],
+      "size": [
+        74,
+        92
+      ],
+      "anchor": [
+        0.3918918918918919,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.shoot.0.png",
+      "atlas": [
+        582,
+        1139,
+        74,
+        92
+      ]
+    },
+    {
+      "id": "rifle.shoot.1",
+      "source": "enemy",
+      "crop": [
+        539,
+        101,
+        649,
+        208
+      ],
+      "pivot": [
+        590,
+        202
+      ],
+      "state": "rifle.shoot",
+      "muzzle": null,
+      "trim": [
+        21,
+        9,
+        98,
+        101
+      ],
+      "sourceSize": [
+        77,
+        92
+      ],
+      "size": [
+        77,
+        92
+      ],
+      "anchor": [
+        0.38961038961038963,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.shoot.1.png",
+      "atlas": [
+        664,
+        1139,
+        77,
+        92
+      ]
+    },
+    {
+      "id": "rifle.shoot.2",
+      "source": "enemy",
+      "crop": [
+        621,
+        101,
+        731,
+        208
+      ],
+      "pivot": [
+        670,
+        202
+      ],
+      "state": "rifle.shoot",
+      "muzzle": null,
+      "trim": [
+        15,
+        9,
+        97,
+        101
+      ],
+      "sourceSize": [
+        82,
+        92
+      ],
+      "size": [
+        82,
+        92
+      ],
+      "anchor": [
+        0.4146341463414634,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.shoot.2.png",
+      "atlas": [
+        749,
+        1139,
+        82,
+        92
+      ]
+    },
+    {
+      "id": "rifle.shoot.3",
+      "source": "enemy",
+      "crop": [
+        703,
+        101,
+        839,
+        208
+      ],
+      "pivot": [
+        751,
+        202
+      ],
+      "state": "rifle.shoot",
+      "muzzle": null,
+      "trim": [
+        12,
+        8,
+        117,
+        101
+      ],
+      "sourceSize": [
+        105,
+        93
+      ],
+      "size": [
+        105,
+        93
+      ],
+      "anchor": [
+        0.34285714285714286,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.shoot.3.png",
+      "atlas": [
+        1864,
+        1035,
+        105,
+        93
+      ]
+    },
+    {
+      "id": "rifle.hit.0",
+      "source": "enemy",
+      "crop": [
+        819,
+        96,
+        932,
+        208
+      ],
+      "pivot": [
+        875.5,
+        202
+      ],
+      "state": "rifle.hit",
+      "muzzle": null,
+      "trim": [
+        26,
+        19,
+        92,
+        106
+      ],
+      "sourceSize": [
+        66,
+        87
+      ],
+      "size": [
+        66,
+        87
+      ],
+      "anchor": [
+        0.4621212121212121,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.hit.0.png",
+      "atlas": [
+        1527,
+        1240,
+        66,
+        87
+      ]
+    },
+    {
+      "id": "rifle.hit.1",
+      "source": "enemy",
+      "crop": [
+        904,
+        96,
+        1004,
+        208
+      ],
+      "pivot": [
+        954.0,
+        202
+      ],
+      "state": "rifle.hit",
+      "muzzle": null,
+      "trim": [
+        21,
+        14,
+        78,
+        106
+      ],
+      "sourceSize": [
+        57,
+        92
+      ],
+      "size": [
+        57,
+        92
+      ],
+      "anchor": [
+        0.5087719298245614,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.hit.1.png",
+      "atlas": [
+        839,
+        1139,
+        57,
+        92
+      ]
+    },
+    {
+      "id": "rifle.hit.2",
+      "source": "enemy",
+      "crop": [
+        976,
+        96,
+        1081,
+        208
+      ],
+      "pivot": [
+        1028.5,
+        202
+      ],
+      "state": "rifle.hit",
+      "muzzle": null,
+      "trim": [
+        12,
+        10,
+        82,
+        106
+      ],
+      "sourceSize": [
+        70,
+        96
+      ],
+      "size": [
+        70,
+        96
+      ],
+      "anchor": [
+        0.5785714285714286,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.hit.2.png",
+      "atlas": [
+        1937,
+        927,
+        70,
+        96
+      ]
+    },
+    {
+      "id": "rifle.dead.0",
+      "source": "enemy",
+      "crop": [
+        1060,
+        109,
+        1173,
+        209
+      ],
+      "pivot": [
+        1116.5,
+        202
+      ],
+      "state": "rifle.dead",
+      "muzzle": null,
+      "trim": [
+        24,
+        15,
+        97,
+        94
+      ],
+      "sourceSize": [
+        73,
+        79
+      ],
+      "size": [
+        73,
+        79
+      ],
+      "anchor": [
+        0.4452054794520548,
+        0.012658227848101222
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.dead.0.png",
+      "atlas": [
+        346,
+        1338,
+        73,
+        79
+      ]
+    },
+    {
+      "id": "rifle.dead.1",
+      "source": "enemy",
+      "crop": [
+        1145,
+        109,
+        1264,
+        209
+      ],
+      "pivot": [
+        1204.5,
+        202
+      ],
+      "state": "rifle.dead",
+      "muzzle": null,
+      "trim": [
+        18,
+        31,
+        97,
+        93
+      ],
+      "sourceSize": [
+        79,
+        62
+      ],
+      "size": [
+        79,
+        62
+      ],
+      "anchor": [
+        0.5253164556962026,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.dead.1.png",
+      "atlas": [
+        284,
+        1429,
+        79,
+        62
+      ]
+    },
+    {
+      "id": "rifle.dead.2",
+      "source": "enemy",
+      "crop": [
+        1236,
+        109,
+        1352,
+        209
+      ],
+      "pivot": [
+        1294.0,
+        202
+      ],
+      "state": "rifle.dead",
+      "muzzle": null,
+      "trim": [
+        18,
+        40,
+        94,
+        91
+      ],
+      "sourceSize": [
+        76,
+        51
+      ],
+      "size": [
+        76,
+        51
+      ],
+      "anchor": [
+        0.5263157894736842,
+        -0.03921568627450989
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.dead.2.png",
+      "atlas": [
+        738,
+        1429,
+        76,
+        51
+      ]
+    },
+    {
+      "id": "rifle.dead.3",
+      "source": "enemy",
+      "crop": [
+        1324,
+        109,
+        1448,
+        209
+      ],
+      "pivot": [
+        1389.0,
+        202
+      ],
+      "state": "rifle.dead",
+      "muzzle": null,
+      "trim": [
+        8,
+        49,
+        108,
+        90
+      ],
+      "sourceSize": [
+        100,
+        41
+      ],
+      "size": [
+        100,
+        41
+      ],
+      "anchor": [
+        0.57,
+        -0.07317073170731714
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rifle.dead.3.png",
+      "atlas": [
+        220,
+        1502,
+        100,
+        41
+      ]
+    },
+    {
+      "id": "knife.walk.0",
+      "source": "enemy",
+      "crop": [
+        1,
+        319,
+        114,
+        430
+      ],
+      "pivot": [
+        57.5,
+        424
+      ],
+      "state": "knife.walk",
+      "muzzle": null,
+      "trim": [
+        25,
+        9,
+        105,
+        104
+      ],
+      "sourceSize": [
+        80,
+        95
+      ],
+      "size": [
+        80,
+        95
+      ],
+      "anchor": [
+        0.39375,
+        -0.010526315789473717
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.walk.0.png",
+      "atlas": [
+        507,
+        1035,
+        80,
+        95
+      ]
+    },
+    {
+      "id": "knife.walk.1",
+      "source": "enemy",
+      "crop": [
+        86,
+        319,
+        198,
+        430
+      ],
+      "pivot": [
+        142.0,
+        424
+      ],
+      "state": "knife.walk",
+      "muzzle": null,
+      "trim": [
+        17,
+        8,
+        102,
+        104
+      ],
+      "sourceSize": [
+        85,
+        96
+      ],
+      "size": [
+        85,
+        96
+      ],
+      "anchor": [
+        0.4588235294117647,
+        -0.01041666666666674
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.walk.1.png",
+      "atlas": [
+        4,
+        1035,
+        85,
+        96
+      ]
+    },
+    {
+      "id": "knife.walk.2",
+      "source": "enemy",
+      "crop": [
+        170,
+        319,
+        280,
+        430
+      ],
+      "pivot": [
+        225.0,
+        424
+      ],
+      "state": "knife.walk",
+      "muzzle": null,
+      "trim": [
+        9,
+        11,
+        93,
+        105
+      ],
+      "sourceSize": [
+        84,
+        94
+      ],
+      "size": [
+        84,
+        94
+      ],
+      "anchor": [
+        0.5476190476190477,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.walk.2.png",
+      "atlas": [
+        1261,
+        1035,
+        84,
+        94
+      ]
+    },
+    {
+      "id": "knife.walk.3",
+      "source": "enemy",
+      "crop": [
+        252,
+        319,
+        374,
+        430
+      ],
+      "pivot": [
+        313.0,
+        424
+      ],
+      "state": "knife.walk",
+      "muzzle": null,
+      "trim": [
+        8,
+        8,
+        101,
+        104
+      ],
+      "sourceSize": [
+        93,
+        96
+      ],
+      "size": [
+        93,
+        96
+      ],
+      "anchor": [
+        0.5698924731182796,
+        -0.01041666666666674
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.walk.3.png",
+      "atlas": [
+        97,
+        1035,
+        93,
+        96
+      ]
+    },
+    {
+      "id": "knife.attack.0",
+      "source": "enemy",
+      "crop": [
+        362,
+        303,
+        491,
+        430
+      ],
+      "pivot": [
+        426.5,
+        424
+      ],
+      "state": "knife.attack",
+      "muzzle": null,
+      "trim": [
+        23,
+        30,
+        120,
+        124
+      ],
+      "sourceSize": [
+        97,
+        94
+      ],
+      "size": [
+        97,
+        94
+      ],
+      "anchor": [
+        0.42783505154639173,
+        0.03191489361702127
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.attack.0.png",
+      "atlas": [
+        1353,
+        1035,
+        97,
+        94
+      ]
+    },
+    {
+      "id": "knife.attack.1",
+      "source": "enemy",
+      "crop": [
+        463,
+        303,
+        615,
+        430
+      ],
+      "pivot": [
+        539.0,
+        424
+      ],
+      "state": "knife.attack",
+      "muzzle": null,
+      "trim": [
+        24,
+        29,
+        122,
+        124
+      ],
+      "sourceSize": [
+        98,
+        95
+      ],
+      "size": [
+        98,
+        95
+      ],
+      "anchor": [
+        0.5306122448979592,
+        0.03157894736842104
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.attack.1.png",
+      "atlas": [
+        595,
+        1035,
+        98,
+        95
+      ]
+    },
+    {
+      "id": "knife.attack.2",
+      "source": "enemy",
+      "crop": [
+        587,
+        303,
+        700,
+        430
+      ],
+      "pivot": [
+        643.5,
+        424
+      ],
+      "state": "knife.attack",
+      "muzzle": null,
+      "trim": [
+        3,
+        40,
+        101,
+        124
+      ],
+      "sourceSize": [
+        98,
+        84
+      ],
+      "size": [
+        98,
+        84
+      ],
+      "anchor": [
+        0.5459183673469388,
+        0.0357142857142857
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.attack.2.png",
+      "atlas": [
+        1777,
+        1240,
+        98,
+        84
+      ]
+    },
+    {
+      "id": "knife.attack.3",
+      "source": "enemy",
+      "crop": [
+        672,
+        303,
+        794,
+        430
+      ],
+      "pivot": [
+        733.0,
+        424
+      ],
+      "state": "knife.attack",
+      "muzzle": null,
+      "trim": [
+        16,
+        24,
+        102,
+        124
+      ],
+      "sourceSize": [
+        86,
+        100
+      ],
+      "size": [
+        86,
+        100
+      ],
+      "anchor": [
+        0.5232558139534884,
+        0.030000000000000027
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.attack.3.png",
+      "atlas": [
+        1546,
+        816,
+        86,
+        100
+      ]
+    },
+    {
+      "id": "knife.hit.0",
+      "source": "enemy",
+      "crop": [
+        779,
+        316,
+        893,
+        432
+      ],
+      "pivot": [
+        836.0,
+        424
+      ],
+      "state": "knife.hit",
+      "muzzle": null,
+      "trim": [
+        27,
+        8,
+        104,
+        111
+      ],
+      "sourceSize": [
+        77,
+        103
+      ],
+      "size": [
+        77,
+        103
+      ],
+      "anchor": [
+        0.38961038961038963,
+        0.029126213592232997
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.hit.0.png",
+      "atlas": [
+        125,
+        816,
+        77,
+        103
+      ]
+    },
+    {
+      "id": "knife.hit.1",
+      "source": "enemy",
+      "crop": [
+        865,
+        316,
+        985,
+        432
+      ],
+      "pivot": [
+        925.0,
+        424
+      ],
+      "state": "knife.hit",
+      "muzzle": null,
+      "trim": [
+        26,
+        23,
+        102,
+        110
+      ],
+      "sourceSize": [
+        76,
+        87
+      ],
+      "size": [
+        76,
+        87
+      ],
+      "anchor": [
+        0.4473684210526316,
+        0.02298850574712641
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.hit.1.png",
+      "atlas": [
+        1601,
+        1240,
+        76,
+        87
+      ]
+    },
+    {
+      "id": "knife.hit.2",
+      "source": "enemy",
+      "crop": [
+        957,
+        316,
+        1068,
+        432
+      ],
+      "pivot": [
+        1012.5,
+        424
+      ],
+      "state": "knife.hit",
+      "muzzle": null,
+      "trim": [
+        27,
+        15,
+        94,
+        111
+      ],
+      "sourceSize": [
+        67,
+        96
+      ],
+      "size": [
+        67,
+        96
+      ],
+      "anchor": [
+        0.4253731343283582,
+        0.03125
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.hit.2.png",
+      "atlas": [
+        198,
+        1035,
+        67,
+        96
+      ]
+    },
+    {
+      "id": "knife.dead.0",
+      "source": "enemy",
+      "crop": [
+        1054,
+        323,
+        1169,
+        432
+      ],
+      "pivot": [
+        1111.5,
+        424
+      ],
+      "state": "knife.dead",
+      "muzzle": null,
+      "trim": [
+        26,
+        11,
+        103,
+        104
+      ],
+      "sourceSize": [
+        77,
+        93
+      ],
+      "size": [
+        77,
+        93
+      ],
+      "anchor": [
+        0.4090909090909091,
+        0.032258064516129004
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.dead.0.png",
+      "atlas": [
+        4,
+        1139,
+        77,
+        93
+      ]
+    },
+    {
+      "id": "knife.dead.1",
+      "source": "enemy",
+      "crop": [
+        1141,
+        323,
+        1263,
+        432
+      ],
+      "pivot": [
+        1202.0,
+        424
+      ],
+      "state": "knife.dead",
+      "muzzle": null,
+      "trim": [
+        18,
+        41,
+        107,
+        109
+      ],
+      "sourceSize": [
+        89,
+        68
+      ],
+      "size": [
+        89,
+        68
+      ],
+      "anchor": [
+        0.48314606741573035,
+        0.11764705882352944
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.dead.1.png",
+      "atlas": [
+        1847,
+        1338,
+        89,
+        68
+      ]
+    },
+    {
+      "id": "knife.dead.2",
+      "source": "enemy",
+      "crop": [
+        1235,
+        323,
+        1353,
+        432
+      ],
+      "pivot": [
+        1294.0,
+        424
+      ],
+      "state": "knife.dead",
+      "muzzle": null,
+      "trim": [
+        15,
+        55,
+        96,
+        104
+      ],
+      "sourceSize": [
+        81,
+        49
+      ],
+      "size": [
+        81,
+        49
+      ],
+      "anchor": [
+        0.5432098765432098,
+        0.061224489795918324
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.dead.2.png",
+      "atlas": [
+        1263,
+        1429,
+        81,
+        49
+      ]
+    },
+    {
+      "id": "knife.dead.3",
+      "source": "enemy",
+      "crop": [
+        1325,
+        323,
+        1448,
+        432
+      ],
+      "pivot": [
+        1389.5,
+        424
+      ],
+      "state": "knife.dead",
+      "muzzle": null,
+      "trim": [
+        9,
+        63,
+        110,
+        103
+      ],
+      "sourceSize": [
+        101,
+        40
+      ],
+      "size": [
+        101,
+        40
+      ],
+      "anchor": [
+        0.5495049504950495,
+        0.050000000000000044
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/knife.dead.3.png",
+      "atlas": [
+        328,
+        1502,
+        101,
+        40
+      ]
+    },
+    {
+      "id": "shield.walk.0",
+      "source": "enemy",
+      "crop": [
+        0,
+        548,
+        108,
+        657
+      ],
+      "pivot": [
+        53.5,
+        650
+      ],
+      "state": "shield.walk",
+      "muzzle": null,
+      "trim": [
+        23,
+        4,
+        93,
+        103
+      ],
+      "sourceSize": [
+        70,
+        99
+      ],
+      "size": [
+        70,
+        99
+      ],
+      "anchor": [
+        0.4357142857142857,
+        0.010101010101010055
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.walk.0.png",
+      "atlas": [
+        482,
+        927,
+        70,
+        99
+      ]
+    },
+    {
+      "id": "shield.walk.1",
+      "source": "enemy",
+      "crop": [
+        80,
+        548,
+        186,
+        657
+      ],
+      "pivot": [
+        133.0,
+        650
+      ],
+      "state": "shield.walk",
+      "muzzle": null,
+      "trim": [
+        22,
+        4,
+        89,
+        103
+      ],
+      "sourceSize": [
+        67,
+        99
+      ],
+      "size": [
+        67,
+        99
+      ],
+      "anchor": [
+        0.4626865671641791,
+        0.010101010101010055
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.walk.1.png",
+      "atlas": [
+        560,
+        927,
+        67,
+        99
+      ]
+    },
+    {
+      "id": "shield.walk.2",
+      "source": "enemy",
+      "crop": [
+        158,
+        548,
+        264,
+        657
+      ],
+      "pivot": [
+        211.0,
+        650
+      ],
+      "state": "shield.walk",
+      "muzzle": null,
+      "trim": [
+        19,
+        3,
+        85,
+        103
+      ],
+      "sourceSize": [
+        66,
+        100
+      ],
+      "size": [
+        66,
+        100
+      ],
+      "anchor": [
+        0.5151515151515151,
+        0.010000000000000009
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.walk.2.png",
+      "atlas": [
+        1640,
+        816,
+        66,
+        100
+      ]
+    },
+    {
+      "id": "shield.walk.3",
+      "source": "enemy",
+      "crop": [
+        236,
+        548,
+        335,
+        657
+      ],
+      "pivot": [
+        285.5,
+        650
+      ],
+      "state": "shield.walk",
+      "muzzle": null,
+      "trim": [
+        13,
+        4,
+        73,
+        103
+      ],
+      "sourceSize": [
+        60,
+        99
+      ],
+      "size": [
+        60,
+        99
+      ],
+      "anchor": [
+        0.6083333333333333,
+        0.010101010101010055
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.walk.3.png",
+      "atlas": [
+        635,
+        927,
+        60,
+        99
+      ]
+    },
+    {
+      "id": "shield.brace.0",
+      "source": "enemy",
+      "crop": [
+        319,
+        553,
+        439,
+        658
+      ],
+      "pivot": [
+        379.0,
+        650
+      ],
+      "state": "shield.brace",
+      "muzzle": null,
+      "trim": [
+        16,
+        11,
+        93,
+        99
+      ],
+      "sourceSize": [
+        77,
+        88
+      ],
+      "size": [
+        77,
+        88
+      ],
+      "anchor": [
+        0.5714285714285714,
+        0.022727272727272707
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.brace.0.png",
+      "atlas": [
+        1028,
+        1240,
+        77,
+        88
+      ]
+    },
+    {
+      "id": "shield.brace.1",
+      "source": "enemy",
+      "crop": [
+        411,
+        553,
+        529,
+        658
+      ],
+      "pivot": [
+        470.0,
+        650
+      ],
+      "state": "shield.brace",
+      "muzzle": null,
+      "trim": [
+        9,
+        11,
+        94,
+        99
+      ],
+      "sourceSize": [
+        85,
+        88
+      ],
+      "size": [
+        85,
+        88
+      ],
+      "anchor": [
+        0.5882352941176471,
+        0.022727272727272707
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.brace.1.png",
+      "atlas": [
+        1113,
+        1240,
+        85,
+        88
+      ]
+    },
+    {
+      "id": "shield.shoot.0",
+      "source": "enemy",
+      "crop": [
+        509,
+        548,
+        645,
+        660
+      ],
+      "pivot": [
+        577.0,
+        650
+      ],
+      "state": "shield.shoot",
+      "muzzle": null,
+      "trim": [
+        20,
+        4,
+        125,
+        105
+      ],
+      "sourceSize": [
+        105,
+        101
+      ],
+      "size": [
+        105,
+        101
+      ],
+      "anchor": [
+        0.45714285714285713,
+        0.02970297029702973
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.shoot.0.png",
+      "atlas": [
+        756,
+        816,
+        105,
+        101
+      ]
+    },
+    {
+      "id": "shield.shoot.1",
+      "source": "enemy",
+      "crop": [
+        617,
+        548,
+        730,
+        660
+      ],
+      "pivot": [
+        673.5,
+        650
+      ],
+      "state": "shield.shoot",
+      "muzzle": null,
+      "trim": [
+        4,
+        4,
+        103,
+        105
+      ],
+      "sourceSize": [
+        99,
+        101
+      ],
+      "size": [
+        99,
+        101
+      ],
+      "anchor": [
+        0.5303030303030303,
+        0.02970297029702973
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.shoot.1.png",
+      "atlas": [
+        869,
+        816,
+        99,
+        101
+      ]
+    },
+    {
+      "id": "shield.shoot.2",
+      "source": "enemy",
+      "crop": [
+        702,
+        548,
+        812,
+        660
+      ],
+      "pivot": [
+        757.0,
+        650
+      ],
+      "state": "shield.shoot",
+      "muzzle": null,
+      "trim": [
+        10,
+        4,
+        91,
+        106
+      ],
+      "sourceSize": [
+        81,
+        102
+      ],
+      "size": [
+        81,
+        102
+      ],
+      "anchor": [
+        0.5555555555555556,
+        0.039215686274509776
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.shoot.2.png",
+      "atlas": [
+        468,
+        816,
+        81,
+        102
+      ]
+    },
+    {
+      "id": "shield.hit.0",
+      "source": "enemy",
+      "crop": [
+        797,
+        541,
+        913,
+        661
+      ],
+      "pivot": [
+        855.0,
+        650
+      ],
+      "state": "shield.hit",
+      "muzzle": null,
+      "trim": [
+        20,
+        12,
+        90,
+        113
+      ],
+      "sourceSize": [
+        70,
+        101
+      ],
+      "size": [
+        70,
+        101
+      ],
+      "anchor": [
+        0.5428571428571428,
+        0.03960396039603964
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.hit.0.png",
+      "atlas": [
+        976,
+        816,
+        70,
+        101
+      ]
+    },
+    {
+      "id": "shield.hit.1",
+      "source": "enemy",
+      "crop": [
+        870,
+        541,
+        994,
+        661
+      ],
+      "pivot": [
+        939.5,
+        650
+      ],
+      "state": "shield.hit",
+      "muzzle": null,
+      "trim": [
+        13,
+        12,
+        94,
+        112
+      ],
+      "sourceSize": [
+        81,
+        100
+      ],
+      "size": [
+        81,
+        100
+      ],
+      "anchor": [
+        0.6975308641975309,
+        0.030000000000000027
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.hit.1.png",
+      "atlas": [
+        1714,
+        816,
+        81,
+        100
+      ]
+    },
+    {
+      "id": "shield.hit.2",
+      "source": "enemy",
+      "crop": [
+        966,
+        541,
+        1069,
+        661
+      ],
+      "pivot": [
+        1017.5,
+        650
+      ],
+      "state": "shield.hit",
+      "muzzle": null,
+      "trim": [
+        1,
+        16,
+        77,
+        113
+      ],
+      "sourceSize": [
+        76,
+        97
+      ],
+      "size": [
+        76,
+        97
+      ],
+      "anchor": [
+        0.6644736842105263,
+        0.04123711340206182
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.hit.2.png",
+      "atlas": [
+        1333,
+        927,
+        76,
+        97
+      ]
+    },
+    {
+      "id": "shield.dead.0",
+      "source": "enemy",
+      "crop": [
+        1058,
+        560,
+        1171,
+        666
+      ],
+      "pivot": [
+        1114.5,
+        654
+      ],
+      "state": "shield.dead",
+      "muzzle": null,
+      "trim": [
+        20,
+        6,
+        101,
+        101
+      ],
+      "sourceSize": [
+        81,
+        95
+      ],
+      "size": [
+        81,
+        95
+      ],
+      "anchor": [
+        0.4506172839506173,
+        0.0736842105263158
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.dead.0.png",
+      "atlas": [
+        701,
+        1035,
+        81,
+        95
+      ]
+    },
+    {
+      "id": "shield.dead.1",
+      "source": "enemy",
+      "crop": [
+        1143,
+        560,
+        1266,
+        666
+      ],
+      "pivot": [
+        1204.5,
+        654
+      ],
+      "state": "shield.dead",
+      "muzzle": null,
+      "trim": [
+        15,
+        19,
+        111,
+        101
+      ],
+      "sourceSize": [
+        96,
+        82
+      ],
+      "size": [
+        96,
+        82
+      ],
+      "anchor": [
+        0.484375,
+        0.08536585365853655
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.dead.1.png",
+      "atlas": [
+        242,
+        1338,
+        96,
+        82
+      ]
+    },
+    {
+      "id": "shield.dead.2",
+      "source": "enemy",
+      "crop": [
+        1238,
+        560,
+        1354,
+        666
+      ],
+      "pivot": [
+        1296.0,
+        654
+      ],
+      "state": "shield.dead",
+      "muzzle": null,
+      "trim": [
+        11,
+        51,
+        98,
+        101
+      ],
+      "sourceSize": [
+        87,
+        50
+      ],
+      "size": [
+        87,
+        50
+      ],
+      "anchor": [
+        0.5402298850574713,
+        0.14
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.dead.2.png",
+      "atlas": [
+        822,
+        1429,
+        87,
+        50
+      ]
+    },
+    {
+      "id": "shield.dead.3",
+      "source": "enemy",
+      "crop": [
+        1326,
+        560,
+        1448,
+        666
+      ],
+      "pivot": [
+        1390.5,
+        654
+      ],
+      "state": "shield.dead",
+      "muzzle": null,
+      "trim": [
+        11,
+        55,
+        108,
+        100
+      ],
+      "sourceSize": [
+        97,
+        45
+      ],
+      "size": [
+        97,
+        45
+      ],
+      "anchor": [
+        0.5515463917525774,
+        0.1333333333333333
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/shield.dead.3.png",
+      "atlas": [
+        1869,
+        1429,
+        97,
+        45
+      ]
+    },
+    {
+      "id": "rocket.idle.0",
+      "source": "enemy",
+      "crop": [
+        2,
+        768,
+        126,
+        879
+      ],
+      "pivot": [
+        64.0,
+        872
+      ],
+      "state": "rocket.idle",
+      "muzzle": null,
+      "trim": [
+        28,
+        7,
+        99,
+        104
+      ],
+      "sourceSize": [
+        71,
+        97
+      ],
+      "size": [
+        71,
+        97
+      ],
+      "anchor": [
+        0.4788732394366197,
+        0.0
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.idle.0.png",
+      "atlas": [
+        1417,
+        927,
+        71,
+        97
+      ]
+    },
+    {
+      "id": "rocket.idle.1",
+      "source": "enemy",
+      "crop": [
+        98,
+        768,
+        225,
+        879
+      ],
+      "pivot": [
+        161.5,
+        872
+      ],
+      "state": "rocket.idle",
+      "muzzle": null,
+      "trim": [
+        19,
+        7,
+        93,
+        105
+      ],
+      "sourceSize": [
+        74,
+        98
+      ],
+      "size": [
+        74,
+        98
+      ],
+      "anchor": [
+        0.6013513513513513,
+        0.010204081632653073
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.idle.1.png",
+      "atlas": [
+        703,
+        927,
+        74,
+        98
+      ]
+    },
+    {
+      "id": "rocket.aim.0",
+      "source": "enemy",
+      "crop": [
+        200,
+        769,
+        329,
+        879
+      ],
+      "pivot": [
+        264.5,
+        872
+      ],
+      "state": "rocket.aim",
+      "muzzle": null,
+      "trim": [
+        23,
+        6,
+        109,
+        104
+      ],
+      "sourceSize": [
+        86,
+        98
+      ],
+      "size": [
+        86,
+        98
+      ],
+      "anchor": [
+        0.48255813953488375,
+        0.010204081632653073
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.aim.0.png",
+      "atlas": [
+        785,
+        927,
+        86,
+        98
+      ]
+    },
+    {
+      "id": "rocket.aim.1",
+      "source": "enemy",
+      "crop": [
+        301,
+        769,
+        428,
+        879
+      ],
+      "pivot": [
+        364.5,
+        872
+      ],
+      "state": "rocket.aim",
+      "muzzle": null,
+      "trim": [
+        14,
+        6,
+        97,
+        104
+      ],
+      "sourceSize": [
+        83,
+        98
+      ],
+      "size": [
+        83,
+        98
+      ],
+      "anchor": [
+        0.5963855421686747,
+        0.010204081632653073
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.aim.1.png",
+      "atlas": [
+        879,
+        927,
+        83,
+        98
+      ]
+    },
+    {
+      "id": "rocket.fire.0",
+      "source": "enemy",
+      "crop": [
+        401,
+        752,
+        529,
+        880
+      ],
+      "pivot": [
+        459,
+        872
+      ],
+      "state": "rocket.fire",
+      "muzzle": null,
+      "trim": [
+        20,
+        24,
+        106,
+        121
+      ],
+      "sourceSize": [
+        86,
+        97
+      ],
+      "size": [
+        86,
+        97
+      ],
+      "anchor": [
+        0.4418604651162791,
+        0.010309278350515427
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.fire.0.png",
+      "atlas": [
+        1496,
+        927,
+        86,
+        97
+      ]
+    },
+    {
+      "id": "rocket.fire.1",
+      "source": "enemy",
+      "crop": [
+        501,
+        752,
+        663,
+        880
+      ],
+      "pivot": [
+        554,
+        872
+      ],
+      "state": "rocket.fire",
+      "muzzle": null,
+      "trim": [
+        9,
+        15,
+        148,
+        122
+      ],
+      "sourceSize": [
+        139,
+        107
+      ],
+      "size": [
+        139,
+        107
+      ],
+      "anchor": [
+        0.31654676258992803,
+        0.01869158878504673
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.fire.1.png",
+      "atlas": [
+        917,
+        694,
+        139,
+        107
+      ]
+    },
+    {
+      "id": "rocket.fire.2",
+      "source": "enemy",
+      "crop": [
+        635,
+        752,
+        816,
+        880
+      ],
+      "pivot": [
+        694,
+        872
+      ],
+      "state": "rocket.fire",
+      "muzzle": null,
+      "trim": [
+        17,
+        24,
+        84,
+        122
+      ],
+      "sourceSize": [
+        67,
+        98
+      ],
+      "size": [
+        67,
+        98
+      ],
+      "anchor": [
+        0.6268656716417911,
+        0.020408163265306145
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.fire.2.png",
+      "atlas": [
+        970,
+        927,
+        67,
+        98
+      ]
+    },
+    {
+      "id": "rocket.hit.0",
+      "source": "enemy",
+      "crop": [
+        795,
+        760,
+        911,
+        884
+      ],
+      "pivot": [
+        853.0,
+        873
+      ],
+      "state": "rocket.hit",
+      "muzzle": null,
+      "trim": [
+        24,
+        22,
+        95,
+        116
+      ],
+      "sourceSize": [
+        71,
+        94
+      ],
+      "size": [
+        71,
+        94
+      ],
+      "anchor": [
+        0.4788732394366197,
+        0.03191489361702127
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.hit.0.png",
+      "atlas": [
+        1458,
+        1035,
+        71,
+        94
+      ]
+    },
+    {
+      "id": "rocket.hit.1",
+      "source": "enemy",
+      "crop": [
+        883,
+        760,
+        991,
+        884
+      ],
+      "pivot": [
+        937.0,
+        873
+      ],
+      "state": "rocket.hit",
+      "muzzle": null,
+      "trim": [
+        16,
+        29,
+        89,
+        117
+      ],
+      "sourceSize": [
+        73,
+        88
+      ],
+      "size": [
+        73,
+        88
+      ],
+      "anchor": [
+        0.5205479452054794,
+        0.045454545454545414
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.hit.1.png",
+      "atlas": [
+        1206,
+        1240,
+        73,
+        88
+      ]
+    },
+    {
+      "id": "rocket.hit.2",
+      "source": "enemy",
+      "crop": [
+        963,
+        760,
+        1085,
+        884
+      ],
+      "pivot": [
+        1024.0,
+        873
+      ],
+      "state": "rocket.hit",
+      "muzzle": null,
+      "trim": [
+        21,
+        30,
+        105,
+        116
+      ],
+      "sourceSize": [
+        84,
+        86
+      ],
+      "size": [
+        84,
+        86
+      ],
+      "anchor": [
+        0.47619047619047616,
+        0.03488372093023251
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.hit.2.png",
+      "atlas": [
+        1685,
+        1240,
+        84,
+        86
+      ]
+    },
+    {
+      "id": "rocket.dead.0",
+      "source": "enemy",
+      "crop": [
+        1066,
+        781,
+        1183,
+        891
+      ],
+      "pivot": [
+        1124.5,
+        880
+      ],
+      "state": "rocket.dead",
+      "muzzle": null,
+      "trim": [
+        29,
+        19,
+        105,
+        92
+      ],
+      "sourceSize": [
+        76,
+        73
+      ],
+      "size": [
+        76,
+        73
+      ],
+      "anchor": [
+        0.3881578947368421,
+        -0.09589041095890405
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.dead.0.png",
+      "atlas": [
+        923,
+        1338,
+        76,
+        73
+      ]
+    },
+    {
+      "id": "rocket.dead.1",
+      "source": "enemy",
+      "crop": [
+        1155,
+        781,
+        1263,
+        891
+      ],
+      "pivot": [
+        1209.0,
+        880
+      ],
+      "state": "rocket.dead",
+      "muzzle": null,
+      "trim": [
+        10,
+        7,
+        94,
+        77
+      ],
+      "sourceSize": [
+        84,
+        70
+      ],
+      "size": [
+        84,
+        70
+      ],
+      "anchor": [
+        0.5238095238095238,
+        -0.3142857142857143
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.dead.1.png",
+      "atlas": [
+        1259,
+        1338,
+        84,
+        70
+      ]
+    },
+    {
+      "id": "rocket.dead.2",
+      "source": "enemy",
+      "crop": [
+        1220,
+        781,
+        1349,
+        891
+      ],
+      "pivot": [
+        1292.0,
+        880
+      ],
+      "state": "rocket.dead",
+      "muzzle": null,
+      "trim": [
+        8,
+        59,
+        93,
+        102
+      ],
+      "sourceSize": [
+        85,
+        43
+      ],
+      "size": [
+        85,
+        43
+      ],
+      "anchor": [
+        0.7529411764705882,
+        0.06976744186046513
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.dead.2.png",
+      "atlas": [
+        127,
+        1502,
+        85,
+        43
+      ]
+    },
+    {
+      "id": "rocket.dead.3",
+      "source": "enemy",
+      "crop": [
+        1305,
+        781,
+        1448,
+        891
+      ],
+      "pivot": [
+        1388.0,
+        880
+      ],
+      "state": "rocket.dead",
+      "muzzle": null,
+      "trim": [
+        5,
+        56,
+        125,
+        110
+      ],
+      "sourceSize": [
+        120,
+        54
+      ],
+      "size": [
+        120,
+        54
+      ],
+      "anchor": [
+        0.65,
+        0.20370370370370372
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/rocket.dead.3.png",
+      "atlas": [
+        610,
+        1429,
+        120,
+        54
+      ]
+    },
+    {
+      "id": "tank.idle",
+      "source": "enemy",
+      "crop": [
+        12,
+        956,
+        197,
+        1086
+      ],
+      "pivot": [
+        103,
+        1077
+      ],
+      "state": "tank.idle",
+      "muzzle": null,
+      "trim": [
+        5,
+        3,
+        180,
+        119
+      ],
+      "sourceSize": [
+        175,
+        116
+      ],
+      "size": [
+        175,
+        116
+      ],
+      "anchor": [
+        0.49142857142857144,
+        -0.01724137931034475
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.idle.png",
+      "atlas": [
+        908,
+        569,
+        175,
+        116
+      ]
+    },
+    {
+      "id": "tank.fire",
+      "source": "enemy",
+      "crop": [
+        198,
+        956,
+        434,
+        1086
+      ],
+      "pivot": [
+        283,
+        1077
+      ],
+      "state": "tank.fire",
+      "muzzle": null,
+      "trim": [
+        4,
+        3,
+        235,
+        119
+      ],
+      "sourceSize": [
+        231,
+        116
+      ],
+      "size": [
+        231,
+        116
+      ],
+      "anchor": [
+        0.35064935064935066,
+        -0.01724137931034475
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.fire.png",
+      "atlas": [
+        1091,
+        569,
+        231,
+        116
+      ]
+    },
+    {
+      "id": "tank.damaged",
+      "source": "enemy",
+      "crop": [
+        436,
+        957,
+        614,
+        1086
+      ],
+      "pivot": [
+        520,
+        1077
+      ],
+      "state": "tank.damaged",
+      "muzzle": null,
+      "trim": [
+        1,
+        4,
+        168,
+        118
+      ],
+      "sourceSize": [
+        167,
+        114
+      ],
+      "size": [
+        167,
+        114
+      ],
+      "anchor": [
+        0.49700598802395207,
+        -0.01754385964912286
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.damaged.png",
+      "atlas": [
+        1850,
+        569,
+        167,
+        114
+      ]
+    },
+    {
+      "id": "tank.heavy",
+      "source": "enemy",
+      "crop": [
+        626,
+        960,
+        822,
+        1086
+      ],
+      "pivot": [
+        720,
+        1077
+      ],
+      "state": "tank.heavy",
+      "muzzle": null,
+      "trim": [
+        13,
+        0,
+        190,
+        113
+      ],
+      "sourceSize": [
+        177,
+        113
+      ],
+      "size": [
+        177,
+        113
+      ],
+      "anchor": [
+        0.4576271186440678,
+        -0.03539823008849563
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.heavy.png",
+      "atlas": [
+        340,
+        694,
+        177,
+        113
+      ]
+    },
+    {
+      "id": "tank.wreck",
+      "source": "enemy",
+      "crop": [
+        1266,
+        958,
+        1448,
+        1086
+      ],
+      "pivot": [
+        1350,
+        1077
+      ],
+      "state": "tank.wreck",
+      "muzzle": null,
+      "trim": [
+        5,
+        25,
+        167,
+        115
+      ],
+      "sourceSize": [
+        162,
+        90
+      ],
+      "size": [
+        162,
+        90
+      ],
+      "anchor": [
+        0.4876543209876543,
+        -0.04444444444444451
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.wreck.png",
+      "atlas": [
+        1403,
+        1139,
+        162,
+        90
+      ]
+    },
+    {
+      "id": "tank.explode.0",
+      "source": "enemy",
+      "crop": [
+        819,
+        963,
+        967,
+        1086
+      ],
+      "pivot": [
+        890.0,
+        1077
+      ],
+      "state": "tank.explode",
+      "muzzle": null,
+      "trim": [
+        23,
+        15,
+        134,
+        109
+      ],
+      "sourceSize": [
+        111,
+        94
+      ],
+      "size": [
+        111,
+        94
+      ],
+      "anchor": [
+        0.43243243243243246,
+        -0.05319148936170204
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.explode.0.png",
+      "atlas": [
+        1537,
+        1035,
+        111,
+        94
+      ]
+    },
+    {
+      "id": "tank.explode.1",
+      "source": "enemy",
+      "crop": [
+        937,
+        963,
+        1064,
+        1086
+      ],
+      "pivot": [
+        997.5,
+        1077
+      ],
+      "state": "tank.explode",
+      "muzzle": null,
+      "trim": [
+        19,
+        21,
+        113,
+        109
+      ],
+      "sourceSize": [
+        94,
+        88
+      ],
+      "size": [
+        94,
+        88
+      ],
+      "anchor": [
+        0.44148936170212766,
+        -0.05681818181818188
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.explode.1.png",
+      "atlas": [
+        1287,
+        1240,
+        94,
+        88
+      ]
+    },
+    {
+      "id": "tank.explode.2",
+      "source": "enemy",
+      "crop": [
+        1034,
+        963,
+        1178,
+        1086
+      ],
+      "pivot": [
+        1103.0,
+        1077
+      ],
+      "state": "tank.explode",
+      "muzzle": null,
+      "trim": [
+        22,
+        4,
+        130,
+        109
+      ],
+      "sourceSize": [
+        108,
+        105
+      ],
+      "size": [
+        108,
+        105
+      ],
+      "anchor": [
+        0.4351851851851852,
+        -0.04761904761904767
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.explode.2.png",
+      "atlas": [
+        1488,
+        694,
+        108,
+        105
+      ]
+    },
+    {
+      "id": "tank.explode.3",
+      "source": "enemy",
+      "crop": [
+        1148,
+        963,
+        1281,
+        1086
+      ],
+      "pivot": [
+        1211.5,
+        1077
+      ],
+      "state": "tank.explode",
+      "muzzle": null,
+      "trim": [
+        30,
+        19,
+        78,
+        77
+      ],
+      "sourceSize": [
+        48,
+        58
+      ],
+      "size": [
+        48,
+        58
+      ],
+      "anchor": [
+        0.6979166666666666,
+        -0.6379310344827587
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/tank.explode.3.png",
+      "atlas": [
+        371,
+        1429,
+        48,
+        58
+      ]
+    },
+    {
+      "id": "weapon.rifle",
+      "source": "fx",
+      "crop": [
+        36,
+        23,
+        321,
+        137
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        13,
+        13,
+        275,
+        114
+      ],
+      "sourceSize": [
+        262,
+        101
+      ],
+      "size": [
+        240,
+        93
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/weapon.rifle.png",
+      "atlas": [
+        89,
+        1139,
+        240,
+        93
+      ]
+    },
+    {
+      "id": "weapon.shotgun",
+      "source": "fx",
+      "crop": [
+        355,
+        34,
+        618,
+        134
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        13,
+        16,
+        253,
+        92
+      ],
+      "sourceSize": [
+        240,
+        76
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/weapon.shotgun.png",
+      "atlas": [
+        427,
+        1338,
+        240,
+        76
+      ]
+    },
+    {
+      "id": "weapon.rocket",
+      "source": "fx",
+      "crop": [
+        643,
+        22,
+        963,
+        141
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        10,
+        12,
+        306,
+        105
+      ],
+      "sourceSize": [
+        296,
+        93
+      ],
+      "size": [
+        240,
+        75
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/weapon.rocket.png",
+      "atlas": [
+        675,
+        1338,
+        240,
+        75
+      ]
+    },
+    {
+      "id": "projectile.grenade",
+      "source": "fx",
+      "crop": [
+        978,
+        25,
+        1075,
+        142
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        12,
+        12,
+        85,
+        114
+      ],
+      "sourceSize": [
+        73,
+        102
+      ],
+      "size": [
+        73,
+        102
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/projectile.grenade.png",
+      "atlas": [
+        557,
+        816,
+        73,
+        102
+      ]
+    },
+    {
+      "id": "pickup.grenades",
+      "source": "fx",
+      "crop": [
+        1091,
+        24,
+        1242,
+        148
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        13,
+        11,
+        138,
+        114
+      ],
+      "sourceSize": [
+        125,
+        103
+      ],
+      "size": [
+        125,
+        103
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/pickup.grenades.png",
+      "atlas": [
+        210,
+        816,
+        125,
+        103
+      ]
+    },
+    {
+      "id": "pickup.health",
+      "source": "fx",
+      "crop": [
+        1260,
+        25,
+        1409,
+        145
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        13,
+        6,
+        135,
+        110
+      ],
+      "sourceSize": [
+        122,
+        104
+      ],
+      "size": [
+        122,
+        104
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/pickup.health.png",
+      "atlas": [
+        1852,
+        694,
+        122,
+        104
+      ]
+    },
+    {
+      "id": "effect.muzzle",
+      "source": "fx",
+      "crop": [
+        40,
+        164,
+        114,
+        240
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        6,
+        14,
+        68,
+        69
+      ],
+      "sourceSize": [
+        62,
+        55
+      ],
+      "size": [
+        62,
+        55
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.muzzle.png",
+      "atlas": [
+        540,
+        1429,
+        62,
+        55
+      ]
+    },
+    {
+      "id": "effect.muzzle-large",
+      "source": "fx",
+      "crop": [
+        201,
+        145,
+        366,
+        249
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        11,
+        4,
+        157,
+        104
+      ],
+      "sourceSize": [
+        146,
+        100
+      ],
+      "size": [
+        146,
+        100
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.muzzle-large.png",
+      "atlas": [
+        1803,
+        816,
+        146,
+        100
+      ]
+    },
+    {
+      "id": "effect.smoke",
+      "source": "fx",
+      "crop": [
+        608,
+        153,
+        738,
+        251
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        0,
+        4,
+        123,
+        93
+      ],
+      "sourceSize": [
+        123,
+        89
+      ],
+      "size": [
+        123,
+        89
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.smoke.png",
+      "atlas": [
+        792,
+        1240,
+        123,
+        89
+      ]
+    },
+    {
+      "id": "projectile.bullet",
+      "source": "fx",
+      "crop": [
+        241,
+        274,
+        397,
+        325
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        6,
+        8,
+        148,
+        39
+      ],
+      "sourceSize": [
+        142,
+        31
+      ],
+      "size": [
+        142,
+        31
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/projectile.bullet.png",
+      "atlas": [
+        636,
+        1502,
+        142,
+        31
+      ]
+    },
+    {
+      "id": "projectile.pellet",
+      "source": "fx",
+      "crop": [
+        43,
+        282,
+        109,
+        320
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        7,
+        7,
+        60,
+        26
+      ],
+      "sourceSize": [
+        53,
+        19
+      ],
+      "size": [
+        53,
+        19
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/projectile.pellet.png",
+      "atlas": [
+        786,
+        1502,
+        53,
+        19
+      ]
+    },
+    {
+      "id": "projectile.rocket",
+      "source": "fx",
+      "crop": [
+        222,
+        466,
+        439,
+        517
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        10,
+        0,
+        210,
+        47
+      ],
+      "sourceSize": [
+        200,
+        47
+      ],
+      "size": [
+        200,
+        47
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/projectile.rocket.png",
+      "atlas": [
+        1493,
+        1429,
+        200,
+        47
+      ]
+    },
+    {
+      "id": "effect.impact",
+      "source": "fx",
+      "crop": [
+        851,
+        675,
+        1018,
+        794
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        3,
+        0,
+        167,
+        118
+      ],
+      "sourceSize": [
+        164,
+        118
+      ],
+      "size": [
+        164,
+        118
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.impact.png",
+      "atlas": [
+        1868,
+        437,
+        164,
+        118
+      ]
+    },
+    {
+      "id": "effect.metal",
+      "source": "fx",
+      "crop": [
+        212,
+        679,
+        344,
+        781
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        21,
+        0,
+        131,
+        102
+      ],
+      "sourceSize": [
+        110,
+        102
+      ],
+      "size": [
+        110,
+        102
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.metal.png",
+      "atlas": [
+        638,
+        816,
+        110,
+        102
+      ]
+    },
+    {
+      "id": "effect.wood",
+      "source": "fx",
+      "crop": [
+        368,
+        664,
+        546,
+        795
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        0,
+        8,
+        168,
+        114
+      ],
+      "sourceSize": [
+        168,
+        106
+      ],
+      "size": [
+        168,
+        106
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.wood.png",
+      "atlas": [
+        1312,
+        694,
+        168,
+        106
+      ]
+    },
+    {
+      "id": "effect.explosion",
+      "source": "fx",
+      "crop": [
+        763,
+        825,
+        1074,
+        1066
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        0,
+        0,
+        289,
+        233
+      ],
+      "sourceSize": [
+        289,
+        233
+      ],
+      "size": [
+        289,
+        233
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.explosion.png",
+      "atlas": [
+        340,
+        4,
+        289,
+        233
+      ]
+    },
+    {
+      "id": "effect.trail",
+      "source": "fx",
+      "crop": [
+        411,
+        815,
+        652,
+        900
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        11,
+        2,
+        241,
+        85
+      ],
+      "sourceSize": [
+        230,
+        83
+      ],
+      "size": [
+        230,
+        83
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.trail.png",
+      "atlas": [
+        4,
+        1338,
+        230,
+        83
+      ]
+    },
+    {
+      "id": "effect.dust",
+      "source": "fx",
+      "crop": [
+        1290,
+        601,
+        1409,
+        667
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        0,
+        0,
+        105,
+        58
+      ],
+      "sourceSize": [
+        105,
+        58
+      ],
+      "size": [
+        105,
+        58
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/effect.dust.png",
+      "atlas": [
+        427,
+        1429,
+        105,
+        58
+      ]
+    },
+    {
+      "id": "explosion.0",
+      "source": "fx",
+      "crop": [
+        36,
+        958,
+        112,
+        1045
+      ],
+      "pivot": [
+        74.0,
+        1040
+      ],
+      "state": "Explosion",
+      "muzzle": null,
+      "trim": [
+        10,
+        21,
+        61,
+        71
+      ],
+      "sourceSize": [
+        51,
+        50
+      ],
+      "size": [
+        51,
+        50
+      ],
+      "anchor": [
+        0.5490196078431373,
+        -0.21999999999999997
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/explosion.0.png",
+      "atlas": [
+        917,
+        1429,
+        51,
+        50
+      ]
+    },
+    {
+      "id": "explosion.1",
+      "source": "fx",
+      "crop": [
+        119,
+        928,
+        228,
+        1051
+      ],
+      "pivot": [
+        173.5,
+        1046
+      ],
+      "state": "Explosion",
+      "muzzle": null,
+      "trim": [
+        19,
+        18,
+        100,
+        115
+      ],
+      "sourceSize": [
+        81,
+        97
+      ],
+      "size": [
+        81,
+        97
+      ],
+      "anchor": [
+        0.4382716049382716,
+        -0.030927835051546282
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/explosion.1.png",
+      "atlas": [
+        1590,
+        927,
+        81,
+        97
+      ]
+    },
+    {
+      "id": "explosion.2",
+      "source": "fx",
+      "crop": [
+        235,
+        925,
+        387,
+        1061
+      ],
+      "pivot": [
+        311.0,
+        1056
+      ],
+      "state": "Explosion",
+      "muzzle": null,
+      "trim": [
+        28,
+        20,
+        145,
+        123
+      ],
+      "sourceSize": [
+        117,
+        103
+      ],
+      "size": [
+        117,
+        103
+      ],
+      "anchor": [
+        0.41025641025641024,
+        -0.07766990291262132
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/explosion.2.png",
+      "atlas": [
+        343,
+        816,
+        117,
+        103
+      ]
+    },
+    {
+      "id": "explosion.3",
+      "source": "fx",
+      "crop": [
+        390,
+        921,
+        556,
+        1064
+      ],
+      "pivot": [
+        473.0,
+        1059
+      ],
+      "state": "Explosion",
+      "muzzle": null,
+      "trim": [
+        19,
+        17,
+        150,
+        132
+      ],
+      "sourceSize": [
+        131,
+        115
+      ],
+      "size": [
+        131,
+        115
+      ],
+      "anchor": [
+        0.48854961832061067,
+        -0.05217391304347818
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/explosion.3.png",
+      "atlas": [
+        1475,
+        569,
+        131,
+        115
+      ]
+    },
+    {
+      "id": "explosion.4",
+      "source": "fx",
+      "crop": [
+        560,
+        861,
+        762,
+        1064
+      ],
+      "pivot": [
+        661.0,
+        1059
+      ],
+      "state": "Explosion",
+      "muzzle": null,
+      "trim": [
+        19,
+        0,
+        188,
+        193
+      ],
+      "sourceSize": [
+        169,
+        193
+      ],
+      "size": [
+        169,
+        193
+      ],
+      "anchor": [
+        0.48520710059171596,
+        -0.02590673575129543
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/explosion.4.png",
+      "atlas": [
+        1115,
+        4,
+        169,
+        193
+      ]
+    },
+    {
+      "id": "explosion.5",
+      "source": "fx",
+      "crop": [
+        763,
+        825,
+        1074,
+        1066
+      ],
+      "pivot": [
+        918.5,
+        1061
+      ],
+      "state": "Explosion",
+      "muzzle": null,
+      "trim": [
+        0,
+        0,
+        289,
+        233
+      ],
+      "sourceSize": [
+        289,
+        233
+      ],
+      "size": [
+        289,
+        233
+      ],
+      "anchor": [
+        0.5380622837370242,
+        -0.012875536480686733
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/explosion.5.png",
+      "atlas": [
+        637,
+        4,
+        289,
+        233
+      ]
+    },
+    {
+      "id": "explosion.6",
+      "source": "fx",
+      "crop": [
+        1074,
+        782,
+        1420,
+        1066
+      ],
+      "pivot": [
+        1247.0,
+        1061
+      ],
+      "state": "Explosion",
+      "muzzle": null,
+      "trim": [
+        0,
+        6,
+        328,
+        273
+      ],
+      "sourceSize": [
+        328,
+        267
+      ],
+      "size": [
+        328,
+        267
+      ],
+      "anchor": [
+        0.5274390243902439,
+        -0.022471910112359605
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/explosion.6.png",
+      "atlas": [
+        4,
+        4,
+        328,
+        267
+      ]
+    },
+    {
+      "id": "ground.flat-a",
+      "source": "env",
+      "crop": [
+        17,
+        72,
+        219,
+        199
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        11,
+        2,
+        198,
+        121
+      ],
+      "sourceSize": [
+        187,
+        119
+      ],
+      "size": [
+        187,
+        119
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/ground.flat-a.png",
+      "atlas": [
+        1526,
+        437,
+        187,
+        119
+      ]
+    },
+    {
+      "id": "ground.flat-b",
+      "source": "env",
+      "crop": [
+        226,
+        74,
+        548,
+        199
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        6,
+        0,
+        318,
+        118
+      ],
+      "sourceSize": [
+        312,
+        118
+      ],
+      "size": [
+        240,
+        91
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/ground.flat-b.png",
+      "atlas": [
+        1155,
+        1139,
+        240,
+        91
+      ]
+    },
+    {
+      "id": "ground.small",
+      "source": "env",
+      "crop": [
+        552,
+        79,
+        697,
+        199
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        10,
+        0,
+        137,
+        113
+      ],
+      "sourceSize": [
+        127,
+        113
+      ],
+      "size": [
+        127,
+        113
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/ground.small.png",
+      "atlas": [
+        525,
+        694,
+        127,
+        113
+      ]
+    },
+    {
+      "id": "ground.slope",
+      "source": "env",
+      "crop": [
+        857,
+        35,
+        1182,
+        199
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        8,
+        7,
+        318,
+        158
+      ],
+      "sourceSize": [
+        310,
+        151
+      ],
+      "size": [
+        240,
+        117
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/ground.slope.png",
+      "atlas": [
+        242,
+        569,
+        240,
+        117
+      ]
+    },
+    {
+      "id": "platform.stone",
+      "source": "env",
+      "crop": [
+        38,
+        240,
+        248,
+        358
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        8,
+        2,
+        206,
+        116
+      ],
+      "sourceSize": [
+        198,
+        114
+      ],
+      "size": [
+        198,
+        114
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/platform.stone.png",
+      "atlas": [
+        4,
+        694,
+        198,
+        114
+      ]
+    },
+    {
+      "id": "platform.short",
+      "source": "env",
+      "crop": [
+        278,
+        248,
+        534,
+        326
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        5,
+        7,
+        252,
+        78
+      ],
+      "sourceSize": [
+        247,
+        71
+      ],
+      "size": [
+        240,
+        69
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/platform.short.png",
+      "atlas": [
+        1599,
+        1338,
+        240,
+        69
+      ]
+    },
+    {
+      "id": "platform.metal",
+      "source": "env",
+      "crop": [
+        582,
+        247,
+        834,
+        326
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        6,
+        7,
+        249,
+        78
+      ],
+      "sourceSize": [
+        243,
+        71
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/platform.metal.png",
+      "atlas": [
+        1351,
+        1338,
+        240,
+        70
+      ]
+    },
+    {
+      "id": "platform.wood",
+      "source": "env",
+      "crop": [
+        868,
+        239,
+        1131,
+        359
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        10,
+        10,
+        258,
+        113
+      ],
+      "sourceSize": [
+        248,
+        103
+      ],
+      "size": [
+        240,
+        100
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/platform.wood.png",
+      "atlas": [
+        4,
+        927,
+        240,
+        100
+      ]
+    },
+    {
+      "id": "crate.intact",
+      "source": "env",
+      "crop": [
+        66,
+        406,
+        226,
+        541
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        9,
+        9,
+        148,
+        128
+      ],
+      "sourceSize": [
+        139,
+        119
+      ],
+      "size": [
+        139,
+        119
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/crate.intact.png",
+      "atlas": [
+        1721,
+        437,
+        139,
+        119
+      ]
+    },
+    {
+      "id": "crate.broken",
+      "source": "env",
+      "crop": [
+        274,
+        406,
+        466,
+        541
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        7,
+        11,
+        185,
+        128
+      ],
+      "sourceSize": [
+        178,
+        117
+      ],
+      "size": [
+        178,
+        117
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/crate.broken.png",
+      "atlas": [
+        490,
+        569,
+        178,
+        117
+      ]
+    },
+    {
+      "id": "crate.debris",
+      "source": "env",
+      "crop": [
+        490,
+        404,
+        720,
+        543
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        5,
+        12,
+        224,
+        133
+      ],
+      "sourceSize": [
+        219,
+        121
+      ],
+      "size": [
+        219,
+        121
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/crate.debris.png",
+      "atlas": [
+        1046,
+        437,
+        219,
+        121
+      ]
+    },
+    {
+      "id": "barrel.intact",
+      "source": "env",
+      "crop": [
+        760,
+        402,
+        875,
+        551
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        12,
+        3,
+        102,
+        141
+      ],
+      "sourceSize": [
+        90,
+        138
+      ],
+      "size": [
+        90,
+        138
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/barrel.intact.png",
+      "atlas": [
+        772,
+        279,
+        90,
+        138
+      ]
+    },
+    {
+      "id": "barrel.dented",
+      "source": "env",
+      "crop": [
+        939,
+        402,
+        1119,
+        551
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        11,
+        5,
+        175,
+        146
+      ],
+      "sourceSize": [
+        164,
+        141
+      ],
+      "size": [
+        164,
+        141
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/barrel.dented.png",
+      "atlas": [
+        352,
+        279,
+        164,
+        141
+      ]
+    },
+    {
+      "id": "barrel.broken",
+      "source": "env",
+      "crop": [
+        1127,
+        380,
+        1419,
+        556
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        4,
+        2,
+        268,
+        176
+      ],
+      "sourceSize": [
+        264,
+        174
+      ],
+      "size": [
+        240,
+        158
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/barrel.broken.png",
+      "atlas": [
+        1640,
+        4,
+        240,
+        158
+      ]
+    },
+    {
+      "id": "cover.sandbags",
+      "source": "env",
+      "crop": [
+        24,
+        574,
+        308,
+        715
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        10,
+        11,
+        279,
+        131
+      ],
+      "sourceSize": [
+        269,
+        120
+      ],
+      "size": [
+        240,
+        107
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/cover.sandbags.png",
+      "atlas": [
+        1064,
+        694,
+        240,
+        107
+      ]
+    },
+    {
+      "id": "cover.concrete",
+      "source": "env",
+      "crop": [
+        318,
+        592,
+        583,
+        715
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        9,
+        7,
+        265,
+        115
+      ],
+      "sourceSize": [
+        256,
+        108
+      ],
+      "size": [
+        240,
+        101
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/cover.concrete.png",
+      "atlas": [
+        1054,
+        816,
+        240,
+        101
+      ]
+    },
+    {
+      "id": "prop.sign",
+      "source": "env",
+      "crop": [
+        607,
+        567,
+        865,
+        717
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        12,
+        6,
+        258,
+        148
+      ],
+      "sourceSize": [
+        246,
+        142
+      ],
+      "size": [
+        240,
+        139
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/prop.sign.png",
+      "atlas": [
+        524,
+        279,
+        240,
+        139
+      ]
+    },
+    {
+      "id": "prop.warning",
+      "source": "env",
+      "crop": [
+        888,
+        576,
+        1101,
+        717
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        5,
+        10,
+        198,
+        137
+      ],
+      "sourceSize": [
+        193,
+        127
+      ],
+      "size": [
+        193,
+        127
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/prop.warning.png",
+      "atlas": [
+        1281,
+        279,
+        193,
+        127
+      ]
+    },
+    {
+      "id": "prop.rocks",
+      "source": "env",
+      "crop": [
+        1183,
+        663,
+        1315,
+        719
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        10,
+        8,
+        125,
+        52
+      ],
+      "sourceSize": [
+        115,
+        44
+      ],
+      "size": [
+        115,
+        44
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/prop.rocks.png",
+      "atlas": [
+        4,
+        1502,
+        115,
+        44
+      ]
+    },
+    {
+      "id": "building.base",
+      "source": "env",
+      "crop": [
+        12,
+        731,
+        418,
+        950
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        3,
+        2,
+        406,
+        214
+      ],
+      "sourceSize": [
+        403,
+        212
+      ],
+      "size": [
+        340,
+        179
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/building.base.png",
+      "atlas": [
+        1292,
+        4,
+        340,
+        179
+      ]
+    },
+    {
+      "id": "prop.tent",
+      "source": "env",
+      "crop": [
+        418,
+        774,
+        798,
+        950
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        3,
+        5,
+        380,
+        170
+      ],
+      "sourceSize": [
+        377,
+        165
+      ],
+      "size": [
+        240,
+        105
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/prop.tent.png",
+      "atlas": [
+        1604,
+        694,
+        240,
+        105
+      ]
+    },
+    {
+      "id": "prop.tower",
+      "source": "env",
+      "crop": [
+        804,
+        724,
+        979,
+        950
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        2,
+        12,
+        175,
+        219
+      ],
+      "sourceSize": [
+        173,
+        207
+      ],
+      "size": [
+        173,
+        207
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/prop.tower.png",
+      "atlas": [
+        934,
+        4,
+        173,
+        207
+      ]
+    },
+    {
+      "id": "building.barracks",
+      "source": "env",
+      "crop": [
+        979,
+        731,
+        1438,
+        949
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        0,
+        10,
+        455,
+        211
+      ],
+      "sourceSize": [
+        455,
+        201
+      ],
+      "size": [
+        340,
+        150
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/building.barracks.png",
+      "atlas": [
+        4,
+        279,
+        340,
+        150
+      ]
+    },
+    {
+      "id": "background.cloud",
+      "source": "env",
+      "crop": [
+        12,
+        955,
+        275,
+        1064
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        11,
+        13,
+        255,
+        84
+      ],
+      "sourceSize": [
+        244,
+        71
+      ],
+      "size": [
+        244,
+        71
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/background.cloud.png",
+      "atlas": [
+        1007,
+        1338,
+        244,
+        71
+      ]
+    },
+    {
+      "id": "background.cloud-small",
+      "source": "env",
+      "crop": [
+        281,
+        957,
+        495,
+        1019
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        17,
+        14,
+        208,
+        51
+      ],
+      "sourceSize": [
+        191,
+        37
+      ],
+      "size": [
+        191,
+        37
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/background.cloud-small.png",
+      "atlas": [
+        437,
+        1502,
+        191,
+        37
+      ]
+    },
+    {
+      "id": "background.mountains",
+      "source": "env",
+      "crop": [
+        918,
+        959,
+        1438,
+        1079
+      ],
+      "pivot": null,
+      "state": "",
+      "muzzle": null,
+      "trim": [
+        0,
+        9,
+        510,
+        99
+      ],
+      "sourceSize": [
+        510,
+        90
+      ],
+      "size": [
+        510,
+        90
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "qa": "reviewed",
+      "file": "art/slices/v053/background.mountains.png",
+      "atlas": [
+        4,
+        1240,
+        510,
+        90
+      ]
+    }
+  ],
+  "aliases": {
+    "crate.worn": "crate.broken",
+    "barrel.worn": "barrel.dented",
+    "barrel.wreck": "barrel.broken",
+    "cover.sandbags-broken": "cover.sandbags",
+    "cover.concrete-broken": "cover.concrete",
+    "platform.scaffold": "platform.metal",
+    "building.bunker": "building.base",
+    "prop.flag": "prop.warning",
+    "prop.rock": "prop.rocks",
+    "prop.scrub": "prop.rocks"
+  },
+  "clips": {
+    "player.idle": [
+      "player.idle.0",
+      "player.idle.1",
+      "player.idle.2",
+      "player.idle.3"
+    ],
+    "player.run": [
+      "player.run.0",
+      "player.run.1",
+      "player.run.2",
+      "player.run.3",
+      "player.run.4",
+      "player.run.5",
+      "player.run.6",
+      "player.run.7",
+      "player.run.8"
+    ],
+    "player.jump": [
+      "player.jump.0",
+      "player.jump.1",
+      "player.jump.2",
+      "player.jump.3"
+    ],
+    "player.fall": [
+      "player.fall.0",
+      "player.fall.1"
+    ],
+    "player.crouch": [
+      "player.crouch.0",
+      "player.crouch.1"
+    ],
+    "player.crouch-walk": [
+      "player.crouch-walk.0",
+      "player.crouch-walk.1",
+      "player.crouch-walk.2",
+      "player.crouch-walk.3",
+      "player.crouch-walk.4",
+      "player.crouch-walk.5"
+    ],
+    "player.stand-shoot": [
+      "player.stand-shoot.0",
+      "player.stand-shoot.1",
+      "player.stand-shoot.2",
+      "player.stand-shoot.3"
+    ],
+    "player.run-shoot": [
+      "player.run-shoot.0",
+      "player.run-shoot.1",
+      "player.run-shoot.2",
+      "player.run-shoot.3",
+      "player.run-shoot.4",
+      "player.run-shoot.5",
+      "player.run-shoot.6"
+    ],
+    "player.crouch-shoot": [
+      "player.crouch-shoot.0",
+      "player.crouch-shoot.1",
+      "player.crouch-shoot.2",
+      "player.crouch-shoot.3"
+    ],
+    "player.throw": [
+      "player.throw.0",
+      "player.throw.1",
+      "player.throw.2",
+      "player.throw.3",
+      "player.throw.4"
+    ],
+    "player.hit": [
+      "player.hit.0",
+      "player.hit.1",
+      "player.hit.2",
+      "player.hit.3"
+    ],
+    "player.death": [
+      "player.death.0",
+      "player.death.1",
+      "player.death.2",
+      "player.death.3",
+      "player.death.4",
+      "player.death.5"
+    ],
+    "rifle.idle": [
+      "rifle.idle.0",
+      "rifle.idle.1"
+    ],
+    "rifle.walk": [
+      "rifle.walk.0",
+      "rifle.walk.1",
+      "rifle.walk.2",
+      "rifle.walk.3"
+    ],
+    "rifle.shoot": [
+      "rifle.shoot.0",
+      "rifle.shoot.1",
+      "rifle.shoot.2",
+      "rifle.shoot.3"
+    ],
+    "rifle.hit": [
+      "rifle.hit.0",
+      "rifle.hit.1",
+      "rifle.hit.2"
+    ],
+    "rifle.dead": [
+      "rifle.dead.0",
+      "rifle.dead.1",
+      "rifle.dead.2",
+      "rifle.dead.3"
+    ],
+    "knife.walk": [
+      "knife.walk.0",
+      "knife.walk.1",
+      "knife.walk.2",
+      "knife.walk.3"
+    ],
+    "knife.attack": [
+      "knife.attack.0",
+      "knife.attack.1",
+      "knife.attack.2",
+      "knife.attack.3"
+    ],
+    "knife.hit": [
+      "knife.hit.0",
+      "knife.hit.1",
+      "knife.hit.2"
+    ],
+    "knife.dead": [
+      "knife.dead.0",
+      "knife.dead.1",
+      "knife.dead.2",
+      "knife.dead.3"
+    ],
+    "shield.walk": [
+      "shield.walk.0",
+      "shield.walk.1",
+      "shield.walk.2",
+      "shield.walk.3"
+    ],
+    "shield.brace": [
+      "shield.brace.0",
+      "shield.brace.1"
+    ],
+    "shield.shoot": [
+      "shield.shoot.0",
+      "shield.shoot.1",
+      "shield.shoot.2"
+    ],
+    "shield.hit": [
+      "shield.hit.0",
+      "shield.hit.1",
+      "shield.hit.2"
+    ],
+    "shield.dead": [
+      "shield.dead.0",
+      "shield.dead.1",
+      "shield.dead.2",
+      "shield.dead.3"
+    ],
+    "rocket.idle": [
+      "rocket.idle.0",
+      "rocket.idle.1"
+    ],
+    "rocket.aim": [
+      "rocket.aim.0",
+      "rocket.aim.1"
+    ],
+    "rocket.fire": [
+      "rocket.fire.0",
+      "rocket.fire.1",
+      "rocket.fire.2"
+    ],
+    "rocket.hit": [
+      "rocket.hit.0",
+      "rocket.hit.1",
+      "rocket.hit.2"
+    ],
+    "rocket.dead": [
+      "rocket.dead.0",
+      "rocket.dead.1",
+      "rocket.dead.2",
+      "rocket.dead.3"
+    ],
+    "tank.explode": [
+      "tank.explode.0",
+      "tank.explode.1",
+      "tank.explode.2",
+      "tank.explode.3"
+    ],
+    "explosion": [
+      "explosion.0",
+      "explosion.1",
+      "explosion.2",
+      "explosion.3",
+      "explosion.4",
+      "explosion.5",
+      "explosion.6"
+    ]
+  },
+  "unavailable": [
+    {
+      "id": "boss.colossus",
+      "qa": "needs-remake",
+      "reason": "No giant walking boss supplied. Its original encounter and renderer are retained outside the first two zones."
+    },
+    {
+      "id": "player.aim-up",
+      "qa": "needs-remake",
+      "reason": "No upward-facing gun poses. Full-body animation retained; independent gun overlay supplies aiming direction."
+    },
+    {
+      "id": "cover.broken",
+      "qa": "shared-debris",
+      "reason": "No broken sandbag/concrete variants in new sheet; impact and debris used without invented textures."
+    }
+  ],
+  "muzzles": {
+    "player.idle.0": [
+      32.0,
+      28.8
+    ],
+    "player.idle.1": [
+      31.36,
+      29.44
+    ],
+    "player.idle.2": [
+      32.64,
+      29.44
+    ],
+    "player.idle.3": [
+      34.56,
+      29.44
+    ],
+    "player.run.0": [
+      33.92,
+      30.72
+    ],
+    "player.run.1": [
+      28.8,
+      28.8
+    ],
+    "player.run.2": [
+      28.8,
+      29.44
+    ],
+    "player.run.3": [
+      26.88,
+      28.16
+    ],
+    "player.run.4": [
+      29.44,
+      28.16
+    ],
+    "player.run.5": [
+      30.08,
+      28.16
+    ],
+    "player.run.6": [
+      29.44,
+      27.52
+    ],
+    "player.run.7": [
+      28.16,
+      28.16
+    ],
+    "player.run.8": [
+      23.04,
+      27.52
+    ],
+    "player.jump.0": [
+      45.44,
+      32.0
+    ],
+    "player.jump.1": [
+      35.84,
+      37.12
+    ],
+    "player.jump.2": [
+      39.04,
+      39.68
+    ],
+    "player.jump.3": [
+      44.8,
+      24.96
+    ],
+    "player.fall.0": [
+      32.64,
+      51.2
+    ],
+    "player.fall.1": [
+      42.88,
+      30.08
+    ],
+    "player.crouch.0": [
+      32.64,
+      24.32
+    ],
+    "player.crouch.1": [
+      30.72,
+      21.12
+    ],
+    "player.crouch-walk.0": [
+      35.84,
+      24.96
+    ],
+    "player.crouch-walk.1": [
+      40.32,
+      24.96
+    ],
+    "player.crouch-walk.2": [
+      42.24,
+      23.68
+    ],
+    "player.crouch-walk.3": [
+      40.32,
+      25.6
+    ],
+    "player.crouch-walk.4": [
+      42.88,
+      24.96
+    ],
+    "player.crouch-walk.5": [
+      43.52,
+      24.96
+    ],
+    "player.stand-shoot.0": [
+      37.76,
+      42.24
+    ],
+    "player.stand-shoot.1": [
+      39.04,
+      42.24
+    ],
+    "player.stand-shoot.2": [
+      40.96,
+      41.6
+    ],
+    "player.stand-shoot.3": [
+      43.52,
+      41.6
+    ],
+    "player.run-shoot.0": [
+      47.36,
+      48.64
+    ],
+    "player.run-shoot.1": [
+      49.92,
+      48.0
+    ],
+    "player.run-shoot.2": [
+      43.52,
+      48.64
+    ],
+    "player.run-shoot.3": [
+      40.32,
+      48.0
+    ],
+    "player.run-shoot.4": [
+      35.84,
+      49.28
+    ],
+    "player.run-shoot.5": [
+      30.08,
+      48.64
+    ],
+    "player.run-shoot.6": [
+      39.04,
+      48.0
+    ],
+    "player.crouch-shoot.0": [
+      49.28,
+      28.16
+    ],
+    "player.crouch-shoot.1": [
+      46.72,
+      29.44
+    ],
+    "player.crouch-shoot.2": [
+      47.36,
+      28.8
+    ],
+    "player.crouch-shoot.3": [
+      32.0,
+      27.52
+    ]
+  }
+}

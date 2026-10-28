@@ -35,6 +35,8 @@ function meta(file, dir = false) {
   if (file.endsWith(".meta") || existsSync(file + ".meta")) return;
   const ext = path.extname(file),
     hash = createHash("md5").update(file.replaceAll("\\", "/")).digest("hex");
+  // Images are imported by Creator's actual image/texture importer. Never label a PNG as TS.
+  if (!dir && ![".ts", ".scene", ".wav"].includes(ext)) return;
   let uuid = `${hash.slice(0, 8)}-${hash.slice(8, 12)}-${hash.slice(12, 16)}-${hash.slice(16, 20)}-${hash.slice(20)}`;
   if (file.replaceAll("\\", "/").endsWith("/GameManager.ts")) uuid = scriptUUID;
   if (ext === ".scene") uuid = sceneUUID;

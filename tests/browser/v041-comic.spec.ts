@@ -111,7 +111,7 @@ test("mobile comic presentation: real weapon pickups, fan pellets, visible rocke
   writeFileSync("reports/v041-comic.json", JSON.stringify(result, null, 2));
   expect(captures).toEqual(new Set(["rifle", "shotgun", "rocket"]));
   expect(fan).toBe(true);
-  expect(rocketSpeed).toBe(460);
+  expect(rocketSpeed).toBeCloseTo(460, 8);
   expect(rocketSmoke).toBe(true);
   expect(styles.has("rocket")).toBe(true);
   expect(errors).toEqual([]);

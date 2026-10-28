@@ -25,6 +25,11 @@ import { ObjectRenderer } from "./render/ObjectRenderer";
 import { AudioBridge } from "./platform/AudioBridge";
 import { Node } from "cc";
 import { viewportLayout } from "./ui/ViewportLayout";
+import { ComicAssets } from "./render/ComicAssets";
+import { ComicLevelRenderer } from "./render/ComicLevelRenderer";
+import { comicPose } from "./render/ComicPose";
+import { comicEquipment } from "./render/ComicEquipment";
+import { DirectClips } from "./render/DirectFrames";
 const { ccclass } = _decorator;
 @ccclass("GameManager")
 export class GameManager extends Component {
@@ -35,7 +40,7 @@ export class GameManager extends Component {
   private hud!: HUDController;
   private actors!: Ink;
   private effects!: Ink;
-  private map!: LevelRenderer;
+  private map!: LevelRenderer | ComicLevelRenderer;
   private objects!: ObjectRenderer;
   private world!: Node;
   private audio!: AudioBridge;
@@ -53,11 +58,20 @@ export class GameManager extends Component {
   private orientationPaused = false;
   private display = viewportLayout(C.width, C.height);
   onLoad(): void {
+    void this.boot();
+  }
+  private async boot(): Promise<void> {
     try {
+      await ComicAssets.load();
+      this.session.weapon.canPresent = id => !ComicAssets.enabled ||
+        ComicAssets.has(`weapon.${id}`) &&
+        (id !== "knife" && id !== "rocket" || Object.entries(DirectClips)
+          .filter(([clip])=>clip.startsWith(id+"."))
+          .every(([,frames])=>frames.every(frame=>ComicAssets.has(frame))));
       this.initialize();
       this.ready = true;
       console.info(
-        "[Breakout] V0.4.2 ready; open encounters, reversible boss entry and rounded comic art.",
+        "[Breakout] V0.5.7 ready; complete supplied knife/rocket actions and native modular terrain.",
       );
     } catch (error) {
       console.error("[Breakout] Initialization failed", error);
@@ -97,7 +111,7 @@ export class GameManager extends Component {
     board.getComponent(UITransform)!.setAnchorPoint(0, 0);
     this.board = board;
     this.world = node(board, "World presentation");
-    this.map = new LevelRenderer(this.world, this.session.level);
+    this.map = ComicAssets.enabled ? new ComicLevelRenderer(this.world, this.session.level) : new LevelRenderer(this.world, this.session.level);
     this.objects = new ObjectRenderer(this.world);
     this.actors = new Ink(node(this.world, "Stickmen"));
     this.effects = new Ink(node(this.world, "Combat effects"));
@@ -127,6 +141,7 @@ export class GameManager extends Component {
         ...this.session.snapshot(),
         playerShots: this.session.weapon.shots,
         audio: this.audio.status(),
+        art: { requested: C.artStyle, active: ComicAssets.enabled ? "comic" : "legacy", loaded: ComicAssets.ready, error: ComicAssets.error, playerFrame: comicPose(this.session.player), equipment: comicEquipment(this.session.player), renderedPlayer:this.renderer.playerStatus(),hudWeapon:this.hud.weaponStatus(),combat:this.combatRenderer.status(), terrain: "native-v057" },
         visibleChunks: this.map.visibleChunks,
         platform: this.platform.adapter.status(),
         display: {
@@ -287,14 +302,19 @@ export class GameManager extends Component {
     this.map.update(s.camera.x, s.level.guardDefeated, s.camera.visibleWidth);
     this.objects.draw(s);
     this.actors.clear();
+    this.renderer.begin(this.actors);
     for (const e of s.spawner.enemies)
       if (
         e.x > s.camera.x - 100 &&
         e.x < s.camera.x + s.camera.visibleWidth + 100 &&
-        e.deadTime < (e.kind === "guard" ? 2.6 : C.rendering.corpseDuration)
+        e.deadTime <
+          (e.kind === "guard" || e.kind === "colossus"
+            ? 2.6
+            : C.rendering.corpseDuration)
       )
         this.renderer.draw(this.actors, e, s.camera.x);
     this.renderer.draw(this.actors, s.player, s.camera.x);
+    this.renderer.end();
     this.combatRenderer.draw(this.effects, s);
     this.hud.update(
       s,

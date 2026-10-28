@@ -8,7 +8,7 @@ export class ProjectileArt {
     const x = p.x - cameraX,
       y = p.y,
       length = Math.hypot(p.vx, p.vy) || 1;
-    const visualScale = p.kind === "rocket" ? 1.8 : 1;
+    const visualScale = p.kind === "rocket" ? 2.1 : p.kind === "bullet" || p.kind === "pellet" ? 1.6 : 1;
     const cs = (p.vx / length) * visualScale,
       sn = (p.vy / length) * visualScale;
     const line = (
@@ -45,7 +45,15 @@ export class ProjectileArt {
       g.lineWidth = w;
       g.stroke();
     };
-    if (p.kind === "rocket") {
+    if (p.kind === "shockwave") {
+      shape(
+        [-34, -9, -21, 4, -16, 21, -6, 9, 5, 20, 12, 5, 3, -10],
+        colors.white,
+        3,
+      );
+      line(-38, 2, -57, 3, 2.4);
+      line(-37, -6, -51, -6, 2);
+    } else if (p.kind === "rocket") {
       const flame = 8 + Math.sin(time * 63) * 3;
       shape(
         [-32, 4, -41, 6, -39, 2, -49 - flame, 0, -40, -2, -44, -6, -32, -4],

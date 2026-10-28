@@ -139,9 +139,21 @@ export class LevelController {
       );
     body.x += dx;
     for (const s of this.solids) {
-      if (s.oneWay || s.slope) continue;
+      // Shallow terraces snap while walking, but their vertical faces must
+      // remain solid when an airborne body approaches below the top.
+      if (s.oneWay || (s.slope && (onTerrain || s.slope.left !== s.slope.right))) continue;
       if (body.y >= s.y + s.h - 0.01 || body.y + body.height <= s.y + 0.01)
         continue;
+      if (s.slope) {
+        // Feet can overlap the lip before the body center crosses it. Resolve
+        // that partial overlap too; a swept-edge-only check misses this case.
+        if (dx > 0 && oldX < s.x && body.x + body.halfWidth >= s.x) {
+          body.x = Math.min(body.x, s.x - body.halfWidth); body.vx = 0;
+        } else if (dx < 0 && oldX > s.x + s.w && body.x - body.halfWidth <= s.x + s.w) {
+          body.x = Math.max(body.x, s.x + s.w + body.halfWidth); body.vx = 0;
+        }
+        continue;
+      }
       if (
         dx > 0 &&
         oldX + body.halfWidth <= s.x + 0.01 &&

@@ -3,7 +3,13 @@ import { GameSession } from "../core/GameSession";
 import { WeaponSystem } from "../combat/WeaponSystem";
 import { Ink, colors } from "./Ink";
 import { ProjectileArt } from "./ProjectileArt";
+import { ColossusBoss } from "../enemy/ColossusBoss";
+import { ComicCombatArt } from "./ComicCombatArt";
+import { meleePose } from "./MeleePose";
+import { ComicAssets } from "./ComicAssets";
 export class CombatRenderer {
+  status(){return{rockets:this.comic.playerRockets,muzzle:this.comic.muzzlePoint};}
+  private comic = new ComicCombatArt();
   private projectileArt = new ProjectileArt();
   private tint = new Color(24, 24, 24);
   private smoke = new Color(30, 30, 30);
@@ -73,9 +79,39 @@ export class CombatRenderer {
   }
   draw(ink: Ink, session: GameSession): void {
     ink.clear();
+    this.comic.begin(ink);
     ink.g.lineCap = Graphics.LineCap.BUTT;
     const cam = session.camera.x,
       visible = session.camera.visibleWidth;
+    const player = session.player;
+    // New complete knife frames already contain the blade and painted slash.
+    // Drawing the legacy attached blade/arc here would duplicate the weapon.
+    if (player.meleeTime > 0 && !ComicAssets.enabled) {
+      const view=meleePose(player),facing=player.facing,x=player.x-cam,y=player.y+view.originY;
+      const hx=x+view.hand.x*facing,hy=player.y+view.hand.y;
+      if(!this.comic.knife(hx,hy,view.angle,facing,view.width))
+        ink.segment(hx,hy,hx+Math.cos(view.angle)*view.width*facing,hy+Math.sin(view.angle)*view.width,6);
+      if(view.active){
+        const direction=view.stage===2?1:-1;
+        const tail=view.end-direction*.85;
+        const arc=Array.from({length:14},(_,i)=>{
+          const a=tail+(view.end-tail)*i/13;
+          return{x:hx+Math.cos(a)*view.range*facing,y:hy+Math.sin(a)*view.range};
+        });
+        ink.line(arc,view.stage===3?13:9,colors.ink);ink.line(arc,view.stage===3?8:5,colors.white);
+        for(const offset of [8,16])ink.line(arc.map(p=>({x:p.x-offset*facing,y:p.y+offset*.25})),2,colors.muted);
+        for(let i=0;i<3;i++)ink.segment(x-facing*(30+i*9),y+18-i*12,x-facing*(50+i*9),y+18-i*12,2.5);
+      }
+    }
+    const tracking = session.projectiles.items.find(p => p.active && p.homing && p.target?.alive);
+    if (tracking?.target) {
+      const b = tracking.target.bounds, x = b.x + b.w / 2 - cam, y = b.y + b.h / 2;
+      ink.circle(x, y, 19, colors.ink, undefined, 2);
+      for (const sign of [-1, 1]) {
+        ink.segment(x + sign * 15, y, x + sign * 25, y, 2.5);
+        ink.segment(x, y + sign * 15, x, y + sign * 25, 2.5);
+      }
+    }
     for (const m of session.projectiles.marks)
       if (m.active && m.x > cam - 10 && m.x < cam + visible + 10) {
         ink.circle(m.x - cam, m.y, 1.6, colors.muted, colors.muted, 1);
@@ -88,18 +124,68 @@ export class CombatRenderer {
           colors.muted,
         );
       }
-    const boss = session.spawner.guard;
-    if (boss.active && boss.warningTime > 0) {
-      for (let n = 0; n < (boss.phase === 2 ? 2 : 1); n++) {
-        const x = boss.warningX - cam + n * 75;
-        ink.ellipse(x, 154, 85, 10, colors.ink, undefined, 2);
-        ink.segment(x - 35, 157, x + 35, 157, 2);
-        ink.segment(x - 50, 175, x - 40, 183, 2);
-        ink.segment(x + 50, 175, x + 40, 183, 2);
+    for (const boss of [session.spawner.guard, session.spawner.miniBoss]) {
+      if (!boss?.active || boss.warningTime <= 0) continue;
+      if (boss instanceof ColossusBoss && boss.attack === "sweep") {
+        const ax = boss.x + boss.facing * 132 - cam,
+          ay = boss.y + 138;
+        const bx = boss.warningX - cam,
+          by = boss.warningTargetY;
+        for (let n = 0; n < 16; n += 2)
+          ink.segment(
+            ax + ((bx - ax) * n) / 16,
+            ay + ((by - ay) * n) / 16,
+            ax + ((bx - ax) * (n + 1)) / 16,
+            ay + ((by - ay) * (n + 1)) / 16,
+            2,
+            colors.muted,
+          );
+        ink.circle(bx, by, 14, colors.ink, undefined, 2.5);
+      } else if (boss instanceof ColossusBoss && boss.attack === "stomp") {
+        const x = boss.x - cam;
+        ink.ellipse(x, boss.y + 5, 156, 11, colors.ink, undefined, 3);
+        for (const side of [-1, 1])
+          for (let n = 0; n < 3; n++) {
+            const px = x + side * (170 + n * 40);
+            ink.line(
+              [
+                { x: px, y: boss.y + 8 },
+                { x: px + side * 18, y: boss.y + 17 },
+                { x: px, y: boss.y + 26 },
+              ],
+              2.5,
+            );
+          }
+      } else {
+        const offsets =
+          boss instanceof ColossusBoss
+            ? boss.phase === 2
+              ? [-90, 0, 90]
+              : [0, 90]
+            : boss.phase === 2
+              ? [0, 75]
+              : [0];
+        for (const offset of offsets) {
+          const x = boss.warningX + offset - cam,
+            y = session.level.groundY(boss.warningX + offset);
+          ink.ellipse(
+            x,
+            y + 4,
+            boss instanceof ColossusBoss ? 65 : 85,
+            10,
+            colors.ink,
+            undefined,
+            2.5,
+          );
+          ink.segment(x - 25, y + 7, x + 25, y + 7, 2);
+          ink.segment(x - 38, y + 25, x - 30, y + 33, 2);
+          ink.segment(x + 38, y + 25, x + 30, y + 33, 2);
+        }
       }
     }
     for (const b of session.explosions.items)
       if (b.active && b.x > cam - b.radius && b.x < cam + visible + b.radius) {
+        if (this.comic.blast(ink, b, cam, session.level.groundY(b.x))) continue;
         const x = b.x - cam,
           age = b.age,
           t = age / 0.85,
@@ -224,6 +310,7 @@ export class CombatRenderer {
       }
     for (const p of session.particles.items)
       if (p.active && p.x > cam - 80 && p.x < cam + visible + 80) {
+        if (this.comic.particle(p, cam)) continue;
         const color = this.tint,
           amount = 1 - p.life / p.maxLife;
         color.set(
@@ -324,12 +411,15 @@ export class CombatRenderer {
     // Render bodies after their smoke so the special weapon silhouette stays legible.
     for (const p of session.projectiles.items)
       if (p.active && p.x > cam - 70 && p.x < cam + visible + 70)
-        this.projectileArt.draw(ink, p, cam, session.time);
+        if (!this.comic.projectile(p, cam))
+          this.projectileArt.draw(ink, p, cam, session.time);
     for (const g of session.grenades.items)
       if (g.active && g.x > cam - 30 && g.x < cam + visible + 30)
-        this.projectileArt.grenade(ink, g, cam);
+        if (!this.comic.grenade(g, cam))
+          this.projectileArt.grenade(ink, g, cam);
     const flash = (weapon: WeaponSystem) => {
       if (weapon.flash <= 0) return;
+      if (this.comic.muzzle(weapon, cam, weapon === session.weapon ? session.player : undefined)) return;
       const x = weapon.flashX - cam,
         y = weapon.flashY,
         d = weapon.flashFacing;
@@ -362,7 +452,12 @@ export class CombatRenderer {
     for (const e of session.spawner.enemies) {
       if (e.x < cam - 60 || e.x > cam + visible + 60) continue;
       flash(e.weapon);
-      if (e.windup > 0 && e.alive) {
+      if (
+        e.windup > 0 &&
+        e.alive &&
+        e.kind !== "guard" &&
+        e.kind !== "colossus"
+      ) {
         const x = e.x - cam,
           y = e.y + 91;
         ink.line(
@@ -374,7 +469,12 @@ export class CombatRenderer {
         );
         ink.circle(x, y, 1, colors.ink, colors.ink, 1);
       }
-      if (e.alive && e.health < e.maxHealth) {
+      if (
+        e.alive &&
+        e.health < e.maxHealth &&
+        e.kind !== "guard" &&
+        e.kind !== "colossus"
+      ) {
         ink.rect(
           e.x - cam - 18,
           e.y + 84,
@@ -396,5 +496,6 @@ export class CombatRenderer {
       }
     }
     ink.g.lineCap = Graphics.LineCap.ROUND;
+    this.comic.end();
   }
 }

@@ -1,5 +1,6 @@
 /** Units: design pixels, seconds. All combat/movement tuning lives here. */
 export const GameConfig = {
+  artStyle: "comic" as "legacy" | "comic",
   width: 1280,
   height: 720,
   fps: 60,
@@ -17,6 +18,8 @@ export const GameConfig = {
     acceleration: 2600,
     deceleration: 3200,
     jumpVelocity: 550,
+    airJumpVelocity: 500,
+    airJumps: 1,
     gravity: 1200,
     height: 74,
     halfWidth: 13,
@@ -27,7 +30,24 @@ export const GameConfig = {
     crouchSpeed: 115,
     deathDuration: 0.9,
   },
+  animation: { strideLength: 96, legSegment: 23 },
+  melee: {
+    range: 88, height: 64, damage: 4, interval: 0.48, duration: 0.28, windup: 0.07,
+    comboWindow: .42,
+    combo: [
+      { duration: .26, windup: .055, active: .115, range: 94, damage: 4, knockback: 125, lunge: 100, start: 1.05, end: -1.05 },
+      { duration: .30, windup: .075, active: .13, range: 105, damage: 4, knockback: 160, lunge: 120, start: -1.15, end: 1.10 },
+      { duration: .43, windup: .13, active: .16, range: 116, damage: 7, knockback: 250, lunge: 145, start: 1.50, end: -1.30 },
+    ],
+  },
+  homing: { turnRate: 2.5, acquireRange: 680, cone: 1.05, delay: 0.08 },
+  rocketLaunch: { turnRate: 14, exposedNose: 10, visualLength: 116 },
   weapons: {
+    knife: {
+      id: "knife", name: "战术刀", interval: .26, speed: 0, damage: 4, range: 94,
+      muzzleHeight: 40, pellets: 0, spread: 0, recoil: 0, ammo: -1, muzzleLength: 0,
+      blastRadius: 0, knockback: 125,
+    },
     rifle: {
       id: "rifle",
       name: "突击步枪",
@@ -62,7 +82,7 @@ export const GameConfig = {
     },
     rocket: {
       id: "rocket",
-      name: "火箭筒",
+      name: "追踪火箭筒",
       interval: 0.95,
       speed: 460,
       damage: 9,
@@ -138,6 +158,14 @@ export const GameConfig = {
       notice: 820,
       damage: 2,
     },
+    colossus: {
+      health: 132,
+      speed: 0,
+      range: 1100,
+      interval: 1.4,
+      notice: 1500,
+      damage: 1,
+    },
   },
   boss: {
     firstInterval: 2.3,
@@ -148,6 +176,17 @@ export const GameConfig = {
     maxSummons: 8,
     blastRadius: 85,
     shellFlight: 0.95,
+  },
+  colossus: {
+    intro: 1.3,
+    firstWindup: 1.05,
+    secondWindup: 0.78,
+    firstRecovery: 1.25,
+    secondRecovery: 0.95,
+    summonInterval: 15,
+    maxSummons: 4,
+    shellFlight: 1.05,
+    waveSpeed: 360,
   },
   enemyProjectile: { speed: 430, range: 1000 },
   pools: { projectiles: 96, particles: 320 },

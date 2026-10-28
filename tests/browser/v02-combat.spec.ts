@@ -54,7 +54,7 @@ test("real bullets break wood, collect shotgun, chain barrels and throw a limite
   expect(s.kills).toBeGreaterThan(0);
   expect(s.weapon).toBe("shotgun");
   await page.waitForFunction(
-    () => (globalThis as any).__BREAKOUT__.snapshot().audio.loaded === 7,
+    () => (globalThis as any).__BREAKOUT__.snapshot().audio.loaded === 9,
   );
   const audio = (
     await page.evaluate(() => (globalThis as any).__BREAKOUT__.snapshot())

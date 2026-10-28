@@ -13,6 +13,7 @@ import { LevelController } from "../level/LevelController";
 import { PlayerController } from "../player/PlayerController";
 import { ProjectileManager } from "../combat/ProjectileManager";
 import { WeaponSystem } from "../combat/WeaponSystem";
+import { EnemyTactics } from "./EnemyTactics";
 
 export class EnemyController {
   x: number;
@@ -40,8 +41,15 @@ export class EnemyController {
   shieldHealth = 0;
   shieldHit = 0;
   deathEffectPlayed = false;
-  private turnTime = 0;
-  private patrolDirection: Facing = -1;
+  private tactics = new EnemyTactics();
+  private stuckTime = 0;
+  private hopCooldown = 0;
+  private hopDirection: Facing = 1;
+  private hopTime = 0;
+  get action(): string {
+    return this.tactics.action;
+  }
+
   readonly weapon = new WeaponSystem();
   private hurtbox: Rect = { x: 0, y: 0, w: 26, h: 65 };
   constructor(readonly spawn: EnemySpawn) {
@@ -70,7 +78,7 @@ export class EnemyController {
     if (!this.alive) return "Dead";
     if (this.hitTime > 0) return "Hit";
     if (!this.grounded) return this.vy > 0 ? "Jump" : "Fall";
-    if (this.state === "Attack") return "Shoot";
+    if (this.state === "Attack" && Math.abs(this.vx) < 4) return "Shoot";
     if (Math.abs(this.vx) > 4) return "Run";
     return "Idle";
   }
@@ -92,9 +100,9 @@ export class EnemyController {
     }
     this.health = Math.max(0, this.health - amount);
     this.hitTime = blocked ? 0.025 : 0.13;
-    this.vx = direction * 65;
+    this.vx = this.kind === "turret" ? 0 : direction * 65;
     this.state = this.alive ? "Hit" : "Dead";
-    if (!blocked) this.windup = 0;
+    if (!blocked) this.tactics.interrupt(this);
     return true;
   }
   update(
@@ -109,9 +117,7 @@ export class EnemyController {
     this.attackCooldown = Math.max(0, this.attackCooldown - dt);
     this.hitTime = Math.max(0, this.hitTime - dt);
     this.shieldHit = Math.max(0, this.shieldHit - dt);
-    const config = C.enemies[this.kind],
-      dx = player.x - this.x,
-      dy = player.y - this.y;
+    const dx = player.x - this.x;
     if (!this.alive) {
       this.state = "Dead";
       this.deadTime += dt;
@@ -119,109 +125,34 @@ export class EnemyController {
     } else if (this.hitTime > 0) {
       this.state = "Hit";
       this.vx *= Math.exp(-dt * 5);
-    } else if (!player.alive || Math.abs(dx) > config.notice) {
-      this.windup = 0;
-      this.state = Math.abs(dx) > 900 ? "Idle" : "Patrol";
-      if (this.x < this.spawn.x - this.spawn.patrol) this.patrolDirection = 1;
-      if (this.x > this.spawn.x + this.spawn.patrol) this.patrolDirection = -1;
-      this.vx =
-        this.state === "Patrol" ? this.patrolDirection * config.speed * 0.3 : 0;
-      if (this.vx) this.facing = this.vx > 0 ? 1 : -1;
-    } else {
-      const desired: Facing = dx >= 0 ? 1 : -1;
-      if (this.kind === "shield" && desired !== this.facing) {
-        this.turnTime += dt;
-        if (this.turnTime >= 0.45) {
-          this.facing = desired;
-          this.turnTime = 0;
-        }
-      } else {
-        this.facing = desired;
-        this.turnTime = 0;
-      }
-      const close =
-        Math.abs(dx) <= config.range &&
-        Math.abs(dy) < (this.kind === "melee" ? 50 : 110);
-      const sight = !level.solids.some(
-        (s) =>
-          !s.entityId &&
-          segmentRect(
-            { x: this.x, y: this.y + 44 },
-            { x: player.x, y: player.y + 44 },
-            s,
-          ) !== null,
-      );
-      if (close && (this.kind === "melee" || sight)) {
-        this.state = "Attack";
-        this.vx =
-          this.kind === "ranged" && !this.spawn.onPlatform
-            ? (Math.abs(dx) < 220 ? -this.facing : this.facing) *
-              config.speed *
-              0.4
-            : 0;
-        this.aimPitch =
-          this.kind === "turret"
-            ? Math.max(-0.3, Math.min(0.65, Math.atan2(dy - 12, Math.abs(dx))))
-            : 0;
-        if (this.attackCooldown === 0 && this.windup === 0)
-          this.windup =
-            this.kind === "melee" ? 0.38 : this.kind === "turret" ? 0.7 : 0.4;
-        if (this.windup > 0) {
-          this.windup = Math.max(0, this.windup - dt);
-          if (this.windup === 0) {
-            if (this.kind === "melee") {
-              if (
-                Math.abs(player.x - this.x) < config.range + 8 &&
-                Math.abs(player.y - this.y) < 50
-              )
-                player.takeDamage(config.damage, this.facing);
-            } else if (this.kind === "turret") {
-              projectiles.spawn({
-                owner: "enemy",
-                x: this.x + this.facing * 36 * Math.cos(this.aimPitch),
-                y: this.y + 50 + 36 * Math.sin(this.aimPitch),
-                direction: this.facing,
-                pitch: this.aimPitch,
-                speed: 260,
-                damage: 2,
-                range: 1150,
-                kind: "cannon",
-                blastRadius: 55,
-              });
-              this.recoil = 1.5;
-            } else
-              this.weapon.fire(this, projectiles, "enemy", config.interval);
-            this.attackCooldown = config.interval;
-          }
-        }
-      } else {
-        this.state = "Chase";
-        this.windup = 0;
-        this.vx =
-          this.kind === "melee" || !sight || Math.abs(dx) > config.range
-            ? this.facing * config.speed
-            : 0;
-      }
-    }
+    } else this.tactics.update(this, dt, player, level, projectiles);
     // Ranged platform soldiers remain on their patrol surface. Melee soldiers can negotiate crates.
     if (
       this.kind === "ranged" &&
       this.spawn.onPlatform &&
-      Math.abs(this.x - this.spawn.x) > this.spawn.patrol
+      ((this.x <= this.spawn.x - this.spawn.patrol && this.vx < 0) ||
+        (this.x >= this.spawn.x + this.spawn.patrol && this.vx > 0))
     )
       this.vx = 0;
     const oldX = this.x;
+    this.hopTime = Math.max(0, this.hopTime - dt);
+    // Keep takeoff momentum: acquiring sight mid-jump must not stop a soldier
+    // above the same lip and drop it back into the depression.
+    if (this.hopTime > 0 && !this.grounded && this.alive && this.hitTime === 0)
+      this.vx = this.hopDirection * 160;
+    const walking = Math.abs(this.vx) > 4;
+    const walkDirection: Facing = this.vx >= 0 ? 1 : -1;
+    this.hopCooldown = Math.max(0, this.hopCooldown - dt);
     this.vy -= C.player.gravity * dt;
     level.move(this, dt);
-    if (this.grounded) this.stride += ((this.x - oldX) * this.facing) / 112;
-    if (
-      this.alive &&
-      this.kind === "melee" &&
-      this.state === "Chase" &&
-      this.grounded &&
-      Math.abs(this.x - oldX) < 0.01 &&
-      Math.abs(dx) > 50
-    )
-      this.vy = 480;
+    if (this.grounded)
+      this.stride += ((this.x - oldX) * this.facing) / C.animation.strideLength;
+    const mobile = this.kind === "melee" || this.kind === "ranged" || this.kind === "shield";
+    this.stuckTime = this.alive && mobile && !this.spawn.onPlatform && walking && this.grounded
+      && this.hitTime === 0 && Math.abs(this.x - oldX) < 0.01 ? this.stuckTime + dt : 0;
+    if (this.stuckTime > 0.14 && this.hopCooldown === 0) {
+      this.vy = 480; this.grounded = false; this.stuckTime = 0; this.hopCooldown = 0.85;
+      this.hopTime = .85; this.hopDirection = walkDirection;
+    }
   }
 }

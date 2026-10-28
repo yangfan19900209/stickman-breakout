@@ -1,0 +1,1633 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "00-v054-combat.spec.ts",
+      "file": "00-v054-combat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "keyboard knife and mobile ordinary fire perform real close combat",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5848,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:48:14.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46e39ca7299677652a61-70c041862e1d31860aa3",
+          "file": "00-v054-combat.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "rectangular road and enlarged guided rockets work through the first two zones",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 36408,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:48:20.904Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46e39ca7299677652a61-f5f76ab4c73e847a7483",
+          "file": "00-v054-combat.spec.ts",
+          "line": 36,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "gameplay.spec.ts",
+      "file": "gameplay.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "title, left-facing air fire, pause, audio switch, home and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4344,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:48:57.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8475ef9564cfbc88065-0ef74fdef85bfa33e20e",
+          "file": "gameplay.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "actual enemy damage leads to game over; restart restores objects and player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13680,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:49:01.698Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8475ef9564cfbc88065-1280c54da069d53858ee",
+          "file": "gameplay.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "complete V0.5 story with real keyboard input, mini tank and two-phase final boss",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 239755,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Run 5s x=1059 hp=4 kills=3 boss=132\n"
+                    },
+                    {
+                      "text": "Run 10s x=1955 hp=3 kills=7 boss=132\n"
+                    },
+                    {
+                      "text": "Run 15s x=3249 hp=5 kills=10 boss=132\n"
+                    },
+                    {
+                      "text": "Run 20s x=4208 hp=3 kills=12 boss=132\n"
+                    },
+                    {
+                      "text": "Run 25s x=5044 hp=3 kills=14 boss=132\n"
+                    },
+                    {
+                      "text": "Run 30s x=5742 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 35s x=5686 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 40s x=5623 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 45s x=5594 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 50s x=5586 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 55s x=5609 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 60s x=5679 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 65s x=5577 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 70s x=5603 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 75s x=5603 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 80s x=5580 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 85s x=5633 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 90s x=5615 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 95s x=5626 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 100s x=5608 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 105s x=5591 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 110s x=5581 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 115s x=5598 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 120s x=5661 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 125s x=5563 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 130s x=5504 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 135s x=5500 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 140s x=5481 hp=2 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 146s x=5512 hp=1 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 151s x=5632 hp=1 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 156s x=6887 hp=4 kills=19 boss=132\n"
+                    },
+                    {
+                      "text": "Run 161s x=7435 hp=4 kills=19 boss=73\n"
+                    },
+                    {
+                      "text": "Run 166s x=7209 hp=3 kills=19 boss=37\n"
+                    },
+                    {
+                      "text": "Run 171s x=7291 hp=2 kills=21 boss=15\n"
+                    },
+                    {
+                      "text": "Run 176s x=7835 hp=2 kills=22 boss=0\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:49:15.394Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8475ef9564cfbc88065-0cb80c11f49c40db3171",
+          "file": "gameplay.spec.ts",
+          "line": 104,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "movement.spec.ts",
+      "file": "movement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Cocos startup, keyboard movement and jump",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3774,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:15.177Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f4644ce1bc9a9704a33-a34638d2593eb22dcc8f",
+          "file": "movement.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-cancel.spec.ts",
+      "file": "v02-cancel.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "cancelling active joystick and firing fingers releases all input ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3537,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:18.980Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2cfa97bfd09f0b9d629b-5f6c66967ee11800a218",
+          "file": "v02-cancel.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-combat.spec.ts",
+      "file": "v02-combat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real bullets break wood, collect shotgun, chain barrels and throw a limited grenade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:22.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "171ab8462cc6fe1b1814-d7915b83e4c81f4f2e60",
+          "file": "v02-combat.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-input.spec.ts",
+      "file": "v02-input.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "actual analog drag, dead zone, three fingers and automatic recenter",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3241,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:27.491Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d28a8f3a7db7525e692f-2b144f50b3b6097c8471",
+          "file": "v02-input.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "dragging down crouches and dragging up aims without triggering a jump",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3823,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:30.738Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d28a8f3a7db7525e692f-6f716012678b523ec147",
+          "file": "v02-input.spec.ts",
+          "line": 105,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-visual.spec.ts",
+      "file": "v02-visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "original audio, scene culling and bounded frame work; portrait freezes the run",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:34.589Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "635a65c579e0c138f1cc-24c30ba2f4496f1d7386",
+          "file": "v02-visual.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v021-feedback.spec.ts",
+      "file": "v021-feedback.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real combat exposes wood/enemy/metal hits and layered blast debris with shake",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5022,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:41.183Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "eeda592baf3a6fa74788-86adba0616605b7fb94d",
+          "file": "v021-feedback.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v021-layout.spec.ts",
+      "file": "v021-layout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "portrait blocks gameplay; rotating restores full viewport with reachable controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3455,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:46.233Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-436a3852c0f53f5a122c",
+          "file": "v021-layout.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "full screen and larger hit areas at 667 / DPR 2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3562,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:49.698Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-57d8612a9899634ed8c8",
+          "file": "v021-layout.spec.ts",
+          "line": 141,
+          "column": 3
+        },
+        {
+          "title": "full screen and larger hit areas at 740 / DPR 3",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3650,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:53.274Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-9d61d0ed6ea5feec0dca",
+          "file": "v021-layout.spec.ts",
+          "line": 141,
+          "column": 3
+        },
+        {
+          "title": "full screen and larger hit areas at 1024 / DPR 2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5381,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:53:56.937Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-60f216f159fd098d131f",
+          "file": "v021-layout.spec.ts",
+          "line": 141,
+          "column": 3
+        },
+        {
+          "title": "browser safe-area bridge repositions controls; expanded fire hit region works",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2716,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:02.328Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-5918115abe47ebd7113e",
+          "file": "v021-layout.spec.ts",
+          "line": 232,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-actions.spec.ts",
+      "file": "v04-actions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "blank right tap and hold share the weapon; jump/grenade never cause extra shots",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4351,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:05.073Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00fb0fbd98d12a6f4680-91e7d31f520d4723c6fe",
+          "file": "v04-actions.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-floating.spec.ts",
+      "file": "v04-floating.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "left blank touch summons neutral floating stick, edge clamp and second finger ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:09.453Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4fa44e53287673ee7f70-f8c5a7a22fb33f6b81dd",
+          "file": "v04-floating.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-mobile.spec.ts",
+      "file": "v04-mobile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:12.777Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-a93cdbfbfce7f9008110",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 852x393",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2644,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:15.404Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-4763f38d53d4390f652f",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 932x430",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2743,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:18.057Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-79fb0392a602ad3b27bb",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 1280x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3540,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:20.810Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-b00d5e78c9736317a119",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "movement, fire, grenade, HUD priority and simultaneous release stay independent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3712,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:24.364Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-2254e2b7a031150ef242",
+          "file": "v04-mobile.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "viewport height changes retain fingers; browser blur signal clears input and pauses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3640,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:28.090Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-e926a7a51250ed514c17",
+          "file": "v04-mobile.spec.ts",
+          "line": 180,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-platform.spec.ts",
+      "file": "v04-platform.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "subpath manifest, icons, viewport, real fullscreen entry and exit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3256,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:31.761Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-d2a2ed0678940dd634be",
+          "file": "v04-platform.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "unsupported fullscreen and standalone detection safely fall back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6126,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:35.030Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-81caeacc50093e494703",
+          "file": "v04-platform.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "service worker preserves subpath offline startup after an online visit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8616,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:41.169Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-05d55c8f449d55195021",
+          "file": "v04-platform.spec.ts",
+          "line": 101,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v041-comic.spec.ts",
+      "file": "v041-comic.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile comic presentation: real weapon pickups, fan pellets, visible rocket and separate blasts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12932,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m460\u001b[39m\nReceived: \u001b[31m460.00000000000057\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m460\u001b[39m\nReceived: \u001b[31m460.00000000000057\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v041-comic.spec.ts:114:23",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v041-comic.spec.ts",
+                      "column": 23,
+                      "line": 114
+                    },
+                    "snippet": "  112 |   expect(captures).toEqual(new Set([\"rifle\", \"shotgun\", \"rocket\"]));\n  113 |   expect(fan).toBe(true);\n> 114 |   expect(rocketSpeed).toBe(460);\n      |                       ^\n  115 |   expect(rocketSmoke).toBe(true);\n  116 |   expect(styles.has(\"rocket\")).toBe(true);\n  117 |   expect(errors).toEqual([]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v041-comic.spec.ts",
+                        "column": 23,
+                        "line": 114
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m460\u001b[39m\nReceived: \u001b[31m460.00000000000057\u001b[39m\n\n  112 |   expect(captures).toEqual(new Set([\"rifle\", \"shotgun\", \"rocket\"]));\n  113 |   expect(fan).toBe(true);\n> 114 |   expect(rocketSpeed).toBe(460);\n      |                       ^\n  115 |   expect(rocketSmoke).toBe(true);\n  116 |   expect(styles.has(\"rocket\")).toBe(true);\n  117 |   expect(errors).toEqual([]);\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v041-comic.spec.ts:114:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:54:49.816Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v041-comic-mobile-comic-pr-89944--rocket-and-separate-blasts\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v041-comic-mobile-comic-pr-89944--rocket-and-separate-blasts\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v041-comic.spec.ts",
+                    "column": 23,
+                    "line": 114
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "b079d355730b3accd4d8-70bdff52a4830ad4b5b0",
+          "file": "v041-comic.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v042-bypass.spec.ts",
+      "file": "v042-bypass.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real keys: bypass living soldiers, activate boss, retreat freely and re-enter",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 81712,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:55:03.184Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bb37b3cb5fa19740ec84-85dd751fb9c692166d59",
+          "file": "v042-bypass.spec.ts",
+          "line": 9,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v042-terrain.spec.ts",
+      "file": "v042-terrain.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile road: actual movement follows both sides of the ridge and can return without jumping",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7850,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:56:24.996Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8770fd4a2f5a3cd9af2e-03e1c9cf27cca3a24246",
+          "file": "v042-terrain.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v05-art.spec.ts",
+      "file": "v05-art.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "comic texture loads without errors; active frames survive running, air fire, crouch, throwing and resume",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:56:32.874Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6262358228c3f95db53a-1d91dfe66a07f4f82374",
+          "file": "v05-art.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "missing comic texture falls back to playable legacy art",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:56:37.373Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6262358228c3f95db53a-ed73506d61fd1214241a",
+          "file": "v05-art.spec.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v05-movement.spec.ts",
+      "file": "v05-movement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "upright soldier and real keyboard double jump, with no third takeoff",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4241,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:56:47.922Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a0aad5589a28ef6cfc5c-016cb5644504df3952be",
+          "file": "v05-movement.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "two actual touch presses use the original jump button in the air",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3306,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:56:52.183Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a0aad5589a28ef6cfc5c-2457cca869e7e771beec",
+          "file": "v05-movement.spec.ts",
+          "line": 50,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v053-resources.spec.ts",
+      "file": "v053-resources.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "supplied six-frame crouch walk actually advances while moving and firing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4235,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:56:55.527Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e46fad6b4e9122e794b-b0e7412c74aa8768d4e0",
+          "file": "v053-resources.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "first two zones use supplied art with real combat, explosions and mobile controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49261,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T03:56:59.779Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e46fad6b4e9122e794b-fe40aa97c3c5fb0d57a6",
+          "file": "v053-resources.spec.ts",
+          "line": 26,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T03:48:14.077Z",
+    "duration": 575222.705,
+    "expected": 36,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

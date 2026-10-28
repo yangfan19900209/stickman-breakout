@@ -1,14 +1,20 @@
 const { PlaytestBrain } = require("./playtest-brain.cjs");
 /** Read-only route: play normally, deliberately leave the final infantry group alive. */
 class BypassBrain {
-  combat = new PlaytestBrain();
+  combat = new PlaytestBrain({ healthThreshold: 4 });
   phase = "approach";
   jumpUntil = 0;
   wasJump = false;
   entries = [];
   retreat = null;
   next(s) {
-    if (this.phase === "approach" && s.player.x > 5650) this.phase = "skip";
+    // Collect health before the bypass, then leave the optional tank and final
+    // infantry alive. The regression tests free entry/retreat, not compulsory kills.
+    if (
+      this.phase === "approach" &&
+      s.player.x > 5000
+    )
+      this.phase = "skip";
     if (this.phase === "skip" && s.boss.active) {
       this.entries.push({
         x: s.player.x,

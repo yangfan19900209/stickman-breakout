@@ -1,0 +1,62 @@
+{
+  "version": "0.5.7",
+  "patch": "industrial-underpass",
+  "date": "2026-10-20",
+  "sourceSHA256": "d3593febc2ba33a34b6da551bbba064327f59c311355b7f491aa0300f5adf81a",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 114,
+    "passed": 114,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "reproducedBefore": {
+    "report": "reports/v057-underpass-before.json",
+    "failed": 4
+  },
+  "changes": {
+    "platform": {
+      "x": 3300,
+      "oldBottom": 248,
+      "newBottom": 320,
+      "width": 160,
+      "height": 16
+    },
+    "sandbags": {
+      "oldX": 3480,
+      "newX": 3520,
+      "exitGap": 60
+    },
+    "ai": "Sandbags and indestructible cover block sight; wooden boxes/barrels remain firing targets. Existing hop logic and combat values preserved."
+  },
+  "browser": {
+    "targetedPassed": 2,
+    "standingRoute": "reports/v057-underpass-browser-results.json",
+    "rocketRegression": "reports/v057-underpass-first-attempt.json",
+    "note": "Rocket regression passed first run. Underpass return route initially met the dropped bridge lip; normal jump was added to the input pilot and the two-way standing underpass run passed."
+  },
+  "route": {
+    "report": "reports/v057-underpass.json",
+    "standingSamples": 28,
+    "health": 2,
+    "x": 3650.930555555579,
+    "errors": []
+  },
+  "web": {
+    "files": 52,
+    "bytes": 5907141
+  },
+  "wechat": {
+    "files": 51,
+    "bytes": 3105848
+  },
+  "screenshots": [
+    "reports/v057-underpass-left.png",
+    "reports/v057-underpass-right.png",
+    "reports/v057-underpass-exit.png"
+  ],
+  "limitations": [
+    "Full browser suite/campaign not rerun for this patch; all model logic tests including campaign/retreat passed.",
+    "WeChat editor/device runtime, sustained mobile FPS, upload and publication not verified/performed."
+  ]
+}

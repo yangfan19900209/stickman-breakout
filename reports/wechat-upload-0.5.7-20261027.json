@@ -1,0 +1,18 @@
+{
+  "appid": "wx7d2aae02691fc088",
+  "version": "0.5.7",
+  "description": "线条突围 V0.5.7｜开发者 YF：完整持刀/火箭筒动作、模块化地图、三段刀连击；修正火箭炮口与42%平台死角。",
+  "developer": "YF",
+  "type": "miniGame",
+  "robot": 1,
+  "buildSHA256": "df1a6d7d2ca91c660df7dec2ed98933cb040c5c870ec3a2a2b8f396bf65e8414",
+  "files": 51,
+  "bytes": 3105848,
+  "startedAt": "2026-10-27T00:55:47.452Z",
+  "status": "failed",
+  "release": "not_published",
+  "runtimeVerified": false,
+  "completedAt": "2026-10-27T00:56:02.754Z",
+  "errorCode": 20003,
+  "error": "Error: {\"errCode\":-10008,\"errMsg\":\"invalid ip: [upload IP omitted], reference: https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html\"}"
+}

@@ -26,7 +26,7 @@ test("original audio, scene culling and bounded frame work; portrait freezes the
   await page.locator("#GameCanvas").focus();
   await page.keyboard.press("Enter");
   await page.waitForFunction(
-    () => (globalThis as any).__BREAKOUT__.snapshot().audio.loaded === 7,
+    () => (globalThis as any).__BREAKOUT__.snapshot().audio.loaded === 9,
   );
   await page.keyboard.down("KeyJ");
   await page.waitForTimeout(500);

@@ -9,6 +9,8 @@ export class InputManager {
   private pauseQueued = false;
   private grenadeQueued = false;
   private shootQueued = false;
+  private meleeQueued = false;
+  private switchQueued = false;
   readonly joystick = new VirtualJoystick();
   private readonly frame: InputFrame = {
     axis: 0,
@@ -26,6 +28,8 @@ export class InputManager {
     if (action === "pause") this.pauseQueued = true;
     if (action === "grenade") this.grenadeQueued = true;
     if (action === "shoot") this.shootQueued = true;
+    if (action === "melee") this.meleeQueued = true;
+    if (action === "switchWeapon") this.switchQueued = true;
   }
   release(source: string): void {
     this.held.delete(source);
@@ -48,6 +52,9 @@ export class InputManager {
         ? 1
         : 0;
     frame.grenade = this.grenadeQueued;
+    frame.melee = this.meleeQueued || this.isHeld("melee");
+    frame.switchWeapon = this.switchQueued;this.switchQueued = false;
+    this.meleeQueued = false;
     this.jumpQueued = false;
     this.grenadeQueued = false;
     this.shootQueued = false;
@@ -59,6 +66,8 @@ export class InputManager {
     return p;
   }
   clear(): void {
+    this.switchQueued = false;
+    this.meleeQueued = false;
     this.held.clear();
     this.jumpQueued = false;
     this.pauseQueued = false;

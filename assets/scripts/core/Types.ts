@@ -14,7 +14,7 @@ export function surfaceY(r: Rect, x: number): number {
     : r.y + r.h;
 }
 export type Facing = -1 | 1;
-export type DamageKind = "bullet" | "explosion";
+export type DamageKind = "bullet" | "explosion" | "melee";
 export type DamageOwner = "player" | "enemy" | "neutral";
 export type AnimationState =
   | "Idle"
@@ -33,7 +33,13 @@ export type EnemyState =
   | "Attack"
   | "Hit"
   | "Dead";
-export type EnemyKind = "melee" | "ranged" | "shield" | "turret" | "guard";
+export type EnemyKind =
+  | "melee"
+  | "ranged"
+  | "shield"
+  | "turret"
+  | "guard"
+  | "colossus";
 export type GameState =
   | "title"
   | "playing"
@@ -49,6 +55,8 @@ export type InputAction =
   | "pause"
   | "crouch"
   | "aimUp"
+  | "melee"
+  | "switchWeapon"
   | "grenade";
 export interface InputFrame {
   axis: number;
@@ -58,6 +66,8 @@ export interface InputFrame {
   crouch?: boolean;
   aimY?: number;
   grenade?: boolean;
+  melee?: boolean;
+  switchWeapon?: boolean;
 }
 export interface Damageable {
   x: number;

@@ -1,12 +1,20 @@
 /** Read-only playtest policy shared by model and real-keyboard browser runs. */
 class PlaytestBrain {
+  constructor({ healthThreshold = 3 } = {}) {
+    this.healthThreshold = healthThreshold;
+  }
   jumpUntil = 0;
   lastGrenade = -10;
   next(s) {
     const p = s.player,
       time = s.time,
       enemy = s.enemies
-        .filter((e) => e.health > 0 && e.kind !== "guard")
+        .filter(
+          (e) =>
+            e.health > 0 &&
+            e.kind !== "colossus" &&
+            !(e.kind === "guard" && s.boss?.kind !== "colossus"),
+        )
         .sort((a, b) => Math.abs(a.x - p.x) - Math.abs(b.x - p.x))[0];
     let axis = 1,
       shoot = false,
@@ -20,17 +28,42 @@ class PlaytestBrain {
       (i) =>
         Math.abs(i.x - p.x) < 330 &&
         Math.abs(i.y - p.y - 25) < 100 &&
-        (i.kind !== "health" || p.health <= 3),
+        (i.kind !== "health" || p.health <= this.healthThreshold),
     );
-    if (useful) {
+    const mini = s.miniBoss;
+    if (mini?.health > 0 && Math.abs(mini.x - p.x) < 680 && !s.arenaEntered) {
+      const dx = mini.x - p.x;
+      axis =
+        Math.abs(dx) > 300
+          ? Math.sign(dx)
+          : p.facing !== Math.sign(dx)
+            ? Math.sign(dx)
+            : 0;
+      shoot = true;
+      if (mini.warningTime > 0 && Math.abs(p.x - mini.warningX) < 155)
+        axis = p.x < mini.x ? -1 : 1;
+      if (Math.abs(dx) < 350 && s.grenades > 0 && time - this.lastGrenade > 2) {
+        grenade = true;
+        this.lastGrenade = time;
+      }
+    } else if (useful) {
       axis = Math.abs(useful.x - p.x) < 18 ? 0 : useful.x > p.x ? 1 : -1;
       shoot = true;
     } else if (s.arenaEntered && s.guardHealth > 0) {
       const boss = s.boss,
-        dx = (s.enemies.find((e) => e.kind === "guard")?.x ?? 7840) - p.x;
+        dx =
+          (s.enemies.find(
+            (e) => e.kind === (boss.kind === "colossus" ? "colossus" : "guard"),
+          )?.x ?? 7840) - p.x;
       axis = dx > 420 ? 1 : 0;
       shoot = true;
-      if (boss.warningTime > 0 && Math.abs(p.x - boss.warningX) < 160) {
+      if (boss.attack === "stomp" && boss.windup > 0 && boss.windup < 0.35)
+        wantsJump = true;
+      if (
+        boss.attack !== "stomp" &&
+        boss.warningTime > 0 &&
+        Math.abs(p.x - boss.warningX) < 160
+      ) {
         axis = p.x < 7000 ? 1 : -1;
       }
       if (enemy && Math.abs(enemy.x - p.x) < 220) {

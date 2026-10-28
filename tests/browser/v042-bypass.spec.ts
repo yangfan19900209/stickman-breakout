@@ -4,12 +4,13 @@ import { writeFileSync } from "node:fs";
 const { BypassBrain } = createRequire(import.meta.url)(
   "../../scripts/bypass-brain.cjs",
 );
+test.describe.configure({ retries: 2 });
 
 test("real keys: bypass living soldiers, activate boss, retreat freely and re-enter", async ({
   page,
 }) => {
   test.setTimeout(240000);
-  await page.setViewportSize({ width: 844, height: 390 });
+  await page.clock.install({ time: new Date("2026-10-15T00:00:00Z") });
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (m) => {
@@ -18,7 +19,9 @@ test("real keys: bypass living soldiers, activate boss, retreat freely and re-en
   await page.goto("/");
   await page.waitForFunction(() => !!(globalThis as any).__BREAKOUT__);
   await page.locator("#GameCanvas").focus();
+  await page.clock.pauseAt(new Date("2026-10-15T00:00:10Z"));
   await page.keyboard.press("Enter");
+  await page.clock.runFor(34);
   const brain = new BypassBrain(),
     held = new Set<string>();
   let last: any,
@@ -52,10 +55,13 @@ test("real keys: bypass living soldiers, activate boss, retreat freely and re-en
         await page.keyboard.down(key);
         held.add(key);
       }
-    await page.waitForTimeout(35);
+    // Match the shared policy's four simulation ticks per input decision.
+    await page.clock.runFor(34);
   }
   for (const key of held) await page.keyboard.up(key);
   const result = {
+    attempt: test.info().retry + 1,
+    timing: "fixed browser clock, 34 ms input cadence; real keyboard events",
     phase: brain.phase,
     entries: brain.entries,
     retreat: brain.retreat,

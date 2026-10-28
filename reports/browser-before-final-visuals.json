@@ -1,0 +1,1777 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "gameplay.spec.ts",
+      "file": "gameplay.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "title, left-facing air fire, pause, audio switch, home and restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6520,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:23:48.163Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8475ef9564cfbc88065-0ef74fdef85bfa33e20e",
+          "file": "gameplay.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "actual enemy damage leads to game over; restart restores objects and player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14803,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:23:54.850Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8475ef9564cfbc88065-1280c54da069d53858ee",
+          "file": "gameplay.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "complete V0.5 story with real keyboard input, mini tank and two-phase final boss",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 360000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 83930,
+                  "error": {
+                    "message": "Error: {\"state\":\"dying\",\"x\":5441.777777777669,\"health\":0,\"boss\":132,\"enemies\":[{\"id\":\"m1\",\"x\":360.7472222511566,\"y\":174,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r1\",\"x\":902.4160068992313,\"y\":175.47803257364512,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r2\",\"x\":1282.2344444155008,\"y\":262,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m2\",\"x\":1617.2706597674357,\"y\":118,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r3\",\"x\":2001.0210068992292,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m3\",\"x\":2253,\"y\":148.592,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r4\",\"x\":2544.226006899214,\"y\":282,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m4\",\"x\":2632.787326434102,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r5\",\"x\":3281.4710068992185,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-B\",\"x\":2712.7039931007707,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-B\",\"x\":3643.4860776459577,\"y\":178,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C\",\"x\":3996.5167989388615,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":7,\"windup\":0,\"action\":\"recover\"},{\"id\":\"charge-C\",\"x\":4576.745723254367,\"y\":134,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C1\",\"x\":4874.206002737893,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C2\",\"x\":5380.304622605685,\"y\":294,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-C\",\"x\":5830.948415166346,\"y\":150,\"health\":0.15387096774193498,\"state\":\"Hit\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C2\",\"x\":6259.362499999954,\"y\":150,\"health\":6,\"state\":\"Patrol\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"rifle-C3\",\"x\":6530,\"y\":150,\"health\":4,\"state\":\"Idle\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"outpost-tank\",\"x\":6160,\"y\":150,\"health\":41,\"state\":\"Attack\",\"kind\":\"guard\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"gate-colossus\",\"x\":7840,\"y\":150,\"health\":132,\"state\":\"Idle\",\"kind\":\"colossus\",\"shield\":0,\"windup\":0,\"action\":\"salvo\"}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m",
+                    "stack": "Error: {\"state\":\"dying\",\"x\":5441.777777777669,\"health\":0,\"boss\":132,\"enemies\":[{\"id\":\"m1\",\"x\":360.7472222511566,\"y\":174,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r1\",\"x\":902.4160068992313,\"y\":175.47803257364512,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r2\",\"x\":1282.2344444155008,\"y\":262,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m2\",\"x\":1617.2706597674357,\"y\":118,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r3\",\"x\":2001.0210068992292,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m3\",\"x\":2253,\"y\":148.592,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r4\",\"x\":2544.226006899214,\"y\":282,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m4\",\"x\":2632.787326434102,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r5\",\"x\":3281.4710068992185,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-B\",\"x\":2712.7039931007707,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-B\",\"x\":3643.4860776459577,\"y\":178,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C\",\"x\":3996.5167989388615,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":7,\"windup\":0,\"action\":\"recover\"},{\"id\":\"charge-C\",\"x\":4576.745723254367,\"y\":134,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C1\",\"x\":4874.206002737893,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C2\",\"x\":5380.304622605685,\"y\":294,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-C\",\"x\":5830.948415166346,\"y\":150,\"health\":0.15387096774193498,\"state\":\"Hit\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C2\",\"x\":6259.362499999954,\"y\":150,\"health\":6,\"state\":\"Patrol\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"rifle-C3\",\"x\":6530,\"y\":150,\"health\":4,\"state\":\"Idle\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"outpost-tank\",\"x\":6160,\"y\":150,\"health\":41,\"state\":\"Attack\",\"kind\":\"guard\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"gate-colossus\",\"x\":7840,\"y\":150,\"health\":132,\"state\":\"Idle\",\"kind\":\"colossus\",\"shield\":0,\"windup\":0,\"action\":\"salvo\"}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts:218:5",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts",
+                      "column": 5,
+                      "line": 218
+                    },
+                    "snippet": "  216 |       enemies: end.enemies,\n  217 |     }),\n> 218 |   ).toBe(\"complete\");\n      |     ^\n  219 |   expect(end.guardHealth).toBe(0);\n  220 |   expect(end.player.health).toBeGreaterThan(0);\n  221 |   // Ordinary-zone clearance is optional; only the defeated boss gates completion."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts",
+                        "column": 5,
+                        "line": 218
+                      },
+                      "message": "Error: {\"state\":\"dying\",\"x\":5441.777777777669,\"health\":0,\"boss\":132,\"enemies\":[{\"id\":\"m1\",\"x\":360.7472222511566,\"y\":174,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r1\",\"x\":902.4160068992313,\"y\":175.47803257364512,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r2\",\"x\":1282.2344444155008,\"y\":262,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m2\",\"x\":1617.2706597674357,\"y\":118,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r3\",\"x\":2001.0210068992292,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m3\",\"x\":2253,\"y\":148.592,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r4\",\"x\":2544.226006899214,\"y\":282,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m4\",\"x\":2632.787326434102,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r5\",\"x\":3281.4710068992185,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-B\",\"x\":2712.7039931007707,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-B\",\"x\":3643.4860776459577,\"y\":178,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C\",\"x\":3996.5167989388615,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":7,\"windup\":0,\"action\":\"recover\"},{\"id\":\"charge-C\",\"x\":4576.745723254367,\"y\":134,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C1\",\"x\":4874.206002737893,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C2\",\"x\":5380.304622605685,\"y\":294,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-C\",\"x\":5830.948415166346,\"y\":150,\"health\":0.15387096774193498,\"state\":\"Hit\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C2\",\"x\":6259.362499999954,\"y\":150,\"health\":6,\"state\":\"Patrol\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"rifle-C3\",\"x\":6530,\"y\":150,\"health\":4,\"state\":\"Idle\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"outpost-tank\",\"x\":6160,\"y\":150,\"health\":41,\"state\":\"Attack\",\"kind\":\"guard\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"gate-colossus\",\"x\":7840,\"y\":150,\"health\":132,\"state\":\"Idle\",\"kind\":\"colossus\",\"shield\":0,\"windup\":0,\"action\":\"salvo\"}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n\n  216 |       enemies: end.enemies,\n  217 |     }),\n> 218 |   ).toBe(\"complete\");\n      |     ^\n  219 |   expect(end.guardHealth).toBe(0);\n  220 |   expect(end.player.health).toBeGreaterThan(0);\n  221 |   // Ordinary-zone clearance is optional; only the defeated boss gates completion.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts:218:5"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "Run 5s x=1085 hp=5 kills=3 boss=132\n"
+                    },
+                    {
+                      "text": "Run 10s x=2135 hp=4 kills=7 boss=132\n"
+                    },
+                    {
+                      "text": "Run 15s x=3287 hp=4 kills=10 boss=132\n"
+                    },
+                    {
+                      "text": "Run 20s x=4060 hp=2 kills=11 boss=132\n"
+                    },
+                    {
+                      "text": "Run 25s x=5034 hp=2 kills=14 boss=132\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:24:09.676Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\gameplay-complete-V0-5-sto-2ff79-nk-and-two-phase-final-boss\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\gameplay-complete-V0-5-sto-2ff79-nk-and-two-phase-final-boss\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts",
+                    "column": 5,
+                    "line": 218
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 92692,
+                  "error": {
+                    "message": "Error: {\"state\":\"dying\",\"x\":5719.083333333333,\"health\":0,\"boss\":132,\"enemies\":[{\"id\":\"m1\",\"x\":360.7472222511566,\"y\":174,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r1\",\"x\":902.4160068992313,\"y\":175.47803257364512,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r2\",\"x\":1282.2344444155008,\"y\":262,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m2\",\"x\":1614.6873264341023,\"y\":118,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r3\",\"x\":2001.0210068992292,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m3\",\"x\":2253,\"y\":148.592,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r4\",\"x\":2545.171006899213,\"y\":282,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m4\",\"x\":2631.4956597674354,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r5\",\"x\":3281.3360068992183,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-B\",\"x\":2712.7039931007707,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-B\",\"x\":3643.4860776459577,\"y\":178,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C\",\"x\":4006.3610617508475,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"charge-C\",\"x\":4573.74565976751,\"y\":134,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C1\",\"x\":4868.536006899187,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C2\",\"x\":5415.026006895821,\"y\":294,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-C\",\"x\":5812.288341316053,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C2\",\"x\":6103.671309027295,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C3\",\"x\":6467.540000000097,\"y\":150,\"health\":4,\"state\":\"Patrol\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"outpost-tank\",\"x\":6160,\"y\":150,\"health\":18,\"state\":\"Attack\",\"kind\":\"guard\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"gate-colossus\",\"x\":7840,\"y\":150,\"health\":132,\"state\":\"Idle\",\"kind\":\"colossus\",\"shield\":0,\"windup\":0,\"action\":\"salvo\"}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m",
+                    "stack": "Error: {\"state\":\"dying\",\"x\":5719.083333333333,\"health\":0,\"boss\":132,\"enemies\":[{\"id\":\"m1\",\"x\":360.7472222511566,\"y\":174,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r1\",\"x\":902.4160068992313,\"y\":175.47803257364512,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r2\",\"x\":1282.2344444155008,\"y\":262,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m2\",\"x\":1614.6873264341023,\"y\":118,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r3\",\"x\":2001.0210068992292,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m3\",\"x\":2253,\"y\":148.592,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r4\",\"x\":2545.171006899213,\"y\":282,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m4\",\"x\":2631.4956597674354,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r5\",\"x\":3281.3360068992183,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-B\",\"x\":2712.7039931007707,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-B\",\"x\":3643.4860776459577,\"y\":178,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C\",\"x\":4006.3610617508475,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"charge-C\",\"x\":4573.74565976751,\"y\":134,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C1\",\"x\":4868.536006899187,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C2\",\"x\":5415.026006895821,\"y\":294,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-C\",\"x\":5812.288341316053,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C2\",\"x\":6103.671309027295,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C3\",\"x\":6467.540000000097,\"y\":150,\"health\":4,\"state\":\"Patrol\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"outpost-tank\",\"x\":6160,\"y\":150,\"health\":18,\"state\":\"Attack\",\"kind\":\"guard\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"gate-colossus\",\"x\":7840,\"y\":150,\"health\":132,\"state\":\"Idle\",\"kind\":\"colossus\",\"shield\":0,\"windup\":0,\"action\":\"salvo\"}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts:218:5",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts",
+                      "column": 5,
+                      "line": 218
+                    },
+                    "snippet": "  216 |       enemies: end.enemies,\n  217 |     }),\n> 218 |   ).toBe(\"complete\");\n      |     ^\n  219 |   expect(end.guardHealth).toBe(0);\n  220 |   expect(end.player.health).toBeGreaterThan(0);\n  221 |   // Ordinary-zone clearance is optional; only the defeated boss gates completion."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts",
+                        "column": 5,
+                        "line": 218
+                      },
+                      "message": "Error: {\"state\":\"dying\",\"x\":5719.083333333333,\"health\":0,\"boss\":132,\"enemies\":[{\"id\":\"m1\",\"x\":360.7472222511566,\"y\":174,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r1\",\"x\":902.4160068992313,\"y\":175.47803257364512,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r2\",\"x\":1282.2344444155008,\"y\":262,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m2\",\"x\":1614.6873264341023,\"y\":118,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r3\",\"x\":2001.0210068992292,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m3\",\"x\":2253,\"y\":148.592,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r4\",\"x\":2545.171006899213,\"y\":282,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"m4\",\"x\":2631.4956597674354,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"r5\",\"x\":3281.3360068992183,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-B\",\"x\":2712.7039931007707,\"y\":163,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-B\",\"x\":3643.4860776459577,\"y\":178,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C\",\"x\":4006.3610617508475,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"charge-C\",\"x\":4573.74565976751,\"y\":134,\"health\":0,\"state\":\"Dead\",\"kind\":\"melee\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C1\",\"x\":4868.536006899187,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C2\",\"x\":5415.026006895821,\"y\":294,\"health\":0,\"state\":\"Dead\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"turret-C\",\"x\":5812.288341316053,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"turret\",\"shield\":0,\"windup\":0,\"action\":\"recover\"},{\"id\":\"shield-C2\",\"x\":6103.671309027295,\"y\":150,\"health\":0,\"state\":\"Dead\",\"kind\":\"shield\",\"shield\":8,\"windup\":0,\"action\":\"recover\"},{\"id\":\"rifle-C3\",\"x\":6467.540000000097,\"y\":150,\"health\":4,\"state\":\"Patrol\",\"kind\":\"ranged\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"outpost-tank\",\"x\":6160,\"y\":150,\"health\":18,\"state\":\"Attack\",\"kind\":\"guard\",\"shield\":0,\"windup\":0,\"action\":\"patrol\"},{\"id\":\"gate-colossus\",\"x\":7840,\"y\":150,\"health\":132,\"state\":\"Idle\",\"kind\":\"colossus\",\"shield\":0,\"windup\":0,\"action\":\"salvo\"}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n\n  216 |       enemies: end.enemies,\n  217 |     }),\n> 218 |   ).toBe(\"complete\");\n      |     ^\n  219 |   expect(end.guardHealth).toBe(0);\n  220 |   expect(end.player.health).toBeGreaterThan(0);\n  221 |   // Ordinary-zone clearance is optional; only the defeated boss gates completion.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts:218:5"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "Run 5s x=1085 hp=5 kills=3 boss=132\n"
+                    },
+                    {
+                      "text": "Run 10s x=2127 hp=4 kills=7 boss=132\n"
+                    },
+                    {
+                      "text": "Run 15s x=3287 hp=4 kills=10 boss=132\n"
+                    },
+                    {
+                      "text": "Run 20s x=4137 hp=4 kills=11 boss=132\n"
+                    },
+                    {
+                      "text": "Run 25s x=4970 hp=4 kills=14 boss=132\n"
+                    },
+                    {
+                      "text": "Run 30s x=5764 hp=1 kills=15 boss=132\n"
+                    },
+                    {
+                      "text": "Run 35s x=5744 hp=1 kills=16 boss=132\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-16T01:25:34.086Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\gameplay-complete-V0-5-sto-2ff79-nk-and-two-phase-final-boss-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\gameplay-complete-V0-5-sto-2ff79-nk-and-two-phase-final-boss-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\gameplay.spec.ts",
+                    "column": 5,
+                    "line": 218
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 247427,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Run 5s x=1070 hp=5 kills=3 boss=132\n"
+                    },
+                    {
+                      "text": "Run 10s x=2092 hp=4 kills=5 boss=132\n"
+                    },
+                    {
+                      "text": "Run 15s x=2770 hp=5 kills=9 boss=132\n"
+                    },
+                    {
+                      "text": "Run 20s x=3492 hp=3 kills=10 boss=132\n"
+                    },
+                    {
+                      "text": "Run 25s x=4589 hp=3 kills=12 boss=132\n"
+                    },
+                    {
+                      "text": "Run 30s x=5190 hp=3 kills=16 boss=132\n"
+                    },
+                    {
+                      "text": "Run 35s x=5724 hp=3 kills=17 boss=132\n"
+                    },
+                    {
+                      "text": "Run 40s x=5753 hp=3 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 45s x=5715 hp=3 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 50s x=5639 hp=3 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 55s x=5468 hp=3 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 60s x=5479 hp=3 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 65s x=5484 hp=3 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 70s x=5477 hp=3 kills=18 boss=132\n"
+                    },
+                    {
+                      "text": "Run 75s x=5499 hp=1 kills=19 boss=132\n"
+                    },
+                    {
+                      "text": "Run 80s x=6856 hp=5 kills=19 boss=132\n"
+                    },
+                    {
+                      "text": "Run 85s x=7437 hp=5 kills=19 boss=77\n"
+                    },
+                    {
+                      "text": "Run 90s x=7226 hp=4 kills=19 boss=39\n"
+                    },
+                    {
+                      "text": "Run 95s x=7261 hp=3 kills=21 boss=18\n"
+                    },
+                    {
+                      "text": "Run 100s x=7681 hp=2 kills=22 boss=0\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-10-16T01:27:07.297Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "a8475ef9564cfbc88065-0cb80c11f49c40db3171",
+          "file": "gameplay.spec.ts",
+          "line": 104,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "movement.spec.ts",
+      "file": "movement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Cocos startup, keyboard movement and jump",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4762,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:14.833Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f4644ce1bc9a9704a33-a34638d2593eb22dcc8f",
+          "file": "movement.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-cancel.spec.ts",
+      "file": "v02-cancel.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "cancelling active joystick and firing fingers releases all input ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4507,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:19.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2cfa97bfd09f0b9d629b-5f6c66967ee11800a218",
+          "file": "v02-cancel.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-combat.spec.ts",
+      "file": "v02-combat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real bullets break wood, collect shotgun, chain barrels and throw a limited grenade",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6092,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:24.150Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "171ab8462cc6fe1b1814-d7915b83e4c81f4f2e60",
+          "file": "v02-combat.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-input.spec.ts",
+      "file": "v02-input.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "actual analog drag, dead zone, three fingers and automatic recenter",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6258,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m2\u001b[39m\nReceived:   \u001b[31m2.7083333333333712\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m2\u001b[39m\nReceived:   \u001b[31m2.7083333333333712\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v02-input.spec.ts:94:45",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v02-input.spec.ts",
+                      "column": 45,
+                      "line": 94
+                    },
+                    "snippet": "  92 |   const b = await read(page);\n  93 |   expect(b.controls.stick.owner).toBe(null);\n> 94 |   expect(Math.abs(b.player.x - a.player.x)).toBeLessThan(2);\n     |                                             ^\n  95 |   expect(b.playerShots).toBe(a.playerShots);\n  96 |   expect(errors).toEqual([]);\n  97 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v02-input.spec.ts",
+                        "column": 45,
+                        "line": 94
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m2\u001b[39m\nReceived:   \u001b[31m2.7083333333333712\u001b[39m\n\n  92 |   const b = await read(page);\n  93 |   expect(b.controls.stick.owner).toBe(null);\n> 94 |   expect(Math.abs(b.player.x - a.player.x)).toBeLessThan(2);\n     |                                             ^\n  95 |   expect(b.playerShots).toBe(a.playerShots);\n  96 |   expect(errors).toEqual([]);\n  97 | });\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v02-input.spec.ts:94:45"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:30.267Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v02-input-actual-analog-dr-b01ab-gers-and-automatic-recenter\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v02-input-actual-analog-dr-b01ab-gers-and-automatic-recenter\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v02-input.spec.ts",
+                    "column": 45,
+                    "line": 94
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d28a8f3a7db7525e692f-2b144f50b3b6097c8471",
+          "file": "v02-input.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "dragging down crouches and dragging up aims without triggering a jump",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5214,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:37.002Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d28a8f3a7db7525e692f-6f716012678b523ec147",
+          "file": "v02-input.spec.ts",
+          "line": 98,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v02-visual.spec.ts",
+      "file": "v02-visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "original audio, scene culling and bounded frame work; portrait freezes the run",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6940,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:42.329Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "635a65c579e0c138f1cc-24c30ba2f4496f1d7386",
+          "file": "v02-visual.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v021-feedback.spec.ts",
+      "file": "v021-feedback.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real combat exposes wood/enemy/metal hits and layered blast debris with shake",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5944,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:49.298Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "eeda592baf3a6fa74788-86adba0616605b7fb94d",
+          "file": "v021-feedback.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v021-layout.spec.ts",
+      "file": "v021-layout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "portrait blocks gameplay; rotating restores full viewport with reachable controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5227,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:31:55.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-436a3852c0f53f5a122c",
+          "file": "v021-layout.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "full screen and larger hit areas at 667 / DPR 2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5122,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:00.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-57d8612a9899634ed8c8",
+          "file": "v021-layout.spec.ts",
+          "line": 141,
+          "column": 3
+        },
+        {
+          "title": "full screen and larger hit areas at 740 / DPR 3",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:05.686Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-9d61d0ed6ea5feec0dca",
+          "file": "v021-layout.spec.ts",
+          "line": 141,
+          "column": 3
+        },
+        {
+          "title": "full screen and larger hit areas at 1024 / DPR 2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8439,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:11.226Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-60f216f159fd098d131f",
+          "file": "v021-layout.spec.ts",
+          "line": 141,
+          "column": 3
+        },
+        {
+          "title": "browser safe-area bridge repositions controls; expanded fire hit region works",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3711,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:19.681Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da35d7eec63874ce7844-5918115abe47ebd7113e",
+          "file": "v021-layout.spec.ts",
+          "line": 232,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-actions.spec.ts",
+      "file": "v04-actions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "blank right tap and hold share the weapon; jump/grenade never cause extra shots",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6487,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:23.419Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00fb0fbd98d12a6f4680-91e7d31f520d4723c6fe",
+          "file": "v04-actions.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-floating.spec.ts",
+      "file": "v04-floating.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "left blank touch summons neutral floating stick, edge clamp and second finger ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6296,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:29.933Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4fa44e53287673ee7f70-f8c5a7a22fb33f6b81dd",
+          "file": "v04-floating.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-mobile.spec.ts",
+      "file": "v04-mobile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3832,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:36.264Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-a93cdbfbfce7f9008110",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 852x393",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3976,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:40.128Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-4763f38d53d4390f652f",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 932x430",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4029,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:44.118Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-79fb0392a602ad3b27bb",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 1280x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3762,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:48.163Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-b00d5e78c9736317a119",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "movement, fire, grenade, HUD priority and simultaneous release stay independent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4096,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:51.943Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-2254e2b7a031150ef242",
+          "file": "v04-mobile.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "viewport height changes retain fingers; browser blur signal clears input and pauses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3774,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:56.058Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-e926a7a51250ed514c17",
+          "file": "v04-mobile.spec.ts",
+          "line": 180,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-platform.spec.ts",
+      "file": "v04-platform.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "subpath manifest, icons, viewport, real fullscreen entry and exit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3598,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:32:59.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-d2a2ed0678940dd634be",
+          "file": "v04-platform.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "unsupported fullscreen and standalone detection safely fall back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:33:03.484Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-81caeacc50093e494703",
+          "file": "v04-platform.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "service worker preserves subpath offline startup after an online visit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8277,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:33:09.093Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10cc4da2111dd8db65c5-05d55c8f449d55195021",
+          "file": "v04-platform.spec.ts",
+          "line": 101,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v041-comic.spec.ts",
+      "file": "v041-comic.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile comic presentation: real weapon pickups, fan pellets, visible rocket and separate blasts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12174,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:33:17.405Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b079d355730b3accd4d8-70bdff52a4830ad4b5b0",
+          "file": "v041-comic.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v042-bypass.spec.ts",
+      "file": "v042-bypass.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real keys: bypass living soldiers, activate boss, retreat freely and re-enter",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 108492,
+                  "error": {
+                    "message": "Error: {\"x\":6833.777777777646,\"hp\":0,\"phase\":\"retreat\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"retreat\"\u001b[39m",
+                    "stack": "Error: {\"x\":6833.777777777646,\"hp\":0,\"phase\":\"retreat\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"retreat\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:78:5",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                      "column": 5,
+                      "line": 78
+                    },
+                    "snippet": "  76 |       phase: brain.phase,\n  77 |     }),\n> 78 |   ).toBe(\"done\");\n     |     ^\n  79 |   expect(brain.entries).toHaveLength(2);\n  80 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  81 |   // The regression needs living ordinary C-zone enemies on BOTH entries, not one fixed soldier."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                        "column": 5,
+                        "line": 78
+                      },
+                      "message": "Error: {\"x\":6833.777777777646,\"hp\":0,\"phase\":\"retreat\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"retreat\"\u001b[39m\n\n  76 |       phase: brain.phase,\n  77 |     }),\n> 78 |   ).toBe(\"done\");\n     |     ^\n  79 |   expect(brain.entries).toHaveLength(2);\n  80 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  81 |   // The regression needs living ordinary C-zone enemies on BOTH entries, not one fixed soldier.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:78:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:33:29.605Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                    "column": 5,
+                    "line": 78
+                  }
+                },
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 97999,
+                  "error": {
+                    "message": "Error: {\"x\":6060.897373503998,\"hp\":0,\"phase\":\"skip\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"skip\"\u001b[39m",
+                    "stack": "Error: {\"x\":6060.897373503998,\"hp\":0,\"phase\":\"skip\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"skip\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:78:5",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                      "column": 5,
+                      "line": 78
+                    },
+                    "snippet": "  76 |       phase: brain.phase,\n  77 |     }),\n> 78 |   ).toBe(\"done\");\n     |     ^\n  79 |   expect(brain.entries).toHaveLength(2);\n  80 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  81 |   // The regression needs living ordinary C-zone enemies on BOTH entries, not one fixed soldier."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                        "column": 5,
+                        "line": 78
+                      },
+                      "message": "Error: {\"x\":6060.897373503998,\"hp\":0,\"phase\":\"skip\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"skip\"\u001b[39m\n\n  76 |       phase: brain.phase,\n  77 |     }),\n> 78 |   ).toBe(\"done\");\n     |     ^\n  79 |   expect(brain.entries).toHaveLength(2);\n  80 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  81 |   // The regression needs living ordinary C-zone enemies on BOTH entries, not one fixed soldier.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:78:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-16T01:35:18.586Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                    "column": 5,
+                    "line": 78
+                  }
+                },
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 97298,
+                  "error": {
+                    "message": "Error: {\"x\":6833.777777777646,\"hp\":0,\"phase\":\"retreat\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"retreat\"\u001b[39m",
+                    "stack": "Error: {\"x\":6833.777777777646,\"hp\":0,\"phase\":\"retreat\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"retreat\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:78:5",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                      "column": 5,
+                      "line": 78
+                    },
+                    "snippet": "  76 |       phase: brain.phase,\n  77 |     }),\n> 78 |   ).toBe(\"done\");\n     |     ^\n  79 |   expect(brain.entries).toHaveLength(2);\n  80 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  81 |   // The regression needs living ordinary C-zone enemies on BOTH entries, not one fixed soldier."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                        "column": 5,
+                        "line": 78
+                      },
+                      "message": "Error: {\"x\":6833.777777777646,\"hp\":0,\"phase\":\"retreat\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"retreat\"\u001b[39m\n\n  76 |       phase: brain.phase,\n  77 |     }),\n> 78 |   ).toBe(\"done\");\n     |     ^\n  79 |   expect(brain.entries).toHaveLength(2);\n  80 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  81 |   // The regression needs living ordinary C-zone enemies on BOTH entries, not one fixed soldier.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:78:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-10-16T01:36:57.119Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter-retry2\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter-retry2\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                    "column": 5,
+                    "line": 78
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb37b3cb5fa19740ec84-85dd751fb9c692166d59",
+          "file": "v042-bypass.spec.ts",
+          "line": 9,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v042-terrain.spec.ts",
+      "file": "v042-terrain.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile road: actual movement follows both sides of the ridge and can return without jumping",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7812,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:38:34.940Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8770fd4a2f5a3cd9af2e-03e1c9cf27cca3a24246",
+          "file": "v042-terrain.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v05-art.spec.ts",
+      "file": "v05-art.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "comic texture loads without errors; active frames survive running, air fire, crouch, throwing and resume",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3739,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:38:42.869Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6262358228c3f95db53a-1d91dfe66a07f4f82374",
+          "file": "v05-art.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "missing comic texture falls back to playable legacy art",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9340,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:38:46.620Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6262358228c3f95db53a-ed73506d61fd1214241a",
+          "file": "v05-art.spec.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v05-movement.spec.ts",
+      "file": "v05-movement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "upright soldier and real keyboard double jump, with no third takeoff",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3744,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:38:55.982Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a0aad5589a28ef6cfc5c-016cb5644504df3952be",
+          "file": "v05-movement.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "two actual touch presses use the original jump button in the air",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3434,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:38:59.740Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a0aad5589a28ef6cfc5c-2457cca869e7e771beec",
+          "file": "v05-movement.spec.ts",
+          "line": 50,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v053-resources.spec.ts",
+      "file": "v053-resources.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "supplied six-frame crouch walk actually advances while moving and firing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4374,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:39:03.214Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e46fad6b4e9122e794b-b0e7412c74aa8768d4e0",
+          "file": "v053-resources.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "first two zones use supplied art with real combat, explosions and mobile controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 54395,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T01:39:07.600Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e46fad6b4e9122e794b-fe40aa97c3c5fb0d57a6",
+          "file": "v053-resources.spec.ts",
+          "line": 26,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T01:23:47.361Z",
+    "duration": 974995.695,
+    "expected": 32,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 1
+  }
+}

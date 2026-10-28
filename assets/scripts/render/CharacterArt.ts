@@ -112,6 +112,19 @@ export class CharacterArt {
     };
     if (a.animation !== "Dead")
       ink.ellipse(x, y - 3, 25, 3, colors.far, colors.far, 1);
+    if ((a.airJumpTime ?? 0) > 0) {
+      ink.ellipse(
+        x,
+        y - 7,
+        26 + (0.18 - a.airJumpTime!) * 80,
+        5,
+        black,
+        undefined,
+        2.5,
+      );
+      line(-16, -13, -28, -18, 1.7, gray);
+      line(15, -13, 28, -18, 1.7, gray);
+    }
     limb(pose.leftHip, pose.leftKnee, pose.leftAnkle, 6, gray);
     boot(pose.leftAnkle);
     const t = pose.torso,
@@ -142,6 +155,9 @@ export class CharacterArt {
     curve(t.x + 14, t.y + 10, n.x + 15, n.y - 7, n.x + 8, n.y - 3);
     finish();
     line(n.x - 6, n.y - 5, t.x - 4, t.y + 3, 3.5, gray);
+    line(n.x-6,n.y-4,n.x,n.y-8,1.8);
+    line(n.x,n.y-8,n.x+6,n.y-4,1.8);
+    line(t.x-6,t.y+11,t.x-1,t.y+10,1.4,gray);
     line(t.x - 8, t.y + 1, t.x + 9, t.y + 1, 4.5);
     shape(
       [t.x - 2, t.y + 3, t.x + 3, t.y + 3, t.x + 3, t.y - 1, t.x - 2, t.y - 1],
@@ -288,6 +304,8 @@ export class CharacterArt {
         pose.leftHand.y + 1,
         1.1,
       );
+      if(a.action==="reload")
+        shape([pose.leftHand.x-2,pose.leftHand.y-2,pose.leftHand.x+3,pose.leftHand.y-3,pose.leftHand.x+3,pose.leftHand.y-11,pose.leftHand.x-2,pose.leftHand.y-10],gray,1.6);
     }
     if (a.kind === "melee" && a.animation !== "Dead") {
       line(
@@ -322,6 +340,10 @@ export class CharacterArt {
     } else if (a.animation === "Hit") {
       line(h.x - 21, h.y + 8, h.x - 29, h.y + 13, 3);
       line(h.x - 20, h.y - 2, h.x - 30, h.y - 2, 2.5);
+    }
+    if(a.action==="chargeWindup" || a.action==="bash") {
+      line(h.x+22,h.y+21,h.x+22,h.y+11,3);
+      ink.circle(px(h.x+22),py(h.y+6),1.8,black,black,1);
     }
   }
 }

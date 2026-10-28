@@ -1,38 +1,144 @@
 {
   "snapshot": {
     "state": "playing",
-    "time": 70.93333333333585,
+    "time": 90.35833333335131,
     "player": {
-      "x": 7840.541666666336,
+      "x": 7323.805555555324,
       "y": 150,
-      "vx": 280,
+      "vx": 106.6666666666667,
       "vy": 0,
-      "health": 2,
+      "health": 3,
       "grounded": true,
-      "facing": 1,
+      "facing": -1,
       "animation": "Run",
       "crouched": false,
-      "aimPitch": 0
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": true
     },
-    "cameraX": 6949.9998843249405,
-    "kills": 23,
+    "cameraX": 6689.595594150612,
+    "kills": 19,
+    "melee": {
+      "swings": 6,
+      "hits": 6,
+      "time": 0,
+      "stage": 0,
+      "state": "idle",
+      "action": "melee_combo_reset",
+      "stance": "jump",
+      "comboRemaining": 0,
+      "heavyHits": 0,
+      "blockedHits": 0
+    },
     "weapon": "rifle",
+    "weaponPresentation": {
+      "id": "rifle",
+      "name": "突击步枪",
+      "ammo": -1,
+      "icon": "weapon.rifle",
+      "ammoText": "∞  弹药",
+      "projectile": "bullet",
+      "sound": "rifle",
+      "width": 59,
+      "mode": "ranged",
+      "muzzleExtra": 0
+    },
+    "playerWeapon": "rifle",
     "ammo": -1,
-    "grenades": 4,
-    "grenadesThrown": 3,
-    "destroyedObjects": 19,
-    "explosions": 56,
+    "grenades": 3,
+    "grenadesThrown": 4,
+    "destroyedObjects": 17,
+    "explosions": 69,
     "feedback": {
       "shakeTime": 0,
       "shakePower": 7,
       "hitStop": 0,
-      "blasts": [],
-      "particles": [],
-      "peakParticles": 174,
+      "blasts": [
+        {
+          "x": 7448.972222221977,
+          "y": 274.77637042894287,
+          "age": 0.8083333333333329,
+          "radius": 35,
+          "style": "cannon"
+        }
+      ],
+      "particles": [
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "smoke"
+        },
+        {
+          "kind": "shell"
+        }
+      ],
+      "peakParticles": 151,
       "droppedParticles": 0
     },
-    "combo": 0,
-    "bestCombo": 4,
+    "combo": 2,
+    "bestCombo": 5,
     "objects": [
       {
         "id": "shotgun-cache",
@@ -98,13 +204,13 @@
         "id": "hanging-01",
         "kind": "hanging",
         "x": 1530,
-        "y": 410,
+        "y": 374,
         "w": 54,
         "h": 48,
-        "health": 2,
-        "alive": true,
+        "health": 0,
+        "alive": false,
         "solid": false,
-        "triggered": false
+        "triggered": true
       },
       {
         "id": "crate-02",
@@ -137,9 +243,9 @@
         "y": 128,
         "w": 38,
         "h": 58,
-        "health": 0,
-        "alive": false,
-        "solid": false,
+        "health": 3,
+        "alive": true,
+        "solid": true,
         "triggered": false
       },
       {
@@ -161,7 +267,7 @@
         "y": 150,
         "w": 58,
         "h": 62,
-        "health": 1.1710451338368895,
+        "health": 8,
         "alive": true,
         "solid": true,
         "triggered": false
@@ -185,9 +291,9 @@
         "y": 178,
         "w": 75,
         "h": 44,
-        "health": 0,
-        "alive": false,
-        "solid": false,
+        "health": 6,
+        "alive": true,
+        "solid": true,
         "triggered": false
       },
       {
@@ -209,7 +315,7 @@
         "y": 150,
         "w": 52,
         "h": 47,
-        "health": 2,
+        "health": 3,
         "alive": true,
         "solid": true,
         "triggered": false
@@ -233,9 +339,9 @@
         "y": 310,
         "w": 56,
         "h": 48,
-        "health": 0,
-        "alive": false,
-        "solid": false,
+        "health": 1,
+        "alive": true,
+        "solid": true,
         "triggered": false
       },
       {
@@ -345,19 +451,118 @@
         "kind": "health",
         "x": 458,
         "y": 184
+      },
+      {
+        "kind": "health",
+        "x": 6658,
+        "y": 160
       }
     ],
-    "projectileStates": [],
-    "remaining": 0,
-    "guardHealth": 0,
+    "projectileStates": [
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 6557.1238888886155,
+        "y": 310.68749999999983,
+        "vx": -1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 6674.984999999736,
+        "y": 273.64166666666654,
+        "vx": -1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 6780.911666666413,
+        "y": 191.39249999999987,
+        "vx": -1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 6890.03833333309,
+        "y": 198,
+        "vx": -1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 7549.378333333109,
+        "y": 198,
+        "vx": 1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false
+      },
+      {
+        "owner": "enemy",
+        "kind": "cannon",
+        "x": 7671.664594356225,
+        "y": 397.8650793650794,
+        "vx": -229.48677248700685,
+        "vy": 78.09523809523816,
+        "homing": false,
+        "locked": false
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 7219.0355555553215,
+        "y": 198.64,
+        "vx": -1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false
+      },
+      {
+        "owner": "enemy",
+        "kind": "cannon",
+        "x": 7100.954168389879,
+        "y": 189.40812242036478,
+        "vx": -355.3439014303624,
+        "vy": -57.712318583201096,
+        "homing": false,
+        "locked": false
+      }
+    ],
+    "remaining": 3,
+    "guardHealth": 10.828487903225827,
     "boss": {
+      "kind": "colossus",
+      "name": "重装裁决者",
+      "attack": "salvo",
+      "introTime": 0,
       "phase": 2,
       "active": true,
-      "mode": "destroyed",
-      "warningX": 7142.138888888665,
-      "warningTime": 0,
+      "mode": "recovering",
+      "warningX": 7467.038888888643,
+      "warningTime": 1.3050000000000037,
       "windup": 0,
-      "summons": 4
+      "summons": 2
+    },
+    "miniBoss": {
+      "x": 6160,
+      "health": 0,
+      "maxHealth": 42,
+      "active": true,
+      "phase": 2,
+      "warningX": 5600.93055555556,
+      "warningTime": 0
     },
     "levelWidth": 8200,
     "exitX": 8070,
@@ -375,7 +580,7 @@
         "name": "工业突破",
         "start": 1850,
         "end": 3800,
-        "cleared": true
+        "cleared": false
       },
       {
         "id": "C",
@@ -386,7 +591,7 @@
       },
       {
         "id": "D",
-        "name": "战车决战",
+        "name": "裁决者决战",
         "start": 6740,
         "end": 8200,
         "cleared": false
@@ -407,7 +612,7 @@
         "id": "lift-C",
         "kind": "lift",
         "x": 5000,
-        "y": 197.2083333333322,
+        "y": 264.9166666666648,
         "w": 142,
         "h": 16,
         "released": false,
@@ -418,29 +623,18 @@
       {
         "x": 0,
         "y": -240,
-        "w": 160,
+        "w": 270,
         "h": 390,
         "kind": "ground",
         "slope": {
           "left": 150,
           "right": 150
-        }
-      },
-      {
-        "x": 160,
-        "y": -240,
-        "w": 110,
-        "h": 414,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 174
         }
       },
       {
         "x": 270,
         "y": -240,
-        "w": 250,
+        "w": 370,
         "h": 414,
         "kind": "ground",
         "slope": {
@@ -449,36 +643,14 @@
         }
       },
       {
-        "x": 520,
-        "y": -240,
-        "w": 120,
-        "h": 414,
-        "kind": "ground",
-        "slope": {
-          "left": 174,
-          "right": 150
-        }
-      },
-      {
         "x": 640,
         "y": -240,
-        "w": 165,
+        "w": 295,
         "h": 390,
         "kind": "ground",
         "slope": {
           "left": 150,
           "right": 150
-        }
-      },
-      {
-        "x": 805,
-        "y": -240,
-        "w": 130,
-        "h": 424,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 184
         }
       },
       {
@@ -496,11 +668,11 @@
         "x": 1140,
         "y": -240,
         "w": 160,
-        "h": 424,
+        "h": 390,
         "kind": "ground",
         "slope": {
-          "left": 184,
-          "right": 156
+          "left": 150,
+          "right": 150
         }
       },
       {
@@ -511,13 +683,13 @@
         "kind": "ground",
         "slope": {
           "left": 156,
-          "right": 118
+          "right": 156
         }
       },
       {
         "x": 1480,
         "y": -240,
-        "w": 150,
+        "w": 260,
         "h": 358,
         "kind": "ground",
         "slope": {
@@ -526,53 +698,20 @@
         }
       },
       {
-        "x": 1630,
-        "y": -240,
-        "w": 110,
-        "h": 390,
-        "kind": "ground",
-        "slope": {
-          "left": 118,
-          "right": 150
-        }
-      },
-      {
         "x": 1740,
         "y": -240,
-        "w": 270,
+        "w": 630,
         "h": 390,
         "kind": "ground",
         "slope": {
           "left": 150,
           "right": 150
-        }
-      },
-      {
-        "x": 2010,
-        "y": -240,
-        "w": 235,
-        "h": 390,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 150
-        }
-      },
-      {
-        "x": 2245,
-        "y": -240,
-        "w": 125,
-        "h": 390,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 128
         }
       },
       {
         "x": 2370,
         "y": -240,
-        "w": 110,
+        "w": 255,
         "h": 368,
         "kind": "ground",
         "slope": {
@@ -581,64 +720,31 @@
         }
       },
       {
-        "x": 2480,
-        "y": -240,
-        "w": 145,
-        "h": 403,
-        "kind": "ground",
-        "slope": {
-          "left": 128,
-          "right": 163
-        }
-      },
-      {
         "x": 2625,
         "y": -240,
-        "w": 195,
+        "w": 290,
         "h": 403,
         "kind": "ground",
         "slope": {
           "left": 163,
           "right": 163
-        }
-      },
-      {
-        "x": 2820,
-        "y": -240,
-        "w": 95,
-        "h": 403,
-        "kind": "ground",
-        "slope": {
-          "left": 163,
-          "right": 150
         }
       },
       {
         "x": 2915,
         "y": -240,
-        "w": 435,
+        "w": 545,
         "h": 390,
         "kind": "ground",
         "slope": {
           "left": 150,
           "right": 150
-        }
-      },
-      {
-        "x": 3350,
-        "y": -240,
-        "w": 110,
-        "h": 418,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 178
         }
       },
       {
         "x": 3460,
         "y": -240,
-        "w": 190,
+        "w": 260,
         "h": 418,
         "kind": "ground",
         "slope": {
@@ -647,20 +753,9 @@
         }
       },
       {
-        "x": 3650,
-        "y": -240,
-        "w": 70,
-        "h": 418,
-        "kind": "ground",
-        "slope": {
-          "left": 178,
-          "right": 150
-        }
-      },
-      {
         "x": 3720,
         "y": -240,
-        "w": 290,
+        "w": 380,
         "h": 390,
         "kind": "ground",
         "slope": {
@@ -669,42 +764,20 @@
         }
       },
       {
-        "x": 4010,
-        "y": -240,
-        "w": 90,
-        "h": 416,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 176
-        }
-      },
-      {
         "x": 4100,
         "y": -240,
-        "w": 230,
+        "w": 390,
         "h": 416,
         "kind": "ground",
         "slope": {
           "left": 176,
           "right": 176
-        }
-      },
-      {
-        "x": 4330,
-        "y": -240,
-        "w": 160,
-        "h": 416,
-        "kind": "ground",
-        "slope": {
-          "left": 176,
-          "right": 134
         }
       },
       {
         "x": 4490,
         "y": -240,
-        "w": 190,
+        "w": 340,
         "h": 374,
         "kind": "ground",
         "slope": {
@@ -713,42 +786,20 @@
         }
       },
       {
-        "x": 4680,
-        "y": -240,
-        "w": 150,
-        "h": 390,
-        "kind": "ground",
-        "slope": {
-          "left": 134,
-          "right": 150
-        }
-      },
-      {
         "x": 4830,
         "y": -240,
-        "w": 370,
+        "w": 560,
         "h": 390,
         "kind": "ground",
         "slope": {
           "left": 150,
           "right": 150
-        }
-      },
-      {
-        "x": 5200,
-        "y": -240,
-        "w": 190,
-        "h": 390,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 120
         }
       },
       {
         "x": 5390,
         "y": -240,
-        "w": 80,
+        "w": 170,
         "h": 360,
         "kind": "ground",
         "slope": {
@@ -757,64 +808,9 @@
         }
       },
       {
-        "x": 5470,
-        "y": -240,
-        "w": 90,
-        "h": 390,
-        "kind": "ground",
-        "slope": {
-          "left": 120,
-          "right": 150
-        }
-      },
-      {
         "x": 5560,
         "y": -240,
-        "w": 530,
-        "h": 390,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 150
-        }
-      },
-      {
-        "x": 6090,
-        "y": -240,
-        "w": 140,
-        "h": 425,
-        "kind": "ground",
-        "slope": {
-          "left": 150,
-          "right": 185
-        }
-      },
-      {
-        "x": 6230,
-        "y": -240,
-        "w": 120,
-        "h": 425,
-        "kind": "ground",
-        "slope": {
-          "left": 185,
-          "right": 185
-        }
-      },
-      {
-        "x": 6350,
-        "y": -240,
-        "w": 160,
-        "h": 425,
-        "kind": "ground",
-        "slope": {
-          "left": 185,
-          "right": 150
-        }
-      },
-      {
-        "x": 6510,
-        "y": -240,
-        "w": 1690,
+        "w": 2640,
         "h": 390,
         "kind": "ground",
         "slope": {
@@ -921,12 +917,28 @@
         "kind": "step"
       },
       {
+        "x": 2410,
+        "y": 128,
+        "w": 38,
+        "h": 58,
+        "kind": "crate",
+        "entityId": "barrel-03"
+      },
+      {
         "x": 3100,
         "y": 150,
         "w": 58,
         "h": 62,
         "kind": "crate",
         "entityId": "steel-01"
+      },
+      {
+        "x": 3480,
+        "y": 178,
+        "w": 75,
+        "h": 44,
+        "kind": "crate",
+        "entityId": "sandbags-B"
       },
       {
         "x": 3730,
@@ -945,6 +957,14 @@
         "entityId": "concrete-C"
       },
       {
+        "x": 4420,
+        "y": 310,
+        "w": 56,
+        "h": 48,
+        "kind": "crate",
+        "entityId": "hidden-rockets"
+      },
+      {
         "x": 3080,
         "y": 150,
         "w": 210,
@@ -953,258 +973,300 @@
       },
       {
         "x": 5000,
-        "y": 197.2083333333322,
+        "y": 264.9166666666648,
         "w": 142,
         "h": 16,
         "kind": "platform"
       }
     ],
-    "exitOpen": true,
-    "bullets": 0,
-    "shots": 342,
-    "hits": 130,
+    "exitOpen": false,
+    "bullets": 8,
+    "shots": 532,
+    "hits": 93,
     "peakBullets": 11,
     "droppedBullets": 0,
     "enemies": [
       {
         "id": "m1",
-        "x": 460.2055555844913,
+        "x": 534.5444444155085,
         "y": 174,
         "health": 0,
         "state": "Dead",
         "kind": "melee",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "r1",
-        "x": 887.4107445725139,
-        "y": 171.5535793497344,
+        "x": 902.4160068992313,
+        "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "r2",
-        "x": 1229.6549999999968,
+        "x": 1283.6483636916457,
         "y": 262,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "m2",
-        "x": 1424.2498264340986,
-        "y": 129.76948108613473,
+        "x": 1353.8539931007608,
+        "y": 156,
         "health": 0,
         "state": "Dead",
         "kind": "melee",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "r3",
-        "x": 1965.2910068992164,
+        "x": 2027,
         "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "m3",
-        "x": 2293.378993100801,
-        "y": 141.48529721425905,
-        "health": 0,
-        "state": "Dead",
+        "x": 3014.150000000034,
+        "y": 200,
+        "health": 3,
+        "state": "Idle",
         "kind": "melee",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "patrol"
       },
       {
         "id": "r4",
-        "x": 2559.346006899192,
+        "x": 2481.007482621654,
         "y": 282,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "m4",
-        "x": 2662.495659767432,
+        "x": 2633,
         "y": 163,
         "health": 0,
         "state": "Dead",
         "kind": "melee",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "r5",
-        "x": 3256.5360068992245,
-        "y": 150,
-        "health": 0,
-        "state": "Dead",
+        "x": 3276.839999999994,
+        "y": 164,
+        "health": 4,
+        "state": "Idle",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "patrol"
       },
       {
         "id": "shield-B",
-        "x": 2712.7039931007707,
+        "x": 2633,
         "y": 163,
         "health": 0,
         "state": "Dead",
         "kind": "shield",
         "shield": 8,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "turret-B",
-        "x": 3643.4860776459577,
+        "x": 3583,
         "y": 178,
         "health": 0,
         "state": "Dead",
         "kind": "turret",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "shield-C",
-        "x": 4137,
-        "y": 176,
+        "x": 3983,
+        "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "shield",
-        "shield": 7,
-        "windup": 0
+        "shield": 8,
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "charge-C",
-        "x": 4682.79149310085,
-        "y": 134.29775926409067,
+        "x": 4524.823657880748,
+        "y": 134,
         "health": 0,
         "state": "Dead",
         "kind": "melee",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "rifle-C1",
-        "x": 4933.651006899222,
-        "y": 150,
+        "x": 4819.008653016006,
+        "y": 134,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "rifle-C2",
-        "x": 5393.497511407551,
+        "x": 5308.576622557917,
         "y": 294,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "turret-C",
-        "x": 5844.64656843212,
+        "x": 5844.906094515121,
         "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "turret",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "shield-C2",
-        "x": 6242.07876198614,
-        "y": 185,
+        "x": 6285.596006899137,
+        "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "shield",
-        "shield": 0,
-        "windup": 0
+        "shield": 8,
+        "windup": 0,
+        "action": "recover"
       },
       {
         "id": "rifle-C3",
-        "x": 6542.9510068991485,
+        "x": 6411.37100689934,
         "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
-        "id": "gate-guard",
-        "x": 7840,
+        "id": "outpost-tank",
+        "x": 6160,
         "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "guard",
         "shield": 0,
-        "windup": 0
+        "windup": 0.30333333333333345,
+        "action": "patrol"
       },
       {
-        "id": "reinforce-19",
-        "x": 7570.140899522219,
+        "id": "gate-colossus",
+        "x": 7840,
         "y": 150,
-        "health": 0,
-        "state": "Dead",
-        "kind": "ranged",
+        "health": 10.828487903225827,
+        "state": "Attack",
+        "kind": "colossus",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "salvo"
       },
       {
         "id": "reinforce-20",
-        "x": 7552.588842119203,
-        "y": 150,
-        "health": 0,
-        "state": "Dead",
-        "kind": "melee",
-        "shield": 0,
-        "windup": 0
-      },
-      {
-        "id": "reinforce-21",
-        "x": 7497.960898714755,
+        "x": 7531.259344818173,
         "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "ranged",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       },
       {
-        "id": "reinforce-22",
-        "x": 7475.7697995335975,
+        "id": "reinforce-21",
+        "x": 7558.3010114848275,
         "y": 150,
         "health": 0,
         "state": "Dead",
         "kind": "melee",
         "shield": 0,
-        "windup": 0
+        "windup": 0,
+        "action": "recover"
       }
     ],
-    "playerShots": 270,
+    "playerShots": 425,
     "audio": {
-      "loaded": 7,
-      "played": 523,
+      "loaded": 9,
+      "played": 744,
       "muted": false,
       "loadErrors": []
     },
-    "visibleChunks": 9,
+    "art": {
+      "requested": "comic",
+      "active": "comic",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "player.run-shoot.2",
+      "equipment": {
+        "pose": "player.run-shoot.2",
+        "body": "player.run-shoot.2",
+        "weapon": null,
+        "grip": null,
+        "bakedWeapon": "",
+        "bakedRifle": true
+      },
+      "renderedPlayer": {
+        "body": "player.run-shoot.2",
+        "weapon": "baked.rifle",
+        "weaponVisible": true
+      },
+      "hudWeapon": {
+        "text": "突击步枪\n∞  弹药 · 切刀",
+        "id": "rifle",
+        "frame": "weapon.rifle",
+        "switch": {
+          "x": 210,
+          "y": 695
+        }
+      },
+      "terrain": "native-v057"
+    },
+    "visibleChunks": 14,
     "platform": {
       "mode": "browser",
       "fullscreen": false,
@@ -1216,15 +1278,15 @@
       "height": 720,
       "portrait": false,
       "zoom": 1.4,
-      "combatZoom": 1.0240000000000002,
-      "worldVisibleWidth": 1249.9999999999998,
-      "cameraY": 0.0000012849038769917829,
+      "combatZoom": 1.024000000000001,
+      "worldVisibleWidth": 1249.9999999999989,
+      "cameraY": 0.46494857534978906,
       "frameWidth": 1280,
       "frameHeight": 720,
       "orientationPaused": false
     },
     "controls": {
-      "shootHeld": false,
+      "shootHeld": true,
       "hudHeight": 52,
       "stick": {
         "x": 0,
@@ -1278,116 +1340,148 @@
   },
   "trace": [
     {
-      "time": 5.108333333333377,
-      "x": 1039.9166666666672,
-      "y": 293.56282051282165,
+      "time": 5.016666666666706,
+      "x": 1059.4166666666663,
+      "y": 328.6666666666667,
       "health": 4,
       "kills": 3,
-      "boss": 90
+      "boss": 132
     },
     {
-      "time": 10.16666666666673,
-      "x": 2062.2083333333017,
-      "y": 250.75,
+      "time": 10.058333333333403,
+      "x": 2009.7916666666376,
+      "y": 215.16666666666666,
       "health": 4,
-      "kills": 7,
-      "boss": 90
+      "kills": 5,
+      "boss": 132
     },
     {
-      "time": 15.20833333333311,
-      "x": 3283.5277777777906,
-      "y": 164,
+      "time": 15.108333333333116,
+      "x": 3122.361111111115,
+      "y": 280,
+      "health": 4,
+      "kills": 8,
+      "boss": 132
+    },
+    {
+      "time": 20.1249999999995,
+      "x": 4124.416666666664,
+      "y": 246.66666666666666,
       "health": 4,
       "kills": 10,
-      "boss": 90
+      "boss": 132
     },
     {
-      "time": 20.283333333332823,
-      "x": 4173.52777777783,
-      "y": 269.05000000000035,
+      "time": 25.133333333332548,
+      "x": 5041.194444444366,
+      "y": 246.36666666666656,
       "health": 4,
-      "kills": 11,
-      "boss": 90
+      "kills": 12,
+      "boss": 132
     },
     {
-      "time": 25.45833333333253,
-      "x": 4520.583333333304,
-      "y": 196.91666666666666,
-      "health": 3,
+      "time": 30.14999999999893,
+      "x": 5873.249999999822,
+      "y": 259.5,
+      "health": 4,
       "kills": 14,
-      "boss": 90
+      "boss": 132
     },
     {
-      "time": 30.466666666665578,
-      "x": 5184.749999999892,
-      "y": 204.02500000000012,
-      "health": 3,
-      "kills": 15,
-      "boss": 90
-    },
-    {
-      "time": 35.48333333333196,
-      "x": 6003.69444444435,
-      "y": 200,
-      "health": 2,
-      "kills": 18,
-      "boss": 90
-    },
-    {
-      "time": 40.54166666666501,
-      "x": 7412.027777777502,
-      "y": 150,
-      "health": 2,
-      "kills": 18,
-      "boss": 83.75451612903225
-    },
-    {
-      "time": 45.55833333333139,
-      "x": 7253.444444444189,
-      "y": 150,
-      "health": 2,
-      "kills": 18,
-      "boss": 43.60889112903226
-    },
-    {
-      "time": 50.616666666664436,
-      "x": 7296.819444444184,
-      "y": 150,
-      "health": 2,
-      "kills": 20,
-      "boss": 34.60889112903226
-    },
-    {
-      "time": 55.66666666666415,
-      "x": 6843.652777777577,
-      "y": 150,
-      "health": 2,
-      "kills": 20,
-      "boss": 21.60889112903226
-    },
-    {
-      "time": 60.82499999999719,
-      "x": 7038.333333333103,
+      "time": 35.18333333333198,
+      "x": 5738.24999999984,
       "y": 150,
       "health": 4,
-      "kills": 20,
-      "boss": 10.608891129032259
+      "kills": 15,
+      "boss": 132
     },
     {
-      "time": 65.85833333333181,
-      "x": 6988.13888888867,
-      "y": 267.74166666666656,
-      "health": 2,
-      "kills": 22,
-      "boss": 2.6088911290322585
-    },
-    {
-      "time": 70.93333333333585,
-      "x": 7840.541666666336,
+      "time": 40.19166666666503,
+      "x": 5730.736111110955,
       "y": 150,
-      "health": 2,
-      "kills": 23,
-      "boss": 0
+      "health": 4,
+      "kills": 16,
+      "boss": 132
+    },
+    {
+      "time": 45.20833333333141,
+      "x": 5593.333333333193,
+      "y": 150,
+      "health": 4,
+      "kills": 16,
+      "boss": 132
+    },
+    {
+      "time": 50.24166666666446,
+      "x": 5619.513888888894,
+      "y": 150,
+      "health": 4,
+      "kills": 16,
+      "boss": 132
+    },
+    {
+      "time": 55.26666666666417,
+      "x": 5599.027777777786,
+      "y": 150,
+      "health": 4,
+      "kills": 16,
+      "boss": 132
+    },
+    {
+      "time": 60.27499999999722,
+      "x": 5595.624999999995,
+      "y": 160,
+      "health": 4,
+      "kills": 16,
+      "boss": 132
+    },
+    {
+      "time": 65.29999999999804,
+      "x": 5537.50000000001,
+      "y": 120,
+      "health": 4,
+      "kills": 16,
+      "boss": 132
+    },
+    {
+      "time": 70.32500000000203,
+      "x": 5493.013888888894,
+      "y": 182,
+      "health": 4,
+      "kills": 16,
+      "boss": 132
+    },
+    {
+      "time": 75.35000000000603,
+      "x": 6653.263888888742,
+      "y": 265,
+      "health": 5,
+      "kills": 17,
+      "boss": 132
+    },
+    {
+      "time": 80.35000000001001,
+      "x": 7255.263888888664,
+      "y": 150,
+      "health": 5,
+      "kills": 17,
+      "boss": 70.97411290322583
+    },
+    {
+      "time": 85.35833333334733,
+      "x": 7200.8611111108885,
+      "y": 265.01250000000005,
+      "health": 4,
+      "kills": 17,
+      "boss": 30.828487903225827
+    },
+    {
+      "time": 90.35833333335131,
+      "x": 7323.805555555324,
+      "y": 150,
+      "health": 3,
+      "kills": 19,
+      "boss": 10.828487903225827
     }
   ]
 }

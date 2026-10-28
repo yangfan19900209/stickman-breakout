@@ -63,6 +63,10 @@ export class CocosInputAdapter {
         return "aimUp";
       case KeyCode.KEY_K:
         return "grenade";
+      case KeyCode.KEY_L:
+        return "melee";
+      case KeyCode.KEY_Q:
+        return "switchWeapon";
       case KeyCode.KEY_P:
       case KeyCode.ESCAPE:
         return "pause";

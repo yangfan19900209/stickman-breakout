@@ -5,6 +5,7 @@ import { chromium, request } from "playwright";
 const site =
   process.env.PAGES_URL ||
   "https://yangfan19900209.github.io/stickman-breakout/";
+const reportPrefix = process.env.PAGES_REPORT_PREFIX || "github-pages";
 const localVersion = JSON.parse(readFileSync("docs/version.json", "utf8"));
 const manifest = JSON.parse(readFileSync("docs/.pages-manifest.json", "utf8"));
 const api = await request.newContext();
@@ -75,7 +76,7 @@ try {
   await desktop.keyboard.up("KeyJ");
   await desktop.keyboard.up("Space");
   const keyboard = await snapshot(desktop);
-  await desktop.screenshot({ path: "reports/github-pages-desktop.png" });
+  await desktop.screenshot({ path: `reports/${reportPrefix}-desktop.png` });
   await desktop.keyboard.press("KeyP");
   await desktop.waitForFunction(
     () => globalThis.__BREAKOUT__.snapshot().state === "paused",
@@ -143,7 +144,7 @@ try {
     type: "touchEnd",
     touchPoints: [],
   });
-  await mobile.screenshot({ path: "reports/github-pages-mobile.png" });
+  await mobile.screenshot({ path: `reports/${reportPrefix}-mobile.png` });
   await mobile.waitForTimeout(250);
   const released = await snapshot(mobile);
   await mobile.waitForTimeout(250);
@@ -168,7 +169,7 @@ try {
   const portrait = await snapshot(mobile);
   await mobile.waitForTimeout(200);
   assert.equal((await snapshot(mobile)).time, portrait.time);
-  await mobile.screenshot({ path: "reports/github-pages-portrait.png" });
+  await mobile.screenshot({ path: `reports/${reportPrefix}-portrait.png` });
   await mobile.setViewportSize({ width: 844, height: 390 });
   await mobile.waitForFunction(
     () => globalThis.__BREAKOUT__.snapshot().state === "playing",
@@ -205,7 +206,7 @@ try {
     failedRequests,
   };
   writeFileSync(
-    "reports/github-pages-verification.json",
+    `reports/${reportPrefix}-verification.json`,
     JSON.stringify(result, null, 2),
   );
   console.log(JSON.stringify(result, null, 2));

@@ -4,13 +4,22 @@
     "name": "resources",
     "deps": [],
     "uuids": [
+        "087b8ca2b",
+        "0f019e2f-c8a8-48a9-af29-037b8e0f6db0",
+        "0f019e2f-c8a8-48a9-af29-037b8e0f6db0@6c48a",
+        "16b69511-d6dd-efa8-fd7e-a88342e8da71",
         "421888f5-544b-c554-20e1-3fad24581ebb",
         "4c79c3a2-0311-be5e-7b7b-056315dfcf7f",
         "562cf6c2-84eb-745b-d5f6-1819884fdfa1",
+        "8e3daa0d-bd68-497a-bb32-1f0223cc38e5",
+        "8e3daa0d-bd68-497a-bb32-1f0223cc38e5@6c48a",
         "9b662c6b-6b69-4c32-d7b8-68362ed1a786",
+        "bcc80b49-6f7b-2b02-3649-c8978b1a617b",
         "d9da93be-3cba-8dd6-4ada-38bd8ddc53f0",
         "e042d8e9-17f4-5d59-e76f-6243161162e5",
-        "f3109b18-22ac-7dd8-dc23-a4936f08d13e"
+        "f3109b18-22ac-7dd8-dc23-a4936f08d13e",
+        "fc0931d5-97c2-4932-92d4-6fa1b92cc48a",
+        "fc0931d5-97c2-4932-92d4-6fa1b92cc48a@6c48a"
     ],
     "paths": {
         "9b662c6b-6b69-4c32-d7b8-68362ed1a786": [
@@ -20,6 +29,16 @@
         ],
         "e042d8e9-17f4-5d59-e76f-6243161162e5": [
             "audio/hit",
+            "cc.AudioClip",
+            1
+        ],
+        "bcc80b49-6f7b-2b02-3649-c8978b1a617b": [
+            "audio/knife",
+            "cc.AudioClip",
+            1
+        ],
+        "16b69511-d6dd-efa8-fd7e-a88342e8da71": [
+            "audio/melee-hit",
             "cc.AudioClip",
             1
         ],
@@ -47,10 +66,46 @@
             "audio/step",
             "cc.AudioClip",
             1
+        ],
+        "fc0931d5-97c2-4932-92d4-6fa1b92cc48a": [
+            "comic/comic",
+            "cc.ImageAsset",
+            1
+        ],
+        "fc0931d5-97c2-4932-92d4-6fa1b92cc48a@6c48a": [
+            "comic/comic/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "0f019e2f-c8a8-48a9-af29-037b8e0f6db0": [
+            "comic/native",
+            "cc.ImageAsset",
+            1
+        ],
+        "0f019e2f-c8a8-48a9-af29-037b8e0f6db0@6c48a": [
+            "comic/native/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "8e3daa0d-bd68-497a-bb32-1f0223cc38e5": [
+            "comic/supplement",
+            "cc.ImageAsset",
+            1
+        ],
+        "8e3daa0d-bd68-497a-bb32-1f0223cc38e5@6c48a": [
+            "comic/supplement/texture",
+            "cc.Texture2D",
+            1
         ]
     },
     "scenes": {},
-    "packs": {},
+    "packs": {
+        "087b8ca2b": [
+            "0f019e2f-c8a8-48a9-af29-037b8e0f6db0@6c48a",
+            "8e3daa0d-bd68-497a-bb32-1f0223cc38e5@6c48a",
+            "fc0931d5-97c2-4932-92d4-6fa1b92cc48a@6c48a"
+        ]
+    },
     "versions": {
         "import": [],
         "native": []

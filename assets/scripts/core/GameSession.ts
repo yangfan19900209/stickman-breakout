@@ -12,6 +12,8 @@ import { GrenadeSystem } from "../combat/GrenadeSystem";
 import { PickupSystem } from "../world/PickupSystem";
 import { DestructibleObject } from "../world/DestructibleObject";
 import { LevelDefinition } from "../level/LevelData";
+import { ColossusBoss } from "../enemy/ColossusBoss";
+import { MeleeSystem } from "../combat/MeleeSystem";
 
 /** Session owns simulation order; no engine or browser dependencies. */
 export class GameSession {
@@ -23,6 +25,7 @@ export class GameSession {
   readonly particles = new ParticlePool();
   readonly projectiles = new ProjectileManager(this.particles);
   readonly weapon = new WeaponSystem();
+  readonly melee = new MeleeSystem();
   readonly explosions = new ExplosionSystem();
   readonly grenades = new GrenadeSystem();
   readonly pickups = new PickupSystem();
@@ -38,7 +41,11 @@ export class GameSession {
   hitFlash = 0;
   private resumeState: "playing" | "dying" = "playing";
   private bossDeathStarted = false;
+  private introEffectPlayed = false;
+  private stompSerial = 0;
+  private weaponRevision = 0;
   constructor(data?: LevelDefinition) {
+    this.player.bindWeapon(this.weapon);
     this.level = new LevelController(data);
     this.reset("title");
   }
@@ -48,11 +55,15 @@ export class GameSession {
     this.hitFlash = 0;
     this.level.reset();
     this.player.reset(this.level.data.spawn.x, this.level.data.spawn.y);
+    this.player.throwTime = 0;
     this.camera.reset();
     this.spawner.reset(this.level.data.enemies);
     this.particles.reset();
     this.projectiles.reset();
     this.weapon.reset();
+    this.weaponRevision = this.weapon.revision;
+    this.melee.reset();
+    this.player.meleeTime = 0;
     this.explosions.reset();
     this.grenades.reset();
     this.pickups.reset();
@@ -61,6 +72,8 @@ export class GameSession {
     this.dropSeed = 1;
     this.shakeTime = this.shakePower = this.hitStop = 0;
     this.bossDeathStarted = false;
+    this.introEffectPlayed = false;
+    this.stompSerial = 0;
     this.projectiles.onExplosion = (x, y, radius, damage, owner, style) =>
       this.explosions.enqueue(x, y, radius, damage, owner, style);
     this.level.objects.onHit = (o, destroyed) => this.objectHit(o, destroyed);
@@ -76,7 +89,11 @@ export class GameSession {
   }
   update(dt: number, input: InputFrame): void {
     if (this.state !== "playing" && this.state !== "dying") return;
+    if(this.state==="playing"&&input.switchWeapon)this.weapon.toggleKnife();
+    if(this.state==="playing"&&input.melee&&this.weapon.id!=="knife")this.weapon.equip("knife");
+    if(this.weaponRevision!==this.weapon.revision){this.melee.cancel(this.player);this.weaponRevision=this.weapon.revision;}
     this.time += dt;
+    this.player.throwTime = Math.max(0, this.player.throwTime - dt);
     this.explosions.advance(dt);
     this.shakeTime = Math.max(0, this.shakeTime - dt);
     this.comboTime = Math.max(0, this.comboTime - dt);
@@ -85,10 +102,20 @@ export class GameSession {
     const health = this.player.health;
     this.level.updateWorld(dt, this.player, this.spawner.enemies);
     const grounded = this.player.grounded;
+    const jumpSerial = this.player.jumpSerial;
     this.level.objects.update(dt, this.level.staticSolids);
     this.level.objects.flushHits();
     this.level.refreshSolids();
     this.player.update(dt, input, this.level);
+    if (this.player.jumpSerial !== jumpSerial && this.player.jumpCount === 2)
+      for (let n = 0; n < 7; n++)
+        this.particles.emit(
+          this.player.x + (n - 3) * 5,
+          this.player.y + 3,
+          "dust",
+          (n - 3) * 45,
+          -25,
+        );
     if (!grounded && this.player.grounded) {
       for (let i = 0; i < 5; i++)
         this.particles.emit(
@@ -100,13 +127,34 @@ export class GameSession {
         );
     }
     this.weapon.update(dt);
-    if (this.state === "playing" && input.shoot && this.player.alive)
+    const oldMeleeHits = this.melee.hits;
+    const slashing = this.melee.update(dt, this.player, this.spawner.enemies, this.level.solids,
+      this.state === "playing" && input.shoot, this.state === "playing" && !!input.melee, this.particles,this.level,this.level.objects.objects);
+    if (this.melee.hits > oldMeleeHits) {
+      this.hitStop = this.melee.stage===3?.065:.04;
+      this.shakePower = this.melee.stage===3?6:3.5;this.shakeTime=this.melee.stage===3?.16:.10;
+    }
+    if (this.state === "playing" && input.shoot && this.player.alive && !slashing)
       this.weapon.fire(this.player, this.projectiles, "player");
     if (input.grenade && this.state === "playing")
       this.grenades.throw(this.player);
     this.grenades.update(dt, this.level, this.explosions);
     for (const enemy of this.spawner.enemies)
       enemy.update(dt, this.player, this.level, this.projectiles);
+    const finalBoss = this.spawner.guard;
+    if (finalBoss instanceof ColossusBoss) {
+      if (finalBoss.mode === "entering" && !this.introEffectPlayed) {
+        this.introEffectPlayed = true;
+        this.shakeTime = 0.3;
+        this.shakePower = 3;
+      }
+      if (finalBoss.impactSerial !== this.stompSerial) {
+        this.stompSerial = finalBoss.impactSerial;
+        this.shakeTime = 0.22;
+        this.shakePower = 5;
+        this.hitStop = 0.035;
+      }
+    }
     this.projectiles.update(
       dt,
       this.player,
@@ -123,9 +171,18 @@ export class GameSession {
     );
     this.level.objects.flushHits();
     for (const e of this.spawner.enemies)
-      if (!e.alive && e.kind === "turret" && !e.deathEffectPlayed) {
+      if (
+        !e.alive &&
+        (e.kind === "turret" ||
+          (e.kind === "guard" && e !== this.spawner.guard)) &&
+        !e.deathEffectPlayed
+      ) {
         e.deathEffectPlayed = true;
         this.explosions.enqueue(e.x, e.y + 35, 85, 0, "player");
+        if (e.kind === "guard") {
+          this.pickups.spawn(e.x - 90, e.y + 25, "health");
+          this.pickups.spawn(e.x - 130, e.y + 30, "rocket");
+        }
       }
     this.explosions.flush((x, y, radius, damage, owner) =>
       this.applyBlast(x, y, radius, damage, owner),
@@ -133,6 +190,7 @@ export class GameSession {
     this.explosions.update(dt);
     this.level.refreshSolids();
     this.pickups.update(dt, this.player, this.weapon, this.level.solids);
+    if(this.weaponRevision!==this.weapon.revision){this.melee.cancel(this.player);this.weaponRevision=this.weapon.revision;}
     const kills = this.spawner.kills;
     if (kills > this.lastKills) {
       this.combo += kills - this.lastKills;
@@ -148,7 +206,7 @@ export class GameSession {
         for (let n = 0; n < 5; n++)
           this.explosions.enqueue(
             this.spawner.guard.x + (n - 2) * 35,
-            185 + (n % 2) * 55,
+            this.spawner.guard.y + 35 + (n % 3) * 70,
             130,
             0,
             "player",
@@ -194,10 +252,18 @@ export class GameSession {
         animation: this.player.animation,
         crouched: this.player.crouched,
         aimPitch: this.player.aimPitch,
+        airJumpsRemaining: this.player.airJumpsRemaining,
+        jumpCount: this.player.jumpCount,
+        canJump: this.player.canJump,
       },
       cameraX: this.camera.x,
       kills: this.spawner.kills,
+      melee: { swings: this.melee.swings, hits: this.melee.hits, time: this.melee.time, stage:this.melee.stage,
+        state:this.melee.state,action:this.melee.action,stance:this.melee.stance,comboRemaining:this.melee.comboRemaining,heavyHits:this.melee.heavyHits,blockedHits:this.melee.blockedHits },
       weapon: this.weapon.id,
+      weaponPresentation: this.weapon.presentation,
+      weaponShot:{x:this.weapon.flashX,y:this.weapon.flashY,pitch:this.weapon.flashPitch,flash:this.weapon.flash},
+      playerWeapon: this.player.weaponId,
       ammo: this.weapon.ammo,
       grenades: this.player.grenades,
       grenadesThrown: this.grenades.thrown,
@@ -248,10 +314,24 @@ export class GameSession {
           y: p.y,
           vx: p.vx,
           vy: p.vy,
+          homing: p.homing,
+          locked: !!p.target?.alive,
+          age:p.age,
         })),
       remaining: this.spawner.remaining,
       guardHealth: this.spawner.guard.health,
       boss: {
+        kind: this.spawner.guard.kind,
+        name:
+          this.spawner.guard.kind === "colossus" ? "重装裁决者" : "履带战车",
+        attack:
+          this.spawner.guard instanceof ColossusBoss
+            ? this.spawner.guard.attack
+            : "salvo",
+        introTime:
+          this.spawner.guard instanceof ColossusBoss
+            ? this.spawner.guard.introTime
+            : 0,
         phase: this.spawner.guard.phase,
         active: this.spawner.guard.active,
         mode: this.spawner.guard.mode,
@@ -260,6 +340,17 @@ export class GameSession {
         windup: this.spawner.guard.windup,
         summons: this.spawner.guard.summons,
       },
+      miniBoss: this.spawner.miniBoss
+        ? {
+            x: this.spawner.miniBoss.x,
+            health: this.spawner.miniBoss.health,
+            maxHealth: this.spawner.miniBoss.maxHealth,
+            active: this.spawner.miniBoss.active,
+            phase: this.spawner.miniBoss.phase,
+            warningX: this.spawner.miniBoss.warningX,
+            warningTime: this.spawner.miniBoss.warningTime,
+          }
+        : null,
       levelWidth: this.level.data.width,
       exitX: this.level.data.exit.x,
       arenaEntered: this.level.arenaEntered,
@@ -301,6 +392,7 @@ export class GameSession {
         kind: e.kind,
         shield: e.shieldHealth,
         windup: e.windup,
+        action: e.action,
       })),
     };
   }
@@ -311,6 +403,15 @@ export class GameSession {
       destroyed ? 16 : 5,
       o.kind === "wood" || o.kind === "hanging" ? "wood" : "spark",
     );
+    if (o.kind === "wood" || o.kind === "hanging")
+      for (const p of this.particles.items)
+        if (
+          p.active &&
+          p.kind === "wood" &&
+          p.x === o.x + o.w / 2 &&
+          p.y === o.y + o.h / 2
+        )
+          p.vx = o.hitDirection * (80 + Math.abs(p.vx) * 0.8);
     if (destroyed) {
       if (o.kind === "barrel")
         this.explosions.schedule(
@@ -369,7 +470,10 @@ export class GameSession {
           hit(
             e,
             damage *
-              (damage >= 9 && (e.kind === "guard" || e.kind === "turret")
+              (damage >= 9 &&
+              (e.kind === "guard" ||
+                e.kind === "turret" ||
+                e.kind === "colossus")
                 ? 1.5
                 : 1),
           )

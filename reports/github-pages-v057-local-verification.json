@@ -1,0 +1,36 @@
+{
+  "site": "http://127.0.0.1:4191/stickman-breakout/",
+  "checkedAt": "2026-10-28T08:07:36.983Z",
+  "status": "passed",
+  "matchedBuildFiles": 52,
+  "onlineVersion": {
+    "project": "stickman-breakout",
+    "version": "0.5.7",
+    "creator": "3.8.8",
+    "sourceSHA256": "d3593febc2ba33a34b6da551bbba064327f59c311355b7f491aa0300f5adf81a",
+    "webBuildSHA256": "8225e1457a673f3e4a233455b0c575bf527d72d3b4d039e1b873e470e5c80927",
+    "preparedAt": "2026-10-28T08:01:43.271Z"
+  },
+  "desktop": {
+    "state": "playing",
+    "playerX": 163.19444444444454,
+    "playerY": 248.61666666666667,
+    "shots": 2,
+    "pauseResume": true
+  },
+  "mobile": {
+    "viewport": "844x390",
+    "simultaneousTouches": 3,
+    "playerX": 154.4166632673262,
+    "playerY": 256.25,
+    "shots": 2,
+    "releaseVerified": true,
+    "floatingJoystick": true,
+    "rightBlankShooting": true,
+    "fullViewport": true,
+    "portraitFrozen": true,
+    "rotationResume": true
+  },
+  "applicationErrors": [],
+  "failedRequests": []
+}

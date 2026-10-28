@@ -1,6 +1,6 @@
 {
   "name": "stickman-breakout",
-  "version": "0.4.2",
+  "version": "0.5.7",
   "private": true,
   "type": "module",
   "uuid": "927c2a86-6c1c-4375-a9e0-39c8b956a631",
@@ -12,6 +12,7 @@
     "test": "node scripts/test.mjs",
     "build:web": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-cocos.ps1 -Platform web-mobile",
     "build:wechat": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-cocos.ps1 -Platform wechatgame",
+    "upload:wechat": "node scripts/upload-wechat.mjs",
     "preview": "node scripts/serve.mjs",
     "test:browser": "playwright test",
     "verify:delivery": "node scripts/verify-delivery.mjs",
@@ -23,6 +24,8 @@
   "devDependencies": {
     "@cocos/creator-types": "3.8.8",
     "@playwright/test": "1.63.0",
+    "miniprogram-ci": "2.1.31",
+    "pngjs": "3.4.0",
     "prettier": "3.6.2",
     "typescript": "5.9.3"
   }

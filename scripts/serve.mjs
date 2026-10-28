@@ -27,11 +27,13 @@ const server = createServer((req, res) => {
       res.end();
       return;
     }
-    const file = path.resolve(
-      root,
-      decodeURIComponent(url.pathname).replace(/^\/stickman-breakout\/?/, "/").replace(/^\//, "") || "index.html",
-    );
-    if (!file.startsWith(root + path.sep) && file !== root) {
+    const artPreview = url.pathname.startsWith("/art/");
+    const servedRoot = artPreview ? path.resolve("art") : root;
+    const relative = artPreview
+      ? url.pathname.slice(5)
+      : url.pathname.replace(/^\/stickman-breakout\/?/, "/").replace(/^\//, "");
+    const file = path.resolve(servedRoot, decodeURIComponent(relative) || "index.html");
+    if (!file.startsWith(servedRoot + path.sep) && file !== servedRoot) {
       res.writeHead(403);
       res.end();
       return;

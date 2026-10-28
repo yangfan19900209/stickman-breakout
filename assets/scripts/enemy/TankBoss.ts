@@ -16,10 +16,13 @@ export class TankBoss extends EnemyController {
   private summonTime = 8;
   private secondShell = 0;
   private targetX = 0;
+  private targetY = 150;
+  readonly miniBoss: boolean;
   onSummon?: (x: number) => void;
   private box: Rect = { x: 0, y: 0, w: 240, h: 125 };
   constructor(data: EnemySpawn) {
     super(data);
+    this.miniBoss = data.encounter === "mini";
     this.halfWidth = 110;
     this.height = 125;
     this.attackCooldown = 2;
@@ -63,9 +66,11 @@ export class TankBoss extends EnemyController {
       this.deadTime += dt;
       return;
     }
-    this.active = level.data.arena
-      ? level.arenaEntered
-      : Math.abs(p.x - this.x) < 800;
+    this.active = this.miniBoss
+      ? Math.abs(p.x - this.x) < 740
+      : level.data.arena
+        ? level.arenaEntered
+        : Math.abs(p.x - this.x) < 800;
     if (!this.active || !p.alive) {
       this.state = "Idle";
       this.mode = "dormant";
@@ -79,7 +84,11 @@ export class TankBoss extends EnemyController {
     this.attackCooldown = Math.max(0, this.attackCooldown - dt);
     this.warningTime = Math.max(0, this.warningTime - dt);
     this.summonTime -= dt;
-    if (this.summonTime <= 0 && this.summons < C.boss.maxSummons) {
+    if (
+      !this.miniBoss &&
+      this.summonTime <= 0 &&
+      this.summons < C.boss.maxSummons
+    ) {
       this.summonTime = C.boss.summonInterval;
       this.onSummon?.(this.x - 300);
       this.summons += 2;
@@ -92,10 +101,13 @@ export class TankBoss extends EnemyController {
       this.windup = this.phase === 1 ? C.boss.firstWindup : C.boss.secondWindup;
       this.targetX = clamp(
         p.x + p.vx * 0.4,
-        (level.data.arena?.start ?? 0) + 50,
-        (level.data.arena?.end ?? level.data.width) - 50,
+        (this.miniBoss ? 0 : (level.data.arena?.start ?? 0)) + 50,
+        (this.miniBoss
+          ? level.data.width
+          : (level.data.arena?.end ?? level.data.width)) - 50,
       );
       this.warningX = this.targetX;
+      this.targetY = level.groundY(this.targetX);
       this.warningTime =
         this.windup + C.boss.shellFlight + (this.phase === 2 ? 0.2 : 0);
       this.mode = "aiming";
@@ -118,7 +130,7 @@ export class TankBoss extends EnemyController {
       y = this.y + 92,
       flight = C.boss.shellFlight;
     const vx = (target - x) / flight,
-      vy = (150 - y + 0.5 * 800 * flight * flight) / flight,
+      vy = (this.targetY - y + 0.5 * 800 * flight * flight) / flight,
       speed = Math.hypot(vx, vy);
     projectiles.spawn({
       owner: "enemy",

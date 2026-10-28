@@ -1,9 +1,7 @@
 import { Rect, surfaceY } from "../core/Types";
 
-/** Authored road: broad ridges, shallow gullies and level pads for props/platforms.
- * No pits or one-way terrain. Both directions remain traversable without jumping.
- * The final tank apron stays level for its existing shell telegraphs.
- */
+/** Rectangular terraces. Constant-height surface spans retain foot snapping for
+ * shallow steps, with true vertical sides for projectile/grenade collision. */
 const points: readonly (readonly [number, number])[] = [
   [0, 150],
   [160, 150],
@@ -12,7 +10,7 @@ const points: readonly (readonly [number, number])[] = [
   [640, 150],
   [805, 150],
   [935, 184],
-  [1140, 184],
+  [1140, 150],
   [1300, 156],
   [1480, 118],
   [1630, 118],
@@ -39,21 +37,24 @@ const points: readonly (readonly [number, number])[] = [
   [5470, 120],
   [5560, 150],
   [6090, 150],
-  [6230, 185],
-  [6350, 185],
+  [6230, 150],
+  [6350, 150],
   [6510, 150],
   [8200, 150],
 ];
-export const road: Rect[] = points.slice(1).map(([x, y], i) => {
+export const road: Rect[] = points.slice(1).reduce<Rect[]>((spans, [x], i) => {
   const [left, height] = points[i];
-  return {
+  const previous = spans[spans.length - 1];
+  if (previous?.slope?.left === height) { previous.w = x - previous.x; return spans; }
+  spans.push({
     x: left,
     y: -240,
     w: x - left,
-    h: Math.max(height, y) + 240,
-    slope: { left: height, right: y },
-  };
-});
+    h: height + 240,
+    slope: { left: height, right: height },
+  });
+  return spans;
+}, []);
 export function roadHeight(x: number): number {
   const r = road.find((r) => x >= r.x && x <= r.x + r.w);
   return r ? surfaceY(r, x) : 150;

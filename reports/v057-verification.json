@@ -1,0 +1,165 @@
+{
+  "version": "0.5.7",
+  "date": "2026-10-20",
+  "creator": "3.8.8",
+  "typecheck": "passed",
+  "sourceSHA256": "92dad115cf1895bdb4f108f0269907a7dff03e44ae99ddd932ecc3ee7761f3ea",
+  "logicTests": {
+    "tests": 104,
+    "passed": 104,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "startTime": "2026-10-20T02:01:18.619Z",
+    "duration": 834904.089,
+    "expected": 39,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 2,
+    "report": "reports/v057-browser-results.json"
+  },
+  "fullRun": {
+    "attempt": 2,
+    "state": "complete",
+    "seconds": 94.46666666668791,
+    "health": 3,
+    "kills": 20,
+    "errors": []
+  },
+  "bypass": {
+    "attempt": 2,
+    "phase": "done",
+    "entries": [
+      {
+        "x": 6878.416666666635,
+        "boss": 132,
+        "skipped": [
+          "rifle-C2",
+          "turret-C",
+          "shield-C2",
+          "rifle-C3",
+          "gate-colossus"
+        ]
+      },
+      {
+        "x": 6878.305555555531,
+        "boss": 132,
+        "skipped": [
+          "rifle-C2",
+          "turret-C",
+          "shield-C2",
+          "rifle-C3",
+          "gate-colossus"
+        ]
+      }
+    ],
+    "retreat": {
+      "x": 6654.583333333337,
+      "camera": 6061.9764883910275,
+      "active": false
+    },
+    "errors": []
+  },
+  "switches": {
+    "cycles": 16,
+    "sampledRenderFrames": 70,
+    "blankFrames": 0
+  },
+  "knife": {
+    "stages": [
+      1,
+      2,
+      3
+    ],
+    "hitStop": 0.04,
+    "hits": 1,
+    "bullets": 0
+  },
+  "newAssets": {
+    "sources": {
+      "knife": {
+        "file": "art/source/v057/持刀士兵动作.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "mode": "RGBA",
+        "sha256": "8d7213f3a41e0ba7c5149040b7891add6743ec789d847490c6347aa24329b6a1",
+        "transparentPixels": 1009236
+      },
+      "rocket": {
+        "file": "art/source/v057/火箭筒士兵动作.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "mode": "RGBA",
+        "sha256": "7b4d32a9fbb54565bbe90ade69dabd3cc09e567105c8843df1023621d4fe3e37",
+        "transparentPixels": 990341
+      },
+      "ground": {
+        "file": "art/source/v057/漫画地形模块.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "mode": "RGBA",
+        "sha256": "66330a67c4dc3fa4369d7ed6d17b9bf412ec188e81402f0221b900390fb9aac7",
+        "transparentPixels": 792341
+      },
+      "metal": {
+        "file": "art/source/v057/金属平台模块.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "mode": "RGBA",
+        "sha256": "a1e37f4684a12023c25d32ca9316894e59ebf4381513433c809d9d158360efe7",
+        "transparentPixels": 848465
+      }
+    },
+    "cuts": 112,
+    "clips": 24,
+    "textureBytes": 253895,
+    "textureSize": [
+      2048,
+      1024
+    ],
+    "padding": 8,
+    "extrusion": 4,
+    "actorComposition": "single complete supplied frame for knife and rocket; no extra gun/grip/slash"
+  },
+  "web": {
+    "files": 52,
+    "bytes": 5899277,
+    "creatorExitCode": 36
+  },
+  "wechat": {
+    "files": 51,
+    "bytes": 3102432,
+    "creatorExitCode": 36,
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    "reports/v057-first-screen.png",
+    "reports/v057-platform.png",
+    "reports/v057-rocket.png",
+    "reports/v057-rocket-detail.png",
+    "reports/v057-knife-hold.png",
+    "reports/v057-knife-1.png",
+    "reports/v057-knife-2.png",
+    "reports/v057-knife-3.png",
+    "reports/v057-knife-hit.png",
+    "reports/v057-knife-crouch.png",
+    "reports/v057-knife-jump.png",
+    "reports/v057-second-zone.png"
+  ],
+  "limitations": [
+    "Shotgun full-body action sheet was not supplied; existing shotgun composition remains.",
+    "No dedicated crouched cutting or high-angle aiming frames; crouch cuts reuse native low knife poses, grenade throws reuse the earlier supplied sheet.",
+    "WeChat developer tools, physical Android/iOS devices, WeChat browser safe area/multitouch and sustained real-device 60FPS are unverified.",
+    "No upload, review submission or publication performed in this iteration."
+  ]
+}

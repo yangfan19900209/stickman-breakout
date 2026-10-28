@@ -15,6 +15,7 @@ export interface EnemySpawn {
   patrol: number;
   health?: number;
   onPlatform?: boolean;
+  encounter?: "mini" | "final";
 }
 export interface MechanismData {
   id: string;
@@ -64,7 +65,8 @@ export const AbandonedBase: LevelDefinition = {
     { x: 2300, y: 266, w: 320, h: 16, kind: "platform" },
     { x: 2710, y: 150, w: 72, h: 60, kind: "crate" },
     { x: 2920, y: 150, w: 160, h: 50, kind: "step" },
-    { x: 3300, y: 248, w: 160, h: 16, kind: "platform" },
+    // Leave standing/jumping clearance above the raised exit and its cover.
+    { x: 3300, y: 320, w: 160, h: 16, kind: "platform" },
     { x: 4150, y: 150, w: 85, h: 58, kind: "step" },
     { x: 4235, y: 150, w: 85, h: 108, kind: "step" },
     { x: 4300, y: 292, w: 250, h: 18, kind: "platform" },
@@ -90,7 +92,23 @@ export const AbandonedBase: LevelDefinition = {
     { id: "turret-C", kind: "turret", x: 5800, y: 150, patrol: 0 },
     { id: "shield-C2", kind: "shield", x: 6280, y: 150, patrol: 40 },
     { id: "rifle-C3", kind: "ranged", x: 6530, y: 150, patrol: 30 },
-    { id: "gate-guard", kind: "guard", x: 7840, y: 150, patrol: 0 },
+    {
+      id: "outpost-tank",
+      kind: "guard",
+      x: 6160,
+      y: 150,
+      patrol: 0,
+      health: 42,
+      encounter: "mini",
+    },
+    {
+      id: "gate-colossus",
+      kind: "colossus",
+      x: 7840,
+      y: 150,
+      patrol: 0,
+      encounter: "final",
+    },
   ] as EnemySpawn[],
   objects: [
     {
@@ -163,7 +181,7 @@ export const AbandonedBase: LevelDefinition = {
     { id: "A", name: "道路遭遇", start: 0, end: 1850 },
     { id: "B", name: "工业突破", start: 1850, end: 3800 },
     { id: "C", name: "机械阵地", start: 3800, end: 6740 },
-    { id: "D", name: "战车决战", start: 6740, end: 8200 },
+    { id: "D", name: "裁决者决战", start: 6740, end: 8200 },
   ],
   mechanisms: [
     {
@@ -202,7 +220,7 @@ AbandonedBase.objects.push(
     h: 102,
     link: "bridge-B",
   },
-  { id: "sandbags-B", kind: "sandbag", x: 3480, y: 150, w: 75, h: 44 },
+  { id: "sandbags-B", kind: "sandbag", x: 3520, y: 150, w: 75, h: 44 },
   { id: "cargo-B", kind: "hanging", x: 3590, y: 440, w: 65, h: 55 },
   {
     id: "health-B",

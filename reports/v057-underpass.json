@@ -1,0 +1,8096 @@
+{
+  "walks": [
+    {
+      "direction": "left",
+      "player": {
+        "x": 3465.5555555556357,
+        "y": 178,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052180939,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.953543038446,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.48607570917,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3977.666666666666,
+          "y": 229.75,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 79
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3451.555555555635,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521684783,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.927569019218,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860759789503,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3969.666666666665,
+          "y": 237.5,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 79
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3442.222222222301,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521611505,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.9122956463398,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860761375876,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3964.333333333331,
+          "y": 241,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 79
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3432.888888888967,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521545207,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.89847572706,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860762811286,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3958.9999999999973,
+          "y": 243.16666666666666,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 80
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3423.555555555633,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521485217,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.8859709469807,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860764110103,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3953.6666666666633,
+          "y": 244,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 80
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3416.5555555556325,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521444,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.8773796764162,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.486076500244,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3949.666666666663,
+          "y": 243.75,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 80
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3407.2222222222986,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052139364,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.866882450986,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.486076609274,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3944.333333333329,
+          "y": 242.25,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 80
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3397.8888888889646,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052134807,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.857384168631,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.486076707928,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3938.999999999995,
+          "y": 239.41666666666666,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 81
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3388.5555555556307,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521306842,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.8487897673485,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.486076797194,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3933.666666666661,
+          "y": 235.25,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 81
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3374.55555555563,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052125223,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.8374070432283,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860769154207,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3925.66666666666,
+          "y": 226.5,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 81
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3367.5555555556293,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052122785,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.832324831039,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860769682073,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3921.6666666666597,
+          "y": 222,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 81
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3358.2222222222954,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521198053,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.826115141025,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860770327045,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3919.4999999999936,
+          "y": 222,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 82
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3353.5555555556284,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052118424,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.8232355412156,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860770626133,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3918.4166666666606,
+          "y": 222,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 82
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3339.5555555556275,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521146703,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.8154123169643,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.48607714387,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3915.1666666666615,
+          "y": 222,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 82
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3330.2222222222936,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521124634,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.810812065457,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860771916506,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3912.9999999999955,
+          "y": 222,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 82
+    },
+    {
+      "direction": "left",
+      "player": {
+        "x": 3320.8888888889596,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700521104666,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.8066495857606,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860772348848,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3910.8333333333294,
+          "y": 222,
+          "health": 6,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 83
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3354.5972222222263,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Land",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.77005209316,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7705731552082,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860776095934,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3860.952315707048,
+          "y": 209.25,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 88
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3368.597222222227,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Land",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700520929257,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7700853812707,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860776146597,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3857.702315707049,
+          "y": 199,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 89
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3377.930555555561,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Land",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700520927874,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7697985579966,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860776176392,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3855.535649040383,
+          "y": 190.5,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 89
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3387.263888888895,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Land",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052092663,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.769539029566,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.486077620335,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3853.368982373717,
+          "y": 180.66666666666666,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 89
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3396.597222222229,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.77005209255,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.769304198531,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860776227742,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3851.2023157070507,
+          "y": 169.5,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 89
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3403.5972222222294,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700520924727,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7691428604703,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.48607762445,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3849.577315707051,
+          "y": 160.25,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 89
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3412.9305555555634,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052092378,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7689457299093,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860776264973,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3847.410649040385,
+          "y": 150,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 90
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3422.2638888888973,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700520922926,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.768767358801,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.48607762835,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3845.243982373719,
+          "y": 150,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 90
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3431.5972222222313,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700520922153,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7686059619487,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.486077630026,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3843.077315707053,
+          "y": 150,
+          "health": 5.8,
+          "state": "Chase",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0,
+          "action": "approach"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 90
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3445.597222222232,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052092113,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.768392202341,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.486077632246,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3840.910649040387,
+          "y": 150,
+          "health": 5.8,
+          "state": "Attack",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0.5833333333333334,
+          "action": "brace"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 91
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3454.930555555566,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.7700520920525,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7682665063458,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860776335518,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3840.910649040387,
+          "y": 150,
+          "health": 5.8,
+          "state": "Attack",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0.5500000000000002,
+          "action": "brace"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 91
+    },
+    {
+      "direction": "right",
+      "player": {
+        "x": 3461.9305555555666,
+        "y": 178,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "enemies": [
+        {
+          "id": "m1",
+          "x": 534.5444444155085,
+          "y": 174,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r1",
+          "x": 902.4160068992313,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r2",
+          "x": 1283.6483636916457,
+          "y": 262,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m2",
+          "x": 1354.3706597674272,
+          "y": 156,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r3",
+          "x": 2062.3110068992373,
+          "y": 205,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m3",
+          "x": 2287,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r4",
+          "x": 2517.5860068992033,
+          "y": 282,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "m4",
+          "x": 3065.770052092011,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "r5",
+          "x": 3171,
+          "y": 150,
+          "health": 0,
+          "state": "Dead",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-B",
+          "x": 3051.7681801483054,
+          "y": 200,
+          "health": 0,
+          "state": "Dead",
+          "kind": "shield",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "turret-B",
+          "x": 3643.4860776344485,
+          "y": 178,
+          "health": 0,
+          "state": "Dead",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        },
+        {
+          "id": "shield-C",
+          "x": 3840.910649040387,
+          "y": 150,
+          "health": 5.8,
+          "state": "Attack",
+          "kind": "shield",
+          "shield": 7,
+          "windup": 0.5250000000000002,
+          "action": "brace"
+        },
+        {
+          "id": "charge-C",
+          "x": 4650,
+          "y": 134,
+          "health": 3,
+          "state": "Idle",
+          "kind": "melee",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C1",
+          "x": 4900,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C2",
+          "x": 5360,
+          "y": 294,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "turret-C",
+          "x": 5800,
+          "y": 150,
+          "health": 8,
+          "state": "Idle",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "shield-C2",
+          "x": 6280,
+          "y": 150,
+          "health": 6,
+          "state": "Idle",
+          "kind": "shield",
+          "shield": 8,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "rifle-C3",
+          "x": 6530,
+          "y": 150,
+          "health": 4,
+          "state": "Idle",
+          "kind": "ranged",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "outpost-tank",
+          "x": 6160,
+          "y": 150,
+          "health": 42,
+          "state": "Idle",
+          "kind": "guard",
+          "shield": 0,
+          "windup": 0,
+          "action": "patrol"
+        },
+        {
+          "id": "gate-colossus",
+          "x": 7840,
+          "y": 150,
+          "health": 132,
+          "state": "Idle",
+          "kind": "colossus",
+          "shield": 0,
+          "windup": 0,
+          "action": "salvo"
+        }
+      ],
+      "shots": 91
+    }
+  ],
+  "snapshot": {
+    "state": "playing",
+    "time": 27.69999999999907,
+    "player": {
+      "x": 3650.930555555579,
+      "y": 178,
+      "vx": 280,
+      "vy": 0,
+      "health": 2,
+      "grounded": true,
+      "facing": 1,
+      "animation": "Run",
+      "crouched": false,
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": true
+    },
+    "cameraX": 3216.4157403382987,
+    "kills": 11,
+    "melee": {
+      "swings": 0,
+      "hits": 0,
+      "time": 0,
+      "stage": 0,
+      "state": "idle",
+      "action": "melee_combo_reset",
+      "stance": "stand",
+      "comboRemaining": 0,
+      "heavyHits": 0,
+      "blockedHits": 0
+    },
+    "weapon": "rifle",
+    "weaponPresentation": {
+      "id": "rifle",
+      "name": "突击步枪",
+      "ammo": -1,
+      "icon": "weapon.rifle",
+      "ammoText": "∞  弹药",
+      "projectile": "bullet",
+      "sound": "rifle",
+      "width": 59,
+      "mode": "ranged",
+      "muzzleExtra": 0
+    },
+    "weaponShot": {
+      "x": 3691.2905555555785,
+      "y": 226.64,
+      "pitch": 0,
+      "flash": 0.035
+    },
+    "playerWeapon": "rifle",
+    "ammo": -1,
+    "grenades": 5,
+    "grenadesThrown": 0,
+    "destroyedObjects": 14,
+    "explosions": 11,
+    "feedback": {
+      "shakeTime": 0,
+      "shakePower": 7,
+      "hitStop": 0,
+      "blasts": [],
+      "particles": [
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "impact",
+          "material": "stone"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "spark"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "shell"
+        },
+        {
+          "kind": "metal"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        },
+        {
+          "kind": "wood"
+        }
+      ],
+      "peakParticles": 130,
+      "droppedParticles": 0
+    },
+    "combo": 0,
+    "bestCombo": 4,
+    "objects": [
+      {
+        "id": "shotgun-cache",
+        "kind": "wood",
+        "x": 300,
+        "y": 174,
+        "w": 55,
+        "h": 50,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "crate-01",
+        "kind": "wood",
+        "x": 420,
+        "y": 174,
+        "w": 76,
+        "h": 54,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "barrel-01",
+        "kind": "barrel",
+        "x": 660,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "barrel-02",
+        "kind": "barrel",
+        "x": 735,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "rocket-cache",
+        "kind": "wood",
+        "x": 1350,
+        "y": 262,
+        "w": 55,
+        "h": 50,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "hanging-01",
+        "kind": "hanging",
+        "x": 1530,
+        "y": 374,
+        "w": 54,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": true
+      },
+      {
+        "id": "crate-02",
+        "kind": "wood",
+        "x": 1750,
+        "y": 150,
+        "w": 64,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "sandbags-01",
+        "kind": "sandbag",
+        "x": 1890,
+        "y": 150,
+        "w": 85,
+        "h": 44,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "barrel-03",
+        "kind": "barrel",
+        "x": 2410,
+        "y": 128,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "crate-03",
+        "kind": "wood",
+        "x": 2710,
+        "y": 163,
+        "w": 72,
+        "h": 60,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "steel-01",
+        "kind": "steel",
+        "x": 3100,
+        "y": 150,
+        "w": 58,
+        "h": 62,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "bridge-rope",
+        "kind": "rope",
+        "x": 3140,
+        "y": 285,
+        "w": 14,
+        "h": 102,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "sandbags-B",
+        "kind": "sandbag",
+        "x": 3520,
+        "y": 178,
+        "w": 75,
+        "h": 44,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "cargo-B",
+        "kind": "hanging",
+        "x": 3590,
+        "y": 440,
+        "w": 65,
+        "h": 55,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "health-B",
+        "kind": "wood",
+        "x": 3730,
+        "y": 150,
+        "w": 52,
+        "h": 47,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "concrete-C",
+        "kind": "concrete",
+        "x": 3880,
+        "y": 150,
+        "w": 90,
+        "h": 72,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "hidden-rockets",
+        "kind": "wood",
+        "x": 4420,
+        "y": 310,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "barrel-C1",
+        "kind": "barrel",
+        "x": 5580,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "barrel-C2",
+        "kind": "barrel",
+        "x": 5680,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "grenades-C",
+        "kind": "wood",
+        "x": 5800,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "cargo-C",
+        "kind": "hanging",
+        "x": 5980,
+        "y": 425,
+        "w": 56,
+        "h": 50,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false
+      },
+      {
+        "id": "health-C",
+        "kind": "wood",
+        "x": 6630,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "arena-rockets",
+        "kind": "wood",
+        "x": 7100,
+        "y": 150,
+        "w": 58,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "arena-sandbag",
+        "kind": "sandbag",
+        "x": 7410,
+        "y": 150,
+        "w": 80,
+        "h": 40,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      },
+      {
+        "id": "arena-barrel",
+        "kind": "barrel",
+        "x": 7590,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false
+      }
+    ],
+    "pickups": [
+      {
+        "kind": "rocket",
+        "x": 3129,
+        "y": 174
+      },
+      {
+        "kind": "health",
+        "x": 458,
+        "y": 184
+      },
+      {
+        "kind": "health",
+        "x": 2746,
+        "y": 173
+      },
+      {
+        "kind": "health",
+        "x": 3756,
+        "y": 160
+      }
+    ],
+    "projectileStates": [
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 4059.177222222229,
+        "y": 226.64,
+        "vx": 1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false,
+        "age": 0.4583333333333339
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 3727.9572222222446,
+        "y": 226.64,
+        "vx": 1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false,
+        "age": 0.03333333333333333
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 3962.8505555555676,
+        "y": 226,
+        "vx": 1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false,
+        "age": 0.3166666666666668
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "x": 3832.603888888906,
+        "y": 227.28,
+        "vx": 1100,
+        "vy": 0,
+        "homing": false,
+        "locked": false,
+        "age": 0.175
+      },
+      {
+        "owner": "enemy",
+        "kind": "bullet",
+        "x": 3747.4129647474224,
+        "y": 206,
+        "vx": -430,
+        "vy": 0,
+        "homing": false,
+        "locked": false,
+        "age": 0.13333333333333333
+      }
+    ],
+    "remaining": 9,
+    "guardHealth": 132,
+    "boss": {
+      "kind": "colossus",
+      "name": "重装裁决者",
+      "attack": "salvo",
+      "introTime": 1.3,
+      "phase": 1,
+      "active": false,
+      "mode": "dormant",
+      "warningX": 0,
+      "warningTime": 0,
+      "windup": 0,
+      "summons": 0
+    },
+    "miniBoss": {
+      "x": 6160,
+      "health": 42,
+      "maxHealth": 42,
+      "active": false,
+      "phase": 1,
+      "warningX": 0,
+      "warningTime": 0
+    },
+    "levelWidth": 8200,
+    "exitX": 8070,
+    "arenaEntered": false,
+    "zones": [
+      {
+        "id": "A",
+        "name": "道路遭遇",
+        "start": 0,
+        "end": 1850,
+        "cleared": true
+      },
+      {
+        "id": "B",
+        "name": "工业突破",
+        "start": 1850,
+        "end": 3800,
+        "cleared": true
+      },
+      {
+        "id": "C",
+        "name": "机械阵地",
+        "start": 3800,
+        "end": 6740,
+        "cleared": false
+      },
+      {
+        "id": "D",
+        "name": "裁决者决战",
+        "start": 6740,
+        "end": 8200,
+        "cleared": false
+      }
+    ],
+    "mechanisms": [
+      {
+        "id": "bridge-B",
+        "kind": "bridge",
+        "x": 3080,
+        "y": 150,
+        "w": 210,
+        "h": 14,
+        "released": true,
+        "landed": true
+      },
+      {
+        "id": "lift-C",
+        "kind": "lift",
+        "x": 5000,
+        "y": 289.5833333333327,
+        "w": 142,
+        "h": 16,
+        "released": false,
+        "landed": false
+      }
+    ],
+    "terrain": [
+      {
+        "x": 0,
+        "y": -240,
+        "w": 270,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 270,
+        "y": -240,
+        "w": 370,
+        "h": 414,
+        "kind": "ground",
+        "slope": {
+          "left": 174,
+          "right": 174
+        }
+      },
+      {
+        "x": 640,
+        "y": -240,
+        "w": 295,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 935,
+        "y": -240,
+        "w": 205,
+        "h": 424,
+        "kind": "ground",
+        "slope": {
+          "left": 184,
+          "right": 184
+        }
+      },
+      {
+        "x": 1140,
+        "y": -240,
+        "w": 160,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 1300,
+        "y": -240,
+        "w": 180,
+        "h": 396,
+        "kind": "ground",
+        "slope": {
+          "left": 156,
+          "right": 156
+        }
+      },
+      {
+        "x": 1480,
+        "y": -240,
+        "w": 260,
+        "h": 358,
+        "kind": "ground",
+        "slope": {
+          "left": 118,
+          "right": 118
+        }
+      },
+      {
+        "x": 1740,
+        "y": -240,
+        "w": 630,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 2370,
+        "y": -240,
+        "w": 255,
+        "h": 368,
+        "kind": "ground",
+        "slope": {
+          "left": 128,
+          "right": 128
+        }
+      },
+      {
+        "x": 2625,
+        "y": -240,
+        "w": 290,
+        "h": 403,
+        "kind": "ground",
+        "slope": {
+          "left": 163,
+          "right": 163
+        }
+      },
+      {
+        "x": 2915,
+        "y": -240,
+        "w": 545,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 3460,
+        "y": -240,
+        "w": 260,
+        "h": 418,
+        "kind": "ground",
+        "slope": {
+          "left": 178,
+          "right": 178
+        }
+      },
+      {
+        "x": 3720,
+        "y": -240,
+        "w": 380,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 4100,
+        "y": -240,
+        "w": 390,
+        "h": 416,
+        "kind": "ground",
+        "slope": {
+          "left": 176,
+          "right": 176
+        }
+      },
+      {
+        "x": 4490,
+        "y": -240,
+        "w": 340,
+        "h": 374,
+        "kind": "ground",
+        "slope": {
+          "left": 134,
+          "right": 134
+        }
+      },
+      {
+        "x": 4830,
+        "y": -240,
+        "w": 560,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 5390,
+        "y": -240,
+        "w": 170,
+        "h": 360,
+        "kind": "ground",
+        "slope": {
+          "left": 120,
+          "right": 120
+        }
+      },
+      {
+        "x": 5560,
+        "y": -240,
+        "w": 2640,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        }
+      },
+      {
+        "x": 950,
+        "y": 184,
+        "w": 92,
+        "h": 48,
+        "kind": "step"
+      },
+      {
+        "x": 1042,
+        "y": 184,
+        "w": 90,
+        "h": 88,
+        "kind": "step"
+      },
+      {
+        "x": 1150,
+        "y": 248,
+        "w": 340,
+        "h": 14,
+        "kind": "platform"
+      },
+      {
+        "x": 1430,
+        "y": 360,
+        "w": 205,
+        "h": 14,
+        "kind": "platform"
+      },
+      {
+        "x": 2040,
+        "y": 150,
+        "w": 100,
+        "h": 55,
+        "kind": "step"
+      },
+      {
+        "x": 2140,
+        "y": 150,
+        "w": 100,
+        "h": 95,
+        "kind": "step"
+      },
+      {
+        "x": 2300,
+        "y": 266,
+        "w": 320,
+        "h": 16,
+        "kind": "platform"
+      },
+      {
+        "x": 2920,
+        "y": 150,
+        "w": 160,
+        "h": 50,
+        "kind": "step"
+      },
+      {
+        "x": 3300,
+        "y": 320,
+        "w": 160,
+        "h": 16,
+        "kind": "platform"
+      },
+      {
+        "x": 4150,
+        "y": 176,
+        "w": 85,
+        "h": 58,
+        "kind": "step"
+      },
+      {
+        "x": 4235,
+        "y": 176,
+        "w": 85,
+        "h": 108,
+        "kind": "step"
+      },
+      {
+        "x": 4300,
+        "y": 292,
+        "w": 250,
+        "h": 18,
+        "kind": "platform"
+      },
+      {
+        "x": 5200,
+        "y": 278,
+        "w": 390,
+        "h": 16,
+        "kind": "platform"
+      },
+      {
+        "x": 5900,
+        "y": 150,
+        "w": 180,
+        "h": 50,
+        "kind": "step"
+      },
+      {
+        "x": 3880,
+        "y": 150,
+        "w": 90,
+        "h": 72,
+        "kind": "crate",
+        "entityId": "concrete-C"
+      },
+      {
+        "x": 4420,
+        "y": 310,
+        "w": 56,
+        "h": 48,
+        "kind": "crate",
+        "entityId": "hidden-rockets"
+      },
+      {
+        "x": 5580,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "kind": "crate",
+        "entityId": "barrel-C1"
+      },
+      {
+        "x": 5680,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "kind": "crate",
+        "entityId": "barrel-C2"
+      },
+      {
+        "x": 5800,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "kind": "crate",
+        "entityId": "grenades-C"
+      },
+      {
+        "x": 6630,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "kind": "crate",
+        "entityId": "health-C"
+      },
+      {
+        "x": 7100,
+        "y": 150,
+        "w": 58,
+        "h": 48,
+        "kind": "crate",
+        "entityId": "arena-rockets"
+      },
+      {
+        "x": 7410,
+        "y": 150,
+        "w": 80,
+        "h": 40,
+        "kind": "crate",
+        "entityId": "arena-sandbag"
+      },
+      {
+        "x": 7590,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "kind": "crate",
+        "entityId": "arena-barrel"
+      },
+      {
+        "x": 3080,
+        "y": 150,
+        "w": 210,
+        "h": 14,
+        "kind": "platform"
+      },
+      {
+        "x": 5000,
+        "y": 289.5833333333327,
+        "w": 142,
+        "h": 16,
+        "kind": "platform"
+      }
+    ],
+    "exitOpen": false,
+    "bullets": 5,
+    "shots": 151,
+    "hits": 75,
+    "peakBullets": 11,
+    "droppedBullets": 0,
+    "enemies": [
+      {
+        "id": "m1",
+        "x": 534.5444444155085,
+        "y": 174,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r1",
+        "x": 902.4160068992313,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r2",
+        "x": 1283.6483636916457,
+        "y": 262,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m2",
+        "x": 1354.3706597674272,
+        "y": 156,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r3",
+        "x": 2062.3110068992373,
+        "y": 205,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m3",
+        "x": 2287,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r4",
+        "x": 2517.5860068992033,
+        "y": 282,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m4",
+        "x": 3065.770052091551,
+        "y": 200,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r5",
+        "x": 3171,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-B",
+        "x": 3051.767217702032,
+        "y": 200,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-B",
+        "x": 3643.486077644445,
+        "y": 178,
+        "health": 0,
+        "state": "Dead",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-C",
+        "x": 3841.946298080758,
+        "y": 150,
+        "health": 5.6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 6,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "charge-C",
+        "x": 4650,
+        "y": 134,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C1",
+        "x": 4900,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C2",
+        "x": 5360,
+        "y": 294,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-C",
+        "x": 5800,
+        "y": 150,
+        "health": 8,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-C2",
+        "x": 6280,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C3",
+        "x": 6530,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "outpost-tank",
+        "x": 6160,
+        "y": 150,
+        "health": 42,
+        "state": "Idle",
+        "kind": "guard",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "gate-colossus",
+        "x": 7840,
+        "y": 150,
+        "health": 132,
+        "state": "Idle",
+        "kind": "colossus",
+        "shield": 0,
+        "windup": 0,
+        "action": "salvo"
+      }
+    ],
+    "playerShots": 96,
+    "audio": {
+      "loaded": 9,
+      "played": 164,
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "requested": "comic",
+      "active": "comic",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "player.run-shoot.1",
+      "equipment": {
+        "pose": "player.run-shoot.1",
+        "body": "player.run-shoot.1",
+        "weapon": null,
+        "grip": null,
+        "bakedWeapon": "",
+        "bakedRifle": true
+      },
+      "renderedPlayer": {
+        "body": "player.run-shoot.1",
+        "weapon": "baked.rifle",
+        "weaponVisible": true
+      },
+      "hudWeapon": {
+        "text": "突击步枪\n∞  弹药 · 切刀",
+        "id": "rifle",
+        "frame": "weapon.rifle",
+        "switch": {
+          "x": 387.69230769230774,
+          "y": 673.8461538461538
+        }
+      },
+      "combat": {
+        "rockets": [],
+        "muzzle": {
+          "x": 3700.850555555579,
+          "y": 226,
+          "pitch": 0
+        }
+      },
+      "terrain": "native-v057"
+    },
+    "visibleChunks": 12,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false
+    },
+    "display": {
+      "width": 1558.1538461538462,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 1.4,
+      "worldVisibleWidth": 1112.967032967033,
+      "cameraY": 2.3055126775001067e-13,
+      "frameWidth": 844,
+      "frameHeight": 390,
+      "orientationPaused": false
+    },
+    "controls": {
+      "shootHeld": true,
+      "hudHeight": 96,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "joystick": {
+          "x": 171.92307692307693,
+          "y": 164.53846153846155,
+          "r": 95.76000000000002,
+          "baseR": 135,
+          "knobR": 64.80000000000001,
+          "hit": 270,
+          "unit": 1.8461538461538463
+        },
+        "jump": {
+          "x": 1188.7384615384615,
+          "y": 228.82153846153847,
+          "r": 64.80000000000001,
+          "hit": 151.75384615384618
+        },
+        "shoot": {
+          "x": 1404,
+          "y": 164.53846153846155,
+          "r": 108,
+          "hit": 241.84615384615384
+        },
+        "grenade": {
+          "x": 1415.076923076923,
+          "y": 366.02769230769235,
+          "r": 54.720000000000006,
+          "hit": 131.59384615384616
+        },
+        "pause": {
+          "x": 1502.769230769231,
+          "y": 668.3076923076923,
+          "hit": 81.23076923076924
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 0,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    }
+  },
+  "errors": []
+}

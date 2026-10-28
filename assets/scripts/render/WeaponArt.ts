@@ -15,6 +15,7 @@ const launcher = [
   -25, 8, -20, 5, 20, 5, 26, 8, 26, -8, 20, -5, 4, -5, 2, -12, -3, -12, -2, -5,
   -20, -5, -25, -8,
 ];
+const knife = [-12,3,0,3,30,10,22,-1,0,-3,-12,-3];
 export class WeaponArt {
   draw(
     ink: Ink,
@@ -33,7 +34,7 @@ export class WeaponArt {
     const px = (a: number, b: number) => x + (a * cs - b * sn) * facing * scale;
     const py = (a: number, b: number) => y + (a * sn + b * cs) * scale;
     const shape =
-      id === "rocket" ? launcher : id === "shotgun" ? shotgun : rifle;
+      id === "knife" ? knife : id === "rocket" ? launcher : id === "shotgun" ? shotgun : rifle;
     g.moveTo(px(shape[0], shape[1]), py(shape[0], shape[1]));
     for (let i = 2; i < shape.length; i += 2)
       g.lineTo(px(shape[i], shape[i + 1]), py(shape[i], shape[i + 1]));

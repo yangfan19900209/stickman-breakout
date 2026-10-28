@@ -1,6 +1,8 @@
 import { AudioClip, AudioSource, Node, resources, assetManager } from "cc";
 import { GameSession } from "../core/GameSession";
 type Effect =
+  | "knife"
+  | "melee-hit"
   | "rifle"
   | "shotgun"
   | "rocket"
@@ -14,6 +16,8 @@ export class AudioBridge {
   private clips = new Map<Effect, AudioClip>();
   private destroyed = false;
   private shots = 0;
+  private swings = 0;
+  private meleeHits = 0;
   private explosions = 0;
   private health = 5;
   private pickups = 0;
@@ -28,6 +32,7 @@ export class AudioBridge {
     await Promise.all(
       (
         [
+          "knife","melee-hit",
           "rifle",
           "shotgun",
           "rocket",
@@ -66,7 +71,9 @@ export class AudioBridge {
   }
   update(s: GameSession): void {
     if (s.state === "playing" || s.state === "dying") {
-      if (s.weapon.shots > this.shots) this.play(s.weapon.id);
+      if (s.weapon.shots > this.shots) this.play(s.weapon.lastShot);
+      if(s.melee.swings>this.swings)this.play("knife");
+      if(s.melee.hits>this.meleeHits)this.play("melee-hit");
       if (s.explosions.total > this.explosions) this.play("blast");
       if (s.player.health < this.health) this.play("hit");
       if (s.pickups.collected > this.pickups) this.play("pickup");
@@ -80,6 +87,7 @@ export class AudioBridge {
       }
     }
     this.shots = s.weapon.shots;
+    this.swings=s.melee.swings;this.meleeHits=s.melee.hits;
     this.explosions = s.explosions.total;
     this.health = s.player.health;
     this.pickups = s.pickups.collected;

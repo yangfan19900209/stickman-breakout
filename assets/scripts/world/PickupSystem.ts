@@ -42,6 +42,17 @@ export class PickupSystem {
     this.messageTime = Math.max(0, this.messageTime - dt);
     for (const p of this.items) {
       if (!p.active) continue;
+      // A drop created beside a large machine can start inside a nearby step.
+      // Resolve that overlap once, so it never becomes an unreachable supply below the floor.
+      if (p.age === 0)
+        for (const s of solids)
+          if (
+            p.x >= s.x &&
+            p.x <= s.x + s.w &&
+            p.y >= s.y &&
+            p.y < surfaceY(s, p.x) + 10
+          )
+            p.y = surfaceY(s, p.x) + 10;
       p.age += dt;
       const oldY = p.y;
       p.vy -= 600 * dt;
@@ -71,13 +82,12 @@ export class PickupSystem {
         player.grenades = Math.min(C.grenade.max, player.grenades + 2);
         this.lastMessage = "手雷补给 +2";
       } else {
-        weapon.equip(p.kind);
-        player.weaponId = p.kind;
+        if (!weapon.equip(p.kind)) continue;
         this.lastMessage =
-          p.kind === "shotgun"
+          p.kind === "knife" ? "战术刀 · 长按普攻三段连击" : p.kind === "shotgun"
             ? "拾取霰弹枪 · 近距离爆发"
             : p.kind === "rocket"
-              ? "拾取火箭筒 · 范围爆炸"
+              ? "追踪火箭 · 自动锁敌 / 范围爆炸"
               : "拾取自动步枪";
       }
       p.active = false;

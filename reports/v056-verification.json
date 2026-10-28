@@ -1,0 +1,132 @@
+{
+  "version": "0.5.6",
+  "date": "2026-10-19",
+  "creator": "3.8.8",
+  "typecheck": "passed",
+  "sourceSHA256": "ef9320b472ee292be275e2cc75cd5408c596f510b70137ed1c4ae8fedf1188b4",
+  "logicTests": {
+    "tests": 97,
+    "passed": 97,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "passed": 41,
+    "firstAttemptPassed": 39,
+    "passedAfterRetry": 0,
+    "failed": 0,
+    "originalFailures": 2,
+    "report": "reports/v056-browser-results.json",
+    "retest": "reports/v056-audio-retest.json",
+    "frameSampling": "reports/v056-frame-retest.json",
+    "note": "Final build complete suite:39/41. Two tests still waited for exactly 7 audio clips; updated to 9 after adding knife/hit sounds and both passed focused rerun. Per-render-frame swap sampling passed separately. Game/build unchanged between runs."
+  },
+  "fullRun": {
+    "attempt": 1,
+    "state": "complete",
+    "seconds": 69.93333333333506,
+    "health": 2,
+    "kills": 22,
+    "guardHealth": 0,
+    "errors": []
+  },
+  "bypass": {
+    "phase": "done",
+    "entries": [
+      {
+        "x": 6876.083333333302,
+        "boss": 132,
+        "skipped": [
+          "turret-C",
+          "shield-C2",
+          "rifle-C3",
+          "gate-colossus"
+        ]
+      },
+      {
+        "x": 6873.638888888865,
+        "boss": 132,
+        "skipped": [
+          "turret-C",
+          "shield-C2",
+          "rifle-C3",
+          "gate-colossus"
+        ]
+      }
+    ],
+    "retreat": {
+      "x": 6656.91666666667,
+      "camera": 6062.973208127467,
+      "active": false
+    },
+    "errors": []
+  },
+  "weaponSwitch": {
+    "cycles": 16,
+    "sampledRenderFrames": 70,
+    "blankFrames": 0,
+    "report": "reports/v056-switch.json"
+  },
+  "knife": {
+    "stages": [
+      1,
+      2,
+      3
+    ],
+    "hitStop": 0.04,
+    "hits": 1,
+    "bullets": 0,
+    "report": "reports/v056-knife.json"
+  },
+  "web": {
+    "files": 50,
+    "bytes": 5606718,
+    "creatorExitCode": 36
+  },
+  "wechat": {
+    "files": 49,
+    "bytes": 2826159,
+    "creatorExitCode": 36,
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "art": {
+    "cuts": 102,
+    "additionalTextureBytes": 137522,
+    "additionalTextureSize": [
+      2048,
+      1024
+    ],
+    "padding": 8,
+    "extrusion": 4,
+    "source": {
+      "file": "art/source/v055/黑白漫画可拼接地形.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "aae240c3cead6f194acb127e72693f18c08198b0875cd3165d0158b70f4aa0ba",
+      "transparentPixels": 717737
+    }
+  },
+  "screenshots": [
+    "reports/v056-first-screen.png",
+    "reports/v056-platform.png",
+    "reports/v056-shotgun.png",
+    "reports/v056-rocket.png",
+    "reports/v056-knife-hold.png",
+    "reports/v056-knife-1.png",
+    "reports/v056-knife-2.png",
+    "reports/v056-knife-3.png",
+    "reports/v056-knife-hit.png",
+    "reports/v056-knife-crouch.png",
+    "reports/v056-knife-jump.png"
+  ],
+  "limitations": [
+    "Knife body animation reuses supplied throw/crouch/jump frames; bespoke knife animation frames remain unavailable.",
+    "No high-angle dedicated arm poses for all guns.",
+    "WeChat developer tools, physical Android/iOS devices and sustained real-device 60FPS not verified.",
+    "No upload, review submission or publication performed in this iteration."
+  ]
+}

@@ -1,0 +1,970 @@
+{
+  "date": "2026-10-19",
+  "creator": "3.8.8",
+  "design": {
+    "width": 1280,
+    "height": 720,
+    "targetFPS": 60
+  },
+  "sourceModules": 54,
+  "sourceSHA256": "3f1a7e1cf077147a6bed80c92fdb0d06c7eedab846593640a7fdfe488ee3d738",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 84,
+    "passed": 84,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "passed": 37,
+    "firstAttemptPassed": 36,
+    "passedAfterRetry": 0,
+    "failed": 0,
+    "originalFailures": 1,
+    "focusedRetest": {
+      "passed": 1,
+      "report": "reports/v054-weapon-retest.json",
+      "reason": "Use floating-point tolerance for guided velocity magnitude (460.00000000000057 instead of exact 460); no game change."
+    },
+    "currentCampaign": {
+      "passed": true,
+      "attempts": 1,
+      "report": "reports/v054-full-browser-results.json"
+    }
+  },
+  "web": {
+    "files": 44,
+    "bytes": 5401133,
+    "entry": "build/web-mobile/index.html",
+    "creatorExitCode": 36
+  },
+  "wechat": {
+    "files": 43,
+    "bytes": 2648627,
+    "entry": "build/wechatgame/game.js",
+    "creatorExitCode": 36,
+    "orientation": "landscape",
+    "appid": "wx7d2aae02691fc088",
+    "runtimeVerified": false
+  },
+  "fullRun": {
+    "timing": "fixed browser clock, 34 ms input cadence; real keyboard events",
+    "attempt": 1,
+    "state": "complete",
+    "seconds": 176.34166666667062,
+    "health": 2,
+    "kills": 22,
+    "guardHealth": 0,
+    "cameraX": 6949.99999963394,
+    "peakBullets": 12,
+    "droppedBullets": 0,
+    "applicationErrors": []
+  },
+  "bypassRoute": {
+    "phase": "done",
+    "entries": [
+      {
+        "x": 6876.097222222098,
+        "boss": 132,
+        "skipped": [
+          "rifle-C2",
+          "turret-C",
+          "shield-C2",
+          "rifle-C3",
+          "gate-colossus"
+        ]
+      },
+      {
+        "x": 6873.638888888865,
+        "boss": 132,
+        "skipped": [
+          "rifle-C2",
+          "turret-C",
+          "shield-C2",
+          "rifle-C3",
+          "gate-colossus"
+        ]
+      }
+    ],
+    "retreat": {
+      "x": 6656.91666666667,
+      "camera": 6062.319546858495,
+      "active": false
+    },
+    "errors": []
+  },
+  "touchCancellation": {
+    "inputReleased": true,
+    "engineDiagnostics": [
+      "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted."
+    ],
+    "applicationErrors": []
+  },
+  "mobileLayout": {
+    "rows": [
+      {
+        "size": {
+          "width": 844,
+          "height": 390
+        },
+        "display": {
+          "width": 1558.1538461538462,
+          "height": 720,
+          "portrait": false,
+          "zoom": 1.4,
+          "combatZoom": 1.4,
+          "worldVisibleWidth": 1112.967032967033,
+          "cameraY": 0,
+          "frameWidth": 844,
+          "frameHeight": 390,
+          "orientationPaused": false
+        },
+        "layout": {
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390
+        },
+        "heroHeightCSS": 56.11666666666666,
+        "shot": 2
+      }
+    ],
+    "errors": []
+  },
+  "mobileDevices": [
+    {
+      "size": {
+        "width": 667,
+        "height": 375,
+        "dpr": 2
+      },
+      "display": {
+        "width": 1280.64,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 914.7428571428572,
+        "cameraY": 0,
+        "frameWidth": 667,
+        "frameHeight": 375,
+        "orientationPaused": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 667,
+        "height": 375
+      },
+      "actualPixelRatio": 2,
+      "hitPixels": {
+        "joystick": 140.625,
+        "jump": 79.5,
+        "shoot": 126.5,
+        "grenade": 69,
+        "pause": 44
+      },
+      "heroHeightCSS": 53.958333333333336,
+      "shots": 2
+    },
+    {
+      "size": {
+        "width": 740,
+        "height": 360,
+        "dpr": 3
+      },
+      "display": {
+        "width": 1480,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1057.142857142857,
+        "cameraY": 0,
+        "frameWidth": 740,
+        "frameHeight": 360,
+        "orientationPaused": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 740,
+        "height": 360
+      },
+      "actualPixelRatio": 2,
+      "hitPixels": {
+        "joystick": 136,
+        "jump": 76.8,
+        "shoot": 122,
+        "grenade": 66.72,
+        "pause": 44
+      },
+      "heroHeightCSS": 51.8,
+      "shots": 2
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 2
+      },
+      "display": {
+        "width": 960,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.25,
+        "combatZoom": 1.25,
+        "worldVisibleWidth": 768,
+        "cameraY": 0,
+        "frameWidth": 1024,
+        "frameHeight": 768,
+        "orientationPaused": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 768
+      },
+      "actualPixelRatio": 2,
+      "hitPixels": {
+        "joystick": 156,
+        "jump": 88,
+        "shoot": 136,
+        "grenade": 78,
+        "pause": 48
+      },
+      "heroHeightCSS": 98.66666666666667,
+      "shots": 4
+    }
+  ],
+  "combatFeedback": {
+    "samples": {
+      "materials": [
+        "wood",
+        "metal",
+        "stone",
+        "enemy"
+      ],
+      "kinds": [
+        "shell",
+        "impact",
+        "wood",
+        "spark",
+        "metal",
+        "dust"
+      ],
+      "peakShake": 1.9016666666666666,
+      "blastFrames": 59,
+      "ages": [
+        0.016666666666666666,
+        0.016666666666666666,
+        0.016666666666666666,
+        0.016666666666666666,
+        0.016666666666666666,
+        0.03333333333333333,
+        0.049999999999999996,
+        0.049999999999999996,
+        0.049999999999999996,
+        0.049999999999999996,
+        0.05833333333333333,
+        0.075,
+        0.09166666666666666,
+        0.10833333333333332,
+        0.10833333333333332,
+        0.10833333333333332,
+        0.10833333333333332,
+        0.12499999999999999,
+        0.14166666666666666,
+        0.15,
+        0.175,
+        0.19166666666666665,
+        0.19999999999999998,
+        0.21666666666666665,
+        0.2333333333333333,
+        0.24999999999999997,
+        0.275,
+        0.29166666666666674,
+        0.3000000000000001,
+        0.3250000000000002,
+        0.3416666666666669,
+        0.35000000000000026,
+        0.366666666666667,
+        0.3833333333333337,
+        0.40833333333333377,
+        0.41666666666666713,
+        0.43333333333333385,
+        0.45000000000000057,
+        0.47500000000000064,
+        0.483333333333334,
+        0.5000000000000007,
+        0.5166666666666673,
+        0.5416666666666672,
+        0.5500000000000005,
+        0.5666666666666671,
+        0.5833333333333337,
+        0.6083333333333336,
+        0.6166666666666669,
+        0.6333333333333335,
+        0.6583333333333334,
+        0.675,
+        0.6833333333333333,
+        0.7083333333333333,
+        0.7166666666666666,
+        0.7333333333333332,
+        0.7583333333333331,
+        0.7749999999999997,
+        0.7916666666666663,
+        0.8083333333333329
+      ]
+    },
+    "errors": []
+  },
+  "v04Devices": [
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390
+      },
+      "layout": {
+        "joystick": {
+          "x": 171.92307692307693,
+          "y": 164.53846153846155,
+          "r": 95.76000000000002,
+          "baseR": 135,
+          "knobR": 64.80000000000001,
+          "hit": 270,
+          "unit": 1.8461538461538463
+        },
+        "jump": {
+          "x": 1188.7384615384615,
+          "y": 228.82153846153847,
+          "r": 64.80000000000001,
+          "hit": 151.75384615384618
+        },
+        "shoot": {
+          "x": 1404,
+          "y": 164.53846153846155,
+          "r": 108,
+          "hit": 241.84615384615384
+        },
+        "grenade": {
+          "x": 1415.076923076923,
+          "y": 366.02769230769235,
+          "r": 54.720000000000006,
+          "hit": 131.59384615384616
+        },
+        "pause": {
+          "x": 1502.769230769231,
+          "y": 668.3076923076923,
+          "hit": 81.23076923076924
+        }
+      },
+      "hudHeightCSS": 52,
+      "baseDiameterCSS": 146.25,
+      "knobDiameterCSS": 70.2,
+      "dragRadiusCSS": 51.870000000000005,
+      "fireDiameterCSS": 116.99999999999999,
+      "errors": []
+    },
+    {
+      "size": {
+        "width": 852,
+        "height": 393
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 852,
+        "height": 393
+      },
+      "layout": {
+        "joystick": {
+          "x": 171.6412213740458,
+          "y": 164.31297709923663,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 228.46809160305344,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 164.31297709923663,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 365.5062595419847,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1505.9541984732823,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      },
+      "hudHeightCSS": 51.99999999999999,
+      "baseDiameterCSS": 147.375,
+      "knobDiameterCSS": 70.74,
+      "dragRadiusCSS": 52.269,
+      "fireDiameterCSS": 117.89999999999998,
+      "errors": []
+    },
+    {
+      "size": {
+        "width": 932,
+        "height": 430
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 932,
+        "height": 430
+      },
+      "layout": {
+        "joystick": {
+          "x": 164.09302325581396,
+          "y": 157.3953488372093,
+          "r": 95.76000000000002,
+          "baseR": 130.6046511627907,
+          "knobR": 63.62790697674419,
+          "hit": 261.2093023255814,
+          "unit": 1.6744186046511629
+        },
+        "jump": {
+          "x": 1212.2790697674418,
+          "y": 217.54046511627905,
+          "r": 63.62790697674419,
+          "hit": 147.34883720930233
+        },
+        "shoot": {
+          "x": 1416.5581395348838,
+          "y": 157.3953488372093,
+          "r": 102.13953488372094,
+          "hit": 227.72093023255817
+        },
+        "grenade": {
+          "x": 1426.6046511627908,
+          "y": 349.4176744186047,
+          "r": 54.72,
+          "hit": 129.53302325581396
+        },
+        "pause": {
+          "x": 1507.5627906976747,
+          "y": 670.353488372093,
+          "hit": 79.2
+        }
+      },
+      "hudHeightCSS": 52,
+      "baseDiameterCSS": 156,
+      "knobDiameterCSS": 76,
+      "dragRadiusCSS": 57.19000000000001,
+      "fireDiameterCSS": 122.00000000000001,
+      "errors": []
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "layout": {
+        "joystick": {
+          "x": 98,
+          "y": 94,
+          "r": 58,
+          "baseR": 78,
+          "knobR": 38,
+          "hit": 156,
+          "unit": 1
+        },
+        "jump": {
+          "x": 1072,
+          "y": 129.92000000000002,
+          "r": 38,
+          "hit": 88
+        },
+        "shoot": {
+          "x": 1194,
+          "y": 94,
+          "r": 61,
+          "hit": 136
+        },
+        "grenade": {
+          "x": 1200,
+          "y": 209,
+          "r": 33,
+          "hit": 78
+        },
+        "pause": {
+          "x": 1248,
+          "y": 690,
+          "hit": 48
+        }
+      },
+      "hudHeightCSS": 52,
+      "baseDiameterCSS": 156,
+      "knobDiameterCSS": 76,
+      "dragRadiusCSS": 58,
+      "fireDiameterCSS": 122,
+      "errors": []
+    }
+  ],
+  "v04Platform": {
+    "manifest": {
+      "url": "http://127.0.0.1:4190/stickman-breakout/manifest.webmanifest",
+      "data": {
+        "id": "./",
+        "name": "线条突围 · Stickman Breakout",
+        "short_name": "线条突围",
+        "lang": "zh-CN",
+        "start_url": "./",
+        "scope": "./",
+        "display": "standalone",
+        "orientation": "landscape",
+        "background_color": "#faf9f5",
+        "theme_color": "#faf9f5",
+        "icons": [
+          {
+            "src": "./icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "./icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+          }
+        ]
+      }
+    },
+    "fullscreenEntered": true,
+    "fullscreenExited": true,
+    "errors": []
+  },
+  "v04Actions": {
+    "blankTap": true,
+    "blankHold": true,
+    "jumpNoExtraShot": true,
+    "grenadeNoExtraShot": true,
+    "independentRelease": true,
+    "errors": []
+  },
+  "v041Comic": {
+    "captures": [
+      "rifle",
+      "shotgun",
+      "rocket"
+    ],
+    "fan": true,
+    "rocketSpeed": 459.9999999999999,
+    "rocketSmoke": true,
+    "styles": [
+      "barrel",
+      "rocket"
+    ],
+    "errors": []
+  },
+  "roadTraversal": {
+    "samples": [
+      {
+        "direction": 1,
+        "x": 112.70833333333334,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 138.08333333333337,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 173.0833333333335,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 203.41666666666697,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 222.0833333333337,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 320.0833333333333,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 345.7499999999998,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 380.7499999999995,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 411.0833333333326,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 446.0833333333323,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 478.7499999999987,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 504.41666666666515,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 511.4166666666651,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 510.0416666666651,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 525.0972222222206,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 555.4305555555544,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 599.7638888888885,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 637.0972222222224,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": 1,
+        "x": 665.0972222222229,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 690.7222222222231,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 668.5555555555562,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 642.8888888888891,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 610.222222222222,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 577.5555555555547,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 554.222222222221,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 521.5555555555538,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 495.88888888888715,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 470.2222222222207,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 437.5555555555543,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 407.2222222222212,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 374.5555555555548,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 341.8888888888884,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 311.5555555555553,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 278.8888888888889,
+        "y": 174,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 250.88888888888906,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 218.22222222222226,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 187.8888888888888,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 155.222222222222,
+        "y": 150,
+        "grounded": true
+      },
+      {
+        "direction": -1,
+        "x": 124.88888888888857,
+        "y": 150,
+        "grounded": true
+      }
+    ],
+    "final": {
+      "x": 104.88888888888859,
+      "y": 150,
+      "vx": -146.6666666666667,
+      "vy": 0,
+      "health": 5,
+      "grounded": true,
+      "facing": -1,
+      "animation": "Run",
+      "crouched": false,
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": true
+    },
+    "errors": []
+  },
+  "version": "0.5.4",
+  "v054Combat": {
+    "closeCombat": {
+      "melee": {
+        "swings": 2,
+        "hits": 1,
+        "time": 0.20499999999999996
+      },
+      "health": 5,
+      "kills": 1
+    },
+    "guided": {
+      "locked": true,
+      "bent": true,
+      "x": 3804.5833333333785,
+      "errors": []
+    }
+  },
+  "validationNotes": [
+    "Final Web build: 36/37 passed in the complete suite, including the current full campaign. The remaining weapon test passed a focused rerun after replacing exact floating-point speed equality with tolerance; game code/build unchanged. Raw reports retained separately. Both official Cocos targets built from the same final source.",
+    "An intermediate campaign exposed terrace side tunneling; fixed with two-direction overlapping-lip collision coverage. Campaign budget increased to 240 simulation seconds; no health, enemy damage or attack-rate reduction.",
+    "Knife uses supplied whole-body throwing poses plus a blade and slash overlay; dedicated player knife frames are not available. Guided rockets upgrade the existing rocket pickup, not a fourth weapon.",
+    "First two zones are the visual acceptance scope. Giant final boss and high-angle hand articulation need supplied art.",
+    "Latest campaign attempt: 1; fixed-clock input replay does not establish real-device performance."
+  ],
+  "comicArt": {
+    "frames": 179,
+    "textureBytes": 610613,
+    "textureSize": [
+      2048,
+      2048
+    ],
+    "unavailable": [
+      {
+        "id": "boss.colossus",
+        "qa": "needs-remake",
+        "reason": "No giant walking boss supplied. Its original encounter and renderer are retained outside the first two zones."
+      },
+      {
+        "id": "player.aim-up",
+        "qa": "needs-remake",
+        "reason": "No upward-facing gun poses. Full-body animation retained; independent gun overlay supplies aiming direction."
+      },
+      {
+        "id": "cover.broken",
+        "qa": "shared-debris",
+        "reason": "No broken sandbag/concrete variants in new sheet; impact and debris used without invented textures."
+      }
+    ],
+    "clips": 33,
+    "firstTwoZones": [
+      "first-combat",
+      "explosion",
+      "second-zone",
+      "rocket-soldier"
+    ]
+  },
+  "performance": {
+    "frames": 137,
+    "averageFPS": 45.37776158457259,
+    "slowFramesOver50ms": 1,
+    "visibleChunks": 12,
+    "audio": {
+      "loaded": 7,
+      "played": 4,
+      "muted": false,
+      "loadErrors": []
+    },
+    "environment": {
+      "browser": "153.0.8010.12",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)"
+    }
+  },
+  "engineModules": [
+    "2d",
+    "audio",
+    "base",
+    "custom-pipeline",
+    "gfx-webgl",
+    "gfx-webgl2",
+    "graphics",
+    "profiler",
+    "ui",
+    "ui-skew"
+  ],
+  "unverified": [
+    "WeChat developer-tools runtime",
+    "Android/iOS/WeChat real devices",
+    "Real-device 60FPS and memory",
+    "Editor GUI manual inspection",
+    "Physical iOS Safari fullscreen/PWA installation and browser toolbar behavior"
+  ]
+}

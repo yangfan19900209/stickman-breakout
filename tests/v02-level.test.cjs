@@ -183,7 +183,7 @@ test("tank defeat has an explosion sequence, then unlocks a reachable exit and r
   assert.equal(s.level.guardDefeated, true);
   s.reset();
   assert.equal(s.state, "playing");
-  assert.equal(s.spawner.guard.health, 90);
+  assert.equal(s.spawner.guard.health, 132);
   assert.equal(s.level.arenaEntered, false);
 });
 test("safe insets move touch controls inward without changing their ownership model", () => {

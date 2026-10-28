@@ -72,7 +72,7 @@ test("boss activates with ALL ordinary enemies alive, retreat and re-entry prese
   assert.equal(s.level.zone.id, "D");
   assert.equal(s.level.clearedZones.size, 0);
   assert.ok(
-    s.spawner.enemies.filter((e) => e.kind !== "guard").every((e) => e.alive),
+    s.spawner.enemies.filter((e) => e.kind !== "guard" && e.kind !== "colossus").every((e) => e.alive),
   );
   s.spawner.guard.takeDamage(12, 1);
   const hp = s.spawner.guard.health;
@@ -106,10 +106,10 @@ test("defeating the boss opens the exit with skipped enemies still alive", () =>
   assert.equal(s.state, "complete");
   assert.equal(s.level.clearedZones.size, 0);
   assert.ok(
-    s.spawner.enemies.filter((e) => e.kind !== "guard").every((e) => e.alive),
+    s.spawner.enemies.filter((e) => e.kind !== "guard" && e.kind !== "colossus").every((e) => e.alive),
   );
   s.reset();
   assert.equal(s.level.zone.id, "A");
   assert.equal(s.level.arenaEntered, false);
-  assert.equal(s.spawner.guard.health, 90);
+  assert.equal(s.spawner.guard.health, 132);
 });

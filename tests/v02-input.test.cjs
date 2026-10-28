@@ -111,6 +111,7 @@ test("coyote jump and buffered landing both retain exactly one takeoff", () => {
   q.y = 160;
   q.vy = -200;
   q.grounded = false;
+  q.airJumpsRemaining = 0;
   q.update(1 / 120, { ...idle, jump: true }, k);
   for (let t = 0; t < 10; t++) q.update(1 / 120, idle, k);
   assert.ok(q.vy > 300);

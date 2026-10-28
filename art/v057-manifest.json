@@ -1,0 +1,4821 @@
+{
+  "version": "0.5.7",
+  "sources": {
+    "knife": {
+      "file": "art/source/v057/持刀士兵动作.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "8d7213f3a41e0ba7c5149040b7891add6743ec789d847490c6347aa24329b6a1",
+      "transparentPixels": 1009236
+    },
+    "rocket": {
+      "file": "art/source/v057/火箭筒士兵动作.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "7b4d32a9fbb54565bbe90ade69dabd3cc09e567105c8843df1023621d4fe3e37",
+      "transparentPixels": 990341
+    },
+    "ground": {
+      "file": "art/source/v057/漫画地形模块.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "66330a67c4dc3fa4369d7ed6d17b9bf412ec188e81402f0221b900390fb9aac7",
+      "transparentPixels": 792341
+    },
+    "metal": {
+      "file": "art/source/v057/金属平台模块.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "a1e37f4684a12023c25d32ca9316894e59ebf4381513433c809d9d158360efe7",
+      "transparentPixels": 848465
+    }
+  },
+  "frames": [
+    {
+      "id": "direct.knife.idle.0",
+      "source": "knife",
+      "crop": [
+        168,
+        0,
+        270,
+        116
+      ],
+      "trim": [
+        4,
+        7,
+        94,
+        112
+      ],
+      "origin": [
+        172,
+        7
+      ],
+      "size": [
+        90,
+        105
+      ],
+      "sourceSize": [
+        90,
+        105
+      ],
+      "anchor": [
+        0.3888888888888889,
+        0.01904761904761909
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.idle.0.png",
+      "atlas": [
+        1680,
+        4,
+        90,
+        105
+      ]
+    },
+    {
+      "id": "direct.knife.idle.1",
+      "source": "knife",
+      "crop": [
+        276,
+        0,
+        379,
+        116
+      ],
+      "trim": [
+        5,
+        7,
+        95,
+        113
+      ],
+      "origin": [
+        281,
+        7
+      ],
+      "size": [
+        90,
+        106
+      ],
+      "sourceSize": [
+        90,
+        106
+      ],
+      "anchor": [
+        0.4111111111111111,
+        0.028301886792452824
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.idle.1.png",
+      "atlas": [
+        1274,
+        4,
+        90,
+        106
+      ]
+    },
+    {
+      "id": "direct.knife.idle.2",
+      "source": "knife",
+      "crop": [
+        387,
+        0,
+        491,
+        116
+      ],
+      "trim": [
+        5,
+        8,
+        97,
+        114
+      ],
+      "origin": [
+        392,
+        8
+      ],
+      "size": [
+        92,
+        106
+      ],
+      "sourceSize": [
+        92,
+        106
+      ],
+      "anchor": [
+        0.40217391304347827,
+        0.037735849056603765
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.idle.2.png",
+      "atlas": [
+        1372,
+        4,
+        92,
+        106
+      ]
+    },
+    {
+      "id": "direct.knife.idle.3",
+      "source": "knife",
+      "crop": [
+        500,
+        0,
+        605,
+        116
+      ],
+      "trim": [
+        3,
+        9,
+        93,
+        115
+      ],
+      "origin": [
+        503,
+        9
+      ],
+      "size": [
+        90,
+        106
+      ],
+      "sourceSize": [
+        90,
+        106
+      ],
+      "anchor": [
+        0.4111111111111111,
+        0.047169811320754707
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.idle.3.png",
+      "atlas": [
+        1472,
+        4,
+        90,
+        106
+      ]
+    },
+    {
+      "id": "direct.knife.run.0",
+      "source": "knife",
+      "crop": [
+        163,
+        113,
+        276,
+        233
+      ],
+      "trim": [
+        4,
+        9,
+        107,
+        112
+      ],
+      "origin": [
+        167,
+        122
+      ],
+      "size": [
+        103,
+        103
+      ],
+      "sourceSize": [
+        103,
+        103
+      ],
+      "anchor": [
+        0.42718446601941745,
+        0.009708737864077666
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.0.png",
+      "atlas": [
+        563,
+        240,
+        103,
+        103
+      ]
+    },
+    {
+      "id": "direct.knife.run.1",
+      "source": "knife",
+      "crop": [
+        278,
+        113,
+        388,
+        233
+      ],
+      "trim": [
+        4,
+        9,
+        106,
+        116
+      ],
+      "origin": [
+        282,
+        122
+      ],
+      "size": [
+        102,
+        107
+      ],
+      "sourceSize": [
+        102,
+        107
+      ],
+      "anchor": [
+        0.4117647058823529,
+        0.04672897196261683
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.1.png",
+      "atlas": [
+        932,
+        4,
+        102,
+        107
+      ]
+    },
+    {
+      "id": "direct.knife.run.2",
+      "source": "knife",
+      "crop": [
+        389,
+        113,
+        498,
+        233
+      ],
+      "trim": [
+        2,
+        10,
+        104,
+        116
+      ],
+      "origin": [
+        391,
+        123
+      ],
+      "size": [
+        102,
+        106
+      ],
+      "sourceSize": [
+        102,
+        106
+      ],
+      "anchor": [
+        0.4411764705882353,
+        0.047169811320754707
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.2.png",
+      "atlas": [
+        1570,
+        4,
+        102,
+        106
+      ]
+    },
+    {
+      "id": "direct.knife.run.3",
+      "source": "knife",
+      "crop": [
+        499,
+        113,
+        608,
+        233
+      ],
+      "trim": [
+        0,
+        10,
+        102,
+        117
+      ],
+      "origin": [
+        499,
+        123
+      ],
+      "size": [
+        102,
+        107
+      ],
+      "sourceSize": [
+        102,
+        107
+      ],
+      "anchor": [
+        0.4411764705882353,
+        0.05607476635514019
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.3.png",
+      "atlas": [
+        1042,
+        4,
+        102,
+        107
+      ]
+    },
+    {
+      "id": "direct.knife.run.4",
+      "source": "knife",
+      "crop": [
+        609,
+        113,
+        719,
+        233
+      ],
+      "trim": [
+        0,
+        8,
+        105,
+        117
+      ],
+      "origin": [
+        609,
+        121
+      ],
+      "size": [
+        105,
+        109
+      ],
+      "sourceSize": [
+        105,
+        109
+      ],
+      "anchor": [
+        0.45714285714285713,
+        0.05504587155963303
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.4.png",
+      "atlas": [
+        467,
+        4,
+        105,
+        109
+      ]
+    },
+    {
+      "id": "direct.knife.run.5",
+      "source": "knife",
+      "crop": [
+        720,
+        113,
+        831,
+        233
+      ],
+      "trim": [
+        0,
+        2,
+        109,
+        113
+      ],
+      "origin": [
+        720,
+        115
+      ],
+      "size": [
+        109,
+        111
+      ],
+      "sourceSize": [
+        109,
+        111
+      ],
+      "anchor": [
+        0.44036697247706424,
+        0.018018018018018056
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.5.png",
+      "atlas": [
+        240,
+        4,
+        109,
+        111
+      ]
+    },
+    {
+      "id": "direct.knife.run.6",
+      "source": "knife",
+      "crop": [
+        833,
+        113,
+        958,
+        233
+      ],
+      "trim": [
+        3,
+        0,
+        118,
+        108
+      ],
+      "origin": [
+        836,
+        113
+      ],
+      "size": [
+        115,
+        108
+      ],
+      "sourceSize": [
+        115,
+        108
+      ],
+      "anchor": [
+        0.40869565217391307,
+        -0.02777777777777768
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.6.png",
+      "atlas": [
+        809,
+        4,
+        115,
+        108
+      ]
+    },
+    {
+      "id": "direct.knife.run.7",
+      "source": "knife",
+      "crop": [
+        960,
+        113,
+        1077,
+        233
+      ],
+      "trim": [
+        0,
+        4,
+        108,
+        113
+      ],
+      "origin": [
+        960,
+        117
+      ],
+      "size": [
+        108,
+        109
+      ],
+      "sourceSize": [
+        108,
+        109
+      ],
+      "anchor": [
+        0.3611111111111111,
+        0.01834862385321101
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.7.png",
+      "atlas": [
+        580,
+        4,
+        108,
+        109
+      ]
+    },
+    {
+      "id": "direct.knife.run.8",
+      "source": "knife",
+      "crop": [
+        1078,
+        113,
+        1187,
+        233
+      ],
+      "trim": [
+        0,
+        1,
+        102,
+        112
+      ],
+      "origin": [
+        1078,
+        114
+      ],
+      "size": [
+        102,
+        111
+      ],
+      "sourceSize": [
+        102,
+        111
+      ],
+      "anchor": [
+        0.38235294117647056,
+        0.009009009009009028
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.run.8.png",
+      "atlas": [
+        357,
+        4,
+        102,
+        111
+      ]
+    },
+    {
+      "id": "direct.knife.jump.0",
+      "source": "knife",
+      "crop": [
+        167,
+        234,
+        279,
+        359
+      ],
+      "trim": [
+        3,
+        11,
+        110,
+        111
+      ],
+      "origin": [
+        170,
+        245
+      ],
+      "size": [
+        107,
+        100
+      ],
+      "sourceSize": [
+        107,
+        100
+      ],
+      "anchor": [
+        0.38317757009345793,
+        0.030000000000000027
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.jump.0.png",
+      "atlas": [
+        1567,
+        240,
+        107,
+        100
+      ]
+    },
+    {
+      "id": "direct.knife.jump.1",
+      "source": "knife",
+      "crop": [
+        292,
+        234,
+        410,
+        359
+      ],
+      "trim": [
+        9,
+        1,
+        114,
+        109
+      ],
+      "origin": [
+        301,
+        235
+      ],
+      "size": [
+        105,
+        108
+      ],
+      "sourceSize": [
+        105,
+        108
+      ],
+      "anchor": [
+        0.4095238095238095,
+        -0.10185185185185186
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.jump.1.png",
+      "atlas": [
+        696,
+        4,
+        105,
+        108
+      ]
+    },
+    {
+      "id": "direct.knife.jump.2",
+      "source": "knife",
+      "crop": [
+        418,
+        234,
+        526,
+        359
+      ],
+      "trim": [
+        0,
+        10,
+        106,
+        114
+      ],
+      "origin": [
+        418,
+        244
+      ],
+      "size": [
+        106,
+        104
+      ],
+      "sourceSize": [
+        106,
+        104
+      ],
+      "anchor": [
+        0.4056603773584906,
+        -0.07692307692307687
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.jump.2.png",
+      "atlas": [
+        181,
+        240,
+        106,
+        104
+      ]
+    },
+    {
+      "id": "direct.knife.jump.3",
+      "source": "knife",
+      "crop": [
+        535,
+        234,
+        647,
+        359
+      ],
+      "trim": [
+        10,
+        23,
+        109,
+        125
+      ],
+      "origin": [
+        545,
+        257
+      ],
+      "size": [
+        99,
+        102
+      ],
+      "sourceSize": [
+        99,
+        102
+      ],
+      "anchor": [
+        0.36363636363636365,
+        0.02941176470588236
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.jump.3.png",
+      "atlas": [
+        975,
+        240,
+        99,
+        102
+      ]
+    },
+    {
+      "id": "direct.knife.fall.0",
+      "source": "knife",
+      "crop": [
+        895,
+        244,
+        1023,
+        364
+      ],
+      "trim": [
+        9,
+        7,
+        123,
+        119
+      ],
+      "origin": [
+        904,
+        251
+      ],
+      "size": [
+        114,
+        112
+      ],
+      "sourceSize": [
+        114,
+        112
+      ],
+      "anchor": [
+        0.32456140350877194,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.fall.0.png",
+      "atlas": [
+        118,
+        4,
+        114,
+        112
+      ]
+    },
+    {
+      "id": "direct.knife.fall.1",
+      "source": "knife",
+      "crop": [
+        1033,
+        244,
+        1154,
+        364
+      ],
+      "trim": [
+        7,
+        14,
+        114,
+        114
+      ],
+      "origin": [
+        1040,
+        258
+      ],
+      "size": [
+        107,
+        100
+      ],
+      "sourceSize": [
+        107,
+        100
+      ],
+      "anchor": [
+        0.3644859813084112,
+        -0.030000000000000027
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.fall.1.png",
+      "atlas": [
+        1452,
+        240,
+        107,
+        100
+      ]
+    },
+    {
+      "id": "direct.knife.crouch.0",
+      "source": "knife",
+      "crop": [
+        211,
+        353,
+        322,
+        442
+      ],
+      "trim": [
+        8,
+        3,
+        104,
+        88
+      ],
+      "origin": [
+        219,
+        356
+      ],
+      "size": [
+        96,
+        85
+      ],
+      "sourceSize": [
+        96,
+        85
+      ],
+      "anchor": [
+        0.4270833333333333,
+        0.02352941176470591
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch.0.png",
+      "atlas": [
+        373,
+        660,
+        96,
+        85
+      ]
+    },
+    {
+      "id": "direct.knife.crouch.1",
+      "source": "knife",
+      "crop": [
+        330,
+        353,
+        444,
+        442
+      ],
+      "trim": [
+        6,
+        3,
+        106,
+        87
+      ],
+      "origin": [
+        336,
+        356
+      ],
+      "size": [
+        100,
+        84
+      ],
+      "sourceSize": [
+        100,
+        84
+      ],
+      "anchor": [
+        0.44,
+        0.011904761904761862
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch.1.png",
+      "atlas": [
+        607,
+        660,
+        100,
+        84
+      ]
+    },
+    {
+      "id": "direct.knife.crouch-walk.0",
+      "source": "knife",
+      "crop": [
+        255,
+        439,
+        365,
+        531
+      ],
+      "trim": [
+        11,
+        1,
+        107,
+        87
+      ],
+      "origin": [
+        266,
+        440
+      ],
+      "size": [
+        96,
+        86
+      ],
+      "sourceSize": [
+        96,
+        86
+      ],
+      "anchor": [
+        0.40625,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch-walk.0.png",
+      "atlas": [
+        1842,
+        563,
+        96,
+        86
+      ]
+    },
+    {
+      "id": "direct.knife.crouch-walk.1",
+      "source": "knife",
+      "crop": [
+        386,
+        439,
+        498,
+        531
+      ],
+      "trim": [
+        4,
+        1,
+        108,
+        89
+      ],
+      "origin": [
+        390,
+        440
+      ],
+      "size": [
+        104,
+        88
+      ],
+      "sourceSize": [
+        104,
+        88
+      ],
+      "anchor": [
+        0.4326923076923077,
+        0.022727272727272707
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch-walk.1.png",
+      "atlas": [
+        382,
+        563,
+        104,
+        88
+      ]
+    },
+    {
+      "id": "direct.knife.crouch-walk.2",
+      "source": "knife",
+      "crop": [
+        509,
+        439,
+        620,
+        531
+      ],
+      "trim": [
+        4,
+        0,
+        109,
+        87
+      ],
+      "origin": [
+        513,
+        439
+      ],
+      "size": [
+        105,
+        87
+      ],
+      "sourceSize": [
+        105,
+        87
+      ],
+      "anchor": [
+        0.42857142857142855,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch-walk.2.png",
+      "atlas": [
+        867,
+        563,
+        105,
+        87
+      ]
+    },
+    {
+      "id": "direct.knife.crouch-walk.3",
+      "source": "knife",
+      "crop": [
+        623,
+        439,
+        735,
+        531
+      ],
+      "trim": [
+        9,
+        0,
+        112,
+        85
+      ],
+      "origin": [
+        632,
+        439
+      ],
+      "size": [
+        103,
+        85
+      ],
+      "sourceSize": [
+        103,
+        85
+      ],
+      "anchor": [
+        0.3786407766990291,
+        -0.0235294117647058
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch-walk.3.png",
+      "atlas": [
+        262,
+        660,
+        103,
+        85
+      ]
+    },
+    {
+      "id": "direct.knife.crouch-walk.4",
+      "source": "knife",
+      "crop": [
+        736,
+        439,
+        849,
+        531
+      ],
+      "trim": [
+        8,
+        0,
+        108,
+        87
+      ],
+      "origin": [
+        744,
+        439
+      ],
+      "size": [
+        100,
+        87
+      ],
+      "sourceSize": [
+        100,
+        87
+      ],
+      "anchor": [
+        0.39,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch-walk.4.png",
+      "atlas": [
+        980,
+        563,
+        100,
+        87
+      ]
+    },
+    {
+      "id": "direct.knife.crouch-walk.5",
+      "source": "knife",
+      "crop": [
+        849,
+        439,
+        960,
+        531
+      ],
+      "trim": [
+        6,
+        0,
+        103,
+        87
+      ],
+      "origin": [
+        855,
+        439
+      ],
+      "size": [
+        97,
+        87
+      ],
+      "sourceSize": [
+        97,
+        87
+      ],
+      "anchor": [
+        0.4020618556701031,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch-walk.5.png",
+      "atlas": [
+        1088,
+        563,
+        97,
+        87
+      ]
+    },
+    {
+      "id": "direct.knife.crouch-walk.6",
+      "source": "knife",
+      "crop": [
+        965,
+        439,
+        1078,
+        531
+      ],
+      "trim": [
+        9,
+        0,
+        108,
+        87
+      ],
+      "origin": [
+        974,
+        439
+      ],
+      "size": [
+        99,
+        87
+      ],
+      "sourceSize": [
+        99,
+        87
+      ],
+      "anchor": [
+        0.35353535353535354,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.crouch-walk.6.png",
+      "atlas": [
+        1193,
+        563,
+        99,
+        87
+      ]
+    },
+    {
+      "id": "direct.knife.combo1.0",
+      "source": "knife",
+      "crop": [
+        268,
+        532,
+        387,
+        632
+      ],
+      "trim": [
+        7,
+        3,
+        115,
+        95
+      ],
+      "origin": [
+        275,
+        535
+      ],
+      "size": [
+        108,
+        92
+      ],
+      "sourceSize": [
+        108,
+        92
+      ],
+      "anchor": [
+        0.37037037037037035,
+        0.010869565217391353
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo1.0.png",
+      "atlas": [
+        859,
+        460,
+        108,
+        92
+      ]
+    },
+    {
+      "id": "direct.knife.combo1.1",
+      "source": "knife",
+      "crop": [
+        401,
+        532,
+        541,
+        632
+      ],
+      "trim": [
+        11,
+        3,
+        133,
+        95
+      ],
+      "origin": [
+        412,
+        535
+      ],
+      "size": [
+        122,
+        92
+      ],
+      "sourceSize": [
+        122,
+        92
+      ],
+      "anchor": [
+        0.3114754098360656,
+        0.010869565217391353
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo1.1.png",
+      "atlas": [
+        975,
+        460,
+        122,
+        92
+      ]
+    },
+    {
+      "id": "direct.knife.combo1.2",
+      "source": "knife",
+      "crop": [
+        542,
+        532,
+        664,
+        632
+      ],
+      "trim": [
+        5,
+        3,
+        117,
+        95
+      ],
+      "origin": [
+        547,
+        535
+      ],
+      "size": [
+        112,
+        92
+      ],
+      "sourceSize": [
+        112,
+        92
+      ],
+      "anchor": [
+        0.38392857142857145,
+        0.010869565217391353
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo1.2.png",
+      "atlas": [
+        1105,
+        460,
+        112,
+        92
+      ]
+    },
+    {
+      "id": "direct.knife.combo1.3",
+      "source": "knife",
+      "crop": [
+        680,
+        532,
+        786,
+        632
+      ],
+      "trim": [
+        8,
+        0,
+        100,
+        95
+      ],
+      "origin": [
+        688,
+        532
+      ],
+      "size": [
+        92,
+        95
+      ],
+      "sourceSize": [
+        92,
+        95
+      ],
+      "anchor": [
+        0.391304347826087,
+        0.010526315789473717
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo1.3.png",
+      "atlas": [
+        1542,
+        353,
+        92,
+        95
+      ]
+    },
+    {
+      "id": "direct.knife.combo2.0",
+      "source": "knife",
+      "crop": [
+        259,
+        630,
+        405,
+        735
+      ],
+      "trim": [
+        6,
+        8,
+        142,
+        99
+      ],
+      "origin": [
+        265,
+        638
+      ],
+      "size": [
+        136,
+        91
+      ],
+      "sourceSize": [
+        136,
+        91
+      ],
+      "anchor": [
+        0.4117647058823529,
+        0.02197802197802201
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo2.0.png",
+      "atlas": [
+        1367,
+        460,
+        136,
+        91
+      ]
+    },
+    {
+      "id": "direct.knife.combo2.1",
+      "source": "knife",
+      "crop": [
+        409,
+        630,
+        537,
+        735
+      ],
+      "trim": [
+        10,
+        0,
+        122,
+        98
+      ],
+      "origin": [
+        419,
+        630
+      ],
+      "size": [
+        112,
+        98
+      ],
+      "sourceSize": [
+        112,
+        98
+      ],
+      "anchor": [
+        0.5446428571428571,
+        0.010204081632653073
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo2.1.png",
+      "atlas": [
+        491,
+        353,
+        112,
+        98
+      ]
+    },
+    {
+      "id": "direct.knife.combo2.2",
+      "source": "knife",
+      "crop": [
+        558,
+        630,
+        676,
+        735
+      ],
+      "trim": [
+        13,
+        11,
+        114,
+        98
+      ],
+      "origin": [
+        571,
+        641
+      ],
+      "size": [
+        101,
+        87
+      ],
+      "sourceSize": [
+        101,
+        87
+      ],
+      "anchor": [
+        0.40594059405940597,
+        0.011494252873563204
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo2.2.png",
+      "atlas": [
+        758,
+        563,
+        101,
+        87
+      ]
+    },
+    {
+      "id": "direct.knife.combo2.3",
+      "source": "knife",
+      "crop": [
+        701,
+        630,
+        844,
+        735
+      ],
+      "trim": [
+        11,
+        6,
+        138,
+        99
+      ],
+      "origin": [
+        712,
+        636
+      ],
+      "size": [
+        127,
+        93
+      ],
+      "sourceSize": [
+        127,
+        93
+      ],
+      "anchor": [
+        0.33070866141732286,
+        0.021505376344086002
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo2.3.png",
+      "atlas": [
+        493,
+        460,
+        127,
+        93
+      ]
+    },
+    {
+      "id": "direct.knife.combo3.0",
+      "source": "knife",
+      "crop": [
+        272,
+        730,
+        404,
+        834
+      ],
+      "trim": [
+        8,
+        2,
+        131,
+        96
+      ],
+      "origin": [
+        280,
+        732
+      ],
+      "size": [
+        123,
+        94
+      ],
+      "sourceSize": [
+        123,
+        94
+      ],
+      "anchor": [
+        0.34146341463414637,
+        -0.010638297872340496
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo3.0.png",
+      "atlas": [
+        120,
+        460,
+        123,
+        94
+      ]
+    },
+    {
+      "id": "direct.knife.combo3.1",
+      "source": "knife",
+      "crop": [
+        404,
+        730,
+        541,
+        834
+      ],
+      "trim": [
+        0,
+        3,
+        134,
+        95
+      ],
+      "origin": [
+        404,
+        733
+      ],
+      "size": [
+        134,
+        92
+      ],
+      "sourceSize": [
+        134,
+        92
+      ],
+      "anchor": [
+        0.3358208955223881,
+        -0.021739130434782705
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo3.1.png",
+      "atlas": [
+        1225,
+        460,
+        134,
+        92
+      ]
+    },
+    {
+      "id": "direct.knife.combo3.2",
+      "source": "knife",
+      "crop": [
+        546,
+        730,
+        737,
+        834
+      ],
+      "trim": [
+        9,
+        0,
+        188,
+        89
+      ],
+      "origin": [
+        555,
+        730
+      ],
+      "size": [
+        179,
+        89
+      ],
+      "sourceSize": [
+        179,
+        89
+      ],
+      "anchor": [
+        0.4022346368715084,
+        -0.0898876404494382
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo3.2.png",
+      "atlas": [
+        1648,
+        460,
+        179,
+        89
+      ]
+    },
+    {
+      "id": "direct.knife.combo3.3",
+      "source": "knife",
+      "crop": [
+        739,
+        730,
+        870,
+        834
+      ],
+      "trim": [
+        8,
+        3,
+        128,
+        99
+      ],
+      "origin": [
+        747,
+        733
+      ],
+      "size": [
+        120,
+        96
+      ],
+      "sourceSize": [
+        120,
+        96
+      ],
+      "anchor": [
+        0.4166666666666667,
+        0.02083333333333337
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo3.3.png",
+      "atlas": [
+        981,
+        353,
+        120,
+        96
+      ]
+    },
+    {
+      "id": "direct.knife.combo3.4",
+      "source": "knife",
+      "crop": [
+        880,
+        730,
+        993,
+        834
+      ],
+      "trim": [
+        7,
+        4,
+        107,
+        99
+      ],
+      "origin": [
+        887,
+        734
+      ],
+      "size": [
+        100,
+        95
+      ],
+      "sourceSize": [
+        100,
+        95
+      ],
+      "anchor": [
+        0.47,
+        0.021052631578947323
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.combo3.4.png",
+      "atlas": [
+        1642,
+        353,
+        100,
+        95
+      ]
+    },
+    {
+      "id": "direct.knife.air-attack.0",
+      "source": "knife",
+      "crop": [
+        264,
+        827,
+        425,
+        915
+      ],
+      "trim": [
+        11,
+        0,
+        152,
+        87
+      ],
+      "origin": [
+        275,
+        827
+      ],
+      "size": [
+        141,
+        87
+      ],
+      "sourceSize": [
+        141,
+        87
+      ],
+      "anchor": [
+        0.3546099290780142,
+        -0.10344827586206895
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.air-attack.0.png",
+      "atlas": [
+        609,
+        563,
+        141,
+        87
+      ]
+    },
+    {
+      "id": "direct.knife.air-attack.1",
+      "source": "knife",
+      "crop": [
+        476,
+        827,
+        620,
+        915
+      ],
+      "trim": [
+        7,
+        0,
+        140,
+        88
+      ],
+      "origin": [
+        483,
+        827
+      ],
+      "size": [
+        133,
+        88
+      ],
+      "sourceSize": [
+        133,
+        88
+      ],
+      "anchor": [
+        0.41353383458646614,
+        -0.09090909090909083
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.air-attack.1.png",
+      "atlas": [
+        241,
+        563,
+        133,
+        88
+      ]
+    },
+    {
+      "id": "direct.knife.hit.0",
+      "source": "knife",
+      "crop": [
+        189,
+        914,
+        294,
+        1012
+      ],
+      "trim": [
+        5,
+        0,
+        98,
+        93
+      ],
+      "origin": [
+        194,
+        914
+      ],
+      "size": [
+        93,
+        93
+      ],
+      "sourceSize": [
+        93,
+        93
+      ],
+      "anchor": [
+        0.34408602150537637,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.hit.0.png",
+      "atlas": [
+        628,
+        460,
+        93,
+        93
+      ]
+    },
+    {
+      "id": "direct.knife.hit.1",
+      "source": "knife",
+      "crop": [
+        321,
+        914,
+        446,
+        1012
+      ],
+      "trim": [
+        8,
+        4,
+        119,
+        93
+      ],
+      "origin": [
+        329,
+        918
+      ],
+      "size": [
+        111,
+        89
+      ],
+      "sourceSize": [
+        111,
+        89
+      ],
+      "anchor": [
+        0.32432432432432434,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.hit.1.png",
+      "atlas": [
+        1835,
+        460,
+        111,
+        89
+      ]
+    },
+    {
+      "id": "direct.knife.hit.2",
+      "source": "knife",
+      "crop": [
+        451,
+        914,
+        578,
+        1012
+      ],
+      "trim": [
+        9,
+        9,
+        122,
+        98
+      ],
+      "origin": [
+        460,
+        923
+      ],
+      "size": [
+        113,
+        89
+      ],
+      "sourceSize": [
+        113,
+        89
+      ],
+      "anchor": [
+        0.3805309734513274,
+        0.0561797752808989
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.hit.2.png",
+      "atlas": [
+        4,
+        563,
+        113,
+        89
+      ]
+    },
+    {
+      "id": "direct.knife.hit.3",
+      "source": "knife",
+      "crop": [
+        593,
+        914,
+        743,
+        1012
+      ],
+      "trim": [
+        12,
+        8,
+        141,
+        98
+      ],
+      "origin": [
+        605,
+        922
+      ],
+      "size": [
+        129,
+        90
+      ],
+      "sourceSize": [
+        129,
+        90
+      ],
+      "anchor": [
+        0.40310077519379844,
+        0.05555555555555558
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.hit.3.png",
+      "atlas": [
+        1511,
+        460,
+        129,
+        90
+      ]
+    },
+    {
+      "id": "direct.knife.death.0",
+      "source": "knife",
+      "crop": [
+        211,
+        1011,
+        343,
+        1086
+      ],
+      "trim": [
+        13,
+        0,
+        118,
+        74
+      ],
+      "origin": [
+        224,
+        1011
+      ],
+      "size": [
+        105,
+        74
+      ],
+      "sourceSize": [
+        105,
+        74
+      ],
+      "anchor": [
+        0.3238095238095238,
+        0.05405405405405406
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.death.0.png",
+      "atlas": [
+        1095,
+        660,
+        105,
+        74
+      ]
+    },
+    {
+      "id": "direct.knife.death.1",
+      "source": "knife",
+      "crop": [
+        351,
+        1011,
+        486,
+        1086
+      ],
+      "trim": [
+        7,
+        7,
+        125,
+        73
+      ],
+      "origin": [
+        358,
+        1018
+      ],
+      "size": [
+        118,
+        66
+      ],
+      "sourceSize": [
+        118,
+        66
+      ],
+      "anchor": [
+        0.4745762711864407,
+        0.045454545454545414
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.death.1.png",
+      "atlas": [
+        4,
+        754,
+        118,
+        66
+      ]
+    },
+    {
+      "id": "direct.knife.death.2",
+      "source": "knife",
+      "crop": [
+        489,
+        1011,
+        635,
+        1086
+      ],
+      "trim": [
+        9,
+        15,
+        139,
+        73
+      ],
+      "origin": [
+        498,
+        1026
+      ],
+      "size": [
+        130,
+        58
+      ],
+      "sourceSize": [
+        130,
+        58
+      ],
+      "anchor": [
+        0.4230769230769231,
+        0.051724137931034475
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.death.2.png",
+      "atlas": [
+        130,
+        754,
+        130,
+        58
+      ]
+    },
+    {
+      "id": "direct.knife.death.3",
+      "source": "knife",
+      "crop": [
+        636,
+        1011,
+        778,
+        1086
+      ],
+      "trim": [
+        8,
+        18,
+        137,
+        66
+      ],
+      "origin": [
+        644,
+        1029
+      ],
+      "size": [
+        129,
+        48
+      ],
+      "sourceSize": [
+        129,
+        48
+      ],
+      "anchor": [
+        0.43410852713178294,
+        -0.08333333333333326
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.death.3.png",
+      "atlas": [
+        942,
+        754,
+        129,
+        48
+      ]
+    },
+    {
+      "id": "direct.knife.death.4",
+      "source": "knife",
+      "crop": [
+        779,
+        1011,
+        925,
+        1086
+      ],
+      "trim": [
+        6,
+        22,
+        143,
+        65
+      ],
+      "origin": [
+        785,
+        1033
+      ],
+      "size": [
+        137,
+        43
+      ],
+      "sourceSize": [
+        137,
+        43
+      ],
+      "anchor": [
+        0.41605839416058393,
+        -0.11627906976744184
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.death.4.png",
+      "atlas": [
+        1381,
+        754,
+        137,
+        43
+      ]
+    },
+    {
+      "id": "direct.knife.death.5",
+      "source": "knife",
+      "crop": [
+        928,
+        1011,
+        1116,
+        1086
+      ],
+      "trim": [
+        3,
+        22,
+        183,
+        66
+      ],
+      "origin": [
+        931,
+        1033
+      ],
+      "size": [
+        180,
+        44
+      ],
+      "sourceSize": [
+        180,
+        44
+      ],
+      "anchor": [
+        0.32222222222222224,
+        -0.09090909090909083
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.knife.death.5.png",
+      "atlas": [
+        1193,
+        754,
+        180,
+        44
+      ]
+    },
+    {
+      "id": "direct.rocket.idle.0",
+      "source": "rocket",
+      "crop": [
+        177,
+        0,
+        287,
+        113
+      ],
+      "trim": [
+        7,
+        12,
+        103,
+        109
+      ],
+      "origin": [
+        184,
+        12
+      ],
+      "size": [
+        96,
+        97
+      ],
+      "sourceSize": [
+        96,
+        97
+      ],
+      "anchor": [
+        0.4166666666666667,
+        0.010309278350515427
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.idle.0.png",
+      "muzzleSource": [
+        278,
+        40
+      ],
+      "atlas": [
+        740,
+        353,
+        96,
+        97
+      ]
+    },
+    {
+      "id": "direct.rocket.idle.1",
+      "source": "rocket",
+      "crop": [
+        299,
+        0,
+        404,
+        113
+      ],
+      "trim": [
+        4,
+        13,
+        100,
+        109
+      ],
+      "origin": [
+        303,
+        13
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "sourceSize": [
+        96,
+        96
+      ],
+      "anchor": [
+        0.4270833333333333,
+        0.01041666666666663
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.idle.1.png",
+      "muzzleSource": [
+        398,
+        39
+      ],
+      "atlas": [
+        1231,
+        353,
+        96,
+        96
+      ]
+    },
+    {
+      "id": "direct.rocket.idle.2",
+      "source": "rocket",
+      "crop": [
+        419,
+        0,
+        524,
+        113
+      ],
+      "trim": [
+        4,
+        13,
+        99,
+        109
+      ],
+      "origin": [
+        423,
+        13
+      ],
+      "size": [
+        95,
+        96
+      ],
+      "sourceSize": [
+        95,
+        96
+      ],
+      "anchor": [
+        0.42105263157894735,
+        0.01041666666666663
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.idle.2.png",
+      "muzzleSource": [
+        516,
+        39
+      ],
+      "atlas": [
+        1335,
+        353,
+        95,
+        96
+      ]
+    },
+    {
+      "id": "direct.rocket.idle.3",
+      "source": "rocket",
+      "crop": [
+        539,
+        0,
+        645,
+        113
+      ],
+      "trim": [
+        4,
+        13,
+        100,
+        109
+      ],
+      "origin": [
+        543,
+        13
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "sourceSize": [
+        96,
+        96
+      ],
+      "anchor": [
+        0.4270833333333333,
+        0.01041666666666663
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.idle.3.png",
+      "muzzleSource": [
+        637,
+        37
+      ],
+      "atlas": [
+        1438,
+        353,
+        96,
+        96
+      ]
+    },
+    {
+      "id": "direct.rocket.run.0",
+      "source": "rocket",
+      "crop": [
+        164,
+        112,
+        285,
+        222
+      ],
+      "trim": [
+        0,
+        2,
+        116,
+        105
+      ],
+      "origin": [
+        164,
+        114
+      ],
+      "size": [
+        116,
+        103
+      ],
+      "sourceSize": [
+        116,
+        103
+      ],
+      "anchor": [
+        0.4396551724137931,
+        0.01941747572815533
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run.0.png",
+      "muzzleSource": [
+        277,
+        145
+      ],
+      "atlas": [
+        851,
+        240,
+        116,
+        103
+      ]
+    },
+    {
+      "id": "direct.rocket.run.1",
+      "source": "rocket",
+      "crop": [
+        277,
+        112,
+        404,
+        222
+      ],
+      "trim": [
+        0,
+        5,
+        122,
+        105
+      ],
+      "origin": [
+        277,
+        117
+      ],
+      "size": [
+        122,
+        100
+      ],
+      "sourceSize": [
+        122,
+        100
+      ],
+      "anchor": [
+        0.47540983606557374,
+        0.020000000000000018
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run.1.png",
+      "muzzleSource": [
+        397,
+        144
+      ],
+      "atlas": [
+        1682,
+        240,
+        122,
+        100
+      ]
+    },
+    {
+      "id": "direct.rocket.run.2",
+      "source": "rocket",
+      "crop": [
+        403,
+        112,
+        525,
+        222
+      ],
+      "trim": [
+        7,
+        3,
+        119,
+        105
+      ],
+      "origin": [
+        410,
+        115
+      ],
+      "size": [
+        112,
+        102
+      ],
+      "sourceSize": [
+        112,
+        102
+      ],
+      "anchor": [
+        0.4017857142857143,
+        0.019607843137254943
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run.2.png",
+      "muzzleSource": [
+        518,
+        137
+      ],
+      "atlas": [
+        1082,
+        240,
+        112,
+        102
+      ]
+    },
+    {
+      "id": "direct.rocket.run.3",
+      "source": "rocket",
+      "crop": [
+        519,
+        112,
+        645,
+        222
+      ],
+      "trim": [
+        6,
+        2,
+        120,
+        104
+      ],
+      "origin": [
+        525,
+        114
+      ],
+      "size": [
+        114,
+        102
+      ],
+      "sourceSize": [
+        114,
+        102
+      ],
+      "anchor": [
+        0.4298245614035088,
+        0.009803921568627416
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run.3.png",
+      "muzzleSource": [
+        637,
+        135
+      ],
+      "atlas": [
+        1202,
+        240,
+        114,
+        102
+      ]
+    },
+    {
+      "id": "direct.rocket.run.4",
+      "source": "rocket",
+      "crop": [
+        646,
+        112,
+        763,
+        222
+      ],
+      "trim": [
+        3,
+        0,
+        110,
+        104
+      ],
+      "origin": [
+        649,
+        112
+      ],
+      "size": [
+        107,
+        104
+      ],
+      "sourceSize": [
+        107,
+        104
+      ],
+      "anchor": [
+        0.42990654205607476,
+        0.009615384615384581
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run.4.png",
+      "muzzleSource": [
+        754,
+        137
+      ],
+      "atlas": [
+        448,
+        240,
+        107,
+        104
+      ]
+    },
+    {
+      "id": "direct.rocket.run.5",
+      "source": "rocket",
+      "crop": [
+        766,
+        112,
+        898,
+        222
+      ],
+      "trim": [
+        4,
+        0,
+        124,
+        101
+      ],
+      "origin": [
+        770,
+        112
+      ],
+      "size": [
+        120,
+        101
+      ],
+      "sourceSize": [
+        120,
+        101
+      ],
+      "anchor": [
+        0.44166666666666665,
+        -0.01980198019801982
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run.5.png",
+      "muzzleSource": [
+        888,
+        129
+      ],
+      "atlas": [
+        1324,
+        240,
+        120,
+        101
+      ]
+    },
+    {
+      "id": "direct.rocket.jump.0",
+      "source": "rocket",
+      "crop": [
+        168,
+        224,
+        289,
+        346
+      ],
+      "trim": [
+        11,
+        7,
+        115,
+        112
+      ],
+      "origin": [
+        179,
+        231
+      ],
+      "size": [
+        104,
+        105
+      ],
+      "sourceSize": [
+        104,
+        105
+      ],
+      "anchor": [
+        0.3942307692307692,
+        -0.02857142857142847
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.jump.0.png",
+      "muzzleSource": [
+        281,
+        260
+      ],
+      "atlas": [
+        1778,
+        4,
+        104,
+        105
+      ]
+    },
+    {
+      "id": "direct.rocket.jump.1",
+      "source": "rocket",
+      "crop": [
+        292,
+        224,
+        422,
+        346
+      ],
+      "trim": [
+        14,
+        0,
+        128,
+        94
+      ],
+      "origin": [
+        306,
+        224
+      ],
+      "size": [
+        114,
+        94
+      ],
+      "sourceSize": [
+        114,
+        94
+      ],
+      "anchor": [
+        0.37719298245614036,
+        -0.2127659574468086
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.jump.1.png",
+      "muzzleSource": [
+        414,
+        253
+      ],
+      "atlas": [
+        371,
+        460,
+        114,
+        94
+      ]
+    },
+    {
+      "id": "direct.rocket.jump.2",
+      "source": "rocket",
+      "crop": [
+        429,
+        224,
+        550,
+        346
+      ],
+      "trim": [
+        4,
+        7,
+        117,
+        102
+      ],
+      "origin": [
+        433,
+        231
+      ],
+      "size": [
+        113,
+        95
+      ],
+      "sourceSize": [
+        113,
+        95
+      ],
+      "anchor": [
+        0.4247787610619469,
+        -0.16842105263157903
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.jump.2.png",
+      "muzzleSource": [
+        543,
+        259
+      ],
+      "atlas": [
+        1864,
+        353,
+        113,
+        95
+      ]
+    },
+    {
+      "id": "direct.rocket.jump.3",
+      "source": "rocket",
+      "crop": [
+        564,
+        224,
+        690,
+        346
+      ],
+      "trim": [
+        5,
+        15,
+        119,
+        122
+      ],
+      "origin": [
+        569,
+        239
+      ],
+      "size": [
+        114,
+        107
+      ],
+      "sourceSize": [
+        114,
+        107
+      ],
+      "anchor": [
+        0.39473684210526316,
+        0.028037383177570097
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.jump.3.png",
+      "muzzleSource": [
+        682,
+        262
+      ],
+      "atlas": [
+        1152,
+        4,
+        114,
+        107
+      ]
+    },
+    {
+      "id": "direct.rocket.fall.0",
+      "source": "rocket",
+      "crop": [
+        993,
+        246,
+        1125,
+        350
+      ],
+      "trim": [
+        3,
+        7,
+        125,
+        100
+      ],
+      "origin": [
+        996,
+        253
+      ],
+      "size": [
+        122,
+        93
+      ],
+      "sourceSize": [
+        122,
+        93
+      ],
+      "anchor": [
+        0.38524590163934425,
+        -0.12903225806451624
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.fall.0.png",
+      "muzzleSource": [
+        1103,
+        266
+      ],
+      "atlas": [
+        729,
+        460,
+        122,
+        93
+      ]
+    },
+    {
+      "id": "direct.rocket.fall.1",
+      "source": "rocket",
+      "crop": [
+        1126,
+        246,
+        1259,
+        350
+      ],
+      "trim": [
+        6,
+        14,
+        128,
+        99
+      ],
+      "origin": [
+        1132,
+        260
+      ],
+      "size": [
+        122,
+        85
+      ],
+      "sourceSize": [
+        122,
+        85
+      ],
+      "anchor": [
+        0.36885245901639346,
+        -0.15294117647058814
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.fall.1.png",
+      "muzzleSource": [
+        1239,
+        277
+      ],
+      "atlas": [
+        477,
+        660,
+        122,
+        85
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch.0",
+      "source": "rocket",
+      "crop": [
+        195,
+        346,
+        316,
+        438
+      ],
+      "trim": [
+        5,
+        2,
+        116,
+        88
+      ],
+      "origin": [
+        200,
+        348
+      ],
+      "size": [
+        111,
+        86
+      ],
+      "sourceSize": [
+        111,
+        86
+      ],
+      "anchor": [
+        0.40540540540540543,
+        0.011627906976744207
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch.0.png",
+      "muzzleSource": [
+        308,
+        379
+      ],
+      "atlas": [
+        4,
+        660,
+        111,
+        86
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch.1",
+      "source": "rocket",
+      "crop": [
+        333,
+        346,
+        453,
+        438
+      ],
+      "trim": [
+        7,
+        5,
+        115,
+        88
+      ],
+      "origin": [
+        340,
+        351
+      ],
+      "size": [
+        108,
+        83
+      ],
+      "sourceSize": [
+        108,
+        83
+      ],
+      "anchor": [
+        0.4166666666666667,
+        0.012048192771084376
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch.1.png",
+      "muzzleSource": [
+        446,
+        379
+      ],
+      "atlas": [
+        843,
+        660,
+        108,
+        83
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch-walk.0",
+      "source": "rocket",
+      "crop": [
+        242,
+        434,
+        367,
+        529
+      ],
+      "trim": [
+        6,
+        1,
+        119,
+        88
+      ],
+      "origin": [
+        248,
+        435
+      ],
+      "size": [
+        113,
+        87
+      ],
+      "sourceSize": [
+        113,
+        87
+      ],
+      "anchor": [
+        0.3893805309734513,
+        0.0
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch-walk.0.png",
+      "muzzleSource": [
+        360,
+        461
+      ],
+      "atlas": [
+        1490,
+        563,
+        113,
+        87
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch-walk.1",
+      "source": "rocket",
+      "crop": [
+        394,
+        434,
+        514,
+        529
+      ],
+      "trim": [
+        6,
+        2,
+        113,
+        89
+      ],
+      "origin": [
+        400,
+        436
+      ],
+      "size": [
+        107,
+        87
+      ],
+      "sourceSize": [
+        107,
+        87
+      ],
+      "anchor": [
+        0.40186915887850466,
+        0.011494252873563204
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch-walk.1.png",
+      "muzzleSource": [
+        506,
+        461
+      ],
+      "atlas": [
+        1611,
+        563,
+        107,
+        87
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch-walk.2",
+      "source": "rocket",
+      "crop": [
+        542,
+        434,
+        662,
+        529
+      ],
+      "trim": [
+        7,
+        1,
+        114,
+        89
+      ],
+      "origin": [
+        549,
+        435
+      ],
+      "size": [
+        107,
+        88
+      ],
+      "sourceSize": [
+        107,
+        88
+      ],
+      "anchor": [
+        0.3925233644859813,
+        0.011363636363636354
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch-walk.2.png",
+      "muzzleSource": [
+        655,
+        462
+      ],
+      "atlas": [
+        494,
+        563,
+        107,
+        88
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch-walk.3",
+      "source": "rocket",
+      "crop": [
+        682,
+        434,
+        803,
+        529
+      ],
+      "trim": [
+        7,
+        0,
+        115,
+        89
+      ],
+      "origin": [
+        689,
+        434
+      ],
+      "size": [
+        108,
+        89
+      ],
+      "sourceSize": [
+        108,
+        89
+      ],
+      "anchor": [
+        0.37037037037037035,
+        0.011235955056179803
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch-walk.3.png",
+      "muzzleSource": [
+        796,
+        457
+      ],
+      "atlas": [
+        125,
+        563,
+        108,
+        89
+      ]
+    },
+    {
+      "id": "direct.rocket.aim.0",
+      "source": "rocket",
+      "crop": [
+        170,
+        527,
+        291,
+        626
+      ],
+      "trim": [
+        4,
+        2,
+        116,
+        96
+      ],
+      "origin": [
+        174,
+        529
+      ],
+      "size": [
+        112,
+        94
+      ],
+      "sourceSize": [
+        112,
+        94
+      ],
+      "anchor": [
+        0.39285714285714285,
+        0.03191489361702127
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.aim.0.png",
+      "muzzleSource": [
+        283,
+        557
+      ],
+      "atlas": [
+        251,
+        460,
+        112,
+        94
+      ]
+    },
+    {
+      "id": "direct.rocket.aim.1",
+      "source": "rocket",
+      "crop": [
+        312,
+        527,
+        435,
+        626
+      ],
+      "trim": [
+        5,
+        0,
+        119,
+        96
+      ],
+      "origin": [
+        317,
+        527
+      ],
+      "size": [
+        114,
+        96
+      ],
+      "sourceSize": [
+        114,
+        96
+      ],
+      "anchor": [
+        0.42105263157894735,
+        0.03125
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.aim.1.png",
+      "muzzleSource": [
+        429,
+        555
+      ],
+      "atlas": [
+        1109,
+        353,
+        114,
+        96
+      ]
+    },
+    {
+      "id": "direct.rocket.aim.2",
+      "source": "rocket",
+      "crop": [
+        456,
+        527,
+        582,
+        626
+      ],
+      "trim": [
+        0,
+        1,
+        121,
+        99
+      ],
+      "origin": [
+        456,
+        528
+      ],
+      "size": [
+        121,
+        98
+      ],
+      "sourceSize": [
+        121,
+        98
+      ],
+      "anchor": [
+        0.4462809917355372,
+        0.061224489795918324
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.aim.2.png",
+      "muzzleSource": [
+        575,
+        553
+      ],
+      "atlas": [
+        611,
+        353,
+        121,
+        98
+      ]
+    },
+    {
+      "id": "direct.rocket.stand-fire.0",
+      "source": "rocket",
+      "crop": [
+        243,
+        615,
+        358,
+        720
+      ],
+      "trim": [
+        4,
+        4,
+        112,
+        99
+      ],
+      "origin": [
+        247,
+        619
+      ],
+      "size": [
+        108,
+        95
+      ],
+      "sourceSize": [
+        108,
+        95
+      ],
+      "anchor": [
+        0.39814814814814814,
+        0.03157894736842104
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.stand-fire.0.png",
+      "muzzleSource": [
+        353,
+        650
+      ],
+      "atlas": [
+        4,
+        460,
+        108,
+        95
+      ]
+    },
+    {
+      "id": "direct.rocket.stand-fire.1",
+      "source": "rocket",
+      "crop": [
+        410,
+        615,
+        530,
+        720
+      ],
+      "trim": [
+        6,
+        0,
+        120,
+        99
+      ],
+      "origin": [
+        416,
+        615
+      ],
+      "size": [
+        114,
+        99
+      ],
+      "sourceSize": [
+        114,
+        99
+      ],
+      "anchor": [
+        0.43859649122807015,
+        0.030303030303030276
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.stand-fire.1.png",
+      "muzzleSource": [
+        527,
+        649
+      ],
+      "atlas": [
+        4,
+        353,
+        114,
+        99
+      ]
+    },
+    {
+      "id": "direct.rocket.stand-fire.2",
+      "source": "rocket",
+      "crop": [
+        844,
+        615,
+        1057,
+        720
+      ],
+      "trim": [
+        6,
+        0,
+        208,
+        99
+      ],
+      "origin": [
+        850,
+        615
+      ],
+      "size": [
+        202,
+        99
+      ],
+      "sourceSize": [
+        202,
+        99
+      ],
+      "anchor": [
+        0.23267326732673269,
+        0.030303030303030276
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.stand-fire.2.png",
+      "muzzleSource": [
+        949,
+        648
+      ],
+      "atlas": [
+        126,
+        353,
+        202,
+        99
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch-fire.0",
+      "source": "rocket",
+      "crop": [
+        245,
+        718,
+        375,
+        805
+      ],
+      "trim": [
+        5,
+        2,
+        125,
+        85
+      ],
+      "origin": [
+        250,
+        720
+      ],
+      "size": [
+        120,
+        83
+      ],
+      "sourceSize": [
+        120,
+        83
+      ],
+      "anchor": [
+        0.38333333333333336,
+        0.07228915662650603
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch-fire.0.png",
+      "muzzleSource": [
+        366,
+        745
+      ],
+      "atlas": [
+        715,
+        660,
+        120,
+        83
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch-fire.1",
+      "source": "rocket",
+      "crop": [
+        398,
+        718,
+        531,
+        805
+      ],
+      "trim": [
+        5,
+        4,
+        133,
+        85
+      ],
+      "origin": [
+        403,
+        722
+      ],
+      "size": [
+        128,
+        81
+      ],
+      "sourceSize": [
+        128,
+        81
+      ],
+      "anchor": [
+        0.4375,
+        0.07407407407407407
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch-fire.1.png",
+      "muzzleSource": [
+        529,
+        744
+      ],
+      "atlas": [
+        959,
+        660,
+        128,
+        81
+      ]
+    },
+    {
+      "id": "direct.rocket.crouch-fire.2",
+      "source": "rocket",
+      "crop": [
+        831,
+        718,
+        1022,
+        805
+      ],
+      "trim": [
+        0,
+        0,
+        182,
+        87
+      ],
+      "origin": [
+        831,
+        718
+      ],
+      "size": [
+        182,
+        87
+      ],
+      "sourceSize": [
+        182,
+        87
+      ],
+      "anchor": [
+        0.3021978021978022,
+        0.09195402298850575
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.crouch-fire.2.png",
+      "muzzleSource": [
+        941,
+        747
+      ],
+      "atlas": [
+        1300,
+        563,
+        182,
+        87
+      ]
+    },
+    {
+      "id": "direct.rocket.run-fire.0",
+      "source": "rocket",
+      "crop": [
+        225,
+        799,
+        368,
+        902
+      ],
+      "trim": [
+        9,
+        4,
+        138,
+        101
+      ],
+      "origin": [
+        234,
+        803
+      ],
+      "size": [
+        129,
+        97
+      ],
+      "sourceSize": [
+        129,
+        97
+      ],
+      "anchor": [
+        0.40310077519379844,
+        0.020618556701030966
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run-fire.0.png",
+      "muzzleSource": [
+        360,
+        832
+      ],
+      "atlas": [
+        844,
+        353,
+        129,
+        97
+      ]
+    },
+    {
+      "id": "direct.rocket.run-fire.1",
+      "source": "rocket",
+      "crop": [
+        387,
+        799,
+        534,
+        902
+      ],
+      "trim": [
+        6,
+        3,
+        147,
+        102
+      ],
+      "origin": [
+        393,
+        802
+      ],
+      "size": [
+        141,
+        99
+      ],
+      "sourceSize": [
+        141,
+        99
+      ],
+      "anchor": [
+        0.3971631205673759,
+        0.030303030303030276
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run-fire.1.png",
+      "muzzleSource": [
+        532,
+        829
+      ],
+      "atlas": [
+        1812,
+        240,
+        141,
+        99
+      ]
+    },
+    {
+      "id": "direct.rocket.run-fire.2",
+      "source": "rocket",
+      "crop": [
+        789,
+        799,
+        962,
+        902
+      ],
+      "trim": [
+        1,
+        0,
+        170,
+        103
+      ],
+      "origin": [
+        790,
+        799
+      ],
+      "size": [
+        169,
+        103
+      ],
+      "sourceSize": [
+        169,
+        103
+      ],
+      "anchor": [
+        0.35502958579881655,
+        0.03883495145631066
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.run-fire.2.png",
+      "muzzleSource": [
+        918,
+        841
+      ],
+      "atlas": [
+        674,
+        240,
+        169,
+        103
+      ]
+    },
+    {
+      "id": "direct.rocket.hit.0",
+      "source": "rocket",
+      "crop": [
+        183,
+        897,
+        302,
+        1001
+      ],
+      "trim": [
+        6,
+        4,
+        112,
+        99
+      ],
+      "origin": [
+        189,
+        901
+      ],
+      "size": [
+        106,
+        95
+      ],
+      "sourceSize": [
+        106,
+        95
+      ],
+      "anchor": [
+        0.41509433962264153,
+        -0.010526315789473717
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.hit.0.png",
+      "atlas": [
+        1750,
+        353,
+        106,
+        95
+      ]
+    },
+    {
+      "id": "direct.rocket.hit.1",
+      "source": "rocket",
+      "crop": [
+        320,
+        897,
+        442,
+        1001
+      ],
+      "trim": [
+        7,
+        7,
+        115,
+        94
+      ],
+      "origin": [
+        327,
+        904
+      ],
+      "size": [
+        108,
+        87
+      ],
+      "sourceSize": [
+        108,
+        87
+      ],
+      "anchor": [
+        0.39814814814814814,
+        -0.06896551724137923
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.hit.1.png",
+      "atlas": [
+        1726,
+        563,
+        108,
+        87
+      ]
+    },
+    {
+      "id": "direct.rocket.hit.2",
+      "source": "rocket",
+      "crop": [
+        448,
+        897,
+        596,
+        1001
+      ],
+      "trim": [
+        9,
+        12,
+        140,
+        98
+      ],
+      "origin": [
+        457,
+        909
+      ],
+      "size": [
+        131,
+        86
+      ],
+      "sourceSize": [
+        131,
+        86
+      ],
+      "anchor": [
+        0.3893129770992366,
+        -0.023255813953488413
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.hit.2.png",
+      "atlas": [
+        123,
+        660,
+        131,
+        86
+      ]
+    },
+    {
+      "id": "direct.rocket.hit.3",
+      "source": "rocket",
+      "crop": [
+        625,
+        897,
+        778,
+        1001
+      ],
+      "trim": [
+        0,
+        0,
+        145,
+        104
+      ],
+      "origin": [
+        625,
+        897
+      ],
+      "size": [
+        145,
+        104
+      ],
+      "sourceSize": [
+        145,
+        104
+      ],
+      "anchor": [
+        0.43448275862068964,
+        0.038461538461538436
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.hit.3.png",
+      "atlas": [
+        295,
+        240,
+        145,
+        104
+      ]
+    },
+    {
+      "id": "direct.rocket.death.0",
+      "source": "rocket",
+      "crop": [
+        188,
+        997,
+        377,
+        1086
+      ],
+      "trim": [
+        7,
+        0,
+        187,
+        73
+      ],
+      "origin": [
+        195,
+        997
+      ],
+      "size": [
+        180,
+        73
+      ],
+      "sourceSize": [
+        180,
+        73
+      ],
+      "anchor": [
+        0.2611111111111111,
+        -0.06849315068493156
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.death.0.png",
+      "atlas": [
+        1208,
+        660,
+        180,
+        73
+      ]
+    },
+    {
+      "id": "direct.rocket.death.1",
+      "source": "rocket",
+      "crop": [
+        378,
+        997,
+        536,
+        1086
+      ],
+      "trim": [
+        6,
+        8,
+        158,
+        76
+      ],
+      "origin": [
+        384,
+        1005
+      ],
+      "size": [
+        152,
+        68
+      ],
+      "sourceSize": [
+        152,
+        68
+      ],
+      "anchor": [
+        0.3355263157894737,
+        -0.02941176470588225
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.death.1.png",
+      "atlas": [
+        1834,
+        660,
+        152,
+        68
+      ]
+    },
+    {
+      "id": "direct.rocket.death.2",
+      "source": "rocket",
+      "crop": [
+        537,
+        997,
+        748,
+        1086
+      ],
+      "trim": [
+        2,
+        26,
+        211,
+        76
+      ],
+      "origin": [
+        539,
+        1023
+      ],
+      "size": [
+        209,
+        50
+      ],
+      "sourceSize": [
+        209,
+        50
+      ],
+      "anchor": [
+        0.24401913875598086,
+        -0.040000000000000036
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.death.2.png",
+      "atlas": [
+        725,
+        754,
+        209,
+        50
+      ]
+    },
+    {
+      "id": "direct.rocket.death.3",
+      "source": "rocket",
+      "crop": [
+        749,
+        997,
+        891,
+        1086
+      ],
+      "trim": [
+        7,
+        39,
+        135,
+        77
+      ],
+      "origin": [
+        756,
+        1036
+      ],
+      "size": [
+        128,
+        38
+      ],
+      "sourceSize": [
+        128,
+        38
+      ],
+      "anchor": [
+        0.3828125,
+        -0.026315789473684292
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.death.3.png",
+      "atlas": [
+        1526,
+        754,
+        128,
+        38
+      ]
+    },
+    {
+      "id": "direct.rocket.death.4",
+      "source": "rocket",
+      "crop": [
+        898,
+        997,
+        1083,
+        1086
+      ],
+      "trim": [
+        8,
+        21,
+        180,
+        75
+      ],
+      "origin": [
+        906,
+        1018
+      ],
+      "size": [
+        172,
+        54
+      ],
+      "sourceSize": [
+        172,
+        54
+      ],
+      "anchor": [
+        0.3313953488372093,
+        -0.05555555555555558
+      ],
+      "scale": 0.84,
+      "file": "art/slices/v057/direct.rocket.death.4.png",
+      "atlas": [
+        268,
+        754,
+        172,
+        54
+      ]
+    },
+    {
+      "id": "native.top.left",
+      "source": "ground",
+      "crop": [
+        22,
+        106,
+        49,
+        177
+      ],
+      "trim": [
+        0,
+        0,
+        27,
+        71
+      ],
+      "origin": [
+        22,
+        106
+      ],
+      "size": [
+        27,
+        71
+      ],
+      "sourceSize": [
+        27,
+        71
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.top.left.png",
+      "atlas": [
+        1396,
+        660,
+        27,
+        71
+      ]
+    },
+    {
+      "id": "native.top.middle",
+      "source": "ground",
+      "crop": [
+        743,
+        126,
+        883,
+        177
+      ],
+      "trim": [
+        0,
+        0,
+        140,
+        51
+      ],
+      "origin": [
+        743,
+        126
+      ],
+      "size": [
+        140,
+        51
+      ],
+      "sourceSize": [
+        140,
+        51
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.top.middle.png",
+      "atlas": [
+        577,
+        754,
+        140,
+        51
+      ]
+    },
+    {
+      "id": "native.top.right",
+      "source": "ground",
+      "crop": [
+        937,
+        106,
+        966,
+        177
+      ],
+      "trim": [
+        0,
+        0,
+        29,
+        71
+      ],
+      "origin": [
+        937,
+        106
+      ],
+      "size": [
+        29,
+        71
+      ],
+      "sourceSize": [
+        29,
+        71
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.top.right.png",
+      "atlas": [
+        1431,
+        660,
+        29,
+        71
+      ]
+    },
+    {
+      "id": "native.fill.left",
+      "source": "ground",
+      "crop": [
+        1118,
+        414,
+        1145,
+        452
+      ],
+      "trim": [
+        0,
+        0,
+        27,
+        38
+      ],
+      "origin": [
+        1118,
+        414
+      ],
+      "size": [
+        27,
+        38
+      ],
+      "sourceSize": [
+        27,
+        38
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.fill.left.png",
+      "atlas": [
+        1662,
+        754,
+        27,
+        38
+      ]
+    },
+    {
+      "id": "native.fill.right",
+      "source": "ground",
+      "crop": [
+        1214,
+        410,
+        1243,
+        448
+      ],
+      "trim": [
+        0,
+        0,
+        29,
+        38
+      ],
+      "origin": [
+        1214,
+        410
+      ],
+      "size": [
+        29,
+        38
+      ],
+      "sourceSize": [
+        29,
+        38
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.fill.right.png",
+      "atlas": [
+        1697,
+        754,
+        29,
+        38
+      ]
+    },
+    {
+      "id": "native.bottom.left",
+      "source": "ground",
+      "crop": [
+        189,
+        205,
+        226,
+        238
+      ],
+      "trim": [
+        0,
+        0,
+        37,
+        33
+      ],
+      "origin": [
+        189,
+        205
+      ],
+      "size": [
+        37,
+        33
+      ],
+      "sourceSize": [
+        37,
+        33
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.bottom.left.png",
+      "atlas": [
+        1734,
+        754,
+        37,
+        33
+      ]
+    },
+    {
+      "id": "native.bottom.middle",
+      "source": "ground",
+      "crop": [
+        800,
+        205,
+        850,
+        238
+      ],
+      "trim": [
+        0,
+        0,
+        50,
+        33
+      ],
+      "origin": [
+        800,
+        205
+      ],
+      "size": [
+        50,
+        33
+      ],
+      "sourceSize": [
+        50,
+        33
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.bottom.middle.png",
+      "atlas": [
+        1779,
+        754,
+        50,
+        33
+      ]
+    },
+    {
+      "id": "native.bottom.right",
+      "source": "ground",
+      "crop": [
+        153,
+        205,
+        182,
+        238
+      ],
+      "trim": [
+        0,
+        0,
+        29,
+        33
+      ],
+      "origin": [
+        153,
+        205
+      ],
+      "size": [
+        29,
+        33
+      ],
+      "sourceSize": [
+        29,
+        33
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.bottom.right.png",
+      "atlas": [
+        1837,
+        754,
+        29,
+        33
+      ]
+    },
+    {
+      "id": "native.soil",
+      "source": "ground",
+      "crop": [
+        430,
+        350,
+        599,
+        455
+      ],
+      "trim": [
+        0,
+        0,
+        169,
+        105
+      ],
+      "origin": [
+        430,
+        350
+      ],
+      "size": [
+        169,
+        105
+      ],
+      "sourceSize": [
+        169,
+        105
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.soil.png",
+      "atlas": [
+        4,
+        240,
+        169,
+        105
+      ]
+    },
+    {
+      "id": "native.grass",
+      "source": "ground",
+      "crop": [
+        1115,
+        105,
+        1236,
+        156
+      ],
+      "trim": [
+        0,
+        0,
+        121,
+        51
+      ],
+      "origin": [
+        1115,
+        105
+      ],
+      "size": [
+        121,
+        51
+      ],
+      "sourceSize": [
+        121,
+        51
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.grass.png",
+      "atlas": [
+        448,
+        754,
+        121,
+        51
+      ]
+    },
+    {
+      "id": "native.stone-ledge",
+      "source": "ground",
+      "crop": [
+        1108,
+        739,
+        1255,
+        838
+      ],
+      "trim": [
+        0,
+        0,
+        147,
+        99
+      ],
+      "origin": [
+        1108,
+        739
+      ],
+      "size": [
+        147,
+        99
+      ],
+      "sourceSize": [
+        147,
+        99
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.6,
+      "file": "art/slices/v057/native.stone-ledge.png",
+      "atlas": [
+        336,
+        353,
+        147,
+        99
+      ]
+    },
+    {
+      "id": "native.metal.left",
+      "source": "metal",
+      "crop": [
+        36,
+        64,
+        86,
+        134
+      ],
+      "trim": [
+        0,
+        0,
+        50,
+        70
+      ],
+      "origin": [
+        36,
+        64
+      ],
+      "size": [
+        50,
+        70
+      ],
+      "sourceSize": [
+        50,
+        70
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "file": "art/slices/v057/native.metal.left.png",
+      "atlas": [
+        1468,
+        660,
+        50,
+        70
+      ]
+    },
+    {
+      "id": "native.metal.middle",
+      "source": "metal",
+      "crop": [
+        322,
+        64,
+        557,
+        134
+      ],
+      "trim": [
+        0,
+        0,
+        235,
+        70
+      ],
+      "origin": [
+        322,
+        64
+      ],
+      "size": [
+        235,
+        70
+      ],
+      "sourceSize": [
+        235,
+        70
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "file": "art/slices/v057/native.metal.middle.png",
+      "atlas": [
+        1526,
+        660,
+        235,
+        70
+      ]
+    },
+    {
+      "id": "native.metal.right",
+      "source": "metal",
+      "crop": [
+        1355,
+        64,
+        1412,
+        134
+      ],
+      "trim": [
+        0,
+        0,
+        57,
+        70
+      ],
+      "origin": [
+        1355,
+        64
+      ],
+      "size": [
+        57,
+        70
+      ],
+      "sourceSize": [
+        57,
+        70
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "file": "art/slices/v057/native.metal.right.png",
+      "atlas": [
+        1769,
+        660,
+        57,
+        70
+      ]
+    },
+    {
+      "id": "native.metal.bracket",
+      "source": "metal",
+      "crop": [
+        78,
+        128,
+        184,
+        174
+      ],
+      "trim": [
+        0,
+        0,
+        106,
+        46
+      ],
+      "origin": [
+        78,
+        128
+      ],
+      "size": [
+        106,
+        46
+      ],
+      "sourceSize": [
+        106,
+        46
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "file": "art/slices/v057/native.metal.bracket.png",
+      "atlas": [
+        1079,
+        754,
+        106,
+        46
+      ]
+    },
+    {
+      "id": "native.metal.post",
+      "source": "metal",
+      "crop": [
+        892,
+        501,
+        998,
+        729
+      ],
+      "trim": [
+        0,
+        0,
+        106,
+        228
+      ],
+      "origin": [
+        892,
+        501
+      ],
+      "size": [
+        106,
+        228
+      ],
+      "sourceSize": [
+        106,
+        228
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "file": "art/slices/v057/native.metal.post.png",
+      "atlas": [
+        4,
+        4,
+        106,
+        228
+      ]
+    }
+  ],
+  "clips": {
+    "knife.idle": [
+      "direct.knife.idle.0",
+      "direct.knife.idle.1",
+      "direct.knife.idle.2",
+      "direct.knife.idle.3"
+    ],
+    "knife.run": [
+      "direct.knife.run.0",
+      "direct.knife.run.1",
+      "direct.knife.run.2",
+      "direct.knife.run.3",
+      "direct.knife.run.4",
+      "direct.knife.run.5",
+      "direct.knife.run.6",
+      "direct.knife.run.7",
+      "direct.knife.run.8"
+    ],
+    "knife.jump": [
+      "direct.knife.jump.0",
+      "direct.knife.jump.1",
+      "direct.knife.jump.2",
+      "direct.knife.jump.3"
+    ],
+    "knife.fall": [
+      "direct.knife.fall.0",
+      "direct.knife.fall.1"
+    ],
+    "knife.crouch": [
+      "direct.knife.crouch.0",
+      "direct.knife.crouch.1"
+    ],
+    "knife.crouch-walk": [
+      "direct.knife.crouch-walk.0",
+      "direct.knife.crouch-walk.1",
+      "direct.knife.crouch-walk.2",
+      "direct.knife.crouch-walk.3",
+      "direct.knife.crouch-walk.4",
+      "direct.knife.crouch-walk.5",
+      "direct.knife.crouch-walk.6"
+    ],
+    "knife.combo1": [
+      "direct.knife.combo1.0",
+      "direct.knife.combo1.1",
+      "direct.knife.combo1.2",
+      "direct.knife.combo1.3"
+    ],
+    "knife.combo2": [
+      "direct.knife.combo2.0",
+      "direct.knife.combo2.1",
+      "direct.knife.combo2.2",
+      "direct.knife.combo2.3"
+    ],
+    "knife.combo3": [
+      "direct.knife.combo3.0",
+      "direct.knife.combo3.1",
+      "direct.knife.combo3.2",
+      "direct.knife.combo3.3",
+      "direct.knife.combo3.4"
+    ],
+    "knife.air-attack": [
+      "direct.knife.air-attack.0",
+      "direct.knife.air-attack.1"
+    ],
+    "knife.hit": [
+      "direct.knife.hit.0",
+      "direct.knife.hit.1",
+      "direct.knife.hit.2",
+      "direct.knife.hit.3"
+    ],
+    "knife.death": [
+      "direct.knife.death.0",
+      "direct.knife.death.1",
+      "direct.knife.death.2",
+      "direct.knife.death.3",
+      "direct.knife.death.4",
+      "direct.knife.death.5"
+    ],
+    "rocket.idle": [
+      "direct.rocket.idle.0",
+      "direct.rocket.idle.1",
+      "direct.rocket.idle.2",
+      "direct.rocket.idle.3"
+    ],
+    "rocket.run": [
+      "direct.rocket.run.0",
+      "direct.rocket.run.1",
+      "direct.rocket.run.2",
+      "direct.rocket.run.3",
+      "direct.rocket.run.4",
+      "direct.rocket.run.5"
+    ],
+    "rocket.jump": [
+      "direct.rocket.jump.0",
+      "direct.rocket.jump.1",
+      "direct.rocket.jump.2",
+      "direct.rocket.jump.3"
+    ],
+    "rocket.fall": [
+      "direct.rocket.fall.0",
+      "direct.rocket.fall.1"
+    ],
+    "rocket.crouch": [
+      "direct.rocket.crouch.0",
+      "direct.rocket.crouch.1"
+    ],
+    "rocket.crouch-walk": [
+      "direct.rocket.crouch-walk.0",
+      "direct.rocket.crouch-walk.1",
+      "direct.rocket.crouch-walk.2",
+      "direct.rocket.crouch-walk.3"
+    ],
+    "rocket.aim": [
+      "direct.rocket.aim.0",
+      "direct.rocket.aim.1",
+      "direct.rocket.aim.2"
+    ],
+    "rocket.stand-fire": [
+      "direct.rocket.stand-fire.0",
+      "direct.rocket.stand-fire.1",
+      "direct.rocket.stand-fire.2"
+    ],
+    "rocket.crouch-fire": [
+      "direct.rocket.crouch-fire.0",
+      "direct.rocket.crouch-fire.1",
+      "direct.rocket.crouch-fire.2"
+    ],
+    "rocket.run-fire": [
+      "direct.rocket.run-fire.0",
+      "direct.rocket.run-fire.1",
+      "direct.rocket.run-fire.2"
+    ],
+    "rocket.hit": [
+      "direct.rocket.hit.0",
+      "direct.rocket.hit.1",
+      "direct.rocket.hit.2",
+      "direct.rocket.hit.3"
+    ],
+    "rocket.death": [
+      "direct.rocket.death.0",
+      "direct.rocket.death.1",
+      "direct.rocket.death.2",
+      "direct.rocket.death.3",
+      "direct.rocket.death.4"
+    ]
+  },
+  "textureSize": [
+    2048,
+    1024
+  ],
+  "textureBytes": 253895,
+  "extrusion": 4,
+  "padding": 8,
+  "notes": [
+    "Knife run: 9 actual bodies; crouch-walk: 7; air attack: 2.",
+    "Rocket fire: 3 actual bodies per row, detached missile excluded. Death: 5 actual bodies.",
+    "No weapon removal masks, body-part assembly, mirroring or RGB repainting."
+  ]
+}

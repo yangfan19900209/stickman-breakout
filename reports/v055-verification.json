@@ -1,0 +1,104 @@
+{
+  "version": "0.5.5",
+  "date": "2026-10-19",
+  "creator": "3.8.8",
+  "typecheck": "passed",
+  "sourceSHA256": "1151ebbafe7d84c3e815d1882aad3c9749ad41c3996d3d571c4ee9397f5a84cc",
+  "logicTests": {
+    "tests": 87,
+    "passed": 87,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "passed": 8,
+    "failed": 0,
+    "report": "reports/v055-browser-results.json",
+    "scope": "First two zones, real pickups/ammo fallback, weapon art, crouch/run/air fire, knife/tracking and mobile analog/multitouch."
+  },
+  "currentBrowserPlay": {
+    "x": 3904.819444444561,
+    "health": 5,
+    "captures": [
+      {
+        "weapon": "rifle",
+        "body": "player.idle.0",
+        "equipment": {
+          "pose": "player.idle.0",
+          "body": "player.idle.0",
+          "weapon": null,
+          "grip": null,
+          "bakedRifle": true
+        },
+        "x": 110
+      },
+      {
+        "weapon": "shotgun",
+        "body": "unarmed.player.run.8",
+        "equipment": {
+          "pose": "player.run.8",
+          "body": "unarmed.player.run.8",
+          "weapon": "weapon.shotgun",
+          "grip": "grip.player.run.8",
+          "bakedRifle": false
+        },
+        "x": 293.9444444444445
+      },
+      {
+        "weapon": "rocket",
+        "body": "unarmed.player.run.6",
+        "equipment": {
+          "pose": "player.run.6",
+          "body": "unarmed.player.run.6",
+          "weapon": "weapon.rocket",
+          "grip": "grip.player.run.6",
+          "bakedRifle": false
+        },
+        "x": 1344.0833333333237
+      }
+    ],
+    "returnedToRifle": true,
+    "errors": []
+  },
+  "web": {
+    "files": 46,
+    "bytes": 5570026,
+    "creatorExitCode": 36
+  },
+  "wechat": {
+    "files": 45,
+    "bytes": 2803571,
+    "creatorExitCode": 36,
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "resources": {
+    "newSource": {
+      "file": "art/source/v055/黑白漫画可拼接地形.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "aae240c3cead6f194acb127e72693f18c08198b0875cd3165d0158b70f4aa0ba",
+      "transparentPixels": 717737
+    },
+    "additionalCuts": 100,
+    "additionalTextureBytes": 137637,
+    "additionalTextureSize": [
+      2048,
+      1024
+    ]
+  },
+  "notes": [
+    "Only map rendering and player weapon composition changed; collision geometry is unchanged. Gun sockets were aligned to the actual replacement grip.",
+    "Current 87 logic tests include complete campaign victory. Full real-keyboard browser campaign belongs to V0.5.4 and is retained separately in reports/v054-verification.json; it was not rerun for this visual pass.",
+    "Ground and platform source pixels repeat at fixed uniform scales; partial end pieces crop UVs. No regenerated character/terrain artwork.",
+    "Body cleanup uses deterministic masks and retained source hand pixels. Dedicated replacement-weapon arm poses at extreme aiming angles remain unavailable."
+  ],
+  "unverified": [
+    "WeChat developer tools runtime",
+    "Android/iOS/WeChat physical devices",
+    "Sustained real-device 60FPS"
+  ]
+}

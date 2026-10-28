@@ -14,7 +14,7 @@ export interface Projectile {
   damage: number;
   distance: number;
   range: number;
-  kind: "bullet" | "pellet" | "rocket" | "cannon";
+  kind: "bullet" | "pellet" | "rocket" | "cannon" | "shockwave";
   blastRadius: number;
   knockback: number;
   gravity: number;
@@ -22,6 +22,11 @@ export interface Projectile {
   firstFrame: boolean;
   originX: number;
   originY: number;
+  homing: boolean;
+  age: number;
+  launchRemaining: number;
+  launchAngle: number;
+  target?: Damageable;
 }
 export interface ProjectileSpawn {
   owner: "player" | "enemy";
@@ -38,6 +43,9 @@ export interface ProjectileSpawn {
   gravity?: number;
   originX?: number;
   originY?: number;
+  homing?: boolean;
+  /** Eject along the visible tube, then turn to pitch before target acquisition. */
+  launchPitch?: number;
 }
 export class ProjectileManager {
   readonly marks = Array.from({ length: 36 }, () => ({
@@ -68,6 +76,10 @@ export class ProjectileManager {
       firstFrame: false,
       originX: 0,
       originY: 0,
+      homing: false,
+      age: 0,
+      launchRemaining: 0,
+      launchAngle: 0,
     }),
   );
   fired = 0;
@@ -102,8 +114,8 @@ export class ProjectileManager {
       x: s.x,
       y: s.y,
       lastX: s.x,
-      vx: s.direction * Math.cos(s.pitch ?? 0) * s.speed,
-      vy: Math.sin(s.pitch ?? 0) * s.speed,
+      vx: s.direction * Math.cos(s.launchPitch ?? s.pitch ?? 0) * s.speed,
+      vy: Math.sin(s.launchPitch ?? s.pitch ?? 0) * s.speed,
       lastY: s.y,
       damage: s.damage,
       distance: 0,
@@ -116,6 +128,11 @@ export class ProjectileManager {
       firstFrame: true,
       originX: s.originX ?? s.x,
       originY: s.originY ?? s.y,
+      homing: s.homing ?? false,
+      age: 0,
+      target: undefined,
+      launchAngle: Math.atan2(Math.sin(s.pitch ?? 0),s.direction*Math.cos(s.pitch ?? 0)),
+      launchRemaining: s.launchPitch === undefined ? 0 : Math.abs((s.pitch ?? 0)-s.launchPitch)/C.rocketLaunch.turnRate,
     });
     this.fired++;
     this.peak = Math.max(this.peak, this.items.filter((p) => p.active).length);
@@ -133,14 +150,28 @@ export class ProjectileManager {
       if (!p.active) continue;
       p.lastX = p.x;
       p.lastY = p.y;
+      p.age += dt;
+      // The first sweep leaves the painted barrel. Upward input used to rotate
+      // the entire 116-unit missile instantly beside a horizontal launcher.
+      if (p.launchRemaining > 0) {
+        if (p.age > dt + 1e-8) {
+          const angle=Math.atan2(p.vy,p.vx),speed=Math.hypot(p.vx,p.vy);
+          const delta=Math.atan2(Math.sin(p.launchAngle-angle),Math.cos(p.launchAngle-angle));
+          const turn=Math.max(-C.rocketLaunch.turnRate*dt,Math.min(C.rocketLaunch.turnRate*dt,delta));
+          p.vx=Math.cos(angle+turn)*speed;p.vy=Math.sin(angle+turn)*speed;
+          p.launchRemaining=Math.max(0,p.launchRemaining-dt);
+        }
+      } else if (p.homing && p.owner === "player" && p.age >= C.homing.delay) this.guide(p, dt, enemies, solids);
       p.vy -= p.gravity * dt;
-      if (p.kind === "rocket") {
+      if (p.kind === "rocket" || p.kind === "cannon") {
         p.smokeTime -= dt;
         if (p.smokeTime <= 0) {
           const speed = Math.hypot(p.vx, p.vy) || 1;
+          const tail=p.kind==="rocket"&&p.owner==="player"
+            ? Math.max(32,Math.min(C.rocketLaunch.visualLength,C.rocketLaunch.exposedNose+p.distance)):50;
           this.particles.emit(
-            p.x - (p.vx / speed) * 50,
-            p.y - (p.vy / speed) * 50,
+            p.x - (p.vx / speed) * tail,
+            p.y - (p.vy / speed) * tail,
             "smoke",
             -p.vx * 0.05,
             20,
@@ -176,7 +207,13 @@ export class ProjectileManager {
           start,
           end,
           candidate.bounds,
-          p.kind === "cannon" ? 6 : p.kind === "rocket" ? 4 : 2,
+          p.kind === "shockwave"
+            ? 12
+            : p.kind === "cannon"
+              ? 6
+              : p.kind === "rocket"
+                ? 4
+                : 2,
         );
         if (t !== null && t < nearest) {
           nearest = t;
@@ -196,6 +233,7 @@ export class ProjectileManager {
             : material === "steel" ||
                 material === "barrel" ||
                 material === "guard" ||
+                material === "colossus" ||
                 material === "turret" ||
                 material === "shield"
               ? "metal"
@@ -249,5 +287,31 @@ export class ProjectileManager {
         if (p.distance >= p.range) p.active = false;
       }
     }
+  }
+  private guide(p: Projectile, dt: number, enemies: Damageable[], solids: Rect[]): void {
+    const angle = Math.atan2(p.vy, p.vx);
+    const delta = (to: number) => Math.atan2(Math.sin(to - angle), Math.cos(to - angle));
+    const visible = (e: Damageable) => {
+      const b = e.bounds, point = { x: b.x + b.w / 2, y: b.y + b.h / 2 };
+      return e.alive && Math.hypot(point.x - p.x, point.y - p.y) < C.homing.acquireRange
+        && !solids.some(s => segmentRect(p, point, s, 1) !== null);
+    };
+    if (p.target && !visible(p.target)) p.target = undefined;
+    if (!p.target) {
+      let nearest = Infinity;
+      for (const e of enemies) {
+        const b = e.bounds, dx = b.x + b.w / 2 - p.x, dy = b.y + b.h / 2 - p.y;
+        const distance = Math.hypot(dx, dy);
+        if (distance < nearest && Math.abs(delta(Math.atan2(dy, dx))) <= C.homing.cone && visible(e)) {
+          nearest = distance; p.target = e;
+        }
+      }
+    }
+    if (!p.target) return;
+    const b = p.target.bounds;
+    const turn = delta(Math.atan2(b.y + b.h / 2 - p.y, b.x + b.w / 2 - p.x));
+    const next = angle + Math.max(-C.homing.turnRate * dt, Math.min(C.homing.turnRate * dt, turn));
+    const speed = Math.hypot(p.vx, p.vy);
+    p.vx = Math.cos(next) * speed; p.vy = Math.sin(next) * speed;
   }
 }

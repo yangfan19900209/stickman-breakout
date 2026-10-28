@@ -127,9 +127,9 @@ test("running stance foot stays planted in world space, swing clears floor and s
       );
   const p = sample(0.1),
     q = sample(0.3);
-  assert.ok(Math.abs(p.rightAnkle.x - (q.rightAnkle.x + 0.2 * 112)) < 1e-6);
+  assert.ok(Math.abs(p.rightAnkle.x - (q.rightAnkle.x + 0.2 * 96)) < 1e-6);
   assert.equal(p.rightAnkle.y, 0);
-  assert.ok(sample(0.78).rightAnkle.y > 17);
+  assert.ok(sample(0.78).rightAnkle.y > 13);
   const hill = sample(0.2, 0.25);
   assert.equal(hill.rightAnkle.y, hill.rightAnkle.x * 0.25);
   assert.ok(
@@ -137,7 +137,7 @@ test("running stance foot stays planted in world space, swing clears floor and s
       Math.hypot(
         hill.rightKnee.x - hill.rightHip.x,
         hill.rightKnee.y - hill.rightHip.y,
-      ) - 24,
+      ) - 23,
     ) < 0.001,
   );
 });

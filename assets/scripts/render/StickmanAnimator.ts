@@ -1,4 +1,5 @@
 import { AnimationState, Vec } from "../core/Types";
+import { GameConfig as C } from "../core/GameConfig";
 export interface Pose {
   head: Vec;
   neck: Vec;
@@ -23,6 +24,8 @@ export interface MotionPose {
   facing?: number;
   landTime?: number;
   vx?: number;
+  airJumpTime?: number;
+  action?: string;
 }
 
 export class StickmanAnimator {
@@ -77,21 +80,53 @@ export class StickmanAnimator {
       const foot = (offset: number): Vec => {
         const u = (((phase + offset) % 1) + 1) % 1;
         // Stance: constant reverse speed cancels body travel. Swing: eased recovery arc.
-        if (u < 0.56) return p(31.36 - 112 * u, 0);
+        const length = C.animation.strideLength,
+          half = length * 0.28;
+        if (u < 0.56) return p(half - length * u, 0);
         const t = (u - 0.56) / 0.44,
           ease = t * t * (3 - 2 * t);
-        return p(-31.36 + 62.72 * ease, Math.sin(t * Math.PI) * 19);
+        return p(-half + half * 2 * ease, Math.sin(t * Math.PI) * 14);
       };
       pose.leftAnkle = foot(0.5);
       pose.rightAnkle = foot(0);
     }
     if (armed && run) {
       // Counter-swing while carrying a rifle; firing blends back into the aimed pose.
-      const swing = wave * (1 - recoil);
+      const swing = wave * Math.max(0, 1 - recoil);
       pose.leftElbow.x -= swing * 5;
       pose.rightElbow.x += swing * 5;
       pose.leftHand.y += swing * 2;
       pose.rightHand.y -= swing * 2;
+    }
+    if (!air && state !== "Crouch" && state !== "Land" && state !== "Dead") {
+      if (!run) {
+        pose.leftAnkle.x = -9;
+        pose.rightAnkle.x = 13;
+      }
+      const support =
+        pose.leftAnkle.y <= pose.rightAnkle.y
+          ? pose.leftAnkle
+          : pose.rightAnkle;
+      const hip = run
+        ? Math.sqrt(
+            Math.max(0, (C.animation.legSegment * 1.97) ** 2 - support.x ** 2),
+          )
+        : 43;
+      const lift = hip - 32 - bob;
+      for (const joint of [
+        pose.torso,
+        pose.neck,
+        pose.head,
+        pose.leftShoulder,
+        pose.rightShoulder,
+        pose.leftElbow,
+        pose.rightElbow,
+        pose.leftHand,
+        pose.rightHand,
+        pose.leftHip,
+        pose.rightHip,
+      ])
+        joint.y += lift;
     }
     if (!armed) {
       pose.leftElbow = p(run ? -wave * 12 : -9, 35 + bob);
@@ -116,7 +151,7 @@ export class StickmanAnimator {
       pose.rightAnkle = p(18, 0);
     }
     if (armed && aimPitch > 0) {
-      const base = state === "Crouch" ? 26 : 44 + bob;
+      const base = state === "Crouch" ? 26 : pose.rightHand.y;
       pose.rightHand = p(
         20 + 5 * Math.cos(aimPitch) - kick,
         base + 22 * Math.sin(aimPitch),
@@ -128,6 +163,15 @@ export class StickmanAnimator {
       pose.rightElbow = p(24, base + 5);
       pose.leftElbow = p(11, base - 4);
     }
+    if (motion.action === "reload" && armed) {
+      pose.rightHand.x = 21; pose.rightHand.y -= 7;
+      pose.leftHand.x = 15; pose.leftHand.y = pose.rightHand.y-7;
+      pose.leftElbow.x = 3; pose.rightElbow.x = 10;
+    }
+    if (motion.action === "chargeWindup" || motion.action === "charge") {
+      pose.head.x += 6; pose.neck.x += 5;
+      if(!armed){pose.rightHand.x=28;pose.rightHand.y=44;pose.rightElbow.x=15;}
+    }
     if (air) {
       pose.leftKnee = p(11, 21);
       pose.leftAnkle = p(2, 9);
@@ -136,6 +180,11 @@ export class StickmanAnimator {
       if (state === "Fall") {
         pose.leftKnee = p(8, 18);
         pose.leftAnkle = p(12, 1);
+      }
+      if ((motion.airJumpTime ?? 0) > 0) {
+        pose.leftAnkle = p(16, 17);
+        pose.rightAnkle = p(-12, 11);
+        pose.head.x += 3;
       }
     }
     if (!air && state !== "Dead") {
@@ -148,7 +197,9 @@ export class StickmanAnimator {
       const dx = ankle.x - hip.x,
         dy = ankle.y - hip.y;
       const dist = Math.max(1, Math.hypot(dx, dy));
-      const bend = Math.sqrt(Math.max(0, 24 * 24 - (dist * dist) / 4));
+      const bend = Math.sqrt(
+        Math.max(0, C.animation.legSegment ** 2 - (dist * dist) / 4),
+      );
       return p(
         (hip.x + ankle.x) / 2 - (dy / dist) * bend,
         (hip.y + ankle.y) / 2 + (dx / dist) * bend,

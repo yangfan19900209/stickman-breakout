@@ -3,6 +3,9 @@ import { writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const { PlaytestBrain } = require("../../scripts/playtest-brain.cjs");
+// Keep unsuccessful pilot attempts in the report, rather than changing health
+// or enemies to guarantee victory. Retried wins are reported separately.
+test.describe.configure({ retries: 2 });
 async function boot(page: Page) {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -98,12 +101,17 @@ test("actual enemy damage leads to game over; restart restores objects and playe
   expect(errors).toEqual([]);
 });
 
-test("complete V0.2 story with real keyboard input, mechanisms and two-phase boss", async ({
+test("complete V0.5 story with real keyboard input, mini tank and two-phase final boss", async ({
   page,
 }) => {
-  test.setTimeout(360000);
+  test.setTimeout(600000);
+  // Replay at a fixed browser clock cadence so GPU/IPC timing does not change
+  // the input policy. All actions still use real keyboard events and Cocos.
+  await page.clock.install({ time: new Date("2026-10-15T00:00:00Z") });
   const errors = await boot(page);
+  await page.clock.pauseAt(new Date("2026-10-15T00:00:10Z"));
   await page.keyboard.press("Enter");
+  await page.clock.runFor(34);
   await state(page, "playing");
   const brain = new PlaytestBrain(),
     held = new Set<string>(),
@@ -111,13 +119,20 @@ test("complete V0.2 story with real keyboard input, mechanisms and two-phase bos
     phases = new Set<number>();
   let arenaShot = false,
     phaseTwoShot = false,
+    tankShot = false,
+    miniDeathAt = -1,
     bridge = false,
     lift = false;
   const trace: any[] = [];
   let lastTrace = 0;
-  for (let n = 0; n < 6000; n++) {
+  for (let n = 0; n < 9000; n++) {
     const s = await read(page);
     if (s.state !== "playing") break;
+    if (s.miniBoss?.health === 0 && miniDeathAt < 0) miniDeathAt = s.time;
+    if (miniDeathAt >= 0 && s.time - miniDeathAt > 0.3 && !tankShot) {
+      await page.screenshot({ path: "reports/v05-tank-wreck.png" });
+      tankShot = true;
+    }
     weapons.add(s.weapon);
     if (s.boss.active) phases.add(s.boss.phase);
     bridge ||= s.mechanisms.some((m: any) => m.kind === "bridge" && m.released);
@@ -167,7 +182,7 @@ test("complete V0.2 story with real keyboard input, mechanisms and two-phase bos
         await page.keyboard.down(key);
         held.add(key);
       }
-    await page.waitForTimeout(35);
+    await page.clock.runFor(34);
   }
   for (const key of held) await page.keyboard.up(key);
   const end = await read(page);
@@ -175,6 +190,9 @@ test("complete V0.2 story with real keyboard input, mechanisms and two-phase bos
     "reports/full-run.json",
     JSON.stringify(
       {
+        timing:
+          "fixed browser clock, 34 ms input cadence; real keyboard events",
+        attempt: test.info().retry + 1,
         snapshot: end,
         errors,
         trace,

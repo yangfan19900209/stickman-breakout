@@ -1,4 +1,4 @@
-import { Color, Label, Node, UITransform, view } from "cc";
+import { Color, Label, Node, UITransform, view, Sprite } from "cc";
 import { GameConfig as C } from "../core/GameConfig";
 import { GameSession } from "../core/GameSession";
 import { InputManager } from "../core/InputManager";
@@ -10,6 +10,7 @@ import { JoystickView } from "./JoystickView";
 import { controlLayout, SafeInsets } from "./ControlLayout";
 import { PlatformAdapter } from "../platform/PlatformAdapter";
 import { WeaponArt } from "../render/WeaponArt";
+import { ComicAssets, ComicBatch } from "../render/ComicAssets";
 
 function text(
   parent: Node,
@@ -59,6 +60,11 @@ function createButton(
 
 /** Persistent UI nodes; panels toggle instead of being recreated every frame/restart. */
 export class HUDController {
+  weaponStatus() {
+    return { text:this.weaponLabel.string, id:this.lastWeapon,
+      frame:this.weaponIcon.node.getComponentInChildren(Sprite)?.spriteFrame?.name??"legacy",
+      switch:{x:this.weaponToggle.position.x,y:this.weaponToggle.position.y} };
+  }
   private hud: Node;
   private hudInk: Ink;
   private controls: Node;
@@ -93,7 +99,9 @@ export class HUDController {
   private joystick: JoystickView;
   private weaponLabel: Label;
   private weaponIcon: Ink;
+  private weaponToggle: Node;
   private weaponArt = new WeaponArt();
+  private comicWeapon?: ComicBatch;
   private lastWeapon = "";
   private message: Label;
   layout = controlLayout();
@@ -154,6 +162,11 @@ export class HUDController {
     this.stats = text(this.hud, "", 170, 590, 26, colors.ink, 320);
     this.weaponLabel = text(this.hud, "", 300, 640, 32, colors.ink, 570);
     this.weaponIcon = new Ink(node(this.hud, "Current weapon silhouette"));
+    this.weaponToggle = node(this.hud,"Switch tactical knife",210,640,220,64);
+    adapter.registerUI(this.weaponToggle,()=>{
+      if(!this.controls.active)return;
+      adapter.state.press("tap:weapon","switchWeapon");adapter.state.release("tap:weapon");
+    });
     this.message = text(parent, "", 640, 534, 30, colors.ink, 750);
     this.guardNode = node(parent, "Guard health");
     this.guardInk = new Ink(this.guardNode);
@@ -271,7 +284,7 @@ export class HUDController {
     button(title, "开始突围  →", 120, -128, 300, 62, onStart, true);
     text(
       title,
-      "A D 移动   ·   Space 跳跃   ·   按住 J 射击",
+      "A D 移动 · Space 二段跳 · J 普攻 · Q 切刀 / 回枪",
       120,
       -204,
       17,
@@ -280,14 +293,14 @@ export class HUDController {
     );
     text(
       title,
-      "P / Esc 暂停   ·   手机支持多点触控   ·   Enter 开始",
+      "手机轻触武器栏切刀，长按普攻连斩 · L 拔刀攻击 · P 暂停",
       120,
       -239,
       14,
       colors.muted,
       760,
     );
-    text(title, "V0.4.2  /  漫画突围", -368, -270, 16, colors.muted, 390);
+    text(title, "V0.5.7  /  原图武器动作与新地形", -368, -270, 16, colors.muted, 390);
     const paused = panel("paused");
     text(paused, "暂停一下", 0, 103, 52);
     text(paused, "战场等你回来。", 0, 42, 20, colors.muted);
@@ -366,6 +379,7 @@ export class HUDController {
     held: boolean,
     disabled = false,
     count = "",
+    knife = false,
   ): void {
     ink.clear();
     const p =
@@ -395,6 +409,10 @@ export class HUDController {
     );
     const q = r * 0.36;
     if (action === "shoot") {
+      if(knife) {
+        ink.line([{x:-q,y:-q*.5},{x:q,y:q},{x:q*.5,y:0},{x:-q,y:-q*.5}],2.4*k,color);
+        ink.segment(-q*1.1,-q*.7,-q*.5,-q*.1,4*k,color);
+      } else {
       ink.circle(0, 5 * k, q, color, undefined, 2.2 * k);
       for (const d of [-1, 1]) {
         ink.segment(d * q * 0.72, 5 * k, d * q * 1.55, 5 * k, 2.2 * k, color);
@@ -408,6 +426,7 @@ export class HUDController {
         );
       }
       ink.circle(0, 5 * k, 2 * k, color, color, 1);
+      }
     } else if (action === "jump") {
       ink.line(
         [
@@ -438,7 +457,7 @@ export class HUDController {
       label = text(ink.node, "", 0, -r * 0.56, 13 * k, color, r * 1.7);
     label.string =
       action === "shoot"
-        ? "普攻"
+        ? knife ? "斩击" : "普攻"
         : action === "grenade"
           ? `雷 ${count}`
           : "跳跃";
@@ -492,9 +511,11 @@ export class HUDController {
       Math.max(1, (44 * k) / 54),
       1,
     );
-    this.weaponIcon.node.setPosition(153 * k + insets.left, top - 22 * k);
+    this.weaponIcon.node.setPosition(161 * k + insets.left, top - 22 * k);
+    this.weaponToggle.setPosition(210*k+insets.left,top-25*k);
+    this.weaponToggle.getComponent(UITransform)!.setContentSize(220*k,64*k);
     this.weaponIcon.node.setScale(1.3 * k, 1.3 * k, 1);
-    this.weaponLabel.node.setPosition(250 * k + insets.left, top - 25 * k);
+    this.weaponLabel.node.setPosition(280 * k + insets.left, top - 25 * k);
     this.weaponLabel.fontSize = 14 * k;
     this.weaponLabel.lineHeight = 18 * k;
     this.weaponLabel.node
@@ -567,10 +588,16 @@ export class HUDController {
       s.state === "playing" || s.state === "dying" || s.state === "paused";
     this.controls.active = s.state === "playing" && !portrait;
     this.adapter.touch.enabled = this.controls.active;
-    this.weaponLabel.string = `${C.weapons[s.weapon.id].name}\n${s.weapon.ammo < 0 ? "∞  弹药" : `剩余 ${s.weapon.ammo} 发`}`;
+    const presentation = s.weapon.presentation;
+    this.weaponLabel.string = `${presentation.name}\n${presentation.ammoText}${s.weapon.id==="knife"?"":" · 切刀"}`;
     if (this.lastWeapon !== s.weapon.id) {
       this.weaponIcon.clear();
-      this.weaponArt.draw(this.weaponIcon, s.weapon.id, 0, 0);
+      if (ComicAssets.enabled) {
+        this.comicWeapon ??= new ComicBatch(this.weaponIcon.node, "HUD weapon");
+        this.comicWeapon.begin();
+        this.comicWeapon.put(presentation.icon, -5, 0, 52,undefined,0,255,1,[.5,.5]);
+        this.comicWeapon.end();
+      } else this.weaponArt.draw(this.weaponIcon, s.weapon.id, 0, 0);
       this.lastWeapon = s.weapon.id;
     }
     this.levelLabel.string = `关卡 01 · ${Math.floor((s.player.x / s.level.data.width) * 100)}%`;
@@ -595,8 +622,13 @@ export class HUDController {
       this.lastState = null;
       return;
     }
-    this.guardNode.active =
-      s.state === "playing" && s.level.arenaEntered && s.spawner.guard.alive;
+    const encounter =
+      s.spawner.guard.active && s.spawner.guard.alive
+        ? s.spawner.guard
+        : s.spawner.miniBoss?.active && s.spawner.miniBoss.alive
+          ? s.spawner.miniBoss
+          : null;
+    this.guardNode.active = s.state === "playing" && !!encounter;
     if (this.guardNode.active) {
       this.guardInk.clear();
       const bw = 320 * this.layout.joystick.unit;
@@ -612,13 +644,15 @@ export class HUDController {
       this.guardInk.rect(
         640 - bw / 2,
         539,
-        (bw * s.spawner.guard.health) / s.spawner.guard.maxHealth,
+        (bw * encounter!.health) / encounter!.maxHealth,
         7 * this.layout.joystick.unit,
         colors.ink,
         colors.ink,
         1,
       );
-      this.guardLabel.string = `履带战车 · 阶段 ${s.spawner.guard.phase}  ${Math.ceil(s.spawner.guard.health)} / ${s.spawner.guard.maxHealth}`;
+      const name =
+        encounter!.kind === "colossus" ? "重装裁决者" : "巡逻战车 · 小 BOSS";
+      this.guardLabel.string = `${name} · 阶段 ${encounter!.phase}  ${Math.ceil(encounter!.health)} / ${encounter!.maxHealth}`;
     }
     if (this.lastState !== s.state) {
       for (const [state, p] of this.panels) p.active = state === s.state;
@@ -697,9 +731,15 @@ export class HUDController {
     }
     const zone = s.level.zone;
     this.objective.string = s.level.guardDefeated
-      ? "战车已击毁 · 抵达出口 →"
+      ? "裁决者已击毁 · 抵达出口 →"
       : s.level.arenaEntered
-        ? "躲开落点预警 · 击毁机械战车"
+        ? s.spawner.guard.mode === "entering"
+          ? "警报 · 重装裁决者启动"
+          : s.spawner.guard.action === "stomp"
+            ? "重踏预警 · 跳过地波"
+            : s.spawner.guard.action === "sweep"
+              ? "锁定炮击 · 及时换位"
+              : "齐射预警 · 离开落点"
         : `${zone?.name ?? "向右推进"} · 向右突围 →`;
     this.stats.string = `击败  ${s.spawner.kills} / ${s.spawner.enemies.length}`;
     for (const stat of this.resultStats)
@@ -710,15 +750,15 @@ export class HUDController {
         b.action === "grenade"
           ? s.player.grenades === 0
           : b.action === "jump"
-            ? !s.player.grounded
+            ? !s.player.canJump
             : !s.player.alive;
       const cooldown =
         b.action === "grenade"
           ? s.grenades.cooldown / C.grenade.interval
           : b.action === "shoot"
-            ? s.weapon.cooldown / C.weapons[s.weapon.id].interval
+            ? Math.min(1,s.weapon.cooldown / (s.weapon.id==="knife"?C.melee.combo[Math.max(0,s.melee.stage-1)].duration+(s.melee.stage===3?.14:0):C.weapons[s.weapon.id].interval))
             : 0;
-      const key = `${held}:${disabled}:${b.action === "grenade" ? s.player.grenades : ""}`;
+      const key = `${held}:${disabled}:${s.weapon.id}:${b.action === "grenade" ? s.player.grenades : ""}`;
       if (key !== b.key) {
         this.paintTouch(
           b.ink,
@@ -726,6 +766,7 @@ export class HUDController {
           held,
           disabled,
           String(s.player.grenades),
+          s.weapon.id === "knife",
         );
         b.held = held;
         b.key = key;

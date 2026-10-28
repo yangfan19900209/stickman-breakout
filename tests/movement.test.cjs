@@ -24,13 +24,13 @@ test("ground is stable for ten seconds", () => {
   assert.equal(p.y, 150);
   assert.equal(p.grounded, true);
 });
-test("one jump, no second air jump, predictable apex and landing", () => {
+test("one initial jump retains its original apex and landing", () => {
   const p = new PlayerController(),
     l = new LevelController();
   let peak = p.y;
   p.update(1 / 120, { ...idle, jump: true }, l);
   for (let i = 0; i < 150; i++) {
-    p.update(1 / 120, { ...idle, jump: i === 24 }, l);
+    p.update(1 / 120, idle, l);
     peak = Math.max(peak, p.y);
   }
   assert.ok(peak > 270 && peak < 278);

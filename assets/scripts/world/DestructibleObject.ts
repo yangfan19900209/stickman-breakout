@@ -20,6 +20,7 @@ export class DestructibleObject {
   readonly h: number;
   health: number;
   hitTime = 0;
+  hitDirection: Facing = 1;
   deadTime = 0;
   falling = false;
   vy = 0;
@@ -56,6 +57,7 @@ export class DestructibleObject {
   takeDamage(amount: number, _direction: Facing, _kind?: DamageKind): boolean {
     if (!this.alive) return false;
     this.hitTime = 0.16;
+    this.hitDirection = _direction;
     if (this.category === "indestructible") return false;
     this.health = Math.max(0, this.health - amount);
     this.dirty = true;

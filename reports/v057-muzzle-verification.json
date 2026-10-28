@@ -1,0 +1,45 @@
+{
+  "version": "0.5.7",
+  "patch": "rocket-muzzle",
+  "date": "2026-10-20",
+  "sourceSHA256": "df5913c05cd8ff40d315871b9f42f92e982dfd2faaa52a7af0537b2ccc159da7",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 109,
+    "passed": 109,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "passed": 5,
+    "integrationFirstPass": 4,
+    "aimedRocketRetest": 1,
+    "report": "reports/v057-muzzle-browser-results.json",
+    "integrationReport": "reports/v057-muzzle-first-attempt.json",
+    "note": "Initial aimed-rocket scenario correctly hit an overhead platform; moved by real input to open sky and reran both facing directions. Other four integration cases passed on the same build."
+  },
+  "shots": "reports/v057-rocket-muzzle.json",
+  "screenshots": [
+    "reports/v057-up-rocket-right.png",
+    "reports/v057-up-rocket-right-flight.png",
+    "reports/v057-up-rocket-left.png",
+    "reports/v057-up-rocket-left-flight.png"
+  ],
+  "web": {
+    "files": 52,
+    "bytes": 5906525
+  },
+  "wechat": {
+    "files": 51,
+    "bytes": 3105671
+  },
+  "priorBaseline": {
+    "report": "reports/v057-verification.json",
+    "browserFullSuiteRerun": false,
+    "browserFullCampaignRerun": false
+  },
+  "limitations": [
+    "Complete supplied soldier stays in its painted pose; rocket exits the tube before steering to upward input. No new high-angle soldier artwork.",
+    "No WeChat developer-tools/physical-device verification, upload or publication."
+  ]
+}

@@ -1,0 +1,2651 @@
+{
+  "version": "0.5.6",
+  "source": {
+    "file": "art/source/v055/黑白漫画可拼接地形.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "mode": "RGBA",
+    "sha256": "aae240c3cead6f194acb127e72693f18c08198b0875cd3165d0158b70f4aa0ba",
+    "transparentPixels": 717737
+  },
+  "playerSourceSHA256": "07257a0c345b6270f77289616cee3b38101a0483db1a9388c2e0409f538fe61c",
+  "textureSize": [
+    2048,
+    1024
+  ],
+  "textureBytes": 137522,
+  "frames": [
+    {
+      "id": "tile.top.left",
+      "size": [
+        36,
+        83
+      ],
+      "sourceSize": [
+        36,
+        83
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        17,
+        42,
+        53,
+        125
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1254,
+        855,
+        36,
+        83
+      ]
+    },
+    {
+      "id": "tile.fill.left",
+      "size": [
+        36,
+        47
+      ],
+      "sourceSize": [
+        36,
+        47
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        17,
+        125,
+        53,
+        172
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1673,
+        855,
+        36,
+        47
+      ]
+    },
+    {
+      "id": "tile.bottom.left",
+      "size": [
+        36,
+        22
+      ],
+      "sourceSize": [
+        36,
+        22
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        17,
+        172,
+        53,
+        194
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1956,
+        855,
+        36,
+        22
+      ]
+    },
+    {
+      "id": "tile.top.middle",
+      "size": [
+        128,
+        55
+      ],
+      "sourceSize": [
+        128,
+        55
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        280,
+        70,
+        552,
+        125
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1537,
+        855,
+        128,
+        55
+      ]
+    },
+    {
+      "id": "tile.fill.middle",
+      "size": [
+        256,
+        94
+      ],
+      "sourceSize": [
+        256,
+        94
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        280,
+        125,
+        552,
+        172
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1420,
+        747,
+        256,
+        94
+      ]
+    },
+    {
+      "id": "tile.bottom.middle",
+      "size": [
+        128,
+        22
+      ],
+      "sourceSize": [
+        128,
+        22
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        280,
+        172,
+        552,
+        194
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        4,
+        955,
+        128,
+        22
+      ]
+    },
+    {
+      "id": "tile.top.right",
+      "size": [
+        44,
+        85
+      ],
+      "sourceSize": [
+        44,
+        85
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        1390,
+        40,
+        1434,
+        125
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1202,
+        855,
+        44,
+        85
+      ]
+    },
+    {
+      "id": "tile.fill.right",
+      "size": [
+        44,
+        47
+      ],
+      "sourceSize": [
+        44,
+        47
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        1390,
+        125,
+        1434,
+        172
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1717,
+        855,
+        44,
+        47
+      ]
+    },
+    {
+      "id": "tile.bottom.right",
+      "size": [
+        44,
+        22
+      ],
+      "sourceSize": [
+        44,
+        22
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        1390,
+        172,
+        1434,
+        194
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        140,
+        955,
+        44,
+        22
+      ]
+    },
+    {
+      "id": "tile.metal.left",
+      "size": [
+        49,
+        56
+      ],
+      "sourceSize": [
+        49,
+        56
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        42,
+        848,
+        91,
+        939
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1298,
+        855,
+        49,
+        56
+      ]
+    },
+    {
+      "id": "tile.metal.middle",
+      "size": [
+        128,
+        56
+      ],
+      "sourceSize": [
+        128,
+        56
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        480,
+        848,
+        918,
+        939
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1355,
+        855,
+        128,
+        56
+      ]
+    },
+    {
+      "id": "tile.metal.right",
+      "size": [
+        38,
+        56
+      ],
+      "sourceSize": [
+        38,
+        56
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        1380,
+        848,
+        1418,
+        939
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        1491,
+        855,
+        38,
+        56
+      ]
+    },
+    {
+      "id": "tile.corner-down",
+      "size": [
+        283,
+        196
+      ],
+      "sourceSize": [
+        283,
+        196
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        585,
+        225,
+        868,
+        421
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        183,
+        4,
+        283,
+        196
+      ]
+    },
+    {
+      "id": "tile.corner-up",
+      "size": [
+        294,
+        195
+      ],
+      "sourceSize": [
+        294,
+        195
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        927,
+        226,
+        1221,
+        421
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        474,
+        4,
+        294,
+        195
+      ]
+    },
+    {
+      "id": "tile.pillar",
+      "size": [
+        171,
+        350
+      ],
+      "sourceSize": [
+        171,
+        350
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        1237,
+        442,
+        1408,
+        792
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        4,
+        4,
+        171,
+        350
+      ]
+    },
+    {
+      "id": "tile.ledge",
+      "size": [
+        343,
+        110
+      ],
+      "sourceSize": [
+        343,
+        110
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        207,
+        680,
+        550,
+        790
+      ],
+      "join": "normalized-periodic",
+      "atlas": [
+        835,
+        623,
+        343,
+        110
+      ]
+    },
+    {
+      "id": "tile.metal.support",
+      "size": [
+        72,
+        43
+      ],
+      "sourceSize": [
+        72,
+        43
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "terrain",
+      "crop": [
+        480,
+        896,
+        552,
+        939
+      ],
+      "join": "fixed-size-bracket",
+      "atlas": [
+        1769,
+        855,
+        72,
+        43
+      ]
+    },
+    {
+      "id": "unarmed.player.idle.0",
+      "size": [
+        95,
+        131
+      ],
+      "sourceSize": [
+        95,
+        131
+      ],
+      "anchor": [
+        0.45263157894736844,
+        0.01526717557251911
+      ],
+      "source": "player",
+      "original": "player.idle.0",
+      "sourceFile": "art/slices/v053/player.idle.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        776,
+        4,
+        95,
+        131
+      ]
+    },
+    {
+      "id": "grip.player.idle.0",
+      "size": [
+        95,
+        131
+      ],
+      "sourceSize": [
+        95,
+        131
+      ],
+      "anchor": [
+        0.45263157894736844,
+        0.01526717557251911
+      ],
+      "source": "player",
+      "original": "player.idle.0",
+      "sourceFile": "art/slices/v053/player.idle.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        879,
+        4,
+        95,
+        131
+      ]
+    },
+    {
+      "id": "unarmed.player.idle.1",
+      "size": [
+        92,
+        128
+      ],
+      "sourceSize": [
+        92,
+        128
+      ],
+      "anchor": [
+        0.45652173913043476,
+        0.0078125
+      ],
+      "source": "player",
+      "original": "player.idle.1",
+      "sourceFile": "art/slices/v053/player.idle.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1398,
+        4,
+        92,
+        128
+      ]
+    },
+    {
+      "id": "grip.player.idle.1",
+      "size": [
+        92,
+        128
+      ],
+      "sourceSize": [
+        92,
+        128
+      ],
+      "anchor": [
+        0.45652173913043476,
+        0.0078125
+      ],
+      "source": "player",
+      "original": "player.idle.1",
+      "sourceFile": "art/slices/v053/player.idle.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1498,
+        4,
+        92,
+        128
+      ]
+    },
+    {
+      "id": "unarmed.player.idle.2",
+      "size": [
+        95,
+        130
+      ],
+      "sourceSize": [
+        95,
+        130
+      ],
+      "anchor": [
+        0.43157894736842106,
+        0.007692307692307665
+      ],
+      "source": "player",
+      "original": "player.idle.2",
+      "sourceFile": "art/slices/v053/player.idle.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        982,
+        4,
+        95,
+        130
+      ]
+    },
+    {
+      "id": "grip.player.idle.2",
+      "size": [
+        95,
+        130
+      ],
+      "sourceSize": [
+        95,
+        130
+      ],
+      "anchor": [
+        0.43157894736842106,
+        0.007692307692307665
+      ],
+      "source": "player",
+      "original": "player.idle.2",
+      "sourceFile": "art/slices/v053/player.idle.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1085,
+        4,
+        95,
+        130
+      ]
+    },
+    {
+      "id": "unarmed.player.idle.3",
+      "size": [
+        97,
+        130
+      ],
+      "sourceSize": [
+        97,
+        130
+      ],
+      "anchor": [
+        0.4329896907216495,
+        0
+      ],
+      "source": "player",
+      "original": "player.idle.3",
+      "sourceFile": "art/slices/v053/player.idle.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1188,
+        4,
+        97,
+        130
+      ]
+    },
+    {
+      "id": "grip.player.idle.3",
+      "size": [
+        97,
+        130
+      ],
+      "sourceSize": [
+        97,
+        130
+      ],
+      "anchor": [
+        0.4329896907216495,
+        0
+      ],
+      "source": "player",
+      "original": "player.idle.3",
+      "sourceFile": "art/slices/v053/player.idle.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1293,
+        4,
+        97,
+        130
+      ]
+    },
+    {
+      "id": "unarmed.player.run.0",
+      "size": [
+        118,
+        122
+      ],
+      "sourceSize": [
+        118,
+        122
+      ],
+      "anchor": [
+        0.5,
+        0.008196721311475419
+      ],
+      "source": "player",
+      "original": "player.run.0",
+      "sourceFile": "art/slices/v053/player.run.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1314,
+        362,
+        118,
+        122
+      ]
+    },
+    {
+      "id": "grip.player.run.0",
+      "size": [
+        118,
+        122
+      ],
+      "sourceSize": [
+        118,
+        122
+      ],
+      "anchor": [
+        0.5,
+        0.008196721311475419
+      ],
+      "source": "player",
+      "original": "player.run.0",
+      "sourceFile": "art/slices/v053/player.run.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1440,
+        362,
+        118,
+        122
+      ]
+    },
+    {
+      "id": "unarmed.player.run.1",
+      "size": [
+        91,
+        123
+      ],
+      "sourceSize": [
+        91,
+        123
+      ],
+      "anchor": [
+        0.45054945054945056,
+        0.016260162601625994
+      ],
+      "source": "player",
+      "original": "player.run.1",
+      "sourceFile": "art/slices/v053/player.run.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        896,
+        362,
+        91,
+        123
+      ]
+    },
+    {
+      "id": "grip.player.run.1",
+      "size": [
+        91,
+        123
+      ],
+      "sourceSize": [
+        91,
+        123
+      ],
+      "anchor": [
+        0.45054945054945056,
+        0.016260162601625994
+      ],
+      "source": "player",
+      "original": "player.run.1",
+      "sourceFile": "art/slices/v053/player.run.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        995,
+        362,
+        91,
+        123
+      ]
+    },
+    {
+      "id": "unarmed.player.run.2",
+      "size": [
+        88,
+        126
+      ],
+      "sourceSize": [
+        88,
+        126
+      ],
+      "anchor": [
+        0.42045454545454547,
+        0.023809523809523836
+      ],
+      "source": "player",
+      "original": "player.run.2",
+      "sourceFile": "art/slices/v053/player.run.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1598,
+        4,
+        88,
+        126
+      ]
+    },
+    {
+      "id": "grip.player.run.2",
+      "size": [
+        88,
+        126
+      ],
+      "sourceSize": [
+        88,
+        126
+      ],
+      "anchor": [
+        0.42045454545454547,
+        0.023809523809523836
+      ],
+      "source": "player",
+      "original": "player.run.2",
+      "sourceFile": "art/slices/v053/player.run.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1694,
+        4,
+        88,
+        126
+      ]
+    },
+    {
+      "id": "unarmed.player.run.3",
+      "size": [
+        94,
+        125
+      ],
+      "sourceSize": [
+        94,
+        125
+      ],
+      "anchor": [
+        0.5106382978723404,
+        0.016000000000000014
+      ],
+      "source": "player",
+      "original": "player.run.3",
+      "sourceFile": "art/slices/v053/player.run.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1790,
+        4,
+        94,
+        125
+      ]
+    },
+    {
+      "id": "grip.player.run.3",
+      "size": [
+        94,
+        125
+      ],
+      "sourceSize": [
+        94,
+        125
+      ],
+      "anchor": [
+        0.5106382978723404,
+        0.016000000000000014
+      ],
+      "source": "player",
+      "original": "player.run.3",
+      "sourceFile": "art/slices/v053/player.run.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1892,
+        4,
+        94,
+        125
+      ]
+    },
+    {
+      "id": "unarmed.player.run.4",
+      "size": [
+        100,
+        124
+      ],
+      "sourceSize": [
+        100,
+        124
+      ],
+      "anchor": [
+        0.52,
+        0
+      ],
+      "source": "player",
+      "original": "player.run.4",
+      "sourceFile": "art/slices/v053/player.run.4.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        4,
+        362,
+        100,
+        124
+      ]
+    },
+    {
+      "id": "grip.player.run.4",
+      "size": [
+        100,
+        124
+      ],
+      "sourceSize": [
+        100,
+        124
+      ],
+      "anchor": [
+        0.52,
+        0
+      ],
+      "source": "player",
+      "original": "player.run.4",
+      "sourceFile": "art/slices/v053/player.run.4.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        112,
+        362,
+        100,
+        124
+      ]
+    },
+    {
+      "id": "unarmed.player.run.5",
+      "size": [
+        90,
+        121
+      ],
+      "sourceSize": [
+        90,
+        121
+      ],
+      "anchor": [
+        0.5111111111111111,
+        0.016528925619834656
+      ],
+      "source": "player",
+      "original": "player.run.5",
+      "sourceFile": "art/slices/v053/player.run.5.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        4,
+        494,
+        90,
+        121
+      ]
+    },
+    {
+      "id": "grip.player.run.5",
+      "size": [
+        90,
+        121
+      ],
+      "sourceSize": [
+        90,
+        121
+      ],
+      "anchor": [
+        0.5111111111111111,
+        0.016528925619834656
+      ],
+      "source": "player",
+      "original": "player.run.5",
+      "sourceFile": "art/slices/v053/player.run.5.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        102,
+        494,
+        90,
+        121
+      ]
+    },
+    {
+      "id": "unarmed.player.run.6",
+      "size": [
+        83,
+        124
+      ],
+      "sourceSize": [
+        83,
+        124
+      ],
+      "anchor": [
+        0.5060240963855421,
+        0.008064516129032251
+      ],
+      "source": "player",
+      "original": "player.run.6",
+      "sourceFile": "art/slices/v053/player.run.6.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        220,
+        362,
+        83,
+        124
+      ]
+    },
+    {
+      "id": "grip.player.run.6",
+      "size": [
+        83,
+        124
+      ],
+      "sourceSize": [
+        83,
+        124
+      ],
+      "anchor": [
+        0.5060240963855421,
+        0.008064516129032251
+      ],
+      "source": "player",
+      "original": "player.run.6",
+      "sourceFile": "art/slices/v053/player.run.6.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        311,
+        362,
+        83,
+        124
+      ]
+    },
+    {
+      "id": "unarmed.player.run.7",
+      "size": [
+        87,
+        119
+      ],
+      "sourceSize": [
+        87,
+        119
+      ],
+      "anchor": [
+        0.5517241379310345,
+        -0.025210084033613356
+      ],
+      "source": "player",
+      "original": "player.run.7",
+      "sourceFile": "art/slices/v053/player.run.7.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        684,
+        494,
+        87,
+        119
+      ]
+    },
+    {
+      "id": "grip.player.run.7",
+      "size": [
+        87,
+        119
+      ],
+      "sourceSize": [
+        87,
+        119
+      ],
+      "anchor": [
+        0.5517241379310345,
+        -0.025210084033613356
+      ],
+      "source": "player",
+      "original": "player.run.7",
+      "sourceFile": "art/slices/v053/player.run.7.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        779,
+        494,
+        87,
+        119
+      ]
+    },
+    {
+      "id": "unarmed.player.run.8",
+      "size": [
+        101,
+        122
+      ],
+      "sourceSize": [
+        101,
+        122
+      ],
+      "anchor": [
+        0.6435643564356436,
+        0
+      ],
+      "source": "player",
+      "original": "player.run.8",
+      "sourceFile": "art/slices/v053/player.run.8.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1566,
+        362,
+        101,
+        122
+      ]
+    },
+    {
+      "id": "grip.player.run.8",
+      "size": [
+        101,
+        122
+      ],
+      "sourceSize": [
+        101,
+        122
+      ],
+      "anchor": [
+        0.6435643564356436,
+        0
+      ],
+      "source": "player",
+      "original": "player.run.8",
+      "sourceFile": "art/slices/v053/player.run.8.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1675,
+        362,
+        101,
+        122
+      ]
+    },
+    {
+      "id": "unarmed.player.jump.0",
+      "size": [
+        113,
+        112
+      ],
+      "sourceSize": [
+        113,
+        112
+      ],
+      "anchor": [
+        0.40707964601769914,
+        0.0267857142857143
+      ],
+      "source": "player",
+      "original": "player.jump.0",
+      "sourceFile": "art/slices/v053/player.jump.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        593,
+        623,
+        113,
+        112
+      ]
+    },
+    {
+      "id": "grip.player.jump.0",
+      "size": [
+        113,
+        112
+      ],
+      "sourceSize": [
+        113,
+        112
+      ],
+      "anchor": [
+        0.40707964601769914,
+        0.0267857142857143
+      ],
+      "source": "player",
+      "original": "player.jump.0",
+      "sourceFile": "art/slices/v053/player.jump.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        714,
+        623,
+        113,
+        112
+      ]
+    },
+    {
+      "id": "unarmed.player.jump.1",
+      "size": [
+        113,
+        117
+      ],
+      "sourceSize": [
+        113,
+        117
+      ],
+      "anchor": [
+        0.504424778761062,
+        -0.21367521367521358
+      ],
+      "source": "player",
+      "original": "player.jump.1",
+      "sourceFile": "art/slices/v053/player.jump.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1190,
+        494,
+        113,
+        117
+      ]
+    },
+    {
+      "id": "grip.player.jump.1",
+      "size": [
+        113,
+        117
+      ],
+      "sourceSize": [
+        113,
+        117
+      ],
+      "anchor": [
+        0.504424778761062,
+        -0.21367521367521358
+      ],
+      "source": "player",
+      "original": "player.jump.1",
+      "sourceFile": "art/slices/v053/player.jump.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1311,
+        494,
+        113,
+        117
+      ]
+    },
+    {
+      "id": "unarmed.player.jump.2",
+      "size": [
+        128,
+        109
+      ],
+      "sourceSize": [
+        128,
+        109
+      ],
+      "anchor": [
+        0.546875,
+        -0.17431192660550465
+      ],
+      "source": "player",
+      "original": "player.jump.2",
+      "sourceFile": "art/slices/v053/player.jump.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1186,
+        623,
+        128,
+        109
+      ]
+    },
+    {
+      "id": "grip.player.jump.2",
+      "size": [
+        128,
+        109
+      ],
+      "sourceSize": [
+        128,
+        109
+      ],
+      "anchor": [
+        0.546875,
+        -0.17431192660550465
+      ],
+      "source": "player",
+      "original": "player.jump.2",
+      "sourceFile": "art/slices/v053/player.jump.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1322,
+        623,
+        128,
+        109
+      ]
+    },
+    {
+      "id": "unarmed.player.jump.3",
+      "size": [
+        107,
+        116
+      ],
+      "sourceSize": [
+        107,
+        116
+      ],
+      "anchor": [
+        0.4205607476635514,
+        0.025862068965517238
+      ],
+      "source": "player",
+      "original": "player.jump.3",
+      "sourceFile": "art/slices/v053/player.jump.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1666,
+        494,
+        107,
+        116
+      ]
+    },
+    {
+      "id": "grip.player.jump.3",
+      "size": [
+        107,
+        116
+      ],
+      "sourceSize": [
+        107,
+        116
+      ],
+      "anchor": [
+        0.4205607476635514,
+        0.025862068965517238
+      ],
+      "source": "player",
+      "original": "player.jump.3",
+      "sourceFile": "art/slices/v053/player.jump.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1781,
+        494,
+        107,
+        116
+      ]
+    },
+    {
+      "id": "unarmed.player.fall.0",
+      "size": [
+        129,
+        91
+      ],
+      "sourceSize": [
+        129,
+        91
+      ],
+      "anchor": [
+        0.43410852713178294,
+        -0.07692307692307687
+      ],
+      "source": "player",
+      "original": "player.fall.0",
+      "sourceFile": "art/slices/v053/player.fall.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        232,
+        855,
+        129,
+        91
+      ]
+    },
+    {
+      "id": "grip.player.fall.0",
+      "size": [
+        129,
+        91
+      ],
+      "sourceSize": [
+        129,
+        91
+      ],
+      "anchor": [
+        0.43410852713178294,
+        -0.07692307692307687
+      ],
+      "source": "player",
+      "original": "player.fall.0",
+      "sourceFile": "art/slices/v053/player.fall.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        369,
+        855,
+        129,
+        91
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch.0",
+      "size": [
+        105,
+        99
+      ],
+      "sourceSize": [
+        105,
+        99
+      ],
+      "anchor": [
+        0.45714285714285713,
+        -0.010101010101010166
+      ],
+      "source": "player",
+      "original": "player.crouch.0",
+      "sourceFile": "art/slices/v053/player.crouch.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        230,
+        747,
+        105,
+        99
+      ]
+    },
+    {
+      "id": "grip.player.crouch.0",
+      "size": [
+        105,
+        99
+      ],
+      "sourceSize": [
+        105,
+        99
+      ],
+      "anchor": [
+        0.45714285714285713,
+        -0.010101010101010166
+      ],
+      "source": "player",
+      "original": "player.crouch.0",
+      "sourceFile": "art/slices/v053/player.crouch.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        343,
+        747,
+        105,
+        99
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch.1",
+      "size": [
+        97,
+        88
+      ],
+      "sourceSize": [
+        97,
+        88
+      ],
+      "anchor": [
+        0.4948453608247423,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch.1",
+      "sourceFile": "art/slices/v053/player.crouch.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        992,
+        855,
+        97,
+        88
+      ]
+    },
+    {
+      "id": "grip.player.crouch.1",
+      "size": [
+        97,
+        88
+      ],
+      "sourceSize": [
+        97,
+        88
+      ],
+      "anchor": [
+        0.4948453608247423,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch.1",
+      "sourceFile": "art/slices/v053/player.crouch.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1097,
+        855,
+        97,
+        88
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-walk.0",
+      "size": [
+        109,
+        99
+      ],
+      "sourceSize": [
+        109,
+        99
+      ],
+      "anchor": [
+        0.42201834862385323,
+        0.010101010101010055
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.0",
+      "sourceFile": "art/slices/v053/player.crouch-walk.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        456,
+        747,
+        109,
+        99
+      ]
+    },
+    {
+      "id": "grip.player.crouch-walk.0",
+      "size": [
+        109,
+        99
+      ],
+      "sourceSize": [
+        109,
+        99
+      ],
+      "anchor": [
+        0.42201834862385323,
+        0.010101010101010055
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.0",
+      "sourceFile": "art/slices/v053/player.crouch-walk.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        573,
+        747,
+        109,
+        99
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-walk.1",
+      "size": [
+        101,
+        95
+      ],
+      "sourceSize": [
+        101,
+        95
+      ],
+      "anchor": [
+        0.3564356435643564,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.1",
+      "sourceFile": "art/slices/v053/player.crouch-walk.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1202,
+        747,
+        101,
+        95
+      ]
+    },
+    {
+      "id": "grip.player.crouch-walk.1",
+      "size": [
+        101,
+        95
+      ],
+      "sourceSize": [
+        101,
+        95
+      ],
+      "anchor": [
+        0.3564356435643564,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.1",
+      "sourceFile": "art/slices/v053/player.crouch-walk.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1311,
+        747,
+        101,
+        95
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-walk.2",
+      "size": [
+        114,
+        96
+      ],
+      "sourceSize": [
+        114,
+        96
+      ],
+      "anchor": [
+        0.4649122807017544,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.2",
+      "sourceFile": "art/slices/v053/player.crouch-walk.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        958,
+        747,
+        114,
+        96
+      ]
+    },
+    {
+      "id": "grip.player.crouch-walk.2",
+      "size": [
+        114,
+        96
+      ],
+      "sourceSize": [
+        114,
+        96
+      ],
+      "anchor": [
+        0.4649122807017544,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.2",
+      "sourceFile": "art/slices/v053/player.crouch-walk.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1080,
+        747,
+        114,
+        96
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-walk.3",
+      "size": [
+        126,
+        97
+      ],
+      "sourceSize": [
+        126,
+        97
+      ],
+      "anchor": [
+        0.4444444444444444,
+        0.010309278350515427
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.3",
+      "sourceFile": "art/slices/v053/player.crouch-walk.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        690,
+        747,
+        126,
+        97
+      ]
+    },
+    {
+      "id": "grip.player.crouch-walk.3",
+      "size": [
+        126,
+        97
+      ],
+      "sourceSize": [
+        126,
+        97
+      ],
+      "anchor": [
+        0.4444444444444444,
+        0.010309278350515427
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.3",
+      "sourceFile": "art/slices/v053/player.crouch-walk.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        824,
+        747,
+        126,
+        97
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-walk.4",
+      "size": [
+        123,
+        100
+      ],
+      "sourceSize": [
+        123,
+        100
+      ],
+      "anchor": [
+        0.45528455284552843,
+        0.010000000000000009
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.4",
+      "sourceFile": "art/slices/v053/player.crouch-walk.4.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1700,
+        623,
+        123,
+        100
+      ]
+    },
+    {
+      "id": "grip.player.crouch-walk.4",
+      "size": [
+        123,
+        100
+      ],
+      "sourceSize": [
+        123,
+        100
+      ],
+      "anchor": [
+        0.45528455284552843,
+        0.010000000000000009
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.4",
+      "sourceFile": "art/slices/v053/player.crouch-walk.4.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1831,
+        623,
+        123,
+        100
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-walk.5",
+      "size": [
+        105,
+        100
+      ],
+      "sourceSize": [
+        105,
+        100
+      ],
+      "anchor": [
+        0.34285714285714286,
+        0.010000000000000009
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.5",
+      "sourceFile": "art/slices/v053/player.crouch-walk.5.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        4,
+        747,
+        105,
+        100
+      ]
+    },
+    {
+      "id": "grip.player.crouch-walk.5",
+      "size": [
+        105,
+        100
+      ],
+      "sourceSize": [
+        105,
+        100
+      ],
+      "anchor": [
+        0.34285714285714286,
+        0.010000000000000009
+      ],
+      "source": "player",
+      "original": "player.crouch-walk.5",
+      "sourceFile": "art/slices/v053/player.crouch-walk.5.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        117,
+        747,
+        105,
+        100
+      ]
+    },
+    {
+      "id": "unarmed.player.stand-shoot.0",
+      "size": [
+        109,
+        114
+      ],
+      "sourceSize": [
+        109,
+        114
+      ],
+      "anchor": [
+        0.41284403669724773,
+        0.02631578947368418
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.0",
+      "sourceFile": "art/slices/v053/player.stand-shoot.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        121,
+        623,
+        109,
+        114
+      ]
+    },
+    {
+      "id": "grip.player.stand-shoot.0",
+      "size": [
+        109,
+        114
+      ],
+      "sourceSize": [
+        109,
+        114
+      ],
+      "anchor": [
+        0.41284403669724773,
+        0.02631578947368418
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.0",
+      "sourceFile": "art/slices/v053/player.stand-shoot.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        238,
+        623,
+        109,
+        114
+      ]
+    },
+    {
+      "id": "unarmed.player.stand-shoot.1",
+      "size": [
+        109,
+        116
+      ],
+      "sourceSize": [
+        109,
+        116
+      ],
+      "anchor": [
+        0.41284403669724773,
+        0.025862068965517238
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.1",
+      "sourceFile": "art/slices/v053/player.stand-shoot.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1896,
+        494,
+        109,
+        116
+      ]
+    },
+    {
+      "id": "grip.player.stand-shoot.1",
+      "size": [
+        109,
+        116
+      ],
+      "sourceSize": [
+        109,
+        116
+      ],
+      "anchor": [
+        0.41284403669724773,
+        0.025862068965517238
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.1",
+      "sourceFile": "art/slices/v053/player.stand-shoot.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        4,
+        623,
+        109,
+        116
+      ]
+    },
+    {
+      "id": "unarmed.player.stand-shoot.2",
+      "size": [
+        109,
+        117
+      ],
+      "sourceSize": [
+        109,
+        117
+      ],
+      "anchor": [
+        0.3853211009174312,
+        0.02564102564102566
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.2",
+      "sourceFile": "art/slices/v053/player.stand-shoot.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1432,
+        494,
+        109,
+        117
+      ]
+    },
+    {
+      "id": "grip.player.stand-shoot.2",
+      "size": [
+        109,
+        117
+      ],
+      "sourceSize": [
+        109,
+        117
+      ],
+      "anchor": [
+        0.3853211009174312,
+        0.02564102564102566
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.2",
+      "sourceFile": "art/slices/v053/player.stand-shoot.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1549,
+        494,
+        109,
+        117
+      ]
+    },
+    {
+      "id": "unarmed.player.stand-shoot.3",
+      "size": [
+        111,
+        114
+      ],
+      "sourceSize": [
+        111,
+        114
+      ],
+      "anchor": [
+        0.3333333333333333,
+        0.01754385964912286
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.3",
+      "sourceFile": "art/slices/v053/player.stand-shoot.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        355,
+        623,
+        111,
+        114
+      ]
+    },
+    {
+      "id": "grip.player.stand-shoot.3",
+      "size": [
+        111,
+        114
+      ],
+      "sourceSize": [
+        111,
+        114
+      ],
+      "anchor": [
+        0.3333333333333333,
+        0.01754385964912286
+      ],
+      "source": "player",
+      "original": "player.stand-shoot.3",
+      "sourceFile": "art/slices/v053/player.stand-shoot.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        474,
+        623,
+        111,
+        114
+      ]
+    },
+    {
+      "id": "unarmed.player.run-shoot.0",
+      "size": [
+        150,
+        119
+      ],
+      "sourceSize": [
+        150,
+        119
+      ],
+      "anchor": [
+        0.48,
+        0.01680672268907568
+      ],
+      "source": "player",
+      "original": "player.run-shoot.0",
+      "sourceFile": "art/slices/v053/player.run-shoot.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        874,
+        494,
+        150,
+        119
+      ]
+    },
+    {
+      "id": "grip.player.run-shoot.0",
+      "size": [
+        150,
+        119
+      ],
+      "sourceSize": [
+        150,
+        119
+      ],
+      "anchor": [
+        0.48,
+        0.01680672268907568
+      ],
+      "source": "player",
+      "original": "player.run-shoot.0",
+      "sourceFile": "art/slices/v053/player.run-shoot.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1032,
+        494,
+        150,
+        119
+      ]
+    },
+    {
+      "id": "unarmed.player.run-shoot.1",
+      "size": [
+        113,
+        121
+      ],
+      "sourceSize": [
+        113,
+        121
+      ],
+      "anchor": [
+        0.2743362831858407,
+        0.016528925619834656
+      ],
+      "source": "player",
+      "original": "player.run-shoot.1",
+      "sourceFile": "art/slices/v053/player.run-shoot.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        200,
+        494,
+        113,
+        121
+      ]
+    },
+    {
+      "id": "grip.player.run-shoot.1",
+      "size": [
+        113,
+        121
+      ],
+      "sourceSize": [
+        113,
+        121
+      ],
+      "anchor": [
+        0.2743362831858407,
+        0.016528925619834656
+      ],
+      "source": "player",
+      "original": "player.run-shoot.1",
+      "sourceFile": "art/slices/v053/player.run-shoot.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        321,
+        494,
+        113,
+        121
+      ]
+    },
+    {
+      "id": "unarmed.player.run-shoot.2",
+      "size": [
+        113,
+        121
+      ],
+      "sourceSize": [
+        113,
+        121
+      ],
+      "anchor": [
+        0.25663716814159293,
+        0.024793388429752095
+      ],
+      "source": "player",
+      "original": "player.run-shoot.2",
+      "sourceFile": "art/slices/v053/player.run-shoot.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        442,
+        494,
+        113,
+        121
+      ]
+    },
+    {
+      "id": "grip.player.run-shoot.2",
+      "size": [
+        113,
+        121
+      ],
+      "sourceSize": [
+        113,
+        121
+      ],
+      "anchor": [
+        0.25663716814159293,
+        0.024793388429752095
+      ],
+      "source": "player",
+      "original": "player.run-shoot.2",
+      "sourceFile": "art/slices/v053/player.run-shoot.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        563,
+        494,
+        113,
+        121
+      ]
+    },
+    {
+      "id": "unarmed.player.run-shoot.3",
+      "size": [
+        124,
+        122
+      ],
+      "sourceSize": [
+        124,
+        122
+      ],
+      "anchor": [
+        0.3709677419354839,
+        0.016393442622950838
+      ],
+      "source": "player",
+      "original": "player.run-shoot.3",
+      "sourceFile": "art/slices/v053/player.run-shoot.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1784,
+        362,
+        124,
+        122
+      ]
+    },
+    {
+      "id": "grip.player.run-shoot.3",
+      "size": [
+        124,
+        122
+      ],
+      "sourceSize": [
+        124,
+        122
+      ],
+      "anchor": [
+        0.3709677419354839,
+        0.016393442622950838
+      ],
+      "source": "player",
+      "original": "player.run-shoot.3",
+      "sourceFile": "art/slices/v053/player.run-shoot.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1916,
+        362,
+        124,
+        122
+      ]
+    },
+    {
+      "id": "unarmed.player.run-shoot.4",
+      "size": [
+        113,
+        124
+      ],
+      "sourceSize": [
+        113,
+        124
+      ],
+      "anchor": [
+        0.4690265486725664,
+        0.024193548387096753
+      ],
+      "source": "player",
+      "original": "player.run-shoot.4",
+      "sourceFile": "art/slices/v053/player.run-shoot.4.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        402,
+        362,
+        113,
+        124
+      ]
+    },
+    {
+      "id": "grip.player.run-shoot.4",
+      "size": [
+        113,
+        124
+      ],
+      "sourceSize": [
+        113,
+        124
+      ],
+      "anchor": [
+        0.4690265486725664,
+        0.024193548387096753
+      ],
+      "source": "player",
+      "original": "player.run-shoot.4",
+      "sourceFile": "art/slices/v053/player.run-shoot.4.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        523,
+        362,
+        113,
+        124
+      ]
+    },
+    {
+      "id": "unarmed.player.run-shoot.5",
+      "size": [
+        102,
+        123
+      ],
+      "sourceSize": [
+        102,
+        123
+      ],
+      "anchor": [
+        0.46078431372549017,
+        0.024390243902439046
+      ],
+      "source": "player",
+      "original": "player.run-shoot.5",
+      "sourceFile": "art/slices/v053/player.run-shoot.5.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1094,
+        362,
+        102,
+        123
+      ]
+    },
+    {
+      "id": "grip.player.run-shoot.5",
+      "size": [
+        102,
+        123
+      ],
+      "sourceSize": [
+        102,
+        123
+      ],
+      "anchor": [
+        0.46078431372549017,
+        0.024390243902439046
+      ],
+      "source": "player",
+      "original": "player.run-shoot.5",
+      "sourceFile": "art/slices/v053/player.run-shoot.5.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1204,
+        362,
+        102,
+        123
+      ]
+    },
+    {
+      "id": "unarmed.player.run-shoot.6",
+      "size": [
+        118,
+        124
+      ],
+      "sourceSize": [
+        118,
+        124
+      ],
+      "anchor": [
+        0.4661016949152542,
+        0.024193548387096753
+      ],
+      "source": "player",
+      "original": "player.run-shoot.6",
+      "sourceFile": "art/slices/v053/player.run-shoot.6.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        644,
+        362,
+        118,
+        124
+      ]
+    },
+    {
+      "id": "grip.player.run-shoot.6",
+      "size": [
+        118,
+        124
+      ],
+      "sourceSize": [
+        118,
+        124
+      ],
+      "anchor": [
+        0.4661016949152542,
+        0.024193548387096753
+      ],
+      "source": "player",
+      "original": "player.run-shoot.6",
+      "sourceFile": "art/slices/v053/player.run-shoot.6.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        770,
+        362,
+        118,
+        124
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-shoot.0",
+      "size": [
+        121,
+        89
+      ],
+      "sourceSize": [
+        121,
+        89
+      ],
+      "anchor": [
+        0.36363636363636365,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.0",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        734,
+        855,
+        121,
+        89
+      ]
+    },
+    {
+      "id": "grip.player.crouch-shoot.0",
+      "size": [
+        121,
+        89
+      ],
+      "sourceSize": [
+        121,
+        89
+      ],
+      "anchor": [
+        0.36363636363636365,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.0",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        863,
+        855,
+        121,
+        89
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-shoot.1",
+      "size": [
+        121,
+        94
+      ],
+      "sourceSize": [
+        121,
+        94
+      ],
+      "anchor": [
+        0.38016528925619836,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.1",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1684,
+        747,
+        121,
+        94
+      ]
+    },
+    {
+      "id": "grip.player.crouch-shoot.1",
+      "size": [
+        121,
+        94
+      ],
+      "sourceSize": [
+        121,
+        94
+      ],
+      "anchor": [
+        0.38016528925619836,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.1",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.1.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1813,
+        747,
+        121,
+        94
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-shoot.2",
+      "size": [
+        106,
+        91
+      ],
+      "sourceSize": [
+        106,
+        91
+      ],
+      "anchor": [
+        0.29245283018867924,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.2",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        506,
+        855,
+        106,
+        91
+      ]
+    },
+    {
+      "id": "grip.player.crouch-shoot.2",
+      "size": [
+        106,
+        91
+      ],
+      "sourceSize": [
+        106,
+        91
+      ],
+      "anchor": [
+        0.29245283018867924,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.2",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.2.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        620,
+        855,
+        106,
+        91
+      ]
+    },
+    {
+      "id": "unarmed.player.crouch-shoot.3",
+      "size": [
+        106,
+        92
+      ],
+      "sourceSize": [
+        106,
+        92
+      ],
+      "anchor": [
+        0.3867924528301887,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.3",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        4,
+        855,
+        106,
+        92
+      ]
+    },
+    {
+      "id": "grip.player.crouch-shoot.3",
+      "size": [
+        106,
+        92
+      ],
+      "sourceSize": [
+        106,
+        92
+      ],
+      "anchor": [
+        0.3867924528301887,
+        0
+      ],
+      "source": "player",
+      "original": "player.crouch-shoot.3",
+      "sourceFile": "art/slices/v053/player.crouch-shoot.3.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        118,
+        855,
+        106,
+        92
+      ]
+    },
+    {
+      "id": "unarmed.player.hit.0",
+      "size": [
+        113,
+        103
+      ],
+      "sourceSize": [
+        113,
+        103
+      ],
+      "anchor": [
+        0.48672566371681414,
+        0.03883495145631066
+      ],
+      "source": "player",
+      "original": "player.hit.0",
+      "sourceFile": "art/slices/v053/player.hit.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1458,
+        623,
+        113,
+        103
+      ]
+    },
+    {
+      "id": "grip.player.hit.0",
+      "size": [
+        113,
+        103
+      ],
+      "sourceSize": [
+        113,
+        103
+      ],
+      "anchor": [
+        0.48672566371681414,
+        0.03883495145631066
+      ],
+      "source": "player",
+      "original": "player.hit.0",
+      "sourceFile": "art/slices/v053/player.hit.0.png",
+      "removalMask": "rifle barrel and magazine; original white grip pixels retained",
+      "atlas": [
+        1579,
+        623,
+        113,
+        103
+      ]
+    },
+    {
+      "id": "weapon.knife",
+      "size": [
+        99,
+        28
+      ],
+      "sourceSize": [
+        99,
+        28
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "source": "existing-knife",
+      "sourceFile": "art/slices/enemy.melee.png",
+      "sourceSHA256": "3fcf3ca085f06486f0c54c78e8dd78227c0490d9565570466c732a3b1df6a35b",
+      "atlas": [
+        1849,
+        855,
+        99,
+        28
+      ]
+    }
+  ],
+  "groundScale": 0.6,
+  "metalScale": 0.5,
+  "walkLine": 94,
+  "extrusion": 4,
+  "padding": 8,
+  "moduleRules": {
+    "terrainScale": 0.6,
+    "platformScale": 0.5,
+    "periodicPixels": true,
+    "worldAlignedBody": true,
+    "internalWallsHidden": true,
+    "fixedBracketWidth": 36
+  }
+}

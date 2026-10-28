@@ -1,0 +1,314 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/v057-rocket-muzzle.spec.ts",
+      "tests/browser/v055-tiles-equipment.spec.ts",
+      "tests/browser/v056-repairs.spec.ts"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "v055-tiles-equipment.spec.ts",
+      "file": "v055-tiles-equipment.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "modular terrain and one equipped weapon remain correct through real pickups, firing and ammo fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 44028,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-20T04:06:56.001Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7c0ef3a35ebf98ca325c-2435f9d75517989f27ae",
+          "file": "v055-tiles-equipment.spec.ts",
+          "line": 8,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v056-repairs.spec.ts",
+      "file": "v056-repairs.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real HUD tap and Q switch knife/gun atomically with cached visible sprites and no accidental shot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-20T04:07:40.244Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "320e6bb7481fea38dc99-d065c7cd915270872884",
+          "file": "v056-repairs.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "held ordinary attack plays three knife cuts, then a real enemy hit produces stop and recoil without firing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9739,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-20T04:07:45.405Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "320e6bb7481fea38dc99-ed0274e1ebf53d1414ba",
+          "file": "v056-repairs.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "mobile ordinary button uses crouch and airborne knife sectors while jump/movement ownership survives",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4574,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-20T04:07:55.160Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "320e6bb7481fea38dc99-85cdbb9af2a1c3b806ce",
+          "file": "v056-repairs.spec.ts",
+          "line": 69,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v057-rocket-muzzle.spec.ts",
+      "file": "v057-rocket-muzzle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "upward rocket emerges from the visible tube for both facing directions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 22049,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v057-rocket-muzzle.spec.ts:45:109",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v057-rocket-muzzle.spec.ts",
+                      "column": 109,
+                      "line": 45
+                    },
+                    "snippet": "  43 |   expect(rocket.width).toBeLessThan(40);expect(Math.abs(Math.sin(rocket.angle*Math.PI/180))).toBeLessThan(.6);\n  44 |   await page.clock.runFor(145);const turned=await read(page);\n> 45 |   expect(turned.projectileStates.some((p:any)=>p.owner==='player'&&p.kind==='rocket'&&p.age>.12&&p.vy>400)).toBe(true);\n     |                                                                                                             ^\n  46 |   captures.push({label:'turned-'+label,snapshot:turned});\n  47 |   captures.push({label,snapshot:s});await page.screenshot({path:`reports/v057-up-rocket-${label}.png`});\n  48 |   await page.keyboard.up('KeyW');await page.clock.runFor(1100);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v057-rocket-muzzle.spec.ts",
+                        "column": 109,
+                        "line": 45
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  43 |   expect(rocket.width).toBeLessThan(40);expect(Math.abs(Math.sin(rocket.angle*Math.PI/180))).toBeLessThan(.6);\n  44 |   await page.clock.runFor(145);const turned=await read(page);\n> 45 |   expect(turned.projectileStates.some((p:any)=>p.owner==='player'&&p.kind==='rocket'&&p.age>.12&&p.vy>400)).toBe(true);\n     |                                                                                                             ^\n  46 |   captures.push({label:'turned-'+label,snapshot:turned});\n  47 |   captures.push({label,snapshot:s});await page.screenshot({path:`reports/v057-up-rocket-${label}.png`});\n  48 |   await page.keyboard.up('KeyW');await page.clock.runFor(1100);\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v057-rocket-muzzle.spec.ts:45:109"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-20T04:07:59.772Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v057-rocket-muzzle-upward--a46e4--for-both-facing-directions\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v057-rocket-muzzle-upward--a46e4--for-both-facing-directions\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v057-rocket-muzzle.spec.ts",
+                    "column": 109,
+                    "line": 45
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3bc14c6fc617ef75d0ef-57080f130c2f7a717d6f",
+          "file": "v057-rocket-muzzle.spec.ts",
+          "line": 8,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-20T04:06:55.571Z",
+    "duration": 86392.164,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

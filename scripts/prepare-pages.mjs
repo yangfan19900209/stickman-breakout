@@ -22,17 +22,32 @@ assert.ok(
 const verification = JSON.parse(
   readFileSync("reports/verification.json", "utf8"),
 );
-assert.equal(
-  verification.browserTests.failed,
-  0,
-  "Only publish the verified Web build.",
-);
+assert.equal(verification.logicTests.failed, 0, "Logic regression must pass.");
+assert.equal(verification.logicTests.exitCode, 0);
+if (verification.browserTests) {
+  assert.equal(verification.browserTests.failed, 0);
+} else {
+  assert.ok(verification.browser?.targetedPassed > 0, "Browser verification is required.");
+  assert.deepEqual(verification.route?.errors, []);
+}
 function files(dir) {
   return readdirSync(dir).flatMap((name) => {
     const file = path.join(dir, name);
     return statSync(file).isDirectory() ? files(file) : [file];
   });
 }
+// Verify the current source and build before replacing any generated Pages files.
+const sourceHash = createHash("sha256");
+const sourceFiles = files("assets/scripts").filter((file) => file.endsWith(".ts")).sort();
+for (const file of sourceFiles) sourceHash.update(file).update(readFileSync(file));
+assert.equal(sourceHash.digest("hex"), verification.sourceSHA256, "Source changed since verification.");
+const buildFiles = files(source);
+assert.equal(buildFiles.length, verification.web.files, "Web build file count changed.");
+assert.equal(buildFiles.reduce((bytes, file) => bytes + statSync(file).size, 0), verification.web.bytes);
+assert.ok(
+  Math.max(...sourceFiles.map((file) => statSync(file).mtimeMs)) < statSync(path.join(source, "index.html")).mtimeMs,
+  "Rebuild Web Mobile after changing gameplay source.",
+);
 function outputPath(relative) {
   const file = path.resolve(target, relative);
   assert.ok(

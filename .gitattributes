@@ -1,5 +1,2 @@
-* text=auto
-# Preserve the exact Cocos build bytes, including generated line endings.
-docs/** -text
-*.png binary
-*.bin binary
+# Pages verification compares the deployed files with the Creator output byte for byte.
+docs/** -text whitespace=cr-at-eol

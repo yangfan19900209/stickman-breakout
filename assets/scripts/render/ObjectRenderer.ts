@@ -1,7 +1,10 @@
 import { Color, Label, Node } from "cc";
 import { GameSession } from "../core/GameSession";
 import { Ink, colors, node } from "./Ink";
+import { ComicObjectArt } from "./ComicObjectArt";
+import { ComicAssets } from "./ComicAssets";
 export class ObjectRenderer {
+  private comic = new ComicObjectArt();
   private ink: Ink;
   private labels: Label[] = [];
   constructor(parent: Node) {
@@ -20,6 +23,7 @@ export class ObjectRenderer {
     const ink = this.ink,
       cam = s.camera.x;
     ink.clear();
+    this.comic.begin(ink);
     for (const o of s.level.objects.objects) {
       if (o.x + o.w < cam - 50 || o.x > cam + s.camera.visibleWidth + 50)
         continue;
@@ -27,6 +31,12 @@ export class ObjectRenderer {
         y = o.y,
         w = o.w,
         h = o.h;
+      const imageDrawn = this.comic.draw(o, cam);
+      if (imageDrawn && o.alive) {
+        if (o.kind === "hanging" && !o.triggered)
+          ink.segment(x + w / 2, y + h, x + w / 2, y + h + 80, 2);
+        continue;
+      }
       if (!o.alive) {
         if (o.kind === "barrel" && o.deadTime < 0.09) {
           ink.rect(x - 2, y - 2, w + 4, h + 4, colors.ink, colors.white, 4);
@@ -256,7 +266,8 @@ export class ObjectRenderer {
       const r = m.rect,
         x = r.x - cam;
       if (x + r.w < 0 || x > s.camera.visibleWidth) continue;
-      ink.rect(x, r.y, r.w, r.h, colors.ink, colors.paper, 3);
+      if (ComicAssets.enabled) this.comic.mechanism(x, r.y, r.w, r.h);
+      else ink.rect(x, r.y, r.w, r.h, colors.ink, colors.paper, 3);
       for (let t = 12; t < r.w - 8; t += 24)
         ink.circle(x + t, r.y + r.h / 2, 2, colors.ink, colors.ink, 1);
       if (m.data.kind === "lift") {
@@ -289,6 +300,11 @@ export class ObjectRenderer {
           p.active && p.x > cam - 30 && p.x < cam + s.camera.visibleWidth + 30;
       l.node.active = visible;
       if (!visible) continue;
+      if (ComicAssets.enabled) {
+        l.node.active = false;
+        this.comic.pickup(s, p);
+        continue;
+      }
       const x = p.x - cam,
         y = p.y + Math.sin(p.age * 5) * 3;
       ink.circle(x, y, 18, colors.ink, colors.paper, 2);
@@ -305,5 +321,6 @@ export class ObjectRenderer {
                 ? "R"
                 : "A";
     }
+    this.comic.end();
   }
 }

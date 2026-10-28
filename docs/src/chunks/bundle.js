@@ -18,6 +18,7 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
         assertThisInitialized: _assertThisInitialized,
         asyncToGenerator: _asyncToGenerator,
         classCallCheck: _classCallCheck,
+        construct: _construct,
         createClass: _createClass,
         createForOfIteratorHelper: _createForOfIteratorHelper,
         createSuper: _createSuper,
@@ -495,6 +496,21 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
         } catch (e) {
           return false;
         }
+      }
+      function _construct(Parent, args, Class) {
+        if (_isNativeReflectConstruct()) {
+          _construct = exports('construct', Reflect.construct.bind());
+        } else {
+          _construct = exports('construct', function _construct(Parent, args, Class) {
+            var a = [null];
+            a.push.apply(a, args);
+            var Constructor = Function.bind.apply(Parent, a);
+            var instance = new Constructor();
+            if (Class) _setPrototypeOf(instance, Class.prototype);
+            return instance;
+          });
+        }
+        return _construct.apply(null, arguments);
       }
       function _assertThisInitialized(self) {
         if (self === void 0) {

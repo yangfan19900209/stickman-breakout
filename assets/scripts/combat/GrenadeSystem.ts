@@ -43,6 +43,7 @@ export class GrenadeSystem {
       spin: 0,
     });
     player.grenades--;
+    player.throwTime = 0.24;
     this.thrown++;
     this.cooldown = C.grenade.interval;
     return true;
