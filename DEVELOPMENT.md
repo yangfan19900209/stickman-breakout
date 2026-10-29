@@ -11,6 +11,7 @@
 - 真实Web专项包含第一屏箱子全血量阶段及一整局键盘推进/小坦克/两阶段大Boss/出口，最终数据见 `reports/v059-campaign.json`、`reports/v059-browser-results.json`。首次Boss激活早于入镜，测试误把正常剔除当缺图；用例修正为入镜后检查完整资源。截图发现闪避方向会裁掉机甲，随后修复镜头并重新验收。
 - Web和微信构建完成；微信未上传/真机未测。完整资源与攻击表、截图及未接入素材见 `art/V059-DELIVERY.md`。
 - 镜头最终修正后的2项Web专项全部通过：整关90.83秒通关、剩4生命、22击杀，六种预警和实际攻击、两个阶段、倒塌/残骸均出现，0运行错误/子弹池丢弃。箱子28个存活采样覆盖3/2/1血量，固定60×51.3669显示尺寸；归零移除碰撞并释放补给。Web 56文件/6,386,886字节，微信55文件/3,566,321字节，Creator均成功退出36。验收脚本核对当前源码指纹、测试时间、构建时间/大小、源图哈希和截图存在，`npm run verify:delivery`通过。
+- 发布提交 `4d9e5f7035708300ac0ac4886cab9e7654457b80`已推送main；GitHub Pages [40841514615](https://github.com/yangfan19900209/stickman-breakout/actions/runs/40841514615)成功。正式站点为0.5.9，全部56文件与构建匹配，键盘/模拟手机三点触控/松手/右侧空白射击/竖屏暂停与旋转恢复通过、应用错误和失败请求0。独立本地/线上证据分别为 `reports/github-pages-v059-local-verification.json`、`reports/github-pages-v059-online-verification.json`，回执 `reports/github-pages-deployment-v059.json`。
 
 ## 历史 V0.5.8
 

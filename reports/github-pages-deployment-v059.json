@@ -1,0 +1,60 @@
+{
+  "version": "0.5.9",
+  "site": "https://yangfan19900209.github.io/stickman-breakout/",
+  "repository": "https://github.com/yangfan19900209/stickman-breakout",
+  "source": {
+    "branch": "main",
+    "path": "/docs"
+  },
+  "publishedCommit": "4d9e5f7035708300ac0ac4886cab9e7654457b80",
+  "pagesRun": {
+    "id": 40841514615,
+    "url": "https://github.com/yangfan19900209/stickman-breakout/actions/runs/40841514615",
+    "conclusion": "success"
+  },
+  "checkedAt": "2026-10-29T08:28:19.603Z",
+  "sourceSHA256": "6206fd567265bf54528c6ef8b02e5e022d7f593a5ba2202752202ab89c84d9a8",
+  "webBuildSHA256": "6d0f264ce6bf407703942b36e3beee6959d26bfa4c19efb91f7c66d893114798",
+  "matchedBuildFiles": 56,
+  "logicTests": {
+    "tests": 129,
+    "passed": 129,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserVerification": "reports/github-pages-v059-online-verification.json",
+  "campaign": {
+    "report": "reports/v059-campaign.json",
+    "state": "complete",
+    "seconds": 90.83333333335169,
+    "health": 4,
+    "kills": 22,
+    "phases": [
+      1,
+      2
+    ],
+    "warnings": [
+      "salvo",
+      "stomp",
+      "laser",
+      "missiles",
+      "sweep",
+      "burst"
+    ],
+    "attackCounts": {
+      "salvo": 2,
+      "sweep": 1,
+      "stomp": 2,
+      "laser": 1,
+      "missiles": 1,
+      "burst": 1
+    },
+    "errors": []
+  },
+  "applicationErrors": [],
+  "failedRequests": [],
+  "limitations": [
+    "Mobile browser viewport/multitouch emulation only; no physical mobile or WeChat runtime validation.",
+    "WeChat artifact built locally; not uploaded this iteration."
+  ]
+}

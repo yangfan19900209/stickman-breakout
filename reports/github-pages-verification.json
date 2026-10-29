@@ -1,28 +1,28 @@
 {
   "site": "https://yangfan19900209.github.io/stickman-breakout/",
-  "checkedAt": "2026-10-29T01:38:51.115Z",
+  "checkedAt": "2026-10-29T08:28:19.603Z",
   "status": "passed",
-  "matchedBuildFiles": 54,
+  "matchedBuildFiles": 56,
   "onlineVersion": {
     "project": "stickman-breakout",
-    "version": "0.5.8",
+    "version": "0.5.9",
     "creator": "3.8.8",
-    "sourceSHA256": "fb1ef8a670e7e836b04edc94b2de9cb5dfbbed56e6c5e172c6a0fce519032ce3",
-    "webBuildSHA256": "29feaf45b516c681d6c9bea836d278802d2ffb1c35ddd0a880f63e44ffcda989",
-    "preparedAt": "2026-10-29T01:29:51.547Z"
+    "sourceSHA256": "6206fd567265bf54528c6ef8b02e5e022d7f593a5ba2202752202ab89c84d9a8",
+    "webBuildSHA256": "6d0f264ce6bf407703942b36e3beee6959d26bfa4c19efb91f7c66d893114798",
+    "preparedAt": "2026-10-29T08:13:28.980Z"
   },
   "desktop": {
     "state": "playing",
-    "playerX": 170.19444444444457,
-    "playerY": 247.41666666666666,
+    "playerX": 165.08333333333343,
+    "playerY": 241.125,
     "shots": 2,
     "pauseResume": true
   },
   "mobile": {
     "viewport": "844x390",
     "simultaneousTouches": 3,
-    "playerX": 152.08333019548058,
-    "playerY": 254.5,
+    "playerX": 156.7499963391718,
+    "playerY": 250.75,
     "shots": 2,
     "releaseVerified": true,
     "floatingJoystick": true,
