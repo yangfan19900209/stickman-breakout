@@ -1,0 +1,188 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/v058-shotgun.spec.ts",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "v058-shotgun.spec.ts",
+      "file": "v058-shotgun.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ordinary player bullets visibly travel at the reduced 760 speed in the real Web build",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2898,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T09:52:33.204Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "086a6a89597d6ae4e6cb-e0c5d82490e33118a102",
+          "file": "v058-shotgun.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "real shotgun pickup uses intact sprites through running, crouch-walking, firing, jumping and repeated weapon switches",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5450,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^direct\\.shotgun\\.stand-shoot/\u001b[39m\nReceived string:  \u001b[31m\"direct.shotgun.idle.0\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^direct\\.shotgun\\.stand-shoot/\u001b[39m\nReceived string:  \u001b[31m\"direct.shotgun.idle.0\"\u001b[39m\n    at capture (C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v058-shotgun.spec.ts:62:37)\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v058-shotgun.spec.ts:69:36",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v058-shotgun.spec.ts",
+                      "column": 37,
+                      "line": 62
+                    },
+                    "snippet": "  60 |  async function capture(label:string,pose:string){\n  61 |   const s=await read(page);expect(s.state).toBe('playing');expect(s.weapon).toBe('shotgun');\n> 62 |   expect(s.art.renderedPlayer.body).toMatch(new RegExp('^direct\\\\.shotgun\\\\.'+pose));\n     |                                     ^\n  63 |   expect(s.art.equipment.weapon).toBeNull();expect(s.art.equipment.grip).toBeNull();\n  64 |   expect(s.art.renderedPlayer.weapon).toBe('baked.shotgun');expect(s.art.renderedPlayer.weaponVisible).toBe(true);\n  65 |   expect(s.art.hudWeapon.frame).toBe('weapon.shotgun');expect(s.playerWeapon).toBe('shotgun');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v058-shotgun.spec.ts",
+                        "column": 37,
+                        "line": 62
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^direct\\.shotgun\\.stand-shoot/\u001b[39m\nReceived string:  \u001b[31m\"direct.shotgun.idle.0\"\u001b[39m\n\n  60 |  async function capture(label:string,pose:string){\n  61 |   const s=await read(page);expect(s.state).toBe('playing');expect(s.weapon).toBe('shotgun');\n> 62 |   expect(s.art.renderedPlayer.body).toMatch(new RegExp('^direct\\\\.shotgun\\\\.'+pose));\n     |                                     ^\n  63 |   expect(s.art.equipment.weapon).toBeNull();expect(s.art.equipment.grip).toBeNull();\n  64 |   expect(s.art.renderedPlayer.weapon).toBe('baked.shotgun');expect(s.art.renderedPlayer.weaponVisible).toBe(true);\n  65 |   expect(s.art.hudWeapon.frame).toBe('weapon.shotgun');expect(s.playerWeapon).toBe('shotgun');\n    at capture (C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v058-shotgun.spec.ts:62:37)\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v058-shotgun.spec.ts:69:36"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T09:52:36.256Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v058-shotgun-real-shotgun--59ca7-nd-repeated-weapon-switches\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v058-shotgun-real-shotgun--59ca7-nd-repeated-weapon-switches\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v058-shotgun.spec.ts",
+                    "column": 37,
+                    "line": 62
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "086a6a89597d6ae4e6cb-a05b44194a012d9171b5",
+          "file": "v058-shotgun.spec.ts",
+          "line": 29,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-28T09:52:32.700Z",
+    "duration": 9638.356,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

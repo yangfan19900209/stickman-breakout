@@ -2,11 +2,11 @@ import { ComicFrames, ComicFrameId, ComicSockets } from "./ComicFrames";
 import { ComicActorPose, comicPose } from "./ComicPose";
 import { isDirectActor } from "./DirectPose";
 
-/** Exactly one visible weapon: baked rifle OR a weapon-free body plus one gun. */
+/** Complete supplied soldiers own their weapon; never clear or cover their bodies. */
 export function comicEquipment(a: ComicActorPose & { weaponId?: string; aimPitch?: number }) {
   const pose = comicPose(a), clean = `unarmed.${pose}` as ComicFrameId;
   if (isDirectActor(pose)) return {pose,body:pose,weapon:null,grip:null,bakedRifle:false,
-    bakedWeapon:pose.startsWith("direct.knife.")?"knife":"rocket"};
+    bakedWeapon:pose.startsWith("direct.knife.")?"knife":pose.startsWith("direct.shotgun.")?"shotgun":"rocket"};
   const suppressed = a.animation === "Dead" || (a.meleeTime ?? 0) > 0 || (a.throwTime ?? 0) > 0;
   const replacement = !a.kind && !suppressed &&
     ((a.weaponId ?? "rifle") !== "rifle" || (a.aimPitch ?? 0) > .01);

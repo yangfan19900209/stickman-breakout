@@ -1,0 +1,2511 @@
+{
+  "version": "0.5.8",
+  "source": {
+    "file": "art/source/v058/霰弹枪士兵动作.png",
+    "sha256": "f6da6b138ff8676cb9ab7f97a10346bc1b1b69bb1468b20c7e92526ba2ef7c7b",
+    "size": [
+      1448,
+      1086
+    ],
+    "mode": "RGBA",
+    "transparentPixels": 936787
+  },
+  "frames": [
+    {
+      "id": "direct.shotgun.idle.0",
+      "crop": [
+        40,
+        59,
+        158,
+        196
+      ],
+      "trim": [
+        4,
+        3,
+        113,
+        128
+      ],
+      "origin": [
+        44,
+        62
+      ],
+      "size": [
+        109,
+        125
+      ],
+      "sourceSize": [
+        109,
+        125
+      ],
+      "footSource": [
+        83,
+        185
+      ],
+      "muzzleSource": [
+        151,
+        128
+      ],
+      "anchor": [
+        0.3577981651376147,
+        0.016000000000000014
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.idle.0.png",
+      "atlas": [
+        1289,
+        4,
+        109,
+        125
+      ]
+    },
+    {
+      "id": "direct.shotgun.idle.1",
+      "crop": [
+        162,
+        59,
+        278,
+        196
+      ],
+      "trim": [
+        5,
+        3,
+        112,
+        128
+      ],
+      "origin": [
+        167,
+        62
+      ],
+      "size": [
+        107,
+        125
+      ],
+      "sourceSize": [
+        107,
+        125
+      ],
+      "footSource": [
+        207,
+        185
+      ],
+      "muzzleSource": [
+        270,
+        131
+      ],
+      "anchor": [
+        0.37383177570093457,
+        0.016000000000000014
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.idle.1.png",
+      "atlas": [
+        1406,
+        4,
+        107,
+        125
+      ]
+    },
+    {
+      "id": "direct.shotgun.idle.2",
+      "crop": [
+        281,
+        59,
+        396,
+        196
+      ],
+      "trim": [
+        4,
+        3,
+        109,
+        128
+      ],
+      "origin": [
+        285,
+        62
+      ],
+      "size": [
+        105,
+        125
+      ],
+      "sourceSize": [
+        105,
+        125
+      ],
+      "footSource": [
+        323,
+        186
+      ],
+      "muzzleSource": [
+        388,
+        132
+      ],
+      "anchor": [
+        0.3619047619047619,
+        0.008000000000000007
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.idle.2.png",
+      "atlas": [
+        1521,
+        4,
+        105,
+        125
+      ]
+    },
+    {
+      "id": "direct.shotgun.idle.3",
+      "crop": [
+        397,
+        59,
+        518,
+        196
+      ],
+      "trim": [
+        4,
+        3,
+        115,
+        128
+      ],
+      "origin": [
+        401,
+        62
+      ],
+      "size": [
+        111,
+        125
+      ],
+      "sourceSize": [
+        111,
+        125
+      ],
+      "footSource": [
+        439,
+        186
+      ],
+      "muzzleSource": [
+        509,
+        132
+      ],
+      "anchor": [
+        0.34234234234234234,
+        0.008000000000000007
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.idle.3.png",
+      "atlas": [
+        1634,
+        4,
+        111,
+        125
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.0",
+      "crop": [
+        575,
+        55,
+        674,
+        196
+      ],
+      "trim": [
+        4,
+        10,
+        97,
+        132
+      ],
+      "origin": [
+        579,
+        65
+      ],
+      "size": [
+        93,
+        122
+      ],
+      "sourceSize": [
+        93,
+        122
+      ],
+      "footSource": [
+        618,
+        186
+      ],
+      "muzzleSource": [
+        669,
+        132
+      ],
+      "anchor": [
+        0.41935483870967744,
+        0.008196721311475419
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.0.png",
+      "atlas": [
+        516,
+        142,
+        93,
+        122
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.1",
+      "crop": [
+        672,
+        55,
+        765,
+        196
+      ],
+      "trim": [
+        1,
+        10,
+        92,
+        132
+      ],
+      "origin": [
+        673,
+        65
+      ],
+      "size": [
+        91,
+        122
+      ],
+      "sourceSize": [
+        91,
+        122
+      ],
+      "footSource": [
+        714,
+        186
+      ],
+      "muzzleSource": [
+        759,
+        134
+      ],
+      "anchor": [
+        0.45054945054945056,
+        0.008196721311475419
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.1.png",
+      "atlas": [
+        617,
+        142,
+        91,
+        122
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.2",
+      "crop": [
+        752,
+        55,
+        856,
+        196
+      ],
+      "trim": [
+        3,
+        5,
+        102,
+        132
+      ],
+      "origin": [
+        755,
+        60
+      ],
+      "size": [
+        99,
+        127
+      ],
+      "sourceSize": [
+        99,
+        127
+      ],
+      "footSource": [
+        803,
+        186
+      ],
+      "muzzleSource": [
+        849,
+        125
+      ],
+      "anchor": [
+        0.48484848484848486,
+        0.007874015748031482
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.2.png",
+      "atlas": [
+        811,
+        4,
+        99,
+        127
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.3",
+      "crop": [
+        844,
+        55,
+        947,
+        196
+      ],
+      "trim": [
+        2,
+        4,
+        101,
+        132
+      ],
+      "origin": [
+        846,
+        59
+      ],
+      "size": [
+        99,
+        128
+      ],
+      "sourceSize": [
+        99,
+        128
+      ],
+      "footSource": [
+        890,
+        186
+      ],
+      "muzzleSource": [
+        941,
+        125
+      ],
+      "anchor": [
+        0.4444444444444444,
+        0.0078125
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.3.png",
+      "atlas": [
+        704,
+        4,
+        99,
+        128
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.4",
+      "crop": [
+        939,
+        55,
+        1038,
+        196
+      ],
+      "trim": [
+        3,
+        2,
+        97,
+        129
+      ],
+      "origin": [
+        942,
+        57
+      ],
+      "size": [
+        94,
+        127
+      ],
+      "sourceSize": [
+        94,
+        127
+      ],
+      "footSource": [
+        986,
+        183
+      ],
+      "muzzleSource": [
+        1032,
+        123
+      ],
+      "anchor": [
+        0.46808510638297873,
+        0.007874015748031482
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.4.png",
+      "atlas": [
+        918,
+        4,
+        94,
+        127
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.5",
+      "crop": [
+        1029,
+        55,
+        1132,
+        196
+      ],
+      "trim": [
+        2,
+        3,
+        101,
+        132
+      ],
+      "origin": [
+        1031,
+        58
+      ],
+      "size": [
+        99,
+        129
+      ],
+      "sourceSize": [
+        99,
+        129
+      ],
+      "footSource": [
+        1081,
+        186
+      ],
+      "muzzleSource": [
+        1126,
+        126
+      ],
+      "anchor": [
+        0.5050505050505051,
+        0.007751937984496138
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.5.png",
+      "atlas": [
+        361,
+        4,
+        99,
+        129
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.6",
+      "crop": [
+        1117,
+        55,
+        1232,
+        196
+      ],
+      "trim": [
+        2,
+        4,
+        113,
+        134
+      ],
+      "origin": [
+        1119,
+        59
+      ],
+      "size": [
+        111,
+        130
+      ],
+      "sourceSize": [
+        111,
+        130
+      ],
+      "footSource": [
+        1177,
+        188
+      ],
+      "muzzleSource": [
+        1225,
+        123
+      ],
+      "anchor": [
+        0.5225225225225225,
+        0.007692307692307665
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.6.png",
+      "atlas": [
+        4,
+        4,
+        111,
+        130
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.7",
+      "crop": [
+        1219,
+        55,
+        1331,
+        196
+      ],
+      "trim": [
+        2,
+        3,
+        110,
+        132
+      ],
+      "origin": [
+        1221,
+        58
+      ],
+      "size": [
+        108,
+        129
+      ],
+      "sourceSize": [
+        108,
+        129
+      ],
+      "footSource": [
+        1272,
+        186
+      ],
+      "muzzleSource": [
+        1324,
+        121
+      ],
+      "anchor": [
+        0.4722222222222222,
+        0.007751937984496138
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.7.png",
+      "atlas": [
+        468,
+        4,
+        108,
+        129
+      ]
+    },
+    {
+      "id": "direct.shotgun.run.8",
+      "crop": [
+        1320,
+        55,
+        1442,
+        196
+      ],
+      "trim": [
+        2,
+        2,
+        111,
+        132
+      ],
+      "origin": [
+        1322,
+        57
+      ],
+      "size": [
+        109,
+        130
+      ],
+      "sourceSize": [
+        109,
+        130
+      ],
+      "footSource": [
+        1374,
+        186
+      ],
+      "muzzleSource": [
+        1427,
+        127
+      ],
+      "anchor": [
+        0.47706422018348627,
+        0.007692307692307665
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run.8.png",
+      "atlas": [
+        123,
+        4,
+        109,
+        130
+      ]
+    },
+    {
+      "id": "direct.shotgun.jump.0",
+      "crop": [
+        37,
+        246,
+        166,
+        380
+      ],
+      "trim": [
+        4,
+        3,
+        124,
+        119
+      ],
+      "origin": [
+        41,
+        249
+      ],
+      "size": [
+        120,
+        116
+      ],
+      "sourceSize": [
+        120,
+        116
+      ],
+      "footSource": [
+        91,
+        364
+      ],
+      "muzzleSource": [
+        158,
+        309
+      ],
+      "anchor": [
+        0.4166666666666667,
+        0.008620689655172376
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.jump.0.png",
+      "atlas": [
+        977,
+        142,
+        120,
+        116
+      ]
+    },
+    {
+      "id": "direct.shotgun.jump.1",
+      "crop": [
+        176,
+        239,
+        297,
+        380
+      ],
+      "trim": [
+        5,
+        4,
+        117,
+        132
+      ],
+      "origin": [
+        181,
+        243
+      ],
+      "size": [
+        112,
+        128
+      ],
+      "sourceSize": [
+        112,
+        128
+      ],
+      "footSource": [
+        226,
+        370
+      ],
+      "muzzleSource": [
+        291,
+        286
+      ],
+      "anchor": [
+        0.4017857142857143,
+        0.0078125
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.jump.1.png",
+      "atlas": [
+        584,
+        4,
+        112,
+        128
+      ]
+    },
+    {
+      "id": "direct.shotgun.jump.2",
+      "crop": [
+        301,
+        226,
+        422,
+        380
+      ],
+      "trim": [
+        4,
+        4,
+        117,
+        133
+      ],
+      "origin": [
+        305,
+        230
+      ],
+      "size": [
+        113,
+        129
+      ],
+      "sourceSize": [
+        113,
+        129
+      ],
+      "footSource": [
+        350,
+        358
+      ],
+      "muzzleSource": [
+        415,
+        276
+      ],
+      "anchor": [
+        0.39823008849557523,
+        0.007751937984496138
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.jump.2.png",
+      "atlas": [
+        240,
+        4,
+        113,
+        129
+      ]
+    },
+    {
+      "id": "direct.shotgun.jump.3",
+      "crop": [
+        427,
+        264,
+        551,
+        380
+      ],
+      "trim": [
+        4,
+        4,
+        119,
+        111
+      ],
+      "origin": [
+        431,
+        268
+      ],
+      "size": [
+        115,
+        107
+      ],
+      "sourceSize": [
+        115,
+        107
+      ],
+      "footSource": [
+        474,
+        375
+      ],
+      "muzzleSource": [
+        543,
+        323
+      ],
+      "anchor": [
+        0.3739130434782609,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.jump.3.png",
+      "atlas": [
+        1738,
+        142,
+        115,
+        107
+      ]
+    },
+    {
+      "id": "direct.shotgun.fall.0",
+      "crop": [
+        720,
+        264,
+        854,
+        386
+      ],
+      "trim": [
+        5,
+        4,
+        128,
+        112
+      ],
+      "origin": [
+        725,
+        268
+      ],
+      "size": [
+        123,
+        108
+      ],
+      "sourceSize": [
+        123,
+        108
+      ],
+      "footSource": [
+        771,
+        375
+      ],
+      "muzzleSource": [
+        844,
+        304
+      ],
+      "anchor": [
+        0.37398373983739835,
+        0.0092592592592593
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.fall.0.png",
+      "atlas": [
+        1607,
+        142,
+        123,
+        108
+      ]
+    },
+    {
+      "id": "direct.shotgun.fall.1",
+      "crop": [
+        876,
+        269,
+        1018,
+        386
+      ],
+      "trim": [
+        5,
+        4,
+        138,
+        114
+      ],
+      "origin": [
+        881,
+        273
+      ],
+      "size": [
+        133,
+        110
+      ],
+      "sourceSize": [
+        133,
+        110
+      ],
+      "footSource": [
+        928,
+        380
+      ],
+      "muzzleSource": [
+        1009,
+        306
+      ],
+      "anchor": [
+        0.3533834586466165,
+        0.027272727272727226
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.fall.1.png",
+      "atlas": [
+        1466,
+        142,
+        133,
+        110
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch.0",
+      "crop": [
+        54,
+        445,
+        184,
+        555
+      ],
+      "trim": [
+        4,
+        4,
+        125,
+        104
+      ],
+      "origin": [
+        58,
+        449
+      ],
+      "size": [
+        121,
+        100
+      ],
+      "sourceSize": [
+        121,
+        100
+      ],
+      "footSource": [
+        108,
+        548
+      ],
+      "muzzleSource": [
+        176,
+        503
+      ],
+      "anchor": [
+        0.4132231404958678,
+        0.010000000000000009
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch.0.png",
+      "atlas": [
+        931,
+        273,
+        121,
+        100
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch.1",
+      "crop": [
+        191,
+        445,
+        325,
+        555
+      ],
+      "trim": [
+        5,
+        7,
+        129,
+        104
+      ],
+      "origin": [
+        196,
+        452
+      ],
+      "size": [
+        124,
+        97
+      ],
+      "sourceSize": [
+        124,
+        97
+      ],
+      "footSource": [
+        245,
+        548
+      ],
+      "muzzleSource": [
+        317,
+        506
+      ],
+      "anchor": [
+        0.3951612903225806,
+        0.010309278350515427
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch.1.png",
+      "atlas": [
+        1195,
+        273,
+        124,
+        97
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-walk.0",
+      "crop": [
+        414,
+        440,
+        551,
+        555
+      ],
+      "trim": [
+        5,
+        12,
+        132,
+        109
+      ],
+      "origin": [
+        419,
+        452
+      ],
+      "size": [
+        127,
+        97
+      ],
+      "sourceSize": [
+        127,
+        97
+      ],
+      "footSource": [
+        476,
+        548
+      ],
+      "muzzleSource": [
+        543,
+        507
+      ],
+      "anchor": [
+        0.44881889763779526,
+        0.010309278350515427
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-walk.0.png",
+      "atlas": [
+        1060,
+        273,
+        127,
+        97
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-walk.1",
+      "crop": [
+        566,
+        440,
+        708,
+        555
+      ],
+      "trim": [
+        5,
+        13,
+        137,
+        109
+      ],
+      "origin": [
+        571,
+        453
+      ],
+      "size": [
+        132,
+        96
+      ],
+      "sourceSize": [
+        132,
+        96
+      ],
+      "footSource": [
+        628,
+        548
+      ],
+      "muzzleSource": [
+        700,
+        506
+      ],
+      "anchor": [
+        0.4318181818181818,
+        0.01041666666666663
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-walk.1.png",
+      "atlas": [
+        1327,
+        273,
+        132,
+        96
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-walk.2",
+      "crop": [
+        726,
+        440,
+        866,
+        555
+      ],
+      "trim": [
+        5,
+        13,
+        134,
+        109
+      ],
+      "origin": [
+        731,
+        453
+      ],
+      "size": [
+        129,
+        96
+      ],
+      "sourceSize": [
+        129,
+        96
+      ],
+      "footSource": [
+        790,
+        548
+      ],
+      "muzzleSource": [
+        858,
+        509
+      ],
+      "anchor": [
+        0.4573643410852713,
+        0.01041666666666663
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-walk.2.png",
+      "atlas": [
+        1467,
+        273,
+        129,
+        96
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-walk.3",
+      "crop": [
+        884,
+        440,
+        1026,
+        555
+      ],
+      "trim": [
+        5,
+        7,
+        137,
+        109
+      ],
+      "origin": [
+        889,
+        447
+      ],
+      "size": [
+        132,
+        102
+      ],
+      "sourceSize": [
+        132,
+        102
+      ],
+      "footSource": [
+        948,
+        548
+      ],
+      "muzzleSource": [
+        1018,
+        503
+      ],
+      "anchor": [
+        0.44696969696969696,
+        0.009803921568627416
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-walk.3.png",
+      "atlas": [
+        356,
+        273,
+        132,
+        102
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-walk.4",
+      "crop": [
+        1057,
+        440,
+        1194,
+        555
+      ],
+      "trim": [
+        5,
+        4,
+        132,
+        109
+      ],
+      "origin": [
+        1062,
+        444
+      ],
+      "size": [
+        127,
+        105
+      ],
+      "sourceSize": [
+        127,
+        105
+      ],
+      "footSource": [
+        1120,
+        548
+      ],
+      "muzzleSource": [
+        1186,
+        501
+      ],
+      "anchor": [
+        0.4566929133858268,
+        0.00952380952380949
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-walk.4.png",
+      "atlas": [
+        128,
+        273,
+        127,
+        105
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-walk.5",
+      "crop": [
+        1212,
+        440,
+        1351,
+        555
+      ],
+      "trim": [
+        5,
+        8,
+        134,
+        109
+      ],
+      "origin": [
+        1217,
+        448
+      ],
+      "size": [
+        129,
+        101
+      ],
+      "sourceSize": [
+        129,
+        101
+      ],
+      "footSource": [
+        1274,
+        548
+      ],
+      "muzzleSource": [
+        1343,
+        503
+      ],
+      "anchor": [
+        0.4418604651162791,
+        0.00990099009900991
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-walk.5.png",
+      "atlas": [
+        794,
+        273,
+        129,
+        101
+      ]
+    },
+    {
+      "id": "direct.shotgun.stand-shoot.0",
+      "crop": [
+        29,
+        604,
+        173,
+        744
+      ],
+      "trim": [
+        5,
+        5,
+        144,
+        132
+      ],
+      "origin": [
+        34,
+        609
+      ],
+      "size": [
+        139,
+        127
+      ],
+      "sourceSize": [
+        139,
+        127
+      ],
+      "footSource": [
+        81,
+        735
+      ],
+      "muzzleSource": [
+        129,
+        668
+      ],
+      "anchor": [
+        0.3381294964028777,
+        0.007874015748031482
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.stand-shoot.0.png",
+      "atlas": [
+        1020,
+        4,
+        139,
+        127
+      ]
+    },
+    {
+      "id": "direct.shotgun.stand-shoot.1",
+      "crop": [
+        172,
+        604,
+        282,
+        744
+      ],
+      "trim": [
+        2,
+        8,
+        103,
+        131
+      ],
+      "origin": [
+        174,
+        612
+      ],
+      "size": [
+        101,
+        123
+      ],
+      "sourceSize": [
+        101,
+        123
+      ],
+      "footSource": [
+        219,
+        734
+      ],
+      "muzzleSource": [
+        273,
+        670
+      ],
+      "anchor": [
+        0.44554455445544555,
+        0.008130081300813052
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.stand-shoot.1.png",
+      "atlas": [
+        407,
+        142,
+        101,
+        123
+      ]
+    },
+    {
+      "id": "direct.shotgun.stand-shoot.4",
+      "crop": [
+        505,
+        604,
+        628,
+        744
+      ],
+      "trim": [
+        4,
+        4,
+        118,
+        131
+      ],
+      "origin": [
+        509,
+        608
+      ],
+      "size": [
+        114,
+        127
+      ],
+      "sourceSize": [
+        114,
+        127
+      ],
+      "footSource": [
+        552,
+        734
+      ],
+      "muzzleSource": [
+        620,
+        668
+      ],
+      "anchor": [
+        0.37719298245614036,
+        0.007874015748031482
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.stand-shoot.4.png",
+      "atlas": [
+        1167,
+        4,
+        114,
+        127
+      ]
+    },
+    {
+      "id": "direct.shotgun.run-shoot.0",
+      "crop": [
+        659,
+        605,
+        785,
+        747
+      ],
+      "trim": [
+        5,
+        8,
+        124,
+        131
+      ],
+      "origin": [
+        664,
+        613
+      ],
+      "size": [
+        119,
+        123
+      ],
+      "sourceSize": [
+        119,
+        123
+      ],
+      "footSource": [
+        710,
+        735
+      ],
+      "muzzleSource": [
+        779,
+        669
+      ],
+      "anchor": [
+        0.3865546218487395,
+        0.008130081300813052
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run-shoot.0.png",
+      "atlas": [
+        137,
+        142,
+        119,
+        123
+      ]
+    },
+    {
+      "id": "direct.shotgun.run-shoot.4",
+      "crop": [
+        1166,
+        605,
+        1303,
+        747
+      ],
+      "trim": [
+        2,
+        10,
+        137,
+        133
+      ],
+      "origin": [
+        1168,
+        615
+      ],
+      "size": [
+        135,
+        123
+      ],
+      "sourceSize": [
+        135,
+        123
+      ],
+      "footSource": [
+        1226,
+        737
+      ],
+      "muzzleSource": [
+        1260,
+        670
+      ],
+      "anchor": [
+        0.42962962962962964,
+        0.008130081300813052
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.run-shoot.4.png",
+      "atlas": [
+        264,
+        142,
+        135,
+        123
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-shoot.0",
+      "crop": [
+        35,
+        800,
+        182,
+        914
+      ],
+      "trim": [
+        6,
+        5,
+        146,
+        106
+      ],
+      "origin": [
+        41,
+        805
+      ],
+      "size": [
+        140,
+        101
+      ],
+      "sourceSize": [
+        140,
+        101
+      ],
+      "footSource": [
+        92,
+        905
+      ],
+      "muzzleSource": [
+        138,
+        857
+      ],
+      "anchor": [
+        0.36428571428571427,
+        0.00990099009900991
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-shoot.0.png",
+      "atlas": [
+        496,
+        273,
+        140,
+        101
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-shoot.1",
+      "crop": [
+        182,
+        800,
+        325,
+        914
+      ],
+      "trim": [
+        1,
+        6,
+        143,
+        107
+      ],
+      "origin": [
+        183,
+        806
+      ],
+      "size": [
+        142,
+        101
+      ],
+      "sourceSize": [
+        142,
+        101
+      ],
+      "footSource": [
+        231,
+        907
+      ],
+      "muzzleSource": [
+        289,
+        856
+      ],
+      "anchor": [
+        0.3380281690140845,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-shoot.1.png",
+      "atlas": [
+        644,
+        273,
+        142,
+        101
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-shoot.2",
+      "crop": [
+        323,
+        800,
+        476,
+        914
+      ],
+      "trim": [
+        0,
+        3,
+        153,
+        108
+      ],
+      "origin": [
+        323,
+        803
+      ],
+      "size": [
+        153,
+        105
+      ],
+      "sourceSize": [
+        153,
+        105
+      ],
+      "footSource": [
+        374,
+        907
+      ],
+      "muzzleSource": [
+        440,
+        853
+      ],
+      "anchor": [
+        0.3333333333333333,
+        0.00952380952380949
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-shoot.2.png",
+      "atlas": [
+        1861,
+        142,
+        153,
+        105
+      ]
+    },
+    {
+      "id": "direct.shotgun.crouch-shoot.3",
+      "crop": [
+        475,
+        800,
+        596,
+        914
+      ],
+      "trim": [
+        0,
+        3,
+        116,
+        108
+      ],
+      "origin": [
+        475,
+        803
+      ],
+      "size": [
+        116,
+        105
+      ],
+      "sourceSize": [
+        116,
+        105
+      ],
+      "footSource": [
+        528,
+        907
+      ],
+      "muzzleSource": [
+        588,
+        853
+      ],
+      "anchor": [
+        0.45689655172413796,
+        0.00952380952380949
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.crouch-shoot.3.png",
+      "atlas": [
+        4,
+        273,
+        116,
+        105
+      ]
+    },
+    {
+      "id": "direct.shotgun.reload.0",
+      "crop": [
+        626,
+        793,
+        749,
+        916
+      ],
+      "trim": [
+        4,
+        7,
+        118,
+        119
+      ],
+      "origin": [
+        630,
+        800
+      ],
+      "size": [
+        114,
+        112
+      ],
+      "sourceSize": [
+        114,
+        112
+      ],
+      "footSource": [
+        676,
+        911
+      ],
+      "muzzleSource": [
+        741,
+        865
+      ],
+      "anchor": [
+        0.40350877192982454,
+        0.008928571428571397
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.reload.0.png",
+      "atlas": [
+        1211,
+        142,
+        114,
+        112
+      ]
+    },
+    {
+      "id": "direct.shotgun.reload.1",
+      "crop": [
+        760,
+        793,
+        885,
+        925
+      ],
+      "trim": [
+        4,
+        3,
+        120,
+        126
+      ],
+      "origin": [
+        764,
+        796
+      ],
+      "size": [
+        116,
+        123
+      ],
+      "sourceSize": [
+        116,
+        123
+      ],
+      "footSource": [
+        811,
+        918
+      ],
+      "muzzleSource": [
+        877,
+        852
+      ],
+      "anchor": [
+        0.4051724137931034,
+        0.008130081300813052
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.reload.1.png",
+      "atlas": [
+        1753,
+        4,
+        116,
+        123
+      ]
+    },
+    {
+      "id": "direct.shotgun.reload.2",
+      "crop": [
+        887,
+        793,
+        1019,
+        925
+      ],
+      "trim": [
+        4,
+        5,
+        127,
+        126
+      ],
+      "origin": [
+        891,
+        798
+      ],
+      "size": [
+        123,
+        121
+      ],
+      "sourceSize": [
+        123,
+        121
+      ],
+      "footSource": [
+        946,
+        918
+      ],
+      "muzzleSource": [
+        1011,
+        851
+      ],
+      "anchor": [
+        0.44715447154471544,
+        0.008264462809917328
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.reload.2.png",
+      "atlas": [
+        716,
+        142,
+        123,
+        121
+      ]
+    },
+    {
+      "id": "direct.shotgun.reload.3",
+      "crop": [
+        1023,
+        793,
+        1153,
+        925
+      ],
+      "trim": [
+        4,
+        3,
+        125,
+        126
+      ],
+      "origin": [
+        1027,
+        796
+      ],
+      "size": [
+        121,
+        123
+      ],
+      "sourceSize": [
+        121,
+        123
+      ],
+      "footSource": [
+        1073,
+        919
+      ],
+      "muzzleSource": [
+        1144,
+        870
+      ],
+      "anchor": [
+        0.38016528925619836,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.reload.3.png",
+      "atlas": [
+        1877,
+        4,
+        121,
+        123
+      ]
+    },
+    {
+      "id": "direct.shotgun.reload.4",
+      "crop": [
+        1158,
+        793,
+        1292,
+        925
+      ],
+      "trim": [
+        4,
+        4,
+        129,
+        127
+      ],
+      "origin": [
+        1162,
+        797
+      ],
+      "size": [
+        125,
+        123
+      ],
+      "sourceSize": [
+        125,
+        123
+      ],
+      "footSource": [
+        1208,
+        919
+      ],
+      "muzzleSource": [
+        1284,
+        860
+      ],
+      "anchor": [
+        0.368,
+        0.008130081300813052
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.reload.4.png",
+      "atlas": [
+        4,
+        142,
+        125,
+        123
+      ]
+    },
+    {
+      "id": "direct.shotgun.hit.0",
+      "crop": [
+        47,
+        964,
+        143,
+        1080
+      ],
+      "trim": [
+        6,
+        4,
+        91,
+        107
+      ],
+      "origin": [
+        53,
+        968
+      ],
+      "size": [
+        85,
+        103
+      ],
+      "sourceSize": [
+        85,
+        103
+      ],
+      "footSource": [
+        89,
+        1071
+      ],
+      "muzzleSource": [
+        133,
+        1007
+      ],
+      "anchor": [
+        0.4235294117647059,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.hit.0.png",
+      "atlas": [
+        263,
+        273,
+        85,
+        103
+      ]
+    },
+    {
+      "id": "direct.shotgun.hit.1",
+      "crop": [
+        166,
+        954,
+        277,
+        1080
+      ],
+      "trim": [
+        6,
+        4,
+        104,
+        116
+      ],
+      "origin": [
+        172,
+        958
+      ],
+      "size": [
+        98,
+        112
+      ],
+      "sourceSize": [
+        98,
+        112
+      ],
+      "footSource": [
+        215,
+        1070
+      ],
+      "muzzleSource": [
+        264,
+        1005
+      ],
+      "anchor": [
+        0.4387755102040816,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.hit.1.png",
+      "atlas": [
+        1105,
+        142,
+        98,
+        112
+      ]
+    },
+    {
+      "id": "direct.shotgun.hit.2",
+      "crop": [
+        288,
+        954,
+        421,
+        1080
+      ],
+      "trim": [
+        6,
+        1,
+        128,
+        117
+      ],
+      "origin": [
+        294,
+        955
+      ],
+      "size": [
+        122,
+        116
+      ],
+      "sourceSize": [
+        122,
+        116
+      ],
+      "footSource": [
+        346,
+        1070
+      ],
+      "muzzleSource": [
+        406,
+        1013
+      ],
+      "anchor": [
+        0.4262295081967213,
+        0.008620689655172376
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.hit.2.png",
+      "atlas": [
+        847,
+        142,
+        122,
+        116
+      ]
+    },
+    {
+      "id": "direct.shotgun.hit.3",
+      "crop": [
+        429,
+        954,
+        565,
+        1080
+      ],
+      "trim": [
+        6,
+        6,
+        131,
+        117
+      ],
+      "origin": [
+        435,
+        960
+      ],
+      "size": [
+        125,
+        111
+      ],
+      "sourceSize": [
+        125,
+        111
+      ],
+      "footSource": [
+        485,
+        1071
+      ],
+      "muzzleSource": [
+        516,
+        995
+      ],
+      "anchor": [
+        0.4,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.hit.3.png",
+      "atlas": [
+        1333,
+        142,
+        125,
+        111
+      ]
+    },
+    {
+      "id": "direct.shotgun.death.0",
+      "crop": [
+        613,
+        973,
+        728,
+        1086
+      ],
+      "trim": [
+        6,
+        5,
+        111,
+        98
+      ],
+      "origin": [
+        619,
+        978
+      ],
+      "size": [
+        105,
+        93
+      ],
+      "sourceSize": [
+        105,
+        93
+      ],
+      "footSource": [
+        674,
+        1070
+      ],
+      "muzzleSource": [
+        719,
+        991
+      ],
+      "anchor": [
+        0.5238095238095238,
+        0.010752688172043001
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.death.0.png",
+      "atlas": [
+        1604,
+        273,
+        105,
+        93
+      ]
+    },
+    {
+      "id": "direct.shotgun.death.1",
+      "crop": [
+        727,
+        973,
+        851,
+        1086
+      ],
+      "trim": [
+        4,
+        4,
+        120,
+        97
+      ],
+      "origin": [
+        731,
+        977
+      ],
+      "size": [
+        116,
+        93
+      ],
+      "sourceSize": [
+        116,
+        93
+      ],
+      "footSource": [
+        789,
+        1070
+      ],
+      "muzzleSource": [
+        838,
+        986
+      ],
+      "anchor": [
+        0.5,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.death.1.png",
+      "atlas": [
+        1717,
+        273,
+        116,
+        93
+      ]
+    },
+    {
+      "id": "direct.shotgun.death.2",
+      "crop": [
+        860,
+        990,
+        972,
+        1086
+      ],
+      "trim": [
+        5,
+        5,
+        107,
+        78
+      ],
+      "origin": [
+        865,
+        995
+      ],
+      "size": [
+        102,
+        73
+      ],
+      "sourceSize": [
+        102,
+        73
+      ],
+      "footSource": [
+        917,
+        1067
+      ],
+      "muzzleSource": [
+        961,
+        1001
+      ],
+      "anchor": [
+        0.5098039215686274,
+        0.013698630136986356
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.death.2.png",
+      "atlas": [
+        1841,
+        273,
+        102,
+        73
+      ]
+    },
+    {
+      "id": "direct.shotgun.death.3",
+      "crop": [
+        969,
+        1007,
+        1113,
+        1086
+      ],
+      "trim": [
+        5,
+        4,
+        139,
+        61
+      ],
+      "origin": [
+        974,
+        1011
+      ],
+      "size": [
+        134,
+        57
+      ],
+      "sourceSize": [
+        134,
+        57
+      ],
+      "footSource": [
+        1037,
+        1068
+      ],
+      "muzzleSource": [
+        1104,
+        1044
+      ],
+      "anchor": [
+        0.4701492537313433,
+        0.0
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.death.3.png",
+      "atlas": [
+        4,
+        386,
+        134,
+        57
+      ]
+    },
+    {
+      "id": "direct.shotgun.death.4",
+      "crop": [
+        1120,
+        1015,
+        1287,
+        1086
+      ],
+      "trim": [
+        6,
+        4,
+        162,
+        53
+      ],
+      "origin": [
+        1126,
+        1019
+      ],
+      "size": [
+        156,
+        49
+      ],
+      "sourceSize": [
+        156,
+        49
+      ],
+      "footSource": [
+        1203,
+        1066
+      ],
+      "muzzleSource": [
+        1279,
+        1049
+      ],
+      "anchor": [
+        0.4935897435897436,
+        0.04081632653061229
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.death.4.png",
+      "atlas": [
+        296,
+        386,
+        156,
+        49
+      ]
+    },
+    {
+      "id": "direct.shotgun.death.5",
+      "crop": [
+        1288,
+        1013,
+        1443,
+        1086
+      ],
+      "trim": [
+        6,
+        4,
+        148,
+        54
+      ],
+      "origin": [
+        1294,
+        1017
+      ],
+      "size": [
+        142,
+        50
+      ],
+      "sourceSize": [
+        142,
+        50
+      ],
+      "footSource": [
+        1365,
+        1066
+      ],
+      "muzzleSource": [
+        1433,
+        1047
+      ],
+      "anchor": [
+        0.5,
+        0.020000000000000018
+      ],
+      "scale": 0.7,
+      "file": "art/slices/v058/direct.shotgun.death.5.png",
+      "atlas": [
+        146,
+        386,
+        142,
+        50
+      ]
+    }
+  ],
+  "clips": {
+    "shotgun.idle": [
+      "direct.shotgun.idle.0",
+      "direct.shotgun.idle.1",
+      "direct.shotgun.idle.2",
+      "direct.shotgun.idle.3"
+    ],
+    "shotgun.run": [
+      "direct.shotgun.run.0",
+      "direct.shotgun.run.1",
+      "direct.shotgun.run.2",
+      "direct.shotgun.run.3",
+      "direct.shotgun.run.4",
+      "direct.shotgun.run.5",
+      "direct.shotgun.run.6",
+      "direct.shotgun.run.7",
+      "direct.shotgun.run.8"
+    ],
+    "shotgun.jump": [
+      "direct.shotgun.jump.0",
+      "direct.shotgun.jump.1",
+      "direct.shotgun.jump.2",
+      "direct.shotgun.jump.3"
+    ],
+    "shotgun.fall": [
+      "direct.shotgun.fall.0",
+      "direct.shotgun.fall.1"
+    ],
+    "shotgun.crouch": [
+      "direct.shotgun.crouch.0",
+      "direct.shotgun.crouch.1"
+    ],
+    "shotgun.crouch-walk": [
+      "direct.shotgun.crouch-walk.0",
+      "direct.shotgun.crouch-walk.1",
+      "direct.shotgun.crouch-walk.2",
+      "direct.shotgun.crouch-walk.3",
+      "direct.shotgun.crouch-walk.4",
+      "direct.shotgun.crouch-walk.5"
+    ],
+    "shotgun.stand-shoot": [
+      "direct.shotgun.stand-shoot.0",
+      "direct.shotgun.stand-shoot.1",
+      "direct.shotgun.stand-shoot.4"
+    ],
+    "shotgun.run-shoot": [
+      "direct.shotgun.run-shoot.0",
+      "direct.shotgun.run-shoot.4"
+    ],
+    "shotgun.crouch-shoot": [
+      "direct.shotgun.crouch-shoot.0",
+      "direct.shotgun.crouch-shoot.1",
+      "direct.shotgun.crouch-shoot.2",
+      "direct.shotgun.crouch-shoot.3"
+    ],
+    "shotgun.reload": [
+      "direct.shotgun.reload.0",
+      "direct.shotgun.reload.1",
+      "direct.shotgun.reload.2",
+      "direct.shotgun.reload.3",
+      "direct.shotgun.reload.4"
+    ],
+    "shotgun.hit": [
+      "direct.shotgun.hit.0",
+      "direct.shotgun.hit.1",
+      "direct.shotgun.hit.2",
+      "direct.shotgun.hit.3"
+    ],
+    "shotgun.death": [
+      "direct.shotgun.death.0",
+      "direct.shotgun.death.1",
+      "direct.shotgun.death.2",
+      "direct.shotgun.death.3",
+      "direct.shotgun.death.4",
+      "direct.shotgun.death.5"
+    ]
+  },
+  "textureSize": [
+    2048,
+    512
+  ],
+  "textureBytes": 141058,
+  "scale": 0.7,
+  "extrusion": 4,
+  "padding": 8,
+  "excludedOverlaps": [
+    "direct.shotgun.stand-shoot.2",
+    "direct.shotgun.stand-shoot.3",
+    "direct.shotgun.run-shoot.1",
+    "direct.shotgun.run-shoot.2",
+    "direct.shotgun.run-shoot.3",
+    "direct.shotgun.run-shoot.5"
+  ],
+  "notes": [
+    "57 source figures; use 51 clean complete figures. Six fire poses overlap a neighbouring figure/flash or truncate the flash and are excluded.",
+    "RUN has 9 bodies, STAND SHOOT has 5 despite printed labels; clean firing clips use 3 standing / 2 running frames.",
+    "Reload frames are archived; no new magazine/reload gameplay is introduced.",
+    "No separate crouch-running fire or grenade-throw row: use crouch-walk plus existing muzzle FX, and the earlier supplied throw action."
+  ]
+}

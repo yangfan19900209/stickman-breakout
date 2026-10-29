@@ -4,10 +4,12 @@
     "name": "resources",
     "deps": [],
     "uuids": [
-        "087b8ca2b",
         "0f019e2f-c8a8-48a9-af29-037b8e0f6db0",
         "0f019e2f-c8a8-48a9-af29-037b8e0f6db0@6c48a",
+        "0ffee8712",
         "16b69511-d6dd-efa8-fd7e-a88342e8da71",
+        "2569bc5c-876b-4701-b2cc-0a03a0c5248c",
+        "2569bc5c-876b-4701-b2cc-0a03a0c5248c@6c48a",
         "421888f5-544b-c554-20e1-3fad24581ebb",
         "4c79c3a2-0311-be5e-7b7b-056315dfcf7f",
         "562cf6c2-84eb-745b-d5f6-1819884fdfa1",
@@ -87,6 +89,16 @@
             "cc.Texture2D",
             1
         ],
+        "2569bc5c-876b-4701-b2cc-0a03a0c5248c": [
+            "comic/shotgun",
+            "cc.ImageAsset",
+            1
+        ],
+        "2569bc5c-876b-4701-b2cc-0a03a0c5248c@6c48a": [
+            "comic/shotgun/texture",
+            "cc.Texture2D",
+            1
+        ],
         "8e3daa0d-bd68-497a-bb32-1f0223cc38e5": [
             "comic/supplement",
             "cc.ImageAsset",
@@ -100,9 +112,10 @@
     },
     "scenes": {},
     "packs": {
-        "087b8ca2b": [
+        "0ffee8712": [
             "0f019e2f-c8a8-48a9-af29-037b8e0f6db0@6c48a",
             "8e3daa0d-bd68-497a-bb32-1f0223cc38e5@6c48a",
+            "2569bc5c-876b-4701-b2cc-0a03a0c5248c@6c48a",
             "fc0931d5-97c2-4932-92d4-6fa1b92cc48a@6c48a"
         ]
     },

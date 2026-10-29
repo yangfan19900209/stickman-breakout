@@ -6,7 +6,7 @@ import { RenderActor } from "./StickmanRenderer";
 import { comicEquipment } from "./ComicEquipment";
 import { weaponPresentation } from "../combat/WeaponPresentation";
 import { Sprite } from "cc";
-import { isDirectActor } from "./DirectPose";
+import { isDirectActor, directScale } from "./DirectPose";
 
 /** Whole supplied action frames. No segmented legs, geometric limbs or rotated corpses. */
 export class ComicActorArt {
@@ -23,7 +23,7 @@ export class ComicActorArt {
     if (!ComicAssets.enabled || a.kind === "colossus") return false;
     if (!this.batch) this.begin(ink);
     const equipment = comicEquipment(a), id = equipment.body, data = ComicFrames[id];
-    const scale = a.kind === "guard" ? 1.25 : a.kind ? .8 : isDirectActor(id) ? .84 : .64;
+    const scale = a.kind === "guard" ? 1.25 : a.kind ? .8 : isDirectActor(id) ? directScale(id) : .64;
     const alpha = a.invincible && Math.floor(a.invincible * 15) % 2 ? 130 : 255;
     const dead = a.animation === "Dead";
     const bodyNode = this.batch!.put(id, a.x - cam, a.y, data.sourceSize[0] * scale, data.sourceSize[1] * scale, 0,

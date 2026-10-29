@@ -1,0 +1,25 @@
+{
+  "first": {
+    "owner": "player",
+    "kind": "bullet",
+    "x": 160.42666666666668,
+    "y": 192.24,
+    "vx": 760,
+    "vy": 0,
+    "homing": false,
+    "locked": false,
+    "age": 0.016666666666666666
+  },
+  "second": {
+    "owner": "player",
+    "kind": "bullet",
+    "x": 211.09333333333342,
+    "y": 192.24,
+    "vx": 760,
+    "vy": 0,
+    "homing": false,
+    "locked": false,
+    "age": 0.08333333333333333
+  },
+  "errors": []
+}

@@ -52,7 +52,7 @@ export const GameConfig = {
       id: "rifle",
       name: "突击步枪",
       interval: 0.14,
-      speed: 1100,
+      speed: 760,
       damage: 1,
       range: 980,
       muzzleHeight: 44,

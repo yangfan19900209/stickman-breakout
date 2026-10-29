@@ -1478,7 +1478,7 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
 });
 
 System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicAssets.ts', './ComicFrames.ts', './ComicPose.ts', './ComicEquipment.ts', './WeaponPresentation.ts', './DirectPose.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, cclegacy, Sprite, ComicBatch, ComicAssets, ComicFrames, comicMuzzle, comicEquipment, weaponPresentation, isDirectActor;
+  var _createClass, _classCallCheck, _defineProperty, cclegacy, Sprite, ComicBatch, ComicAssets, ComicFrames, comicMuzzle, comicEquipment, weaponPresentation, isDirectActor, directScale;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -1500,6 +1500,7 @@ System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabe
       weaponPresentation = module.weaponPresentation;
     }, function (module) {
       isDirectActor = module.isDirectActor;
+      directScale = module.directScale;
     }],
     execute: function () {
       cclegacy._RF.push({}, "19af5HIo5U7RbOuCPDBueYu", "ComicActorArt", undefined);
@@ -1538,7 +1539,7 @@ System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabe
             var equipment = comicEquipment(a),
               id = equipment.body,
               data = ComicFrames[id];
-            var scale = a.kind === "guard" ? 1.25 : a.kind ? .8 : isDirectActor(id) ? .84 : .64;
+            var scale = a.kind === "guard" ? 1.25 : a.kind ? .8 : isDirectActor(id) ? directScale(id) : .64;
             var alpha = a.invincible && Math.floor(a.invincible * 15) % 2 ? 130 : 255;
             var dead = a.animation === "Dead";
             var bodyNode = this.batch.put(id, a.x - cam, a.y, data.sourceSize[0] * scale, data.sourceSize[1] * scale, 0, dead && a.kind !== "guard" ? Math.min(alpha, Math.max(0, (.85 - a.deadTime) * 900)) : alpha, a.facing);
@@ -1575,8 +1576,8 @@ System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicFrames.ts', './SupplementFrames.ts', './DirectFrames.ts', './GameConfig.ts', './Ink.ts'], function (exports) {
-  var _createClass, _defineProperty, _classCallCheck, _toConsumableArray, _asyncToGenerator, _regeneratorRuntime, _slicedToArray, _construct, cclegacy, SpriteFrame, Rect, Size, Sprite, UITransform, Color, Texture2D, resources, ComicFrames, SupplementFrames, DirectFrames, GameConfig, node;
+System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicFrames.ts', './SupplementFrames.ts', './DirectFrames.ts', './ShotgunFrames.ts', './GameConfig.ts', './Ink.ts'], function (exports) {
+  var _createClass, _defineProperty, _classCallCheck, _toConsumableArray, _asyncToGenerator, _regeneratorRuntime, _slicedToArray, _construct, cclegacy, SpriteFrame, Rect, Size, Sprite, UITransform, Color, Texture2D, resources, ComicFrames, SupplementFrames, DirectFrames, ShotgunFrames, GameConfig, node;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -1604,6 +1605,8 @@ System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelH
     }, function (module) {
       DirectFrames = module.DirectFrames;
     }, function (module) {
+      ShotgunFrames = module.ShotgunFrames;
+    }, function (module) {
       GameConfig = module.GameConfig;
     }, function (module) {
       node = module.node;
@@ -1625,7 +1628,7 @@ System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelH
           key: "load",
           value: function () {
             var _load = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-              var _load2, _yield$Promise$all, _yield$Promise$all2, texture, supplement, _native, _i, _arr, id, data, f;
+              var _load2, _yield$Promise$all, _yield$Promise$all2, texture, supplement, _native, shotgun, _i, _arr, id, data, f;
               return _regeneratorRuntime().wrap(function _callee$(_context) {
                 while (1) switch (_context.prev = _context.next) {
                   case 0:
@@ -1644,40 +1647,42 @@ System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelH
                       });
                     };
                     _context.next = 6;
-                    return Promise.all([_load2("comic"), _load2("supplement"), _load2("native")]);
+                    return Promise.all([_load2("comic"), _load2("supplement"), _load2("native"), _load2("shotgun")]);
                   case 6:
                     _yield$Promise$all = _context.sent;
-                    _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 3);
+                    _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 4);
                     texture = _yield$Promise$all2[0];
                     supplement = _yield$Promise$all2[1];
                     _native = _yield$Promise$all2[2];
+                    shotgun = _yield$Promise$all2[3];
                     // Clamp padded atlas edges on WebGL 1 and WeChat; V0.5.3 is 2048 square.
                     texture.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
                     supplement.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
                     _native.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
+                    shotgun.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
                     for (_i = 0, _arr = Object.keys(ComicFrames); _i < _arr.length; _i++) {
                       id = _arr[_i];
                       data = ComicFrames[id], f = new SpriteFrame();
                       f.name = id;
-                      f.texture = id in DirectFrames ? _native : id in SupplementFrames ? supplement : texture;
+                      f.texture = id in ShotgunFrames ? shotgun : id in DirectFrames ? _native : id in SupplementFrames ? supplement : texture;
                       f.rect = _construct(Rect, _toConsumableArray(data.atlas));
                       f.originalSize = _construct(Size, _toConsumableArray(data.size));
                       this.frames.set(id, f);
                     }
                     this.ready = true;
-                    console.info("[Breakout] Comic atlases loaded: ".concat(this.frames.size, " frames, 3 textures."));
-                    _context.next = 23;
+                    console.info("[Breakout] Comic atlases loaded: ".concat(this.frames.size, " frames, 4 textures."));
+                    _context.next = 25;
                     break;
-                  case 19:
-                    _context.prev = 19;
+                  case 21:
+                    _context.prev = 21;
                     _context.t0 = _context["catch"](2);
                     this.error = String(_context.t0);
                     console.error("[Breakout] Comic atlas unavailable; using legacy art.", _context.t0);
-                  case 23:
+                  case 25:
                   case "end":
                     return _context.stop();
                 }
-              }, _callee, this, [[2, 19]]);
+              }, _callee, this, [[2, 21]]);
             }));
             function load() {
               return _load.apply(this, arguments);
@@ -1965,7 +1970,7 @@ System.register("chunks:///_virtual/ComicEquipment.ts", ['cc', './ComicFrames.ts
       exports('comicEquipment', comicEquipment);
       cclegacy._RF.push({}, "0c752ojp0UqG2r9VOyEVjDg", "ComicEquipment", undefined);
 
-      /** Exactly one visible weapon: baked rifle OR a weapon-free body plus one gun. */
+      /** Complete supplied soldiers own their weapon; never clear or cover their bodies. */
       function comicEquipment(a) {
         var _a$meleeTime, _a$throwTime, _a$weaponId, _a$aimPitch, _a$weaponId2;
         var pose = comicPose(a),
@@ -1976,7 +1981,7 @@ System.register("chunks:///_virtual/ComicEquipment.ts", ['cc', './ComicFrames.ts
           weapon: null,
           grip: null,
           bakedRifle: false,
-          bakedWeapon: pose.startsWith("direct.knife.") ? "knife" : "rocket"
+          bakedWeapon: pose.startsWith("direct.knife.") ? "knife" : pose.startsWith("direct.shotgun.") ? "shotgun" : "rocket"
         };
         var suppressed = a.animation === "Dead" || ((_a$meleeTime = a.meleeTime) !== null && _a$meleeTime !== void 0 ? _a$meleeTime : 0) > 0 || ((_a$throwTime = a.throwTime) !== null && _a$throwTime !== void 0 ? _a$throwTime : 0) > 0;
         var replacement = !a.kind && !suppressed && (((_a$weaponId = a.weaponId) !== null && _a$weaponId !== void 0 ? _a$weaponId : "rifle") !== "rifle" || ((_a$aimPitch = a.aimPitch) !== null && _a$aimPitch !== void 0 ? _a$aimPitch : 0) > .01);
@@ -2000,8 +2005,8 @@ System.register("chunks:///_virtual/ComicEquipment.ts", ['cc', './ComicFrames.ts
   };
 });
 
-System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SupplementFrames.ts', './DirectFrames.ts'], function (exports) {
-  var _objectSpread2, cclegacy, SupplementFrames, DirectFrames;
+System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SupplementFrames.ts', './DirectFrames.ts', './ShotgunFrames.ts'], function (exports) {
+  var _objectSpread2, cclegacy, SupplementFrames, DirectFrames, ShotgunFrames;
   return {
     setters: [function (module) {
       _objectSpread2 = module.objectSpread2;
@@ -2011,6 +2016,8 @@ System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelH
       SupplementFrames = module.SupplementFrames;
     }, function (module) {
       DirectFrames = module.DirectFrames;
+    }, function (module) {
+      ShotgunFrames = module.ShotgunFrames;
     }],
     execute: function () {
       cclegacy._RF.push({}, "14a86ft1/z7mqTRhbJtO6Hh", "ComicFrames", undefined);
@@ -3150,7 +3157,7 @@ System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelH
           "size": [115, 44]
         }
       };
-      var ComicFrames = exports('ComicFrames', _objectSpread2(_objectSpread2(_objectSpread2({}, BaseComicFrames), SupplementFrames), DirectFrames));
+      var ComicFrames = exports('ComicFrames', _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, BaseComicFrames), SupplementFrames), DirectFrames), ShotgunFrames));
       var ComicClips = exports('ComicClips', {
         "player.idle": ["player.idle.0", "player.idle.1", "player.idle.2", "player.idle.3"],
         "player.run": ["player.run.0", "player.run.1", "player.run.2", "player.run.3", "player.run.4", "player.run.5", "player.run.6", "player.run.7", "player.run.8"],
@@ -4636,39 +4643,51 @@ System.register("chunks:///_virtual/DirectFrames.ts", ['cc'], function (exports)
   };
 });
 
-System.register("chunks:///_virtual/DirectPose.ts", ['cc', './DirectFrames.ts'], function (exports) {
-  var cclegacy, DirectClips, DirectSockets;
+System.register("chunks:///_virtual/DirectPose.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './DirectFrames.ts', './ShotgunFrames.ts'], function (exports) {
+  var _objectSpread2, cclegacy, DirectClips, DirectSockets, ShotgunScale, ShotgunClips, ShotgunSockets;
   return {
     setters: [function (module) {
+      _objectSpread2 = module.objectSpread2;
+    }, function (module) {
       cclegacy = module.cclegacy;
     }, function (module) {
       DirectClips = module.DirectClips;
       DirectSockets = module.DirectSockets;
+    }, function (module) {
+      ShotgunScale = module.ShotgunScale;
+      ShotgunClips = module.ShotgunClips;
+      ShotgunSockets = module.ShotgunSockets;
     }],
     execute: function () {
       exports({
         directBarrel: directBarrel,
         directMuzzle: directMuzzle,
         directPose: directPose,
+        directScale: directScale,
         isDirectActor: isDirectActor
       });
       cclegacy._RF.push({}, "6c427JsqW5Gwu13+XF+s5pk", "DirectPose", undefined);
+      var DirectActorClips = exports('DirectActorClips', _objectSpread2(_objectSpread2({}, DirectClips), ShotgunClips));
+      var actorSockets = _objectSpread2(_objectSpread2({}, DirectSockets), ShotgunSockets);
       function frame(clip, phase) {
         var loop = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-        var frames = DirectClips[clip];
+        var frames = DirectActorClips[clip];
         var index = loop ? (Math.floor(phase) % frames.length + frames.length) % frames.length : Math.min(frames.length - 1, Math.max(0, Math.floor(phase)));
         return frames[index];
       }
       function isDirectActor(id) {
         return id.startsWith("direct.");
       }
+      function directScale(id) {
+        return id.startsWith("direct.shotgun.") ? ShotgunScale : .84;
+      }
 
       /** Complete painted soldiers: no gun-removal masks or extra hand/weapon layers. */
       function directPose(a) {
-        var _a$meleeTime, _a$hitTime, _a$throwTime, _a$vx, _a$stride, _a$stride2;
+        var _a$meleeTime, _a$hitTime, _a$throwTime, _a$vx, _a$stride, _a$stride3, _a$stride4;
         if (a.kind) return undefined;
         var melee = ((_a$meleeTime = a.meleeTime) !== null && _a$meleeTime !== void 0 ? _a$meleeTime : 0) > 0;
-        var family = melee || a.weaponId === "knife" ? "knife" : a.weaponId === "rocket" ? "rocket" : undefined;
+        var family = melee || a.weaponId === "knife" ? "knife" : a.weaponId === "rocket" ? "rocket" : a.weaponId === "shotgun" ? "shotgun" : undefined;
         if (!family) return undefined;
         if (a.animation === "Dead") return frame("".concat(family, ".death"), a.deadTime * 10, false);
         if (a.animation === "Hit") return frame("".concat(family, ".hit"), (.22 - ((_a$hitTime = a.hitTime) !== null && _a$hitTime !== void 0 ? _a$hitTime : .22)) * 18, false);
@@ -4685,23 +4704,30 @@ System.register("chunks:///_virtual/DirectPose.ts", ['cc', './DirectFrames.ts'],
           // its intact arms/blade. Gameplay still uses the low sector and hit effects.
           if (a.meleeStance === "crouch") return frame("knife.crouch-walk", progress * 7, false);
           var clip = "knife.combo".concat(Math.max(1, Math.min(3, (_a$meleeStage = a.meleeStage) !== null && _a$meleeStage !== void 0 ? _a$meleeStage : 1)));
-          return frame(clip, progress * DirectClips[clip].length, false);
+          return frame(clip, progress * DirectActorClips[clip].length, false);
         }
         if (a.animation === "Jump") return frame("".concat(family, ".jump"), 1 + a.animationTime * 5 % 2, false);
         if (a.animation === "Fall") return frame("".concat(family, ".fall"), a.animationTime * 5);
+        // Crouch-running keeps its SIX real leg poses while muzzle FX carry the shot.
+        if (family === "shotgun" && crouch && moving) return frame("shotgun.crouch-walk", ((_a$stride = a.stride) !== null && _a$stride !== void 0 ? _a$stride : 0) * ShotgunClips["shotgun.crouch-walk"].length);
+        if (family === "shotgun" && a.recoil > .04) {
+          var _a$stride2;
+          if (moving) return frame("shotgun.run-shoot", ((_a$stride2 = a.stride) !== null && _a$stride2 !== void 0 ? _a$stride2 : 0) * ShotgunClips["shotgun.run-shoot"].length);
+          return frame(crouch ? "shotgun.crouch-shoot" : "shotgun.stand-shoot", (1.65 - a.recoil) / 8 * 22, false);
+        }
         if (family === "rocket" && a.recoil > .04) {
           var action = crouch ? "crouch-fire" : moving ? "run-fire" : "stand-fire";
           // Recoil decays at 8/s. Use the actual shot age, never the idle animation
           // clock (which previously jumped directly to an unrelated firing pose).
           return frame("rocket.".concat(action), (1.9 - a.recoil) / 8 * 16, false);
         }
-        if (crouch && moving) return frame("".concat(family, ".crouch-walk"), ((_a$stride = a.stride) !== null && _a$stride !== void 0 ? _a$stride : 0) * DirectClips["".concat(family, ".crouch-walk")].length);
+        if (crouch && moving) return frame("".concat(family, ".crouch-walk"), ((_a$stride3 = a.stride) !== null && _a$stride3 !== void 0 ? _a$stride3 : 0) * DirectActorClips["".concat(family, ".crouch-walk")].length);
         if (crouch) return frame("".concat(family, ".crouch"), a.animationTime * 3);
-        if (moving) return frame("".concat(family, ".run"), ((_a$stride2 = a.stride) !== null && _a$stride2 !== void 0 ? _a$stride2 : 0) * DirectClips["".concat(family, ".run")].length);
+        if (moving) return frame("".concat(family, ".run"), ((_a$stride4 = a.stride) !== null && _a$stride4 !== void 0 ? _a$stride4 : 0) * DirectActorClips["".concat(family, ".run")].length);
         return frame("".concat(family, ".idle"), a.animationTime * 3);
       }
       function directMuzzle(id) {
-        return isDirectActor(id) ? DirectSockets[id] : undefined;
+        return isDirectActor(id) ? actorSockets[id] : undefined;
       }
 
       /** Axis of the PAINTED launcher, independent of the requested guided heading.
@@ -5557,7 +5583,7 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
             id: "rifle",
             name: "突击步枪",
             interval: 0.14,
-            speed: 1100,
+            speed: 760,
             damage: 1,
             range: 980,
             muzzleHeight: 44,
@@ -5722,8 +5748,8 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './InputManager.ts', './GameSession.ts', './Ink.ts', './StickmanRenderer.ts', './LevelRenderer.ts', './PlatformBridge.ts', './CombatRenderer.ts', './CocosInputAdapter.ts', './HUDController.ts', './ObjectRenderer.ts', './AudioBridge.ts', './ViewportLayout.ts', './ComicAssets.ts', './ComicLevelRenderer.ts', './ComicPose.ts', './ComicEquipment.ts', './DirectFrames.ts'], function (exports) {
-  var _inherits, _createSuper, _classCallCheck, _defineProperty, _assertThisInitialized, _createClass, _objectSpread2, _toConsumableArray, _slicedToArray, _createForOfIteratorHelper, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, view, ResolutionPolicy, game, profiler, Canvas, Camera, Layers, Color, UITransform, Component, GameConfig, InputManager, GameSession, node, Ink, StickmanRenderer, LevelRenderer, PlatformBridge, CombatRenderer, CocosInputAdapter, HUDController, ObjectRenderer, AudioBridge, viewportLayout, ComicAssets, ComicLevelRenderer, comicPose, comicEquipment, DirectClips;
+System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './InputManager.ts', './GameSession.ts', './Ink.ts', './StickmanRenderer.ts', './LevelRenderer.ts', './PlatformBridge.ts', './CombatRenderer.ts', './CocosInputAdapter.ts', './HUDController.ts', './ObjectRenderer.ts', './AudioBridge.ts', './ViewportLayout.ts', './ComicAssets.ts', './ComicLevelRenderer.ts', './ComicPose.ts', './ComicEquipment.ts', './DirectPose.ts'], function (exports) {
+  var _inherits, _createSuper, _classCallCheck, _defineProperty, _assertThisInitialized, _createClass, _objectSpread2, _toConsumableArray, _slicedToArray, _createForOfIteratorHelper, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, view, ResolutionPolicy, game, profiler, Canvas, Camera, Layers, Color, UITransform, Component, GameConfig, InputManager, GameSession, node, Ink, StickmanRenderer, LevelRenderer, PlatformBridge, CombatRenderer, CocosInputAdapter, HUDController, ObjectRenderer, AudioBridge, viewportLayout, ComicAssets, ComicLevelRenderer, comicPose, comicEquipment, DirectActorClips;
   return {
     setters: [function (module) {
       _inherits = module.inherits;
@@ -5787,7 +5813,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
     }, function (module) {
       comicEquipment = module.comicEquipment;
     }, function (module) {
-      DirectClips = module.DirectClips;
+      DirectActorClips = module.DirectActorClips;
     }],
     execute: function () {
       var _dec, _class;
@@ -5846,7 +5872,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
                     return ComicAssets.load();
                   case 3:
                     this.session.weapon.canPresent = function (id) {
-                      return !ComicAssets.enabled || ComicAssets.has("weapon.".concat(id)) && (id !== "knife" && id !== "rocket" || Object.entries(DirectClips).filter(function (_ref) {
+                      return !ComicAssets.enabled || ComicAssets.has("weapon.".concat(id)) && (id === "rifle" || Object.entries(DirectActorClips).filter(function (_ref) {
                         var _ref2 = _slicedToArray(_ref, 1),
                           clip = _ref2[0];
                         return clip.startsWith(id + ".");
@@ -5860,7 +5886,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
                     };
                     this.initialize();
                     this.ready = true;
-                    console.info("[Breakout] V0.5.7 ready; complete supplied knife/rocket actions and native modular terrain.");
+                    console.info("[Breakout] V0.5.8 ready; complete shotgun/knife/rocket soldiers and slower player rifle rounds.");
                     _context.next = 13;
                     break;
                   case 9:
@@ -8865,9 +8891,9 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './MeleeGeometry.ts', './MeleeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponPresentation.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './ColossusBoss.ts', './EnemyController.ts', './EnemySpawner.ts', './EnemyTactics.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './TerrainProfile.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './ColossusArt.ts', './CombatRenderer.ts', './ComicActorArt.ts', './ComicAssets.ts', './ComicCombatArt.ts', './ComicEquipment.ts', './ComicFrames.ts', './ComicLevelRenderer.ts', './ComicObjectArt.ts', './ComicPose.ts', './DirectFrames.ts', './DirectPose.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './MeleePose.ts', './ObjectRenderer.ts', './ProjectileArt.ts', './RocketPresentation.ts', './SceneryArt.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './SupplementFrames.ts', './TerrainSurface.ts', './TerrainTiles.ts', './WeaponArt.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './MeleeGeometry.ts', './MeleeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponPresentation.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './ColossusBoss.ts', './EnemyController.ts', './EnemySpawner.ts', './EnemyTactics.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './TerrainProfile.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './ColossusArt.ts', './CombatRenderer.ts', './ComicActorArt.ts', './ComicAssets.ts', './ComicCombatArt.ts', './ComicEquipment.ts', './ComicFrames.ts', './ComicLevelRenderer.ts', './ComicObjectArt.ts', './ComicPose.ts', './DirectFrames.ts', './DirectPose.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './MeleePose.ts', './ObjectRenderer.ts', './ProjectileArt.ts', './RocketPresentation.ts', './SceneryArt.ts', './ShotgunFrames.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './SupplementFrames.ts', './TerrainSurface.ts', './TerrainTiles.ts', './WeaponArt.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -10122,7 +10148,7 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
             game.on(Game.EVENT_HIDE, onHide);
             this.unsubscribe = this.adapter.subscribeInactive(onHide);
             globalThis.__BREAKOUT__ = {
-              version: "0.5.7",
+              version: "0.5.8",
               snapshot: snapshot
             };
           }
@@ -11019,6 +11045,396 @@ System.register("chunks:///_virtual/SceneryArt.ts", ['./rollupPluginModLoBabelHe
         return SceneryArt;
       }());
       _defineProperty(SceneryArt, "rockInk", new Color(198, 198, 192));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ShotgunFrames.ts", ['cc'], function (exports) {
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "186b3i0dEsZGJbO1gGmOhHR", "ShotgunFrames", undefined);
+      // Generated from the supplied complete shotgun soldiers by prepare-comic-v058.py.
+      var ShotgunScale = exports('ShotgunScale', .7);
+      var ShotgunFrames = exports('ShotgunFrames', {
+        "direct.shotgun.idle.0": {
+          "atlas": [1289, 4, 109, 125],
+          "anchor": [0.3577981651376147, 0.016000000000000014],
+          "sourceSize": [109, 125],
+          "size": [109, 125]
+        },
+        "direct.shotgun.idle.1": {
+          "atlas": [1406, 4, 107, 125],
+          "anchor": [0.37383177570093457, 0.016000000000000014],
+          "sourceSize": [107, 125],
+          "size": [107, 125]
+        },
+        "direct.shotgun.idle.2": {
+          "atlas": [1521, 4, 105, 125],
+          "anchor": [0.3619047619047619, 0.008000000000000007],
+          "sourceSize": [105, 125],
+          "size": [105, 125]
+        },
+        "direct.shotgun.idle.3": {
+          "atlas": [1634, 4, 111, 125],
+          "anchor": [0.34234234234234234, 0.008000000000000007],
+          "sourceSize": [111, 125],
+          "size": [111, 125]
+        },
+        "direct.shotgun.run.0": {
+          "atlas": [516, 142, 93, 122],
+          "anchor": [0.41935483870967744, 0.008196721311475419],
+          "sourceSize": [93, 122],
+          "size": [93, 122]
+        },
+        "direct.shotgun.run.1": {
+          "atlas": [617, 142, 91, 122],
+          "anchor": [0.45054945054945056, 0.008196721311475419],
+          "sourceSize": [91, 122],
+          "size": [91, 122]
+        },
+        "direct.shotgun.run.2": {
+          "atlas": [811, 4, 99, 127],
+          "anchor": [0.48484848484848486, 0.007874015748031482],
+          "sourceSize": [99, 127],
+          "size": [99, 127]
+        },
+        "direct.shotgun.run.3": {
+          "atlas": [704, 4, 99, 128],
+          "anchor": [0.4444444444444444, 0.0078125],
+          "sourceSize": [99, 128],
+          "size": [99, 128]
+        },
+        "direct.shotgun.run.4": {
+          "atlas": [918, 4, 94, 127],
+          "anchor": [0.46808510638297873, 0.007874015748031482],
+          "sourceSize": [94, 127],
+          "size": [94, 127]
+        },
+        "direct.shotgun.run.5": {
+          "atlas": [361, 4, 99, 129],
+          "anchor": [0.5050505050505051, 0.007751937984496138],
+          "sourceSize": [99, 129],
+          "size": [99, 129]
+        },
+        "direct.shotgun.run.6": {
+          "atlas": [4, 4, 111, 130],
+          "anchor": [0.5225225225225225, 0.007692307692307665],
+          "sourceSize": [111, 130],
+          "size": [111, 130]
+        },
+        "direct.shotgun.run.7": {
+          "atlas": [468, 4, 108, 129],
+          "anchor": [0.4722222222222222, 0.007751937984496138],
+          "sourceSize": [108, 129],
+          "size": [108, 129]
+        },
+        "direct.shotgun.run.8": {
+          "atlas": [123, 4, 109, 130],
+          "anchor": [0.47706422018348627, 0.007692307692307665],
+          "sourceSize": [109, 130],
+          "size": [109, 130]
+        },
+        "direct.shotgun.jump.0": {
+          "atlas": [977, 142, 120, 116],
+          "anchor": [0.4166666666666667, 0.008620689655172376],
+          "sourceSize": [120, 116],
+          "size": [120, 116]
+        },
+        "direct.shotgun.jump.1": {
+          "atlas": [584, 4, 112, 128],
+          "anchor": [0.4017857142857143, 0.0078125],
+          "sourceSize": [112, 128],
+          "size": [112, 128]
+        },
+        "direct.shotgun.jump.2": {
+          "atlas": [240, 4, 113, 129],
+          "anchor": [0.39823008849557523, 0.007751937984496138],
+          "sourceSize": [113, 129],
+          "size": [113, 129]
+        },
+        "direct.shotgun.jump.3": {
+          "atlas": [1738, 142, 115, 107],
+          "anchor": [0.3739130434782609, 0.0],
+          "sourceSize": [115, 107],
+          "size": [115, 107]
+        },
+        "direct.shotgun.fall.0": {
+          "atlas": [1607, 142, 123, 108],
+          "anchor": [0.37398373983739835, 0.0092592592592593],
+          "sourceSize": [123, 108],
+          "size": [123, 108]
+        },
+        "direct.shotgun.fall.1": {
+          "atlas": [1466, 142, 133, 110],
+          "anchor": [0.3533834586466165, 0.027272727272727226],
+          "sourceSize": [133, 110],
+          "size": [133, 110]
+        },
+        "direct.shotgun.crouch.0": {
+          "atlas": [931, 273, 121, 100],
+          "anchor": [0.4132231404958678, 0.010000000000000009],
+          "sourceSize": [121, 100],
+          "size": [121, 100]
+        },
+        "direct.shotgun.crouch.1": {
+          "atlas": [1195, 273, 124, 97],
+          "anchor": [0.3951612903225806, 0.010309278350515427],
+          "sourceSize": [124, 97],
+          "size": [124, 97]
+        },
+        "direct.shotgun.crouch-walk.0": {
+          "atlas": [1060, 273, 127, 97],
+          "anchor": [0.44881889763779526, 0.010309278350515427],
+          "sourceSize": [127, 97],
+          "size": [127, 97]
+        },
+        "direct.shotgun.crouch-walk.1": {
+          "atlas": [1327, 273, 132, 96],
+          "anchor": [0.4318181818181818, 0.01041666666666663],
+          "sourceSize": [132, 96],
+          "size": [132, 96]
+        },
+        "direct.shotgun.crouch-walk.2": {
+          "atlas": [1467, 273, 129, 96],
+          "anchor": [0.4573643410852713, 0.01041666666666663],
+          "sourceSize": [129, 96],
+          "size": [129, 96]
+        },
+        "direct.shotgun.crouch-walk.3": {
+          "atlas": [356, 273, 132, 102],
+          "anchor": [0.44696969696969696, 0.009803921568627416],
+          "sourceSize": [132, 102],
+          "size": [132, 102]
+        },
+        "direct.shotgun.crouch-walk.4": {
+          "atlas": [128, 273, 127, 105],
+          "anchor": [0.4566929133858268, 0.00952380952380949],
+          "sourceSize": [127, 105],
+          "size": [127, 105]
+        },
+        "direct.shotgun.crouch-walk.5": {
+          "atlas": [794, 273, 129, 101],
+          "anchor": [0.4418604651162791, 0.00990099009900991],
+          "sourceSize": [129, 101],
+          "size": [129, 101]
+        },
+        "direct.shotgun.stand-shoot.0": {
+          "atlas": [1020, 4, 139, 127],
+          "anchor": [0.3381294964028777, 0.007874015748031482],
+          "sourceSize": [139, 127],
+          "size": [139, 127]
+        },
+        "direct.shotgun.stand-shoot.1": {
+          "atlas": [407, 142, 101, 123],
+          "anchor": [0.44554455445544555, 0.008130081300813052],
+          "sourceSize": [101, 123],
+          "size": [101, 123]
+        },
+        "direct.shotgun.stand-shoot.4": {
+          "atlas": [1167, 4, 114, 127],
+          "anchor": [0.37719298245614036, 0.007874015748031482],
+          "sourceSize": [114, 127],
+          "size": [114, 127]
+        },
+        "direct.shotgun.run-shoot.0": {
+          "atlas": [137, 142, 119, 123],
+          "anchor": [0.3865546218487395, 0.008130081300813052],
+          "sourceSize": [119, 123],
+          "size": [119, 123]
+        },
+        "direct.shotgun.run-shoot.4": {
+          "atlas": [264, 142, 135, 123],
+          "anchor": [0.42962962962962964, 0.008130081300813052],
+          "sourceSize": [135, 123],
+          "size": [135, 123]
+        },
+        "direct.shotgun.crouch-shoot.0": {
+          "atlas": [496, 273, 140, 101],
+          "anchor": [0.36428571428571427, 0.00990099009900991],
+          "sourceSize": [140, 101],
+          "size": [140, 101]
+        },
+        "direct.shotgun.crouch-shoot.1": {
+          "atlas": [644, 273, 142, 101],
+          "anchor": [0.3380281690140845, 0.0],
+          "sourceSize": [142, 101],
+          "size": [142, 101]
+        },
+        "direct.shotgun.crouch-shoot.2": {
+          "atlas": [1861, 142, 153, 105],
+          "anchor": [0.3333333333333333, 0.00952380952380949],
+          "sourceSize": [153, 105],
+          "size": [153, 105]
+        },
+        "direct.shotgun.crouch-shoot.3": {
+          "atlas": [4, 273, 116, 105],
+          "anchor": [0.45689655172413796, 0.00952380952380949],
+          "sourceSize": [116, 105],
+          "size": [116, 105]
+        },
+        "direct.shotgun.reload.0": {
+          "atlas": [1211, 142, 114, 112],
+          "anchor": [0.40350877192982454, 0.008928571428571397],
+          "sourceSize": [114, 112],
+          "size": [114, 112]
+        },
+        "direct.shotgun.reload.1": {
+          "atlas": [1753, 4, 116, 123],
+          "anchor": [0.4051724137931034, 0.008130081300813052],
+          "sourceSize": [116, 123],
+          "size": [116, 123]
+        },
+        "direct.shotgun.reload.2": {
+          "atlas": [716, 142, 123, 121],
+          "anchor": [0.44715447154471544, 0.008264462809917328],
+          "sourceSize": [123, 121],
+          "size": [123, 121]
+        },
+        "direct.shotgun.reload.3": {
+          "atlas": [1877, 4, 121, 123],
+          "anchor": [0.38016528925619836, 0.0],
+          "sourceSize": [121, 123],
+          "size": [121, 123]
+        },
+        "direct.shotgun.reload.4": {
+          "atlas": [4, 142, 125, 123],
+          "anchor": [0.368, 0.008130081300813052],
+          "sourceSize": [125, 123],
+          "size": [125, 123]
+        },
+        "direct.shotgun.hit.0": {
+          "atlas": [263, 273, 85, 103],
+          "anchor": [0.4235294117647059, 0.0],
+          "sourceSize": [85, 103],
+          "size": [85, 103]
+        },
+        "direct.shotgun.hit.1": {
+          "atlas": [1105, 142, 98, 112],
+          "anchor": [0.4387755102040816, 0.0],
+          "sourceSize": [98, 112],
+          "size": [98, 112]
+        },
+        "direct.shotgun.hit.2": {
+          "atlas": [847, 142, 122, 116],
+          "anchor": [0.4262295081967213, 0.008620689655172376],
+          "sourceSize": [122, 116],
+          "size": [122, 116]
+        },
+        "direct.shotgun.hit.3": {
+          "atlas": [1333, 142, 125, 111],
+          "anchor": [0.4, 0.0],
+          "sourceSize": [125, 111],
+          "size": [125, 111]
+        },
+        "direct.shotgun.death.0": {
+          "atlas": [1604, 273, 105, 93],
+          "anchor": [0.5238095238095238, 0.010752688172043001],
+          "sourceSize": [105, 93],
+          "size": [105, 93]
+        },
+        "direct.shotgun.death.1": {
+          "atlas": [1717, 273, 116, 93],
+          "anchor": [0.5, 0.0],
+          "sourceSize": [116, 93],
+          "size": [116, 93]
+        },
+        "direct.shotgun.death.2": {
+          "atlas": [1841, 273, 102, 73],
+          "anchor": [0.5098039215686274, 0.013698630136986356],
+          "sourceSize": [102, 73],
+          "size": [102, 73]
+        },
+        "direct.shotgun.death.3": {
+          "atlas": [4, 386, 134, 57],
+          "anchor": [0.4701492537313433, 0.0],
+          "sourceSize": [134, 57],
+          "size": [134, 57]
+        },
+        "direct.shotgun.death.4": {
+          "atlas": [296, 386, 156, 49],
+          "anchor": [0.4935897435897436, 0.04081632653061229],
+          "sourceSize": [156, 49],
+          "size": [156, 49]
+        },
+        "direct.shotgun.death.5": {
+          "atlas": [146, 386, 142, 50],
+          "anchor": [0.5, 0.020000000000000018],
+          "sourceSize": [142, 50],
+          "size": [142, 50]
+        }
+      });
+      var ShotgunClips = exports('ShotgunClips', {
+        "shotgun.idle": ["direct.shotgun.idle.0", "direct.shotgun.idle.1", "direct.shotgun.idle.2", "direct.shotgun.idle.3"],
+        "shotgun.run": ["direct.shotgun.run.0", "direct.shotgun.run.1", "direct.shotgun.run.2", "direct.shotgun.run.3", "direct.shotgun.run.4", "direct.shotgun.run.5", "direct.shotgun.run.6", "direct.shotgun.run.7", "direct.shotgun.run.8"],
+        "shotgun.jump": ["direct.shotgun.jump.0", "direct.shotgun.jump.1", "direct.shotgun.jump.2", "direct.shotgun.jump.3"],
+        "shotgun.fall": ["direct.shotgun.fall.0", "direct.shotgun.fall.1"],
+        "shotgun.crouch": ["direct.shotgun.crouch.0", "direct.shotgun.crouch.1"],
+        "shotgun.crouch-walk": ["direct.shotgun.crouch-walk.0", "direct.shotgun.crouch-walk.1", "direct.shotgun.crouch-walk.2", "direct.shotgun.crouch-walk.3", "direct.shotgun.crouch-walk.4", "direct.shotgun.crouch-walk.5"],
+        "shotgun.stand-shoot": ["direct.shotgun.stand-shoot.0", "direct.shotgun.stand-shoot.1", "direct.shotgun.stand-shoot.4"],
+        "shotgun.run-shoot": ["direct.shotgun.run-shoot.0", "direct.shotgun.run-shoot.4"],
+        "shotgun.crouch-shoot": ["direct.shotgun.crouch-shoot.0", "direct.shotgun.crouch-shoot.1", "direct.shotgun.crouch-shoot.2", "direct.shotgun.crouch-shoot.3"],
+        "shotgun.reload": ["direct.shotgun.reload.0", "direct.shotgun.reload.1", "direct.shotgun.reload.2", "direct.shotgun.reload.3", "direct.shotgun.reload.4"],
+        "shotgun.hit": ["direct.shotgun.hit.0", "direct.shotgun.hit.1", "direct.shotgun.hit.2", "direct.shotgun.hit.3"],
+        "shotgun.death": ["direct.shotgun.death.0", "direct.shotgun.death.1", "direct.shotgun.death.2", "direct.shotgun.death.3", "direct.shotgun.death.4", "direct.shotgun.death.5"]
+      });
+      var ShotgunSockets = exports('ShotgunSockets', {
+        "direct.shotgun.idle.0": [47.6, 39.9],
+        "direct.shotgun.idle.1": [44.1, 37.8],
+        "direct.shotgun.idle.2": [45.5, 37.8],
+        "direct.shotgun.idle.3": [49.0, 37.8],
+        "direct.shotgun.run.0": [35.7, 37.8],
+        "direct.shotgun.run.1": [31.5, 36.4],
+        "direct.shotgun.run.2": [32.2, 42.7],
+        "direct.shotgun.run.3": [35.7, 42.7],
+        "direct.shotgun.run.4": [32.2, 42.0],
+        "direct.shotgun.run.5": [31.5, 42.0],
+        "direct.shotgun.run.6": [33.6, 45.5],
+        "direct.shotgun.run.7": [36.4, 45.5],
+        "direct.shotgun.run.8": [37.1, 41.3],
+        "direct.shotgun.jump.0": [46.9, 38.5],
+        "direct.shotgun.jump.1": [45.5, 58.8],
+        "direct.shotgun.jump.2": [45.5, 57.4],
+        "direct.shotgun.jump.3": [48.3, 36.4],
+        "direct.shotgun.fall.0": [51.1, 49.7],
+        "direct.shotgun.fall.1": [56.7, 51.8],
+        "direct.shotgun.crouch.0": [47.6, 31.5],
+        "direct.shotgun.crouch.1": [50.4, 29.4],
+        "direct.shotgun.crouch-walk.0": [46.9, 28.7],
+        "direct.shotgun.crouch-walk.1": [50.4, 29.4],
+        "direct.shotgun.crouch-walk.2": [47.6, 27.3],
+        "direct.shotgun.crouch-walk.3": [49.0, 31.5],
+        "direct.shotgun.crouch-walk.4": [46.2, 32.9],
+        "direct.shotgun.crouch-walk.5": [48.3, 31.5],
+        "direct.shotgun.stand-shoot.0": [33.6, 46.9],
+        "direct.shotgun.stand-shoot.1": [37.8, 44.8],
+        "direct.shotgun.stand-shoot.4": [47.6, 46.2],
+        "direct.shotgun.run-shoot.0": [48.3, 46.2],
+        "direct.shotgun.run-shoot.4": [23.8, 46.9],
+        "direct.shotgun.crouch-shoot.0": [32.2, 33.6],
+        "direct.shotgun.crouch-shoot.1": [40.6, 35.7],
+        "direct.shotgun.crouch-shoot.2": [46.2, 37.8],
+        "direct.shotgun.crouch-shoot.3": [42.0, 37.8],
+        "direct.shotgun.reload.0": [45.5, 32.2],
+        "direct.shotgun.reload.1": [46.2, 46.2],
+        "direct.shotgun.reload.2": [45.5, 46.9],
+        "direct.shotgun.reload.3": [49.7, 34.3],
+        "direct.shotgun.reload.4": [53.2, 41.3],
+        "direct.shotgun.hit.0": [30.8, 44.8],
+        "direct.shotgun.hit.1": [34.3, 45.5],
+        "direct.shotgun.hit.2": [42.0, 39.9],
+        "direct.shotgun.hit.3": [21.7, 53.2],
+        "direct.shotgun.death.0": [31.5, 55.3],
+        "direct.shotgun.death.1": [34.3, 58.8],
+        "direct.shotgun.death.2": [30.8, 46.2],
+        "direct.shotgun.death.3": [46.9, 16.8],
+        "direct.shotgun.death.4": [53.2, 11.9],
+        "direct.shotgun.death.5": [47.6, 13.3]
+      });
       cclegacy._RF.pop();
     }
   };

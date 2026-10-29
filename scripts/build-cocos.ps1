@@ -11,8 +11,9 @@ $configPath = Join-Path $projectPath "build-config\$Platform.json"
 $logPath = Join-Path $projectPath "build-$Platform.log"
 $stdoutPath = Join-Path $projectPath "build-$Platform.stdout.log"
 $stderrPath = Join-Path $projectPath "build-$Platform.stderr.log"
-$process = Start-Process -FilePath $Creator -ArgumentList @('--project', ('"' + $projectPath + '"'), '--build', ('"configPath=' + $configPath + ';logDest=' + $logPath + '"')) -WindowStyle Hidden -PassThru -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath
-$process.WaitForExit()
+# -Wait retains the completed process exit code under Windows PowerShell 5.1.
+# Waiting on the returned Process later can leave ExitCode null in that host.
+$process = Start-Process -FilePath $Creator -ArgumentList @('--project', ('"' + $projectPath + '"'), '--build', ('"configPath=' + $configPath + ';logDest=' + $logPath + '"')) -WindowStyle Hidden -Wait -PassThru -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath
 if ($process.ExitCode -ne 36 -and $process.ExitCode -ne 0) { throw "Creator build failed ($($process.ExitCode)). See $logPath and $stderrPath" }
 $entry = if ($Platform -eq 'web-mobile') { 'index.html' } else { 'game.js' }
 if (-not (Test-Path -LiteralPath (Join-Path $projectPath "build\$Platform\$entry"))) { throw 'Creator exited without a build artifact.' }

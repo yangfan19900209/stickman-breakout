@@ -24,14 +24,13 @@ test('terrain and platforms repeat at fixed scale, crop remainders, cover arbitr
   for(let x=123+.01;x<123+width;x+=.5)assert.ok(tiles.some(t=>x>=t.x-.001&&x<=t.x+t.crop[2]*scale+.001&&y>=t.y&&y<=t.y+t.crop[3]*scale),`gap ${x}/${width}`);
  }
 });
-test('rocket uses complete native poses, shotgun uses gun-free bodies, returning to rifle restores its baked frame',()=>{
+test('rocket and shotgun use complete native poses, returning to rifle restores its baked frame',()=>{
  const poses=[{}, {animation:'Run',vx:280,stride:.2},{animation:'Jump'}, {animation:'Fall'},
   {crouched:true},{crouched:true,vx:100,stride:.3},{recoil:1},{recoil:1,vx:280,stride:.5},{crouched:true,recoil:1},{animation:'Hit',hitTime:.22},{animation:'Hit',hitTime:.12}];
  for(const weaponId of ['rifle','shotgun','rocket'])for(const pose of poses){
   const a={...base,...pose,weaponId},e=comicEquipment(a);
   if(weaponId==='rifle')assert.equal(e.weapon,null);
-  else if(weaponId==='rocket'){assert.equal(e.weapon,null);assert.equal(e.grip,null);assert.equal(e.bakedWeapon,'rocket');assert.ok(e.body.startsWith('direct.rocket.'));}
-  else {assert.equal(e.weapon,'weapon.'+weaponId);assert.equal(e.bakedRifle,false);if(('unarmed.'+e.pose) in ComicFrames)assert.ok(e.body.startsWith('unarmed.'));}
+  else {assert.equal(e.weapon,null);assert.equal(e.grip,null);assert.equal(e.bakedWeapon,weaponId);assert.equal(e.bakedRifle,false);assert.ok(e.body.startsWith(`direct.${weaponId}.`));}
  }
  assert.equal(comicEquipment({...base,aimPitch:Math.PI/2,weaponId:'rifle'}).bakedRifle,false);
  for(const special of [{animation:'Dead'}, {throwTime:.2}, {meleeTime:.2}])assert.equal(comicEquipment({...base,...special,weaponId:'rocket'}).weapon,null);

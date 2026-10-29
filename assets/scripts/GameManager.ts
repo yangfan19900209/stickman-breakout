@@ -29,7 +29,7 @@ import { ComicAssets } from "./render/ComicAssets";
 import { ComicLevelRenderer } from "./render/ComicLevelRenderer";
 import { comicPose } from "./render/ComicPose";
 import { comicEquipment } from "./render/ComicEquipment";
-import { DirectClips } from "./render/DirectFrames";
+import { DirectActorClips } from "./render/DirectPose";
 const { ccclass } = _decorator;
 @ccclass("GameManager")
 export class GameManager extends Component {
@@ -65,13 +65,13 @@ export class GameManager extends Component {
       await ComicAssets.load();
       this.session.weapon.canPresent = id => !ComicAssets.enabled ||
         ComicAssets.has(`weapon.${id}`) &&
-        (id !== "knife" && id !== "rocket" || Object.entries(DirectClips)
+        (id === "rifle" || Object.entries(DirectActorClips)
           .filter(([clip])=>clip.startsWith(id+"."))
           .every(([,frames])=>frames.every(frame=>ComicAssets.has(frame))));
       this.initialize();
       this.ready = true;
       console.info(
-        "[Breakout] V0.5.7 ready; complete supplied knife/rocket actions and native modular terrain.",
+        "[Breakout] V0.5.8 ready; complete shotgun/knife/rocket soldiers and slower player rifle rounds.",
       );
     } catch (error) {
       console.error("[Breakout] Initialization failed", error);
