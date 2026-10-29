@@ -9,6 +9,8 @@
 - 严格类型检查、120项逻辑回归和2项正式Web专项浏览器测试通过。真实拾取后，269个渲染采样无空白/额外枪层，8次切刀再切回正常，蹲行开火使用全部6帧；普通弹速已按实际位移测得760。
 - Web / 微信小游戏构建完成。微信本轮未上传，真机未测；专项浏览器回归不等于重跑浏览器整关。源图有6个重叠/截断射击姿势未采用，专用高角度/蹲行射击图仍缺少；详情见 [本轮交付](art/V058-DELIVERY.md)、[切片预览](art/v058-preview.html)、[验收报告](reports/v058-verification.json)。
 
+GitHub Pages已更新为 **V0.5.8**（2026-10-29）：[立即试玩](https://yangfan19900209.github.io/stickman-breakout/)。发布提交 `6f3e040`，沿用 `main/docs`；[部署运行40801358696](https://github.com/yangfan19900209/stickman-breakout/actions/runs/40801358696)成功。正式站点54个文件与构建逐字节一致，PC移动/跳跃/射击/暂停、模拟手机三点触控/松手/右侧空白射击、竖屏暂停与旋转恢复通过，0应用错误/失败请求。见 [线上检查](reports/github-pages-verification.json)、[发布回执](reports/github-pages-deployment-v058.json)。
+
 ## 历史发布状态（V0.5.7）
 
 GitHub Pages 已部署（2026-10-28）：[立即试玩 V0.5.7](https://yangfan19900209.github.io/stickman-breakout/)。源码与网页包已推送到 `main`，沿用 `main/docs` 发布源，GitHub Pages构建与部署成功。线上52个文件与已验证Web构建逐字节一致；启动、键盘移动/跳跃/射击、暂停恢复、手机横屏三点触控/松手、右侧空白区射击、竖屏暂停和旋转恢复均通过，应用错误和失败请求为0。见 [线上验证](reports/github-pages-verification.json)、[部署记录](reports/github-pages-deployment-v057.json)及[本地发布目录验证](reports/github-pages-v057-local-verification.json)。本次重新通过严格类型检查和114项逻辑测试；手机检查为浏览器模拟，未测真实手机。
