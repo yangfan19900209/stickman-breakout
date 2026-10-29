@@ -1,0 +1,1183 @@
+{
+  "version": "0.5.9",
+  "sources": [
+    {
+      "file": "art/source/v059/重装机甲Boss.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "7ce247f8dade05c2bc687fffedefd0f77940197119395196840ad19cce9a0cdc",
+      "transparentPixels": 782314
+    },
+    {
+      "file": "art/source/v059/机甲攻击与预警.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "d088a93c7f162b06456f8da784cc21d4c7c6d312781991b74f6b85ee34b21286",
+      "transparentPixels": 454305
+    },
+    {
+      "file": "art/source/v059/Boss弹体与特效.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "19d46e088500eca265b502b96427f16d7770a1822c0c8cc4528cd062f4dfbe68",
+      "transparentPixels": 782052
+    }
+  ],
+  "frames": [
+    {
+      "id": "mech.idle",
+      "source": 0,
+      "crop": [
+        28,
+        8,
+        566,
+        374
+      ],
+      "trim": [
+        9,
+        6,
+        529,
+        358
+      ],
+      "origin": [
+        37,
+        14
+      ],
+      "size": [
+        520,
+        352
+      ],
+      "sourceSize": [
+        520,
+        352
+      ],
+      "anchor": [
+        0.573076923076923,
+        -0.0028409090909091717
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        335,
+        367
+      ],
+      "file": "art/slices/v059/mech.idle.png",
+      "sockets": {
+        "muzzle": [
+          49,
+          195
+        ],
+        "core": [
+          336,
+          137
+        ],
+        "leftPod": [
+          215,
+          69
+        ],
+        "rightPod": [
+          465,
+          72
+        ]
+      },
+      "atlas": [
+        423,
+        4,
+        520,
+        352
+      ]
+    },
+    {
+      "id": "mech.step.0",
+      "source": 0,
+      "crop": [
+        578,
+        10,
+        1010,
+        375
+      ],
+      "trim": [
+        10,
+        5,
+        421,
+        363
+      ],
+      "origin": [
+        588,
+        15
+      ],
+      "size": [
+        411,
+        358
+      ],
+      "sourceSize": [
+        411,
+        358
+      ],
+      "anchor": [
+        0.5255474452554745,
+        0.013966480446927387
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        804,
+        368
+      ],
+      "file": "art/slices/v059/mech.step.0.png",
+      "sockets": {
+        "muzzle": [
+          601,
+          194
+        ],
+        "core": [
+          835,
+          142
+        ],
+        "leftPod": [
+          712,
+          66
+        ],
+        "rightPod": [
+          919,
+          79
+        ]
+      },
+      "atlas": [
+        4,
+        4,
+        411,
+        358
+      ]
+    },
+    {
+      "id": "mech.step.1",
+      "source": 0,
+      "crop": [
+        1020,
+        14,
+        1448,
+        373
+      ],
+      "trim": [
+        14,
+        7,
+        404,
+        350
+      ],
+      "origin": [
+        1034,
+        21
+      ],
+      "size": [
+        390,
+        343
+      ],
+      "sourceSize": [
+        390,
+        343
+      ],
+      "anchor": [
+        0.5025641025641026,
+        -0.00291545189504383
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        1230,
+        365
+      ],
+      "file": "art/slices/v059/mech.step.1.png",
+      "sockets": {
+        "muzzle": [
+          1049,
+          199
+        ],
+        "core": [
+          1290,
+          141
+        ],
+        "leftPod": [
+          1178,
+          67
+        ],
+        "rightPod": [
+          1374,
+          82
+        ]
+      },
+      "atlas": [
+        1311,
+        4,
+        390,
+        343
+      ]
+    },
+    {
+      "id": "mech.charge",
+      "source": 0,
+      "crop": [
+        5,
+        411,
+        553,
+        760
+      ],
+      "trim": [
+        7,
+        7,
+        548,
+        349
+      ],
+      "origin": [
+        12,
+        418
+      ],
+      "size": [
+        541,
+        342
+      ],
+      "sourceSize": [
+        541,
+        342
+      ],
+      "anchor": [
+        0.5415896487985212,
+        0.023391812865497075
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        305,
+        752
+      ],
+      "file": "art/slices/v059/mech.charge.png",
+      "sockets": {
+        "muzzle": [
+          58,
+          519
+        ],
+        "core": [
+          301,
+          535
+        ],
+        "leftPod": [
+          210,
+          462
+        ],
+        "rightPod": [
+          458,
+          476
+        ]
+      },
+      "atlas": [
+        4,
+        370,
+        541,
+        342
+      ]
+    },
+    {
+      "id": "mech.damaged",
+      "source": 0,
+      "crop": [
+        1078,
+        388,
+        1445,
+        758
+      ],
+      "trim": [
+        0,
+        10,
+        352,
+        359
+      ],
+      "origin": [
+        1078,
+        398
+      ],
+      "size": [
+        352,
+        349
+      ],
+      "sourceSize": [
+        352,
+        349
+      ],
+      "anchor": [
+        0.5454545454545454,
+        0.0
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        1270,
+        747
+      ],
+      "file": "art/slices/v059/mech.damaged.png",
+      "sockets": {
+        "muzzle": [
+          1101,
+          580
+        ],
+        "core": [
+          1280,
+          565
+        ],
+        "leftPod": [
+          1190,
+          488
+        ],
+        "rightPod": [
+          1355,
+          485
+        ]
+      },
+      "atlas": [
+        951,
+        4,
+        352,
+        349
+      ]
+    },
+    {
+      "id": "mech.collapse",
+      "source": 0,
+      "crop": [
+        245,
+        758,
+        700,
+        1086
+      ],
+      "trim": [
+        26,
+        0,
+        444,
+        316
+      ],
+      "origin": [
+        271,
+        758
+      ],
+      "size": [
+        418,
+        316
+      ],
+      "sourceSize": [
+        418,
+        316
+      ],
+      "anchor": [
+        0.48564593301435405,
+        0.02848101265822789
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        474,
+        1065
+      ],
+      "file": "art/slices/v059/mech.collapse.png",
+      "sockets": {
+        "muzzle": [
+          309,
+          976
+        ],
+        "core": [
+          489,
+          905
+        ]
+      },
+      "atlas": [
+        553,
+        370,
+        418,
+        316
+      ]
+    },
+    {
+      "id": "mech.wreck",
+      "source": 0,
+      "crop": [
+        740,
+        790,
+        1448,
+        1086
+      ],
+      "trim": [
+        0,
+        2,
+        683,
+        281
+      ],
+      "origin": [
+        740,
+        792
+      ],
+      "size": [
+        683,
+        279
+      ],
+      "sourceSize": [
+        683,
+        279
+      ],
+      "anchor": [
+        0.5124450951683748,
+        0.017921146953404965
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        1090,
+        1066
+      ],
+      "file": "art/slices/v059/mech.wreck.png",
+      "sockets": {
+        "core": [
+          1100,
+          958
+        ]
+      },
+      "atlas": [
+        979,
+        370,
+        683,
+        279
+      ]
+    },
+    {
+      "id": "mech.warning",
+      "source": 1,
+      "crop": [
+        20,
+        925,
+        246,
+        1086
+      ],
+      "trim": [
+        11,
+        0,
+        175,
+        146
+      ],
+      "origin": [
+        31,
+        925
+      ],
+      "size": [
+        164,
+        146
+      ],
+      "sourceSize": [
+        164,
+        146
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        113.0,
+        998.0
+      ],
+      "file": "art/slices/v059/mech.warning.png",
+      "sockets": {},
+      "atlas": [
+        4,
+        720,
+        164,
+        146
+      ]
+    },
+    {
+      "id": "mech.ground-ring",
+      "source": 1,
+      "crop": [
+        478,
+        932,
+        788,
+        1082
+      ],
+      "trim": [
+        27,
+        24,
+        220,
+        105
+      ],
+      "origin": [
+        505,
+        956
+      ],
+      "size": [
+        193,
+        81
+      ],
+      "sourceSize": [
+        193,
+        81
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        601.5,
+        996.5
+      ],
+      "file": "art/slices/v059/mech.ground-ring.png",
+      "sockets": {},
+      "atlas": [
+        4,
+        874,
+        193,
+        81
+      ]
+    },
+    {
+      "id": "mech.round",
+      "source": 2,
+      "crop": [
+        43,
+        36,
+        111,
+        93
+      ],
+      "trim": [
+        14,
+        22,
+        61,
+        44
+      ],
+      "origin": [
+        57,
+        58
+      ],
+      "size": [
+        47,
+        22
+      ],
+      "sourceSize": [
+        47,
+        22
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        80.5,
+        69.0
+      ],
+      "file": "art/slices/v059/mech.round.png",
+      "sockets": {},
+      "atlas": [
+        750,
+        874,
+        47,
+        22
+      ]
+    },
+    {
+      "id": "mech.round-heavy",
+      "source": 2,
+      "crop": [
+        42,
+        208,
+        215,
+        294
+      ],
+      "trim": [
+        6,
+        4,
+        165,
+        74
+      ],
+      "origin": [
+        48,
+        212
+      ],
+      "size": [
+        159,
+        70
+      ],
+      "sourceSize": [
+        159,
+        70
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        127.5,
+        247.0
+      ],
+      "file": "art/slices/v059/mech.round-heavy.png",
+      "sockets": {},
+      "atlas": [
+        474,
+        874,
+        159,
+        70
+      ]
+    },
+    {
+      "id": "mech.missile",
+      "source": 2,
+      "crop": [
+        797,
+        198,
+        914,
+        293
+      ],
+      "trim": [
+        5,
+        9,
+        106,
+        73
+      ],
+      "origin": [
+        802,
+        207
+      ],
+      "size": [
+        101,
+        64
+      ],
+      "sourceSize": [
+        101,
+        64
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        852.5,
+        239.0
+      ],
+      "file": "art/slices/v059/mech.missile.png",
+      "sockets": {},
+      "atlas": [
+        641,
+        874,
+        101,
+        64
+      ]
+    },
+    {
+      "id": "mech.missile-fire",
+      "source": 2,
+      "crop": [
+        926,
+        202,
+        1117,
+        295
+      ],
+      "trim": [
+        7,
+        2,
+        180,
+        75
+      ],
+      "origin": [
+        933,
+        204
+      ],
+      "size": [
+        173,
+        73
+      ],
+      "sourceSize": [
+        173,
+        73
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        1019.5,
+        240.5
+      ],
+      "file": "art/slices/v059/mech.missile-fire.png",
+      "sockets": {},
+      "atlas": [
+        205,
+        874,
+        173,
+        73
+      ]
+    },
+    {
+      "id": "mech.orb",
+      "source": 2,
+      "crop": [
+        40,
+        341,
+        165,
+        464
+      ],
+      "trim": [
+        16,
+        15,
+        109,
+        110
+      ],
+      "origin": [
+        56,
+        356
+      ],
+      "size": [
+        93,
+        95
+      ],
+      "sourceSize": [
+        93,
+        95
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        102.5,
+        403.5
+      ],
+      "file": "art/slices/v059/mech.orb.png",
+      "sockets": {},
+      "atlas": [
+        1469,
+        720,
+        93,
+        95
+      ]
+    },
+    {
+      "id": "mech.beam",
+      "source": 2,
+      "crop": [
+        824,
+        400,
+        1425,
+        513
+      ],
+      "trim": [
+        9,
+        0,
+        575,
+        113
+      ],
+      "origin": [
+        833,
+        400
+      ],
+      "size": [
+        566,
+        113
+      ],
+      "sourceSize": [
+        566,
+        113
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        1116.0,
+        456.5
+      ],
+      "file": "art/slices/v059/mech.beam.png",
+      "sockets": {},
+      "atlas": [
+        616,
+        720,
+        566,
+        113
+      ]
+    },
+    {
+      "id": "mech.target",
+      "source": 2,
+      "crop": [
+        1020,
+        518,
+        1438,
+        742
+      ],
+      "trim": [
+        27,
+        0,
+        382,
+        214
+      ],
+      "origin": [
+        1047,
+        518
+      ],
+      "size": [
+        355,
+        214
+      ],
+      "sourceSize": [
+        355,
+        214
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        1224.5,
+        625.0
+      ],
+      "file": "art/slices/v059/mech.target.png",
+      "sockets": {},
+      "atlas": [
+        1670,
+        370,
+        355,
+        214
+      ]
+    },
+    {
+      "id": "mech.muzzle",
+      "source": 2,
+      "crop": [
+        262,
+        625,
+        418,
+        739
+      ],
+      "trim": [
+        4,
+        21,
+        147,
+        114
+      ],
+      "origin": [
+        266,
+        646
+      ],
+      "size": [
+        143,
+        93
+      ],
+      "sourceSize": [
+        143,
+        93
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        337.5,
+        692.5
+      ],
+      "file": "art/slices/v059/mech.muzzle.png",
+      "sockets": {},
+      "atlas": [
+        1706,
+        720,
+        143,
+        93
+      ]
+    },
+    {
+      "id": "mech.hit",
+      "source": 2,
+      "crop": [
+        27,
+        842,
+        137,
+        950
+      ],
+      "trim": [
+        33,
+        0,
+        107,
+        96
+      ],
+      "origin": [
+        60,
+        842
+      ],
+      "size": [
+        74,
+        96
+      ],
+      "sourceSize": [
+        74,
+        96
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        97.0,
+        890.0
+      ],
+      "file": "art/slices/v059/mech.hit.png",
+      "sockets": {},
+      "atlas": [
+        1387,
+        720,
+        74,
+        96
+      ]
+    },
+    {
+      "id": "mech.blast.0",
+      "source": 2,
+      "crop": [
+        32,
+        952,
+        133,
+        1062
+      ],
+      "trim": [
+        7,
+        32,
+        87,
+        104
+      ],
+      "origin": [
+        39,
+        984
+      ],
+      "size": [
+        80,
+        72
+      ],
+      "sourceSize": [
+        80,
+        72
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        79.0,
+        1020.0
+      ],
+      "file": "art/slices/v059/mech.blast.0.png",
+      "sockets": {},
+      "atlas": [
+        386,
+        874,
+        80,
+        72
+      ]
+    },
+    {
+      "id": "mech.blast.1",
+      "source": 2,
+      "crop": [
+        129,
+        931,
+        293,
+        1086
+      ],
+      "trim": [
+        18,
+        37,
+        146,
+        131
+      ],
+      "origin": [
+        147,
+        968
+      ],
+      "size": [
+        128,
+        94
+      ],
+      "sourceSize": [
+        128,
+        94
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        211.0,
+        1015.0
+      ],
+      "file": "art/slices/v059/mech.blast.1.png",
+      "sockets": {},
+      "atlas": [
+        1570,
+        720,
+        128,
+        94
+      ]
+    },
+    {
+      "id": "mech.blast.2",
+      "source": 2,
+      "crop": [
+        295,
+        926,
+        556,
+        1086
+      ],
+      "trim": [
+        5,
+        20,
+        206,
+        143
+      ],
+      "origin": [
+        300,
+        946
+      ],
+      "size": [
+        201,
+        123
+      ],
+      "sourceSize": [
+        201,
+        123
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        400.5,
+        1007.5
+      ],
+      "file": "art/slices/v059/mech.blast.2.png",
+      "sockets": {},
+      "atlas": [
+        176,
+        720,
+        201,
+        123
+      ]
+    },
+    {
+      "id": "mech.blast.3",
+      "source": 2,
+      "crop": [
+        555,
+        920,
+        790,
+        1086
+      ],
+      "trim": [
+        0,
+        30,
+        189,
+        142
+      ],
+      "origin": [
+        555,
+        950
+      ],
+      "size": [
+        189,
+        112
+      ],
+      "sourceSize": [
+        189,
+        112
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        649.5,
+        1006.0
+      ],
+      "file": "art/slices/v059/mech.blast.3.png",
+      "sockets": {},
+      "atlas": [
+        1190,
+        720,
+        189,
+        112
+      ]
+    },
+    {
+      "id": "mech.smoke",
+      "source": 2,
+      "crop": [
+        782,
+        932,
+        1014,
+        1080
+      ],
+      "trim": [
+        9,
+        4,
+        232,
+        124
+      ],
+      "origin": [
+        791,
+        936
+      ],
+      "size": [
+        223,
+        120
+      ],
+      "sourceSize": [
+        223,
+        120
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 0.8,
+      "pivotSource": [
+        902.5,
+        996.0
+      ],
+      "file": "art/slices/v059/mech.smoke.png",
+      "sockets": {},
+      "atlas": [
+        385,
+        720,
+        223,
+        120
+      ]
+    }
+  ],
+  "textureSize": [
+    2048,
+    1024
+  ],
+  "textureBytes": 295406,
+  "extrusion": 4,
+  "padding": 8,
+  "notes": [
+    "Whole native mech drawings; no procedural armor, gun attachments or alternate small mech layered underneath.",
+    "The large missile-firing pose embeds detached missiles; use the clean complete idle/charge body with real shoulder projectiles instead of duplicating painted missiles.",
+    "Attack sheet supplies warning/ground/shock rings; projectile sheet supplies real boss rounds, missiles, beam, impacts, smoke and staged destruction."
+  ]
+}

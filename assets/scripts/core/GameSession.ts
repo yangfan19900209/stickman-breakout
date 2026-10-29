@@ -210,6 +210,7 @@ export class GameSession {
             130,
             0,
             "player",
+            'boss',
           );
         for (const p of this.projectiles.items)
           if (p.owner === "enemy") p.active = false;
@@ -230,7 +231,9 @@ export class GameSession {
       this.player.x,
       dt,
       this.level.data.width,
-      this.player.facing,
+      // Keep the giant in view during a brief evasive turn. Character facing
+      // and free retreat remain independent of this camera-only look-ahead.
+      this.level.arenaEntered ? (this.player.x<this.spawner.guard.x?1:-1) : this.player.facing,
       this.player.y,
       this.level.arenaEntered && this.level.data.arena
         ? this.level.data.arena.start - this.camera.visibleWidth * 0.25
@@ -317,6 +320,7 @@ export class GameSession {
           homing: p.homing,
           locked: !!p.target?.alive,
           age:p.age,
+          visual:p.visual,
         })),
       remaining: this.spawner.remaining,
       guardHealth: this.spawner.guard.health,
@@ -339,6 +343,8 @@ export class GameSession {
         warningTime: this.spawner.guard.warningTime,
         windup: this.spawner.guard.windup,
         summons: this.spawner.guard.summons,
+        beam:this.spawner.guard instanceof ColossusBoss?{active:this.spawner.guard.beam.active,time:this.spawner.guard.beam.time,x:this.spawner.guard.beam.x,y:this.spawner.guard.beam.y,endX:this.spawner.guard.beam.endX,endY:this.spawner.guard.beam.endY,length:this.spawner.guard.beam.length,angle:this.spawner.guard.beam.angle,hits:this.spawner.guard.beam.hits}:null,
+        attackCounts:this.spawner.guard instanceof ColossusBoss?this.spawner.guard.attackCounts:null,
       },
       miniBoss: this.spawner.miniBoss
         ? {

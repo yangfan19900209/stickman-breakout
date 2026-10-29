@@ -5,7 +5,10 @@ import type { LevelController } from "../level/LevelController";
 import type { PlayerController } from "../player/PlayerController";
 import type { ProjectileManager } from "../combat/ProjectileManager";
 import { EnemyController } from "./EnemyController";
-export type ColossusAttack = "salvo" | "sweep" | "stomp";
+import { BossBeam } from "../combat/BossBeam";
+import { colossusSocket } from "../render/ColossusPresentation";
+export type ColossusAttack = "salvo" | "sweep" | "stomp" | "laser" | "missiles" | "burst";
+export const ColossusAttackNames:Record<ColossusAttack,string>={salvo:'重炮轰击',sweep:'瞄准连射',stomp:'踏地冲击',laser:'蓄能激光',missiles:'肩部导弹',burst:'扇形机炮'};
 
 /** Towering final encounter. Locked warnings, distinct attacks, bounded pressure, free retreat. */
 export class ColossusBoss extends EnemyController {
@@ -19,6 +22,12 @@ export class ColossusBoss extends EnemyController {
   warningY = 150;
   summons = 0;
   impactSerial = 0;
+  readonly beam=new BossBeam();
+  readonly attackCounts:Record<ColossusAttack,number>={salvo:0,sweep:0,stomp:0,laser:0,missiles:0,burst:0};
+  private emissionIndex=0;
+  get laserTime(){return this.beam.time;}
+  get attackName(){return ColossusAttackNames[this.attack];}
+  get muzzle(){return colossusSocket(this);}
   onSummon?: (x: number) => void;
   private introduced = false;
   private sequence = 0;
@@ -60,6 +69,7 @@ export class ColossusBoss extends EnemyController {
       this.mode = "destroyed";
       this.warningTime = this.windup = 0;
       this.pendingShots = 0;
+      this.beam.stop();
     }
     return true;
   }
@@ -82,9 +92,10 @@ export class ColossusBoss extends EnemyController {
       this.mode = "dormant";
       this.windup = this.warningTime = 0;
       this.pendingShots = 0;
+      this.beam.stop();
       return;
     }
-    this.facing = p.x > this.x ? 1 : -1;
+    if(this.windup===0&&this.pendingShots===0&&!this.beam.active)this.facing=p.x>this.x?1:-1;
     if (!this.introduced) {
       this.mode = "entering";
       this.state = "Idle";
@@ -104,9 +115,9 @@ export class ColossusBoss extends EnemyController {
     if (this.pendingShots > 0) {
       this.shotDelay -= dt;
       if (this.shotDelay <= 0) {
-        this.emit(shots, this.pendingShots);
+        this.emit(shots, ++this.emissionIndex);
         this.pendingShots--;
-        this.shotDelay = 0.18;
+        this.shotDelay = this.attack==='burst'?.14:this.attack==='missiles'?.24:.18;
       }
     }
     if (
@@ -114,9 +125,10 @@ export class ColossusBoss extends EnemyController {
       this.windup === 0 &&
       this.pendingShots === 0
     ) {
-      this.attack = (["salvo", "stomp", "sweep"] as const)[this.sequence++ % 3];
+      this.attack = (["salvo", "stomp", "laser", "missiles", "sweep", "burst"] as const)[this.sequence++ % 6];
       this.windup =
-        this.phase === 1 ? C.colossus.firstWindup : C.colossus.secondWindup;
+        this.attack==='laser'?C.colossus.laserWindup*(this.phase===2?.84:1):this.phase === 1 ? C.colossus.firstWindup : C.colossus.secondWindup;
+      this.emissionIndex=0;
       this.warningX = clamp(
         p.x + p.vx * 0.18,
         (level.data.arena?.start ?? 0) + 60,
@@ -126,7 +138,7 @@ export class ColossusBoss extends EnemyController {
       this.lockedY = p.y + 35;
       this.warningTime =
         this.windup +
-        (this.attack === "salvo" ? C.colossus.shellFlight + 0.4 : 0.35);
+        (this.attack==='missiles'?C.colossus.missileFlight+.7:this.attack === "salvo" ? C.colossus.shellFlight + 0.4 : 0.35);
       this.mode = "aiming";
     }
     if (this.windup > 0) {
@@ -134,7 +146,7 @@ export class ColossusBoss extends EnemyController {
       if (this.windup === 0) {
         this.emit(shots, 0);
         this.pendingShots =
-          this.attack === "stomp" ? 0 : this.phase === 2 ? 2 : 1;
+          this.attack === "stomp" || this.attack==='laser' ? 0 : this.phase === 2 ? 2 : 1;
         this.shotDelay = 0.18;
         this.attackCooldown =
           this.phase === 1
@@ -143,11 +155,18 @@ export class ColossusBoss extends EnemyController {
         this.mode = "recovering";
       }
     }
+    this.beam.update(dt,p,level.solids);
     if (Math.abs(p.x - this.x) < 132 && p.y < this.y + 200)
       p.takeDamage(1, p.x < this.x ? -1 : 1);
   }
   private emit(shots: ProjectileManager, index: number): void {
     this.recoil = 2;
+    if(index===0)this.attackCounts[this.attack]++;
+    if(this.attack==='laser'){
+      this.beam.start(this.muzzle,{x:this.warningX,y:this.lockedY},C.colossus.laserRange,C.colossus.laserDuration);
+      this.impactSerial++;
+      return;
+    }
     if (this.attack === "stomp") {
       this.impactSerial++;
       for (const d of [-1, 1] as const)
@@ -164,11 +183,12 @@ export class ColossusBoss extends EnemyController {
       shots.particles.blast(this.x, this.y + 15, 80, this.y);
       return;
     }
-    const x = this.x + this.facing * 132,
-      y = this.y + (this.attack === "salvo" ? 226 : 138);
+    const socket=this.attack==='missiles'?colossusSocket(this,index%2?'rightPod':'leftPod'):this.muzzle;
+    const {x,y}=socket;
     const target = this.warningX + (index === 0 ? 0 : index % 2 ? 90 : -90);
-    if (this.attack === "salvo") {
-      const flight = C.colossus.shellFlight,
+    if (this.attack === "salvo" || this.attack==='missiles') {
+      const missile=this.attack==='missiles';
+      const flight = missile?C.colossus.missileFlight:C.colossus.shellFlight,
         vx = (target - x) / flight,
         vy = (this.warningY - y + 0.5 * 800 * flight * flight) / flight;
       shots.spawn({
@@ -181,24 +201,27 @@ export class ColossusBoss extends EnemyController {
         damage: 1,
         range: 2000,
         gravity: 800,
-        kind: "cannon",
+        kind: missile?'rocket':'cannon',
         blastRadius: 65,
+        visual:missile?'mech-missile':'mech-shell',
       });
     } else {
       const pitch =
         Math.atan2(this.lockedY - y, Math.abs(this.warningX - x)) +
         (index === 0 ? 0 : index % 2 ? 0.055 : -0.055);
-      shots.spawn({
+      const spread=this.attack==='burst'?[-C.colossus.burstSpread,0,C.colossus.burstSpread]:[0];
+      for(const offset of spread)shots.spawn({
         owner: "enemy",
         x,
         y,
         direction: this.facing,
-        pitch,
-        speed: 360,
+        pitch:pitch+offset,
+        speed: this.attack==='burst'?C.colossus.burstSpeed:360,
         damage: 1,
         range: 1450,
-        kind: "cannon",
-        blastRadius: 35,
+        kind: this.attack==='burst'?'bullet':'cannon',
+        blastRadius: this.attack==='burst'?0:35,
+        visual:this.attack==='burst'?'mech-round':'mech-shell',
       });
     }
   }

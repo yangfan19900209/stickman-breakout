@@ -1,0 +1,188 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/v059-boss-crates.spec.ts",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "v059-boss-crates.spec.ts",
+      "file": "v059-boss-crates.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real shots crack one full-sized crate before it breaks, removes collision and releases the pickup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4992,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T07:14:39.357Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f2ecf2679355af795d3-1a27db7e8c09225c835a",
+          "file": "v059-boss-crates.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "real-keyboard full campaign renders the supplied mech, all six attacks, both phases and destruction before completion",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 360000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 204989,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^mech\\./\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^mech\\./\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v059-boss-crates.spec.ts:44:97",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v059-boss-crates.spec.ts",
+                      "column": 97,
+                      "line": 44
+                    },
+                    "snippet": "  42 |   if(s.time-lastTrace>=5){lastTrace=s.time;trace.push({time:s.time,x:s.player.x,health:s.player.health,boss:s.guardHealth,attack:s.boss.attack});writeFileSync('reports/v059-campaign-progress.json',JSON.stringify({snapshot:s,trace},null,2));}\n  43 |   if(s.boss.active){\n> 44 |    phases.add(s.boss.phase);expect(s.art.active).toBe('comic');expect(s.art.renderedBoss.frame).toMatch(/^mech\\./);\n     |                                                                                                 ^\n  45 |    expect(s.art.renderedBoss.visible).toBe(true);await shot('boss-intro',s);\n  46 |    if(s.boss.windup>0){warnings.add(s.boss.attack);if(['laser','missiles','burst'].includes(s.boss.attack))await shot('boss-warning-'+s.boss.attack,s);}\n  47 |    if(s.boss.beam?.active){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v059-boss-crates.spec.ts",
+                        "column": 97,
+                        "line": 44
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^mech\\./\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  42 |   if(s.time-lastTrace>=5){lastTrace=s.time;trace.push({time:s.time,x:s.player.x,health:s.player.health,boss:s.guardHealth,attack:s.boss.attack});writeFileSync('reports/v059-campaign-progress.json',JSON.stringify({snapshot:s,trace},null,2));}\n  43 |   if(s.boss.active){\n> 44 |    phases.add(s.boss.phase);expect(s.art.active).toBe('comic');expect(s.art.renderedBoss.frame).toMatch(/^mech\\./);\n     |                                                                                                 ^\n  45 |    expect(s.art.renderedBoss.visible).toBe(true);await shot('boss-intro',s);\n  46 |    if(s.boss.windup>0){warnings.add(s.boss.attack);if(['laser','missiles','burst'].includes(s.boss.attack))await shot('boss-warning-'+s.boss.attack,s);}\n  47 |    if(s.boss.beam?.active){\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v059-boss-crates.spec.ts:44:97"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T07:14:44.523Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v059-boss-crates-real-keyb-de53f-struction-before-completion\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v059-boss-crates-real-keyb-de53f-struction-before-completion\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v059-boss-crates.spec.ts",
+                    "column": 97,
+                    "line": 44
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3f2ecf2679355af795d3-4c49bc6fb8a50464b5cb",
+          "file": "v059-boss-crates.spec.ts",
+          "line": 35,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T07:14:38.815Z",
+    "duration": 211076.97999999998,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

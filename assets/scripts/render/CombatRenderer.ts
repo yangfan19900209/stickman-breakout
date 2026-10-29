@@ -8,7 +8,7 @@ import { ComicCombatArt } from "./ComicCombatArt";
 import { meleePose } from "./MeleePose";
 import { ComicAssets } from "./ComicAssets";
 export class CombatRenderer {
-  status(){return{rockets:this.comic.playerRockets,muzzle:this.comic.muzzlePoint};}
+  status(){return{rockets:this.comic.playerRockets,muzzle:this.comic.muzzlePoint,bossBeam:this.comic.bossBeam};}
   private comic = new ComicCombatArt();
   private projectileArt = new ProjectileArt();
   private tint = new Color(24, 24, 24);
@@ -125,6 +125,7 @@ export class CombatRenderer {
         );
       }
     for (const boss of [session.spawner.guard, session.spawner.miniBoss]) {
+      if(boss instanceof ColossusBoss&&this.comic.boss(ink,boss,cam))continue;
       if (!boss?.active || boss.warningTime <= 0) continue;
       if (boss instanceof ColossusBoss && boss.attack === "sweep") {
         const ax = boss.x + boss.facing * 132 - cam,

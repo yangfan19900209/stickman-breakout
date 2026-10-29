@@ -9,6 +9,9 @@ import {
 import { createHash } from "node:crypto";
 import path from "node:path";
 import ts from "typescript";
+if (JSON.parse(readFileSync("package.json", "utf8")).version === "0.5.9") {
+  await import("./verify-v059.mjs");process.exit(0);
+}
 if (JSON.parse(readFileSync("package.json", "utf8")).version === "0.5.8") {
   await import("./verify-v058.mjs");process.exit(0);
 }

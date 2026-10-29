@@ -11,6 +11,7 @@ import { controlLayout, SafeInsets } from "./ControlLayout";
 import { PlatformAdapter } from "../platform/PlatformAdapter";
 import { WeaponArt } from "../render/WeaponArt";
 import { ComicAssets, ComicBatch } from "../render/ComicAssets";
+import { ColossusBoss } from "../enemy/ColossusBoss";
 
 function text(
   parent: Node,
@@ -652,7 +653,8 @@ export class HUDController {
       );
       const name =
         encounter!.kind === "colossus" ? "重装裁决者" : "巡逻战车 · 小 BOSS";
-      this.guardLabel.string = `${name} · 阶段 ${encounter!.phase}  ${Math.ceil(encounter!.health)} / ${encounter!.maxHealth}`;
+      const attack=encounter instanceof ColossusBoss?` · ${encounter.windup>0?'预警 ':''}${encounter.attackName}`:'';
+      this.guardLabel.string = `${name} · 阶段 ${encounter!.phase}  ${Math.ceil(encounter!.health)} / ${encounter!.maxHealth}${attack}`;
     }
     if (this.lastState !== s.state) {
       for (const [state, p] of this.panels) p.active = state === s.state;

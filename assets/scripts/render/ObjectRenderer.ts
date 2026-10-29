@@ -4,6 +4,7 @@ import { Ink, colors, node } from "./Ink";
 import { ComicObjectArt } from "./ComicObjectArt";
 import { ComicAssets } from "./ComicAssets";
 export class ObjectRenderer {
+  status(){return this.comic.rendered;}
   private comic = new ComicObjectArt();
   private ink: Ink;
   private labels: Label[] = [];
@@ -33,6 +34,11 @@ export class ObjectRenderer {
         h = o.h;
       const imageDrawn = this.comic.draw(o, cam);
       if (imageDrawn && o.alive) {
+        if ((o.kind === 'wood'||o.kind === 'hanging') && o.health<o.maxHealth) {
+          const damage=1-o.health/o.maxHealth;
+          ink.line([{x:x+w*.26,y:y+h*.86},{x:x+w*.38,y:y+h*.65},{x:x+w*.31,y:y+h*.52},{x:x+w*.48,y:y+h*(.52-damage*.32)}],2.1);
+          if(damage>.5)ink.line([{x:x+w*.72,y:y+h*.65},{x:x+w*.61,y:y+h*.4},{x:x+w*.73,y:y+h*.25}],1.8);
+        }
         if (o.kind === "hanging" && !o.triggered)
           ink.segment(x + w / 2, y + h, x + w / 2, y + h + 80, 2);
         continue;

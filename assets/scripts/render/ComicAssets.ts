@@ -13,6 +13,7 @@ import { ComicFrames, ComicFrameId } from "./ComicFrames";
 import { SupplementFrames } from "./SupplementFrames";
 import { DirectFrames } from "./DirectFrames";
 import { ShotgunFrames } from "./ShotgunFrames";
+import { MechFrames } from "./MechFrames";
 import { GameConfig as C } from "../core/GameConfig";
 import { node } from "./Ink";
 
@@ -33,7 +34,7 @@ export class ComicAssets {
           err ? reject(err) : resolve(asset),
         ),
       );
-      const [texture, supplement, native, shotgun] = await Promise.all([load("comic"), load("supplement"), load("native"), load("shotgun")]);
+      const [texture, supplement, native, shotgun, mech] = await Promise.all([load("comic"), load("supplement"), load("native"), load("shotgun"), load("mech")]);
       // Clamp padded atlas edges on WebGL 1 and WeChat; V0.5.3 is 2048 square.
       texture.setWrapMode(
         Texture2D.WrapMode.CLAMP_TO_EDGE,
@@ -42,18 +43,19 @@ export class ComicAssets {
       supplement.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
       native.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
       shotgun.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
+      mech.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
       for (const id of Object.keys(ComicFrames) as ComicFrameId[]) {
         const data = ComicFrames[id],
           f = new SpriteFrame();
         f.name = id;
-        f.texture = id in ShotgunFrames ? shotgun : id in DirectFrames ? native : id in SupplementFrames ? supplement : texture;
+        f.texture = id in MechFrames ? mech : id in ShotgunFrames ? shotgun : id in DirectFrames ? native : id in SupplementFrames ? supplement : texture;
         f.rect = new Rect(...data.atlas);
         f.originalSize = new Size(...data.size);
         this.frames.set(id, f);
       }
       this.ready = true;
       console.info(
-        `[Breakout] Comic atlases loaded: ${this.frames.size} frames, 4 textures.`,
+        `[Breakout] Comic atlases loaded: ${this.frames.size} frames, 5 textures.`,
       );
     } catch (error) {
       this.error = String(error);

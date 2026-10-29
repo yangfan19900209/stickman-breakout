@@ -27,6 +27,7 @@ export interface Projectile {
   launchRemaining: number;
   launchAngle: number;
   target?: Damageable;
+  visual?:"mech-round"|"mech-shell"|"mech-missile";
 }
 export interface ProjectileSpawn {
   owner: "player" | "enemy";
@@ -46,6 +47,7 @@ export interface ProjectileSpawn {
   homing?: boolean;
   /** Eject along the visible tube, then turn to pitch before target acquisition. */
   launchPitch?: number;
+  visual?:Projectile["visual"];
 }
 export class ProjectileManager {
   readonly marks = Array.from({ length: 36 }, () => ({
@@ -131,6 +133,7 @@ export class ProjectileManager {
       homing: s.homing ?? false,
       age: 0,
       target: undefined,
+      visual:s.visual,
       launchAngle: Math.atan2(Math.sin(s.pitch ?? 0),s.direction*Math.cos(s.pitch ?? 0)),
       launchRemaining: s.launchPitch === undefined ? 0 : Math.abs((s.pitch ?? 0)-s.launchPitch)/C.rocketLaunch.turnRate,
     });
@@ -257,7 +260,7 @@ export class ProjectileManager {
             p.blastRadius,
             p.damage,
             p.owner,
-            p.kind === "rocket" ? "rocket" : "cannon",
+            p.visual ? 'boss' : p.kind === "rocket" ? "rocket" : "cannon",
           );
         } else if (
           target &&

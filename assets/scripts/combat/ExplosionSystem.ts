@@ -1,5 +1,5 @@
 import { DamageOwner } from "../core/Types";
-export type BlastStyle = "rocket" | "grenade" | "barrel" | "cannon";
+export type BlastStyle = "rocket" | "grenade" | "barrel" | "cannon" | "boss";
 export interface Blast {
   active: boolean;
   x: number;

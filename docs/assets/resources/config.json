@@ -4,9 +4,9 @@
     "name": "resources",
     "deps": [],
     "uuids": [
+        "0c45b98eb",
         "0f019e2f-c8a8-48a9-af29-037b8e0f6db0",
         "0f019e2f-c8a8-48a9-af29-037b8e0f6db0@6c48a",
-        "0ffee8712",
         "16b69511-d6dd-efa8-fd7e-a88342e8da71",
         "2569bc5c-876b-4701-b2cc-0a03a0c5248c",
         "2569bc5c-876b-4701-b2cc-0a03a0c5248c@6c48a",
@@ -17,6 +17,8 @@
         "8e3daa0d-bd68-497a-bb32-1f0223cc38e5@6c48a",
         "9b662c6b-6b69-4c32-d7b8-68362ed1a786",
         "bcc80b49-6f7b-2b02-3649-c8978b1a617b",
+        "d3916f6c-46d7-4b75-8eb7-3e8283e38c13",
+        "d3916f6c-46d7-4b75-8eb7-3e8283e38c13@6c48a",
         "d9da93be-3cba-8dd6-4ada-38bd8ddc53f0",
         "e042d8e9-17f4-5d59-e76f-6243161162e5",
         "f3109b18-22ac-7dd8-dc23-a4936f08d13e",
@@ -79,6 +81,16 @@
             "cc.Texture2D",
             1
         ],
+        "d3916f6c-46d7-4b75-8eb7-3e8283e38c13": [
+            "comic/mech",
+            "cc.ImageAsset",
+            1
+        ],
+        "d3916f6c-46d7-4b75-8eb7-3e8283e38c13@6c48a": [
+            "comic/mech/texture",
+            "cc.Texture2D",
+            1
+        ],
         "0f019e2f-c8a8-48a9-af29-037b8e0f6db0": [
             "comic/native",
             "cc.ImageAsset",
@@ -112,10 +124,11 @@
     },
     "scenes": {},
     "packs": {
-        "0ffee8712": [
+        "0c45b98eb": [
             "0f019e2f-c8a8-48a9-af29-037b8e0f6db0@6c48a",
             "8e3daa0d-bd68-497a-bb32-1f0223cc38e5@6c48a",
             "2569bc5c-876b-4701-b2cc-0a03a0c5248c@6c48a",
+            "d3916f6c-46d7-4b75-8eb7-3e8283e38c13@6c48a",
             "fc0931d5-97c2-4932-92d4-6fa1b92cc48a@6c48a"
         ]
     },

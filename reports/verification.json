@@ -1,99 +1,145 @@
 {
-  "version": "0.5.8",
+  "version": "0.5.9",
   "date": "2026-10-29",
   "creator": "3.8.8",
-  "sourceSHA256": "fb1ef8a670e7e836b04edc94b2de9cb5dfbbed56e6c5e172c6a0fce519032ce3",
+  "sourceSHA256": "6206fd567265bf54528c6ef8b02e5e022d7f593a5ba2202752202ab89c84d9a8",
   "typecheck": "passed",
   "logicTests": {
-    "tests": 120,
-    "passed": 120,
+    "tests": 129,
+    "passed": 129,
     "failed": 0,
     "exitCode": 0
   },
   "browserTests": {
     "passed": 2,
     "failed": 0,
-    "startTime": "2026-10-29T01:22:12.103Z",
-    "duration": 19094.263000000003,
+    "startTime": "2026-10-29T07:51:55.836Z",
+    "duration": 252275.989,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0,
-    "report": "reports/v058-browser-results.json"
+    "report": "reports/v059-browser-results.json"
   },
-  "rifle": {
-    "oldSpeed": 1100,
-    "speed": 760,
-    "reductionPercent": 30.9,
-    "measuredDistance": 50.66666666666674,
-    "measuredSeconds": 0.06666666666666667,
-    "report": "reports/v058-rifle.json"
+  "crates": {
+    "report": "reports/v059-crate.json",
+    "liveSamples": 28,
+    "width": 60,
+    "height": 51.36690647482014,
+    "damageStages": [
+      3,
+      2,
+      1
+    ],
+    "singleOpaqueBody": true,
+    "collisionRemoved": true,
+    "pickupReleased": true
   },
-  "shotgun": {
-    "source": {
-      "file": "art/source/v058/霰弹枪士兵动作.png",
-      "sha256": "f6da6b138ff8676cb9ab7f97a10346bc1b1b69bb1468b20c7e92526ba2ef7c7b",
-      "size": [
-        1448,
-        1086
-      ],
-      "mode": "RGBA",
-      "transparentPixels": 936787
+  "campaign": {
+    "report": "reports/v059-campaign.json",
+    "state": "complete",
+    "seconds": 90.83333333335169,
+    "health": 4,
+    "kills": 22,
+    "phases": [
+      1,
+      2
+    ],
+    "warnings": [
+      "salvo",
+      "stomp",
+      "laser",
+      "missiles",
+      "sweep",
+      "burst"
+    ],
+    "attackCounts": {
+      "salvo": 2,
+      "sweep": 1,
+      "stomp": 2,
+      "laser": 1,
+      "missiles": 1,
+      "burst": 1
     },
-    "frames": 51,
-    "clips": 12,
-    "textureBytes": 141058,
+    "errors": []
+  },
+  "art": {
+    "sources": [
+      {
+        "file": "art/source/v059/重装机甲Boss.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "mode": "RGBA",
+        "sha256": "7ce247f8dade05c2bc687fffedefd0f77940197119395196840ad19cce9a0cdc",
+        "transparentPixels": 782314
+      },
+      {
+        "file": "art/source/v059/机甲攻击与预警.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "mode": "RGBA",
+        "sha256": "d088a93c7f162b06456f8da784cc21d4c7c6d312781991b74f6b85ee34b21286",
+        "transparentPixels": 454305
+      },
+      {
+        "file": "art/source/v059/Boss弹体与特效.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "mode": "RGBA",
+        "sha256": "19d46e088500eca265b502b96427f16d7770a1822c0c8cc4528cd062f4dfbe68",
+        "transparentPixels": 782052
+      }
+    ],
+    "cuts": 23,
+    "textureBytes": 295406,
     "textureSize": [
       2048,
-      512
+      1024
     ],
     "padding": 8,
     "extrusion": 4,
-    "composition": "single complete supplied figure; no gun-removal mask, weapon or hand overlay",
-    "excludedOverlaps": [
-      "direct.shotgun.stand-shoot.2",
-      "direct.shotgun.stand-shoot.3",
-      "direct.shotgun.run-shoot.1",
-      "direct.shotgun.run-shoot.2",
-      "direct.shotgun.run-shoot.3",
-      "direct.shotgun.run-shoot.5"
-    ],
-    "renderSamples": 269,
-    "blankFrames": 0,
-    "crouchWalkFrames": 6,
-    "switchCycles": 8,
-    "report": "reports/v058-shotgun.json"
+    "body": "one complete supplied mech frame; shared sole/cannon/pod sockets, both facings"
   },
   "web": {
-    "files": 54,
-    "bytes": 6066601,
+    "files": 56,
+    "bytes": 6386886,
     "creatorExitCode": 36
   },
   "wechat": {
-    "files": 53,
-    "bytes": 3258509,
+    "files": 55,
+    "bytes": 3566321,
     "creatorExitCode": 36,
     "runtimeVerified": false,
     "uploaded": false
   },
   "screenshots": [
-    "reports/v058-contact.png",
-    "reports/v058-rifle-flight.png",
-    "reports/v058-shotgun-idle.png",
-    "reports/v058-shotgun-stand-fire.png",
-    "reports/v058-shotgun-run.png",
-    "reports/v058-shotgun-run-fire.png",
-    "reports/v058-shotgun-crouch.png",
-    "reports/v058-shotgun-crouch-fire.png",
-    "reports/v058-shotgun-crouch-walk.png",
-    "reports/v058-shotgun-jump.png",
-    "reports/v058-shotgun-fall.png",
-    "reports/v058-shotgun-switched.png"
+    "reports/v059-contact.png",
+    "reports/v059-crate-intact.png",
+    "reports/v059-crate-damage-2.png",
+    "reports/v059-crate-damage-1.png",
+    "reports/v059-crate-break.png",
+    "reports/v059-boss-intro.png",
+    "reports/v059-boss-damaged.png",
+    "reports/v059-boss-warning-laser.png",
+    "reports/v059-boss-laser.png",
+    "reports/v059-boss-warning-missiles.png",
+    "reports/v059-boss-missiles.png",
+    "reports/v059-boss-warning-burst.png",
+    "reports/v059-boss-fan.png",
+    "reports/v059-boss-collapse.png",
+    "reports/v059-boss-wreck.png",
+    "reports/v059-complete.png"
   ],
   "limitations": [
-    "Only the two targeted browser cases rerun; full campaign and boss/retreat remain covered by current model tests, not a new full browser playthrough.",
-    "Six overlapping/truncated source fire figures excluded. Clean standing/run firing clips have 3/2 frames; reload row archived without adding reload gameplay.",
-    "Crouch-walking fire uses the six complete walking frames with muzzle FX. Grenade throw uses the previously supplied complete throw; no dedicated high-angle shotgun aiming art.",
-    "No physical mobile device or WeChat runtime validation; WeChat artifact built but not uploaded in this iteration."
+    "No physical Android/iOS or WeChat runtime verification; WeChat artifact built locally, not uploaded in this iteration.",
+    "The attack sheet supplies standalone warnings and ground rings; its alternate smaller mech and the main sheet pose with detached painted missiles are not overlaid on the complete body.",
+    "Drone/shield/cone-beam illustrations archived for future work; this iteration adds laser, shoulder missiles and fan cannon to the three existing attacks.",
+    "Browser first attempt asserted a sprite before the boss entered camera view. Final tests allow offscreen culling and verify the actual sprite/beam when visible."
   ]
 }

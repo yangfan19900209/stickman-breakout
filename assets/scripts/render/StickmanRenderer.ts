@@ -32,9 +32,11 @@ export interface RenderActor {
   windup?: number;
   crouched?: boolean;
   hitTime?: number;
+  laserTime?:number;
 }
 export class StickmanRenderer {
   playerStatus() { return this.comic.playerStatus; }
+  bossStatus() { return this.comic.bossStatus; }
   private comic = new ComicActorArt();
   begin(ink: Ink): void {
     this.comic.begin(ink);

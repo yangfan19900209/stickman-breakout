@@ -4,10 +4,14 @@ import { GameSession } from "../core/GameSession";
 import { DestructibleObject } from "../world/DestructibleObject";
 import { Ink } from "./Ink";
 import { metalTiles } from "./TerrainTiles";
+import { objectPresentation } from "./ObjectPresentation";
+import { Sprite, UITransform } from "cc";
 
 export class ComicObjectArt {
+  readonly rendered:{id:string;frame:string;width:number;height:number;alive:boolean;y:number}[]=[];
   private batch?: ComicBatch;
   begin(ink: Ink): void {
+    this.rendered.length=0;
     this.batch ??= new ComicBatch(ink.node, "Comic objects");
     this.batch.begin();
   }
@@ -16,43 +20,24 @@ export class ComicObjectArt {
   }
   draw(o: DestructibleObject, cam: number): boolean {
     if (!ComicAssets.enabled || o.kind === "rope") return false;
-    let id: ComicFrameId;
-    const damage = 1 - o.health / o.maxHealth;
-    if (o.kind === "barrel")
-      id = !o.alive
-        ? "barrel.broken"
-        : damage > 0.65
-          ? "barrel.dented"
-          : damage > 0.2
-            ? "barrel.worn"
-            : "barrel.intact";
-    else if (o.kind === "sandbag")
-      id = !o.alive ? "cover.sandbags-broken" : "cover.sandbags";
-    else if (o.kind === "concrete" || o.kind === "steel")
-      id = damage > 0.3 ? "cover.concrete-broken" : "cover.concrete";
-    else
-      id = !o.alive
-        ? "crate.debris"
-        : damage > 0.55
-          ? "crate.broken"
-          : damage > 0
-            ? "crate.worn"
-            : "crate.intact";
+    const visual=objectPresentation(o),id=visual.id;
     const x = o.x - cam + o.w / 2;
     if (o.alive) {
-      const size = ComicFrames[id].size;
-      const scale = Math.min((o.w + 5) / size[0], (o.h + 3) / size[1]);
-      this.batch!.put(
+      const n=this.batch!.put(
         id,
         x + (o.hitTime > 0 ? Math.sin(o.hitTime * 120) * 1.5 : 0),
         o.y,
-        size[0] * scale,
-        size[1] * scale,
+        visual.width,
+        visual.height,
         0,
-        o.hitTime > 0.12 ? 180 : 255,
+        // Timber stays opaque so background outlines cannot ghost through it
+        // and resemble a second nested crate during the hit flash.
+        (o.kind==='wood'||o.kind==='hanging')?255:o.hitTime > 0.12 ? 180 : 255,
         1,
         [0.5, 0],
       );
+      const t=n.getComponent(UITransform)!;
+      this.rendered.push({id:o.id,frame:n.getComponent(Sprite)!.spriteFrame!.name,width:t.width,height:t.height,alive:true,y:n.position.y});
     } else if (o.kind === "barrel") {
       // This supplied frame is a bursting barrel, not a flattened wreck.
       if (o.deadTime < 0.4) this.batch!.put(

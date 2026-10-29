@@ -71,7 +71,7 @@ export class GameManager extends Component {
       this.initialize();
       this.ready = true;
       console.info(
-        "[Breakout] V0.5.8 ready; complete shotgun/knife/rocket soldiers and slower player rifle rounds.",
+        "[Breakout] V0.5.9 ready; stable damaged crates, native armored boss and six telegraphed attacks.",
       );
     } catch (error) {
       console.error("[Breakout] Initialization failed", error);
@@ -141,7 +141,7 @@ export class GameManager extends Component {
         ...this.session.snapshot(),
         playerShots: this.session.weapon.shots,
         audio: this.audio.status(),
-        art: { requested: C.artStyle, active: ComicAssets.enabled ? "comic" : "legacy", loaded: ComicAssets.ready, error: ComicAssets.error, playerFrame: comicPose(this.session.player), equipment: comicEquipment(this.session.player), renderedPlayer:this.renderer.playerStatus(),hudWeapon:this.hud.weaponStatus(),combat:this.combatRenderer.status(), terrain: "native-v057" },
+        art: { requested: C.artStyle, active: ComicAssets.enabled ? "comic" : "legacy", loaded: ComicAssets.ready, error: ComicAssets.error, playerFrame: comicPose(this.session.player), equipment: comicEquipment(this.session.player), renderedPlayer:this.renderer.playerStatus(),renderedBoss:this.renderer.bossStatus(),objects:this.objects.status(),hudWeapon:this.hud.weaponStatus(),combat:this.combatRenderer.status(), terrain: "native-v057" },
         visibleChunks: this.map.visibleChunks,
         platform: this.platform.adapter.status(),
         display: {

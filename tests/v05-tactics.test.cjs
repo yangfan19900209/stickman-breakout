@@ -67,7 +67,7 @@ test("melee charge has a stationary tell, locked direction and recovery window; 
   f.e.takeDamage(1, 1);
   assert.equal(f.e.action, "recover");
 });
-test("mini tank and final colossus are separate; all three final attacks have a warning and phase transition", () => {
+test("mini tank and final colossus are separate; all six final attacks have a warning and phase transition", () => {
   const s = new GameSession();
   s.reset();
   assert.equal(s.spawner.miniBoss.maxHealth, 42);
@@ -78,14 +78,14 @@ test("mini tank and final colossus are separate; all three final attacks have a 
   s.player.x = 7300;
   const attacks = new Set(),
     warnings = new Set();
-  for (let n = 0; n < 120 * 16; n++) {
+  for (let n = 0; n < 120 * 24; n++) {
     boss.update(1 / 120, s.player, s.level, s.projectiles);
     if (boss.windup > 0) {
       attacks.add(boss.attack);
       warnings.add(boss.warningX);
     }
   }
-  assert.deepEqual([...attacks].sort(), ["salvo", "stomp", "sweep"]);
+  assert.deepEqual([...attacks].sort(), ["burst", "laser", "missiles", "salvo", "stomp", "sweep"]);
   assert.ok(boss.impactSerial > 0);
   assert.ok(s.projectiles.items.some((p) => p.kind === "shockwave"));
   boss.takeDamage(70, 1);

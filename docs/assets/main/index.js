@@ -135,6 +135,101 @@ System.register("chunks:///_virtual/AudioBridge.ts", ['./rollupPluginModLoBabelH
   };
 });
 
+System.register("chunks:///_virtual/BossBeam.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Types.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, segmentRect;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+      _classCallCheck = module.classCallCheck;
+      _defineProperty = module.defineProperty;
+      _createForOfIteratorHelper = module.createForOfIteratorHelper;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      segmentRect = module.segmentRect;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "7b05bPMixo46ReoOgAYf1Xx", "BossBeam", undefined);
+      /** One locked ray, clipped against real cover. Warning never deals damage. */
+      var BossBeam = exports('BossBeam', /*#__PURE__*/function () {
+        function BossBeam() {
+          _classCallCheck(this, BossBeam);
+          _defineProperty(this, "time", 0);
+          _defineProperty(this, "serial", 0);
+          _defineProperty(this, "hits", 0);
+          _defineProperty(this, "x", 0);
+          _defineProperty(this, "y", 0);
+          _defineProperty(this, "endX", 0);
+          _defineProperty(this, "endY", 0);
+          _defineProperty(this, "angle", 0);
+          _defineProperty(this, "length", 0);
+          _defineProperty(this, "range", 0);
+          _defineProperty(this, "damaged", false);
+        }
+        _createClass(BossBeam, [{
+          key: "active",
+          get: function get() {
+            return this.time > 0;
+          }
+        }, {
+          key: "start",
+          value: function start(origin, target, range, duration) {
+            this.x = origin.x;
+            this.y = origin.y;
+            this.angle = Math.atan2(target.y - origin.y, target.x - origin.x);
+            this.range = range;
+            this.time = duration;
+            this.damaged = false;
+            this.serial++;
+          }
+        }, {
+          key: "stop",
+          value: function stop() {
+            this.time = 0;
+            this.length = 0;
+          }
+        }, {
+          key: "update",
+          value: function update(dt, p, solids) {
+            this.time = Math.max(0, this.time - dt);
+            if (!this.active) return;
+            var end = {
+              x: this.x + Math.cos(this.angle) * this.range,
+              y: this.y + Math.sin(this.angle) * this.range
+            };
+            var nearest = 1;
+            var _iterator = _createForOfIteratorHelper(solids),
+              _step;
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                var r = _step.value;
+                var t = segmentRect(this, end, r);
+                if (t !== null) nearest = Math.min(nearest, t);
+              }
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
+            this.endX = this.x + (end.x - this.x) * nearest;
+            this.endY = this.y + (end.y - this.y) * nearest;
+            this.length = this.range * nearest;
+            if (!this.damaged && p.alive && segmentRect(this, {
+              x: this.endX,
+              y: this.endY
+            }, p.bounds, 11) !== null) if (p.takeDamage(1, p.x < this.x ? -1 : 1)) {
+              this.damaged = true;
+              this.hits++;
+            }
+          }
+        }]);
+        return BossBeam;
+      }());
+      cclegacy._RF.pop();
+    }
+  };
+});
+
 System.register("chunks:///_virtual/CameraFollow.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Types.ts'], function (exports) {
   var _createClass, _classCallCheck, _defineProperty, cclegacy, GameConfig, clamp;
   return {
@@ -832,8 +927,8 @@ System.register("chunks:///_virtual/ColossusArt.ts", ['./rollupPluginModLoBabelH
   };
 });
 
-System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Types.ts', './EnemyController.ts'], function (exports) {
-  var _inherits, _createSuper, _createClass, _classCallCheck, _defineProperty, _assertThisInitialized, _createForOfIteratorHelper, cclegacy, GameConfig, clamp, EnemyController;
+System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Types.ts', './EnemyController.ts', './BossBeam.ts', './ColossusPresentation.ts'], function (exports) {
+  var _inherits, _createSuper, _createClass, _classCallCheck, _defineProperty, _assertThisInitialized, _createForOfIteratorHelper, cclegacy, GameConfig, clamp, EnemyController, BossBeam, colossusSocket;
   return {
     setters: [function (module) {
       _inherits = module.inherits;
@@ -851,9 +946,22 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
       clamp = module.clamp;
     }, function (module) {
       EnemyController = module.EnemyController;
+    }, function (module) {
+      BossBeam = module.BossBeam;
+    }, function (module) {
+      colossusSocket = module.colossusSocket;
     }],
     execute: function () {
       cclegacy._RF.push({}, "79331SNw8IHtW4ZK9v8suMh", "ColossusBoss", undefined);
+      var ColossusAttackNames = exports('ColossusAttackNames', {
+        salvo: '重炮轰击',
+        sweep: '瞄准连射',
+        stomp: '踏地冲击',
+        laser: '蓄能激光',
+        missiles: '肩部导弹',
+        burst: '扇形机炮'
+      });
+
       /** Towering final encounter. Locked warnings, distinct attacks, bounded pressure, free retreat. */
       var ColossusBoss = exports('ColossusBoss', /*#__PURE__*/function (_EnemyController) {
         _inherits(ColossusBoss, _EnemyController);
@@ -871,6 +979,16 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
           _defineProperty(_assertThisInitialized(_this), "warningY", 150);
           _defineProperty(_assertThisInitialized(_this), "summons", 0);
           _defineProperty(_assertThisInitialized(_this), "impactSerial", 0);
+          _defineProperty(_assertThisInitialized(_this), "beam", new BossBeam());
+          _defineProperty(_assertThisInitialized(_this), "attackCounts", {
+            salvo: 0,
+            sweep: 0,
+            stomp: 0,
+            laser: 0,
+            missiles: 0,
+            burst: 0
+          });
+          _defineProperty(_assertThisInitialized(_this), "emissionIndex", 0);
           _defineProperty(_assertThisInitialized(_this), "onSummon", void 0);
           _defineProperty(_assertThisInitialized(_this), "introduced", false);
           _defineProperty(_assertThisInitialized(_this), "sequence", 0);
@@ -890,6 +1008,21 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
           return _this;
         }
         _createClass(ColossusBoss, [{
+          key: "laserTime",
+          get: function get() {
+            return this.beam.time;
+          }
+        }, {
+          key: "attackName",
+          get: function get() {
+            return ColossusAttackNames[this.attack];
+          }
+        }, {
+          key: "muzzle",
+          get: function get() {
+            return colossusSocket(this);
+          }
+        }, {
           key: "phase",
           get: function get() {
             return this.health <= this.maxHealth * 0.5 ? 2 : 1;
@@ -922,6 +1055,7 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
               this.mode = "destroyed";
               this.warningTime = this.windup = 0;
               this.pendingShots = 0;
+              this.beam.stop();
             }
             return true;
           }
@@ -941,9 +1075,10 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
               this.mode = "dormant";
               this.windup = this.warningTime = 0;
               this.pendingShots = 0;
+              this.beam.stop();
               return;
             }
-            this.facing = p.x > this.x ? 1 : -1;
+            if (this.windup === 0 && this.pendingShots === 0 && !this.beam.active) this.facing = p.x > this.x ? 1 : -1;
             if (!this.introduced) {
               this.mode = "entering";
               this.state = "Idle";
@@ -964,37 +1099,48 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
             if (this.pendingShots > 0) {
               this.shotDelay -= dt;
               if (this.shotDelay <= 0) {
-                this.emit(shots, this.pendingShots);
+                this.emit(shots, ++this.emissionIndex);
                 this.pendingShots--;
-                this.shotDelay = 0.18;
+                this.shotDelay = this.attack === 'burst' ? .14 : this.attack === 'missiles' ? .24 : .18;
               }
             }
             if (this.attackCooldown === 0 && this.windup === 0 && this.pendingShots === 0) {
               var _level$data$arena$sta, _level$data$arena;
-              this.attack = ["salvo", "stomp", "sweep"][this.sequence++ % 3];
-              this.windup = this.phase === 1 ? GameConfig.colossus.firstWindup : GameConfig.colossus.secondWindup;
+              this.attack = ["salvo", "stomp", "laser", "missiles", "sweep", "burst"][this.sequence++ % 6];
+              this.windup = this.attack === 'laser' ? GameConfig.colossus.laserWindup * (this.phase === 2 ? .84 : 1) : this.phase === 1 ? GameConfig.colossus.firstWindup : GameConfig.colossus.secondWindup;
+              this.emissionIndex = 0;
               this.warningX = clamp(p.x + p.vx * 0.18, ((_level$data$arena$sta = (_level$data$arena = level.data.arena) === null || _level$data$arena === void 0 ? void 0 : _level$data$arena.start) !== null && _level$data$arena$sta !== void 0 ? _level$data$arena$sta : 0) + 60, level.data.width - 60);
               this.warningY = level.groundY(this.warningX);
               this.lockedY = p.y + 35;
-              this.warningTime = this.windup + (this.attack === "salvo" ? GameConfig.colossus.shellFlight + 0.4 : 0.35);
+              this.warningTime = this.windup + (this.attack === 'missiles' ? GameConfig.colossus.missileFlight + .7 : this.attack === "salvo" ? GameConfig.colossus.shellFlight + 0.4 : 0.35);
               this.mode = "aiming";
             }
             if (this.windup > 0) {
               this.windup = Math.max(0, this.windup - dt);
               if (this.windup === 0) {
                 this.emit(shots, 0);
-                this.pendingShots = this.attack === "stomp" ? 0 : this.phase === 2 ? 2 : 1;
+                this.pendingShots = this.attack === "stomp" || this.attack === 'laser' ? 0 : this.phase === 2 ? 2 : 1;
                 this.shotDelay = 0.18;
                 this.attackCooldown = this.phase === 1 ? GameConfig.colossus.firstRecovery : GameConfig.colossus.secondRecovery;
                 this.mode = "recovering";
               }
             }
+            this.beam.update(dt, p, level.solids);
             if (Math.abs(p.x - this.x) < 132 && p.y < this.y + 200) p.takeDamage(1, p.x < this.x ? -1 : 1);
           }
         }, {
           key: "emit",
           value: function emit(shots, index) {
             this.recoil = 2;
+            if (index === 0) this.attackCounts[this.attack]++;
+            if (this.attack === 'laser') {
+              this.beam.start(this.muzzle, {
+                x: this.warningX,
+                y: this.lockedY
+              }, GameConfig.colossus.laserRange, GameConfig.colossus.laserDuration);
+              this.impactSerial++;
+              return;
+            }
             if (this.attack === "stomp") {
               this.impactSerial++;
               var _iterator = _createForOfIteratorHelper([-1, 1]),
@@ -1021,11 +1167,13 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
               shots.particles.blast(this.x, this.y + 15, 80, this.y);
               return;
             }
-            var x = this.x + this.facing * 132,
-              y = this.y + (this.attack === "salvo" ? 226 : 138);
+            var socket = this.attack === 'missiles' ? colossusSocket(this, index % 2 ? 'rightPod' : 'leftPod') : this.muzzle;
+            var x = socket.x,
+              y = socket.y;
             var target = this.warningX + (index === 0 ? 0 : index % 2 ? 90 : -90);
-            if (this.attack === "salvo") {
-              var flight = GameConfig.colossus.shellFlight,
+            if (this.attack === "salvo" || this.attack === 'missiles') {
+              var missile = this.attack === 'missiles';
+              var flight = missile ? GameConfig.colossus.missileFlight : GameConfig.colossus.shellFlight,
                 vx = (target - x) / flight,
                 vy = (this.warningY - y + 0.5 * 800 * flight * flight) / flight;
               shots.spawn({
@@ -1038,28 +1186,80 @@ System.register("chunks:///_virtual/ColossusBoss.ts", ['./rollupPluginModLoBabel
                 damage: 1,
                 range: 2000,
                 gravity: 800,
-                kind: "cannon",
-                blastRadius: 65
+                kind: missile ? 'rocket' : 'cannon',
+                blastRadius: 65,
+                visual: missile ? 'mech-missile' : 'mech-shell'
               });
             } else {
               var pitch = Math.atan2(this.lockedY - y, Math.abs(this.warningX - x)) + (index === 0 ? 0 : index % 2 ? 0.055 : -0.055);
-              shots.spawn({
-                owner: "enemy",
-                x: x,
-                y: y,
-                direction: this.facing,
-                pitch: pitch,
-                speed: 360,
-                damage: 1,
-                range: 1450,
-                kind: "cannon",
-                blastRadius: 35
-              });
+              var spread = this.attack === 'burst' ? [-GameConfig.colossus.burstSpread, 0, GameConfig.colossus.burstSpread] : [0];
+              for (var _i = 0, _spread = spread; _i < _spread.length; _i++) {
+                var offset = _spread[_i];
+                shots.spawn({
+                  owner: "enemy",
+                  x: x,
+                  y: y,
+                  direction: this.facing,
+                  pitch: pitch + offset,
+                  speed: this.attack === 'burst' ? GameConfig.colossus.burstSpeed : 360,
+                  damage: 1,
+                  range: 1450,
+                  kind: this.attack === 'burst' ? 'bullet' : 'cannon',
+                  blastRadius: this.attack === 'burst' ? 0 : 35,
+                  visual: this.attack === 'burst' ? 'mech-round' : 'mech-shell'
+                });
+              }
             }
           }
         }]);
         return ColossusBoss;
       }(EnemyController));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ColossusPresentation.ts", ['cc', './MechFrames.ts'], function (exports) {
+  var cclegacy, MechScale, MechSockets, MechFrames;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      MechScale = module.MechScale;
+      MechSockets = module.MechSockets;
+      MechFrames = module.MechFrames;
+    }],
+    execute: function () {
+      exports({
+        colossusPresentation: colossusPresentation,
+        colossusSocket: colossusSocket
+      });
+      cclegacy._RF.push({}, "1aba6FVJDXy0uT4lZihc3+U", "ColossusPresentation", undefined);
+      function colossusPresentation(a) {
+        var _a$windup, _a$laserTime, _a$action, _a$windup2, _a$health, _a$maxHealth;
+        var id = 'mech.idle';
+        if (a.animation === 'Dead') id = a.deadTime < .65 ? 'mech.damaged' : a.deadTime < 1.35 ? 'mech.collapse' : 'mech.wreck';else if (a.action === 'laser' && (((_a$windup = a.windup) !== null && _a$windup !== void 0 ? _a$windup : 0) > 0 || ((_a$laserTime = a.laserTime) !== null && _a$laserTime !== void 0 ? _a$laserTime : 0) > 0 || a.recoil > .1)) id = 'mech.charge';else if (a.recoil > .1 && ['salvo', 'sweep', 'burst'].includes((_a$action = a.action) !== null && _a$action !== void 0 ? _a$action : '')) id = 'mech.charge';else if (a.action === 'stomp' && ((_a$windup2 = a.windup) !== null && _a$windup2 !== void 0 ? _a$windup2 : 0) > 0) id = a.windup > .45 ? 'mech.step.0' : 'mech.step.1';else if (((_a$health = a.health) !== null && _a$health !== void 0 ? _a$health : 1) / ((_a$maxHealth = a.maxHealth) !== null && _a$maxHealth !== void 0 ? _a$maxHealth : 1) < .35) id = 'mech.damaged';else if (a.action === 'intro') id = Math.floor(a.animationTime * 3) % 2 ? 'mech.step.0' : 'mech.step.1';
+        var f = MechFrames[id];
+        return {
+          id: id,
+          scale: MechScale,
+          width: f.size[0] * MechScale,
+          height: f.size[1] * MechScale,
+          flip: -a.facing,
+          anchor: f.anchor
+        };
+      }
+      function colossusSocket(a) {
+        var _map$slot;
+        var slot = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'muzzle';
+        var view = colossusPresentation(a),
+          map = MechSockets[view.id];
+        var local = (_map$slot = map[slot]) !== null && _map$slot !== void 0 ? _map$slot : MechSockets['mech.idle'][slot];
+        return {
+          x: a.x - local[0] * a.facing,
+          y: a.y + local[1]
+        };
+      }
       cclegacy._RF.pop();
     }
   };
@@ -1114,7 +1314,8 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
           value: function status() {
             return {
               rockets: this.comic.playerRockets,
-              muzzle: this.comic.muzzlePoint
+              muzzle: this.comic.muzzlePoint,
+              bossBeam: this.comic.bossBeam
             };
           }
         }, {
@@ -1236,6 +1437,7 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
             }
             for (var _i3 = 0, _arr3 = [session.spawner.guard, session.spawner.miniBoss]; _i3 < _arr3.length; _i3++) {
               var boss = _arr3[_i3];
+              if (boss instanceof ColossusBoss && this.comic.boss(ink, boss, cam)) continue;
               if (!(boss !== null && boss !== void 0 && boss.active) || boss.warningTime <= 0) continue;
               if (boss instanceof ColossusBoss && boss.attack === "sweep") {
                 var ax = boss.x + boss.facing * 132 - cam,
@@ -1477,8 +1679,8 @@ System.register("chunks:///_virtual/CombatRenderer.ts", ['./rollupPluginModLoBab
   };
 });
 
-System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicAssets.ts', './ComicFrames.ts', './ComicPose.ts', './ComicEquipment.ts', './WeaponPresentation.ts', './DirectPose.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, cclegacy, Sprite, ComicBatch, ComicAssets, ComicFrames, comicMuzzle, comicEquipment, weaponPresentation, isDirectActor, directScale;
+System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicAssets.ts', './ComicFrames.ts', './ComicPose.ts', './ComicEquipment.ts', './WeaponPresentation.ts', './DirectPose.ts', './ColossusPresentation.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, cclegacy, Sprite, ComicBatch, ComicAssets, ComicFrames, comicMuzzle, comicEquipment, weaponPresentation, isDirectActor, directScale, colossusPresentation;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -1501,6 +1703,8 @@ System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabe
     }, function (module) {
       isDirectActor = module.isDirectActor;
       directScale = module.directScale;
+    }, function (module) {
+      colossusPresentation = module.colossusPresentation;
     }],
     execute: function () {
       cclegacy._RF.push({}, "19af5HIo5U7RbOuCPDBueYu", "ComicActorArt", undefined);
@@ -1513,6 +1717,14 @@ System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabe
             body: "",
             weapon: "",
             weaponVisible: false
+          });
+          _defineProperty(this, "bossStatus", {
+            frame: "",
+            width: 0,
+            height: 0,
+            x: 0,
+            y: 0,
+            visible: false
           });
           _defineProperty(this, "batch", void 0);
         }
@@ -1532,10 +1744,21 @@ System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabe
         }, {
           key: "draw",
           value: function draw(ink, a, cam) {
-            // The supplied sheets contain no walking giant. Keep that separate final encounter
-            // explicitly outside this first-two-zone art pass, rather than disguising it as a tank.
-            if (!ComicAssets.enabled || a.kind === "colossus") return false;
+            if (!ComicAssets.enabled) return false;
             if (!this.batch) this.begin(ink);
+            if (a.kind === 'colossus') {
+              var v = colossusPresentation(a);
+              var n = this.batch.put(v.id, a.x - cam, a.y, v.width, v.height, 0, a.hitTime && Math.floor(a.hitTime * 60) % 2 ? 190 : 255, v.flip);
+              this.bossStatus = {
+                frame: n.getComponent(Sprite).spriteFrame.name,
+                width: v.width,
+                height: v.height,
+                x: n.position.x + cam,
+                y: n.position.y,
+                visible: n.active
+              };
+              return true;
+            }
             var equipment = comicEquipment(a),
               id = equipment.body,
               data = ComicFrames[id];
@@ -1576,8 +1799,8 @@ System.register("chunks:///_virtual/ComicActorArt.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicFrames.ts', './SupplementFrames.ts', './DirectFrames.ts', './ShotgunFrames.ts', './GameConfig.ts', './Ink.ts'], function (exports) {
-  var _createClass, _defineProperty, _classCallCheck, _toConsumableArray, _asyncToGenerator, _regeneratorRuntime, _slicedToArray, _construct, cclegacy, SpriteFrame, Rect, Size, Sprite, UITransform, Color, Texture2D, resources, ComicFrames, SupplementFrames, DirectFrames, ShotgunFrames, GameConfig, node;
+System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicFrames.ts', './SupplementFrames.ts', './DirectFrames.ts', './ShotgunFrames.ts', './MechFrames.ts', './GameConfig.ts', './Ink.ts'], function (exports) {
+  var _createClass, _defineProperty, _classCallCheck, _toConsumableArray, _asyncToGenerator, _regeneratorRuntime, _slicedToArray, _construct, cclegacy, SpriteFrame, Rect, Size, Sprite, UITransform, Color, Texture2D, resources, ComicFrames, SupplementFrames, DirectFrames, ShotgunFrames, MechFrames, GameConfig, node;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -1607,6 +1830,8 @@ System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelH
     }, function (module) {
       ShotgunFrames = module.ShotgunFrames;
     }, function (module) {
+      MechFrames = module.MechFrames;
+    }, function (module) {
       GameConfig = module.GameConfig;
     }, function (module) {
       node = module.node;
@@ -1628,7 +1853,7 @@ System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelH
           key: "load",
           value: function () {
             var _load = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-              var _load2, _yield$Promise$all, _yield$Promise$all2, texture, supplement, _native, shotgun, _i, _arr, id, data, f;
+              var _load2, _yield$Promise$all, _yield$Promise$all2, texture, supplement, _native, shotgun, mech, _i, _arr, id, data, f;
               return _regeneratorRuntime().wrap(function _callee$(_context) {
                 while (1) switch (_context.prev = _context.next) {
                   case 0:
@@ -1647,42 +1872,44 @@ System.register("chunks:///_virtual/ComicAssets.ts", ['./rollupPluginModLoBabelH
                       });
                     };
                     _context.next = 6;
-                    return Promise.all([_load2("comic"), _load2("supplement"), _load2("native"), _load2("shotgun")]);
+                    return Promise.all([_load2("comic"), _load2("supplement"), _load2("native"), _load2("shotgun"), _load2("mech")]);
                   case 6:
                     _yield$Promise$all = _context.sent;
-                    _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 4);
+                    _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 5);
                     texture = _yield$Promise$all2[0];
                     supplement = _yield$Promise$all2[1];
                     _native = _yield$Promise$all2[2];
                     shotgun = _yield$Promise$all2[3];
+                    mech = _yield$Promise$all2[4];
                     // Clamp padded atlas edges on WebGL 1 and WeChat; V0.5.3 is 2048 square.
                     texture.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
                     supplement.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
                     _native.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
                     shotgun.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
+                    mech.setWrapMode(Texture2D.WrapMode.CLAMP_TO_EDGE, Texture2D.WrapMode.CLAMP_TO_EDGE);
                     for (_i = 0, _arr = Object.keys(ComicFrames); _i < _arr.length; _i++) {
                       id = _arr[_i];
                       data = ComicFrames[id], f = new SpriteFrame();
                       f.name = id;
-                      f.texture = id in ShotgunFrames ? shotgun : id in DirectFrames ? _native : id in SupplementFrames ? supplement : texture;
+                      f.texture = id in MechFrames ? mech : id in ShotgunFrames ? shotgun : id in DirectFrames ? _native : id in SupplementFrames ? supplement : texture;
                       f.rect = _construct(Rect, _toConsumableArray(data.atlas));
                       f.originalSize = _construct(Size, _toConsumableArray(data.size));
                       this.frames.set(id, f);
                     }
                     this.ready = true;
-                    console.info("[Breakout] Comic atlases loaded: ".concat(this.frames.size, " frames, 4 textures."));
-                    _context.next = 25;
+                    console.info("[Breakout] Comic atlases loaded: ".concat(this.frames.size, " frames, 5 textures."));
+                    _context.next = 27;
                     break;
-                  case 21:
-                    _context.prev = 21;
+                  case 23:
+                    _context.prev = 23;
                     _context.t0 = _context["catch"](2);
                     this.error = String(_context.t0);
                     console.error("[Breakout] Comic atlas unavailable; using legacy art.", _context.t0);
-                  case 25:
+                  case 27:
                   case "end":
                     return _context.stop();
                 }
-              }, _callee, this, [[2, 21]]);
+              }, _callee, this, [[2, 23]]);
             }));
             function load() {
               return _load.apply(this, arguments);
@@ -1840,7 +2067,6 @@ System.register("chunks:///_virtual/ComicCombatArt.ts", ['./rollupPluginModLoBab
     }],
     execute: function () {
       cclegacy._RF.push({}, "d5583cD7rF62E+Us4waPIgn", "ComicCombatArt", undefined);
-
       /** Separate timed flash, illustrated ink burst, rising sprite smoke and physical debris. */
       var ComicCombatArt = exports('ComicCombatArt', /*#__PURE__*/function () {
         function ComicCombatArt() {
@@ -1848,6 +2074,13 @@ System.register("chunks:///_virtual/ComicCombatArt.ts", ['./rollupPluginModLoBab
           _defineProperty(this, "batch", void 0);
           _defineProperty(this, "playerRockets", []);
           _defineProperty(this, "muzzlePoint", void 0);
+          _defineProperty(this, "bossBeam", {
+            visible: false,
+            x: 0,
+            y: 0,
+            length: 0,
+            angle: 0
+          });
         }
         _createClass(ComicCombatArt, [{
           key: "begin",
@@ -1855,6 +2088,7 @@ System.register("chunks:///_virtual/ComicCombatArt.ts", ['./rollupPluginModLoBab
             var _this$batch;
             this.playerRockets.length = 0;
             this.muzzlePoint = undefined;
+            this.bossBeam.visible = false;
             (_this$batch = this.batch) !== null && _this$batch !== void 0 ? _this$batch : this.batch = new ComicBatch(ink.node, "Comic combat pool");
             this.batch.begin();
           }
@@ -1863,6 +2097,44 @@ System.register("chunks:///_virtual/ComicCombatArt.ts", ['./rollupPluginModLoBab
           value: function end() {
             var _this$batch2;
             (_this$batch2 = this.batch) === null || _this$batch2 === void 0 || _this$batch2.end();
+          }
+        }, {
+          key: "boss",
+          value: function boss(ink, b, cam) {
+            if (!ComicAssets.enabled) return false;
+            if (!b.active || !b.alive) return true;
+            var tip = b.muzzle;
+            if (b.warningTime > 0) {
+              if (b.windup > 0) this.batch.put('mech.warning', b.x - cam, b.y + 335, 48, undefined, 0, 230);
+              if (['laser', 'sweep', 'burst'].includes(b.attack) && b.windup > 0) {
+                var angle = Math.atan2(b.warningTargetY - tip.y, b.warningX - tip.x);
+                var length = Math.hypot(b.warningX - tip.x, b.warningTargetY - tip.y);
+                for (var _i = 0, _arr = b.attack === 'burst' ? [-GameConfig.colossus.burstSpread, 0, GameConfig.colossus.burstSpread] : [0]; _i < _arr.length; _i++) {
+                  var offset = _arr[_i];
+                  for (var n = 0; n < 18; n += 2) ink.segment(tip.x - cam + Math.cos(angle + offset) * length * n / 18, tip.y + Math.sin(angle + offset) * length * n / 18, tip.x - cam + Math.cos(angle + offset) * length * (n + 1) / 18, tip.y + Math.sin(angle + offset) * length * (n + 1) / 18, 2, colors.muted);
+                }
+                if (b.attack === 'laser') this.batch.put('mech.orb', tip.x - cam, tip.y, 42 + Math.sin(b.animationTime * 28) * 8, undefined, 0, 180);
+              } else if (b.attack === 'stomp') {
+                this.batch.put('mech.ground-ring', b.x - cam, b.y + 5, 330, 42, 0, 210);
+              } else if (b.attack === 'salvo' || b.attack === 'missiles') {
+                for (var _i2 = 0, _arr2 = b.phase === 2 ? [-90, 0, 90] : [0, 90]; _i2 < _arr2.length; _i2++) {
+                  var _offset = _arr2[_i2];
+                  this.batch.put('mech.target', b.warningX + _offset - cam, b.warningY + 5, 125, 65, 0, 210, 1, [.5, .16]);
+                }
+              }
+            }
+            if (b.beam.active && b.beam.length > 0) {
+              var _n = this.batch.put('mech.beam', b.beam.x - cam, b.beam.y, b.beam.length, 26 + Math.sin(b.animationTime * 70) * 2, b.beam.angle * 180 / Math.PI, 255, 1, [0, .5]);
+              this.batch.put('mech.orb', b.beam.x - cam, b.beam.y, 57, undefined, 0, 250);
+              this.bossBeam = {
+                visible: _n.active,
+                x: b.beam.x,
+                y: b.beam.y,
+                length: b.beam.length,
+                angle: _n.angle * Math.PI / 180
+              };
+            } else if (b.recoil > 1.35 && b.attack !== 'missiles' && b.attack !== 'stomp' && b.attack !== 'laser') this.batch.put('mech.muzzle', tip.x - cam, tip.y, 88, undefined, 0, 255, -b.facing, [1, .5]);
+            return true;
           }
         }, {
           key: "knife",
@@ -1884,11 +2156,12 @@ System.register("chunks:///_virtual/ComicCombatArt.ts", ['./rollupPluginModLoBab
             }
             if (t < 0.055) ink.circle(x, b.y, 15 + t * r * 7, colors.ink, colors.white, 4);
             var stage = Math.min(6, Math.floor(t / .07));
-            if (t < 0.56) this.batch.put(ComicClips.explosion[stage], x, b.y - r * 0.32, r * [.22, .48, .85, 1.1, 1.45, 1.7, 1.85][stage], undefined, 0, Math.min(255, (0.56 - t) * 1800), 1, [0.5, 0.08]);
+            var boss = b.style === 'boss';
+            if (t < 0.56) this.batch.put(boss ? ['mech.blast.0', 'mech.blast.1', 'mech.blast.2', 'mech.blast.3'][Math.min(3, Math.floor(t / .105))] : ComicClips.explosion[stage], x, b.y - r * 0.32, r * [.22, .48, .85, 1.1, 1.45, 1.7, 1.85][stage], undefined, 0, Math.min(255, (0.56 - t) * 1800), 1, [0.5, 0.08]);
             if (t > 0.1) for (var n = 0; n < 3; n++) {
               var age = t - 0.1,
                 side = n - 1;
-              this.batch.put("effect.smoke", x + side * r * (0.17 + age * 0.22), b.y + r * 0.12 + age * (65 + n * 16), r * (0.35 + age * 0.45), undefined, side * (8 + age * 12), Math.min(230, Math.max(0, (0.85 - t) * 400)), n % 2 ? -1 : 1);
+              this.batch.put(boss ? 'mech.smoke' : "effect.smoke", x + side * r * (0.17 + age * 0.22), b.y + r * 0.12 + age * (65 + n * 16), r * (0.35 + age * 0.45), undefined, side * (8 + age * 12), Math.min(230, Math.max(0, (0.85 - t) * 400)), n % 2 ? -1 : 1);
             }
             return true;
           }
@@ -1904,8 +2177,19 @@ System.register("chunks:///_virtual/ComicCombatArt.ts", ['./rollupPluginModLoBab
         }, {
           key: "projectile",
           value: function projectile(p, cam) {
-            if (!ComicAssets.enabled || p.kind === "shockwave") return false;
+            if (!ComicAssets.enabled) return false;
             var angle = Math.atan2(p.vy, p.vx) * 180 / Math.PI;
+            if (p.kind === 'shockwave') {
+              this.batch.put('mech.ground-ring', p.x - cam, p.y, 80, 23, 0, 240);
+              this.batch.put('mech.hit', p.x - cam, p.y + 9, 53, undefined, 0, 255);
+              return true;
+            }
+            if (p.visual) {
+              var missile = p.visual === 'mech-missile',
+                shell = p.visual === 'mech-shell';
+              this.batch.put(missile ? 'mech.missile-fire' : shell ? 'mech.round-heavy' : 'mech.round', p.x - cam, p.y, missile ? 92 : shell ? 55 : 32, undefined, angle, 255, 1, [1, .5]);
+              return true;
+            }
             var rocket = p.kind === "rocket" || p.kind === "cannon";
             if (p.kind === "rocket" && p.owner === "player") {
               var size = ComicFrames["projectile.rocket"].size;
@@ -2005,8 +2289,8 @@ System.register("chunks:///_virtual/ComicEquipment.ts", ['cc', './ComicFrames.ts
   };
 });
 
-System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SupplementFrames.ts', './DirectFrames.ts', './ShotgunFrames.ts'], function (exports) {
-  var _objectSpread2, cclegacy, SupplementFrames, DirectFrames, ShotgunFrames;
+System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SupplementFrames.ts', './DirectFrames.ts', './ShotgunFrames.ts', './MechFrames.ts'], function (exports) {
+  var _objectSpread2, cclegacy, SupplementFrames, DirectFrames, ShotgunFrames, MechFrames;
   return {
     setters: [function (module) {
       _objectSpread2 = module.objectSpread2;
@@ -2018,6 +2302,8 @@ System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelH
       DirectFrames = module.DirectFrames;
     }, function (module) {
       ShotgunFrames = module.ShotgunFrames;
+    }, function (module) {
+      MechFrames = module.MechFrames;
     }],
     execute: function () {
       cclegacy._RF.push({}, "14a86ft1/z7mqTRhbJtO6Hh", "ComicFrames", undefined);
@@ -3157,7 +3443,7 @@ System.register("chunks:///_virtual/ComicFrames.ts", ['./rollupPluginModLoBabelH
           "size": [115, 44]
         }
       };
-      var ComicFrames = exports('ComicFrames', _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, BaseComicFrames), SupplementFrames), DirectFrames), ShotgunFrames));
+      var ComicFrames = exports('ComicFrames', _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, BaseComicFrames), SupplementFrames), DirectFrames), ShotgunFrames), MechFrames));
       var ComicClips = exports('ComicClips', {
         "player.idle": ["player.idle.0", "player.idle.1", "player.idle.2", "player.idle.3"],
         "player.run": ["player.run.0", "player.run.1", "player.run.2", "player.run.3", "player.run.4", "player.run.5", "player.run.6", "player.run.7", "player.run.8"],
@@ -3435,8 +3721,8 @@ System.register("chunks:///_virtual/ComicLevelRenderer.ts", ['./rollupPluginModL
   };
 });
 
-System.register("chunks:///_virtual/ComicObjectArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicAssets.ts', './ComicFrames.ts', './TerrainTiles.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, ComicBatch, ComicAssets, ComicFrames, metalTiles;
+System.register("chunks:///_virtual/ComicObjectArt.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ComicAssets.ts', './TerrainTiles.ts', './ObjectPresentation.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, UITransform, Sprite, ComicBatch, ComicAssets, metalTiles, objectPresentation;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -3445,25 +3731,29 @@ System.register("chunks:///_virtual/ComicObjectArt.ts", ['./rollupPluginModLoBab
       _createForOfIteratorHelper = module.createForOfIteratorHelper;
     }, function (module) {
       cclegacy = module.cclegacy;
+      UITransform = module.UITransform;
+      Sprite = module.Sprite;
     }, function (module) {
       ComicBatch = module.ComicBatch;
       ComicAssets = module.ComicAssets;
     }, function (module) {
-      ComicFrames = module.ComicFrames;
-    }, function (module) {
       metalTiles = module.metalTiles;
+    }, function (module) {
+      objectPresentation = module.objectPresentation;
     }],
     execute: function () {
       cclegacy._RF.push({}, "a265fF4JkE2nxZgpbcrKYxm", "ComicObjectArt", undefined);
       var ComicObjectArt = exports('ComicObjectArt', /*#__PURE__*/function () {
         function ComicObjectArt() {
           _classCallCheck(this, ComicObjectArt);
+          _defineProperty(this, "rendered", []);
           _defineProperty(this, "batch", void 0);
         }
         _createClass(ComicObjectArt, [{
           key: "begin",
           value: function begin(ink) {
             var _this$batch;
+            this.rendered.length = 0;
             (_this$batch = this.batch) !== null && _this$batch !== void 0 ? _this$batch : this.batch = new ComicBatch(ink.node, "Comic objects");
             this.batch.begin();
           }
@@ -3477,14 +3767,23 @@ System.register("chunks:///_virtual/ComicObjectArt.ts", ['./rollupPluginModLoBab
           key: "draw",
           value: function draw(o, cam) {
             if (!ComicAssets.enabled || o.kind === "rope") return false;
-            var id;
-            var damage = 1 - o.health / o.maxHealth;
-            if (o.kind === "barrel") id = !o.alive ? "barrel.broken" : damage > 0.65 ? "barrel.dented" : damage > 0.2 ? "barrel.worn" : "barrel.intact";else if (o.kind === "sandbag") id = !o.alive ? "cover.sandbags-broken" : "cover.sandbags";else if (o.kind === "concrete" || o.kind === "steel") id = damage > 0.3 ? "cover.concrete-broken" : "cover.concrete";else id = !o.alive ? "crate.debris" : damage > 0.55 ? "crate.broken" : damage > 0 ? "crate.worn" : "crate.intact";
+            var visual = objectPresentation(o),
+              id = visual.id;
             var x = o.x - cam + o.w / 2;
             if (o.alive) {
-              var size = ComicFrames[id].size;
-              var scale = Math.min((o.w + 5) / size[0], (o.h + 3) / size[1]);
-              this.batch.put(id, x + (o.hitTime > 0 ? Math.sin(o.hitTime * 120) * 1.5 : 0), o.y, size[0] * scale, size[1] * scale, 0, o.hitTime > 0.12 ? 180 : 255, 1, [0.5, 0]);
+              var n = this.batch.put(id, x + (o.hitTime > 0 ? Math.sin(o.hitTime * 120) * 1.5 : 0), o.y, visual.width, visual.height, 0,
+              // Timber stays opaque so background outlines cannot ghost through it
+              // and resemble a second nested crate during the hit flash.
+              o.kind === 'wood' || o.kind === 'hanging' ? 255 : o.hitTime > 0.12 ? 180 : 255, 1, [0.5, 0]);
+              var t = n.getComponent(UITransform);
+              this.rendered.push({
+                id: o.id,
+                frame: n.getComponent(Sprite).spriteFrame.name,
+                width: t.width,
+                height: t.height,
+                alive: true,
+                y: n.position.y
+              });
             } else if (o.kind === "barrel") {
               // This supplied frame is a bursting barrel, not a flattened wreck.
               if (o.deadTime < 0.4) this.batch.put(id, x, o.y - 2, o.w * (2.2 + o.deadTime), undefined, 0, Math.round(255 * (1 - o.deadTime / 0.4)), 1, [0.5, 0]);
@@ -5717,7 +6016,13 @@ System.register("chunks:///_virtual/GameConfig.ts", ['cc'], function (exports) {
           summonInterval: 15,
           maxSummons: 4,
           shellFlight: 1.05,
-          waveSpeed: 360
+          waveSpeed: 360,
+          laserWindup: 1.3,
+          laserDuration: .55,
+          laserRange: 1220,
+          burstSpeed: 370,
+          burstSpread: .18,
+          missileFlight: 1.3
         },
         enemyProjectile: {
           speed: 430,
@@ -5886,7 +6191,7 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
                     };
                     this.initialize();
                     this.ready = true;
-                    console.info("[Breakout] V0.5.8 ready; complete shotgun/knife/rocket soldiers and slower player rifle rounds.");
+                    console.info("[Breakout] V0.5.9 ready; stable damaged crates, native armored boss and six telegraphed attacks.");
                     _context.next = 13;
                     break;
                   case 9:
@@ -5967,6 +6272,8 @@ System.register("chunks:///_virtual/GameManager.ts", ['./rollupPluginModLoBabelH
                   playerFrame: comicPose(_this2.session.player),
                   equipment: comicEquipment(_this2.session.player),
                   renderedPlayer: _this2.renderer.playerStatus(),
+                  renderedBoss: _this2.renderer.bossStatus(),
+                  objects: _this2.objects.status(),
                   hudWeapon: _this2.hud.weaponStatus(),
                   combat: _this2.combatRenderer.status(),
                   terrain: "native-v057"
@@ -6398,7 +6705,7 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
             if (!this.spawner.guard.alive && !this.bossDeathStarted) {
               this.bossDeathStarted = true;
               if (this.level.data.arena) {
-                for (var _n2 = 0; _n2 < 5; _n2++) this.explosions.enqueue(this.spawner.guard.x + (_n2 - 2) * 35, this.spawner.guard.y + 35 + _n2 % 3 * 70, 130, 0, "player");
+                for (var _n2 = 0; _n2 < 5; _n2++) this.explosions.enqueue(this.spawner.guard.x + (_n2 - 2) * 35, this.spawner.guard.y + 35 + _n2 % 3 * 70, 130, 0, "player", 'boss');
                 var _iterator3 = _createForOfIteratorHelper(this.projectiles.items),
                   _step3;
                 try {
@@ -6430,7 +6737,10 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
               this.state = "dying";
               if (this.player.deadTime >= GameConfig.player.deathDuration) this.state = "gameover";
             } else if (this.level.reachedExit(this.player.x)) this.state = "complete";
-            this.camera.update(this.player.x, dt, this.level.data.width, this.player.facing, this.player.y, this.level.arenaEntered && this.level.data.arena ? this.level.data.arena.start - this.camera.visibleWidth * 0.25 : undefined);
+            this.camera.update(this.player.x, dt, this.level.data.width,
+            // Keep the giant in view during a brief evasive turn. Character facing
+            // and free retreat remain independent of this camera-only look-ahead.
+            this.level.arenaEntered ? this.player.x < this.spawner.guard.x ? 1 : -1 : this.player.facing, this.player.y, this.level.arenaEntered && this.level.data.arena ? this.level.data.arena.start - this.camera.visibleWidth * 0.25 : undefined);
           }
         }, {
           key: "snapshot",
@@ -6547,7 +6857,8 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
                   vy: p.vy,
                   homing: p.homing,
                   locked: !!((_p$target = p.target) !== null && _p$target !== void 0 && _p$target.alive),
-                  age: p.age
+                  age: p.age,
+                  visual: p.visual
                 };
               }),
               remaining: this.spawner.remaining,
@@ -6563,7 +6874,19 @@ System.register("chunks:///_virtual/GameSession.ts", ['./rollupPluginModLoBabelH
                 warningX: this.spawner.guard.warningX,
                 warningTime: this.spawner.guard.warningTime,
                 windup: this.spawner.guard.windup,
-                summons: this.spawner.guard.summons
+                summons: this.spawner.guard.summons,
+                beam: this.spawner.guard instanceof ColossusBoss ? {
+                  active: this.spawner.guard.beam.active,
+                  time: this.spawner.guard.beam.time,
+                  x: this.spawner.guard.beam.x,
+                  y: this.spawner.guard.beam.y,
+                  endX: this.spawner.guard.beam.endX,
+                  endY: this.spawner.guard.beam.endY,
+                  length: this.spawner.guard.beam.length,
+                  angle: this.spawner.guard.beam.angle,
+                  hits: this.spawner.guard.beam.hits
+                } : null,
+                attackCounts: this.spawner.guard instanceof ColossusBoss ? this.spawner.guard.attackCounts : null
               },
               miniBoss: this.spawner.miniBoss ? {
                 x: this.spawner.miniBoss.x,
@@ -6849,8 +7172,8 @@ System.register("chunks:///_virtual/GrenadeSystem.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanRenderer.ts', './JoystickView.ts', './ControlLayout.ts', './PlatformAdapter.ts', './WeaponArt.ts', './ComicAssets.ts'], function (exports) {
-  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, UITransform, Sprite, Color, Label, view, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout, PlatformAdapter, WeaponArt, ComicAssets, ComicBatch;
+System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameConfig.ts', './Ink.ts', './StickmanRenderer.ts', './JoystickView.ts', './ControlLayout.ts', './PlatformAdapter.ts', './WeaponArt.ts', './ComicAssets.ts', './ColossusBoss.ts'], function (exports) {
+  var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, _slicedToArray, cclegacy, UITransform, Sprite, Color, Label, view, GameConfig, node, Ink, colors, StickmanRenderer, JoystickView, controlLayout, PlatformAdapter, WeaponArt, ComicAssets, ComicBatch, ColossusBoss;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -6884,6 +7207,8 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
     }, function (module) {
       ComicAssets = module.ComicAssets;
       ComicBatch = module.ComicBatch;
+    }, function (module) {
+      ColossusBoss = module.ColossusBoss;
     }],
     execute: function () {
       cclegacy._RF.push({}, "57cedYylhxGlVuP7wp2UQhx", "HUDController", undefined);
@@ -7357,7 +7682,8 @@ System.register("chunks:///_virtual/HUDController.ts", ['./rollupPluginModLoBabe
               this.guardInk.rect(640 - bw / 2, 539, bw, 7 * this.layout.joystick.unit, colors.ink, colors.paper, 2);
               this.guardInk.rect(640 - bw / 2, 539, bw * encounter.health / encounter.maxHealth, 7 * this.layout.joystick.unit, colors.ink, colors.ink, 1);
               var name = encounter.kind === "colossus" ? "重装裁决者" : "巡逻战车 · 小 BOSS";
-              this.guardLabel.string = "".concat(name, " \xB7 \u9636\u6BB5 ").concat(encounter.phase, "  ").concat(Math.ceil(encounter.health), " / ").concat(encounter.maxHealth);
+              var attack = encounter instanceof ColossusBoss ? " \xB7 ".concat(encounter.windup > 0 ? '预警 ' : '').concat(encounter.attackName) : '';
+              this.guardLabel.string = "".concat(name, " \xB7 \u9636\u6BB5 ").concat(encounter.phase, "  ").concat(Math.ceil(encounter.health), " / ").concat(encounter.maxHealth).concat(attack);
             }
             if (this.lastState !== s.state) {
               var _iterator5 = _createForOfIteratorHelper(this.panels),
@@ -8891,9 +9217,9 @@ System.register("chunks:///_virtual/LevelRenderer.ts", ['./rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './MeleeGeometry.ts', './MeleeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponPresentation.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './ColossusBoss.ts', './EnemyController.ts', './EnemySpawner.ts', './EnemyTactics.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './TerrainProfile.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './ColossusArt.ts', './CombatRenderer.ts', './ComicActorArt.ts', './ComicAssets.ts', './ComicCombatArt.ts', './ComicEquipment.ts', './ComicFrames.ts', './ComicLevelRenderer.ts', './ComicObjectArt.ts', './ComicPose.ts', './DirectFrames.ts', './DirectPose.ts', './Ink.ts', './LevelRenderer.ts', './MechanicalEnemyArt.ts', './MeleePose.ts', './ObjectRenderer.ts', './ProjectileArt.ts', './RocketPresentation.ts', './SceneryArt.ts', './ShotgunFrames.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './SupplementFrames.ts', './TerrainSurface.ts', './TerrainTiles.ts', './WeaponArt.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameManager.ts', './CameraFollow.ts', './BossBeam.ts', './ExplosionSystem.ts', './GrenadeSystem.ts', './MeleeGeometry.ts', './MeleeSystem.ts', './ParticlePool.ts', './ProjectileManager.ts', './WeaponPresentation.ts', './WeaponSystem.ts', './GameConfig.ts', './GameSession.ts', './InputManager.ts', './TouchInputManager.ts', './Types.ts', './VirtualJoystick.ts', './ColossusBoss.ts', './EnemyController.ts', './EnemySpawner.ts', './EnemyTactics.ts', './TankBoss.ts', './LevelController.ts', './LevelData.ts', './MechanismController.ts', './TerrainProfile.ts', './AudioBridge.ts', './CocosInputAdapter.ts', './PlatformAdapter.ts', './PlatformBridge.ts', './PlayerController.ts', './CharacterArt.ts', './ColossusArt.ts', './ColossusPresentation.ts', './CombatRenderer.ts', './ComicActorArt.ts', './ComicAssets.ts', './ComicCombatArt.ts', './ComicEquipment.ts', './ComicFrames.ts', './ComicLevelRenderer.ts', './ComicObjectArt.ts', './ComicPose.ts', './DirectFrames.ts', './DirectPose.ts', './Ink.ts', './LevelRenderer.ts', './MechFrames.ts', './MechanicalEnemyArt.ts', './MeleePose.ts', './ObjectPresentation.ts', './ObjectRenderer.ts', './ProjectileArt.ts', './RocketPresentation.ts', './SceneryArt.ts', './ShotgunFrames.ts', './StickmanAnimator.ts', './StickmanRenderer.ts', './SupplementFrames.ts', './TerrainSurface.ts', './TerrainTiles.ts', './WeaponArt.ts', './ControlLayout.ts', './HUDController.ts', './JoystickView.ts', './ViewportLayout.ts', './DestructibleManager.ts', './DestructibleObject.ts', './PickupSystem.ts'], function () {
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -9091,6 +9417,200 @@ System.register("chunks:///_virtual/MechanismController.ts", ['./rollupPluginMod
         }]);
         return MechanismController;
       }());
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/MechFrames.ts", ['cc'], function (exports) {
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "f35d5xHrnp6Hb5K5uko+l+b", "MechFrames", undefined);
+      // Generated from the three supplied sheets by prepare-comic-v059.py.
+      var MechFrames = exports('MechFrames', {
+        "mech.idle": {
+          "atlas": [423, 4, 520, 352],
+          "anchor": [0.573076923076923, -0.0028409090909091717],
+          "sourceSize": [520, 352],
+          "size": [520, 352]
+        },
+        "mech.step.0": {
+          "atlas": [4, 4, 411, 358],
+          "anchor": [0.5255474452554745, 0.013966480446927387],
+          "sourceSize": [411, 358],
+          "size": [411, 358]
+        },
+        "mech.step.1": {
+          "atlas": [1311, 4, 390, 343],
+          "anchor": [0.5025641025641026, -0.00291545189504383],
+          "sourceSize": [390, 343],
+          "size": [390, 343]
+        },
+        "mech.charge": {
+          "atlas": [4, 370, 541, 342],
+          "anchor": [0.5415896487985212, 0.023391812865497075],
+          "sourceSize": [541, 342],
+          "size": [541, 342]
+        },
+        "mech.damaged": {
+          "atlas": [951, 4, 352, 349],
+          "anchor": [0.5454545454545454, 0.0],
+          "sourceSize": [352, 349],
+          "size": [352, 349]
+        },
+        "mech.collapse": {
+          "atlas": [553, 370, 418, 316],
+          "anchor": [0.48564593301435405, 0.02848101265822789],
+          "sourceSize": [418, 316],
+          "size": [418, 316]
+        },
+        "mech.wreck": {
+          "atlas": [979, 370, 683, 279],
+          "anchor": [0.5124450951683748, 0.017921146953404965],
+          "sourceSize": [683, 279],
+          "size": [683, 279]
+        },
+        "mech.warning": {
+          "atlas": [4, 720, 164, 146],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [164, 146],
+          "size": [164, 146]
+        },
+        "mech.ground-ring": {
+          "atlas": [4, 874, 193, 81],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [193, 81],
+          "size": [193, 81]
+        },
+        "mech.round": {
+          "atlas": [750, 874, 47, 22],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [47, 22],
+          "size": [47, 22]
+        },
+        "mech.round-heavy": {
+          "atlas": [474, 874, 159, 70],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [159, 70],
+          "size": [159, 70]
+        },
+        "mech.missile": {
+          "atlas": [641, 874, 101, 64],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [101, 64],
+          "size": [101, 64]
+        },
+        "mech.missile-fire": {
+          "atlas": [205, 874, 173, 73],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [173, 73],
+          "size": [173, 73]
+        },
+        "mech.orb": {
+          "atlas": [1469, 720, 93, 95],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [93, 95],
+          "size": [93, 95]
+        },
+        "mech.beam": {
+          "atlas": [616, 720, 566, 113],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [566, 113],
+          "size": [566, 113]
+        },
+        "mech.target": {
+          "atlas": [1670, 370, 355, 214],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [355, 214],
+          "size": [355, 214]
+        },
+        "mech.muzzle": {
+          "atlas": [1706, 720, 143, 93],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [143, 93],
+          "size": [143, 93]
+        },
+        "mech.hit": {
+          "atlas": [1387, 720, 74, 96],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [74, 96],
+          "size": [74, 96]
+        },
+        "mech.blast.0": {
+          "atlas": [386, 874, 80, 72],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [80, 72],
+          "size": [80, 72]
+        },
+        "mech.blast.1": {
+          "atlas": [1570, 720, 128, 94],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [128, 94],
+          "size": [128, 94]
+        },
+        "mech.blast.2": {
+          "atlas": [176, 720, 201, 123],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [201, 123],
+          "size": [201, 123]
+        },
+        "mech.blast.3": {
+          "atlas": [1190, 720, 189, 112],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [189, 112],
+          "size": [189, 112]
+        },
+        "mech.smoke": {
+          "atlas": [385, 720, 223, 120],
+          "anchor": [0.5, 0.5],
+          "sourceSize": [223, 120],
+          "size": [223, 120]
+        }
+      });
+      var MechScale = exports('MechScale', .8);
+      var MechSockets = exports('MechSockets', {
+        "mech.idle": {
+          "muzzle": [-228.8, 137.6],
+          "core": [0.8, 184.0],
+          "leftPod": [-96.0, 238.4],
+          "rightPod": [104.0, 236.0]
+        },
+        "mech.step.0": {
+          "muzzle": [-162.4, 139.2],
+          "core": [24.8, 180.8],
+          "leftPod": [-73.6, 241.6],
+          "rightPod": [92.0, 231.2]
+        },
+        "mech.step.1": {
+          "muzzle": [-144.8, 132.8],
+          "core": [48.0, 179.2],
+          "leftPod": [-41.6, 238.4],
+          "rightPod": [115.2, 226.4]
+        },
+        "mech.charge": {
+          "muzzle": [-197.6, 186.4],
+          "core": [-3.2, 173.6],
+          "leftPod": [-76.0, 232.0],
+          "rightPod": [122.4, 220.8]
+        },
+        "mech.damaged": {
+          "muzzle": [-135.2, 133.6],
+          "core": [8.0, 145.6],
+          "leftPod": [-64.0, 207.2],
+          "rightPod": [68.0, 209.6]
+        },
+        "mech.collapse": {
+          "muzzle": [-132.0, 71.2],
+          "core": [12.0, 128.0]
+        },
+        "mech.wreck": {
+          "core": [8.0, 86.4]
+        }
+      });
       cclegacy._RF.pop();
     }
   };
@@ -9401,6 +9921,40 @@ System.register("chunks:///_virtual/MeleeSystem.ts", ['./rollupPluginModLoBabelH
   };
 });
 
+System.register("chunks:///_virtual/ObjectPresentation.ts", ['cc', './ComicFrames.ts'], function (exports) {
+  var cclegacy, ComicFrames;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      ComicFrames = module.ComicFrames;
+    }],
+    execute: function () {
+      exports('objectPresentation', objectPresentation);
+      cclegacy._RF.push({}, "4f3d8lUGoqg+ggBQG0/PkWd", "ObjectPresentation", undefined);
+
+      /** A live crate has ONE stable envelope. Damage changes cracks, never its scale.
+       * The supplied broken crate includes debris outside the box and cannot be fit
+       * against the whole image without shrinking the actual timber body.
+       */
+      function objectPresentation(o) {
+        var damage = 1 - o.health / o.maxHealth;
+        var id;
+        if (o.kind === 'wood' || o.kind === 'hanging') id = o.alive ? 'crate.intact' : 'crate.debris';else if (o.kind === 'barrel') id = !o.alive ? 'barrel.broken' : damage > .2 ? 'barrel.dented' : 'barrel.intact';else if (o.kind === 'sandbag') id = o.alive ? 'cover.sandbags' : 'cover.sandbags-broken';else id = damage > .3 ? 'cover.concrete-broken' : 'cover.concrete';
+        var size = ComicFrames[id].size;
+        var scale = Math.min((o.w + 5) / size[0], (o.h + 3) / size[1]);
+        return {
+          id: id,
+          width: size[0] * scale,
+          height: size[1] * scale,
+          cracks: o.alive && (o.kind === 'wood' || o.kind === 'hanging') ? damage : 0
+        };
+      }
+      cclegacy._RF.pop();
+    }
+  };
+});
+
 System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Ink.ts', './ComicObjectArt.ts', './ComicAssets.ts'], function (exports) {
   var _createClass, _classCallCheck, _defineProperty, _createForOfIteratorHelper, cclegacy, Label, Color, Ink, node, colors, ComicObjectArt, ComicAssets;
   return {
@@ -9442,6 +9996,11 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
           }
         }
         _createClass(ObjectRenderer, [{
+          key: "status",
+          value: function status() {
+            return this.comic.rendered;
+          }
+        }, {
           key: "draw",
           value: function draw(s) {
             var ink = this.ink,
@@ -9460,6 +10019,32 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                   h = o.h;
                 var imageDrawn = this.comic.draw(o, cam);
                 if (imageDrawn && o.alive) {
+                  if ((o.kind === 'wood' || o.kind === 'hanging') && o.health < o.maxHealth) {
+                    var damage = 1 - o.health / o.maxHealth;
+                    ink.line([{
+                      x: _x + w * .26,
+                      y: _y + h * .86
+                    }, {
+                      x: _x + w * .38,
+                      y: _y + h * .65
+                    }, {
+                      x: _x + w * .31,
+                      y: _y + h * .52
+                    }, {
+                      x: _x + w * .48,
+                      y: _y + h * (.52 - damage * .32)
+                    }], 2.1);
+                    if (damage > .5) ink.line([{
+                      x: _x + w * .72,
+                      y: _y + h * .65
+                    }, {
+                      x: _x + w * .61,
+                      y: _y + h * .4
+                    }, {
+                      x: _x + w * .73,
+                      y: _y + h * .25
+                    }], 1.8);
+                  }
                   if (o.kind === "hanging" && !o.triggered) ink.segment(_x + w / 2, _y + h, _x + w / 2, _y + h + 80, 2);
                   continue;
                 }
@@ -9614,7 +10199,7 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                   }
                 }
                 if (o.health < o.maxHealth) {
-                  var damage = 1 - o.health / o.maxHealth;
+                  var _damage = 1 - o.health / o.maxHealth;
                   ink.line([{
                     x: _x + w * 0.28,
                     y: _y + h
@@ -9626,7 +10211,7 @@ System.register("chunks:///_virtual/ObjectRenderer.ts", ['./rollupPluginModLoBab
                     y: _y + h * 0.7
                   }, {
                     x: _x + w * 0.47,
-                    y: _y + h * (0.6 - damage * 0.5)
+                    y: _y + h * (0.6 - _damage * 0.5)
                   }], 2.5);
                 }
                 if (o.kind === "hanging" && !o.triggered) ink.line([{
@@ -10148,7 +10733,7 @@ System.register("chunks:///_virtual/PlatformBridge.ts", ['./rollupPluginModLoBab
             game.on(Game.EVENT_HIDE, onHide);
             this.unsubscribe = this.adapter.subscribeInactive(onHide);
             globalThis.__BREAKOUT__ = {
-              version: "0.5.8",
+              version: "0.5.9",
               snapshot: snapshot
             };
           }
@@ -10648,6 +11233,7 @@ System.register("chunks:///_virtual/ProjectileManager.ts", ['./rollupPluginModLo
               homing: (_s$homing = s.homing) !== null && _s$homing !== void 0 ? _s$homing : false,
               age: 0,
               target: undefined,
+              visual: s.visual,
               launchAngle: Math.atan2(Math.sin((_s$pitch = s.pitch) !== null && _s$pitch !== void 0 ? _s$pitch : 0), s.direction * Math.cos((_s$pitch2 = s.pitch) !== null && _s$pitch2 !== void 0 ? _s$pitch2 : 0)),
               launchRemaining: s.launchPitch === undefined ? 0 : Math.abs(((_s$pitch3 = s.pitch) !== null && _s$pitch3 !== void 0 ? _s$pitch3 : 0) - s.launchPitch) / GameConfig.rocketLaunch.turnRate
             });
@@ -10746,7 +11332,7 @@ System.register("chunks:///_virtual/ProjectileManager.ts", ['./rollupPluginModLo
                   }
                   if (p.blastRadius > 0) {
                     var _this$onExplosion;
-                    (_this$onExplosion = this.onExplosion) === null || _this$onExplosion === void 0 || _this$onExplosion.call(this, p.x, p.y, p.blastRadius, p.damage, p.owner, p.kind === "rocket" ? "rocket" : "cannon");
+                    (_this$onExplosion = this.onExplosion) === null || _this$onExplosion === void 0 || _this$onExplosion.call(this, p.x, p.y, p.blastRadius, p.damage, p.owner, p.visual ? 'boss' : p.kind === "rocket" ? "rocket" : "cannon");
                   } else if (_target && _target.takeDamage(p.kind === "pellet" && p.distance < 180 ? p.damage * 1.5 : p.damage, p.vx > 0 ? 1 : -1, "bullet")) {
                     this.hits++;
                     var body = _target;
@@ -11673,6 +12259,11 @@ System.register("chunks:///_virtual/StickmanRenderer.ts", ['./rollupPluginModLoB
           key: "playerStatus",
           value: function playerStatus() {
             return this.comic.playerStatus;
+          }
+        }, {
+          key: "bossStatus",
+          value: function bossStatus() {
+            return this.comic.bossStatus;
           }
         }, {
           key: "begin",

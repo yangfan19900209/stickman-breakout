@@ -7,10 +7,12 @@ import { comicEquipment } from "./ComicEquipment";
 import { weaponPresentation } from "../combat/WeaponPresentation";
 import { Sprite } from "cc";
 import { isDirectActor, directScale } from "./DirectPose";
+import { colossusPresentation } from "./ColossusPresentation";
 
 /** Whole supplied action frames. No segmented legs, geometric limbs or rotated corpses. */
 export class ComicActorArt {
   playerStatus = {body:"",weapon:"",weaponVisible:false};
+  bossStatus = {frame:"",width:0,height:0,x:0,y:0,visible:false};
   private batch?: ComicBatch;
   begin(ink: Ink): void {
     this.batch ??= new ComicBatch(ink.node, "Comic actors");
@@ -18,10 +20,14 @@ export class ComicActorArt {
   }
   end(): void { this.batch?.end(); }
   draw(ink: Ink, a: RenderActor, cam: number): boolean {
-    // The supplied sheets contain no walking giant. Keep that separate final encounter
-    // explicitly outside this first-two-zone art pass, rather than disguising it as a tank.
-    if (!ComicAssets.enabled || a.kind === "colossus") return false;
+    if (!ComicAssets.enabled) return false;
     if (!this.batch) this.begin(ink);
+    if(a.kind==='colossus'){
+      const v=colossusPresentation(a);
+      const n=this.batch!.put(v.id,a.x-cam,a.y,v.width,v.height,0,a.hitTime&&Math.floor(a.hitTime*60)%2?190:255,v.flip);
+      this.bossStatus={frame:n.getComponent(Sprite)!.spriteFrame!.name,width:v.width,height:v.height,x:n.position.x+cam,y:n.position.y,visible:n.active};
+      return true;
+    }
     const equipment = comicEquipment(a), id = equipment.body, data = ComicFrames[id];
     const scale = a.kind === "guard" ? 1.25 : a.kind ? .8 : isDirectActor(id) ? directScale(id) : .64;
     const alpha = a.invincible && Math.floor(a.invincible * 15) % 2 ? 130 : 255;
