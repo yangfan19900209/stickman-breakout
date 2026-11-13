@@ -1,0 +1,1931 @@
+{
+  "startedAt": "2026-11-10T06:52:12.288Z",
+  "environment": "Chrome 844x390 DPR 2, ordinary keyboard and independent touch IDs, read-only game snapshots",
+  "idleCacheStable": true,
+  "movingGripCacheStable": true,
+  "landMultiTouch": true,
+  "oceanMultiTouch": true,
+  "touchCancelCleared": true,
+  "outerHitRegion": true,
+  "grenadeBadgeSequence": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "captures": [
+    "controls-land-idle",
+    "controls-land-pressed",
+    "controls-knife",
+    "controls-double-ready",
+    "controls-double-spent",
+    "controls-slide-ready",
+    "controls-slide-pressed",
+    "controls-grenade-2",
+    "controls-grenade-1",
+    "controls-grenade-0",
+    "controls-pause-panel",
+    "controls-shore",
+    "controls-ocean-idle",
+    "controls-ocean-multitouch",
+    "controls-ocean-boost-cooldown",
+    "controls-ocean-recovered"
+  ],
+  "states": [
+    {
+      "name": "controls-land-idle",
+      "chapter": 1,
+      "time": 0.09166666666666666,
+      "grenades": 3,
+      "player": {
+        "x": 110,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Idle",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 0,
+          "originY": 0,
+          "baseX": 0,
+          "baseY": 0,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 12,
+          "joystick": 1
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-land-pressed",
+      "chapter": 1,
+      "time": 0.9416666666666658,
+      "grenades": 3,
+      "player": {
+        "x": 166.55555754286226,
+        "y": 150,
+        "vx": 213.33334745367017,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": true,
+        "hudHeight": 96,
+        "stick": {
+          "x": 76.60800405649039,
+          "y": 0,
+          "axis": 0.7619048123345363,
+          "vertical": 0,
+          "owner": 1
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": [
+            {
+              "id": 1,
+              "role": "move"
+            },
+            {
+              "id": 2,
+              "role": "action"
+            }
+          ]
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 13,
+          "joystick": 2
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": true,
+            "cooldown": 3,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-knife",
+      "chapter": 1,
+      "time": 1.0999999999999985,
+      "grenades": 3,
+      "player": {
+        "x": 179.8888922882293,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Idle",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 17,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.knife"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-double-ready",
+      "chapter": 1,
+      "time": 1.274999999999998,
+      "grenades": 3,
+      "player": {
+        "x": 179.8888922882293,
+        "y": 194.91666666666666,
+        "vx": 0,
+        "vy": 440,
+        "health": 5,
+        "grounded": false,
+        "facing": 1,
+        "animation": "Jump",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 1,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "double",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 23,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": true,
+            "cooldown": 0,
+            "frame": "ui.doubleJump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-double-spent",
+      "chapter": 1,
+      "time": 1.4499999999999973,
+      "grenades": 3,
+      "player": {
+        "x": 179.8888922882293,
+        "y": 246.3666666666667,
+        "vx": 0,
+        "vy": 410,
+        "health": 5,
+        "grounded": false,
+        "facing": 1,
+        "animation": "Jump",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 0,
+        "jumpCount": 2,
+        "canJump": false
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "spent",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 27,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": true,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-slide-ready",
+      "chapter": 1,
+      "time": 2.5749999999999935,
+      "grenades": 3,
+      "player": {
+        "x": 179.8888922882293,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Crouch",
+        "crouched": true,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "slide",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 34,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.slide"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-slide-pressed",
+      "chapter": 1,
+      "time": 2.66666666666666,
+      "grenades": 3,
+      "player": {
+        "x": 222.37500339934041,
+        "y": 150,
+        "vx": 436.96969696969677,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.3566666666666664,
+        "slideProgress": 0.18939393939394,
+        "slideCooldown": 0.696666666666667,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "slide",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 35,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": true,
+            "cooldown": 8,
+            "frame": "ui.slide"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-grenade-2",
+      "chapter": 1,
+      "time": 3.1999999999999913,
+      "grenades": 2,
+      "player": {
+        "x": 287.6267605633803,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Hit",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0.16333333333333358,
+        "slideSerial": 1,
+        "hitTime": 0.21166666666666667,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": true,
+        "paints": {
+          "actions": 40,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": true,
+            "cooldown": 8,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-grenade-1",
+      "chapter": 1,
+      "time": 3.9499999999999886,
+      "grenades": 1,
+      "player": {
+        "x": 287.6267605633803,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Idle",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 42,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": true,
+            "cooldown": 8,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-grenade-0",
+      "chapter": 1,
+      "time": 4.6916666666666895,
+      "grenades": 0,
+      "player": {
+        "x": 287.6267605633803,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Idle",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 44,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": true,
+            "cooldown": 8,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-pause-panel",
+      "chapter": 1,
+      "time": 5.325000000000054,
+      "grenades": 0,
+      "player": {
+        "x": 287.6267605633803,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Idle",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 45,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-shore",
+      "chapter": 2,
+      "time": 0.14166666666666666,
+      "stage": "shore",
+      "grenades": 3,
+      "player": {
+        "x": 110,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 0,
+          "originY": 0,
+          "baseX": 0,
+          "baseY": 0,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "boost",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 18,
+          "joystick": 2
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-ocean-idle",
+      "chapter": 2,
+      "time": 8.383333333333498,
+      "stage": "swimming",
+      "grenades": 3,
+      "player": {
+        "x": 840,
+        "y": 360,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 0,
+          "originY": 0,
+          "baseX": 0,
+          "baseY": 0,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "boost",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 18,
+          "joystick": 2
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-ocean-multitouch",
+      "chapter": 2,
+      "time": 8.541666666666822,
+      "stage": "swimming",
+      "grenades": 3,
+      "player": {
+        "x": 892.8155128250305,
+        "y": 384.37639788939106,
+        "vx": 562.9347885635261,
+        "vy": 259.8161346509066,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "controls": {
+        "shootHeld": true,
+        "hudHeight": 96,
+        "stick": {
+          "x": 62.243999774639434,
+          "y": 28.728008563701934,
+          "axis": 0.6008648855044821,
+          "vertical": 0.2773223385209509,
+          "owner": 11
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": [
+            {
+              "id": 11,
+              "role": "move"
+            },
+            {
+              "id": 12,
+              "role": "action"
+            },
+            {
+              "id": 13,
+              "role": "action"
+            }
+          ]
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "boost",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 20,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": true,
+            "cooldown": 8,
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": true,
+            "cooldown": 3,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-ocean-boost-cooldown",
+      "chapter": 2,
+      "time": 8.850000000000138,
+      "stage": "swimming",
+      "grenades": 3,
+      "player": {
+        "x": 992.9586921440259,
+        "y": 430.59634075117026,
+        "vx": 16.99915765201461,
+        "vy": 7.845767437358171,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "boost",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 22,
+          "joystick": 4
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 7,
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    },
+    {
+      "name": "controls-ocean-recovered",
+      "chapter": 2,
+      "time": 10.86666666666669,
+      "stage": "swimming",
+      "grenades": 3,
+      "player": {
+        "x": 993.7397867878998,
+        "y": 430.95684608019013,
+        "vx": 5.1746776145859474e-17,
+        "vy": 2.3883134657871215e-17,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "controls": {
+        "shootHeld": false,
+        "hudHeight": 96,
+        "stick": {
+          "x": 0,
+          "y": 0,
+          "axis": 0,
+          "vertical": 0,
+          "owner": null
+        },
+        "layout": {
+          "systemMenu": null,
+          "hud": {
+            "levelX": 1325.538461538462,
+            "trackX": 1222.1538461538464,
+            "secondRow": false,
+            "objectiveX": 925.846153846154,
+            "objectiveWidth": 511.3846153846157
+          },
+          "joystick": {
+            "x": 171.92307692307693,
+            "y": 164.53846153846155,
+            "r": 95.76000000000002,
+            "baseR": 135,
+            "knobR": 64.80000000000001,
+            "hit": 270,
+            "unit": 1.8461538461538463
+          },
+          "jump": {
+            "x": 1188.7384615384615,
+            "y": 228.82153846153847,
+            "r": 64.80000000000001,
+            "hit": 151.75384615384618
+          },
+          "shoot": {
+            "x": 1404,
+            "y": 164.53846153846155,
+            "r": 108,
+            "hit": 241.84615384615384
+          },
+          "grenade": {
+            "x": 1415.076923076923,
+            "y": 366.02769230769235,
+            "r": 54.720000000000006,
+            "hit": 131.59384615384616
+          },
+          "pause": {
+            "x": 1502.769230769231,
+            "y": 668.3076923076923,
+            "hit": 81.23076923076924
+          }
+        },
+        "floating": {
+          "originX": 171.92307692307693,
+          "originY": 164.53846153846155,
+          "baseX": 171.92307692307693,
+          "baseY": 164.53846153846155,
+          "owners": []
+        }
+      },
+      "presentation": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "boost",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 23,
+          "joystick": 4
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "browserDiagnostics": [
+    {
+      "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+      "location": {
+        "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+        "line": 40431,
+        "column": 0,
+        "lineNumber": 40431,
+        "columnNumber": 0
+      }
+    },
+    {
+      "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+      "location": {
+        "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+        "line": 40431,
+        "column": 0,
+        "lineNumber": 40431,
+        "columnNumber": 0
+      }
+    }
+  ]
+}

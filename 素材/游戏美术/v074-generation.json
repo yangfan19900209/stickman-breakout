@@ -1,0 +1,34 @@
+{
+  "tool": "built-in imagegen",
+  "assets": [
+    {
+      "id": "land",
+      "refs": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/v073/terrain.png"
+      ],
+      "prompt": "Use case: stylized-concept. Production terrain sprite sheet for a black-and-white hand-inked 2D side-scrolling military action game. Use attached underwater terrain ONLY as style reference: bold organic black outside contours, white opaque material faces, finer engraved hatching, pebbles and structural detail. Land setting, NOT underwater. EXACTLY SIX isolated large side elevation assets, 2 columns x 3 rows, transparent gutters. Target 2048x2048. Top left: long ground cross-section, flat walkable grass edge, tiny grass tufts, dense layered soil and varied embedded rocks, square opaque cut sides for modular tiling, wide rectangular body, no bottom floating shadow. Top right: long ruined military concrete foundation cross-section, flat top slab, chipped edges, aggregate stones, rebar and narrow seams, wide rectangular opaque body for tiling. Middle left: complete long industrial steel catwalk, perfectly level thin walkable top, riveted face plates, strong triangular ribs below, hanging cables, thick shaped end caps, pure side view, no perspective taper. Middle right: large square retaining-wall cross-section with layered sandstone blocks, cracks, exposed aggregate, roots at top, complete opaque interior and detailed sides, flat horizontal top. Bottom left: complete coastal cliff side elevation, broad FLAT grass plateau across the top, a sheer eroded rock wall at the RIGHT EDGE curving inward below, stratified rock and fissures all the way down, broad opaque rock interior, no sea or sky, no repeating oval pebbles on surface. Bottom right: abandoned industrial pump-house and loading gantry background landmark, weathered panel walls, pipes, tank and tall crane arm, complete coherent side-elevation building group with open transparent space around silhouette. ALL SIX separate, generous transparent gutters, no characters, creatures, water, writing, numbers, border, grid, shadows outside objects. Keep every silhouette complete and detailed enough to match the reference at gameplay size.",
+      "source": "../素材/游戏美术/source/v074/land.png"
+    },
+    {
+      "id": "torpedo",
+      "refs": [
+        "C:/Users/Administrator/Desktop/线条突围/art/slices/level02/diver.torpedo.fire.png"
+      ],
+      "prompt": "Use case: identity-preserve. Create a production animation sprite sheet using attached diver as strict identity and equipment reference. SAME helmet, single visible eye and mask, white air tank, black gloves, short black flippers, round torso and SAME large straight white TORPEDO LAUNCHER tube held with BOTH hands, aiming exactly horizontally RIGHT. Exactly SIX complete whole-body poses in a 3-column by 2-row grid. Shared head diameter and line thickness. Reading order: 1 upright hover knees bent; 2 alternate hover flipper kick; 3 swimming forward, torso leaning right, one flipper kicked back; 4 opposite swimming kick, alternate leg extends; 5 another distinct swimming kick both legs passing through; 6 streamlined boost legs trailing back. All holding SAME torpedo tube; barrel stays horizontal right in every frame. Bold black contour, opaque white fills, grey only in fins, no cutout body holes. Clear margins and gutters so no limbs or barrels cross cells. Transparent background. Target 1536x1024. No bubbles, muzzle flash, bullets, labels, captions, floor, grid, or detached parts. Natural visibly different fin poses, not translations of same static sprite.",
+      "source": "../素材/游戏美术/source/v074/torpedo.png"
+    },
+    {
+      "id": "entry",
+      "refs": [
+        "C:/Users/Administrator/Desktop/线条突围/art/slices/level02/object.sealed-crate.png",
+        "C:/Users/Administrator/Desktop/线条突围/art/slices/v053/player.idle.0.png"
+      ],
+      "prompt": "Use case: identity-preserve. Game animation asset sheet, black-and-white thick outline cute military platformer. Image 1 is the exact sealed supply chest reference, image 2 the exact land soldier identity. EXACTLY SIX isolated complete assets in a 3 column x 2 row layout, generous gutters, transparent background. Top row: SAME chest in three opening phases, identical front wall and base dimensions/perspective, base stays fixed: closed with lid latched; lid lifted 40 degrees on back hinge with visible dark inside; lid fully upright 100 degrees, revealing neatly packed diver mask and one white oxygen cylinder. Bottom row: THREE complete LAND SOLDIER poses facing RIGHT with same helmet, large eye, white shirt, backpack, black boots as reference: crouching and reaching both empty hands forward to chest latch at knee height; kneeling and lifting a small diver mask in both hands; standing holding the mask at chest height ready to put it on. No chest drawn with character poses. No gun in any bottom-row pose. Same head diameter across all three poses. Preserve entire hands/feet. No ground, bubbles, extra detached props, text, grid, fake checkered background. Opaque white subjects, true transparent outside. Target1536x1024. Keep chest three opening phases coherent with each other.",
+      "source": "../素材/游戏美术/source/v074/entry.png"
+    }
+  ],
+  "processingNotes": [
+    "Torpedo sheet initially contained a pale checkerboard. Background removal performed with built-in imagegen; approved source is torpedo-alpha.png.",
+    "Coast and factory redrawn as isolated landmarks because original rectangular cells overlapped."
+  ]
+}

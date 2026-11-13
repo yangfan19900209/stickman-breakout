@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "checkedAt": "2026-11-13T07:21:08.092Z",
+  "scope": "Design prototype only; not the Cocos game or real WeChat. No messages sent, no game records modified.",
+  "flows": [
+    "new-player entry",
+    "cancel/send leaves revival entitlement unchanged",
+    "one revive per attempt",
+    "boss/ammo retained in prototype",
+    "locked chapter remains disabled",
+    "clear unlocks selection",
+    "assisted run saves progress without fastest time",
+    "prior best retained",
+    "restart resets revival"
+  ],
+  "dimensions": [
+    {
+      "viewport": {
+        "width": 852,
+        "height": 600
+      },
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "返回",
+          "height": 46
+        },
+        {
+          "text": "重玩本关",
+          "height": 56
+        },
+        {
+          "text": "重玩本关",
+          "height": 56
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 667,
+        "height": 530
+      },
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "返回",
+          "height": 46
+        },
+        {
+          "text": "重玩本关",
+          "height": 56
+        },
+        {
+          "text": "重玩本关",
+          "height": 56
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "captures": [
+    "开发进度/验证记录/revive-select-design-20261113/death-desktop.png",
+    "开发进度/验证记录/revive-select-design-20261113/chapters-first-cleared.png",
+    "开发进度/验证记录/revive-select-design-20261113/assisted-result.png",
+    "开发进度/验证记录/revive-select-design-20261113/chapters-852.png",
+    "开发进度/验证记录/revive-select-design-20261113/death-852.png",
+    "开发进度/验证记录/revive-select-design-20261113/chapters-667.png",
+    "开发进度/验证记录/revive-select-design-20261113/death-667.png"
+  ],
+  "prototypeBytes": 13129
+}

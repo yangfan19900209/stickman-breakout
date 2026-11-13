@@ -1,0 +1,860 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/v061-campaign.spec.ts",
+      "tests/browser/v042-bypass.spec.ts",
+      "tests/browser/v057-underpass.spec.ts",
+      "tests/browser/v057-rocket-muzzle.spec.ts",
+      "tests/browser/v04-mobile.spec.ts",
+      "tests/browser/v04-actions.spec.ts",
+      "tests/browser/v056-repairs.spec.ts",
+      "tests/browser/v058-shotgun.spec.ts",
+      "--reporter=list,json"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "v04-actions.spec.ts",
+      "file": "v04-actions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "blank right tap and hold share the weapon; jump/grenade never cause extra shots",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:00.120Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00fb0fbd98d12a6f4680-91e7d31f520d4723c6fe",
+          "file": "v04-actions.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v04-mobile.spec.ts",
+      "file": "v04-mobile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:06.961Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-a93cdbfbfce7f9008110",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 852x393",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3794,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:10.214Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-4763f38d53d4390f652f",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 932x430",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:14.027Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-79fb0392a602ad3b27bb",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "V0.4 thumb layout, full viewport and touch at 1280x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:18.180Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-b00d5e78c9736317a119",
+          "file": "v04-mobile.spec.ts",
+          "line": 24,
+          "column": 3
+        },
+        {
+          "title": "movement, fire, grenade, HUD priority and simultaneous release stay independent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5204,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:22.010Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-2254e2b7a031150ef242",
+          "file": "v04-mobile.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "viewport height changes retain fingers; browser blur signal clears input and pauses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4074,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:27.234Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c70c4810b9a66e1db211-e926a7a51250ed514c17",
+          "file": "v04-mobile.spec.ts",
+          "line": 180,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v042-bypass.spec.ts",
+      "file": "v042-bypass.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real keys: bypass living soldiers, activate boss, retreat freely and re-enter",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 57520,
+                  "error": {
+                    "message": "Error: {\"x\":5738.152777777713,\"hp\":0,\"phase\":\"approach\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"approach\"\u001b[39m",
+                    "stack": "Error: {\"x\":5738.152777777713,\"hp\":0,\"phase\":\"approach\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"approach\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:84:5",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                      "column": 5,
+                      "line": 84
+                    },
+                    "snippet": "  82 |       phase: brain.phase,\n  83 |     }),\n> 84 |   ).toBe(\"done\");\n     |     ^\n  85 |   expect(brain.entries).toHaveLength(2);\n  86 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  87 |   // Both entries must preserve ordinary soldiers from the last approach zone."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                        "column": 5,
+                        "line": 84
+                      },
+                      "message": "Error: {\"x\":5738.152777777713,\"hp\":0,\"phase\":\"approach\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"approach\"\u001b[39m\n\n  82 |       phase: brain.phase,\n  83 |     }),\n> 84 |   ).toBe(\"done\");\n     |     ^\n  85 |   expect(brain.entries).toHaveLength(2);\n  86 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  87 |   // Both entries must preserve ordinary soldiers from the last approach zone.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:84:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:52:31.345Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                    "column": 5,
+                    "line": 84
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 107800,
+                  "error": {
+                    "message": "Error: {\"x\":5758.048205743504,\"hp\":0,\"phase\":\"approach\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"approach\"\u001b[39m",
+                    "stack": "Error: {\"x\":5758.048205743504,\"hp\":0,\"phase\":\"approach\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"approach\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:84:5",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                      "column": 5,
+                      "line": 84
+                    },
+                    "snippet": "  82 |       phase: brain.phase,\n  83 |     }),\n> 84 |   ).toBe(\"done\");\n     |     ^\n  85 |   expect(brain.entries).toHaveLength(2);\n  86 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  87 |   // Both entries must preserve ordinary soldiers from the last approach zone."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                        "column": 5,
+                        "line": 84
+                      },
+                      "message": "Error: {\"x\":5758.048205743504,\"hp\":0,\"phase\":\"approach\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"done\"\u001b[39m\nReceived: \u001b[31m\"approach\"\u001b[39m\n\n  82 |       phase: brain.phase,\n  83 |     }),\n> 84 |   ).toBe(\"done\");\n     |     ^\n  85 |   expect(brain.entries).toHaveLength(2);\n  86 |   // Previously fired rockets can destroy the turret after we stop shooting.\n  87 |   // Both entries must preserve ordinary soldiers from the last approach zone.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts:84:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T08:53:29.324Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v042-bypass-real-keys-bypa-32769-retreat-freely-and-re-enter-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v042-bypass.spec.ts",
+                    "column": 5,
+                    "line": 84
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 207429,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T08:55:17.638Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "bb37b3cb5fa19740ec84-85dd751fb9c692166d59",
+          "file": "v042-bypass.spec.ts",
+          "line": 9,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v056-repairs.spec.ts",
+      "file": "v056-repairs.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real HUD tap and Q switch knife/gun atomically with cached visible sprites and no accidental shot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5277,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:58:45.192Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "320e6bb7481fea38dc99-d065c7cd915270872884",
+          "file": "v056-repairs.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "held ordinary attack plays three knife cuts, then a real enemy hit produces stop and recoil without firing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9990,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:58:50.485Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "320e6bb7481fea38dc99-ed0274e1ebf53d1414ba",
+          "file": "v056-repairs.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "mobile ordinary button uses crouch and airborne knife sectors while jump/movement ownership survives",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3952,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:59:00.491Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "320e6bb7481fea38dc99-85cdbb9af2a1c3b806ce",
+          "file": "v056-repairs.spec.ts",
+          "line": 69,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v057-rocket-muzzle.spec.ts",
+      "file": "v057-rocket-muzzle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "upward rocket emerges from the visible tube for both facing directions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32273,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:59:04.480Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3bc14c6fc617ef75d0ef-57080f130c2f7a717d6f",
+          "file": "v057-rocket-muzzle.spec.ts",
+          "line": 8,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v057-underpass.spec.ts",
+      "file": "v057-underpass.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile real-key route can enter and leave the 42-percent underpass standing, with normal cover and combat",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 42659,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T08:59:36.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9416c73134d9be055a02-08c05094fe2063ff468d",
+          "file": "v057-underpass.spec.ts",
+          "line": 8,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v058-shotgun.spec.ts",
+      "file": "v058-shotgun.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ordinary player bullets visibly travel at the reduced 760 speed in the real Web build",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:00:19.483Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "086a6a89597d6ae4e6cb-e0c5d82490e33118a102",
+          "file": "v058-shotgun.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "real shotgun pickup uses intact sprites through running, crouch-walking, firing, jumping and repeated weapon switches",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10525,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:00:22.100Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "086a6a89597d6ae4e6cb-a05b44194a012d9171b5",
+          "file": "v058-shotgun.spec.ts",
+          "line": 29,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v061-campaign.spec.ts",
+      "file": "v061-campaign.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "crate breaks through real shots, releases one supply and debris settles on the road",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6165,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:00:32.639Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ce76df60ace61a98bc78-dfe120ab2cfc853c01a4",
+          "file": "v061-campaign.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "real keyboard completes expanded six-zone campaign, mini boss and both final boss phases",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 120788,
+                  "error": {
+                    "message": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5819.958333333135,\"trace\":[{\"time\":5.025000000000039,\"x\":1029,\"y\":261.75,\"health\":4,\"zone\":\"A\",\"boss\":132},{\"time\":10.058333333333403,\"x\":1950.1111111110838,\"y\":150,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":15.099999999999783,\"x\":2988.5000000000273,\"y\":252,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":20.116666666666166,\"x\":3617.819444444464,\"y\":195.5,\"health\":3,\"zone\":\"B\",\"boss\":132},{\"time\":25.124999999999215,\"x\":4208.416666666653,\"y\":266.3541666666667,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":30.133333333332263,\"x\":5111.027777777668,\"y\":346.99999999999864,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":35.15833333333198,\"x\":5731.111111110922,\"y\":183.66666666666666,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.16666666666503,\"x\":5716.94444444426,\"y\":150,\"health\":1,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m",
+                    "stack": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5819.958333333135,\"trace\":[{\"time\":5.025000000000039,\"x\":1029,\"y\":261.75,\"health\":4,\"zone\":\"A\",\"boss\":132},{\"time\":10.058333333333403,\"x\":1950.1111111110838,\"y\":150,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":15.099999999999783,\"x\":2988.5000000000273,\"y\":252,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":20.116666666666166,\"x\":3617.819444444464,\"y\":195.5,\"health\":3,\"zone\":\"B\",\"boss\":132},{\"time\":25.124999999999215,\"x\":4208.416666666653,\"y\":266.3541666666667,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":30.133333333332263,\"x\":5111.027777777668,\"y\":346.99999999999864,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":35.15833333333198,\"x\":5731.111111110922,\"y\":183.66666666666666,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.16666666666503,\"x\":5716.94444444426,\"y\":150,\"health\":1,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts:122:123",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                      "column": 123,
+                      "line": 122
+                    },
+                    "snippet": "  120 |   await page.screenshot({ path: 'reports/v061-complete.png' });\n  121 |   writeFileSync('reports/v061-campaign.json', JSON.stringify({ snapshot: end, trace, captures, phases: [...phases], warnings: [...warnings], miniDeathAt, bossEntryAt, errors }, null, 2));\n> 122 |   expect(end.state, JSON.stringify({ state: end.state, hp: end.player.health, x: end.player.x, trace: trace.slice(-8) })).toBe('complete');\n      |                                                                                                                           ^\n  123 |   expect(end.levelWidth).toBe(12400); expect(end.zones).toHaveLength(6);\n  124 |   expect(end.miniBoss.health).toBe(0); expect(end.guardHealth).toBe(0);\n  125 |   expect(end.player.health).toBeGreaterThan(0); expect(end.exitOpen).toBe(true);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                        "column": 123,
+                        "line": 122
+                      },
+                      "message": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5819.958333333135,\"trace\":[{\"time\":5.025000000000039,\"x\":1029,\"y\":261.75,\"health\":4,\"zone\":\"A\",\"boss\":132},{\"time\":10.058333333333403,\"x\":1950.1111111110838,\"y\":150,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":15.099999999999783,\"x\":2988.5000000000273,\"y\":252,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":20.116666666666166,\"x\":3617.819444444464,\"y\":195.5,\"health\":3,\"zone\":\"B\",\"boss\":132},{\"time\":25.124999999999215,\"x\":4208.416666666653,\"y\":266.3541666666667,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":30.133333333332263,\"x\":5111.027777777668,\"y\":346.99999999999864,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":35.15833333333198,\"x\":5731.111111110922,\"y\":183.66666666666666,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.16666666666503,\"x\":5716.94444444426,\"y\":150,\"health\":1,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n\n  120 |   await page.screenshot({ path: 'reports/v061-complete.png' });\n  121 |   writeFileSync('reports/v061-campaign.json', JSON.stringify({ snapshot: end, trace, captures, phases: [...phases], warnings: [...warnings], miniDeathAt, bossEntryAt, errors }, null, 2));\n> 122 |   expect(end.state, JSON.stringify({ state: end.state, hp: end.player.health, x: end.player.x, trace: trace.slice(-8) })).toBe('complete');\n      |                                                                                                                           ^\n  123 |   expect(end.levelWidth).toBe(12400); expect(end.zones).toHaveLength(6);\n  124 |   expect(end.miniBoss.health).toBe(0); expect(end.guardHealth).toBe(0);\n  125 |   expect(end.player.health).toBeGreaterThan(0); expect(end.exitOpen).toBe(true);\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts:122:123"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:00:38.811Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v061-campaign-real-keyboar-d90af--and-both-final-boss-phases\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v061-campaign-real-keyboar-d90af--and-both-final-boss-phases\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                    "column": 123,
+                    "line": 122
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ce76df60ace61a98bc78-e7e96730a5ce9e47cd5f",
+          "file": "v061-campaign.spec.ts",
+          "line": 76,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T08:51:59.342Z",
+    "duration": 641066.9550000001,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 1
+  }
+}

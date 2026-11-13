@@ -1,0 +1,35 @@
+{
+  "tool": "image_gen.imagegen",
+  "generatedFor": "V0.8.8",
+  "requests": [
+    {
+      "key": "mini",
+      "prompt": "Edit/redesign the patrol tank shown in the first reference screenshot into a production 2D game sprite sheet. The second reference soldier defines the STRICT artwork style: clean hand-drawn black outlines, opaque white armor, a little light-gray fill, sparse crisp interior marks, playful proportions. Redesign as a compact armored scout tank nicknamed Iron Rhino: low wide two-track chassis with three large road wheels visible, a rounded white armored turret, short chunky cannon projecting LEFT, a small helmeted cartoon driver clearly seated in a top hatch, tiny rear aerial, and a blunt wedge-shaped nose suitable for ramming. Much simpler and cleaner than the old screenshot tank, no dense scratches, hatching, exhaust smoke or realistic textures. Exactly EIGHT complete separate states arranged in FOUR columns and TWO rows, equal spacious cells, all facing LEFT, same tank proportions and source pixel scale across frames, consistent wheel ground baseline in each row. Reading order: 1 idle; 2 rolling tread pose A; 3 rolling tread pose B with changed wheel spokes and subtle suspension; 4 cannon recoil with barrel pulled back and driver bracing; 5 ram anticipation hull leaned back slightly; 6 forward ram with hull low and nose forward; 7 damaged but intact with two clear cracks, no smoke; 8 settled low broken tank wreck with visible large closed broken parts, no gore. Every frame must contain the COMPLETE hull, cannon and driver where alive. Maintain unchanged body size, allow stance differences. Frame width roughly 430 pixels, external contour 7-9 source pixels, generous transparent gaps >35px, target 2048x1024 landscape. True transparent background but WHITE BODY FILLS OPAQUE. No text, labels, grid, floor, shadows, muzzle flash, detached bullets, VFX or UI. This output is the isolated new tank sprite sheet, not an edited screenshot.",
+      "refs": [
+        "C:/Users/ADMINI~1/AppData/Local/Temp/codex-clipboard-f5980476-ab3b-4a43-86ee-e770736c38c4.jpg",
+        "C:/Users/Administrator/Desktop/线条突围/art/source/v081/rifle.png"
+      ]
+    },
+    {
+      "key": "colossus",
+      "prompt": "Transform the robot atlas in reference 1 into a new complete production 2D boss ANIMATION SHEET, preserving the robot identity: squat heavy biped mech, helmet with single black visor and short antennae, white chunky armor plates, round chest reactor, twin shoulder missile pods, LEFT-directed gun arm, other claw hand, broad articulated boots. Use reference 2 soldier as the strict clean comic drawing STYLE guide. Retain mechanical structure but remove micro-scratches, dense textures and smoke. Clean bold black outer contours, lighter sparse internal outlines, opaque white fill, small gray planar shadows. Exactly TWELVE complete isolated FULL-BODY frames arranged in FOUR columns and THREE rows in equal cells. All face LEFT with same head/torso dimensions, camera and source scale; consistent foot baseline per row. Reading order: 1 neutral braced idle; 2 WALK left-leg leading contact with opposite arm movement; 3 WALK passing pose rear foot lifted; 4 WALK right-leg leading contact; 5 WALK opposite passing pose, visibly opposite leg configuration to frame 3; 6 cannon FIRE recoil torso leans back and barrel recoils; 7 STOMP anticipation one knee lifted high; 8 STOMP contact low crouched wide stance; 9 LASER charge arm extended and shoulders brace, no baked energy; 10 damaged but standing, lower torso and clear cracked plates, no smoke; 11 COLLAPSING kneeling with tilted torso; 12 settled low WRECK with fallen torso and recognizable pods and gun. Not twelve copies with only the gun moving: the FOUR WALK frames MUST show alternating legs, bent knee and weight shift. Every frame has complete head, feet, pods and barrel, with substantial transparent spacing, no silhouettes crossing cells. Target 2400x1800 landscape. Strong smooth contour around 8 source pixels on 430px-high standing mech, so it matches the game hero when shown roughly 3 times taller. No text, grid, numbers, UI, ground, shadows, muzzle flash, smoke, explosions or detached missiles. Preserve true background alpha and opaque white fills. Output only this new animation sheet.",
+      "refs": [
+        "C:/Users/Administrator/Desktop/线条突围/assets/resources/comic/mech.png",
+        "C:/Users/Administrator/Desktop/线条突围/art/source/v081/rifle.png"
+      ]
+    },
+    {
+      "key": "terrain",
+      "prompt": "Redesign the platform and terrain artwork from these references for the SAME monochrome hand-drawn side-scrolling game. Output a transparent game asset sheet with exactly FOUR isolated long HORIZONTAL assets, ONE per ROW, with generous transparent gaps. Clean black outer ink lines, opaque off-white fills, a little light gray planar shadow, sparse medium-detail interior structure matching the soldier in reference 2. No dense hatching or textures. Row 1: a complete floating industrial jump platform, about 1000px wide by 130px tall, straight flat walkable upper rim, slightly rounded reinforced end caps, a low inset horizontal beam with exactly TWO broad diagonal reinforcement ribs and a few large bolt heads. Complete compact body, no legs, no columns, no hanging cables or railing; visually more designed than a bare rectangle but uncluttered. Row 2: a second complete platform of same outer dimensions and walkable top height, three shallow recessed panels and small diagonal end braces, again compact and no legs. Row 3: a long REPEATABLE GRASSY ROAD SURFACE STRIP 1000px by about 100px, continuous irregular top line with tiny low grass accents, white soil beneath with a few rounded stones and gently broken underside. LEFT and RIGHT edges remain open for continuation: no vertical end cap, no corner post, no large root or rock cut at the join. Quiet equal-height first and last 80px. Row 4: a long REPEATABLE INDUSTRIAL ROAD SURFACE STRIP same dimensions, level organic-worn concrete edge with one subtle continuous top lip and irregular stone underside, a few small cracks; NO metal plate panels, no vertical joints, no paired boundary rivets, NO end caps. Left and right should continue at equal height with quiet first and last 80px. Natural complete drawn details, not blank geometric placeholders. Target 1536x1024 landscape. No perspective foreshortening, no ground/support outside assets, no scene background, shadows, text, frames, measurement annotations, UI or figures. True transparent gaps and background, solid pale surfaces remain opaque. Do not include the old tall platform legs or guardrail.",
+      "refs": [
+        "C:/Users/Administrator/Desktop/线条突围/assets/landart/ink.png",
+        "C:/Users/Administrator/Desktop/线条突围/art/source/v081/rifle.png"
+      ]
+    }
+  ],
+  "terrainCleanup": {
+    "prompt": "Remove all cloudy background and shadows outside the four assets. Preserve the complete assets and their opaque white interiors, export transparent PNG.",
+    "file": "terrain.png",
+    "candidate": "terrain-candidate.png"
+  }
+}

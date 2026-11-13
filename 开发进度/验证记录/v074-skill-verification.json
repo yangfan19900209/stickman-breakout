@@ -1,0 +1,57 @@
+{
+  "skill": "cocos-2d-action-games",
+  "checkedAt": "2026-11-07T08:14:39.984298+00:00",
+  "validationScope": "V0.7.4 chest choreography, moving fire poses, separate interior material and surface caps, complete exposed edges, world-anchored water behind cliff; reference documentation only",
+  "projectSource": "doc\\skills\\cocos-2d-action-games",
+  "installedPath": "C:\\Users\\Administrator\\.codex\\skills\\cocos-2d-action-games",
+  "officialValidator": "passed",
+  "allowImplicitInvocation": true,
+  "comparisonBeforeUpdate": "10 files identical; installed hashes rechecked against v074-skill-before.json immediately before copying",
+  "changedFiles": [
+    "references/design-and-presentation.md",
+    "references/sprite-resource-pipeline.md"
+  ],
+  "filesMatched": 10,
+  "files": [
+    {
+      "file": "SKILL.md",
+      "sha256": "a19944f2c3dd92dfc8c025b022167442b5bdf27bd4742c1728e91ebc0bd6730f"
+    },
+    {
+      "file": "agents/openai.yaml",
+      "sha256": "97f227a02eb924aa591c233add91960114b2511573fa284a2182f285962df1c2"
+    },
+    {
+      "file": "references/asset-prompts.md",
+      "sha256": "b5bd15b70254a64bb9304d36bc5717e897b0b261825ee51e4061dbfa562c71d8"
+    },
+    {
+      "file": "references/design-and-presentation.md",
+      "sha256": "21216cab9396ae9212a6dfc432d8371b09f5a29c79c8b763789e98c7461aa326"
+    },
+    {
+      "file": "references/gameplay-and-physics.md",
+      "sha256": "bbe8c87c382583c99dcd44ab752c92199ab7bd9e4993fc884f664697cfb9b4bb"
+    },
+    {
+      "file": "references/project-examples.md",
+      "sha256": "8fe631d1b67d19b71bfb15fa62e1f8fd1a5c6751674f53137f52df5d165df064"
+    },
+    {
+      "file": "references/skill-maintenance.md",
+      "sha256": "b7b574b7b9587c9034e8f3dd2f56131f73fc8834e2db466917a8f74c8c8fdd64"
+    },
+    {
+      "file": "references/sprite-resource-pipeline.md",
+      "sha256": "889b926d3b0594afc4fb2af9f17e0834e9f48c38860b2b91e7dea1b3d3a3d4e9"
+    },
+    {
+      "file": "references/verification-and-delivery.md",
+      "sha256": "d6ffed671cc08115b10838f693033e9d72b99adeb1852622d95e89f04557f5e1"
+    },
+    {
+      "file": "scripts/inspect_sprite.py",
+      "sha256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc"
+    }
+  ]
+}

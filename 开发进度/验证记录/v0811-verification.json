@@ -1,0 +1,319 @@
+{
+  "version": "0.8.11",
+  "checkedAt": "2026-11-11T02:26:08.428Z",
+  "sourceSHA256": "5e7ae98891df8dbf5d0d1e95cbec3683d22d7856c0f38f6b827a11fcfedc40f2",
+  "typecheck": {
+    "status": "passed",
+    "log": "reports/v0811-typecheck.log"
+  },
+  "logic": {
+    "tests": 308,
+    "passed": 308,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "report": "reports/v0811-mobile.json",
+    "method": "Complete normal-keyboard campaign; read-only snapshots and controlled clock; normal health, ammo and enemy states, no teleports or deliberate cease-fire tour.",
+    "health": 2,
+    "fightDuration": 31.766666666691947,
+    "miniFightDuration": 17.283333333332354,
+    "attacks": {
+      "salvo": 2,
+      "sweep": 1,
+      "stomp": 1,
+      "laser": 2,
+      "missiles": 1,
+      "burst": 1,
+      "charge": 2,
+      "leap": 2
+    },
+    "framing": {
+      "samples": 1097,
+      "minHeadClearance": 15.552898224957517,
+      "worst": {
+        "time": 104.19166666669565,
+        "mode": "leaping",
+        "attack": "leap",
+        "drawn": {
+          "frame": "colossus.stomp-tell",
+          "width": 344.25600000000003,
+          "height": 322.08000000000004,
+          "x": 13754.4,
+          "y": 278.3333333333333,
+          "visible": true
+        },
+        "display": {
+          "width": 1558.1538461538462,
+          "height": 720,
+          "portrait": false,
+          "zoom": 1.4,
+          "combatZoom": 0.7148358715737181,
+          "worldVisibleWidth": 2179.736507519629,
+          "cameraY": 0.0005611989084570805,
+          "worldY": 112.77421078684038,
+          "bossCeiling": 556.7692307692307,
+          "frameWidth": 844,
+          "frameHeight": 390,
+          "orientationPaused": false
+        },
+        "bossY": 278.3333333333333,
+        "windup": 0,
+        "top": 541.2163325442732
+      }
+    },
+    "projectiles": {
+      "player-standard-bullet": {
+        "frame": "projectile.bullet",
+        "samples": 6528,
+        "fullWidth": 86,
+        "maxWidth": 86,
+        "maxHeight": 19,
+        "report": "reports/v0811-mobile.json"
+      },
+      "enemy-standard-bullet": {
+        "frame": "projectile.bullet",
+        "samples": 702,
+        "fullWidth": 86,
+        "maxWidth": 86,
+        "maxHeight": 19,
+        "report": "reports/v0811-mobile.json"
+      },
+      "enemy-standard-cannon": {
+        "frame": "projectile.rocket",
+        "samples": 259,
+        "fullWidth": 116,
+        "maxWidth": 115.99999999999999,
+        "maxHeight": 27.259999999999998,
+        "report": "reports/v0811-mobile.json"
+      },
+      "player-standard-rocket": {
+        "frame": "projectile.rocket",
+        "samples": 428,
+        "fullWidth": 116,
+        "maxWidth": 115.99999999999999,
+        "maxHeight": 27.259999999999998,
+        "report": "reports/v0811-mobile.json"
+      },
+      "enemy-mini-bullet": {
+        "frame": "projectile.bullet",
+        "samples": 326,
+        "fullWidth": 98.89999999999999,
+        "maxWidth": 98.89999999999999,
+        "maxHeight": 21.849999999999998,
+        "report": "reports/v0811-mobile.json"
+      },
+      "enemy-mini-cannon": {
+        "frame": "projectile.rocket",
+        "samples": 37,
+        "fullWidth": 133.39999999999998,
+        "maxWidth": 133.39999999999998,
+        "maxHeight": 31.348999999999997,
+        "report": "reports/v0811-mobile.json"
+      },
+      "enemy-boss-cannon": {
+        "frame": "projectile.rocket",
+        "samples": 286,
+        "fullWidth": 145,
+        "maxWidth": 145,
+        "maxHeight": 34.074999999999996,
+        "report": "reports/v0811-mobile.json"
+      },
+      "enemy-boss-bullet": {
+        "frame": "projectile.bullet",
+        "samples": 268,
+        "fullWidth": 107.5,
+        "maxWidth": 107.5,
+        "maxHeight": 23.75,
+        "report": "reports/v0811-mobile.json"
+      },
+      "enemy-boss-rocket": {
+        "frame": "projectile.rocket",
+        "samples": 136,
+        "fullWidth": 145,
+        "maxWidth": 145,
+        "maxHeight": 34.074999999999996,
+        "report": "reports/v0811-mobile.json"
+      }
+    },
+    "applicationErrors": 0,
+    "failedRequests": 0
+  },
+  "model": {
+    "report": "reports/v0811-model-campaign.json",
+    "health": 2,
+    "fightDuration": 29.366666666639958
+  },
+  "web": {
+    "entryTime": 1794363042478.0361,
+    "sha256": "a6803c131084d77c4842679016c5187a58d76e72a929fd6a9cd55c7b2fd8b29e",
+    "bytes": 22688169,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794363137229.788,
+    "sha256": "0599ae81d43da7b11f6b97364ed29597689598aa7b7a4b9e02274bb4bc9f673b",
+    "bytes": 19527009,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 590696
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10238512
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V0811-20261111",
+    "preservedFiles": [
+      "assets/scripts/player/PlayerController.ts",
+      "assets/scripts/combat/WeaponSystem.ts",
+      "assets/scripts/combat/MeleeSystem.ts",
+      "assets/scripts/enemy/EnemyController.ts",
+      "assets/scripts/enemy/EnemyTactics.ts",
+      "assets/scripts/enemy/GroundPursuit.ts",
+      "assets/scripts/level/LevelController.ts",
+      "assets/scripts/level/LevelData.ts"
+    ],
+    "miniBossOnlyTierChanged": true,
+    "dependenciesUnchanged": true
+  },
+  "art": {
+    "unchangedFrom": "reports/v088-art.json",
+    "atlases": [
+      {
+        "path": "assets/landart/boss-v088.png",
+        "sha256": "3d24c20a114d85ace00339b19736aa9b994d0f41c937042689dc304b1d3343a9",
+        "bytes": 2657748
+      },
+      {
+        "path": "assets/landart/terrain-v088.png",
+        "sha256": "5138009c157bb07373907932dc1fcb25dd09c24a53db1f83c09f42f2b84e2c77",
+        "bytes": 795620
+      }
+    ]
+  },
+  "skill": {
+    "report": "reports/v0811-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v0811-mobile-projectile-player-standard-bullet.png",
+      "sha256": "7bfe35c2e21cb27dc76f850756bf03a926764b8baef4dcdbdd6315dff98ce0de"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-enemy-standard-bullet.png",
+      "sha256": "8c0722d58189e142caa0a428b3436ee80b22cf07398a414a9a1239419f36aaa8"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-enemy-standard-cannon.png",
+      "sha256": "180617725f4041e3b71a13febc2567093a0e47ab4032f36f4bb6687248ee027f"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-player-standard-rocket.png",
+      "sha256": "7e4baebfa1ada1f54b5c2d9e8a76ddd2a0100a3b68cff1e5d812164dc99c75a7"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-enemy-mini-bullet.png",
+      "sha256": "7e9fa1d595ccaf594ac5583f3d3b9859309b3c9805b9107428f4e9d41af6fd97"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-enemy-mini-cannon.png",
+      "sha256": "6e1d51501a68134a40f3c6eb649e52f75710e1ef8d614ebf77b2bad88ae4069e"
+    },
+    {
+      "file": "reports/v0811-mobile-boss-size.png",
+      "sha256": "86f03291813107cf7c9d07383d25a0a646252bf0f6552f081b338ded11c44fef"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-salvo.png",
+      "sha256": "0f372bd36ec41b927c89c9c49255a14731ca0f4190bc5f1447d1a68055c1ce7b"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-enemy-boss-cannon.png",
+      "sha256": "e1ce9caad6edecfeec0836b98d194df6c82759ab6ab450fb55e826dc810f7b6f"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-charge.png",
+      "sha256": "f9abe67426c6581636310609020d46a6b4ecf4e4661d37284780f81456b8aadc"
+    },
+    {
+      "file": "reports/v0811-mobile-charging.png",
+      "sha256": "3c0c10a2fcafa6057be25aa34af43f4154cbcd2e7f4b809ab1446517c8c70b30"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-laser.png",
+      "sha256": "7ac7aa14d4978cef9d0c765e05ea1030da93208554cc0e4b68dcd5ef2af10459"
+    },
+    {
+      "file": "reports/v0811-mobile-enrage.png",
+      "sha256": "0dc3aedd182695b4a4357cc39bb630b7582b88feb3a1eb65ba06614f7ed52f25"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-leap.png",
+      "sha256": "49e31415f24b19a1bc355b518e4369b2b5c32baf2ca6e3ad1324decb4fe22dd0"
+    },
+    {
+      "file": "reports/v0811-mobile-leaping.png",
+      "sha256": "eea1127eaa49cf97f74cfb7846b5298d79e067ba6078b6608b94698890e87428"
+    },
+    {
+      "file": "reports/v0811-mobile-landing.png",
+      "sha256": "8bcde936d1f30443e0c8ebe95c135f9fb43ae6fc3154f2541362aa1f9bc54970"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-burst.png",
+      "sha256": "aff9b3f080413e74a5ba8bc56997fee3d2b9b5d19ff85c389c4b80dc1222a3cc"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-enemy-boss-bullet.png",
+      "sha256": "58bcd446f47494b1046e097553a8126967d72eb18459a0981f3fd882c79ce917"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-stomp.png",
+      "sha256": "ef6616d9f5ee31c4bca1175e0ce8e28833b77626e79bb7ff3d466a20ef107e3e"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-missiles.png",
+      "sha256": "94c52467ec2493d46ce1b92cd9611fd50764290b86ff62d75816e8b60b8af62d"
+    },
+    {
+      "file": "reports/v0811-mobile-projectile-enemy-boss-rocket.png",
+      "sha256": "c408125ab2ac5c14a246da5a097f1cd0e7deee1a803b37365c638016503d8089"
+    },
+    {
+      "file": "reports/v0811-mobile-tell-sweep.png",
+      "sha256": "be7c49ebf1218cd141cb01220d7fb1a4f3e2173d4e34c22a658161608929a225"
+    },
+    {
+      "file": "reports/v0811-mobile-result.png",
+      "sha256": "e41c2a78d7e79457a89a1bac6e01dae8060a46341656e6b2825686e5c1f60383"
+    }
+  ],
+  "limitations": [
+    "Browser uses a controlled clock and normal keyboard input; touchscreen and WeChat real-device experience not validated this iteration",
+    "Earlier route and framing probes include failures, preserved separately; final campaign alone supplies all delivery assertions",
+    "No upload or publication"
+  ]
+}

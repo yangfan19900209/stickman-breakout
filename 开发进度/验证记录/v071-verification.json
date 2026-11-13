@@ -1,0 +1,207 @@
+{
+  "version": "0.7.1",
+  "checkedAt": "2026-11-06T09:18:35.391Z",
+  "sourceSHA256": "a8f0552fe92675c4c2b98dd632a48a016fb7a49a34ed7f9c9b484b1adb95f269",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 188,
+    "passed": 188,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4190/level02.html",
+    "launcher": "第二关测试.cmd",
+    "entry": "Direct chapter 02, same production chapter loader; no first-level completion required",
+    "refreshVerified": true,
+    "portraitResumeVerified": true,
+    "simulatedTouchVerified": true
+  },
+  "rifle": {
+    "fullBodyFrames": 12,
+    "source": {
+      "file": "art/source/v071/rifle-actions.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "e27f9f8807bbcef8a38b0e44bb391db0f6cb013a98be2f1943ce41ffb0e8e587"
+    },
+    "runtime": {
+      "file": "assets/resources/comic/rifle-actions.png",
+      "size": [
+        1024,
+        512
+      ],
+      "bytes": 17593,
+      "sha256": "79c160ccd0adb5eeffd150f0a956019fecae54bf3c73e21a329f67731ee8b613"
+    },
+    "processing": "Original RGBA source and whole-body crops retained. Runtime uniform half-resolution, 32-color quantization (lossy). Transparent gutters retained.",
+    "browserCaptures": 24
+  },
+  "browser": {
+    "evidence": "reports/v071-browser-results.json",
+    "errors": 0,
+    "scope": "Rifle jump/fall in both directions and three aim angles; direct chapter 02 entry, reload, intro pause, portrait-to-landscape and simulated two-finger swimming/shooting"
+  },
+  "web": {
+    "files": 302,
+    "bytes": 8492432,
+    "sha256": "f4b1f61f499259abeef0e3cde146cbde125b486b7132f61d1c275fda20cca5c7",
+    "entryTime": 1793955223933.4016,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "files": 313,
+    "bytes": 5522333,
+    "sha256": "b7abacef47c252893e0961fdcb3a2d986522bb5f1ae3cb02375daeeecf056537",
+    "entryTime": 1793955400412.2986,
+    "mainBytes": 4188828,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 398661
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 766569
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    {
+      "file": "reports/v071-rifle-flat-right-rise.png",
+      "sha256": "7a57ca5e4c9617f3964b99f9ee6bfb8562eab1709fc1ce3284d1a85f75e95ded"
+    },
+    {
+      "file": "reports/v071-rifle-flat-right-rise-next.png",
+      "sha256": "f6adf2b42f4bce05d6df08cf467291c2b87cf34b118ce5d21022f861e9840abe"
+    },
+    {
+      "file": "reports/v071-rifle-flat-right-fall.png",
+      "sha256": "55f5d5579d76ddfdc54dd1f5a5042c4a0bebb88f321ce7c610d6a2458a0047e5"
+    },
+    {
+      "file": "reports/v071-rifle-flat-right-fall-next.png",
+      "sha256": "4820b5603ef253e7850842d054bfb26945eaa465f21dd684e705c3380794715c"
+    },
+    {
+      "file": "reports/v071-rifle-up-right-rise.png",
+      "sha256": "7c37a7663da8e6f2e910310ab66449a289183a7f3933b6e653f5c30cf1e92553"
+    },
+    {
+      "file": "reports/v071-rifle-up-right-rise-next.png",
+      "sha256": "f31b48ba3bf119f3986262a3e23abf9d7231abb21e02fe4f1432add6a8be0420"
+    },
+    {
+      "file": "reports/v071-rifle-up-right-fall.png",
+      "sha256": "8a95e681dc526227c85aa070fc602ad76b4d5db17265654a3606d616459cb70b"
+    },
+    {
+      "file": "reports/v071-rifle-up-right-fall-next.png",
+      "sha256": "7657ef1509f4a1903f207df729bce089ba46a2b96d2adb4e16c4fa39a3ed738a"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-right-rise.png",
+      "sha256": "e6e443ae1a376d0756d1ccd4e16d8fb556bdc721d383392f2561285b5072d9bf"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-right-rise-next.png",
+      "sha256": "95c4a31ece4e20009f919555c1c9dd4f5ac27ee03578d67b1ddb147f5068f8db"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-right-fall.png",
+      "sha256": "eff3aeceed5c1765959927def43a17cfc18514725e5fc3f9b2c155ba587c7786"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-right-fall-next.png",
+      "sha256": "61778a91ee59f13c23e4096887687bbf4019f79e8ddc6db8ed9641e9151e6698"
+    },
+    {
+      "file": "reports/v071-rifle-flat-left-rise.png",
+      "sha256": "5f70b27861490451cf5efcdf94913ae2526dc60a46d43b3ea9a0dd92ab9f24d5"
+    },
+    {
+      "file": "reports/v071-rifle-flat-left-rise-next.png",
+      "sha256": "eb5eca371f7e0186d182fd4c4dd187b4f524b6dba34b2cc764783a50b03a75d2"
+    },
+    {
+      "file": "reports/v071-rifle-flat-left-fall.png",
+      "sha256": "1a23d240700b38eef43b82ac02e1e4735ab723edecc3fec8fc542ebffeebc15d"
+    },
+    {
+      "file": "reports/v071-rifle-flat-left-fall-next.png",
+      "sha256": "0371ae9342bd85ed8274f36a5f011c53a2d1102415ee07c4975c9b25f1157abe"
+    },
+    {
+      "file": "reports/v071-rifle-up-left-rise.png",
+      "sha256": "9291f7c97219c3d934555b76f2bc4b93a0318c73a50070d38322ca31a9fd2642"
+    },
+    {
+      "file": "reports/v071-rifle-up-left-rise-next.png",
+      "sha256": "c6982eae0ade04e0f5fe4e345f8e10c4529354aa1480b845167aeb27e0466b66"
+    },
+    {
+      "file": "reports/v071-rifle-up-left-fall.png",
+      "sha256": "47f175ee3d4bb79f7b231e56f682cda00ee4abea5d5c47748811b91aec11af70"
+    },
+    {
+      "file": "reports/v071-rifle-up-left-fall-next.png",
+      "sha256": "1526e465d22441b263b2cd9a7c852bb4c30ec4519e54db84fd160c3d13a20ae6"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-left-rise.png",
+      "sha256": "9a2ee81fa9856c8ed069e12285dd64518164d573b97c5b3d0b3727c534593e74"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-left-rise-next.png",
+      "sha256": "f42ac470384c7037968c296e7287399ed18c498d62ddcc2d652b36c4705ecd2e"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-left-fall.png",
+      "sha256": "cc1217108df6f3bba7d1ea8d64dff279772ab756e7b194927a289ffa64a0eb00"
+    },
+    {
+      "file": "reports/v071-rifle-diagonal-left-fall-next.png",
+      "sha256": "e00a01206119cab97e4c0e10ada50ccfc278c13f40d6b8f5f1a7363acb202530"
+    },
+    {
+      "file": "reports/v071-level02-direct.png",
+      "sha256": "4ad633ea34e80cbb2af3aa5306b0dd07655359e04484d0dd05c310bdb5f44f19"
+    },
+    {
+      "file": "reports/v071-level02-swimming.png",
+      "sha256": "4deb9a4f0827b4585fa71b6d1d935540fe29599288c57c7604fc767380ef2a6d"
+    },
+    {
+      "file": "reports/v071-level02-portrait.png",
+      "sha256": "405d91051283ecea526f41833f5471812e83b0d50c00b35b48b97ba79ad8059a"
+    },
+    {
+      "file": "reports/v071-level02-mobile-direct.png",
+      "sha256": "26a5d9fa85e4470fd60621d25890ce665fbfadd613c3a26ba41958aa6f1cd65d"
+    },
+    {
+      "file": "reports/v071-level02-touch.png",
+      "sha256": "150b3146924176fa767d7ed1c2d83d011b13cdb3eceef75d65729b2f1fdd093f"
+    }
+  ],
+  "previousEvidence": {
+    "file": "reports/v070-verification.json",
+    "fullCampaignBrowserRunsRepeatedThisTurn": false
+  },
+  "limitations": [
+    "This turn uses focused real browser input and model regressions; full browser campaigns were verified in V0.7.0, not rerun here.",
+    "WeChat locally built only; no Developer Tools or phone hardware verification.",
+    "Direct preview is a separate launch page sharing the same game build, not a forked chapter implementation."
+  ]
+}

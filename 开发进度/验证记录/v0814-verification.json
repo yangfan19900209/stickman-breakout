@@ -1,0 +1,192 @@
+{
+  "version": "0.8.14",
+  "checkedAt": "2026-11-11T06:08:15.297Z",
+  "sourceSHA256": "295fcecce7bc891d38c09c74b505590988fdee55b70e16cdddaa33bc6cfc0a88",
+  "typecheck": {
+    "status": "passed",
+    "log": "reports/v0814-typecheck.log"
+  },
+  "logic": {
+    "tests": 328,
+    "passed": 328,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "report": "reports/v0814-camera-shield.json",
+    "method": "Normal keyboard partial route, no teleports or health/ammo edits. Rifle used near shield soldiers; readonly snapshots and actual Cocos Sprite inspection. Simulated mobile viewport, not hardware.",
+    "cameraRange": 8.327643967936694,
+    "playerRange": 11.80555555555543,
+    "impactSamples": 649,
+    "drawnFrames": [
+      "shield.break.1",
+      "shield.break.2",
+      "shield.break.3",
+      "shield.break.4",
+      "shield.break.5"
+    ],
+    "shieldSequence": [
+      {
+        "time": 81.50833333334427,
+        "weapon": "rifle",
+        "id": "shield-G2",
+        "hp": 4,
+        "plate": 2,
+        "breaks": 0
+      },
+      {
+        "time": 82.3083333333449,
+        "weapon": "rifle",
+        "id": "shield-G2",
+        "hp": 3,
+        "plate": 1,
+        "breaks": 0
+      },
+      {
+        "time": 82.52500000001174,
+        "weapon": "rifle",
+        "id": "shield-G2",
+        "hp": 2,
+        "plate": 0,
+        "breaks": 1
+      },
+      {
+        "time": 82.74166666667858,
+        "weapon": "rifle",
+        "id": "shield-G2",
+        "hp": 1,
+        "plate": 0,
+        "breaks": 1
+      },
+      {
+        "time": 82.9750000000121,
+        "weapon": "rifle",
+        "id": "shield-G2",
+        "hp": 0,
+        "plate": 0,
+        "breaks": 1
+      }
+    ],
+    "expiry": true,
+    "applicationErrors": 0
+  },
+  "model": {
+    "report": "reports/v0814-model-campaign.json",
+    "state": "complete",
+    "health": 4,
+    "fightDuration": 35.46666666669489
+  },
+  "art": {
+    "manifest": "art/v0814-shield-manifest.json",
+    "sourceSHA256": "a07828c7235d66d498390ab0861b3cbc206ccdd671e64dbb1060f6f97e7bb802",
+    "outputSHA256": "687f6c44a3eac101af772d1937d073d056216599f3a804c5289d2687348570a1",
+    "bytes": 64688
+  },
+  "web": {
+    "entryTime": 1794376686105.342,
+    "sha256": "a49ef62348a8d891fa635ce75bd670dddf97554cebf19222be4a6af0618094b3",
+    "bytes": 22764605,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794376962566.719,
+    "sha256": "b774916bc6a4d9e4d6049b44e0e344c07ae6128b0f84846331593cf91113e49c",
+    "bytes": 19596371,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 595136
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10303434
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V0814-20261111",
+    "checkpointEntriesVerified": 436,
+    "preservedFiles": [
+      "assets/scripts/combat/WeaponSystem.ts",
+      "assets/scripts/enemy/TankBoss.ts",
+      "assets/scripts/enemy/ColossusBoss.ts",
+      "assets/scripts/enemy/EnemyTactics.ts",
+      "assets/scripts/ui/ControlLayout.ts",
+      "assets/scripts/platform/SafeAreaInsets.ts",
+      "assets/scripts/level/LevelData.ts",
+      "assets/scripts/core/InputManager.ts",
+      "assets/scripts/core/TouchInputManager.ts",
+      "assets/scripts/player/PlayerController.ts"
+    ],
+    "dependenciesUnchanged": true
+  },
+  "skill": {
+    "report": "reports/v0814-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v0814-camera-before-turn.png",
+      "sha256": "49e3d1a53f8fb9778b9a23983c576711d95a8cac6cadf61456667d92f7046658",
+      "capturedAt": "2026-11-11T06:00:40.305Z"
+    },
+    {
+      "file": "reports/v0814-camera-after-turn.png",
+      "sha256": "09ccbfe9bada4b8fd12b4797b5a5cae7d1f6e1598f4b2ab1b4f572c1d7c46502",
+      "capturedAt": "2026-11-11T06:00:41.392Z"
+    },
+    {
+      "file": "reports/v0814-shield.break.1.png",
+      "sha256": "b8334eebc07cb7fd3130e3003f46845c5645a72887d800f16811f84cd8bb313a",
+      "capturedAt": "2026-11-11T06:00:46.420Z"
+    },
+    {
+      "file": "reports/v0814-shield.break.2.png",
+      "sha256": "81ae03671fb897b731463045ec37220d6de7d00f3429acea339826b810ddad0d",
+      "capturedAt": "2026-11-11T06:00:46.700Z"
+    },
+    {
+      "file": "reports/v0814-shield.break.3.png",
+      "sha256": "0704e11d2e1edde84063ce86af5f05020a13f5968a5edb7b687a80f15942e123",
+      "capturedAt": "2026-11-11T06:00:47.003Z"
+    },
+    {
+      "file": "reports/v0814-shield.break.4.png",
+      "sha256": "a075c10e4cefdfa5ff47b7655a2340070727439633187bb593566fce47c67488",
+      "capturedAt": "2026-11-11T06:00:47.330Z"
+    },
+    {
+      "file": "reports/v0814-shield.break.5.png",
+      "sha256": "9841539b78f418c1f11c4b3084db7983e677a32bf46c26485eca4592790a957c",
+      "capturedAt": "2026-11-11T06:00:47.659Z"
+    },
+    {
+      "file": "reports/v0814-shield-broken-finished.png",
+      "sha256": "7a0638a60843e62bf8aa659e12d44273bf1bd790da994ef19f353f7609839262",
+      "capturedAt": "2026-11-11T06:01:25.508Z"
+    }
+  ],
+  "limitations": [
+    "Browser verification uses normal keyboard input at a simulated phone viewport; no iPhone/WeChat hardware test",
+    "Full campaign is model-input validation; browser run covers camera and shield encounters and does not complete the campaign",
+    "No upload or publication"
+  ]
+}

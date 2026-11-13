@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-11-09T08:10:13.731Z",
+  "barrier": {
+    "x": 3860.6125,
+    "y": 150,
+    "w": 128.775,
+    "h": 54.18749999999999,
+    "kind": "crate",
+    "entityId": "concrete-C",
+    "oneWay": false
+  },
+  "contact": {
+    "x": 3924.154538341239,
+    "y": 204.1875,
+    "vx": 0,
+    "vy": 0,
+    "health": 4,
+    "grounded": true,
+    "facing": 1,
+    "animation": "Land",
+    "crouched": false,
+    "aimPitch": 0,
+    "airJumpsRemaining": 1,
+    "jumpCount": 0,
+    "canJump": true
+  },
+  "standing": {
+    "player": {
+      "x": 3924.154538341239,
+      "y": 204.1875,
+      "vx": 0,
+      "vy": 0,
+      "health": 4,
+      "grounded": true,
+      "facing": 1,
+      "animation": "Idle",
+      "crouched": false,
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": true
+    },
+    "art": {
+      "body": "player.idle.3",
+      "weapon": "baked.rifle",
+      "weaponVisible": true
+    }
+  },
+  "after": {
+    "x": 4052.015649452357,
+    "y": 150,
+    "vx": 0,
+    "vy": 0,
+    "health": 4,
+    "grounded": true,
+    "facing": 1,
+    "animation": "Idle",
+    "crouched": false,
+    "aimPitch": 0,
+    "airJumpsRemaining": 1,
+    "jumpCount": 0,
+    "canJump": true
+  },
+  "errors": [],
+  "captures": [
+    "concrete-contact",
+    "concrete-edge-release"
+  ],
+  "input": "Normal keyboard; jump onto actual concrete-C roof and walk off its edge"
+}

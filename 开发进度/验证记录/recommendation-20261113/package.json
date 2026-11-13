@@ -1,0 +1,58 @@
+{
+  "destination": "C:\\Users\\Administrator\\Desktop\\线条突围\\交付\\版本\\1.0.6-推荐接入",
+  "version": "1.0.6",
+  "sourceSHA256": "3b75007e3ab22e6b3815090060a48d6551a69374428bb4a25a5cb21da5dfd1e5",
+  "archives": [
+    {
+      "file": "线条突围-Web-1.0.6-推荐接入.zip",
+      "bytes": 19195405,
+      "sha256": "11fca56fdaf70354a674d579776e1b4534c1627ba0df6c8112d7d8caefd6b817",
+      "entries": 434
+    },
+    {
+      "file": "线条突围-微信小游戏-1.0.6-推荐接入.zip",
+      "bytes": 18892846,
+      "sha256": "ac377e5518d3505c52e750b96bfc39907dd8e86be36ae2b72aca93ac4b0ccd59",
+      "entries": 447
+    },
+    {
+      "file": "构建输入.zip",
+      "bytes": 18371539,
+      "sha256": "6662331d30e91c5c06fbd171f50483f402510be91e6ac76ce89f377e01f90a17",
+      "entries": 753
+    }
+  ],
+  "budget": {
+    "mainBytes": 3864129,
+    "totalBytes": 20924702,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 742362
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10487797
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4978245
+      },
+      {
+        "name": "level03",
+        "root": "subpackages/level03/",
+        "bytes": 683894
+      }
+    ],
+    "basis": "Existing project local budgets: main < 4 MiB and total < 20 MiB; not a claim of current platform policy."
+  },
+  "verified": true
+}

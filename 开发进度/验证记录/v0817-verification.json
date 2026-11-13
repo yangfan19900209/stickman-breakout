@@ -1,0 +1,229 @@
+{
+  "version": "0.8.17",
+  "checkedAt": "2026-11-12T01:15:59.995Z",
+  "passed": true,
+  "scope": "P0/P1 playable flight slice: launch, two enemy types, four-pattern helicopter mini-boss, medkit and extraction. Full chapter and final airship boss are not implemented.",
+  "builds": {
+    "web-mobile": {
+      "entry": "index.html",
+      "entryTime": 1794445894107.39,
+      "fileCount": 429,
+      "sha256": "13aa6389aa846a3a5d3054621abd0eb64ccd124f104c8b0e6d1dcf4f3c828041",
+      "bytes": 23570096,
+      "creatorExitCode": 36
+    },
+    "wechatgame": {
+      "entry": "game.js",
+      "entryTime": 1794445971205.758,
+      "fileCount": 439,
+      "sha256": "2c9f08320b21fa6b0d7b5adb9c1c8004d399f3cb1f637d7a6f737f5cfe2a4bb3",
+      "bytes": 20335982,
+      "creatorExitCode": 36
+    }
+  },
+  "runtimeInputs": {
+    "fileCount": 341,
+    "sha256": "6bcacbe94957cc6bf587f4053e6ac251bb33b18eb59c1d4350fe56b4bbb97d1d"
+  },
+  "checks": {
+    "logic": {
+      "tests": 361,
+      "passed": 361,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "typecheck": true,
+    "flight": [
+      "neutral hover",
+      "horizontal reversal",
+      "vertical movement",
+      "pause and resume",
+      "three-finger diagonal attack/dodge and cancellation",
+      "chapter 3 retry"
+    ],
+    "bossPatterns": {
+      "burst": 3,
+      "missiles": 2,
+      "sweep": 2,
+      "dive": 2
+    },
+    "routing": [
+      "menuAndRetry",
+      "failedLoad",
+      "mobile",
+      "chapterLink"
+    ],
+    "loaderMockCases": 11,
+    "artFrames": 22,
+    "localBudget": {
+      "version": "0.8.17",
+      "checkedAt": "2026-11-12T01:13:08.229Z",
+      "localBudget": {
+        "main": 4194304,
+        "total": 20971520
+      },
+      "budgetSource": "Existing project budgets, not a claim about current platform policy",
+      "mainBytes": 4189058,
+      "totalBytes": 20335982,
+      "mainRemaining": 5246,
+      "totalRemaining": 635538,
+      "subpackages": [
+        {
+          "name": "internal",
+          "root": "subpackages/internal/",
+          "bytes": 168275
+        },
+        {
+          "name": "main",
+          "root": "subpackages/main/",
+          "bytes": 650738
+        },
+        {
+          "name": "landart",
+          "root": "subpackages/landart/",
+          "bytes": 10303434
+        },
+        {
+          "name": "level02",
+          "root": "subpackages/level02/",
+          "bytes": 4340583
+        },
+        {
+          "name": "level03",
+          "root": "subpackages/level03/",
+          "bytes": 683894
+        }
+      ],
+      "runtimeImages": [
+        {
+          "file": "assets/level03/flight-atlas.png",
+          "bytes": 682668,
+          "sha256": "df3befbf9971e1fbf435f55ee7548ff613ace7e6dc3a761a9b216bd60babcf2d"
+        }
+      ],
+      "runtimeImageBytes": 682668,
+      "wechatRuntimeVerified": false,
+      "uploaded": false
+    },
+    "protectedGameplayFiles": 53,
+    "changedExistingSources": [
+      "assets/scripts/GameManager.ts",
+      "assets/scripts/core/InputManager.ts",
+      "assets/scripts/ocean/OceanAssets.ts",
+      "assets/scripts/platform/AudioBridge.ts",
+      "assets/scripts/platform/PlatformAdapter.ts",
+      "assets/scripts/platform/PlatformBridge.ts",
+      "assets/scripts/ui/HUDController.ts"
+    ],
+    "skillFilesMatched": 12,
+    "documentationLinks": true
+  },
+  "browser": {
+    "flightClear": {
+      "time": 29.841666666665613,
+      "health": 5
+    },
+    "patternTourClear": {
+      "time": 44.69166666666477,
+      "health": 5
+    },
+    "previousChapter": {
+      "time": 114.58333333337059,
+      "health": 3
+    },
+    "warnings": [
+      "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted."
+    ],
+    "unexpectedErrors": [],
+    "intentionalLoadFailureDiagnostics": 19
+  },
+  "boundaries": [
+    "Automated browser keyboard/touch play uses normal health/ammo and read-only snapshots; timings are not human difficulty measurements.",
+    "Pattern tour deliberately holds fire to observe all four attacks.",
+    "Mock callback tests and chapter reload evidence do not prove GPU memory release on a real device.",
+    "Web and WeChat builds passed locally; WeChat/iPhone runtime, upload and publication are not performed."
+  ],
+  "evidence": [
+    {
+      "file": "reports/logic-results.json",
+      "bytes": 67,
+      "sha256": "aca30c41a9e345b08a798fa106bd4fc8d453cfdfce9acf92d7fd1d50ea817dbc"
+    },
+    {
+      "file": "reports/v0817-budget.json",
+      "bytes": 1119,
+      "sha256": "afbafb4166983356bf1099090a19cb5770804a609350cfe6e9d92966c9816cca"
+    },
+    {
+      "file": "reports/v0817-flight-art-verification.json",
+      "bytes": 4263,
+      "sha256": "c69af41cf1e1c01ab668e54e8751bd4360de881fb1b6c671d7b5f1ba990712e7"
+    },
+    {
+      "file": "reports/v0817-flight-patterns.json",
+      "bytes": 32081,
+      "sha256": "101831cf29ba06e9814de920121e5ae644d8658926ae81e77a87d64e6f988f65"
+    },
+    {
+      "file": "reports/v0817-flight.json",
+      "bytes": 42558,
+      "sha256": "c154b93823ef85d55bcd2e3b02a5cd1b81888a46606b16a1d7a1cf0de117f697"
+    },
+    {
+      "file": "reports/v0817-loaders.json",
+      "bytes": 5009,
+      "sha256": "1c27729360f2d866899988c1012501ae3a239219b547f0dfc082aea8e0e5779c"
+    },
+    {
+      "file": "reports/v0817-preservation.json",
+      "bytes": 5967,
+      "sha256": "dfbdb94a55727bed7b03358a5f4f10cec9259228947aef6ed0707c1297f72e75"
+    },
+    {
+      "file": "reports/v0817-routing.json",
+      "bytes": 594222,
+      "sha256": "0dff453071da1ce6f3f5e5f43100dbe8b579a7410c9550d840981707e8d8baa5"
+    },
+    {
+      "file": "reports/v0817-skill-verification.json",
+      "bytes": 2123,
+      "sha256": "cd4f5f78d1bb9776f784ec9c07ec93b69f65d7772f0c6b6bd2f45702edb7f884"
+    },
+    {
+      "file": "reports/v0817-typecheck.log",
+      "bytes": 72,
+      "sha256": "e96084ed72383ff0723d5ed8fa61646fd57c00ee211524210e3497446ac463ae"
+    }
+  ],
+  "screenshots": [
+    "reports/v0817-flight-entry.png",
+    "reports/v0817-flight-touch-dodge.png",
+    "reports/v0817-flight-combat.png",
+    "reports/v0817-flight-mini-tell-burst.png",
+    "reports/v0817-flight-mini-fire-burst.png",
+    "reports/v0817-flight-mini-tell-missiles.png",
+    "reports/v0817-flight-mini-fire-missiles.png",
+    "reports/v0817-flight-mini-tell-sweep.png",
+    "reports/v0817-flight-mini-charge-sweep.png",
+    "reports/v0817-flight-mini-reward.png",
+    "reports/v0817-flight-complete.png",
+    "reports/v0817-flight-patterns-combat.png",
+    "reports/v0817-flight-patterns-mini-tell-burst.png",
+    "reports/v0817-flight-patterns-mini-fire-burst.png",
+    "reports/v0817-flight-patterns-mini-tell-missiles.png",
+    "reports/v0817-flight-patterns-mini-fire-missiles.png",
+    "reports/v0817-flight-patterns-mini-tell-sweep.png",
+    "reports/v0817-flight-patterns-mini-charge-sweep.png",
+    "reports/v0817-flight-patterns-mini-tell-dive.png",
+    "reports/v0817-flight-patterns-mini-charge-dive.png",
+    "reports/v0817-flight-patterns-mini-reward.png",
+    "reports/v0817-flight-patterns-complete.png",
+    "reports/v0817-routing-three-entries.png",
+    "reports/v0817-routing-flight-controls.png",
+    "reports/v0817-routing-load-failure-restored.png",
+    "reports/v0817-routing-phone-move-fire-dodge.png",
+    "reports/v0817-routing-ocean-complete.png",
+    "reports/v0817-routing-ocean-to-flight.png",
+    "reports/v0817-routing-ocean-reloaded.png"
+  ]
+}

@@ -1,0 +1,1639 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: normal jump onto hanging bridge",
+  "state": {
+    "state": "playing",
+    "time": 18.52499999999959,
+    "player": {
+      "x": 3170.1402777777844,
+      "y": 204.1875,
+      "vx": 0,
+      "vy": 0,
+      "health": 4,
+      "grounded": true,
+      "facing": 1,
+      "animation": "Idle",
+      "crouched": false,
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": true
+    },
+    "cameraX": 2769.472144791005,
+    "kills": 10,
+    "melee": {
+      "swings": 4,
+      "hits": 5,
+      "time": 0,
+      "stage": 0,
+      "state": "idle",
+      "action": "melee_combo_reset",
+      "stance": "jump",
+      "comboRemaining": 0,
+      "heavyHits": 0,
+      "blockedHits": 0,
+      "crateProtection": false
+    },
+    "weapon": "rifle",
+    "weaponPresentation": {
+      "id": "rifle",
+      "name": "突击步枪",
+      "ammo": -1,
+      "icon": "weapon.rifle",
+      "ammoText": "∞  弹药",
+      "projectile": "bullet",
+      "sound": "rifle",
+      "width": 59,
+      "mode": "ranged",
+      "muzzleExtra": 0
+    },
+    "weaponShot": {
+      "x": 2937.9033625731217,
+      "y": 272.2368421052632,
+      "pitch": 0,
+      "flash": 0
+    },
+    "playerWeapon": "rifle",
+    "ammo": -1,
+    "grenades": 5,
+    "grenadesThrown": 1,
+    "destroyedObjects": 8,
+    "explosions": 4,
+    "feedback": {
+      "shakeTime": 0,
+      "shakePower": 3.5,
+      "hitStop": 0,
+      "blasts": [],
+      "particles": [],
+      "peakParticles": 134,
+      "droppedParticles": 0
+    },
+    "combo": 0,
+    "bestCombo": 10,
+    "objects": [
+      {
+        "id": "grenade-cache",
+        "kind": "wood",
+        "x": 300,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 18.099999999999614
+      },
+      {
+        "id": "crate-01",
+        "kind": "wood",
+        "x": 420,
+        "y": 150,
+        "w": 76,
+        "h": 54,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 17.666666666666305
+      },
+      {
+        "id": "barrel-01",
+        "kind": "barrel",
+        "x": 660,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 16.858333333333018
+      },
+      {
+        "id": "barrel-02",
+        "kind": "barrel",
+        "x": 735,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 16.766666666666357
+      },
+      {
+        "id": "upper-crate-A",
+        "kind": "wood",
+        "x": 1350,
+        "y": 260,
+        "w": 55,
+        "h": 50,
+        "health": 2,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "hanging-01",
+        "kind": "hanging",
+        "x": 1530,
+        "y": 410,
+        "w": 54,
+        "h": 48,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-02",
+        "kind": "wood",
+        "x": 1750,
+        "y": 150,
+        "w": 64,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 14.658333333333141
+      },
+      {
+        "id": "sandbags-01",
+        "kind": "sandbag",
+        "x": 1860,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 13.98333333333318
+      },
+      {
+        "id": "barrel-03",
+        "kind": "barrel",
+        "x": 2230,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 12.866666666666577
+      },
+      {
+        "id": "crate-03",
+        "kind": "wood",
+        "x": 2710,
+        "y": 150,
+        "w": 72,
+        "h": 60,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 6.658333333333454
+      },
+      {
+        "id": "steel-01",
+        "kind": "steel",
+        "x": 3055,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 5,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "bridge-rope",
+        "kind": "rope",
+        "x": 3178,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbags-B",
+        "kind": "sandbag",
+        "x": 3508,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "cargo-B",
+        "kind": "hanging",
+        "x": 3590,
+        "y": 440,
+        "w": 65,
+        "h": 55,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-C",
+        "kind": "concrete",
+        "x": 3851,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "hidden-grenades",
+        "kind": "wood",
+        "x": 4420,
+        "y": 260,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-C1",
+        "kind": "barrel",
+        "x": 5620,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-C2",
+        "kind": "barrel",
+        "x": 5680,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "rocket-before-tank",
+        "kind": "wood",
+        "x": 5510,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "cargo-C",
+        "kind": "hanging",
+        "x": 5980,
+        "y": 425,
+        "w": 56,
+        "h": 50,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "rocket-before-colossus",
+        "kind": "wood",
+        "x": 10870,
+        "y": 150,
+        "w": 58,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "arena-sandbag",
+        "kind": "sandbag",
+        "x": 11577.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "arena-barrel",
+        "kind": "barrel",
+        "x": 11790,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "grenades-E",
+        "kind": "wood",
+        "x": 6950,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-E1",
+        "kind": "sandbag",
+        "x": 7700,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-E1",
+        "kind": "barrel",
+        "x": 7895,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-E",
+        "kind": "wood",
+        "x": 8220,
+        "y": 260,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-E2",
+        "kind": "sandbag",
+        "x": 8527.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-F",
+        "kind": "wood",
+        "x": 9070,
+        "y": 260,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-F",
+        "kind": "sandbag",
+        "x": 9370,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-F",
+        "kind": "barrel",
+        "x": 9570,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "bridge-rope-F",
+        "kind": "rope",
+        "x": 9793,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-F",
+        "kind": "concrete",
+        "x": 9971,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-F",
+        "kind": "wood",
+        "x": 10330,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "grenades-before-final",
+        "kind": "wood",
+        "x": 10690,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      }
+    ],
+    "pickups": [],
+    "recoveryPoints": [
+      {
+        "id": "after-industry",
+        "x": 3756,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-tank",
+        "x": 5460,
+        "y": 260,
+        "purpose": "before-boss"
+      },
+      {
+        "id": "after-freight",
+        "x": 8810,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-colossus",
+        "x": 10780,
+        "y": 150,
+        "purpose": "before-boss"
+      }
+    ],
+    "recoverySpawned": [],
+    "victory": {
+      "active": false,
+      "time": 0,
+      "phase": "idle",
+      "focus": 0,
+      "cheerTime": 0,
+      "resultProgress": 0,
+      "resultsReady": false,
+      "impactSerial": 0,
+      "haptic": "light",
+      "flash": 0
+    },
+    "projectileStates": [],
+    "remaining": 20,
+    "guardHealth": 132,
+    "boss": {
+      "kind": "colossus",
+      "name": "重装裁决者",
+      "attack": "salvo",
+      "introTime": 1.3,
+      "phase": 1,
+      "active": false,
+      "mode": "dormant",
+      "warningX": 0,
+      "warningTargetY": 185,
+      "muzzle": {
+        "x": 11811.2,
+        "y": 287.6
+      },
+      "warningTime": 0,
+      "windup": 0,
+      "summons": 0,
+      "beam": {
+        "active": false,
+        "time": 0,
+        "x": 0,
+        "y": 0,
+        "endX": 0,
+        "endY": 0,
+        "length": 0,
+        "angle": 0,
+        "hits": 0
+      },
+      "attackCounts": {
+        "salvo": 0,
+        "sweep": 0,
+        "stomp": 0,
+        "laser": 0,
+        "missiles": 0,
+        "burst": 0
+      }
+    },
+    "miniBoss": {
+      "x": 6160,
+      "health": 42,
+      "maxHealth": 42,
+      "active": false,
+      "phase": 1,
+      "warningX": 0,
+      "warningTime": 0,
+      "attack": "bombard",
+      "warningPoints": []
+    },
+    "levelWidth": 12400,
+    "exitX": 12270,
+    "arena": {
+      "start": 11040,
+      "end": 12370
+    },
+    "arenaEntered": false,
+    "zones": [
+      {
+        "id": "A",
+        "name": "道路遭遇",
+        "start": 0,
+        "end": 1850,
+        "cleared": true
+      },
+      {
+        "id": "B",
+        "name": "工业突破",
+        "start": 1850,
+        "end": 3800,
+        "cleared": false
+      },
+      {
+        "id": "C",
+        "name": "机械阵地",
+        "start": 3800,
+        "end": 6740,
+        "cleared": false
+      },
+      {
+        "id": "E",
+        "name": "运输栈道",
+        "start": 6740,
+        "end": 8840,
+        "cleared": false
+      },
+      {
+        "id": "F",
+        "name": "封锁哨线",
+        "start": 8840,
+        "end": 10940,
+        "cleared": false
+      },
+      {
+        "id": "D",
+        "name": "裁决者决战",
+        "start": 10940,
+        "end": 12400,
+        "cleared": false
+      }
+    ],
+    "mechanisms": [
+      {
+        "id": "bridge-B",
+        "kind": "bridge",
+        "x": 3080,
+        "y": 296,
+        "w": 210,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 150,
+        "maxY": 296
+      },
+      {
+        "id": "lift-C",
+        "kind": "lift",
+        "x": 4960,
+        "y": 247.24999999999878,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "lift-E",
+        "kind": "lift",
+        "x": 7960,
+        "y": 255.5,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "bridge-F",
+        "kind": "bridge",
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 150,
+        "maxY": 296
+      }
+    ],
+    "terrain": [
+      {
+        "x": 0,
+        "y": -240,
+        "w": 12400,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        },
+        "oneWay": false
+      },
+      {
+        "x": 1150,
+        "y": 236,
+        "w": 340,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 2300,
+        "y": 236,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 3300,
+        "y": 236,
+        "w": 160,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 4300,
+        "y": 236,
+        "w": 250,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 5200,
+        "y": 236,
+        "w": 390,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 7300,
+        "y": 236,
+        "w": 360,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 8190,
+        "y": 236,
+        "w": 300,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 9000,
+        "y": 236,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 1350.6267605633802,
+        "y": 260,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "upper-crate-A",
+        "oneWay": false
+      },
+      {
+        "x": 3064.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "steel-01",
+        "oneWay": false
+      },
+      {
+        "x": 3505.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbags-B",
+        "oneWay": false
+      },
+      {
+        "x": 3860.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-C",
+        "oneWay": false
+      },
+      {
+        "x": 4422.140845070423,
+        "y": 260,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "hidden-grenades",
+        "oneWay": false
+      },
+      {
+        "x": 5617.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-C1",
+        "oneWay": false
+      },
+      {
+        "x": 5677.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-C2",
+        "oneWay": false
+      },
+      {
+        "x": 5510.640845070423,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "rocket-before-tank",
+        "oneWay": false
+      },
+      {
+        "x": 10873.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "rocket-before-colossus",
+        "oneWay": false
+      },
+      {
+        "x": 11575,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "arena-sandbag",
+        "oneWay": false
+      },
+      {
+        "x": 11787.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "arena-barrel",
+        "oneWay": false
+      },
+      {
+        "x": 6950.62676056338,
+        "y": 150,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "grenades-E",
+        "oneWay": false
+      },
+      {
+        "x": 7697.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E1",
+        "oneWay": false
+      },
+      {
+        "x": 7892.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-E1",
+        "oneWay": false
+      },
+      {
+        "x": 8222.140845070422,
+        "y": 260,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "upper-crate-E",
+        "oneWay": false
+      },
+      {
+        "x": 8525,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E2",
+        "oneWay": false
+      },
+      {
+        "x": 9070.640845070422,
+        "y": 260,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "upper-crate-F",
+        "oneWay": false
+      },
+      {
+        "x": 9367.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-F",
+        "oneWay": false
+      },
+      {
+        "x": 9567.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-F",
+        "oneWay": false
+      },
+      {
+        "x": 9980.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-F",
+        "oneWay": false
+      },
+      {
+        "x": 10332.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "crate-F",
+        "oneWay": false
+      },
+      {
+        "x": 10690.640845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "grenades-before-final",
+        "oneWay": false
+      },
+      {
+        "x": 3080,
+        "y": 296,
+        "w": 210,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 4960,
+        "y": 247.24999999999878,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 7960,
+        "y": 255.5,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      }
+    ],
+    "exitOpen": false,
+    "bullets": 0,
+    "shots": 80,
+    "hits": 50,
+    "peakBullets": 12,
+    "droppedBullets": 0,
+    "enemies": [
+      {
+        "id": "m1",
+        "x": 537.4177885819664,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r1",
+        "x": 903.8110068992311,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r2",
+        "x": 1330.649243185082,
+        "y": 260,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m2",
+        "x": 1526.558022570534,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r3",
+        "x": 2045.237265876066,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m3",
+        "x": 2657.8092539967806,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r4",
+        "x": 2501.94846965837,
+        "y": 260,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m4",
+        "x": 2639.892313886729,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r5",
+        "x": 3154.6017663443286,
+        "y": 204.1875,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-B",
+        "x": 2645.5314140624646,
+        "y": 150,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 6,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-B",
+        "x": 3700,
+        "y": 150,
+        "health": 8,
+        "state": "Chase",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "approach"
+      },
+      {
+        "id": "shield-C",
+        "x": 4100,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-C",
+        "x": 4650,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C1",
+        "x": 4900,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C2",
+        "x": 5360,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-C",
+        "x": 5900,
+        "y": 150,
+        "health": 8,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-C2",
+        "x": 6280,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C3",
+        "x": 6530,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E1",
+        "x": 7480,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-E1",
+        "x": 7870,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-E",
+        "x": 8120,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E2",
+        "x": 8380,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E3",
+        "x": 8725,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-F1",
+        "x": 9160,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-F",
+        "x": 9645,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-F",
+        "x": 9760,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-F",
+        "x": 10200,
+        "y": 150,
+        "health": 8,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-F2",
+        "x": 10500,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "outpost-tank",
+        "x": 6160,
+        "y": 150,
+        "health": 42,
+        "state": "Idle",
+        "kind": "guard",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "gate-colossus",
+        "x": 12040,
+        "y": 150,
+        "health": 132,
+        "state": "Idle",
+        "kind": "colossus",
+        "shield": 0,
+        "windup": 0,
+        "action": "salvo"
+      }
+    ],
+    "chapter": 1,
+    "entryMode": "campaign",
+    "oceanArt": null,
+    "chapterLoading": false,
+    "playerShots": 72,
+    "audio": {
+      "loaded": 9,
+      "played": 134,
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "requested": "comic",
+      "active": "comic",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "player.idle.3",
+      "equipment": {
+        "pose": "player.idle.3",
+        "body": "player.idle.3",
+        "weapon": null,
+        "grip": null,
+        "bakedWeapon": "",
+        "bakedRifle": true
+      },
+      "renderedPlayer": {
+        "body": "player.idle.3",
+        "weapon": "baked.rifle",
+        "weaponVisible": true
+      },
+      "renderedBoss": {
+        "frame": "",
+        "width": 0,
+        "height": 0,
+        "x": 0,
+        "y": 0,
+        "visible": false
+      },
+      "objects": [
+        {
+          "id": "steel-01",
+          "frame": "cover.concrete-broken",
+          "width": 153,
+          "height": 64.38749999999999,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "sandbags-B",
+          "frame": "cover.sandbags",
+          "width": 150,
+          "height": 66.875,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "cargo-B",
+          "frame": "polish.crate",
+          "width": 58.816901408450704,
+          "height": 58,
+          "alive": true,
+          "y": 440
+        },
+        {
+          "id": "concrete-C",
+          "frame": "cover.concrete",
+          "width": 153,
+          "height": 64.38749999999999,
+          "alive": true,
+          "y": 150
+        }
+      ],
+      "pickups": [],
+      "hudWeapon": {
+        "text": "突击步枪\n∞  弹药 · 切刀",
+        "id": "rifle",
+        "frame": "weapon.rifle",
+        "switch": {
+          "x": 387.69230769230774,
+          "y": 673.8461538461538
+        }
+      },
+      "combat": {
+        "rockets": [],
+        "bossBeam": {
+          "visible": false,
+          "x": 0,
+          "y": 0,
+          "length": 0,
+          "angle": 0
+        }
+      },
+      "terrain": "unified-drawn-v075"
+    },
+    "visibleChunks": 11,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 0,
+        "supported": false
+      }
+    },
+    "presentation": {
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 286.723076923077,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": false,
+      "resultProgress": 0,
+      "resultReady": false
+    },
+    "display": {
+      "width": 1558.1538461538462,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 1.4,
+      "worldVisibleWidth": 1112.967032967033,
+      "cameraY": 0.4446911423778774,
+      "frameWidth": 844,
+      "frameHeight": 390,
+      "orientationPaused": false
+    },
+    "controls": {
+      "shootHeld": false,
+      "hudHeight": 96,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "joystick": {
+          "x": 171.92307692307693,
+          "y": 164.53846153846155,
+          "r": 95.76000000000002,
+          "baseR": 135,
+          "knobR": 64.80000000000001,
+          "hit": 270,
+          "unit": 1.8461538461538463
+        },
+        "jump": {
+          "x": 1188.7384615384615,
+          "y": 228.82153846153847,
+          "r": 64.80000000000001,
+          "hit": 151.75384615384618
+        },
+        "shoot": {
+          "x": 1404,
+          "y": 164.53846153846155,
+          "r": 108,
+          "hit": 241.84615384615384
+        },
+        "grenade": {
+          "x": 1415.076923076923,
+          "y": 366.02769230769235,
+          "r": 54.720000000000006,
+          "hit": 131.59384615384616
+        },
+        "pause": {
+          "x": 1502.769230769231,
+          "y": 668.3076923076923,
+          "hit": 81.23076923076924
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 0,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    }
+  },
+  "motion": [],
+  "firing": [],
+  "errors": []
+}

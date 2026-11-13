@@ -1,0 +1,3243 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(s.player.slideTime>0)\n",
+  "s": {
+    "state": "playing",
+    "time": 3.658333333333323,
+    "player": {
+      "x": 287.6267605633803,
+      "y": 150,
+      "vx": 0,
+      "vy": 0,
+      "health": 5,
+      "grounded": true,
+      "facing": 1,
+      "animation": "Crouch",
+      "crouched": true,
+      "slideTime": 0,
+      "slideProgress": 1,
+      "slideCooldown": 0.7550000000000001,
+      "slideSerial": 2,
+      "hitTime": 0,
+      "meleeActive": false,
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": true
+    },
+    "cameraX": -110,
+    "kills": 0,
+    "melee": {
+      "swings": 0,
+      "hits": 0,
+      "time": 0,
+      "stage": 0,
+      "state": "idle",
+      "action": "melee_combo_reset",
+      "stance": "stand",
+      "comboRemaining": 0,
+      "heavyHits": 0,
+      "blockedHits": 0,
+      "crateProtection": false
+    },
+    "weapon": "rifle",
+    "weaponPresentation": {
+      "id": "rifle",
+      "name": "突击步枪",
+      "ammo": -1,
+      "icon": "weapon.rifle",
+      "ammoText": "∞  弹药",
+      "projectile": "bullet",
+      "sound": "rifle",
+      "width": 59,
+      "mode": "ranged",
+      "muzzleExtra": 0
+    },
+    "weaponShot": {
+      "x": 132.3827777777779,
+      "y": 215.97684210526313,
+      "pitch": 0.7853981633974483,
+      "flash": 0
+    },
+    "playerWeapon": "rifle",
+    "ammo": -1,
+    "grenades": 3,
+    "grenadesThrown": 0,
+    "destroyedObjects": 0,
+    "explosions": 0,
+    "feedback": {
+      "shakeTime": 0,
+      "shakePower": 0,
+      "hitStop": 0,
+      "hitFlash": 0,
+      "blasts": [],
+      "particles": [
+        {
+          "kind": "shell",
+          "x": 731.1666666666642,
+          "y": 261.58743169398906,
+          "vx": 90,
+          "vy": -13.333333333333336
+        }
+      ],
+      "peakParticles": 26,
+      "droppedParticles": 0
+    },
+    "combo": 0,
+    "bestCombo": 0,
+    "objects": [
+      {
+        "id": "entry-crate",
+        "kind": "wood",
+        "x": 300,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-01",
+        "kind": "wood",
+        "x": 420,
+        "y": 150,
+        "w": 76,
+        "h": 54,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-01",
+        "kind": "barrel",
+        "x": 660,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 1,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-02",
+        "kind": "barrel",
+        "x": 735,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-A",
+        "kind": "wood",
+        "x": 1350,
+        "y": 260,
+        "w": 55,
+        "h": 50,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "hanging-01",
+        "kind": "hanging",
+        "x": 1530,
+        "y": 410,
+        "w": 54,
+        "h": 48,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-02",
+        "kind": "wood",
+        "x": 1750,
+        "y": 150,
+        "w": 64,
+        "h": 64,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbags-01",
+        "kind": "sandbag",
+        "x": 1860,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-03",
+        "kind": "barrel",
+        "x": 2230,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-03",
+        "kind": "wood",
+        "x": 2710,
+        "y": 150,
+        "w": 72,
+        "h": 60,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-B",
+        "kind": "concrete",
+        "x": 3055,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "bridge-rope",
+        "kind": "rope",
+        "x": 3178,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbags-B",
+        "kind": "sandbag",
+        "x": 3508,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "cargo-B",
+        "kind": "hanging",
+        "x": 3590,
+        "y": 440,
+        "w": 65,
+        "h": 55,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-C",
+        "kind": "concrete",
+        "x": 3851,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-C",
+        "kind": "wood",
+        "x": 4420,
+        "y": 260,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-C1",
+        "kind": "barrel",
+        "x": 5620,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-C2",
+        "kind": "barrel",
+        "x": 5680,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "rocket-before-tank",
+        "kind": "wood",
+        "x": 4880,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "cargo-C",
+        "kind": "hanging",
+        "x": 5980,
+        "y": 425,
+        "w": 56,
+        "h": 50,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "rocket-before-colossus",
+        "kind": "wood",
+        "x": 13270,
+        "y": 150,
+        "w": 58,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "arena-sandbag",
+        "kind": "sandbag",
+        "x": 13977.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "arena-barrel",
+        "kind": "barrel",
+        "x": 14190,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "grenades-E",
+        "kind": "wood",
+        "x": 6950,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-E1",
+        "kind": "sandbag",
+        "x": 7700,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-E1",
+        "kind": "barrel",
+        "x": 7895,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-E",
+        "kind": "wood",
+        "x": 8220,
+        "y": 260,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-E2",
+        "kind": "sandbag",
+        "x": 8527.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-F",
+        "kind": "wood",
+        "x": 9070,
+        "y": 260,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-F",
+        "kind": "sandbag",
+        "x": 9370,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-F",
+        "kind": "barrel",
+        "x": 9570,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "bridge-rope-F",
+        "kind": "rope",
+        "x": 9793,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-F",
+        "kind": "concrete",
+        "x": 9971,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-F",
+        "kind": "wood",
+        "x": 10330,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-G",
+        "kind": "concrete",
+        "x": 11080,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-G1",
+        "kind": "barrel",
+        "x": 11690,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-G",
+        "kind": "wood",
+        "x": 12010,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-G",
+        "kind": "sandbag",
+        "x": 12270,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-G2",
+        "kind": "barrel",
+        "x": 12855,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "grenades-before-final",
+        "kind": "wood",
+        "x": 13090,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      }
+    ],
+    "pickups": [],
+    "recoveryPoints": [
+      {
+        "id": "after-industry",
+        "x": 3756,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-tank",
+        "x": 5460,
+        "y": 260,
+        "purpose": "before-boss"
+      },
+      {
+        "id": "after-freight",
+        "x": 8810,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "after-blockade",
+        "x": 10800,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-colossus",
+        "x": 13180,
+        "y": 150,
+        "purpose": "before-boss"
+      }
+    ],
+    "recoverySpawned": [],
+    "victory": {
+      "active": false,
+      "time": 0,
+      "phase": "idle",
+      "focus": 0,
+      "cheerTime": 0,
+      "resultProgress": 0,
+      "resultsReady": false,
+      "impactSerial": 0,
+      "haptic": "light",
+      "flash": 0
+    },
+    "projectileStates": [
+      {
+        "owner": "enemy",
+        "kind": "bullet",
+        "x": 571.4333408965945,
+        "y": 238.60699824335597,
+        "vx": -355.3274095329685,
+        "vy": -57.81377028520191,
+        "homing": false,
+        "locked": false,
+        "age": 0.26666666666666666,
+        "gravity": 0
+      }
+    ],
+    "remaining": 38,
+    "guardHealth": 132,
+    "boss": {
+      "kind": "colossus",
+      "name": "重装裁决者",
+      "attack": "salvo",
+      "introTime": 1.3,
+      "phase": 1,
+      "active": false,
+      "mode": "dormant",
+      "warningX": 0,
+      "warningTargetY": 185,
+      "muzzle": {
+        "x": 14211.2,
+        "y": 287.6
+      },
+      "warningTime": 0,
+      "windup": 0,
+      "summons": 0,
+      "beam": {
+        "active": false,
+        "time": 0,
+        "x": 0,
+        "y": 0,
+        "endX": 0,
+        "endY": 0,
+        "length": 0,
+        "angle": 0,
+        "hits": 0
+      },
+      "attackCounts": {
+        "salvo": 0,
+        "sweep": 0,
+        "stomp": 0,
+        "laser": 0,
+        "missiles": 0,
+        "burst": 0
+      }
+    },
+    "miniBoss": {
+      "x": 6160,
+      "health": 42,
+      "maxHealth": 42,
+      "active": false,
+      "phase": 1,
+      "warningX": 0,
+      "warningTime": 0,
+      "attack": "bombard",
+      "warningPoints": []
+    },
+    "levelWidth": 14800,
+    "exitX": 14670,
+    "arena": {
+      "start": 13440,
+      "end": 14770
+    },
+    "arenaEntered": false,
+    "zones": [
+      {
+        "id": "A",
+        "name": "道路遭遇",
+        "start": 0,
+        "end": 1850,
+        "cleared": false
+      },
+      {
+        "id": "B",
+        "name": "工业突破",
+        "start": 1850,
+        "end": 3800,
+        "cleared": false
+      },
+      {
+        "id": "C",
+        "name": "机械阵地",
+        "start": 3800,
+        "end": 6740,
+        "cleared": false
+      },
+      {
+        "id": "E",
+        "name": "运输栈道",
+        "start": 6740,
+        "end": 8840,
+        "cleared": false
+      },
+      {
+        "id": "F",
+        "name": "封锁哨线",
+        "start": 8840,
+        "end": 10940,
+        "cleared": false
+      },
+      {
+        "id": "G",
+        "name": "维修长廊",
+        "start": 10940,
+        "end": 13340,
+        "cleared": false
+      },
+      {
+        "id": "D",
+        "name": "裁决者决战",
+        "start": 13340,
+        "end": 14800,
+        "cleared": false
+      }
+    ],
+    "mechanisms": [
+      {
+        "id": "bridge-B",
+        "kind": "bridge",
+        "x": 3080,
+        "y": 296,
+        "w": 210,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 150,
+        "maxY": 296
+      },
+      {
+        "id": "lift-C",
+        "kind": "lift",
+        "x": 4960,
+        "y": 186.58333333333317,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "lift-E",
+        "kind": "lift",
+        "x": 7960,
+        "y": 204.5,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "bridge-F",
+        "kind": "bridge",
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 150,
+        "maxY": 296
+      }
+    ],
+    "terrain": [
+      {
+        "x": 0,
+        "y": -240,
+        "w": 14800,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        },
+        "oneWay": false
+      },
+      {
+        "x": 1150,
+        "y": 236,
+        "w": 340,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 2300,
+        "y": 236,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 3300,
+        "y": 236,
+        "w": 160,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 4300,
+        "y": 236,
+        "w": 250,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 5200,
+        "y": 236,
+        "w": 390,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 7300,
+        "y": 236,
+        "w": 360,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 8190,
+        "y": 236,
+        "w": 300,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 9000,
+        "y": 236,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 11300,
+        "y": 236,
+        "w": 340,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 12500,
+        "y": 236,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 300.6267605633803,
+        "y": 150,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "entry-crate",
+        "oneWay": false
+      },
+      {
+        "x": 429.09859154929575,
+        "y": 150,
+        "w": 57.802816901408455,
+        "h": 57,
+        "kind": "crate",
+        "entityId": "crate-01",
+        "oneWay": false
+      },
+      {
+        "x": 657.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-01",
+        "oneWay": false
+      },
+      {
+        "x": 732.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-02",
+        "oneWay": false
+      },
+      {
+        "x": 1350.6267605633802,
+        "y": 260,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "upper-crate-A",
+        "oneWay": false
+      },
+      {
+        "x": 1748.0281690140846,
+        "y": 150,
+        "w": 67.94366197183098,
+        "h": 67,
+        "kind": "crate",
+        "entityId": "crate-02",
+        "oneWay": false
+      },
+      {
+        "x": 1857.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbags-01",
+        "oneWay": false
+      },
+      {
+        "x": 2227.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-03",
+        "oneWay": false
+      },
+      {
+        "x": 2714.056338028169,
+        "y": 150,
+        "w": 63.887323943661976,
+        "h": 63,
+        "kind": "crate",
+        "entityId": "crate-03",
+        "oneWay": false
+      },
+      {
+        "x": 3064.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-B",
+        "oneWay": false
+      },
+      {
+        "x": 3505.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbags-B",
+        "oneWay": false
+      },
+      {
+        "x": 3860.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-C",
+        "oneWay": false
+      },
+      {
+        "x": 4422.140845070423,
+        "y": 260,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "upper-crate-C",
+        "oneWay": false
+      },
+      {
+        "x": 5617.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-C1",
+        "oneWay": false
+      },
+      {
+        "x": 5677.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-C2",
+        "oneWay": false
+      },
+      {
+        "x": 4880.640845070423,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "rocket-before-tank",
+        "oneWay": false
+      },
+      {
+        "x": 13273.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "rocket-before-colossus",
+        "oneWay": false
+      },
+      {
+        "x": 13975,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "arena-sandbag",
+        "oneWay": false
+      },
+      {
+        "x": 14187.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "arena-barrel",
+        "oneWay": false
+      },
+      {
+        "x": 6950.62676056338,
+        "y": 150,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "grenades-E",
+        "oneWay": false
+      },
+      {
+        "x": 7697.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E1",
+        "oneWay": false
+      },
+      {
+        "x": 7892.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-E1",
+        "oneWay": false
+      },
+      {
+        "x": 8222.140845070422,
+        "y": 260,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "upper-crate-E",
+        "oneWay": false
+      },
+      {
+        "x": 8525,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E2",
+        "oneWay": false
+      },
+      {
+        "x": 9070.640845070422,
+        "y": 260,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "upper-crate-F",
+        "oneWay": false
+      },
+      {
+        "x": 9367.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-F",
+        "oneWay": false
+      },
+      {
+        "x": 9567.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-F",
+        "oneWay": false
+      },
+      {
+        "x": 9980.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-F",
+        "oneWay": false
+      },
+      {
+        "x": 10332.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "crate-F",
+        "oneWay": false
+      },
+      {
+        "x": 11089.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-G",
+        "oneWay": false
+      },
+      {
+        "x": 11687.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-G1",
+        "oneWay": false
+      },
+      {
+        "x": 12012.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "crate-G",
+        "oneWay": false
+      },
+      {
+        "x": 12267.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-G",
+        "oneWay": false
+      },
+      {
+        "x": 12852.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-G2",
+        "oneWay": false
+      },
+      {
+        "x": 13090.640845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "grenades-before-final",
+        "oneWay": false
+      },
+      {
+        "x": 3080,
+        "y": 296,
+        "w": 210,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 4960,
+        "y": 186.58333333333317,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 7960,
+        "y": 204.5,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      }
+    ],
+    "exitOpen": false,
+    "bullets": 1,
+    "shots": 11,
+    "hits": 2,
+    "peakBullets": 8,
+    "droppedBullets": 0,
+    "enemies": [
+      {
+        "id": "m1",
+        "x": 267.24823943662125,
+        "y": 150,
+        "health": 3,
+        "state": "Chase",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "approach"
+      },
+      {
+        "id": "r1",
+        "x": 703.1666666666642,
+        "y": 200.75409836065575,
+        "health": 4,
+        "state": "Attack",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "burst"
+      },
+      {
+        "id": "r2",
+        "x": 1290,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "m2",
+        "x": 1540,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "r3",
+        "x": 2045,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "m3",
+        "x": 2670,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "r4",
+        "x": 2500,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "m4",
+        "x": 2860,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "r5",
+        "x": 3230,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-B",
+        "x": 2810,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-B",
+        "x": 3700,
+        "y": 150,
+        "health": 8,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-C",
+        "x": 4100,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-C",
+        "x": 4650,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C1",
+        "x": 4790,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C2",
+        "x": 5360,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-C",
+        "x": 5900,
+        "y": 150,
+        "health": 8,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-C2",
+        "x": 6280,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C3",
+        "x": 6530,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E0",
+        "x": 7140,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E1",
+        "x": 7480,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-E1",
+        "x": 7870,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-E",
+        "x": 8120,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E2",
+        "x": 8380,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E3",
+        "x": 8725,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-F0",
+        "x": 8925,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-F1",
+        "x": 9160,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-F",
+        "x": 9645,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-F",
+        "x": 9760,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-F",
+        "x": 10200,
+        "y": 150,
+        "health": 8,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-F2",
+        "x": 10500,
+        "y": 150,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-G1",
+        "x": 11270,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-G1",
+        "x": 11440,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-G1",
+        "x": 11810,
+        "y": 150,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-G2",
+        "x": 12470,
+        "y": 150,
+        "health": 6,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 8,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-G2",
+        "x": 12640,
+        "y": 260,
+        "health": 4,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-G",
+        "x": 12980,
+        "y": 150,
+        "health": 8,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "outpost-tank",
+        "x": 6160,
+        "y": 150,
+        "health": 42,
+        "state": "Idle",
+        "kind": "guard",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "gate-colossus",
+        "x": 14440,
+        "y": 150,
+        "health": 132,
+        "state": "Idle",
+        "kind": "colossus",
+        "shield": 0,
+        "windup": 0,
+        "action": "salvo"
+      }
+    ],
+    "chapter": 1,
+    "entryMode": "campaign",
+    "oceanArt": null,
+    "chapterLoading": false,
+    "playerShots": 8,
+    "audio": {
+      "loaded": 9,
+      "played": 14,
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "requested": "comic",
+      "active": "comic",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "player.crouch.0",
+      "equipment": {
+        "pose": "player.crouch.0",
+        "body": "player.crouch.0",
+        "weapon": null,
+        "grip": null,
+        "bakedWeapon": "",
+        "bakedRifle": true
+      },
+      "renderedPlayer": {
+        "body": "player.crouch.0",
+        "weapon": "baked.rifle",
+        "weaponVisible": true
+      },
+      "renderedBoss": {
+        "frame": "",
+        "width": 0,
+        "height": 0,
+        "x": 0,
+        "y": 0,
+        "visible": false
+      },
+      "objects": [
+        {
+          "id": "entry-crate",
+          "frame": "polish.crate",
+          "width": 53.74647887323944,
+          "height": 53,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "crate-01",
+          "frame": "polish.crate",
+          "width": 57.802816901408455,
+          "height": 57,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "barrel-01",
+          "frame": "polish.barrel",
+          "width": 43,
+          "height": 50.75409836065574,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "barrel-02",
+          "frame": "polish.barrel",
+          "width": 43,
+          "height": 50.75409836065574,
+          "alive": true,
+          "y": 150
+        }
+      ],
+      "pickups": [],
+      "hudWeapon": {
+        "text": "突击步枪\n∞  弹药 · 切刀",
+        "id": "rifle",
+        "frame": "weapon.rifle",
+        "switch": {
+          "x": 387.69230769230774,
+          "y": 673.8461538461538
+        }
+      },
+      "combat": {
+        "rockets": [],
+        "bossBeam": {
+          "visible": false,
+          "x": 0,
+          "y": 0,
+          "length": 0,
+          "angle": 0
+        }
+      },
+      "terrain": "unified-drawn-v075"
+    },
+    "visibleChunks": 9,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 0,
+        "supported": false
+      }
+    },
+    "presentation": {
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 286.723076923077,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": false,
+      "resultProgress": 0,
+      "resultReady": false,
+      "controls": {
+        "style": "ink-disc-v083",
+        "jumpMode": "slide",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": true,
+        "damageVisible": false
+      },
+      "objective": {
+        "visible": true,
+        "text": "道路遭遇 · 向右突围 →",
+        "x": 925.846153846154,
+        "y": 673.8461538461538
+      }
+    },
+    "display": {
+      "width": 1558.1538461538462,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 1.4,
+      "worldVisibleWidth": 1112.967032967033,
+      "cameraY": 0.008333356891150686,
+      "frameWidth": 844,
+      "frameHeight": 390,
+      "orientationPaused": false
+    },
+    "controls": {
+      "shootHeld": false,
+      "hudHeight": 96,
+      "stick": {
+        "x": 0,
+        "y": -86.18402569110577,
+        "axis": 0,
+        "vertical": -0.8809527003409535,
+        "owner": 1
+      },
+      "layout": {
+        "systemMenu": null,
+        "hud": {
+          "levelX": 1325.538461538462,
+          "trackX": 1222.1538461538464,
+          "secondRow": false,
+          "objectiveX": 925.846153846154,
+          "objectiveWidth": 511.3846153846157
+        },
+        "joystick": {
+          "x": 171.92307692307693,
+          "y": 164.53846153846155,
+          "r": 95.76000000000002,
+          "baseR": 135,
+          "knobR": 64.80000000000001,
+          "hit": 270,
+          "unit": 1.8461538461538463
+        },
+        "jump": {
+          "x": 1188.7384615384615,
+          "y": 228.82153846153847,
+          "r": 64.80000000000001,
+          "hit": 151.75384615384618
+        },
+        "shoot": {
+          "x": 1404,
+          "y": 164.53846153846155,
+          "r": 108,
+          "hit": 241.84615384615384
+        },
+        "grenade": {
+          "x": 1415.076923076923,
+          "y": 366.02769230769235,
+          "r": 54.720000000000006,
+          "hit": 131.59384615384616
+        },
+        "pause": {
+          "x": 1502.769230769231,
+          "y": 668.3076923076923,
+          "hit": 81.23076923076924
+        }
+      },
+      "floating": {
+        "originX": 171.92307692307693,
+        "originY": 164.53846153846155,
+        "baseX": 171.92307692307693,
+        "baseY": 164.53846153846155,
+        "owners": [
+          {
+            "id": 1,
+            "role": "move"
+          },
+          {
+            "id": 2,
+            "role": "action"
+          }
+        ]
+      }
+    }
+  },
+  "aim": [
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 111.80555555555557,
+        "y": 150,
+        "vx": 86.66666666666667,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 140.87055555555557,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.035
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 116.5,
+        "y": 150,
+        "vx": 173.33333333333331,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 140.87055555555557,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.001666666666666674
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 124.08333333333334,
+        "y": 150,
+        "vx": 259.99999999999994,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 140.87055555555557,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 133.41666666666669,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 140.87055555555557,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 142.75000000000006,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 169.10333333333335,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0.043333333333333335
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 149.75000000000009,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 169.10333333333335,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0.01833333333333334
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 159.08333333333346,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 169.10333333333335,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 168.41666666666683,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 169.10333333333335,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 177.7500000000002,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 207.78000000000017,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.06
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.3",
+      "player": {
+        "x": 187.08333333333357,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 207.78000000000017,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.026666666666666672
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.3",
+      "player": {
+        "x": 196.41666666666694,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 207.78000000000017,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.3",
+      "player": {
+        "x": 203.41666666666697,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 207.78000000000017,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 212.75000000000034,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 207.78000000000017,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 222.0833333333337,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 248.10666666666702,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.043333333333333335
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 231.41666666666708,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 248.10666666666702,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.010000000000000007
+      }
+    },
+    {
+      "dir": "KeyD",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 240.75000000000045,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 248.10666666666702,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 248.27777777777823,
+        "y": 150,
+        "vx": 193.33333333333334,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 248.10666666666702,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 252.02777777777823,
+        "y": 150,
+        "vx": 128.33333333333337,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 221.00777777777824,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0.06
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 253.62500000000045,
+        "y": 150,
+        "vx": 85.00000000000003,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 221.00777777777824,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0.043333333333333335
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 254.08333333333377,
+        "y": 150,
+        "vx": -44.999999999999986,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 221.00777777777824,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 250.77777777777823,
+        "y": 150,
+        "vx": -131.66666666666666,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 221.00777777777824,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 244.58333333333377,
+        "y": 150,
+        "vx": -218.3333333333333,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 221.00777777777824,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 235.73611111111154,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 212.5533333333338,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.035
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.3",
+      "player": {
+        "x": 226.40277777777817,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 212.5533333333338,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.001666666666666674
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.3",
+      "player": {
+        "x": 219.40277777777814,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 212.5533333333338,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.3",
+      "player": {
+        "x": 210.06944444444477,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 212.5533333333338,
+        "y": 218.34157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 200.7361111111114,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 172.37944444444474,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.051666666666666666
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 191.40277777777803,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 172.37944444444474,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0.01833333333333334
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.0",
+      "player": {
+        "x": 182.06944444444466,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 172.37944444444474,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 172.73611111111128,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 172.37944444444474,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.1",
+      "player": {
+        "x": 165.73611111111126,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 172.37944444444474,
+        "y": 219.00157894736842,
+        "pitch": 0.7853981633974483,
+        "flash": 0
+      }
+    },
+    {
+      "dir": "KeyA",
+      "frame": "direct.rifle.diagonal-walk.2",
+      "player": {
+        "x": 156.40277777777789,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "slideTime": 0,
+        "slideProgress": 1,
+        "slideCooldown": 0,
+        "slideSerial": 0,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0.7853981633974483,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "muzzle": {
+        "x": 132.3827777777779,
+        "y": 215.97684210526313,
+        "pitch": 0.7853981633974483,
+        "flash": 0.035
+      }
+    }
+  ],
+  "slides": [
+    {
+      "frame": "direct.rifle.slide.0",
+      "player": {
+        "x": 165.26641414141426,
+        "y": 150,
+        "vx": 468.7878787878787,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.40666666666666657,
+        "slideProgress": 0.07575757575757602,
+        "slideCooldown": 0.7466666666666668,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.1",
+      "player": {
+        "x": 180.45075757575768,
+        "y": 150,
+        "vx": 447.57575757575745,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.37333333333333313,
+        "slideProgress": 0.15151515151515194,
+        "slideCooldown": 0.7133333333333336,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.1",
+      "player": {
+        "x": 194.92803030303043,
+        "y": 150,
+        "vx": 426.36363636363615,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.3399999999999997,
+        "slideProgress": 0.22727272727272796,
+        "slideCooldown": 0.6800000000000004,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.1",
+      "player": {
+        "x": 208.69823232323242,
+        "y": 150,
+        "vx": 405.1515151515149,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.30666666666666625,
+        "slideProgress": 0.303030303030304,
+        "slideCooldown": 0.6466666666666672,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.1",
+      "player": {
+        "x": 221.7613636363637,
+        "y": 150,
+        "vx": 383.9393939393936,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.2733333333333328,
+        "slideProgress": 0.37878787878788,
+        "slideCooldown": 0.613333333333334,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.2",
+      "player": {
+        "x": 234.11742424242433,
+        "y": 150,
+        "vx": 362.7272727272724,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.23999999999999944,
+        "slideProgress": 0.4545454545454558,
+        "slideCooldown": 0.5800000000000007,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.2",
+      "player": {
+        "x": 242.92045454545462,
+        "y": 150,
+        "vx": 346.8181818181815,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.21499999999999944,
+        "slideProgress": 0.5113636363636376,
+        "slideCooldown": 0.5550000000000008,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.2",
+      "player": {
+        "x": 254.03914141414145,
+        "y": 150,
+        "vx": 325.6060606060603,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.18166666666666612,
+        "slideProgress": 0.5871212121212134,
+        "slideCooldown": 0.5216666666666676,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.2",
+      "player": {
+        "x": 264.4507575757576,
+        "y": 150,
+        "vx": 304.39393939393904,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.1483333333333328,
+        "slideProgress": 0.6628787878787892,
+        "slideCooldown": 0.4883333333333343,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    },
+    {
+      "frame": "direct.rifle.slide.2",
+      "player": {
+        "x": 274.1553030303031,
+        "y": 150,
+        "vx": 283.18181818181785,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Slide",
+        "crouched": true,
+        "slideTime": 0.11499999999999946,
+        "slideProgress": 0.7386363636363649,
+        "slideCooldown": 0.45500000000000085,
+        "slideSerial": 1,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": false
+      }
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

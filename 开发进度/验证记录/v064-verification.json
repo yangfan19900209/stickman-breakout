@@ -1,0 +1,98 @@
+{
+  "version": "0.6.4",
+  "date": "2026-11-06",
+  "creator": "3.8.8",
+  "sourceSHA256": "b7b3ddfa6daa90ca9502d2e70a8b14b8814f3d4153ee895564a0130e2dd59e98",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 169,
+    "passed": 169,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "evidence": "reports/v064-browser-results.json",
+    "startTime": "2026-11-06T03:56:35.114Z",
+    "duration": 17512.136000000002,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": [
+      {
+        "title": "unified cover 1280x720: start, return home and keyboard start",
+        "status": "passed"
+      },
+      {
+        "title": "unified cover 844x390: start, return home and keyboard start",
+        "status": "passed"
+      },
+      {
+        "title": "unified cover 1024x768: start, return home and keyboard start",
+        "status": "passed"
+      },
+      {
+        "title": "unified cover 932x430: start, return home and keyboard start",
+        "status": "passed"
+      }
+    ]
+  },
+  "cover": {
+    "composition": "one unified generated illustration with native title and controls",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "runtimeEncoding": "JPEG quality 93, 4:4:4; no resizing; lossy encoding, original PNG preserved",
+    "assets": [
+      {
+        "file": "art/source/v064/cover.png",
+        "bytes": 1725508,
+        "sha256": "224112cfd059e49b035027702311f2c28d707d82e866b5a59837950004350d16"
+      },
+      {
+        "file": "assets/resources/comic/title-cover.jpg",
+        "bytes": 337403,
+        "sha256": "26271d85a82f41c8c6ee4065a31ddfaf645c6f566a7c1c2be6fa18dc72bc4cdb"
+      }
+    ]
+  },
+  "web": {
+    "files": 60,
+    "bytes": 7475243,
+    "sha256": "314aa019aa01ac73f708984266904f0dcd4f79ce86583a3a9ea78f49a85bd7b4",
+    "runtimeVerified": true,
+    "browser": "installed Chrome"
+  },
+  "wechat": {
+    "files": 72,
+    "bytes": 4626267,
+    "sha256": "ac02fd6f0f7e5998f38be7f0ec28538c23bf4dc10b312b694ec036617635822b",
+    "mainBytes": 4142683,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 315309
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    "reports/v064-cover-1280.png",
+    "reports/v064-cover-844.png",
+    "reports/v064-cover-1024.png",
+    "reports/v064-cover-932.png"
+  ],
+  "limitations": [
+    "Browser validation covers title-screen rendering and mouse/touch/keyboard navigation, not a new full-campaign run.",
+    "WeChat is built locally; no Developer Tools or physical-device validation in this iteration.",
+    "Not uploaded or published."
+  ]
+}

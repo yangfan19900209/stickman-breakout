@@ -1,0 +1,48 @@
+{
+  "version": "1.0.3",
+  "passed": true,
+  "checkedAt": "2026-11-13T04:46:57.263Z",
+  "checkpoint": "PRE-V103-20261113",
+  "changed": [
+    "assets/resources/comic/title-cover.jpg",
+    "assets/resources/comic/title-cover.jpg.meta",
+    "assets/scripts/GameManager.ts",
+    "assets/scripts/core/ReleaseConfig.ts",
+    "assets/scripts/platform/CocosInputAdapter.ts",
+    "assets/scripts/platform/PlatformAdapter.ts",
+    "assets/scripts/platform/PlatformBridge.ts",
+    "assets/scripts/platform/ShareBridge.ts",
+    "assets/scripts/render/ComicAssets.ts",
+    "assets/scripts/ui/HUDController.ts",
+    "assets/scripts/ui/TitlePoster.ts"
+  ],
+  "movedUnchanged": [
+    "assets/resources/comic/title-cover.jpg",
+    "assets/resources/comic/title-cover.jpg.meta"
+  ],
+  "protectedFiles": 683,
+  "imagesUnchanged": 185,
+  "dependencyLockPreserved": true,
+  "preservedReleases": [
+    {
+      "directory": "release/1.0.0",
+      "files": 441,
+      "sha256": "4bca47a91ad3422769ed16ebdbf91ff40153340d718c58c04914e2e655e704d1"
+    },
+    {
+      "directory": "release/1.0.0-game-club",
+      "files": 441,
+      "sha256": "612bd876f93f59746b4c780ab3dbbde63d7b1c65fb6241595d88e4b8920d2561"
+    },
+    {
+      "directory": "release/1.0.1",
+      "files": 441,
+      "sha256": "df976d580b93a12b979e2669627f16ce8571d977e787e8fa720104420df09f14"
+    },
+    {
+      "directory": "release/1.0.2",
+      "files": 441,
+      "sha256": "498a19e22504b8a57ebcedd6f7517b2fa5e1ccd8cc5aac564fd44247a8d42fab"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+import { GameConfig as C, WeaponId } from "../core/GameConfig";
+import {
+  AnimationState,
+  Facing,
+  InputFrame,
+  Rect,
+  overlaps,
+} from "../core/Types";
+import { LevelController } from "../level/LevelController";
+import type { Solid } from "../level/LevelData";
+
+export class PlayerController {
+  readonly isPlayer = true;
+  x = 110;
+  y = 150;
+  vx = 0;
+  vy = 0;
+  grounded = true;
+  readonly halfWidth = C.player.halfWidth;
+  get height(): number {
+    return this.crouched ? 43 : C.player.height;
+  }
+  crouched = false;
+  aimPitch = 0;
+  landTime = 0;
+  private jumpCut = false;
+  health: number = C.player.maxHealth;
+  grenades: number = C.grenade.initial;
+  private standaloneWeapon: WeaponId = "rifle";
+  private equipped?: { readonly id: WeaponId };
+  bindWeapon(source: { readonly id: WeaponId }): void { this.equipped = source; }
+  get weaponId(): WeaponId { return this.equipped?.id ?? this.standaloneWeapon; }
+  // Compatibility for standalone model tests; the session never keeps a second ID.
+  set weaponId(id: WeaponId) { this.standaloneWeapon = id; }
+  facing: Facing = 1;
+  invincible = 0;
+  hitTime = 0;
+  meleeTime = 0;
+  meleeStage = 0;
+  meleeProgress = 0;
+  meleeActive = false;
+  meleeAngle = 0;
+  meleeStance: "stand" | "crouch" | "jump" = "stand";
+  deadTime = 0;
+  recoil = 0;
+  animationTime = 0;
+  stride = 0;
+  groundSlope = 0;
+  airJumpsRemaining: number = C.player.airJumps;
+  jumpCount = 0;
+  jumpSerial = 0;
+  airJumpTime = 0;
+  throwTime = 0;
+  celebrationTime = 0;
+  private jumpWasPressed = false;
+  private dropSurfaces: Solid[] = [];
+  dropCount = 0;
+  get canJump(): boolean {
+    return (
+      this.alive &&
+      (this.grounded || this.coyote > 0 || this.airJumpsRemaining > 0)
+    );
+  }
+  private coyote = 0;
+  private buffer = 0;
+  private hurtbox: Rect = { x: 0, y: 0, w: 26, h: 65 };
+  get alive(): boolean {
+    return this.health > 0;
+  }
+  get bounds(): Rect {
+    this.hurtbox.x = this.x - 13;
+    this.hurtbox.y = this.y + 3;
+    this.hurtbox.h = this.crouched ? 36 : 65;
+    return this.hurtbox;
+  }
+  get animation(): AnimationState {
+    if (!this.alive) return "Dead";
+    if (this.hitTime > 0) return "Hit";
+    if (!this.grounded) return this.vy > 0 ? "Jump" : "Fall";
+    if (this.crouched) return "Crouch";
+    if (this.landTime > 0) return "Land";
+    if (Math.abs(this.vx) > 8) return "Run";
+    return this.recoil > 0 ? "Shoot" : "Idle";
+  }
+  reset(x: number, y: number): void {
+    this.celebrationTime = 0;
+    this.meleeTime = 0;
+    this.meleeStage = this.meleeProgress = 0;
+    this.meleeActive = false;
+    this.x = x;
+    this.y = y;
+    this.vx = 0;
+    this.vy = 0;
+    this.grounded = true;
+    this.health = C.player.maxHealth;
+    this.grenades = C.grenade.initial;
+    this.weaponId = "rifle";
+    this.facing = 1;
+    this.crouched = false;
+    this.aimPitch = 0;
+    this.landTime = 0;
+    this.throwTime = 0;
+    this.stride = this.groundSlope = 0;
+    this.airJumpsRemaining = C.player.airJumps;
+    this.jumpCount = this.jumpSerial = this.airJumpTime = 0;
+    this.jumpWasPressed = false;
+    this.dropSurfaces = [];
+    this.dropCount = 0;
+    this.jumpCut = false;
+    this.invincible =
+      this.hitTime =
+      this.deadTime =
+      this.recoil =
+      this.animationTime =
+      this.coyote =
+      this.buffer =
+        0;
+  }
+  /** Restore only the body: equipment, grenades and run counters stay earned. */
+  reviveAt(x: number, y: number, grounded: boolean): void {
+    this.x=x; this.y=y; this.grounded=grounded; this.health=C.player.maxHealth;
+    this.vx=this.vy=this.deadTime=this.hitTime=this.recoil=this.throwTime=0;
+    this.celebrationTime=this.landTime=this.aimPitch=this.groundSlope=0;
+    this.meleeTime=this.meleeStage=this.meleeProgress=this.meleeAngle=0;
+    this.meleeActive=this.crouched=this.jumpWasPressed=this.jumpCut=false;
+    this.meleeStance="stand"; this.dropSurfaces=[];
+    this.airJumpsRemaining=C.player.airJumps; this.jumpCount=this.airJumpTime=0;
+    this.animationTime=this.stride=this.coyote=this.buffer=0;
+    this.invincible=C.revive.protection;
+  }
+  update(dt: number, input: InputFrame, level: LevelController): void {
+    this.animationTime += dt;
+    this.airJumpTime = Math.max(0, this.airJumpTime - dt);
+    const jumpPressed = input.jump && !this.jumpWasPressed;
+    this.jumpWasPressed = input.jump;
+    this.landTime = Math.max(0, this.landTime - dt);
+    this.recoil = Math.max(0, this.recoil - dt * 8);
+    this.invincible = Math.max(0, this.invincible - dt);
+    this.hitTime = Math.max(0, this.hitTime - dt);
+    if (!this.alive) {
+      this.deadTime += dt;
+      this.vx *= Math.exp(-dt * 8);
+    } else {
+      if (Math.abs(input.axis) > 0.06) this.facing = input.axis > 0 ? 1 : -1;
+      const wantsCrouch = !!input.crouch && this.grounded;
+      const blockedStanding =
+        this.crouched &&
+        level.solids.some(
+          (s) =>
+            !s.slope && !s.oneWay &&
+            overlaps(
+              {
+                x: this.x - 13,
+                y: this.y + 0.5,
+                w: 26,
+                h: C.player.height - 0.5,
+              },
+              s,
+            ),
+        );
+      this.crouched = wantsCrouch || blockedStanding;
+      this.aimPitch = input.aimY
+        ? Math.abs(input.axis) > 0.3
+          ? Math.PI / 4
+          : Math.PI / 2
+        : 0;
+      const target =
+        input.axis * (this.crouched ? C.player.crouchSpeed : C.player.speed);
+      const change =
+        (input.axis ? C.player.acceleration : C.player.deceleration) * dt;
+      if (this.hitTime > .12) this.vx *= Math.exp(-dt * 4);
+      else this.vx += Math.max(-change, Math.min(change, target - this.vx));
+      this.coyote = this.grounded
+        ? C.player.coyoteTime
+        : Math.max(0, this.coyote - dt);
+      this.buffer = jumpPressed && !blockedStanding
+        ? C.player.jumpBuffer
+        : Math.max(0, this.buffer - dt);
+      const drop = jumpPressed && input.crouch && !blockedStanding
+        ? level.dropSurfaces(this) : [];
+      if (drop.length) {
+        this.dropSurfaces = drop;
+        this.vy = -80;
+        this.grounded = false;
+        this.coyote = this.buffer = 0;
+        this.crouched = false;
+        this.dropCount++;
+      } else if (this.buffer > 0 && this.coyote > 0 && !blockedStanding) {
+        this.vy = C.player.jumpVelocity;
+        this.grounded = false;
+        this.coyote = 0;
+        this.buffer = 0;
+        this.jumpCut = false;
+        this.crouched = false;
+        this.jumpCount = 1;
+        this.jumpSerial++;
+      } else if (jumpPressed && !this.grounded && this.airJumpsRemaining > 0) {
+        this.vy = C.player.airJumpVelocity;
+        this.airJumpsRemaining--;
+        this.jumpCount = 2;
+        this.jumpSerial++;
+        this.airJumpTime = 0.18;
+        this.buffer = this.coyote = 0;
+        this.jumpCut = this.crouched = false;
+      }
+      // A ground/coyote/buffered jump always completes its full arc after a tap.
+      // The existing second-jump release control and one-air-jump budget remain.
+      if (this.jumpCount === 2 && input.jumpHeld === false && !this.jumpCut && this.vy > 0) {
+        this.vy *= C.player.jumpCut;
+        this.jumpCut = true;
+      }
+    }
+    this.vy -= C.player.gravity * dt;
+    const wasGrounded = this.grounded;
+    const oldX = this.x;
+    level.movePlayer(this, dt, this.dropSurfaces);
+    // Only the surface we left is ignored, until feet clear its underside.
+    // Lower decks and solid ground keep their normal swept collision.
+    this.dropSurfaces = this.dropSurfaces.filter(s => !this.grounded &&
+      level.solids.includes(s) && this.y >= s.y - .5);
+    if (this.grounded) {
+      this.stride += Math.abs(this.x - oldX) / C.animation.strideLength;
+      this.airJumpsRemaining = C.player.airJumps;
+      this.jumpCount = 0;
+    }
+    if (!wasGrounded && this.grounded) this.landTime = 0.14;
+    if (this.y < -200) this.takeDamage(this.health, this.facing);
+  }
+  takeDamage(amount: number, direction: Facing): boolean {
+    if (!this.alive || this.invincible > 0) return false;
+    this.health = Math.max(0, this.health - Math.ceil(amount));
+    this.invincible = C.player.invincibility;
+    this.hitTime = 0.22;
+    this.vx = direction * 145;
+    return true;
+  }
+}

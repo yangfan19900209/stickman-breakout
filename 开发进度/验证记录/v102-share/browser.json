@@ -1,0 +1,299 @@
+{
+  "version": "1.0.2",
+  "passed": true,
+  "startedAt": "2026-11-13T03:07:16.713Z",
+  "method": "Actual Cocos Web build and touch/keyboard input; simulated WeChat share/menu requests and native community overlay. No actual message was sent. No game-state changes. This does not confirm WeChat device behavior or server-side community access.",
+  "cases": [
+    {
+      "name": "wide-phone",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "inset": 59,
+      "homeBounds": {
+        "x": 74.84375,
+        "y": 296.921875,
+        "width": 77.5,
+        "height": 43.65625
+      },
+      "host": {
+        "shareMenus": [
+          {
+            "menus": [
+              "shareAppMessage"
+            ],
+            "withShareTicket": false
+          }
+        ],
+        "shareCards": [
+          {
+            "title": "线条突围 · 黑白战场，等你突围",
+            "query": "from=share"
+          },
+          {
+            "title": "线条突围 · 黑白战场，等你突围",
+            "query": "from=share"
+          }
+        ],
+        "created": 1,
+        "shown": 6,
+        "hidden": 6,
+        "destroyed": 0,
+        "taps": 2,
+        "options": [
+          {
+            "type": "text",
+            "text": "",
+            "icon": "dark",
+            "style": {
+              "left": 74.85416666666664,
+              "top": 296.9333333333333,
+              "width": 77.50833333333333,
+              "height": 43.666666666666664,
+              "backgroundColor": "transparent",
+              "color": "#22201d",
+              "borderColor": "#22201d",
+              "borderWidth": 0,
+              "borderRadius": 0,
+              "fontSize": 13.1,
+              "lineHeight": 43.666666666666664,
+              "textAlign": "center"
+            }
+          }
+        ],
+        "toasts": [],
+        "menuCard": {
+          "title": "线条突围 · 黑白战场，等你突围",
+          "query": "from=share"
+        }
+      },
+      "final": {
+        "enabled": true,
+        "supported": true,
+        "visible": true,
+        "background": false,
+        "tapRequests": 2,
+        "bounds": {
+          "left": 74.85416666666664,
+          "top": 296.9333333333333,
+          "width": 77.50833333333333,
+          "height": 43.666666666666664
+        },
+        "error": ""
+      },
+      "checks": [
+        "title tap",
+        "start hides",
+        "pause tap clears input",
+        "background/foreground preserves pause",
+        "rotation hides/restores",
+        "resume hides",
+        "return home reuses button"
+      ]
+    },
+    {
+      "name": "small-phone",
+      "viewport": {
+        "width": 667,
+        "height": 375
+      },
+      "inset": 0,
+      "homeBounds": {
+        "x": 49.515625,
+        "y": 283.328125,
+        "width": 73.953125,
+        "height": 41.65625
+      },
+      "host": {
+        "shareMenus": [
+          {
+            "menus": [
+              "shareAppMessage"
+            ],
+            "withShareTicket": false
+          }
+        ],
+        "shareCards": [
+          {
+            "title": "线条突围 · 黑白战场，等你突围",
+            "query": "from=share"
+          },
+          {
+            "title": "线条突围 · 黑白战场，等你突围",
+            "query": "from=share"
+          }
+        ],
+        "created": 1,
+        "shown": 6,
+        "hidden": 6,
+        "destroyed": 0,
+        "taps": 2,
+        "options": [
+          {
+            "type": "text",
+            "text": "",
+            "icon": "dark",
+            "style": {
+              "left": 49.52916666666666,
+              "top": 283.33333333333337,
+              "width": 73.95833333333333,
+              "height": 41.66666666666666,
+              "backgroundColor": "transparent",
+              "color": "#22201d",
+              "borderColor": "#22201d",
+              "borderWidth": 0,
+              "borderRadius": 0,
+              "fontSize": 12.499999999999996,
+              "lineHeight": 41.66666666666666,
+              "textAlign": "center"
+            }
+          }
+        ],
+        "toasts": [],
+        "menuCard": {
+          "title": "线条突围 · 黑白战场，等你突围",
+          "query": "from=share"
+        }
+      },
+      "final": {
+        "enabled": true,
+        "supported": true,
+        "visible": true,
+        "background": false,
+        "tapRequests": 2,
+        "bounds": {
+          "left": 49.52916666666666,
+          "top": 283.33333333333337,
+          "width": 73.95833333333333,
+          "height": 41.66666666666666
+        },
+        "error": ""
+      },
+      "checks": [
+        "title tap",
+        "start hides",
+        "pause tap clears input",
+        "background/foreground preserves pause",
+        "rotation hides/restores",
+        "resume hides",
+        "return home reuses button"
+      ]
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "inset": 0,
+      "homeBounds": {
+        "x": 95,
+        "y": 544,
+        "width": 142,
+        "height": 80
+      },
+      "host": {
+        "shareMenus": [
+          {
+            "menus": [
+              "shareAppMessage"
+            ],
+            "withShareTicket": false
+          }
+        ],
+        "shareCards": [
+          {
+            "title": "线条突围 · 黑白战场，等你突围",
+            "query": "from=share"
+          },
+          {
+            "title": "线条突围 · 黑白战场，等你突围",
+            "query": "from=share"
+          }
+        ],
+        "created": 1,
+        "shown": 6,
+        "hidden": 6,
+        "destroyed": 0,
+        "taps": 2,
+        "options": [
+          {
+            "type": "text",
+            "text": "",
+            "icon": "dark",
+            "style": {
+              "left": 95,
+              "top": 544,
+              "width": 142,
+              "height": 80,
+              "backgroundColor": "transparent",
+              "color": "#22201d",
+              "borderColor": "#22201d",
+              "borderWidth": 0,
+              "borderRadius": 0,
+              "fontSize": 22,
+              "lineHeight": 80,
+              "textAlign": "center"
+            }
+          }
+        ],
+        "toasts": [],
+        "menuCard": {
+          "title": "线条突围 · 黑白战场，等你突围",
+          "query": "from=share"
+        }
+      },
+      "final": {
+        "enabled": true,
+        "supported": true,
+        "visible": true,
+        "background": false,
+        "tapRequests": 2,
+        "bounds": {
+          "left": 95,
+          "top": 544,
+          "width": 142,
+          "height": 80
+        },
+        "error": ""
+      },
+      "checks": [
+        "title tap",
+        "start hides",
+        "pause tap clears input",
+        "background/foreground preserves pause",
+        "rotation hides/restores",
+        "resume hides",
+        "return home reuses button"
+      ]
+    },
+    {
+      "name": "unsupported",
+      "passed": true
+    },
+    {
+      "name": "failure",
+      "passed": true
+    },
+    {
+      "name": "browser",
+      "passed": true
+    },
+    {
+      "name": "chapter-two-pause",
+      "passed": true
+    }
+  ],
+  "captures": [
+    "reports/v102-share/wide-phone-home.png",
+    "reports/v102-share/wide-phone-paused.png",
+    "reports/v102-share/small-phone-home.png",
+    "reports/v102-share/small-phone-paused.png",
+    "reports/v102-share/desktop-home.png",
+    "reports/v102-share/desktop-paused.png",
+    "reports/v102-share/chapter-two-paused.png"
+  ],
+  "errors": [],
+  "failed": []
+}

@@ -1,0 +1,209 @@
+{
+  "source": "../素材/游戏美术/source/v084/controls-comic-final.png",
+  "sourceSize": [
+    1448,
+    1086
+  ],
+  "sourceSHA256": "060ff19982b1d3f53bb783822573784dbd4e36c5d92b6cce963f7237cf671533",
+  "atlas": "assets/landart/controls.png",
+  "atlasSize": [
+    2048,
+    1024
+  ],
+  "atlasSHA256": "8dc1ec226deec5f7fa30f7827835721aace5db513a1075094dbf81e27857699f",
+  "preparation": "Whole sprites; alpha-preserving crop, area resampling and packing only. No drawn substitutes.",
+  "frames": [
+    {
+      "id": "attack",
+      "crop": [
+        17,
+        26,
+        327,
+        335
+      ],
+      "atlas": [
+        4,
+        4,
+        293,
+        300
+      ],
+      "sourcePixels": 83310
+    },
+    {
+      "id": "jump",
+      "crop": [
+        374,
+        25,
+        328,
+        336
+      ],
+      "atlas": [
+        305,
+        4,
+        293,
+        300
+      ],
+      "sourcePixels": 83954
+    },
+    {
+      "id": "dash",
+      "crop": [
+        735,
+        25,
+        331,
+        337
+      ],
+      "atlas": [
+        606,
+        4,
+        295,
+        300
+      ],
+      "sourcePixels": 85084
+    },
+    {
+      "id": "grenade",
+      "crop": [
+        1094,
+        25,
+        331,
+        336
+      ],
+      "atlas": [
+        909,
+        4,
+        296,
+        300
+      ],
+      "sourcePixels": 84741
+    },
+    {
+      "id": "knife",
+      "crop": [
+        17,
+        383,
+        329,
+        338
+      ],
+      "atlas": [
+        1213,
+        4,
+        292,
+        300
+      ],
+      "sourcePixels": 84669
+    },
+    {
+      "id": "slide",
+      "crop": [
+        372,
+        382,
+        333,
+        342
+      ],
+      "atlas": [
+        1513,
+        4,
+        292,
+        300
+      ],
+      "sourcePixels": 86858
+    },
+    {
+      "id": "pause",
+      "crop": [
+        741,
+        397,
+        318,
+        320
+      ],
+      "atlas": [
+        4,
+        312,
+        298,
+        300
+      ],
+      "sourcePixels": 94169
+    },
+    {
+      "id": "doubleJump",
+      "crop": [
+        1093,
+        382,
+        332,
+        342
+      ],
+      "atlas": [
+        310,
+        312,
+        291,
+        300
+      ],
+      "sourcePixels": 86763
+    },
+    {
+      "id": "stickBase",
+      "crop": [
+        16,
+        742,
+        329,
+        331
+      ],
+      "atlas": [
+        609,
+        312,
+        298,
+        300
+      ],
+      "sourcePixels": 83675
+    },
+    {
+      "id": "stickCap",
+      "crop": [
+        371,
+        746,
+        319,
+        326
+      ],
+      "atlas": [
+        915,
+        312,
+        294,
+        300
+      ],
+      "sourcePixels": 79565
+    },
+    {
+      "id": "badge",
+      "crop": [
+        707,
+        780,
+        251,
+        263
+      ],
+      "atlas": [
+        1217,
+        312,
+        286,
+        300
+      ],
+      "sourcePixels": 50090
+    },
+    {
+      "id": "menu",
+      "crop": [
+        978,
+        795,
+        452,
+        235
+      ],
+      "atlas": [
+        1511,
+        312,
+        300,
+        156
+      ],
+      "sourcePixels": 99529
+    }
+  ]
+}

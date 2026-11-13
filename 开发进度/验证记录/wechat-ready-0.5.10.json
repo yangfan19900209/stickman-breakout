@@ -1,0 +1,18 @@
+{
+  "appid": "wx7d2aae02691fc088",
+  "version": "0.5.10",
+  "description": "线条突围 V0.5.10：修复47%掩体隐形碰撞导致人物悬空；箱子破碎修正、完整霰弹枪动作、新机甲Boss和六种攻击。",
+  "author": "YF",
+  "uploadMethod": "WeChat Developer Tools personal account",
+  "status": "ready_awaiting_personal_login",
+  "creatorExitCode": 36,
+  "files": 55,
+  "bytes": 3566334,
+  "buildSHA256": "01f5ba172f19d2277cdf4303f6414dd7fd5f52abb17d0297aa9783f5d7bf0b3b",
+  "sourceSHA256": "d1a11fc0f5dde427e5d5a95696fc985ce3f5a745538ab70bbb4416d82e66ac38",
+  "preparedAt": "2026-10-29T12:00:12.267Z",
+  "testsRun": false,
+  "runtimeVerified": false,
+  "release": "not_published",
+  "note": "Rebuilt after the local concrete-C height fix. Per user instruction, no logic/browser/typecheck tests run in this upload turn."
+}

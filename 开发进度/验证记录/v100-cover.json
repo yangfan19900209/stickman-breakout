@@ -1,0 +1,653 @@
+{
+  "version": "1.0.0",
+  "passed": true,
+  "startedAt": "2026-11-12T09:49:55.716Z",
+  "method": "Actual browser scenes and touch input. Safe area and WeChat capsule APIs are simulated; public host requests are routed only to the local build. No game-state edits.",
+  "checks": [
+    "three cover viewports: no chapter shortcut labels or hit targets; start touch works; simulated iPhone inset and rotation checked",
+    "third-chapter query/legacy link and refresh return to cover; public chapter queries cannot bypass the campaign; no flight bundle requests"
+  ],
+  "cases": [
+    {
+      "name": "cover-iphone15pro",
+      "url": "http://127.0.0.1:4190/",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "state": "title",
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "worldX": 0,
+        "bossCeiling": 513.7862595419847,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "labels": [
+        {
+          "text": "01",
+          "x": -627.320610687023,
+          "y": 275
+        },
+        {
+          "text": "STICKMAN BREAKOUT",
+          "x": -435.3206106870229,
+          "y": 275
+        },
+        {
+          "text": "线条\n突围",
+          "x": -439.3206106870229,
+          "y": 129
+        },
+        {
+          "text": "冲出重围。",
+          "x": -468.3206106870229,
+          "y": -28
+        },
+        {
+          "text": "奔跑 · 开火 · 直面机甲",
+          "x": -462.3206106870229,
+          "y": -65
+        },
+        {
+          "text": "开始突围",
+          "x": -500.3206106870229,
+          "y": -125
+        },
+        {
+          "text": "→",
+          "x": -385.5396470706664,
+          "y": -126
+        },
+        {
+          "text": "AD 移动 · 空格二段跳 · S＋空格下台",
+          "x": -462.3206106870229,
+          "y": -185
+        },
+        {
+          "text": "手机：空中再点跳 · 摇杆下＋跳下台",
+          "x": -467.3206106870229,
+          "y": -210
+        },
+        {
+          "text": "V1.0.0",
+          "x": -562.320610687023,
+          "y": -268
+        }
+      ]
+    },
+    {
+      "name": "cover-small-phone",
+      "url": "http://127.0.0.1:4190/",
+      "viewport": {
+        "width": 667,
+        "height": 375
+      },
+      "state": "title",
+      "display": {
+        "width": 1280.64,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 914.7428571428572,
+        "cameraY": 0,
+        "worldY": -60,
+        "worldX": 0,
+        "bossCeiling": 505.52,
+        "frameWidth": 667,
+        "frameHeight": 375,
+        "orientationPaused": false
+      },
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 245.096,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "labels": [
+        {
+          "text": "01",
+          "x": -529.224,
+          "y": 275
+        },
+        {
+          "text": "STICKMAN BREAKOUT",
+          "x": -337.22400000000005,
+          "y": 275
+        },
+        {
+          "text": "线条\n突围",
+          "x": -341.22400000000005,
+          "y": 129
+        },
+        {
+          "text": "冲出重围。",
+          "x": -370.22400000000005,
+          "y": -28
+        },
+        {
+          "text": "奔跑 · 开火 · 直面机甲",
+          "x": -364.22400000000005,
+          "y": -65
+        },
+        {
+          "text": "开始突围",
+          "x": -402.22400000000005,
+          "y": -125
+        },
+        {
+          "text": "→",
+          "x": -287.792065481388,
+          "y": -126
+        },
+        {
+          "text": "AD 移动 · 空格二段跳 · S＋空格下台",
+          "x": -364.22400000000005,
+          "y": -185
+        },
+        {
+          "text": "手机：空中再点跳 · 摇杆下＋跳下台",
+          "x": -369.22400000000005,
+          "y": -210
+        },
+        {
+          "text": "V1.0.0",
+          "x": -464.22400000000005,
+          "y": -268
+        }
+      ]
+    },
+    {
+      "name": "cover-desktop",
+      "url": "http://127.0.0.1:4190/",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "title",
+      "display": {
+        "width": 1280,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 914.2857142857143,
+        "cameraY": 0,
+        "worldY": -60,
+        "worldX": 0,
+        "bossCeiling": 616,
+        "frameWidth": 1280,
+        "frameHeight": 720,
+        "orientationPaused": false
+      },
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 245,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "labels": [
+        {
+          "text": "01",
+          "x": -529,
+          "y": 275
+        },
+        {
+          "text": "STICKMAN BREAKOUT",
+          "x": -337,
+          "y": 275
+        },
+        {
+          "text": "线条\n突围",
+          "x": -341,
+          "y": 129
+        },
+        {
+          "text": "冲出重围。",
+          "x": -370,
+          "y": -28
+        },
+        {
+          "text": "奔跑 · 开火 · 直面机甲",
+          "x": -364,
+          "y": -65
+        },
+        {
+          "text": "开始突围",
+          "x": -402,
+          "y": -125
+        },
+        {
+          "text": "→",
+          "x": -287.23355331409664,
+          "y": -126
+        },
+        {
+          "text": "AD 移动 · 空格二段跳 · S＋空格下台",
+          "x": -364,
+          "y": -185
+        },
+        {
+          "text": "手机：空中再点跳 · 摇杆下＋跳下台",
+          "x": -369,
+          "y": -210
+        },
+        {
+          "text": "V1.0.0",
+          "x": -464,
+          "y": -268
+        }
+      ]
+    },
+    {
+      "name": "third-query-blocked",
+      "url": "http://127.0.0.1:4190/?chapter=3",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "state": "title",
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "worldX": 0,
+        "bossCeiling": 557.7557251908397,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "labels": [
+        {
+          "text": "01",
+          "x": -627.320610687023,
+          "y": 275
+        },
+        {
+          "text": "STICKMAN BREAKOUT",
+          "x": -435.3206106870229,
+          "y": 275
+        },
+        {
+          "text": "线条\n突围",
+          "x": -439.3206106870229,
+          "y": 129
+        },
+        {
+          "text": "冲出重围。",
+          "x": -468.3206106870229,
+          "y": -28
+        },
+        {
+          "text": "奔跑 · 开火 · 直面机甲",
+          "x": -462.3206106870229,
+          "y": -65
+        },
+        {
+          "text": "开始突围",
+          "x": -500.3206106870229,
+          "y": -125
+        },
+        {
+          "text": "→",
+          "x": -385.52519425471104,
+          "y": -126
+        },
+        {
+          "text": "AD 移动 · 空格二段跳 · S＋空格下台",
+          "x": -462.3206106870229,
+          "y": -185
+        },
+        {
+          "text": "手机：空中再点跳 · 摇杆下＋跳下台",
+          "x": -467.3206106870229,
+          "y": -210
+        },
+        {
+          "text": "V1.0.0",
+          "x": -562.320610687023,
+          "y": -268
+        }
+      ]
+    },
+    {
+      "name": "third-old-link-blocked",
+      "url": "http://127.0.0.1:4190/",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "state": "title",
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "worldX": 0,
+        "bossCeiling": 557.7557251908397,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "labels": [
+        {
+          "text": "01",
+          "x": -627.320610687023,
+          "y": 275
+        },
+        {
+          "text": "STICKMAN BREAKOUT",
+          "x": -435.3206106870229,
+          "y": 275
+        },
+        {
+          "text": "线条\n突围",
+          "x": -439.3206106870229,
+          "y": 129
+        },
+        {
+          "text": "冲出重围。",
+          "x": -468.3206106870229,
+          "y": -28
+        },
+        {
+          "text": "奔跑 · 开火 · 直面机甲",
+          "x": -462.3206106870229,
+          "y": -65
+        },
+        {
+          "text": "开始突围",
+          "x": -500.3206106870229,
+          "y": -125
+        },
+        {
+          "text": "→",
+          "x": -385.19887780758523,
+          "y": -126
+        },
+        {
+          "text": "AD 移动 · 空格二段跳 · S＋空格下台",
+          "x": -462.3206106870229,
+          "y": -185
+        },
+        {
+          "text": "手机：空中再点跳 · 摇杆下＋跳下台",
+          "x": -467.3206106870229,
+          "y": -210
+        },
+        {
+          "text": "V1.0.0",
+          "x": -562.320610687023,
+          "y": -268
+        }
+      ]
+    },
+    {
+      "name": "public-second-query-blocked",
+      "url": "http://release-check.invalid/?chapter=2",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "state": "title",
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "worldX": 0,
+        "bossCeiling": 557.7557251908397,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "labels": [
+        {
+          "text": "01",
+          "x": -627.320610687023,
+          "y": 275
+        },
+        {
+          "text": "STICKMAN BREAKOUT",
+          "x": -435.3206106870229,
+          "y": 275
+        },
+        {
+          "text": "线条\n突围",
+          "x": -439.3206106870229,
+          "y": 129
+        },
+        {
+          "text": "冲出重围。",
+          "x": -468.3206106870229,
+          "y": -28
+        },
+        {
+          "text": "奔跑 · 开火 · 直面机甲",
+          "x": -462.3206106870229,
+          "y": -65
+        },
+        {
+          "text": "开始突围",
+          "x": -500.3206106870229,
+          "y": -125
+        },
+        {
+          "text": "→",
+          "x": -386.26493177748023,
+          "y": -126
+        },
+        {
+          "text": "AD 移动 · 空格二段跳 · S＋空格下台",
+          "x": -462.3206106870229,
+          "y": -185
+        },
+        {
+          "text": "手机：空中再点跳 · 摇杆下＋跳下台",
+          "x": -467.3206106870229,
+          "y": -210
+        },
+        {
+          "text": "V1.0.0",
+          "x": -562.320610687023,
+          "y": -268
+        }
+      ]
+    },
+    {
+      "name": "public-third-query-blocked",
+      "url": "http://release-check.invalid/?chapter=3",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "state": "title",
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "worldX": 0,
+        "bossCeiling": 557.7557251908397,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "labels": [
+        {
+          "text": "01",
+          "x": -627.320610687023,
+          "y": 275
+        },
+        {
+          "text": "STICKMAN BREAKOUT",
+          "x": -435.3206106870229,
+          "y": 275
+        },
+        {
+          "text": "线条\n突围",
+          "x": -439.3206106870229,
+          "y": 129
+        },
+        {
+          "text": "冲出重围。",
+          "x": -468.3206106870229,
+          "y": -28
+        },
+        {
+          "text": "奔跑 · 开火 · 直面机甲",
+          "x": -462.3206106870229,
+          "y": -65
+        },
+        {
+          "text": "开始突围",
+          "x": -500.3206106870229,
+          "y": -125
+        },
+        {
+          "text": "→",
+          "x": -386.14243606161165,
+          "y": -126
+        },
+        {
+          "text": "AD 移动 · 空格二段跳 · S＋空格下台",
+          "x": -462.3206106870229,
+          "y": -185
+        },
+        {
+          "text": "手机：空中再点跳 · 摇杆下＋跳下台",
+          "x": -467.3206106870229,
+          "y": -210
+        },
+        {
+          "text": "V1.0.0",
+          "x": -562.320610687023,
+          "y": -268
+        }
+      ]
+    }
+  ],
+  "captures": [
+    "reports/v100-cover-iphone15pro.png",
+    "reports/v100-cover-small-phone.png",
+    "reports/v100-cover-desktop.png",
+    "reports/v100-third-query-blocked.png",
+    "reports/v100-third-old-link-blocked.png",
+    "reports/v100-public-second-query-blocked.png",
+    "reports/v100-public-third-query-blocked.png"
+  ],
+  "errors": [],
+  "failed": []
+}

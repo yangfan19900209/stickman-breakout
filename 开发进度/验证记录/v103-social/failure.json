@@ -1,0 +1,16 @@
+{
+  "error": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+  "stack": "page.waitForFunction: Timeout 30000ms exceeded.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\scripts\\verify-v103-social.mjs:71:34",
+  "cases": [],
+  "captures": [
+    "reports/v103-social/wide-phone-title.png",
+    "reports/v103-social/wide-phone-personal.png",
+    "reports/v103-social/wide-phone-privacy.png",
+    "reports/v103-social/wide-phone-progress.png",
+    "reports/v103-social/wide-phone-level1.png",
+    "reports/v103-social/wide-phone-level2.png",
+    "reports/v103-social/wide-phone-offline.png"
+  ],
+  "errors": [],
+  "failed": []
+}

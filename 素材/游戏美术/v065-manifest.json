@@ -1,0 +1,331 @@
+{
+  "source": {
+    "file": "../素材/游戏美术/source/v065/rocket-aim.png",
+    "size": [
+      1774,
+      887
+    ],
+    "sha256": "9076c8a0a36e55a02de1d0fd263b19d6ca607fd12bfc6a542dd4912f85323b65"
+  },
+  "textureSize": [
+    1024,
+    512
+  ],
+  "textureBytes": 27949,
+  "worldScale": 0.25,
+  "processing": "Complete-body crops, uniform half-resolution runtime frames, 128-color RGBA quantization; original preserved.",
+  "frames": [
+    {
+      "id": "direct.rocket.up-stand",
+      "crop": [
+        118,
+        26,
+        328,
+        412
+      ],
+      "pivotSource": [
+        214,
+        407
+      ],
+      "muzzleSource": [
+        284,
+        46
+      ],
+      "rearSource": [
+        284,
+        267
+      ],
+      "atlas": [
+        4,
+        4,
+        105,
+        193
+      ],
+      "anchor": [
+        0.45714285714285713,
+        0.012953367875647714
+      ],
+      "sourceSize": [
+        210,
+        386
+      ],
+      "size": [
+        105,
+        193
+      ]
+    },
+    {
+      "id": "direct.rocket.up-crouch",
+      "crop": [
+        544,
+        66,
+        766,
+        412
+      ],
+      "pivotSource": [
+        650,
+        407
+      ],
+      "muzzleSource": [
+        722,
+        89
+      ],
+      "rearSource": [
+        722,
+        305
+      ],
+      "atlas": [
+        117,
+        4,
+        111,
+        173
+      ],
+      "anchor": [
+        0.4774774774774775,
+        0.014450867052023142
+      ],
+      "sourceSize": [
+        222,
+        346
+      ],
+      "size": [
+        111,
+        173
+      ]
+    },
+    {
+      "id": "direct.rocket.up-jump",
+      "crop": [
+        988,
+        12,
+        1200,
+        368
+      ],
+      "pivotSource": [
+        1082,
+        407
+      ],
+      "muzzleSource": [
+        1156,
+        33
+      ],
+      "rearSource": [
+        1156,
+        242
+      ],
+      "atlas": [
+        236,
+        4,
+        106,
+        178
+      ],
+      "anchor": [
+        0.44339622641509435,
+        -0.1095505617977528
+      ],
+      "sourceSize": [
+        212,
+        356
+      ],
+      "size": [
+        106,
+        178
+      ]
+    },
+    {
+      "id": "direct.rocket.up-fall",
+      "crop": [
+        1432,
+        12,
+        1654,
+        390
+      ],
+      "pivotSource": [
+        1535,
+        407
+      ],
+      "muzzleSource": [
+        1600,
+        33
+      ],
+      "rearSource": [
+        1600,
+        244
+      ],
+      "atlas": [
+        350,
+        4,
+        111,
+        189
+      ],
+      "anchor": [
+        0.46396396396396394,
+        -0.04497354497354489
+      ],
+      "sourceSize": [
+        222,
+        378
+      ],
+      "size": [
+        111,
+        189
+      ]
+    },
+    {
+      "id": "direct.rocket.diagonal-run.0",
+      "crop": [
+        76,
+        518,
+        376,
+        848
+      ],
+      "pivotSource": [
+        214,
+        844
+      ],
+      "muzzleSource": [
+        337,
+        563
+      ],
+      "rearSource": [
+        197,
+        703
+      ],
+      "atlas": [
+        469,
+        4,
+        150,
+        165
+      ],
+      "anchor": [
+        0.46,
+        0.012121212121212088
+      ],
+      "sourceSize": [
+        300,
+        330
+      ],
+      "size": [
+        150,
+        165
+      ]
+    },
+    {
+      "id": "direct.rocket.diagonal-run.1",
+      "crop": [
+        530,
+        518,
+        820,
+        840
+      ],
+      "pivotSource": [
+        650,
+        844
+      ],
+      "muzzleSource": [
+        782,
+        563
+      ],
+      "rearSource": [
+        642,
+        703
+      ],
+      "atlas": [
+        627,
+        4,
+        145,
+        161
+      ],
+      "anchor": [
+        0.41379310344827586,
+        -0.012422360248447228
+      ],
+      "sourceSize": [
+        290,
+        322
+      ],
+      "size": [
+        145,
+        161
+      ]
+    },
+    {
+      "id": "direct.rocket.diagonal-crouch",
+      "crop": [
+        980,
+        538,
+        1258,
+        842
+      ],
+      "pivotSource": [
+        1082,
+        837
+      ],
+      "muzzleSource": [
+        1227,
+        582
+      ],
+      "rearSource": [
+        1087,
+        722
+      ],
+      "atlas": [
+        780,
+        4,
+        139,
+        152
+      ],
+      "anchor": [
+        0.3669064748201439,
+        0.016447368421052655
+      ],
+      "sourceSize": [
+        278,
+        304
+      ],
+      "size": [
+        139,
+        152
+      ]
+    },
+    {
+      "id": "direct.rocket.diagonal-air",
+      "crop": [
+        1424,
+        500,
+        1700,
+        808
+      ],
+      "pivotSource": [
+        1535,
+        844
+      ],
+      "muzzleSource": [
+        1663,
+        540
+      ],
+      "rearSource": [
+        1523,
+        680
+      ],
+      "atlas": [
+        4,
+        205,
+        138,
+        154
+      ],
+      "anchor": [
+        0.40217391304347827,
+        -0.11688311688311681
+      ],
+      "sourceSize": [
+        276,
+        308
+      ],
+      "size": [
+        138,
+        154
+      ]
+    }
+  ]
+}

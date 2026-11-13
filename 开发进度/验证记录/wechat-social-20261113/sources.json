@@ -1,0 +1,242 @@
+[
+  {
+    "id": "friend-cloud",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getFriendCloudStorage.html",
+    "status": 200,
+    "title": "wx.getFriendCloudStorage - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "242d2e75f79f7899bbbf8afa6275f4399929e8bc2a10adb8e163a8c9ecbd3c9c",
+    "chars": 518,
+    "retrievedAt": "2026-11-13T03:33:38.535Z",
+    "extractedTextSha256": "13e01f5ceb98a1e5f2e21365a85cc3045ec30781843b3fb3f08cb539dd9e4dea"
+  },
+  {
+    "id": "potential-friends",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getPotentialFriendList.html",
+    "status": 200,
+    "title": "wx.getPotentialFriendList - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "03e7ee4f802da03c43776def7021df38764df61eae6004ea0280817b410bedc9",
+    "chars": 440,
+    "retrievedAt": "2026-11-13T03:33:38.521Z",
+    "extractedTextSha256": "74aa4c69593ca3b9621ca1a1bfcba0ba76d0324377cfd49eed09c4ee6a47541b"
+  },
+  {
+    "id": "relation-friends",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getRelationFriendList.html",
+    "status": 200,
+    "title": "wx.getRelationFriendList - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "3f91f7a6158c5ba193967788d811020a735dd6603f8dfe6dfff83fb54d6be7eb",
+    "chars": 1821,
+    "retrievedAt": "2026-11-13T03:33:38.487Z",
+    "extractedTextSha256": "6c6cee7e40c4eee8916f15522902d1f9eec79bc94e853d959c0c0b8765f8e576"
+  },
+  {
+    "id": "set-cloud",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.setUserCloudStorage.html",
+    "status": 200,
+    "title": "wx.setUserCloudStorage - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "64ed4976e2789152d83eb9f9b1a8dc44f27f2708e6b7f9f063fff33c9d91a26c",
+    "chars": 469,
+    "retrievedAt": "2026-11-13T03:33:38.565Z",
+    "extractedTextSha256": "3c4171c751348bac38a72b9fcc0f2a895f32d5fd7d96fe9c490732b1da81b099"
+  },
+  {
+    "id": "get-cloud",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getUserCloudStorage.html",
+    "status": 200,
+    "title": "wx.getUserCloudStorage - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "e393125cba901ff2808052e71bc6c3063a9c411b2cf2c8f803f84032946988fb",
+    "chars": 428,
+    "retrievedAt": "2026-11-13T03:33:38.548Z",
+    "extractedTextSha256": "18525475c0656d7d7c329abac99dd263ab416d837b4a41156647c4e3f939861c"
+  },
+  {
+    "id": "kv-data",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/KVData.html",
+    "status": 200,
+    "title": "KVData - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "e10810d09d760bb47ca205950f7b92a8f0823ea8db9dbe01dbba28fbbbdfb2b4",
+    "chars": 865,
+    "retrievedAt": "2026-11-13T03:33:38.470Z",
+    "extractedTextSha256": "b392584bae3e0d8debe76256ae721bec5426341dc082d6cd8b280c5689e12a6c"
+  },
+  {
+    "id": "open-data",
+    "url": "https://developers.weixin.qq.com/minigame/dev/guide/open-ability/open-data.html",
+    "status": 200,
+    "title": "关系链数据 - 微信开放文档 / 小游戏-开发-指南 / 开放能力 / 社交互动 / 关系链",
+    "sha256": "366c9119d4e508fe80f101664f079ee177318f457211272db0db215335fdbf0b",
+    "chars": 1037,
+    "retrievedAt": "2026-11-13T03:33:38.512Z",
+    "extractedTextSha256": "463b20332d5edc2ed2b36a2e49c0833443df985413bc63211156bc665fd0ce89"
+  },
+  {
+    "id": "share-api",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/share/wx.shareAppMessage.html",
+    "status": 200,
+    "title": "wx.shareAppMessage - 微信开放文档 / 小游戏-开发-API / 转发",
+    "sha256": "a720beaa0049c552dc088a8e2d956e194543f770a6d92686046fdcdebc6e8ee7",
+    "chars": 684,
+    "retrievedAt": "2026-11-13T03:33:38.528Z",
+    "extractedTextSha256": "5cbcf0ba477ebfdd6315098c89453a34b0d7ab37d86ea6528fdab327f29416d4"
+  },
+  {
+    "id": "share-guide",
+    "url": "https://developers.weixin.qq.com/minigame/dev/guide/open-ability/share/share.html",
+    "status": 200,
+    "title": "转发 - 微信开放文档 / 小游戏-开发-指南 / 开放能力 / 社交互动 / 转发分享",
+    "sha256": "eed9774cd17d6d775a1e62f4c88582a9ed2833dd4e06fb482809bed8de7f66bd",
+    "chars": 2255,
+    "retrievedAt": "2026-11-13T03:33:38.513Z",
+    "extractedTextSha256": "e89cb0ae753c55012f9c91e80270b5a1b0502a37461db160c1cc9494dc801a7d"
+  },
+  {
+    "id": "direct-share",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.shareMessageToFriend.html",
+    "status": 200,
+    "title": "wx.shareMessageToFriend - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "c94f510d40b80ea6f474a640251245aeb049796cd3a9bd1a06c08bfd1f25e5b6",
+    "chars": 805,
+    "retrievedAt": "2026-11-13T03:33:38.551Z",
+    "extractedTextSha256": "7356c1249cb3e3ec1ce59278859724fc783e6e908128e791e8ab5f2a56af5dc3"
+  },
+  {
+    "id": "direct-query",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/share/wx.setMessageToFriendQuery.html",
+    "status": 200,
+    "title": "wx.setMessageToFriendQuery - 微信开放文档 / 小游戏-开发-API / 转发",
+    "sha256": "d09c47d0ad944e3781babb4f9da970c4cdb0fc83dae04d0fe479f95fbca051f4",
+    "chars": 1052,
+    "retrievedAt": "2026-11-13T03:33:38.563Z",
+    "extractedTextSha256": "ede6e9f3fb60260b65f6c5171df552dd4bc5d251b6db2d9152110fddf1b20036"
+  },
+  {
+    "id": "group-cloud",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getGroupCloudStorage.html",
+    "status": 200,
+    "title": "wx.getGroupCloudStorage - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "7dc6ae52409c827831de3205c4e14a1b6d3431c37358fbe6c07938033fcc6db6",
+    "chars": 704,
+    "retrievedAt": "2026-11-13T03:33:38.530Z",
+    "extractedTextSha256": "7939de5ae98b9a3f5dcef345b710f2f713fad6b12cb644073e0832b97e47221a"
+  },
+  {
+    "id": "group-entry",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/group/wx.getGroupEnterInfo.html",
+    "status": 200,
+    "title": "wx.getGroupEnterInfo - 微信开放文档 / 小游戏-开发-API / 开放接口 / 微信群",
+    "sha256": "e513f37650990020c7975f02bb9f0362c15c1e3ec3e802365b44dd0c283f6e3c",
+    "chars": 1443,
+    "retrievedAt": "2026-11-13T03:33:38.550Z",
+    "extractedTextSha256": "e070dc55781b74e83e79f393fc7d9c8ea92263fa4b4f4534481120089727231a"
+  },
+  {
+    "id": "authorize",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/authorize/wx.authorize.html",
+    "status": 200,
+    "title": "wx.authorize - 微信开放文档 / 小游戏-开发-API / 开放接口 / 授权",
+    "sha256": "61003d87992321aaa8bef23872f1bff69f101d6eb2a08b2b2ec545903be540f5",
+    "chars": 810,
+    "retrievedAt": "2026-11-13T03:33:38.529Z",
+    "extractedTextSha256": "678003c54be48ce4f6c3613279d2ab05ecc7ee77131ef67ed08e4bf4e297ada0"
+  },
+  {
+    "id": "privacy",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/privacy/wx.requirePrivacyAuthorize.html",
+    "status": 200,
+    "title": "wx.requirePrivacyAuthorize - 微信开放文档 / 小游戏-开发-API / 开放接口 / 隐私信息授权",
+    "sha256": "a810a5c8880b57fbc79c92b8b40fc21fb4bea6aebe6da87270a0ccc6bda9992a",
+    "chars": 2559,
+    "retrievedAt": "2026-11-13T03:33:38.536Z",
+    "extractedTextSha256": "0897eed33f6a26697f5835fbbb5339d5ec6670b4fe06e9c3b740a00b5e413c24"
+  },
+  {
+    "id": "launch",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/base/app/life-cycle/wx.getLaunchOptionsSync.html",
+    "status": 200,
+    "title": "wx.getLaunchOptionsSync - 微信开放文档 / 小游戏-开发-API / 基础 / 小程序 / 生命周期",
+    "sha256": "81948419b474dd977f18d9ff8f35b7e93d8766faaf7a47fdc61893fd7cc59b96",
+    "chars": 1885,
+    "retrievedAt": "2026-11-13T03:33:38.538Z",
+    "extractedTextSha256": "df5a213da566067cc71d57e3572793422e7eaf5f374ebd41ae38df6b4fa8e941"
+  },
+  {
+    "id": "on-show",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/base/app/life-cycle/wx.onShow.html",
+    "status": 200,
+    "title": "wx.onShow - 微信开放文档 / 小游戏-开发-API / 基础 / 小程序 / 生命周期",
+    "sha256": "07c8dcbe2033fde500e3d11d16a1f260ec2f8c23a17e2b30528faaa0119b54aa",
+    "chars": 533,
+    "retrievedAt": "2026-11-13T03:33:38.532Z",
+    "extractedTextSha256": "a2dc70ba02c78cf2305e747ba754014d9eb347ef267e94c263e1833f7a8214e7"
+  },
+  {
+    "id": "timeline",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/share/wx.onShareTimeline.html",
+    "status": 200,
+    "title": "wx.onShareTimeline - 微信开放文档 / 小游戏-开发-API / 转发",
+    "sha256": "e7f04198fc26d0450bd54872ac404ea83a11423d0adfe4084e8fff086f36c628",
+    "chars": 992,
+    "retrievedAt": "2026-11-13T03:33:38.539Z",
+    "extractedTextSha256": "76cb07dead9ed6f077b741323e2b965c0952f3570776f067a19744ee3252639b"
+  },
+  {
+    "id": "privacy-guide",
+    "url": "https://developers.weixin.qq.com/minigame/dev/guide/open-ability/privacy.html",
+    "status": 200,
+    "title": "用户隐私保护 - 微信开放文档 / 小游戏-开发-指南 / 开放能力 / 用户信息",
+    "sha256": "5790b5d7765ec4387d83ecdc5901ce7182693cfcdb43664b36a27ce540d5a51c",
+    "chars": 5734,
+    "retrievedAt": "2026-11-13T03:33:38.549Z",
+    "extractedTextSha256": "e328de2c33e0166ae459bb128176f48e6d664f7da695992ce0774cbb2d7012fb"
+  },
+  {
+    "id": "context-guide",
+    "url": "https://developers.weixin.qq.com/minigame/dev/guide/open-ability/opendata/basic.html",
+    "status": 200,
+    "title": "开放数据域 - 微信开放文档 / 小游戏-开发-指南 / 开放能力 / 社交互动 / 关系链",
+    "sha256": "58ccd7a3d955f3348641b02ea57fbadc095660838b9dbd88c4e6e7919e6d2a7f",
+    "chars": 6579,
+    "retrievedAt": "2026-11-13T03:33:38.564Z",
+    "extractedTextSha256": "60ba3f75052af8b642b358960d528db758bbee0fa4694786b7f258f010465b87"
+  },
+  {
+    "id": "content-rules",
+    "url": "https://developers.weixin.qq.com/minigame/dev/guide/open-ability/game-content.html",
+    "status": 200,
+    "title": "内容规范 - 微信开放文档 / 小游戏-开发-指南 / 开放能力 / 内容运营 / 游戏圈",
+    "sha256": "8cda43caaa136e9bddd90186443dcd9a95a5bd2bac7b03beb42a540583dba987",
+    "chars": 1585,
+    "retrievedAt": "2026-11-13T03:33:38.556Z",
+    "extractedTextSha256": "30208f2f7555b932a1eecdbb7e01827f7cf743f5d3e44abc98fb56f1a19bec5d"
+  },
+  {
+    "id": "performance",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/base/performance/wx.getPerformance.html",
+    "status": 200,
+    "title": "wx.getPerformance - 微信开放文档 / 小游戏-开发-API / 基础 / 性能",
+    "sha256": "34e22f16ca99d0adbc7033e892db08a6029904f3ef7e3b4ad05e39bce9ff839c",
+    "chars": 1184,
+    "retrievedAt": "2026-11-13T03:33:38.475Z",
+    "extractedTextSha256": "fb36797d57e2889ee61074f5ae61c649711d796ee38130a196d1454e0b11ecd3"
+  },
+  {
+    "id": "performance-now",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/base/performance/Performance.now.html",
+    "status": 200,
+    "title": "Performance.now - 微信开放文档 / 小游戏-开发-API / 基础 / 性能 / Performance",
+    "sha256": "4451019c5579a88e692156a1eb14acd97e865f6fdb53868890fd6ffbc9fad8bf",
+    "chars": 42,
+    "retrievedAt": "2026-11-13T03:33:38.569Z",
+    "extractedTextSha256": "ce85aa1223b3d24dc21d43aa4beb5b1b8816726fb2f2580f2b72db0aee0a7f53"
+  },
+  {
+    "id": "self-info",
+    "url": "https://developers.weixin.qq.com/minigame/dev/api/open-api/data/OpenDataContext-wx.getUserInfo.html",
+    "status": 200,
+    "title": "OpenDataContext-wx.getUserInfo - 微信开放文档 / 小游戏-开发-API / 开放接口 / 开放数据",
+    "sha256": "82b78a5a4341508bb9da4c28afb64d4e76e59046277a79787b4ba8cdd06e56a1",
+    "chars": 1146,
+    "retrievedAt": "2026-11-13T03:33:38.498Z",
+    "extractedTextSha256": "c7380960410162d694962ee803b05bb8d7f7f8b11122718192dde62ddef8a8ad"
+  }
+]

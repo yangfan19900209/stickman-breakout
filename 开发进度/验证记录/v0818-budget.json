@@ -1,0 +1,845 @@
+{
+  "version": "0.8.18",
+  "checkedAt": "2026-11-12T01:53:57.239Z",
+  "localBudget": {
+    "main": 4194304,
+    "total": 20971520
+  },
+  "budgetSource": "Existing project budgets, not a claim about current platform policy",
+  "mainBytes": 4189058,
+  "totalBytes": 20444217,
+  "mainRemaining": 5246,
+  "totalRemaining": 527303,
+  "subpackages": [
+    {
+      "name": "internal",
+      "root": "subpackages/internal/",
+      "bytes": 168275
+    },
+    {
+      "name": "main",
+      "root": "subpackages/main/",
+      "bytes": 657453
+    },
+    {
+      "name": "landart",
+      "root": "subpackages/landart/",
+      "bytes": 10303434
+    },
+    {
+      "name": "level02",
+      "root": "subpackages/level02/",
+      "bytes": 4442103
+    },
+    {
+      "name": "level03",
+      "root": "subpackages/level03/",
+      "bytes": 683894
+    }
+  ],
+  "runtimeImages": [
+    {
+      "file": "assets/level02/background.coast.jpg",
+      "bytes": 58487,
+      "sha256": "c7d312b87cb211e6f5f5f22f58c03db3fb2094ac3c142f39b89a10bf53d4b830"
+    },
+    {
+      "file": "assets/level02/background.undersea.jpg",
+      "bytes": 64644,
+      "sha256": "31e26ccaeb49f7baa5f08393d132ae5aa7926d0006ce767083bc619de6810ec5"
+    },
+    {
+      "file": "assets/level02/chest.closed.png",
+      "bytes": 5333,
+      "sha256": "6803d5fb595fd3c560f706c2707e8a937e0554d279c59f8993b5e867f2db102d"
+    },
+    {
+      "file": "assets/level02/chest.half.png",
+      "bytes": 5670,
+      "sha256": "bb2519b68aee791375651795d02dfef81c8c9deaed6a69fbd2e1b32f2429e20b"
+    },
+    {
+      "file": "assets/level02/chest.open.png",
+      "bytes": 7402,
+      "sha256": "3053259bec50e8a3e23aff7d809f0fb675c417839265e60c6e6076fd4c6858db"
+    },
+    {
+      "file": "assets/level02/combat-atlas.png",
+      "bytes": 1543852,
+      "sha256": "67a524559cfd1ba924f65cd1ad15834e75604df0e0b85eb6575efb0ad94ee2d8"
+    },
+    {
+      "file": "assets/level02/combat-v0818.png",
+      "bytes": 101285,
+      "sha256": "dd433bf3f6e84d354091b492b2fb8d79eab01cdd9a61b767f01af12c966b5d7a"
+    },
+    {
+      "file": "assets/level02/combat-v086.png",
+      "bytes": 695201,
+      "sha256": "a6f90940ae1e1f39e0f8cecc902ca81551028d2c464650d9b702d36d0f55cc62"
+    },
+    {
+      "file": "assets/level02/combat-v087.png",
+      "bytes": 503882,
+      "sha256": "b29a9623fa7f238e36fd79924e43ae47206cad9638527476e0ac825c5d4ab302"
+    },
+    {
+      "file": "assets/level02/diver.boost.png",
+      "bytes": 4711,
+      "sha256": "6de17c56a68d92cbed569c02edf564cac4b65dbd1bfc197824069910d77b4287"
+    },
+    {
+      "file": "assets/level02/diver.charge.fire.png",
+      "bytes": 4773,
+      "sha256": "8a3d14346a4a2e790e8bf20e7999c23287d015e6e05b128d1f4e882b9f869a7c"
+    },
+    {
+      "file": "assets/level02/diver.cheer.0.png",
+      "bytes": 5459,
+      "sha256": "b9f6803ebbd6f44b1c9965a7232bb0ae0ad0e2399fc7cadf93ecb32da73c2610"
+    },
+    {
+      "file": "assets/level02/diver.cheer.1.png",
+      "bytes": 5669,
+      "sha256": "e69fac5db68fc941a8c0cb03d41bdbeda1327c9dc758d88bba977f67075011d1"
+    },
+    {
+      "file": "assets/level02/diver.cliff.leap.png",
+      "bytes": 5091,
+      "sha256": "4bc8ff0e5f4449697a893c28194ec134ca381ee136b0de0055d38ac24fb06b64"
+    },
+    {
+      "file": "assets/level02/diver.death.png",
+      "bytes": 4435,
+      "sha256": "1ecb4d7a31f58ec4e98a6d11640a15a7bf3c8c293b5c5e012d3a447f0b7aa258"
+    },
+    {
+      "file": "assets/level02/diver.entry.diagonal.png",
+      "bytes": 8173,
+      "sha256": "bc1b2511ef23bd292646b4ede2d7928c9b50345c1a1796db2e7949a7b7ab7dc7"
+    },
+    {
+      "file": "assets/level02/diver.entry.steep.png",
+      "bytes": 8926,
+      "sha256": "4d9ba4632dd0584c7ef500443e052cc88b8a63ceb520c9e7b91370f92fd4253b"
+    },
+    {
+      "file": "assets/level02/diver.equip.mask.png",
+      "bytes": 4219,
+      "sha256": "fcef9bbdf13cc804381e1f0e3285ee75003414c27037f7be1bed1c53cae33b9c"
+    },
+    {
+      "file": "assets/level02/diver.equip.ready.png",
+      "bytes": 5632,
+      "sha256": "5914bd474d45dc413c9588429968b20f6ea21e1ebc2dc50a773cb6fda61da2c1"
+    },
+    {
+      "file": "assets/level02/diver.equip.tank.png",
+      "bytes": 5282,
+      "sha256": "7ccc447961ebe2e27326f03c3d030f69fbb577569fa31e09bc189cff0f4b12dd"
+    },
+    {
+      "file": "assets/level02/diver.harpoon.boost.png",
+      "bytes": 6711,
+      "sha256": "e097c9a26b4dc4fce0e193302a78770a9c2f1a35933e9fce94ec03d9a3c362de"
+    },
+    {
+      "file": "assets/level02/diver.harpoon.fire.png",
+      "bytes": 7257,
+      "sha256": "06333fd59eed5f5e29ba2f94cab353e44757b1b4e6d9beac675796842705aff4"
+    },
+    {
+      "file": "assets/level02/diver.harpoon.hover.0.png",
+      "bytes": 7693,
+      "sha256": "543bcf8f941e09e8c5fa31bf61999452e03e3576f27b1776d1e6426cb52aef70"
+    },
+    {
+      "file": "assets/level02/diver.harpoon.hover.1.png",
+      "bytes": 7718,
+      "sha256": "4e0e0b989ef185b0547c4d5e441878e6b992e30c39f36e007fcf4258dbaff547"
+    },
+    {
+      "file": "assets/level02/diver.harpoon.swim.0.png",
+      "bytes": 7125,
+      "sha256": "97f85c1085a3a0452190439668f34d596f1bfc2d14871aa7ca934a4eed7645b6"
+    },
+    {
+      "file": "assets/level02/diver.harpoon.swim.1.png",
+      "bytes": 7185,
+      "sha256": "849ad41e534aeaf821680eced8e27457731dac4e99f3c4fc8d3554077cacba82"
+    },
+    {
+      "file": "assets/level02/diver.hit.png",
+      "bytes": 5104,
+      "sha256": "5075f8741c86838b818746b55ced879f42fbe8b3faa9b967c8ff8826323e5a3b"
+    },
+    {
+      "file": "assets/level02/diver.hover.0.png",
+      "bytes": 5393,
+      "sha256": "ad7ccf6d339bce9448f6502c5eba131fd55218edd0a61412e361c1c5e3339aa5"
+    },
+    {
+      "file": "assets/level02/diver.hover.1.png",
+      "bytes": 5454,
+      "sha256": "d8fdc18b0d076eeed8ebe6b74baa10a903586cf60295e2bb65fdb83ecce69bda"
+    },
+    {
+      "file": "assets/level02/diver.knife.strike.png",
+      "bytes": 4766,
+      "sha256": "c067f0b711c710344adc6a7b298a260c4106b2bad8a4d3042ab865e3f210b1e1"
+    },
+    {
+      "file": "assets/level02/diver.knife.windup.png",
+      "bytes": 4802,
+      "sha256": "ea45da319199321896bc31fa1bd36f430630ca91cd484c66260238f53cfda6a0"
+    },
+    {
+      "file": "assets/level02/diver.sonar.down45.png",
+      "bytes": 4505,
+      "sha256": "f1162d369863d8554c6bf0620c00b5824138be92bb6a9283d97f49d3de2a65be"
+    },
+    {
+      "file": "assets/level02/diver.sonar.down90.png",
+      "bytes": 4506,
+      "sha256": "a64509260dd2f8e9a4e893f098bcc165c3448c096c86a910130fec88d545b276"
+    },
+    {
+      "file": "assets/level02/diver.sonar.fire.png",
+      "bytes": 4655,
+      "sha256": "d6f6d6d2389f0ab9589aa46563af5b85b3f53fcc2ae907cbd8ebffb39fa859f3"
+    },
+    {
+      "file": "assets/level02/diver.sonar.up45.png",
+      "bytes": 4640,
+      "sha256": "a09d6fa700b891390e560042f2322c2f04bbc596c8816731381275f26c05097a"
+    },
+    {
+      "file": "assets/level02/diver.sonar.up90.png",
+      "bytes": 4627,
+      "sha256": "b2553bf19e079416841fdc1a5aa0b1975f6ec06ed96ced95202ff2f9fd525ed3"
+    },
+    {
+      "file": "assets/level02/diver.surface.png",
+      "bytes": 5449,
+      "sha256": "bf4997b47adbdeb36dab5d31dcde6a0b28b6b5e394fd545ed771d9b978722125"
+    },
+    {
+      "file": "assets/level02/diver.swim.0.png",
+      "bytes": 5213,
+      "sha256": "8628164768d35b28a8aa37237022eb95200a89fac0282f103c06e8cdf7cb6ebe"
+    },
+    {
+      "file": "assets/level02/diver.swim.1.png",
+      "bytes": 5214,
+      "sha256": "a9bfc4dbe1254c1d38a90f13d6f5bb197b93e94ef50935d07f7ac1221ae415e8"
+    },
+    {
+      "file": "assets/level02/diver.swim.2.png",
+      "bytes": 5216,
+      "sha256": "b31d9847dbc53e365b0e34d7e3fa7c2fd973091acc1aa81b12c078ad362bee89"
+    },
+    {
+      "file": "assets/level02/diver.swim.3.png",
+      "bytes": 5349,
+      "sha256": "30403f893274abe6b5e193540daa2bc5c0259b40cad562ec87ffb9e278ee6aa3"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.boost.png",
+      "bytes": 7046,
+      "sha256": "1a3ca942da63a7cf6f26b423ea9a6c515a97e0eda6159c8c7f27a16b7b0b66ed"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.down45.png",
+      "bytes": 4676,
+      "sha256": "2a5c799aca760280de2651d336d4a15cf56e99d143a5a50339121a73784e0908"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.fire.png",
+      "bytes": 4705,
+      "sha256": "bb183633700611f24a6fecd60691691cb1e36dd782fdbbbedad933fd7d4f8598"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.hover.0.png",
+      "bytes": 7118,
+      "sha256": "fb26209179130751fb838f5c31a3e1b74e79d89b621b0a12611851433e8f3683"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.hover.1.png",
+      "bytes": 7165,
+      "sha256": "e40fc60dcd5dae5c0ea393d5756f039757cde6eca54388ec416866c904358447"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.swim.0.png",
+      "bytes": 7402,
+      "sha256": "9189c50dbad79ab2ff9b9ce00621fc82d21bb146104bc2b2d22ef0ef44898ecf"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.swim.1.png",
+      "bytes": 7260,
+      "sha256": "365a35c54245e9014b44f7d6c68e73bb9f1c59d8caf964066f7ecc9f74acba30"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.swim.2.png",
+      "bytes": 6974,
+      "sha256": "2c9afd01c65794e0af290398abcaab22ae49739c422ceddcb5ba2a5481246556"
+    },
+    {
+      "file": "assets/level02/diver.torpedo.up45.png",
+      "bytes": 4751,
+      "sha256": "5f8408e4866df8be2c4069fb7ac3cf91dcd9198c65c0ce776338e81cf4b33fe5"
+    },
+    {
+      "file": "assets/level02/diver.water.glide.png",
+      "bytes": 5151,
+      "sha256": "b9ffe9ef1839f899dfc650f265fe2d57ae784dc3792dd76c0cedab819172ed17"
+    },
+    {
+      "file": "assets/level02/enemy.captain.charge.png",
+      "bytes": 5861,
+      "sha256": "122c73163022d00d60b18bf9e0ba6709636243b4cb3754511012e3a46509e5dc"
+    },
+    {
+      "file": "assets/level02/enemy.captain.dash.png",
+      "bytes": 5533,
+      "sha256": "5d05150e2e80040721e8fb596e4fa23dbf70f39f7ec38a291c463eaee54d2fac"
+    },
+    {
+      "file": "assets/level02/enemy.captain.defeat.png",
+      "bytes": 5853,
+      "sha256": "86071dcdfffc53f6f149660d7a6859309613b381b41ea290c7696a95e06ebd41"
+    },
+    {
+      "file": "assets/level02/enemy.captain.idle.png",
+      "bytes": 6207,
+      "sha256": "bff8c8039b2dee7974860ebc0d76013d7097d47b102aad918af67f5cbaa45295"
+    },
+    {
+      "file": "assets/level02/enemy.diver.aim.png",
+      "bytes": 4346,
+      "sha256": "9044f79141435ad66007b013235d1eebaed17a68f282fc0c0e3440f10783e389"
+    },
+    {
+      "file": "assets/level02/enemy.diver.defeat.png",
+      "bytes": 3788,
+      "sha256": "7bbc017c70c8e142b03b0a4f9329ab52b93623ad7d925b52b32844a046892ff9"
+    },
+    {
+      "file": "assets/level02/enemy.diver.fire.png",
+      "bytes": 4636,
+      "sha256": "575b33ddabe66c9c5c648a23b2956de37d89e9ddd0d4bb75059562055be018fc"
+    },
+    {
+      "file": "assets/level02/enemy.diver.swim.png",
+      "bytes": 4388,
+      "sha256": "3da1804e8563baaacb187202fc2dab8dd16633d284d3929972cabf571c61b3f9"
+    },
+    {
+      "file": "assets/level02/fish.ambient.0.png",
+      "bytes": 3423,
+      "sha256": "bd6575e080514e80c3cf4e9bf915bf9459130438b881953b8566521ab64a9ee9"
+    },
+    {
+      "file": "assets/level02/fish.ambient.1.png",
+      "bytes": 3477,
+      "sha256": "0a5f8e9815689531f5bab5866a0124bd7750442ff3032ec48020008dec9fdeac"
+    },
+    {
+      "file": "assets/level02/fish.attack.dash.png",
+      "bytes": 3230,
+      "sha256": "79230e87e401be3263bfb839f718653bdad17dd8e2e7dfac4c37cdffad6b9e07"
+    },
+    {
+      "file": "assets/level02/fish.attack.defeat.png",
+      "bytes": 3142,
+      "sha256": "8f05021d0172f06ab4e8b9db725fb1f8f15cb11365755c8c2fe3a4cd0206cc52"
+    },
+    {
+      "file": "assets/level02/fish.attack.idle.png",
+      "bytes": 3217,
+      "sha256": "1433103ea02183d8b0a6e300aea9e23bb6090bf71f5afcbe594c69648b74ff37"
+    },
+    {
+      "file": "assets/level02/fish.attack.tell.png",
+      "bytes": 2997,
+      "sha256": "640d83cde57f22cad5ec042ac21cb699efdb2a1984043f69a8873ebb83ef7426"
+    },
+    {
+      "file": "assets/level02/fx.boost.wake.png",
+      "bytes": 2928,
+      "sha256": "25379f5f6d93453d08b2464bf44aa07e54091f5a9d2824095e455d52b766ece1"
+    },
+    {
+      "file": "assets/level02/fx.bubble.burst.png",
+      "bytes": 2709,
+      "sha256": "ae3b3b5b43d4203d9b2f38041b4600b1e65904877d6bd8a7a5a2effb23f13fd0"
+    },
+    {
+      "file": "assets/level02/fx.bubble.single.png",
+      "bytes": 1983,
+      "sha256": "db81d0e1db3338b8929d5541012a757047e5fb019771af3d231c138e316df334"
+    },
+    {
+      "file": "assets/level02/fx.bubble.trail.png",
+      "bytes": 1946,
+      "sha256": "57c91bee1c32da852536dfabcda66a03c9fd4944e308028ad22f54537499d840"
+    },
+    {
+      "file": "assets/level02/fx.burst.0.png",
+      "bytes": 5817,
+      "sha256": "2b53c7b2d9862696b1c4ac2f886ad955d86c494be5b3a7f8e8d5d470cbdb5900"
+    },
+    {
+      "file": "assets/level02/fx.burst.1.png",
+      "bytes": 11662,
+      "sha256": "86e939ad6157603e90e7801eae601ea28595f7cfee9f8d3f13ec49544c878d04"
+    },
+    {
+      "file": "assets/level02/fx.burst.2.png",
+      "bytes": 22766,
+      "sha256": "8b8bafad5fde817afdd6dd88a67af0d7f091f95300c0551c4aaecfb6031cad79"
+    },
+    {
+      "file": "assets/level02/fx.burst.3.png",
+      "bytes": 19675,
+      "sha256": "dfedbcf4ed75e2225fa80324024b4d034ea278ddf5c82f96b5ca33bc89be52e0"
+    },
+    {
+      "file": "assets/level02/fx.burst.4.png",
+      "bytes": 17402,
+      "sha256": "cb9b2e1d77764a74446dcec61ba70a1f624a0d2749cb1aedcbb1bca4632c5084"
+    },
+    {
+      "file": "assets/level02/fx.burst.5.png",
+      "bytes": 11796,
+      "sha256": "4c3ec4102c587a75efca3d84261aa54dc927aa35072cc8abc2e6b20e2373e620"
+    },
+    {
+      "file": "assets/level02/fx.burst.6.png",
+      "bytes": 7076,
+      "sha256": "c07b7906b992f26f2f1fc4ea04531a102dd6a621e039bf24d92807ee06ad5440"
+    },
+    {
+      "file": "assets/level02/fx.burst.7.png",
+      "bytes": 3475,
+      "sha256": "a948187021620fd400c7ae370ee3f4add563981f4b2fdb70fb057ba80fd76d7d"
+    },
+    {
+      "file": "assets/level02/fx.impact.png",
+      "bytes": 4505,
+      "sha256": "5b3df9d7d3129aea5abc7d970ecc5a942e5023a84b998dd171c8c2e35e62a485"
+    },
+    {
+      "file": "assets/level02/fx.laser-beam.png",
+      "bytes": 938,
+      "sha256": "78adca7d0f2455dcc4e4cbe0c1a45717e3a7eb3355b7dfb9b0da9d9feb6b6bc0"
+    },
+    {
+      "file": "assets/level02/fx.laser-charge.png",
+      "bytes": 3155,
+      "sha256": "e7665f6e87d4f62a5f3c523590ff521152e421e48374b6d628e622a76fea36eb"
+    },
+    {
+      "file": "assets/level02/fx.pressure-gap-ring.png",
+      "bytes": 3651,
+      "sha256": "169566ac4d166789f9a1ef3db84794a239714c7f32b3fdef28251b42608ef0df"
+    },
+    {
+      "file": "assets/level02/fx.sonar.0.png",
+      "bytes": 1903,
+      "sha256": "c5482386b8b08e6bd66adbc4d3dea36cc078f0cda6977fc014ef2cfb19695051"
+    },
+    {
+      "file": "assets/level02/fx.sonar.1.png",
+      "bytes": 2503,
+      "sha256": "d01decffc9afcd20854cfcbd3e999f8fb7e74e4abe8085df312301031e4a3c7b"
+    },
+    {
+      "file": "assets/level02/fx.sonar.2.png",
+      "bytes": 2897,
+      "sha256": "7f9280284bdc56c8d95cb6e71a75291c517d92246f88ddbae72833d16331455a"
+    },
+    {
+      "file": "assets/level02/fx.sonar.charged.png",
+      "bytes": 4353,
+      "sha256": "fec08fbff6778e4cd949a13a039082500390820d58c9dd3dcf92530b815094f3"
+    },
+    {
+      "file": "assets/level02/fx.splash.0.png",
+      "bytes": 2046,
+      "sha256": "1570ab8c7628c1151d075dc130e6bfdffeca1a9b9c08b962a719f88ce17bf7ec"
+    },
+    {
+      "file": "assets/level02/fx.splash.1.png",
+      "bytes": 3456,
+      "sha256": "7a0b678ad37db61447cab2152b7a122e7897559408c2764d2ce2f107b7d4532a"
+    },
+    {
+      "file": "assets/level02/fx.splash.2.png",
+      "bytes": 2402,
+      "sha256": "e7014f53282b544d8853e14362a09e81bf25511176ea9ecb9d7f9602d9e58ce3"
+    },
+    {
+      "file": "assets/level02/fx.surface-ripple.png",
+      "bytes": 1871,
+      "sha256": "d430315ef476ae6ee2a9d293d72861d8db80312c339ab8891cd8c8021f27715d"
+    },
+    {
+      "file": "assets/level02/fx.water-blast.0.png",
+      "bytes": 1057,
+      "sha256": "47259922d49ff55154cef0d7924f1e05894eaf57f708ac644f669dd5f4c0ba4b"
+    },
+    {
+      "file": "assets/level02/fx.water-blast.1.png",
+      "bytes": 2884,
+      "sha256": "b75aa95187bd01e91d0620319528ffb1d8ac08fea43e30fb529bc0da40372fb0"
+    },
+    {
+      "file": "assets/level02/fx.water-blast.2.png",
+      "bytes": 5022,
+      "sha256": "393ebcfe3a381cf5cf4f4df240cb893b5f519e0af4fea356aa989d9a89191e22"
+    },
+    {
+      "file": "assets/level02/fx.water-blast.3.png",
+      "bytes": 3349,
+      "sha256": "6e9348a9fccd63d584ca333061abccea31b8f778f12f0572d3e85790d5b788e0"
+    },
+    {
+      "file": "assets/level02/item.charge-sonar.png",
+      "bytes": 3932,
+      "sha256": "7e24fe89b68fe558b20a9b98ff66c1e4945b0d082baed2979783328ebb7804cd"
+    },
+    {
+      "file": "assets/level02/item.depth-charge.png",
+      "bytes": 4771,
+      "sha256": "4f8308f1e1739c370af6d2a72e294d3c588bec02e3ba6a65b874a4e389fce97b"
+    },
+    {
+      "file": "assets/level02/item.energy.png",
+      "bytes": 3184,
+      "sha256": "b99fc5ed30866496544179a3555ecfd2deb7e9bb4dee464d0ebf7e255dde3213"
+    },
+    {
+      "file": "assets/level02/item.harpoon.png",
+      "bytes": 2150,
+      "sha256": "a56053f9fd611a93ef315e3e7da5c9d2d8c5187041d435287b8da5ee17a9d6b0"
+    },
+    {
+      "file": "assets/level02/item.knife.png",
+      "bytes": 1947,
+      "sha256": "57ab7dd3005e41598ba7be4254de3739120ac6731bafd74297c59622f0a51ecb"
+    },
+    {
+      "file": "assets/level02/item.medkit.png",
+      "bytes": 3407,
+      "sha256": "3186d71e74cfe1bcbd16cae20d4f20f5279c8da41d5b77725d64f8ad09a8adbb"
+    },
+    {
+      "file": "assets/level02/item.sonar.png",
+      "bytes": 2801,
+      "sha256": "516648352b6791216a5ee5e157a0e9f2a0b848624202d10f12f4a78078ca8f4c"
+    },
+    {
+      "file": "assets/level02/item.torpedo-ammo.png",
+      "bytes": 4521,
+      "sha256": "a70f7e1c44243ee7540a564622c81dfe6a07c242ffdc822277af1d776262b7bb"
+    },
+    {
+      "file": "assets/level02/item.torpedo-launcher.png",
+      "bytes": 2908,
+      "sha256": "b9550d6f0aeb0ad28e6c5a50d8fe759abbf5db2887b41240301bedfccfc56814"
+    },
+    {
+      "file": "assets/level02/kelp.ambient.0.png",
+      "bytes": 3371,
+      "sha256": "a24eafb059315c1bbffcafab456a27a861747d772f158d5012ae2812545f98a2"
+    },
+    {
+      "file": "assets/level02/kelp.ambient.1.png",
+      "bytes": 3543,
+      "sha256": "ae4e2e3c1c186397e96e0cb0130dd49252515c52695e9e13446486a90c1fe421"
+    },
+    {
+      "file": "assets/level02/kelp.hostile.cut.png",
+      "bytes": 2755,
+      "sha256": "d0fcc7ad7a424404bea7ae5ca643691319ecbf8a9b1bfb11f6a2f1f0c7e963bc"
+    },
+    {
+      "file": "assets/level02/kelp.hostile.idle.png",
+      "bytes": 4200,
+      "sha256": "ef9d4c4ed1546b9f9e099c7fc1452254e4ae96488a270fee71e6d8243d0f0675"
+    },
+    {
+      "file": "assets/level02/kelp.hostile.strike.png",
+      "bytes": 4564,
+      "sha256": "d734f1525ce9ecbe9f22f52b12186ab7146b6e589df2ba427d6fa33567e59b3d"
+    },
+    {
+      "file": "assets/level02/kelp.hostile.tell.png",
+      "bytes": 3007,
+      "sha256": "fe08792127955c8bd5849461b3558935d3866e72683797182088ef999b5e28a6"
+    },
+    {
+      "file": "assets/level02/module.cannon.aim.png",
+      "bytes": 4026,
+      "sha256": "1ae44f7498ced6ab908045257ba443592fbeaf3b8ec25930f6a177eab6f4c3b3"
+    },
+    {
+      "file": "assets/level02/module.cannon.broken.png",
+      "bytes": 3523,
+      "sha256": "c6ddf73659addf441df9eec754e825f031a2a0866efc5a7e9ccb1d7bcdbcb992"
+    },
+    {
+      "file": "assets/level02/module.cannon.idle.png",
+      "bytes": 3614,
+      "sha256": "0d8c7b8ef438a3b757c9806e7d122eb0991d9d6fbc439f286ce45b20fc336c90"
+    },
+    {
+      "file": "assets/level02/module.laser.broken.png",
+      "bytes": 3597,
+      "sha256": "053d0e6a7ab305f1703237fbafbfd55639f99acd76b90b063a9424eeaad3616c"
+    },
+    {
+      "file": "assets/level02/module.laser.charge.png",
+      "bytes": 3629,
+      "sha256": "56afd555c021539adfa76fda18910d37b7de71327b8e7490ff0b69cfe9d6692a"
+    },
+    {
+      "file": "assets/level02/module.laser.idle.png",
+      "bytes": 3430,
+      "sha256": "374d47d51bdd66c4a41edffe2e4fb9127d696b691813f5e3a6db1f14c2b786b8"
+    },
+    {
+      "file": "assets/level02/module.propeller.png",
+      "bytes": 2310,
+      "sha256": "bf6a31ac48dc6e6d78049a975ac92205d3a5f0fa38688b65eb6a845148636e0a"
+    },
+    {
+      "file": "assets/level02/module.reactor.closed.png",
+      "bytes": 3728,
+      "sha256": "ec0514007df068d2bac1e23c4f6e83e3d012a0be1a818da366b12a2886b18986"
+    },
+    {
+      "file": "assets/level02/module.reactor.open.png",
+      "bytes": 4310,
+      "sha256": "f92187a8bfa46691ad97e7fa488501df659335a866d9cb8507999bd0f0dce851"
+    },
+    {
+      "file": "assets/level02/module.torpedo.broken.png",
+      "bytes": 3477,
+      "sha256": "8ed3ab803ff4671d44103807a2829c6de8ada4eee84205fdcc63e7e715c6bd7c"
+    },
+    {
+      "file": "assets/level02/module.torpedo.closed.png",
+      "bytes": 3135,
+      "sha256": "06e1c90dc8ca38a28e21e41b29b2eb080147f38a8584c5ae05ef1fbcab20e8b7"
+    },
+    {
+      "file": "assets/level02/module.torpedo.open.png",
+      "bytes": 3323,
+      "sha256": "05f2d0d7b931c9e034ff5957a31bd5468d16925b50d796a1c187cf1f358b1024"
+    },
+    {
+      "file": "assets/level02/object.anchored-mine.png",
+      "bytes": 4063,
+      "sha256": "b5afece087e63e6dfdd54dabe3a1c88cdeb95b77d3b3acd6342a3242724ab59d"
+    },
+    {
+      "file": "assets/level02/object.crate-broken.png",
+      "bytes": 5193,
+      "sha256": "73818b49f462453c52ff63b4983d7f2c16e7018cfe8bd9c3633c5013b83faad2"
+    },
+    {
+      "file": "assets/level02/object.seabed-turret.png",
+      "bytes": 4978,
+      "sha256": "816b4ac484244524fb68f15a96b113fce306e1ec65fd36782ed5d4518130dea8"
+    },
+    {
+      "file": "assets/level02/object.sealed-crate.png",
+      "bytes": 3784,
+      "sha256": "f87c793cd63f41e4b3e19787748fe0abd8d8f342c98f81847b2d5f0e97f4fc94"
+    },
+    {
+      "file": "assets/level02/projectile.depth-charge.png",
+      "bytes": 3328,
+      "sha256": "3aa7280da4734676dac60462ec8e832c5edfabe439c7a3cf5efe23ddd00aabc0"
+    },
+    {
+      "file": "assets/level02/projectile.enemy-torpedo.png",
+      "bytes": 2249,
+      "sha256": "4f89c5e7dbd2091aed92306db5065521d64e5a0de93d2f73af29311120b07935"
+    },
+    {
+      "file": "assets/level02/projectile.harpoon.png",
+      "bytes": 1378,
+      "sha256": "c21106ea397da5d268f7ec92f6162ed95fdebd080cd9226a8a42b85e569b3dde"
+    },
+    {
+      "file": "assets/level02/projectile.micro-torpedo.png",
+      "bytes": 2931,
+      "sha256": "6183252469ee96a4c20d10addc590d561733fb3d2690ea63fdad19684a806244"
+    },
+    {
+      "file": "assets/level02/projectile.pressure-bolt.png",
+      "bytes": 1971,
+      "sha256": "b402c04be66ea62a8c6de699aa05ecd45ac2c7d471468a86087001276df6928e"
+    },
+    {
+      "file": "assets/level02/reef.bulkhead.png",
+      "bytes": 64269,
+      "sha256": "e51bcd29d2e8a66d30a372ab0796892137c49b65d670f72c4dcaf9f372cc14c8"
+    },
+    {
+      "file": "assets/level02/reef.ceiling.png",
+      "bytes": 45502,
+      "sha256": "cc57cf8c09ccaa080c1119c237cb9c864871dd61fc74df8462cc5c276996559e"
+    },
+    {
+      "file": "assets/level02/reef.deck.png",
+      "bytes": 54498,
+      "sha256": "bd07f8e2e3c172277014594a7b370e58f61913c2469b71bfdd5aa1db0fd52f81"
+    },
+    {
+      "file": "assets/level02/reef.pillar.png",
+      "bytes": 66521,
+      "sha256": "0d39a51ba5fa5f630ec4ec66673f1446c1430a79d513451e446db9fe716de45e"
+    },
+    {
+      "file": "assets/level02/reef.pump.png",
+      "bytes": 81882,
+      "sha256": "1d30279cb4ed540571f8bb7dbc774bb1a60e57a79b3505d8fbe7945ca5fb448c"
+    },
+    {
+      "file": "assets/level02/reef.seabed.png",
+      "bytes": 69265,
+      "sha256": "e77b13515293e265cffb4aa90df8ea9339435ba37557c6ab3b24bdc43b631d42"
+    },
+    {
+      "file": "assets/level02/shore.mask.png",
+      "bytes": 6946,
+      "sha256": "4756e711c4d639ee66a0ed7d2490a6f8d6ff481871738ace1156b993ad519639"
+    },
+    {
+      "file": "assets/level02/shore.reach.png",
+      "bytes": 5988,
+      "sha256": "3c7406c72a3adc8f5142b685067835240c175286b6045c105cb063bae2f0c846"
+    },
+    {
+      "file": "assets/level02/shore.take.png",
+      "bytes": 7037,
+      "sha256": "fd1179f1f6f4956aa176e1cba833284c4c7f245b6ef9526a68fc580895e096d4"
+    },
+    {
+      "file": "assets/level02/submarine.hull.damaged.png",
+      "bytes": 32538,
+      "sha256": "af222ebb9461195a07b31ec0b51655e3b4212769d9fe821f0da6284d357a19fe"
+    },
+    {
+      "file": "assets/level02/submarine.hull.intact.png",
+      "bytes": 26386,
+      "sha256": "36f05e5886c647210c2921d69ed48cf5594cceb0332ab7ce0b3969a285e2e1d9"
+    },
+    {
+      "file": "assets/level02/submarine.hull.wreck.png",
+      "bytes": 30930,
+      "sha256": "9a94ea73142153bae0fc2a6b3ff49e54f95cc4bef5f308c5024e504529084719"
+    },
+    {
+      "file": "assets/level02/terrain.cliff.png",
+      "bytes": 9741,
+      "sha256": "b0536783c4415a288ba1be7640bec10a01338c0534c3c13d7c6e4123175539bd"
+    },
+    {
+      "file": "assets/level02/terrain.coral.shelf.png",
+      "bytes": 8291,
+      "sha256": "f450a3f611ec5315df6e63fdce73db93632b594f23b73d133f74891369ac3ee0"
+    },
+    {
+      "file": "assets/level02/terrain.pipe.elbow.png",
+      "bytes": 6938,
+      "sha256": "6b8fb132c780d9901a5a151f5b654908181fa33e0b6f221b02f8d7ca859737fe"
+    },
+    {
+      "file": "assets/level02/terrain.pipe.straight.png",
+      "bytes": 5933,
+      "sha256": "b6e47bfdc603556a6c59764ae3b8b509b9b55370f356d253c6c57f248d5876af"
+    },
+    {
+      "file": "assets/level02/terrain.rock.arch.png",
+      "bytes": 11064,
+      "sha256": "d538f2a503a0f374ac6f497b98aecb418407c8be37a699f9e54c380d292d891e"
+    },
+    {
+      "file": "assets/level02/terrain.rock.ceiling.png",
+      "bytes": 6126,
+      "sha256": "3d92544285ec28c894f81142bf307f4240331630cde69a552ce8f6d46f027c5a"
+    },
+    {
+      "file": "assets/level02/terrain.rock.pillar.png",
+      "bytes": 9153,
+      "sha256": "5f3f2e4ee12a0607c163e17b91bf662b827303a728e9d53c0fa2fcd63b72e4f7"
+    },
+    {
+      "file": "assets/level02/terrain.seabed.left.png",
+      "bytes": 7020,
+      "sha256": "1a9b6ab11012dcda0e540197cef7524c31f164f03f692d4fdb099436c2a16e68"
+    },
+    {
+      "file": "assets/level02/terrain.seabed.middle.png",
+      "bytes": 5755,
+      "sha256": "29c8a419bcdab7dc007b7a1518ce2b04f1dc96ce46ebb4996603938ab45ab3ef"
+    },
+    {
+      "file": "assets/level02/terrain.seabed.right.png",
+      "bytes": 6298,
+      "sha256": "7882de6da74a75094a28332535ff71af25eeea78cf497ae7ab0d7f770818f666"
+    },
+    {
+      "file": "assets/level02/terrain.wreck.deck.png",
+      "bytes": 7225,
+      "sha256": "76211ee7ec705608031d668807f75d90472e02613bc14c6c55126e6bcd8980b8"
+    },
+    {
+      "file": "assets/level02/terrain.wreck.wall.png",
+      "bytes": 9610,
+      "sha256": "174630249fe4f2d2c95da16eb29a48319c14c9b21fbc5056d3aadff968ddcf4f"
+    },
+    {
+      "file": "assets/level02/v075-background.undersea.png",
+      "bytes": 69803,
+      "sha256": "0016617de62d1031d2a05feb2cc7189721984d7414ee413e27b1f75d32324c95"
+    },
+    {
+      "file": "assets/level02/v075-reef.bulkhead.png",
+      "bytes": 21337,
+      "sha256": "9b16581878f0bc069ff298eecc0c971fc95fe8529f84fbc463e5696056f26540"
+    },
+    {
+      "file": "assets/level02/v075-reef.ceiling.png",
+      "bytes": 20174,
+      "sha256": "80c0aebc79867804cea4ee3c2aaac9b9b9c89716abe740f9cd3f1c228465326f"
+    },
+    {
+      "file": "assets/level02/v075-reef.deck.png",
+      "bytes": 23079,
+      "sha256": "9576cb3b790c6acf949b46fc01b1c206ab95e8d58b2b1462ba66202f257040e4"
+    },
+    {
+      "file": "assets/level02/v075-reef.pillar.png",
+      "bytes": 26553,
+      "sha256": "b004ffa725c1cf1b64855045a8268b2d4d2b16f4915731b0f717ca58fac4e4bd"
+    },
+    {
+      "file": "assets/level02/v075-reef.pump.png",
+      "bytes": 28017,
+      "sha256": "9f4d627f8af74799e64ef50918037f24df0933365fbb9971acbd075a75175722"
+    },
+    {
+      "file": "assets/level02/v075-reef.seabed.png",
+      "bytes": 21759,
+      "sha256": "7a1ae047b6281fe2cb3080c47e755887e1e645079a64d87b4f6ed2bc642f4881"
+    }
+  ],
+  "runtimeImageBytes": 4362957,
+  "wechatRuntimeVerified": false,
+  "uploaded": false
+}

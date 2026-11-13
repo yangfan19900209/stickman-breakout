@@ -1,0 +1,101 @@
+import { InputAction, InputFrame } from "./Types";
+import { VirtualJoystick } from "./VirtualJoystick";
+import { GameConfig as C } from "./GameConfig";
+
+/** Device independent. Multiple keyboard keys and touch IDs can hold an action. */
+export class InputManager {
+  private held = new Map<string, InputAction>();
+  private jumpQueued = false;
+  private pauseQueued = false;
+  private grenadeQueued = false;
+  private shootQueued = false;
+  private meleeQueued = false;
+  private switchQueued = false;
+  private landIntent: "idle" | "move" | "up" | "down" = "idle";
+  readonly joystick = new VirtualJoystick();
+  private readonly frame: InputFrame = {
+    axis: 0,
+    jump: false,
+    shoot: false,
+    jumpHeld: false,
+    crouch: false,
+    aimY: 0,
+    grenade: false,
+  };
+  press(source: string, action: InputAction): void {
+    if (this.held.has(source)) return;
+    this.held.set(source, action);
+    if (action === "jump") this.jumpQueued = true;
+    if (action === "pause") this.pauseQueued = true;
+    if (action === "grenade") this.grenadeQueued = true;
+    if (action === "shoot") this.shootQueued = true;
+    if (action === "melee") this.meleeQueued = true;
+    if (action === "switchWeapon") this.switchQueued = true;
+  }
+  release(source: string): void {
+    this.held.delete(source);
+  }
+  isHeld(action: InputAction): boolean {
+    for (const held of this.held.values()) if (held === action) return true;
+    return false;
+  }
+  consume(movement: "land" | "swim" | "flight" = "land"): InputFrame {
+    const keyboard = Number(this.isHeld("right")) - Number(this.isHeld("left"));
+    const frame = this.frame;
+    const { axis, vertical } = this.joystick;
+    const { x, y, radius, owner } = this.joystick;
+    const distance = Math.hypot(x, y);
+    const active = movement === "land" && owner !== null && distance / radius >
+      (this.landIntent === "idle" ? C.input.landEngage : C.input.landRelease);
+    // Land movement is directional, not a thumb-distance throttle. Short drags
+    // run at normal speed; a small release deadzone prevents jitter near rest.
+    // Keep the shared analog vector intact for swimming and free flight.
+    const horizontalRatio = distance > 0 ? Math.abs(x) / distance : 0;
+    if (!active) this.landIntent = "idle";
+    else if (y > 0 && horizontalRatio < (this.landIntent === "up" ? .62 : .5))
+      this.landIntent = "up";
+    else if (y < 0 && horizontalRatio < (this.landIntent === "down" ? .62 : .5))
+      this.landIntent = "down";
+    else this.landIntent = "move";
+    const landAxis = this.landIntent === "move" ? Math.sign(x) : 0;
+    frame.axis = keyboard || (movement === "land" ? landAxis : axis);
+    frame.vertical =
+      Number(this.isHeld("aimUp")) - Number(this.isHeld("crouch")) ||
+      this.joystick.vertical;
+    frame.jump = this.jumpQueued;
+    frame.shoot = this.isHeld("shoot") || this.shootQueued;
+    frame.jumpHeld = this.isHeld("jump");
+    frame.crouch = this.isHeld("crouch") || this.landIntent === "down";
+    frame.aimY =
+      this.isHeld("aimUp") || (movement === "land"
+        ? active && (this.landIntent === "up" || y / distance > C.input.aimThreshold)
+        : vertical > C.input.aimThreshold)
+        ? 1
+        : 0;
+    frame.grenade = this.grenadeQueued;
+    frame.melee = this.meleeQueued || this.isHeld("melee");
+    frame.switchWeapon = this.switchQueued;
+    this.switchQueued = false;
+    this.meleeQueued = false;
+    this.jumpQueued = false;
+    this.grenadeQueued = false;
+    this.shootQueued = false;
+    return frame;
+  }
+  consumePause(): boolean {
+    const p = this.pauseQueued;
+    this.pauseQueued = false;
+    return p;
+  }
+  clear(): void {
+    this.switchQueued = false;
+    this.meleeQueued = false;
+    this.held.clear();
+    this.jumpQueued = false;
+    this.pauseQueued = false;
+    this.grenadeQueued = false;
+    this.shootQueued = false;
+    this.joystick.reset();
+    this.landIntent = "idle";
+  }
+}

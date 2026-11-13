@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-13T10:27:38.394Z",
+  "target": "https://github.com/yangfan19900209/stickman-breakout",
+  "branch": "main",
+  "base": "00772f5fa4fa8583409d110d6f98a1346979e8b4",
+  "runtimeChangedFromCheckpoint": [
+    "assets/scripts/GameManager.ts",
+    "assets/scripts/core/ReleaseConfig.ts",
+    "assets/scripts/core/Revival.ts",
+    "assets/scripts/platform/RecommendationBridge.ts",
+    "assets/scripts/platform/ShareBridge.ts",
+    "assets/scripts/ui/ChapterSelectPanel.ts",
+    "assets/scripts/ui/HUDController.ts",
+    "assets/scripts/ui/RecommendationPanel.ts",
+    "package-lock.json",
+    "package.json",
+    "web-shell/sw.js"
+  ],
+  "ownWhitespaceCheck": true,
+  "legacyWhitespace": "Unchanged historical files retain original formatting; not rewritten to change build inputs",
+  "forbiddenIndexFiles": [],
+  "trackedFiles": 2705,
+  "trackedBytes": 247059029,
+  "runtimeSHA256": "84abff8b66191f112441e2a116938c4926f91c1c7ec0f059043fb71d1445b62a"
+}

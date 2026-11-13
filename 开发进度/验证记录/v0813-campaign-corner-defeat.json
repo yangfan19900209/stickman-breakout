@@ -1,0 +1,3799 @@
+{
+  "version": "0.8.13",
+  "startedAt": "2026-11-11T04:11:49.710Z",
+  "method": "Complete normal-keyboard campaign; read-only snapshots and controlled clock; normal health, ammo and enemy states, no teleports or deliberate cease-fire tour.",
+  "viewport": {
+    "width": 852,
+    "height": 393,
+    "dpr": 3
+  },
+  "bossEntry": {
+    "time": 89.60000000001737,
+    "hp": 5,
+    "weapon": "rifle",
+    "ammo": -1,
+    "grenades": 0
+  },
+  "firstHit": 92.25000000001948,
+  "fightDuration": null,
+  "miniFightDuration": 14.999999999999151,
+  "framing": {
+    "samples": 569,
+    "minHeadClearance": 15.727436421587072,
+    "worst": {
+      "time": 104.92500000002957,
+      "mode": "leaping",
+      "attack": "leap",
+      "drawn": {
+        "frame": "colossus.stomp-tell",
+        "width": 344.25600000000003,
+        "height": 322.08000000000004,
+        "x": 13501.899856639839,
+        "y": 278.3333333333333,
+        "visible": true
+      },
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 0.7879247148648003,
+        "worldVisibleWidth": 1981.04717504919,
+        "cameraY": 0.0011606518457300385,
+        "worldY": 25.8103671516038,
+        "bossCeiling": 513.7862595419847,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "bossY": 278.3333333333333,
+      "windup": 0,
+      "top": 498.0588231203976
+    }
+  },
+  "pursuit": {
+    "outsideArenaSamples": 364,
+    "minBossX": 13326.151956181762,
+    "barSamples": 607
+  },
+  "projectiles": {
+    "player-standard-bullet": {
+      "frame": "projectile.bullet",
+      "samples": 5735,
+      "fullWidth": 86,
+      "maxWidth": 86,
+      "maxHeight": 19
+    },
+    "enemy-standard-bullet": {
+      "frame": "projectile.bullet",
+      "samples": 646,
+      "fullWidth": 86,
+      "maxWidth": 86,
+      "maxHeight": 19
+    },
+    "enemy-standard-cannon": {
+      "frame": "projectile.rocket",
+      "samples": 135,
+      "fullWidth": 116,
+      "maxWidth": 115.99999999999999,
+      "maxHeight": 27.259999999999998
+    },
+    "player-standard-rocket": {
+      "frame": "projectile.rocket",
+      "samples": 185,
+      "fullWidth": 116,
+      "maxWidth": 115.99999999999999,
+      "maxHeight": 27.259999999999998
+    },
+    "enemy-mini-bullet": {
+      "frame": "projectile.bullet",
+      "samples": 139,
+      "fullWidth": 98.89999999999999,
+      "maxWidth": 98.89999999999999,
+      "maxHeight": 21.849999999999998
+    },
+    "enemy-mini-cannon": {
+      "frame": "projectile.rocket",
+      "samples": 8,
+      "fullWidth": 133.39999999999998,
+      "maxWidth": 64.032,
+      "maxHeight": 31.348999999999997
+    },
+    "enemy-boss-rocket": {
+      "frame": "projectile.rocket",
+      "samples": 89,
+      "fullWidth": 145,
+      "maxWidth": 145,
+      "maxHeight": 34.074999999999996
+    }
+  },
+  "bossFrames": [
+    "colossus.idle",
+    "colossus.walk.0",
+    "colossus.walk.1",
+    "colossus.walk.2",
+    "colossus.stomp-tell",
+    "colossus.stomp",
+    "colossus.walk.3",
+    "colossus.fire",
+    "colossus.charge",
+    "colossus.damaged"
+  ],
+  "milestones": [
+    {
+      "time": 10.716666666666699,
+      "x": 2001.6527777777517,
+      "hp": 5
+    },
+    {
+      "time": 22.733333333332684,
+      "x": 4011.3597222222684,
+      "hp": 4
+    },
+    {
+      "time": 50.94166666666442,
+      "x": 6013.95799353975,
+      "hp": 5
+    },
+    {
+      "time": 63.35833333333038,
+      "x": 8017.519012690627,
+      "hp": 4
+    },
+    {
+      "time": 73.87500000000486,
+      "x": 10026.255182326102,
+      "hp": 5
+    },
+    {
+      "time": 82.88333333334536,
+      "x": 12030.143941023196,
+      "hp": 4
+    },
+    {
+      "time": 92.483333333353,
+      "x": 14035.543622848405,
+      "hp": 5
+    }
+  ],
+  "events": [
+    {
+      "time": 89.60000000001737,
+      "hp": 5,
+      "bossHP": 180,
+      "mode": "entering",
+      "attack": "salvo",
+      "phase": 1,
+      "x": 14440,
+      "y": 150,
+      "frame": ""
+    },
+    {
+      "time": 90.89166666668507,
+      "hp": 5,
+      "bossHP": 180,
+      "mode": "moving",
+      "attack": "salvo",
+      "phase": 1,
+      "x": 14438.083333333334,
+      "y": 150,
+      "frame": "colossus.walk.0"
+    },
+    {
+      "time": 91.20000000001865,
+      "hp": 5,
+      "bossHP": 180,
+      "mode": "aiming",
+      "attack": "leap",
+      "phase": 1,
+      "x": 14371.000000000022,
+      "y": 150,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 92.17500000001942,
+      "hp": 5,
+      "bossHP": 180,
+      "mode": "leaping",
+      "attack": "leap",
+      "phase": 1,
+      "x": 14373.474852430574,
+      "y": 166,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 92.25000000001948,
+      "hp": 5,
+      "bossHP": 173.873353563443,
+      "mode": "leaping",
+      "attack": "leap",
+      "phase": 1,
+      "x": 14378.707815834949,
+      "y": 209.5,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 93.05000000002012,
+      "hp": 5,
+      "bossHP": 173.873353563443,
+      "mode": "recovering",
+      "attack": "leap",
+      "phase": 1,
+      "x": 14385.975840308485,
+      "y": 260,
+      "frame": "colossus.stomp"
+    },
+    {
+      "time": 93.70000000002064,
+      "hp": 4,
+      "bossHP": 173.873353563443,
+      "mode": "moving",
+      "attack": "leap",
+      "phase": 1,
+      "x": 14376.392506975155,
+      "y": 260,
+      "frame": "colossus.walk.2"
+    },
+    {
+      "time": 93.78333333335404,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "moving",
+      "attack": "leap",
+      "phase": 1,
+      "x": 14357.225840308494,
+      "y": 260,
+      "frame": "colossus.walk.3"
+    },
+    {
+      "time": 95.18333333335515,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "recovering",
+      "attack": "leap",
+      "phase": 1,
+      "x": 14035.225840308596,
+      "y": 184.75,
+      "frame": "colossus.idle"
+    },
+    {
+      "time": 95.30000000002191,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "aiming",
+      "attack": "salvo",
+      "phase": 1,
+      "x": 14035.225840308596,
+      "y": 150,
+      "frame": "colossus.idle"
+    },
+    {
+      "time": 96.31666666668939,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "recovering",
+      "attack": "salvo",
+      "phase": 1,
+      "x": 14035.225840308596,
+      "y": 150,
+      "frame": "colossus.fire"
+    },
+    {
+      "time": 96.85000000002314,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "moving",
+      "attack": "salvo",
+      "phase": 1,
+      "x": 14033.30917364193,
+      "y": 150,
+      "frame": "colossus.walk.2"
+    },
+    {
+      "time": 97.15000000002338,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "recovering",
+      "attack": "salvo",
+      "phase": 1,
+      "x": 13966.225840308618,
+      "y": 150,
+      "frame": "colossus.idle"
+    },
+    {
+      "time": 97.54166666669036,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "aiming",
+      "attack": "charge",
+      "phase": 1,
+      "x": 13966.225840308618,
+      "y": 150,
+      "frame": "colossus.charge"
+    },
+    {
+      "time": 98.55833333335784,
+      "hp": 4,
+      "bossHP": 172.873353563443,
+      "mode": "charging",
+      "attack": "charge",
+      "phase": 1,
+      "x": 13966.225840308618,
+      "y": 150,
+      "frame": "colossus.idle"
+    },
+    {
+      "time": 99.51666666669193,
+      "hp": 4,
+      "bossHP": 159.4102839055823,
+      "mode": "charging",
+      "attack": "charge",
+      "phase": 1,
+      "x": 13525.392506975215,
+      "y": 150,
+      "frame": "colossus.walk.2"
+    },
+    {
+      "time": 99.60833333335867,
+      "hp": 4,
+      "bossHP": 159.4102839055823,
+      "mode": "recovering",
+      "attack": "charge",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.idle"
+    },
+    {
+      "time": 100.42500000002599,
+      "hp": 4,
+      "bossHP": 146.0284089055823,
+      "mode": "recovering",
+      "attack": "charge",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.damaged"
+    },
+    {
+      "time": 100.55000000002609,
+      "hp": 4,
+      "bossHP": 146.0284089055823,
+      "mode": "aiming",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.charge"
+    },
+    {
+      "time": 101.22500000002663,
+      "hp": 4,
+      "bossHP": 135.88045459003112,
+      "mode": "aiming",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.charge"
+    },
+    {
+      "time": 101.85833333336046,
+      "hp": 3,
+      "bossHP": 135.88045459003112,
+      "mode": "recovering",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.charge"
+    },
+    {
+      "time": 102.2833333333608,
+      "hp": 3,
+      "bossHP": 134.88045459003112,
+      "mode": "recovering",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.charge"
+    },
+    {
+      "time": 102.50000000002764,
+      "hp": 3,
+      "bossHP": 133.88045459003112,
+      "mode": "recovering",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.damaged"
+    },
+    {
+      "time": 102.73333333336116,
+      "hp": 3,
+      "bossHP": 132.88045459003112,
+      "mode": "recovering",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13498.151956181762,
+      "y": 150,
+      "frame": "colossus.damaged"
+    },
+    {
+      "time": 102.8250000000279,
+      "hp": 3,
+      "bossHP": 132.88045459003112,
+      "mode": "moving",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13500.31862284843,
+      "y": 150,
+      "frame": "colossus.walk.3"
+    },
+    {
+      "time": 102.98333333336136,
+      "hp": 3,
+      "bossHP": 131.88045459003112,
+      "mode": "moving",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13520.901956181775,
+      "y": 150,
+      "frame": "colossus.walk.0"
+    },
+    {
+      "time": 103.25000000002824,
+      "hp": 3,
+      "bossHP": 130.88045459003112,
+      "mode": "moving",
+      "attack": "laser",
+      "phase": 1,
+      "x": 13555.568622848461,
+      "y": 150,
+      "frame": "colossus.walk.1"
+    },
+    {
+      "time": 103.5333333333618,
+      "hp": 3,
+      "bossHP": 129.88045459003112,
+      "mode": "aiming",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13589.151956181813,
+      "y": 150,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 103.75000000002863,
+      "hp": 3,
+      "bossHP": 128.88045459003112,
+      "mode": "aiming",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13589.151956181813,
+      "y": 150,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 103.98333333336215,
+      "hp": 3,
+      "bossHP": 127.88045459003112,
+      "mode": "aiming",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13589.151956181813,
+      "y": 150,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 104.200000000029,
+      "hp": 3,
+      "bossHP": 126.88045459003112,
+      "mode": "aiming",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13589.151956181813,
+      "y": 150,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 104.43333333336251,
+      "hp": 3,
+      "bossHP": 125.88045459003112,
+      "mode": "aiming",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13589.151956181813,
+      "y": 150,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 104.47500000002921,
+      "hp": 3,
+      "bossHP": 125.88045459003112,
+      "mode": "leaping",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13585.651956181813,
+      "y": 154.58333333333334,
+      "frame": "colossus.stomp-tell"
+    },
+    {
+      "time": 105.11666666669639,
+      "hp": 3,
+      "bossHP": 125.88045459003112,
+      "mode": "recovering",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13499.150866251981,
+      "y": 260,
+      "frame": "colossus.stomp"
+    },
+    {
+      "time": 105.41666666669663,
+      "hp": 3,
+      "bossHP": 125.88045459003112,
+      "mode": "moving",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13497.234199585315,
+      "y": 260,
+      "frame": "colossus.walk.2"
+    },
+    {
+      "time": 106.44166666669744,
+      "hp": 2,
+      "bossHP": 125.88045459003112,
+      "mode": "recovering",
+      "attack": "leap",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 177.5,
+      "frame": "colossus.idle"
+    },
+    {
+      "time": 106.5166666666975,
+      "hp": 2,
+      "bossHP": 125.88045459003112,
+      "mode": "aiming",
+      "attack": "missiles",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 150,
+      "frame": "colossus.idle"
+    },
+    {
+      "time": 106.82500000003108,
+      "hp": 2,
+      "bossHP": 124.88045459003112,
+      "mode": "aiming",
+      "attack": "missiles",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 150,
+      "frame": "colossus.damaged"
+    },
+    {
+      "time": 107.31666666669814,
+      "hp": 2,
+      "bossHP": 123.88045459003112,
+      "mode": "aiming",
+      "attack": "missiles",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 150,
+      "frame": "colossus.damaged"
+    },
+    {
+      "time": 107.56666666669834,
+      "hp": 1,
+      "bossHP": 123.88045459003112,
+      "mode": "recovering",
+      "attack": "missiles",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 150,
+      "frame": "colossus.fire"
+    },
+    {
+      "time": 108.07500000003208,
+      "hp": 1,
+      "bossHP": 122.88045459003112,
+      "mode": "recovering",
+      "attack": "missiles",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 150,
+      "frame": "colossus.fire"
+    },
+    {
+      "time": 108.56666666669913,
+      "hp": 1,
+      "bossHP": 121.88045459003112,
+      "mode": "recovering",
+      "attack": "missiles",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 150,
+      "frame": "colossus.damaged"
+    },
+    {
+      "time": 108.73333333336593,
+      "hp": 0,
+      "bossHP": 121.88045459003112,
+      "mode": "dormant",
+      "attack": "missiles",
+      "phase": 1,
+      "x": 13328.068622848428,
+      "y": 150,
+      "frame": "colossus.idle"
+    }
+  ],
+  "damage": [
+    {
+      "time": 11.716666666666642,
+      "x": 2156.513888888867,
+      "y": 248.75,
+      "hp": 4,
+      "boss": {
+        "x": 14440,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 0,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 0,
+        "leapTargetX": 0,
+        "warningPoints": [],
+        "vx": 0,
+        "stride": 0,
+        "movementTurns": 0,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "salvo",
+        "introTime": 1.3,
+        "phase": 1,
+        "active": false,
+        "mode": "dormant",
+        "warningX": 0,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 14254.144,
+          "y": 295.728
+        },
+        "warningTime": 0,
+        "windup": 0,
+        "summons": 0,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 0,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 0,
+          "leap": 0
+        }
+      },
+      "input": {
+        "axis": 0,
+        "jump": false,
+        "jumpHeld": true,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "x": 2175.4812604448753,
+          "y": 261.11338306352826,
+          "vx": -350.657049218691,
+          "vy": -81.48394831646624,
+          "homing": false,
+          "locked": false,
+          "age": 0.7,
+          "tier": "standard",
+          "gravity": 0
+        }
+      ]
+    },
+    {
+      "time": 37.50833333333185,
+      "x": 4925.956944444377,
+      "y": 273.75,
+      "hp": 3,
+      "boss": {
+        "x": 14440,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 0,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 0,
+        "leapTargetX": 0,
+        "warningPoints": [],
+        "vx": 0,
+        "stride": 0,
+        "movementTurns": 0,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "salvo",
+        "introTime": 1.3,
+        "phase": 1,
+        "active": false,
+        "mode": "dormant",
+        "warningX": 0,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 14254.144,
+          "y": 295.728
+        },
+        "warningTime": 0,
+        "windup": 0,
+        "summons": 0,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 0,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 0,
+          "leap": 0
+        }
+      },
+      "input": {
+        "axis": 0,
+        "jump": false,
+        "jumpHeld": true,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": []
+    },
+    {
+      "time": 60.641666666663866,
+      "x": 7847.303162973623,
+      "y": 150,
+      "hp": 4,
+      "boss": {
+        "x": 14440,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 0,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 0,
+        "leapTargetX": 0,
+        "warningPoints": [],
+        "vx": 0,
+        "stride": 0,
+        "movementTurns": 0,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "salvo",
+        "introTime": 1.3,
+        "phase": 1,
+        "active": false,
+        "mode": "dormant",
+        "warningX": 0,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 14254.144,
+          "y": 295.728
+        },
+        "warningTime": 0,
+        "windup": 0,
+        "summons": 0,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 0,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 0,
+          "leap": 0
+        }
+      },
+      "input": {
+        "axis": 1,
+        "jump": false,
+        "jumpHeld": false,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": []
+    },
+    {
+      "time": 67.18333333333287,
+      "x": 8818.114639986397,
+      "y": 248.75,
+      "hp": 3,
+      "boss": {
+        "x": 14440,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 0,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 0,
+        "leapTargetX": 0,
+        "warningPoints": [],
+        "vx": 0,
+        "stride": 0,
+        "movementTurns": 0,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "salvo",
+        "introTime": 1.3,
+        "phase": 1,
+        "active": false,
+        "mode": "dormant",
+        "warningX": 0,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 14254.144,
+          "y": 295.728
+        },
+        "warningTime": 0,
+        "windup": 0,
+        "summons": 0,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 0,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 0,
+          "leap": 0
+        }
+      },
+      "input": {
+        "axis": 1,
+        "jump": false,
+        "jumpHeld": true,
+        "shoot": false,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "x": 8835.186685634282,
+          "y": 255.38602998264207,
+          "vx": -348.8084718158321,
+          "vy": -89.06542533162826,
+          "homing": false,
+          "locked": false,
+          "age": 0.6333333333333335,
+          "tier": "standard",
+          "gravity": 0
+        }
+      ]
+    },
+    {
+      "time": 74.69166666667218,
+      "x": 10254.921848992828,
+      "y": 221.39999999999998,
+      "hp": 4,
+      "boss": {
+        "x": 14440,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 0,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 0,
+        "leapTargetX": 0,
+        "warningPoints": [],
+        "vx": 0,
+        "stride": 0,
+        "movementTurns": 0,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "salvo",
+        "introTime": 1.3,
+        "phase": 1,
+        "active": false,
+        "mode": "dormant",
+        "warningX": 0,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 14254.144,
+          "y": 295.728
+        },
+        "warningTime": 0,
+        "windup": 0,
+        "summons": 0,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 0,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 0,
+          "leap": 0
+        }
+      },
+      "input": {
+        "axis": 1,
+        "jump": false,
+        "jumpHeld": false,
+        "shoot": false,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "x": 10283.89789209272,
+          "y": 230.50759683388685,
+          "vx": -356.6476002859275,
+          "vy": 49.01519366777289,
+          "homing": false,
+          "locked": false,
+          "age": 0.39166666666666705,
+          "tier": "standard",
+          "gravity": 0
+        },
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "x": 10167.987421999813,
+          "y": 246.43753477591338,
+          "vx": -356.6476002859275,
+          "vy": 49.01519366777289,
+          "homing": false,
+          "locked": false,
+          "age": 0.7166666666666666,
+          "tier": "standard",
+          "gravity": 0
+        }
+      ]
+    },
+    {
+      "time": 83.74166666667938,
+      "x": 12196.197901652218,
+      "y": 269.9583333333333,
+      "hp": 3,
+      "boss": {
+        "x": 14440,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 0,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 0,
+        "leapTargetX": 0,
+        "warningPoints": [],
+        "vx": 0,
+        "stride": 0,
+        "movementTurns": 0,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "salvo",
+        "introTime": 1.3,
+        "phase": 1,
+        "active": false,
+        "mode": "dormant",
+        "warningX": 0,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 14254.144,
+          "y": 295.728
+        },
+        "warningTime": 0,
+        "windup": 0,
+        "summons": 0,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 0,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 0,
+          "leap": 0
+        }
+      },
+      "input": {
+        "axis": 0,
+        "jump": false,
+        "jumpHeld": false,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "x": 12210.35221056042,
+          "y": 272.875,
+          "vx": -360,
+          "vy": 0,
+          "homing": false,
+          "locked": false,
+          "age": 0.40833333333333377,
+          "tier": "standard",
+          "gravity": 0
+        }
+      ]
+    },
+    {
+      "time": 93.4000000000204,
+      "x": 14065.11101450478,
+      "y": 272.17499999999995,
+      "hp": 4,
+      "boss": {
+        "x": 14385.975840308485,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 1,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 0,
+        "leapTargetX": 14386,
+        "warningPoints": [
+          {
+            "x": 14386,
+            "y": 260
+          }
+        ],
+        "vx": 0,
+        "stride": 0.5390741923284139,
+        "movementTurns": 1,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "leap",
+        "introTime": 0,
+        "phase": 1,
+        "active": true,
+        "mode": "recovering",
+        "warningX": 14386,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 14207.511840308485,
+          "y": 404.672
+        },
+        "warningTime": 0.2583333333333397,
+        "windup": 0,
+        "summons": 0,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 0,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 0,
+          "leap": 1
+        }
+      },
+      "input": {
+        "axis": 1,
+        "jump": false,
+        "jumpHeld": false,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": [
+        {
+          "owner": "enemy",
+          "kind": "shockwave",
+          "x": 14097.57584030846,
+          "y": 274,
+          "vx": -400,
+          "vy": 0,
+          "homing": false,
+          "locked": false,
+          "age": 0.35000000000000026,
+          "tier": "boss",
+          "gravity": 0
+        }
+      ]
+    },
+    {
+      "time": 101.85833333336046,
+      "x": 13250.243530888258,
+      "y": 244.5,
+      "hp": 3,
+      "boss": {
+        "x": 13498.151956181762,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 1,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 13498.151956181762,
+        "leapTargetX": 14386,
+        "warningPoints": [],
+        "vx": 0,
+        "stride": 6.846292037068636,
+        "movementTurns": 3,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "laser",
+        "introTime": 0,
+        "phase": 1,
+        "active": true,
+        "mode": "aiming",
+        "warningX": 13250.243530888258,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 13292.231956181762,
+          "y": 342.192
+        },
+        "warningTime": 0.5500000000000047,
+        "windup": 2.1614654510671016e-15,
+        "summons": 2,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "endX": 0,
+          "endY": 0,
+          "length": 0,
+          "angle": 0,
+          "hits": 0
+        },
+        "attackCounts": {
+          "salvo": 1,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 0,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 1,
+          "leap": 1
+        }
+      },
+      "input": {
+        "axis": 0,
+        "jump": false,
+        "jumpHeld": true,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": []
+    },
+    {
+      "time": 106.31666666669734,
+      "x": 13196.751956181763,
+      "y": 150,
+      "hp": 2,
+      "boss": {
+        "x": 13326.151956181762,
+        "y": 232.91666666666666,
+        "vy": -250,
+        "grounded": false,
+        "jumpCount": 2,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 13498.151956181762,
+        "leapTargetX": 13498.151956181762,
+        "warningPoints": [
+          {
+            "x": 13498.151956181762,
+            "y": 150
+          }
+        ],
+        "vx": -229.99999999992724,
+        "stride": 8.755629636429703,
+        "movementTurns": 5,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "leap",
+        "introTime": 0,
+        "phase": 1,
+        "active": true,
+        "mode": "moving",
+        "warningX": 13498.151956181762,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 13148.743956181763,
+          "y": 387.0926666666667
+        },
+        "warningTime": 0,
+        "windup": 0,
+        "summons": 2,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 13292.231956181762,
+          "y": 342.192,
+          "endX": 13240.894487137477,
+          "endY": 150,
+          "length": 198.93039132287677,
+          "angle": -1.8318177403250775,
+          "hits": 1
+        },
+        "attackCounts": {
+          "salvo": 1,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 1,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 1,
+          "leap": 2
+        }
+      },
+      "input": {
+        "axis": -1,
+        "jump": false,
+        "jumpHeld": false,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": []
+    },
+    {
+      "time": 107.56666666669834,
+      "x": 13196.751956181763,
+      "y": 150,
+      "hp": 1,
+      "boss": {
+        "x": 13328.068622848428,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 2,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 13498.151956181762,
+        "leapTargetX": 13498.151956181762,
+        "warningPoints": [
+          {
+            "x": 13213.751956181763,
+            "y": 150
+          },
+          {
+            "x": 13303.751956181763,
+            "y": 150
+          }
+        ],
+        "vx": 0,
+        "stride": 8.755629636429703,
+        "movementTurns": 5,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "missiles",
+        "introTime": 0,
+        "phase": 1,
+        "active": true,
+        "mode": "aiming",
+        "warningX": 13213.751956181763,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 13142.212622848429,
+          "y": 295.728
+        },
+        "warningTime": 2.01666666666667,
+        "windup": 0.01666666666666794,
+        "summons": 2,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 13292.231956181762,
+          "y": 342.192,
+          "endX": 13240.894487137477,
+          "endY": 150,
+          "length": 198.93039132287677,
+          "angle": -1.8318177403250775,
+          "hits": 1
+        },
+        "attackCounts": {
+          "salvo": 1,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 1,
+          "missiles": 0,
+          "burst": 0,
+          "charge": 1,
+          "leap": 2
+        }
+      },
+      "input": {
+        "axis": -1,
+        "jump": false,
+        "jumpHeld": false,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": []
+    },
+    {
+      "time": 108.7250000000326,
+      "x": 13196.751956181763,
+      "y": 237.5,
+      "hp": 0,
+      "boss": {
+        "x": 13328.068622848428,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "jumpCount": 2,
+        "halfWidth": 134.4,
+        "height": 316.8,
+        "maxHealth": 180,
+        "chargeEndX": 13498.151956181762,
+        "leapTargetX": 13498.151956181762,
+        "warningPoints": [
+          {
+            "x": 13213.751956181763,
+            "y": 150
+          },
+          {
+            "x": 13303.751956181763,
+            "y": 150
+          }
+        ],
+        "vx": 0,
+        "stride": 8.755629636429703,
+        "movementTurns": 5,
+        "kind": "colossus",
+        "name": "重装裁决者",
+        "attack": "missiles",
+        "introTime": 0,
+        "phase": 1,
+        "active": true,
+        "mode": "recovering",
+        "warningX": 13213.751956181763,
+        "warningTargetY": 185,
+        "muzzle": {
+          "x": 13142.212622848429,
+          "y": 295.728
+        },
+        "warningTime": 0.8416666666666743,
+        "windup": 0,
+        "summons": 2,
+        "beam": {
+          "active": false,
+          "time": 0,
+          "x": 13292.231956181762,
+          "y": 342.192,
+          "endX": 13240.894487137477,
+          "endY": 150,
+          "length": 198.93039132287677,
+          "angle": -1.8318177403250775,
+          "hits": 1
+        },
+        "attackCounts": {
+          "salvo": 1,
+          "sweep": 0,
+          "stomp": 0,
+          "laser": 1,
+          "missiles": 1,
+          "burst": 0,
+          "charge": 1,
+          "leap": 2
+        }
+      },
+      "input": {
+        "axis": -1,
+        "jump": false,
+        "jumpHeld": true,
+        "shoot": true,
+        "crouch": false,
+        "aimY": 0,
+        "grenade": false
+      },
+      "shots": [
+        {
+          "owner": "enemy",
+          "kind": "rocket",
+          "x": 13225.058772421084,
+          "y": 240.54700854700843,
+          "vx": -79.81282051282014,
+          "vy": -609.7435897435898,
+          "homing": false,
+          "locked": false,
+          "age": 1.1583333333333317,
+          "visual": "mech-missile",
+          "tier": "boss",
+          "gravity": 800
+        },
+        {
+          "owner": "enemy",
+          "kind": "rocket",
+          "x": 13349.330503190347,
+          "y": 346.0276239316236,
+          "vx": -124.30512820512794,
+          "vy": -396.4389743589747,
+          "homing": false,
+          "locked": false,
+          "age": 0.9333333333333325,
+          "visual": "mech-missile",
+          "tier": "boss",
+          "gravity": 800
+        }
+      ]
+    }
+  ],
+  "captures": [
+    "reports/v0813-mobile-projectile-player-standard-bullet.png",
+    "reports/v0813-mobile-projectile-enemy-standard-bullet.png",
+    "reports/v0813-mobile-projectile-enemy-standard-cannon.png",
+    "reports/v0813-mobile-projectile-player-standard-rocket.png",
+    "reports/v0813-mobile-projectile-enemy-mini-bullet.png",
+    "reports/v0813-mobile-boss-size.png",
+    "reports/v0813-mobile-tell-leap.png",
+    "reports/v0813-mobile-leaping.png",
+    "reports/v0813-mobile-landing.png",
+    "reports/v0813-mobile-tell-salvo.png",
+    "reports/v0813-mobile-pursuit-outside-arena.png",
+    "reports/v0813-mobile-tell-charge.png",
+    "reports/v0813-mobile-charging.png",
+    "reports/v0813-mobile-tell-laser.png",
+    "reports/v0813-mobile-tell-missiles.png",
+    "reports/v0813-mobile-projectile-enemy-boss-rocket.png",
+    "reports/v0813-mobile-result.png"
+  ],
+  "errors": [],
+  "failed": [],
+  "final": {
+    "state": "gameover",
+    "time": 109.63333333336665,
+    "player": {
+      "x": 13196.751956181763,
+      "y": 150,
+      "vx": 0,
+      "vy": 0,
+      "health": 0,
+      "grounded": true,
+      "facing": -1,
+      "animation": "Dead",
+      "crouched": false,
+      "hitTime": 0,
+      "meleeActive": false,
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": false
+    },
+    "cameraX": 13183.751956181763,
+    "kills": 39,
+    "melee": {
+      "swings": 23,
+      "hits": 13,
+      "time": 0,
+      "stage": 0,
+      "state": "idle",
+      "action": "melee_combo_reset",
+      "stance": "stand",
+      "comboRemaining": 0,
+      "heavyHits": 0,
+      "blockedHits": 1,
+      "crateProtection": false
+    },
+    "weapon": "rifle",
+    "weaponPresentation": {
+      "id": "rifle",
+      "name": "突击步枪",
+      "ammo": -1,
+      "icon": "weapon.rifle",
+      "ammoText": "∞  弹药",
+      "projectile": "bullet",
+      "sound": "rifle",
+      "width": 59,
+      "mode": "ranged",
+      "muzzleExtra": 0
+    },
+    "weaponShot": {
+      "x": 13155.987482497552,
+      "y": 206.4035087719298,
+      "pitch": 0,
+      "flash": 0
+    },
+    "playerWeapon": "rifle",
+    "ammo": -1,
+    "grenades": 0,
+    "grenadesThrown": 5,
+    "destroyedObjects": 25,
+    "explosions": 35,
+    "feedback": {
+      "shakeTime": 0,
+      "shakePower": 7,
+      "hitStop": 0,
+      "hitFlash": 0,
+      "blasts": [
+        {
+          "x": 13214.395836205409,
+          "y": 151.5,
+          "age": 0.7916666666666663,
+          "radius": 75,
+          "style": "boss"
+        },
+        {
+          "x": 13304.803341742516,
+          "y": 151.5,
+          "age": 0.5750000000000004,
+          "radius": 75,
+          "style": "boss"
+        }
+      ],
+      "particles": [
+        {
+          "kind": "dust",
+          "x": 13173.751956181763,
+          "y": 140.65625,
+          "vx": -60,
+          "vy": -110.83333333333337
+        },
+        {
+          "kind": "smoke",
+          "x": 13336.692109677495,
+          "y": 321.3372551833133,
+          "vx": 6.215256410256398,
+          "vy": 34.58333333333329
+        },
+        {
+          "kind": "dust",
+          "x": 13185.251956181763,
+          "y": 140.65625,
+          "vx": -30,
+          "vy": -110.83333333333337
+        },
+        {
+          "kind": "dust",
+          "x": 13196.751956181763,
+          "y": 140.65625,
+          "vx": 0,
+          "vy": -110.83333333333337
+        },
+        {
+          "kind": "dust",
+          "x": 13208.251956181763,
+          "y": 140.65625,
+          "vx": 30,
+          "vy": -110.83333333333337
+        },
+        {
+          "kind": "dust",
+          "x": 13219.751956181763,
+          "y": 140.65625,
+          "vx": 60,
+          "vy": -110.83333333333337
+        },
+        {
+          "kind": "metal",
+          "x": 13323.24079790763,
+          "y": 153,
+          "vx": 0.03366594620048326,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13286.898493325423,
+          "y": 153,
+          "vx": -0.009764579363069306,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13288.443921570952,
+          "y": 153,
+          "vx": -0.011721875910241042,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13310.451172583538,
+          "y": 153,
+          "vx": 0.00348308544026022,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13290.957818519117,
+          "y": 153,
+          "vx": -0.013867829780299733,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13287.118631356347,
+          "y": 153,
+          "vx": -0.021417225806316408,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13205.754618372475,
+          "y": 153,
+          "vx": -0.0007567111276714897,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13211.009228347923,
+          "y": 153,
+          "vx": -0.0002965651254671189,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13157.368520163584,
+          "y": 153,
+          "vx": -0.11949058128305233,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13157.832642247235,
+          "y": 153,
+          "vx": -0.02810305838319002,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13174.78273309205,
+          "y": 153,
+          "vx": -0.006374321305552514,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13204.560777989398,
+          "y": 153,
+          "vx": -0.00015403551428803548,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13241.566372664618,
+          "y": 153,
+          "vx": 0.000735452974353064,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13191.669371567255,
+          "y": 153,
+          "vx": -0.0366708005629418,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13197.312407284728,
+          "y": 153,
+          "vx": -0.0006313496009437973,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13190.850035323714,
+          "y": 153,
+          "vx": -0.03335979214814644,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13242.584641345471,
+          "y": 153,
+          "vx": 0.010886641166967297,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13305.756017206291,
+          "y": 153,
+          "vx": 0.0006885865386229148,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13315.71513372949,
+          "y": 153,
+          "vx": 0.01792212742781065,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13355.850068626913,
+          "y": 153,
+          "vx": 0.15383373169510184,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13343.331647603305,
+          "y": 153,
+          "vx": 0.06328100902575587,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13300.198989313803,
+          "y": 153,
+          "vx": -0.004358071707942293,
+          "vy": 0
+        },
+        {
+          "kind": "metal",
+          "x": 13310.506688120788,
+          "y": 153,
+          "vx": 0.003275950363338016,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13308.443510012232,
+          "y": 153,
+          "vx": 0.0417408152295837,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13302.902736743288,
+          "y": 153,
+          "vx": -0.0014974180051025288,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13320.723814968085,
+          "y": 153,
+          "vx": 0.019280630701292035,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13311.385784188758,
+          "y": 153,
+          "vx": 0.025373211307693416,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13313.649925148107,
+          "y": 153,
+          "vx": 0.010182766408892055,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13296.269685477186,
+          "y": 153,
+          "vx": -0.004563611292258778,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13352.460568698334,
+          "y": 153,
+          "vx": 1.032336077156069,
+          "vy": 0
+        },
+        {
+          "kind": "wood",
+          "x": 13289.75114290589,
+          "y": 153,
+          "vx": -0.4826621736451791,
+          "vy": 0
+        }
+      ],
+      "peakParticles": 147,
+      "droppedParticles": 0
+    },
+    "combo": 0,
+    "bestCombo": 10,
+    "objects": [
+      {
+        "id": "entry-crate",
+        "kind": "wood",
+        "x": 300,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 109.05833333336619
+      },
+      {
+        "id": "crate-01",
+        "kind": "wood",
+        "x": 420,
+        "y": 150,
+        "w": 76,
+        "h": 54,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 107.00833333336456
+      },
+      {
+        "id": "barrel-01",
+        "kind": "barrel",
+        "x": 660,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 2,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-02",
+        "kind": "barrel",
+        "x": 735,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-A",
+        "kind": "wood",
+        "x": 1350,
+        "y": 260,
+        "w": 55,
+        "h": 50,
+        "health": 2,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "hanging-01",
+        "kind": "hanging",
+        "x": 1530,
+        "y": 410,
+        "w": 54,
+        "h": 48,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-02",
+        "kind": "wood",
+        "x": 1750,
+        "y": 150,
+        "w": 64,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 102.33333333336084
+      },
+      {
+        "id": "sandbags-01",
+        "kind": "sandbag",
+        "x": 1860,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 101.22500000002663
+      },
+      {
+        "id": "barrel-03",
+        "kind": "barrel",
+        "x": 2230,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 99.05833333335823
+      },
+      {
+        "id": "crate-03",
+        "kind": "wood",
+        "x": 2710,
+        "y": 150,
+        "w": 72,
+        "h": 60,
+        "health": 2,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-B",
+        "kind": "concrete",
+        "x": 3055,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "bridge-rope",
+        "kind": "rope",
+        "x": 3178,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 91.08333333335189
+      },
+      {
+        "id": "sandbags-B",
+        "kind": "sandbag",
+        "x": 3508,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 1,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "cargo-B",
+        "kind": "hanging",
+        "x": 3590,
+        "y": 440,
+        "w": 65,
+        "h": 55,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-C",
+        "kind": "concrete",
+        "x": 3851,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-C",
+        "kind": "wood",
+        "x": 4420,
+        "y": 260,
+        "w": 56,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 74.41666666667196
+      },
+      {
+        "id": "barrel-C1",
+        "kind": "barrel",
+        "x": 5620,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 81.74166666667779
+      },
+      {
+        "id": "barrel-C2",
+        "kind": "barrel",
+        "x": 5680,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 81.65000000001105
+      },
+      {
+        "id": "rocket-before-tank",
+        "kind": "wood",
+        "x": 4880,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 83.9333333333462
+      },
+      {
+        "id": "cargo-C",
+        "kind": "hanging",
+        "x": 5980,
+        "y": 425,
+        "w": 56,
+        "h": 50,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "rocket-before-colossus",
+        "kind": "wood",
+        "x": 13270,
+        "y": 150,
+        "w": 58,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 15.749999999999746
+      },
+      {
+        "id": "arena-sandbag",
+        "kind": "sandbag",
+        "x": 13977.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 18.799999999999574
+      },
+      {
+        "id": "arena-barrel",
+        "kind": "barrel",
+        "x": 14190,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 17.47499999999965
+      },
+      {
+        "id": "grenades-E",
+        "kind": "wood",
+        "x": 6950,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 56.616666666664095
+      },
+      {
+        "id": "sandbag-E1",
+        "kind": "sandbag",
+        "x": 7700,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 52.51666666666433
+      },
+      {
+        "id": "barrel-E1",
+        "kind": "barrel",
+        "x": 7895,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 49.09166666666452
+      },
+      {
+        "id": "upper-crate-E",
+        "kind": "wood",
+        "x": 8220,
+        "y": 266,
+        "w": 56,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 49.13333333333119
+      },
+      {
+        "id": "sandbag-E2",
+        "kind": "sandbag",
+        "x": 8527.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 47.033333333331306
+      },
+      {
+        "id": "upper-crate-F",
+        "kind": "wood",
+        "x": 9070,
+        "y": 260,
+        "w": 53,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 43.83333333333149
+      },
+      {
+        "id": "sandbag-F",
+        "kind": "sandbag",
+        "x": 9370,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 40.11666666666503
+      },
+      {
+        "id": "barrel-F",
+        "kind": "barrel",
+        "x": 9570,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 38.70833333333178
+      },
+      {
+        "id": "bridge-rope-F",
+        "kind": "rope",
+        "x": 9793,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-F",
+        "kind": "concrete",
+        "x": 9971,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-F",
+        "kind": "wood",
+        "x": 10330,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-G",
+        "kind": "concrete",
+        "x": 11080,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-G1",
+        "kind": "barrel",
+        "x": 11690,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 2,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-G",
+        "kind": "wood",
+        "x": 12010,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 26.89166666666578
+      },
+      {
+        "id": "sandbag-G",
+        "kind": "sandbag",
+        "x": 12270,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 11.266666666666667
+      },
+      {
+        "id": "barrel-G2",
+        "kind": "barrel",
+        "x": 12855,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 13.724999999999861
+      },
+      {
+        "id": "grenades-before-final",
+        "kind": "wood",
+        "x": 13090,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 14.33333333333316
+      }
+    ],
+    "pickups": [
+      {
+        "kind": "grenades",
+        "x": 13116.5,
+        "y": 160,
+        "vy": 0
+      }
+    ],
+    "recoveryPoints": [
+      {
+        "id": "after-industry",
+        "x": 3756,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-tank",
+        "x": 5460,
+        "y": 260,
+        "purpose": "before-boss"
+      },
+      {
+        "id": "after-freight",
+        "x": 8810,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "after-blockade",
+        "x": 10800,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-colossus",
+        "x": 13180,
+        "y": 150,
+        "purpose": "before-boss"
+      }
+    ],
+    "recoverySpawned": [
+      "before-tank",
+      "after-freight",
+      "before-colossus"
+    ],
+    "victory": {
+      "active": false,
+      "time": 0,
+      "phase": "idle",
+      "focus": 0,
+      "cheerTime": 0,
+      "resultProgress": 0,
+      "resultsReady": false,
+      "impactSerial": 0,
+      "haptic": "light",
+      "flash": 0
+    },
+    "projectileStates": [],
+    "remaining": 1,
+    "guardHealth": 121.88045459003112,
+    "boss": {
+      "x": 13328.068622848428,
+      "y": 150,
+      "vy": 0,
+      "grounded": true,
+      "jumpCount": 2,
+      "halfWidth": 134.4,
+      "height": 316.8,
+      "maxHealth": 180,
+      "chargeEndX": 13498.151956181762,
+      "leapTargetX": 13498.151956181762,
+      "warningPoints": [],
+      "vx": 0,
+      "stride": 8.755629636429703,
+      "movementTurns": 5,
+      "kind": "colossus",
+      "name": "重装裁决者",
+      "attack": "missiles",
+      "introTime": 0,
+      "phase": 1,
+      "active": true,
+      "mode": "dormant",
+      "warningX": 13213.751956181763,
+      "warningTargetY": 185,
+      "muzzle": {
+        "x": 13142.212622848429,
+        "y": 295.728
+      },
+      "warningTime": 0,
+      "windup": 0,
+      "summons": 2,
+      "beam": {
+        "active": false,
+        "time": 0,
+        "x": 13292.231956181762,
+        "y": 342.192,
+        "endX": 13240.894487137477,
+        "endY": 150,
+        "length": 0,
+        "angle": -1.8318177403250775,
+        "hits": 1
+      },
+      "attackCounts": {
+        "salvo": 1,
+        "sweep": 0,
+        "stomp": 0,
+        "laser": 1,
+        "missiles": 1,
+        "burst": 0,
+        "charge": 1,
+        "leap": 2
+      }
+    },
+    "miniBoss": {
+      "x": 5117.658698101148,
+      "y": 150,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "jumpCount": 1,
+      "mode": "destroyed",
+      "windup": 0,
+      "ramEndX": 4794.658698101148,
+      "movementTurns": 6,
+      "moveTargetX": 5115.235771317707,
+      "attackCounts": {
+        "bombard": 1,
+        "burst": 2,
+        "ram": 1,
+        "fan": 1
+      },
+      "muzzle": {
+        "x": 5029.658698101148,
+        "y": 202.5
+      },
+      "health": 0,
+      "maxHealth": 68,
+      "active": true,
+      "phase": 2,
+      "warningX": 4665.8746602066085,
+      "warningTime": 0,
+      "attack": "ram",
+      "warningPoints": []
+    },
+    "levelWidth": 14800,
+    "exitX": 14670,
+    "arena": {
+      "start": 13440,
+      "end": 14770
+    },
+    "arenaEntered": false,
+    "bossFraming": true,
+    "progression": {
+      "furthestX": 14143.751956181763,
+      "retreatLimit": 13183.751956181763,
+      "retreatDistance": 960
+    },
+    "zones": [
+      {
+        "id": "A",
+        "name": "道路遭遇",
+        "start": 0,
+        "end": 1850,
+        "cleared": true
+      },
+      {
+        "id": "B",
+        "name": "工业突破",
+        "start": 1850,
+        "end": 3800,
+        "cleared": true
+      },
+      {
+        "id": "C",
+        "name": "机械阵地",
+        "start": 3800,
+        "end": 6740,
+        "cleared": true
+      },
+      {
+        "id": "E",
+        "name": "运输栈道",
+        "start": 6740,
+        "end": 8840,
+        "cleared": true
+      },
+      {
+        "id": "F",
+        "name": "封锁哨线",
+        "start": 8840,
+        "end": 10940,
+        "cleared": true
+      },
+      {
+        "id": "G",
+        "name": "维修长廊",
+        "start": 10940,
+        "end": 13340,
+        "cleared": true
+      },
+      {
+        "id": "D",
+        "name": "裁决者决战",
+        "start": 13340,
+        "end": 14800,
+        "cleared": false
+      }
+    ],
+    "mechanisms": [
+      {
+        "id": "bridge-B",
+        "kind": "bridge",
+        "x": 3080,
+        "y": 204.1875,
+        "w": 210,
+        "h": 24,
+        "released": true,
+        "landed": true,
+        "minY": 150,
+        "maxY": 296
+      },
+      {
+        "id": "lift-C",
+        "kind": "lift",
+        "x": 4960,
+        "y": 230.4583333333324,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "lift-E",
+        "kind": "lift",
+        "x": 7960,
+        "y": 246,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "bridge-F",
+        "kind": "bridge",
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 150,
+        "maxY": 296
+      }
+    ],
+    "terrain": [
+      {
+        "x": 0,
+        "y": -240,
+        "w": 14800,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        },
+        "oneWay": false
+      },
+      {
+        "x": 1150,
+        "y": 236,
+        "w": 340,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 2300,
+        "y": 242,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 3300,
+        "y": 236,
+        "w": 160,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 4300,
+        "y": 236,
+        "w": 250,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 5200,
+        "y": 236,
+        "w": 390,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 7300,
+        "y": 236,
+        "w": 360,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 8190,
+        "y": 242,
+        "w": 300,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 9000,
+        "y": 236,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 11300,
+        "y": 236,
+        "w": 340,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 12500,
+        "y": 242,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 13480,
+        "y": 236,
+        "w": 260,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 13870,
+        "y": 300,
+        "w": 240,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 14250,
+        "y": 236,
+        "w": 260,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 657.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-01",
+        "oneWay": false
+      },
+      {
+        "x": 732.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-02",
+        "oneWay": false
+      },
+      {
+        "x": 1350.6267605633802,
+        "y": 260,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "upper-crate-A",
+        "oneWay": false
+      },
+      {
+        "x": 2714.056338028169,
+        "y": 150,
+        "w": 63.887323943661976,
+        "h": 63,
+        "kind": "crate",
+        "entityId": "crate-03",
+        "oneWay": false
+      },
+      {
+        "x": 3064.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-B",
+        "oneWay": false
+      },
+      {
+        "x": 3505.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbags-B",
+        "oneWay": false
+      },
+      {
+        "x": 3860.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-C",
+        "oneWay": false
+      },
+      {
+        "x": 9980.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-F",
+        "oneWay": false
+      },
+      {
+        "x": 10332.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "crate-F",
+        "oneWay": false
+      },
+      {
+        "x": 11089.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-G",
+        "oneWay": false
+      },
+      {
+        "x": 11687.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-G1",
+        "oneWay": false
+      },
+      {
+        "x": 3080,
+        "y": 204.1875,
+        "w": 210,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 4960,
+        "y": 230.4583333333324,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 7960,
+        "y": 246,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      }
+    ],
+    "exitOpen": false,
+    "bullets": 0,
+    "shots": 361,
+    "hits": 217,
+    "peakBullets": 8,
+    "droppedBullets": 0,
+    "enemies": [
+      {
+        "id": "m1",
+        "x": 482.25263061870294,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r1",
+        "x": 815.717507201352,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r2",
+        "x": 1288.1655087858958,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m2",
+        "x": 1420.2763421192192,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r3",
+        "x": 2009.793018749172,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m3",
+        "x": 2536.8430087859124,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r4",
+        "x": 2480.7055087858507,
+        "y": 266,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m4",
+        "x": 3069.86222009518,
+        "y": 204.1875,
+        "grounded": true,
+        "jumpCount": 3,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r5",
+        "x": 3202.393841192566,
+        "y": 204.1875,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-B",
+        "x": 2704.711095817626,
+        "y": 213,
+        "grounded": true,
+        "jumpCount": 2,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 2,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-B",
+        "x": 3533.6734369626106,
+        "y": 216.875,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-C",
+        "x": 3985.2373647767868,
+        "y": 204.1875,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 0,
+        "windup": 0.09999999999999962,
+        "action": "brace"
+      },
+      {
+        "id": "charge-C",
+        "x": 4500.051342119212,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-C1",
+        "x": 4741.0955087858965,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-C2",
+        "x": 5395.451006899192,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-C",
+        "x": 5945.462673565888,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-C2",
+        "x": 6295.747175452592,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 2,
+        "windup": 0,
+        "action": "approach"
+      },
+      {
+        "id": "rifle-C3",
+        "x": 6520.605508785866,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-E0",
+        "x": 7126.51050878586,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-E1",
+        "x": 7472.18050878588,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "charge-E1",
+        "x": 7904.584057999656,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 2,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-E",
+        "x": 7957.684579322561,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-E2",
+        "x": 8329.160508785793,
+        "y": 266,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-E3",
+        "x": 8556.511259816629,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "charge-F0",
+        "x": 8738.718596393694,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-F1",
+        "x": 9115.775737739277,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-F",
+        "x": 9488.009301902535,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 3,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 1,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "charge-F",
+        "x": 9677.50474005411,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-F",
+        "x": 10086.024938085418,
+        "y": 204.1875,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-F2",
+        "x": 10397.4944135546,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-G1",
+        "x": 11210.274075339283,
+        "y": 204.1875,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 0,
+        "windup": 0.23333333333333292,
+        "action": "brace"
+      },
+      {
+        "id": "rifle-G1",
+        "x": 11432.180508785863,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "charge-G1",
+        "x": 11554.483707402997,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 2,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-G2",
+        "x": 12409.365491802308,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-G2",
+        "x": 12627.095508785855,
+        "y": 266,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-G",
+        "x": 12878.062120703238,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 2,
+        "health": 0,
+        "state": "Dead",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "outpost-tank",
+        "x": 5117.658698101148,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "guard",
+        "shield": 0,
+        "windup": 0,
+        "action": "ram"
+      },
+      {
+        "id": "gate-colossus",
+        "x": 13328.068622848428,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 2,
+        "health": 121.88045459003112,
+        "state": "Idle",
+        "kind": "colossus",
+        "shield": 0,
+        "windup": 0,
+        "action": "missiles"
+      },
+      {
+        "id": "reinforce-38",
+        "x": 13075.855949283387,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "reinforce-39",
+        "x": 13167.480949283381,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      }
+    ],
+    "chapter": 1,
+    "entryMode": "campaign",
+    "oceanArt": null,
+    "chapterLoading": false,
+    "playerShots": 323,
+    "audio": {
+      "loaded": 9,
+      "played": 638,
+      "byEffect": {
+        "rifle": 311,
+        "step": 227,
+        "knife": 23,
+        "melee-hit": 13,
+        "blast": 35,
+        "hit": 11,
+        "pickup": 6,
+        "rocket": 12
+      },
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "requested": "comic",
+      "active": "comic",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "player.death.5",
+      "equipment": {
+        "pose": "player.death.5",
+        "body": "player.death.5",
+        "weapon": null,
+        "grip": null,
+        "bakedWeapon": "",
+        "bakedRifle": false
+      },
+      "renderedPlayer": {
+        "body": "player.death.5",
+        "weapon": "",
+        "weaponVisible": false
+      },
+      "renderedBoss": {
+        "frame": "colossus.idle",
+        "width": 363.264,
+        "height": 315.744,
+        "x": 13328.068622848428,
+        "y": 150,
+        "visible": true
+      },
+      "renderedMiniBoss": {
+        "frame": "rhino.wreck",
+        "width": 191,
+        "height": 122,
+        "x": 5117.658698101148,
+        "y": 150,
+        "visible": true
+      },
+      "objects": [],
+      "pickups": [],
+      "mechanisms": [],
+      "hudWeapon": {
+        "text": "突击步枪\n∞  弹药 · 切刀",
+        "id": "rifle",
+        "frame": "weapon.rifle",
+        "switch": {
+          "x": 492.82442748091603,
+          "y": 674.1984732824427
+        }
+      },
+      "combat": {
+        "rockets": [],
+        "projectiles": [],
+        "bossBeam": {
+          "visible": false,
+          "x": 13292.231956181762,
+          "y": 342.192,
+          "length": 198.93039132287677,
+          "angle": -1.8318177403250773
+        }
+      },
+      "terrain": "unified-drawn-v075"
+    },
+    "visibleChunks": 11,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 0,
+        "supported": false
+      }
+    },
+    "presentation": {
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": false,
+      "resultProgress": 0,
+      "resultReady": false,
+      "bossBar": {
+        "visible": false,
+        "bottom": 521.7862595419847,
+        "builds": 56,
+        "samples": 2317
+      },
+      "controls": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   摇杆向下＝下蹲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 599,
+          "joystick": 1
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": true,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      },
+      "objective": {
+        "visible": false,
+        "text": "后方已封锁 · 向右突围 →",
+        "x": 780.4580152671756,
+        "y": 604.5801526717557
+      }
+    },
+    "display": {
+      "width": 1560.9160305343512,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 0.946743613051508,
+      "worldVisibleWidth": 1648.7209514973817,
+      "cameraY": 1.1518714955041962,
+      "worldY": 0.8979310608491176,
+      "bossCeiling": 513.7862595419847,
+      "frameWidth": 852,
+      "frameHeight": 393,
+      "orientationPaused": false
+    },
+    "controls": {
+      "shootHeld": true,
+      "hudHeight": 139.23664122137404,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "systemMenu": {
+          "x": 1385.0381679389313,
+          "y": 639.3893129770993,
+          "w": 161.22137404580155,
+          "h": 58.62595419847329
+        },
+        "systemReservedLeft": 1304.4274809160304,
+        "safeInsets": {
+          "left": 108.09160305343512,
+          "right": 0,
+          "bottom": 38.47328244274809,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1055.2671755725185,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 952.6717557251902,
+          "secondRow": true,
+          "objectiveX": 780.4580152671756,
+          "objectiveWidth": 512.9770992366412
+        },
+        "joystick": {
+          "x": 279.7328244274809,
+          "y": 202.78625954198472,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 266.9413740458015,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 202.78625954198472,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 403.9795419847328,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1231.1450381679385,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 5.4961832061069344,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    }
+  }
+}

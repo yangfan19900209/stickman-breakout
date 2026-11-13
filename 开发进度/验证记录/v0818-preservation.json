@@ -1,0 +1,1270 @@
+{
+  "checkedAt": "2026-11-12T01:57:19.488Z",
+  "version": "0.8.18",
+  "checkpoint": "PRE-V0818-20261112",
+  "passed": true,
+  "protectedFiles": 252,
+  "scope": "Land/flight gameplay and rendering plus all existing land/flight/shared image assets; ocean gameplay is intentionally changed.",
+  "files": [
+    {
+      "file": "assets/landart/boss-v088.png",
+      "bytes": 2657748,
+      "sha256": "3d24c20a114d85ace00339b19736aa9b994d0f41c937042689dc304b1d3343a9"
+    },
+    {
+      "file": "assets/landart/boss-v088.png.meta",
+      "bytes": 993,
+      "sha256": "a295d627f0ff9262965ec9c853efd2ede5069cf90db7416a313a19ec96378cb2"
+    },
+    {
+      "file": "assets/landart/cast.png",
+      "bytes": 2064226,
+      "sha256": "0cd9c0b74da752f1298cce4e6a0d3429c50ff53289760840a7009568c8480997"
+    },
+    {
+      "file": "assets/landart/cast.png.meta",
+      "bytes": 974,
+      "sha256": "9be94b1193c33abf6c501eb407aea10a2b42623307a8dfc19008a742907d83c2"
+    },
+    {
+      "file": "assets/landart/controls.png",
+      "bytes": 1275117,
+      "sha256": "8dc1ec226deec5f7fa30f7827835721aace5db513a1075094dbf81e27857699f"
+    },
+    {
+      "file": "assets/landart/controls.png.meta",
+      "bytes": 978,
+      "sha256": "625d12d19b84ce633a803de5991861221f98635db6cd1362581944ac127f0776"
+    },
+    {
+      "file": "assets/landart/drawn-fill.png",
+      "bytes": 60965,
+      "sha256": "2f18ab54249ec315e29d380207080efc7a88a7234dbfb39571c98068f287ba1c"
+    },
+    {
+      "file": "assets/landart/drawn-fill.png.meta",
+      "bytes": 980,
+      "sha256": "bd73897de5b6cde935eb5834b265e8b02a619f9965650cae0044451742a2c660"
+    },
+    {
+      "file": "assets/landart/drawn-terrain.png",
+      "bytes": 215946,
+      "sha256": "837f212707e94d0754f4ed9c1a8e495a2443480d0b69fa4d617d1609f5086fdd"
+    },
+    {
+      "file": "assets/landart/drawn-terrain.png.meta",
+      "bytes": 983,
+      "sha256": "9b215961737cf871f883d8a09bc77bf084ef03793d981a4b2c629d5cfa2ba7ce"
+    },
+    {
+      "file": "assets/landart/fill.png",
+      "bytes": 480121,
+      "sha256": "b223411d97d8a70ac2f2a31dffd26fa72fa0856d0c3215946ca65d569acf9f24"
+    },
+    {
+      "file": "assets/landart/fill.png.meta",
+      "bytes": 974,
+      "sha256": "baee86871eb2ea08f2996d17f96327a444bf10db09cc7e30bda606af6bb0d020"
+    },
+    {
+      "file": "assets/landart/ink.png",
+      "bytes": 74874,
+      "sha256": "290c5d1c3f014d32a14a8add186237624a3ee19bd5fd3a00151e8e0ac718443f"
+    },
+    {
+      "file": "assets/landart/ink.png.meta",
+      "bytes": 973,
+      "sha256": "6601f19e7911d8413bed453d8519d1edd822ca2af76abe14909e197a29fcedad"
+    },
+    {
+      "file": "assets/landart/landmarks.png",
+      "bytes": 305754,
+      "sha256": "f1399db7a610b2a7ed254cedbcd16488a7b472643e88ddc85ecf24a0cc101d69"
+    },
+    {
+      "file": "assets/landart/landmarks.png.meta",
+      "bytes": 979,
+      "sha256": "ed62c3932c73ae282becd3b5f86d77f444d46024f6ad069ce04f9a27bd931fa9"
+    },
+    {
+      "file": "assets/landart/motion.png",
+      "bytes": 929283,
+      "sha256": "ccd05fb968881dc84aeabf4332553f64878c8f718875f3c73762c46334053eb6"
+    },
+    {
+      "file": "assets/landart/motion.png.meta",
+      "bytes": 976,
+      "sha256": "00634eecaee9a18a17e4874cb629bfbd616f6cb704bcd4cc7ebf0cc69c159be3"
+    },
+    {
+      "file": "assets/landart/polish.png",
+      "bytes": 623651,
+      "sha256": "1aa2a2424e6a8c6d12868cbd86e5ea23d0755eecef2756d9b3b0a76c185814d5"
+    },
+    {
+      "file": "assets/landart/polish.png.meta",
+      "bytes": 976,
+      "sha256": "08ea1f2f9e2593102e1d522588a50b6a1711b2921f8cca27b55e4988de4d60fc"
+    },
+    {
+      "file": "assets/landart/sandbag-debris.png",
+      "bytes": 57592,
+      "sha256": "7c5998b3c509f87f745fe100becb063ad27316bdc0a167479ce4c8a7491821cc"
+    },
+    {
+      "file": "assets/landart/sandbag-debris.png.meta",
+      "bytes": 984,
+      "sha256": "d11811ea3f88711e87a69911ec79a265e1dfc8593ffcb456eb1aa8548ee432a0"
+    },
+    {
+      "file": "assets/landart/shield-break.png",
+      "bytes": 64688,
+      "sha256": "687f6c44a3eac101af772d1937d073d056216599f3a804c5289d2687348570a1"
+    },
+    {
+      "file": "assets/landart/shield-break.png.meta",
+      "bytes": 982,
+      "sha256": "6407a85b05a3ef3150707c1c07968f3ed97d6f39a65f24ee3252d20111f138ae"
+    },
+    {
+      "file": "assets/landart/soil.png",
+      "bytes": 236629,
+      "sha256": "a1318a1406dcdaa252fcd7bd4c5fef62772167460ec559d2bebf869e1675de5c"
+    },
+    {
+      "file": "assets/landart/soil.png.meta",
+      "bytes": 974,
+      "sha256": "f57d53b8722641029b8463b7ce8c9bed0e5e23e133c36ef5b9469e44141a1d40"
+    },
+    {
+      "file": "assets/landart/terrain-v088.png",
+      "bytes": 795620,
+      "sha256": "5138009c157bb07373907932dc1fcb25dd09c24a53db1f83c09f42f2b84e2c77"
+    },
+    {
+      "file": "assets/landart/terrain-v088.png.meta",
+      "bytes": 996,
+      "sha256": "83f8044d6ee92db3fe4f0ced3aae7e55f6501f63227c162eb32f8bd3d91a846b"
+    },
+    {
+      "file": "assets/landart/terrain.png",
+      "bytes": 456897,
+      "sha256": "b72ec2c9e3ad177374ce2d25f53bcea0a1bdbf8f593d4c39bb47e4228376bbca"
+    },
+    {
+      "file": "assets/landart/terrain.png.meta",
+      "bytes": 977,
+      "sha256": "7d5e1eb88620ce071caeace402bd417c89feb31b46705556d188c81e4ff08ff3"
+    },
+    {
+      "file": "assets/level03/flight-atlas.png",
+      "bytes": 682668,
+      "sha256": "df3befbf9971e1fbf435f55ee7548ff613ace7e6dc3a761a9b216bd60babcf2d"
+    },
+    {
+      "file": "assets/level03/flight-atlas.png.meta",
+      "bytes": 996,
+      "sha256": "3e509be81425514adfafe604dbafaa27a5066834baf3113287f605cee06bae63"
+    },
+    {
+      "file": "assets/resources/audio.meta",
+      "bytes": 168,
+      "sha256": "df186b3a37f7c21e001fa6cac93ff3c52bad98a58cdcf4d380d420318c19f1f9"
+    },
+    {
+      "file": "assets/resources/audio/blast.wav",
+      "bytes": 19888,
+      "sha256": "01106d2aed49bc72cd588c83661c3c34a3abb05469157b1791237c996c966c8d"
+    },
+    {
+      "file": "assets/resources/audio/blast.wav.meta",
+      "bytes": 221,
+      "sha256": "68a2f5d0dc823fb64987561a565946fdbbf4280e39b8acf4fff9cd5dec4d67aa"
+    },
+    {
+      "file": "assets/resources/audio/hit.wav",
+      "bytes": 5336,
+      "sha256": "892a35875c06631d95239f55d87653f6b4d6fd02ce315a281259629603d16c4b"
+    },
+    {
+      "file": "assets/resources/audio/hit.wav.meta",
+      "bytes": 221,
+      "sha256": "a50aac236b25eb1fc7de1a661b1c26d273d575a6c755f9b9eaf1ebb90468c9b5"
+    },
+    {
+      "file": "assets/resources/audio/knife.wav",
+      "bytes": 5776,
+      "sha256": "8e1b008f24ed0d30bfebd5e7cd2fbb30bd543583aaf293131c6215547198d787"
+    },
+    {
+      "file": "assets/resources/audio/knife.wav.meta",
+      "bytes": 221,
+      "sha256": "f22931ad3d72f6c3caf0bd5297b4966d2696ca3f12176d0fd9847c747abd1442"
+    },
+    {
+      "file": "assets/resources/audio/melee-hit.wav",
+      "bytes": 3792,
+      "sha256": "c10eb03b17db4f9a2e3b23df0c3b6a2d12d81f39bc8803355e0c225d5713476b"
+    },
+    {
+      "file": "assets/resources/audio/melee-hit.wav.meta",
+      "bytes": 221,
+      "sha256": "10ebf11cec1c9bb483bab798368aa0759d849e401f41fe528b1d0859b9bf8169"
+    },
+    {
+      "file": "assets/resources/audio/pickup.wav",
+      "bytes": 10628,
+      "sha256": "b851de914ff11d41839d863c1ac9fc692eb200c27d7b1b1068346a4efa1209fa"
+    },
+    {
+      "file": "assets/resources/audio/pickup.wav.meta",
+      "bytes": 221,
+      "sha256": "f16d5a8cb791cd827e5ca4767422ef79eb424d86de7e4f888e2c38bafb834a43"
+    },
+    {
+      "file": "assets/resources/audio/rifle.wav",
+      "bytes": 2690,
+      "sha256": "02a55528299b082516b0c2e27d77234f1356ac0af3f3c7096c8427e127f792cb"
+    },
+    {
+      "file": "assets/resources/audio/rifle.wav.meta",
+      "bytes": 221,
+      "sha256": "842ccbadd99560866c130751fe3a3de433b058ae13044976c7b47f90d0f73559"
+    },
+    {
+      "file": "assets/resources/audio/rocket.wav",
+      "bytes": 8422,
+      "sha256": "aab12b881c31a7eff738dde9f63e84001ebe64ef1e0b9431c4ac279892182859"
+    },
+    {
+      "file": "assets/resources/audio/rocket.wav.meta",
+      "bytes": 221,
+      "sha256": "4ab755ca806aaec04e769ed177c68d7df08d10751d37b3d98e7ce62d57b2ba6d"
+    },
+    {
+      "file": "assets/resources/audio/shotgun.wav",
+      "bytes": 5776,
+      "sha256": "50004e331883fb1f66deb09122a2e56e909cbe4380ab3829fd6437ad4526ceb9"
+    },
+    {
+      "file": "assets/resources/audio/shotgun.wav.meta",
+      "bytes": 221,
+      "sha256": "67fa7ae404f496eacb5798ea489ed7046d6326658980a0a102ac505a7ccb9e6f"
+    },
+    {
+      "file": "assets/resources/audio/step.wav",
+      "bytes": 2910,
+      "sha256": "3570cb5d8481acb4e2f1617f85dcc4123e237808c57fb398bcf2894bd4fc0d5d"
+    },
+    {
+      "file": "assets/resources/audio/step.wav.meta",
+      "bytes": 221,
+      "sha256": "23978024836437461a593fbe4284ffd8338f30562905b144a5ae3131908f4f16"
+    },
+    {
+      "file": "assets/resources/comic.meta",
+      "bytes": 168,
+      "sha256": "1a15f965bcdabd8230d8ab139ae2fe13271a32e609f4384f99331c6cab4ca546"
+    },
+    {
+      "file": "assets/resources/comic/celebration.png",
+      "bytes": 696888,
+      "sha256": "87561dd004ed7142a0dd2e62fdf8c580d9e391b3f36d2dc442c58ab4c4f09fa4"
+    },
+    {
+      "file": "assets/resources/comic/celebration.png.meta",
+      "bytes": 981,
+      "sha256": "e310689e290e88abe6222f5f0727b4ed16c19beede68d5bf08d5d57459d70616"
+    },
+    {
+      "file": "assets/resources/comic/comic.png",
+      "bytes": 610613,
+      "sha256": "2b50cf030abd30c66d7a5534e93cbce2e6230198f19ed503c5161ef93a4416f1"
+    },
+    {
+      "file": "assets/resources/comic/comic.png.meta",
+      "bytes": 975,
+      "sha256": "fc510dcedba9bf469696faf79b1d1bba2b2c54c4b4a3ad998512bc2eb7194640"
+    },
+    {
+      "file": "assets/resources/comic/mech.png",
+      "bytes": 295406,
+      "sha256": "6ef9b5b625110f723b6b5a560e8036f96cd760d3b7de42e46c90bb7666b4871b"
+    },
+    {
+      "file": "assets/resources/comic/mech.png.meta",
+      "bytes": 974,
+      "sha256": "7a2542a474feaa0794887d144ae7d62c516ea815ffffac7747b289fb191acb7b"
+    },
+    {
+      "file": "assets/resources/comic/native.png",
+      "bytes": 253895,
+      "sha256": "a00888ed4a62d2f78752551a89a53502f45043596f50dd9ff01db4377023fa0d"
+    },
+    {
+      "file": "assets/resources/comic/native.png.meta",
+      "bytes": 976,
+      "sha256": "f2d8056720a4e6a5bf52b1e163b0d051e4ee733677bf724b3a75b8409e375216"
+    },
+    {
+      "file": "assets/resources/comic/rifle-actions.png",
+      "bytes": 17593,
+      "sha256": "79c160ccd0adb5eeffd150f0a956019fecae54bf3c73e21a329f67731ee8b613"
+    },
+    {
+      "file": "assets/resources/comic/rifle-actions.png.meta",
+      "bytes": 983,
+      "sha256": "532484c155d1fd8c196636594c9cd9990423eae5d7e97ca872a0bab29b1c63ff"
+    },
+    {
+      "file": "assets/resources/comic/rocket-aim.png",
+      "bytes": 27949,
+      "sha256": "dd9fd49fffa20b2e48b47a2dcaaa526bcef7cc9a0c627c5d95c7472d7ee7924a"
+    },
+    {
+      "file": "assets/resources/comic/rocket-aim.png.meta",
+      "bytes": 980,
+      "sha256": "e8e74da8624b411bffd9d8e38a00a7b49762baf603d48e4133171bb297905bd0"
+    },
+    {
+      "file": "assets/resources/comic/shotgun.png",
+      "bytes": 141058,
+      "sha256": "59dfac72a39146c631cb8befc31427c1068b1472b7c7029ef4b8231c2cb299a9"
+    },
+    {
+      "file": "assets/resources/comic/shotgun.png.meta",
+      "bytes": 977,
+      "sha256": "76753d736c801ab1d5711cae1d057b8edb3cf5767fd800054ea972ca5f1ddf28"
+    },
+    {
+      "file": "assets/resources/comic/supplement.png",
+      "bytes": 137522,
+      "sha256": "a80fd35bd63f9f5f0213b2eda1d7226dc8e849d61aa2fb29d24af511843e0f81"
+    },
+    {
+      "file": "assets/resources/comic/supplement.png.meta",
+      "bytes": 980,
+      "sha256": "fa5a13d8666f9f875ff9310706763dab22cd11f366528de7d48defee8bcd4f1c"
+    },
+    {
+      "file": "assets/resources/comic/title-cover.jpg",
+      "bytes": 337403,
+      "sha256": "26271d85a82f41c8c6ee4065a31ddfaf645c6f566a7c1c2be6fa18dc72bc4cdb"
+    },
+    {
+      "file": "assets/resources/comic/title-cover.jpg.meta",
+      "bytes": 982,
+      "sha256": "045878acb37c7b22e1a0fe536d6bf15207147525bbce396880f205b049e09530"
+    },
+    {
+      "file": "assets/scripts/camera/CameraFollow.ts",
+      "bytes": 1503,
+      "sha256": "dfa1a7c48941cb2e70081ad7ea2c780c02e5d0cfad301b5cd3c7d5121d6c0533"
+    },
+    {
+      "file": "assets/scripts/camera/CameraFollow.ts.meta",
+      "bytes": 170,
+      "sha256": "41fb39ca9873d1589080b832ae391bb8ae9618ff9743ddf15b08a1b53f3fe32d"
+    },
+    {
+      "file": "assets/scripts/combat/BossBeam.ts",
+      "bytes": 1272,
+      "sha256": "ecae698935b47683f10a6b957c1dd9aad5e343e366f5d4b060267bf9416618cb"
+    },
+    {
+      "file": "assets/scripts/combat/BossBeam.ts.meta",
+      "bytes": 170,
+      "sha256": "6c1c28f2f21c5c79970550c31c48bce8531a34e0838061ccd89bf234e8caac04"
+    },
+    {
+      "file": "assets/scripts/combat/ExplosionSystem.ts",
+      "bytes": 3098,
+      "sha256": "117248df3df8d04c4179d1a079c8cdb564e26d65d63a57a21fc0084b7f0c3bc0"
+    },
+    {
+      "file": "assets/scripts/combat/ExplosionSystem.ts.meta",
+      "bytes": 170,
+      "sha256": "bcc60f9d77c6d6c0a69d89733f01bc80c3a75b51c82f6ec0e7432d2712e89804"
+    },
+    {
+      "file": "assets/scripts/combat/GrenadeSystem.ts",
+      "bytes": 2793,
+      "sha256": "a76206723dbed99a794ccba78901fa41d8d1fed06c5c82fe3856d64dc98bbb72"
+    },
+    {
+      "file": "assets/scripts/combat/GrenadeSystem.ts.meta",
+      "bytes": 170,
+      "sha256": "d59a5b00f0b04223c0dd7c8c67a03387175340e8a9277922573d7f92fa8d405c"
+    },
+    {
+      "file": "assets/scripts/combat/MeleeGeometry.ts",
+      "bytes": 1086,
+      "sha256": "cc4db26d970f47918bdd97f8455174e3df8ba223bd6aa36bd75247d0ff8ab0a5"
+    },
+    {
+      "file": "assets/scripts/combat/MeleeGeometry.ts.meta",
+      "bytes": 170,
+      "sha256": "01b7afd43d6e2b7cb85762dadc3772f95198ac53becfb40604d0180d39c0c9f5"
+    },
+    {
+      "file": "assets/scripts/combat/MeleeSystem.ts",
+      "bytes": 7031,
+      "sha256": "b946e73eab798ee9a4b2cd2bc08a80b940481b13b936f63e9279e75ece49eabf"
+    },
+    {
+      "file": "assets/scripts/combat/MeleeSystem.ts.meta",
+      "bytes": 170,
+      "sha256": "351cf2d769af16f6c48af9702cd80515cb47873a688630500794b47ab250a97e"
+    },
+    {
+      "file": "assets/scripts/combat/ParticlePool.ts",
+      "bytes": 8701,
+      "sha256": "d1cfd17bdd6966dde07a1d20083c4fa8ff61b54c6f715d68a3b620e4ba3e3637"
+    },
+    {
+      "file": "assets/scripts/combat/ParticlePool.ts.meta",
+      "bytes": 170,
+      "sha256": "6274f8b258a48cdf6858c79cc111a7d5c549d0ff2619e532aaee7912a53ba5a1"
+    },
+    {
+      "file": "assets/scripts/combat/ProjectileManager.ts",
+      "bytes": 10232,
+      "sha256": "00b1a153ebabfd3e0c713bd2e8cf5ec4d29f637d65b50c67a68e3df4e3f4548c"
+    },
+    {
+      "file": "assets/scripts/combat/ProjectileManager.ts.meta",
+      "bytes": 170,
+      "sha256": "abf22f25dcdd71795bbfb6be7bb4ddb3313527c31e84aa2401c34c6cd9831ccb"
+    },
+    {
+      "file": "assets/scripts/combat/ProjectileProfile.ts",
+      "bytes": 853,
+      "sha256": "c5d6c72347ead992f8a145c2194e33f9dcad94c41fda8b8cfafe6fd595d2e803"
+    },
+    {
+      "file": "assets/scripts/combat/ProjectileProfile.ts.meta",
+      "bytes": 170,
+      "sha256": "6db717f1090083b80ebc2ecfc155963f818cfec30feeb30efcac9cf543c38057"
+    },
+    {
+      "file": "assets/scripts/combat/WeaponPresentation.ts",
+      "bytes": 759,
+      "sha256": "c8e6b2729087b09df587bce972710d06e7ac112744ea6cd444634993adea22bc"
+    },
+    {
+      "file": "assets/scripts/combat/WeaponPresentation.ts.meta",
+      "bytes": 170,
+      "sha256": "42c95c1b0fd0e77390c4084728b64f42200a982033d131b57d1e0c008e39f5d6"
+    },
+    {
+      "file": "assets/scripts/combat/WeaponSystem.ts",
+      "bytes": 6740,
+      "sha256": "6f5352be0521407466d844b2ecdad6cf337a8798913b13e5189c7e64018fd302"
+    },
+    {
+      "file": "assets/scripts/combat/WeaponSystem.ts.meta",
+      "bytes": 170,
+      "sha256": "6f6474f285f466caf1efbba33c0b405f1b985837e990b72e3c7e1d8b7592e80f"
+    },
+    {
+      "file": "assets/scripts/core/GameConfig.ts",
+      "bytes": 5696,
+      "sha256": "17fd109b64d2129796578be99b1cdfcceaf590083294db24d708188428a338e1"
+    },
+    {
+      "file": "assets/scripts/core/GameConfig.ts.meta",
+      "bytes": 170,
+      "sha256": "d54bc8c9ea52c8aaa50cd44adcbeb36e8b62000c59538812e51b643dc7d2673e"
+    },
+    {
+      "file": "assets/scripts/core/GameSession.ts",
+      "bytes": 24166,
+      "sha256": "476038dc795eddefaa9cb53e82912f685f49538c21899be2b96a5fccccfa1450"
+    },
+    {
+      "file": "assets/scripts/core/GameSession.ts.meta",
+      "bytes": 170,
+      "sha256": "6eeacac60fdc2e6fe43b0920a34155e8b3c67036333c1d35183d95ae966a4641"
+    },
+    {
+      "file": "assets/scripts/core/InputManager.ts",
+      "bytes": 3442,
+      "sha256": "88d426a6227d7f87e15c6fcea28f72d2497efb3ae04dacea9a3e27408920d6fc"
+    },
+    {
+      "file": "assets/scripts/core/InputManager.ts.meta",
+      "bytes": 170,
+      "sha256": "daa369f9be9735fd45f4c54982813c86cf92236047b823e3ff407f77d4ae61e8"
+    },
+    {
+      "file": "assets/scripts/core/StaticRectIndex.ts",
+      "bytes": 2097,
+      "sha256": "955c3de660637ff53c1c4a72bbfc15083783d991e9f87af020365ad29ea29c45"
+    },
+    {
+      "file": "assets/scripts/core/StaticRectIndex.ts.meta",
+      "bytes": 170,
+      "sha256": "444b63e75c77fa531679cb0be629bcefdcd7cdd0d9b32f6d15736b4416183483"
+    },
+    {
+      "file": "assets/scripts/core/TouchInputManager.ts",
+      "bytes": 4037,
+      "sha256": "622b03503119a5c5630201f9f8e607e914b13b3de2710b804c94100a8a71895d"
+    },
+    {
+      "file": "assets/scripts/core/TouchInputManager.ts.meta",
+      "bytes": 170,
+      "sha256": "90d363be98a45038c6d07c8018e9237f198a47298122c44bf5c50061385ef4b4"
+    },
+    {
+      "file": "assets/scripts/core/Types.ts",
+      "bytes": 3263,
+      "sha256": "02df22556802168bb2ec62ec47d5c1981b695e37a396860d5d3cbcf25e658ba3"
+    },
+    {
+      "file": "assets/scripts/core/Types.ts.meta",
+      "bytes": 170,
+      "sha256": "73ff30f8bd3378589acd3d7d3938f88ac18b3c1f8d1d69463adab42ed7902b9b"
+    },
+    {
+      "file": "assets/scripts/core/VictorySequence.ts",
+      "bytes": 2112,
+      "sha256": "f39bb148ada5c3ed912d0c33463c9f4b7aa9e9169dd7df1cecf1869db447bc50"
+    },
+    {
+      "file": "assets/scripts/core/VictorySequence.ts.meta",
+      "bytes": 170,
+      "sha256": "20c279e6de23ff5e6098cc1ec70afd8c5b0478ea2b1d946784625e3027a409f9"
+    },
+    {
+      "file": "assets/scripts/core/VirtualJoystick.ts",
+      "bytes": 1168,
+      "sha256": "9aff421b03b893b4de12aea902b4637d06ef0ad1c676ad6e9eb830e065713747"
+    },
+    {
+      "file": "assets/scripts/core/VirtualJoystick.ts.meta",
+      "bytes": 170,
+      "sha256": "2a6955ae8b06ece2f0727d3761d362f2e9dba1adf4ff9fd56eaf18fd8157b993"
+    },
+    {
+      "file": "assets/scripts/enemy/BossMotion.ts",
+      "bytes": 817,
+      "sha256": "f68722ceaf9cfd56048b8267e2bbfa751ed91e5d8d469df1104cd1859e0520df"
+    },
+    {
+      "file": "assets/scripts/enemy/BossMotion.ts.meta",
+      "bytes": 170,
+      "sha256": "000978af19ecfec1a6908ea8838c2e90d2a4ab4f01530dbb05ae3869435ad6f1"
+    },
+    {
+      "file": "assets/scripts/enemy/ColossusBoss.ts",
+      "bytes": 18905,
+      "sha256": "6007c66c28942aa40558b2af3fdc5e94c5e35aba038e71c4053359c531ede443"
+    },
+    {
+      "file": "assets/scripts/enemy/ColossusBoss.ts.meta",
+      "bytes": 170,
+      "sha256": "156141964a947c84adde9ecefb399c6b74788c78eba649b9da12efe5b815b2be"
+    },
+    {
+      "file": "assets/scripts/enemy/EnemyController.ts",
+      "bytes": 6497,
+      "sha256": "17a921c417a92faebd42ba5c1542126997661190c755bb64ba32c79dcff6402a"
+    },
+    {
+      "file": "assets/scripts/enemy/EnemyController.ts.meta",
+      "bytes": 170,
+      "sha256": "c7e4b03720a4ea35a8acb29583bca50b9c40bf5baae0460a8c04edb2f43df9ce"
+    },
+    {
+      "file": "assets/scripts/enemy/EnemySpawner.ts",
+      "bytes": 1979,
+      "sha256": "1cef550b4d9261564eb90c22614a85d64129ed7af795e94d38f4da9ad51c4b9b"
+    },
+    {
+      "file": "assets/scripts/enemy/EnemySpawner.ts.meta",
+      "bytes": 170,
+      "sha256": "cbd9f5be201efcc3a7e5f7bc0bd29f7c760404705bd3edb49cb29dc655d3c716"
+    },
+    {
+      "file": "assets/scripts/enemy/EnemyTactics.ts",
+      "bytes": 9889,
+      "sha256": "71f1774f6604a7de307b8c651888c0a6eefd3fa8fbc2a1fd8c6226ce7506c858"
+    },
+    {
+      "file": "assets/scripts/enemy/EnemyTactics.ts.meta",
+      "bytes": 170,
+      "sha256": "23b610ffbd20630d6492f8dc60d6ed40ef515bde59637db45158c69447855550"
+    },
+    {
+      "file": "assets/scripts/enemy/GroundPursuit.ts",
+      "bytes": 4888,
+      "sha256": "88f0b8b6c97dbdb737d0f6b52ed53ad8963ee4661e0a4ad2a6284d1c125782ed"
+    },
+    {
+      "file": "assets/scripts/enemy/GroundPursuit.ts.meta",
+      "bytes": 170,
+      "sha256": "4d7d617043d0a6a494b41e9352a5e06ad45d4575230228cb1671e706ff74c0c9"
+    },
+    {
+      "file": "assets/scripts/enemy/TankBoss.ts",
+      "bytes": 17819,
+      "sha256": "29b0248f0c09a689010b6c04385721c9fcfd6abb0f77af53c7fbe53a7e8a6009"
+    },
+    {
+      "file": "assets/scripts/enemy/TankBoss.ts.meta",
+      "bytes": 170,
+      "sha256": "33779a8d750332ed7519672d2031b2082789b6719f5ffe76a40674ded4c33ac3"
+    },
+    {
+      "file": "assets/scripts/flight/FlightAssets.ts",
+      "bytes": 4216,
+      "sha256": "69318e391e87ef941d25c17294b1e2a4e55e47f6dbf8b12148d69ebd4600c2f9"
+    },
+    {
+      "file": "assets/scripts/flight/FlightAssets.ts.meta",
+      "bytes": 170,
+      "sha256": "1f83ea94ff2075d6f92a20a679ab2506ce724dbd93bc3c06a5c7f880757e1df2"
+    },
+    {
+      "file": "assets/scripts/flight/FlightFrames.ts",
+      "bytes": 4425,
+      "sha256": "9456d1092f08950aaec4f7ef3ce20407de59e492997be20585487df65f8930ab"
+    },
+    {
+      "file": "assets/scripts/flight/FlightFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "dfd1c5ac2dfe5fa9a2b46c780bd0bfca2bf4999522f8f76201f61d238262ce09"
+    },
+    {
+      "file": "assets/scripts/flight/FlightLevel.ts",
+      "bytes": 2766,
+      "sha256": "118ed16d045b529d130222eaf787e6cfd5fa837a01b8579157bf8175884ba456"
+    },
+    {
+      "file": "assets/scripts/flight/FlightLevel.ts.meta",
+      "bytes": 170,
+      "sha256": "025b3b575d55ad387843c1ebd79a65ff8d210cf65fb503c27639bfd678bd407b"
+    },
+    {
+      "file": "assets/scripts/flight/FlightRenderer.ts",
+      "bytes": 14591,
+      "sha256": "8bede56ab88cbd9343e5803b5bb833271f030ac1ae1ac8b3564d432b53ab1a32"
+    },
+    {
+      "file": "assets/scripts/flight/FlightRenderer.ts.meta",
+      "bytes": 170,
+      "sha256": "f8276bf14fa96863fd4721d316b21523e7c732ee0e90fde6ad5b3518375c2a09"
+    },
+    {
+      "file": "assets/scripts/flight/FlightSession.ts",
+      "bytes": 32884,
+      "sha256": "2deddced89ed4a5ae138ff99af4d4ee79a3c94b27ab9063203de6388652f4a7d"
+    },
+    {
+      "file": "assets/scripts/flight/FlightSession.ts.meta",
+      "bytes": 170,
+      "sha256": "d47dfc56082c71fb1574fa49b48ac760e98cd68630bd5b01f990c4cf8c09d58e"
+    },
+    {
+      "file": "assets/scripts/level/LandDeckProfile.ts",
+      "bytes": 463,
+      "sha256": "0fd52d70330bfe2b51fd614dc855a18f71b81018c3f20f95d485743dc69ebfcb"
+    },
+    {
+      "file": "assets/scripts/level/LandDeckProfile.ts.meta",
+      "bytes": 170,
+      "sha256": "7cd2904482f62fdf29423717428cd577dd39a10317f7f41bbdc911414adb40e0"
+    },
+    {
+      "file": "assets/scripts/level/LevelController.ts",
+      "bytes": 9980,
+      "sha256": "06c26d23a9d380a72a9d940fdf20de016f040dbe03f77f88c1b1e9cbb83f4b2d"
+    },
+    {
+      "file": "assets/scripts/level/LevelController.ts.meta",
+      "bytes": 170,
+      "sha256": "e599afbe36873653017ab7581666b5be8eb20dba8638fca491129772100ed428"
+    },
+    {
+      "file": "assets/scripts/level/LevelData.ts",
+      "bytes": 14799,
+      "sha256": "d61af8b66916497cfd0ee594f4c02f366f27a4b057345933bad518b86a0fecc0"
+    },
+    {
+      "file": "assets/scripts/level/LevelData.ts.meta",
+      "bytes": 170,
+      "sha256": "09d5de913e2a6b35d78a71c883e2d5ad41e4a039fdd19c7d3da3f22af3a54086"
+    },
+    {
+      "file": "assets/scripts/level/MechanismController.ts",
+      "bytes": 2231,
+      "sha256": "3d43470e4da32157e99973b7dfa6a612e9eb080d97800fa5c53379d5ecf69fff"
+    },
+    {
+      "file": "assets/scripts/level/MechanismController.ts.meta",
+      "bytes": 170,
+      "sha256": "e4cb7c980c1eb16f3b9dae57a443ebd27ece634aaffa0114648d128f1bd90560"
+    },
+    {
+      "file": "assets/scripts/level/TerrainProfile.ts",
+      "bytes": 406,
+      "sha256": "a53c1868ecc27704e19a0254e833cf808636bf7e1e172f7337ee4f0b852b8429"
+    },
+    {
+      "file": "assets/scripts/level/TerrainProfile.ts.meta",
+      "bytes": 170,
+      "sha256": "fac1b60b0d76b801f848e1f87e7cb354f8eb3636e5325859ebeb72b389ff352e"
+    },
+    {
+      "file": "assets/scripts/player/PlayerController.ts",
+      "bytes": 7492,
+      "sha256": "26279fc33068f4f677d345fdbcf9fb1079a9462858d4e7e5571bf38d1b742216"
+    },
+    {
+      "file": "assets/scripts/player/PlayerController.ts.meta",
+      "bytes": 170,
+      "sha256": "685fb0b761d18532db7929603fbeca9841a772410d2e13b8f61ca15f49136b73"
+    },
+    {
+      "file": "assets/scripts/render/BossFrames.ts",
+      "bytes": 8282,
+      "sha256": "83378eda3e6d4e2fb4abd93d1d5085f9626302bd58ea816f64b71eb463d729b9"
+    },
+    {
+      "file": "assets/scripts/render/BossFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "0bc747d59b20b12cb3abb605c5dde0003bcf5e9669b216443114138b65d70026"
+    },
+    {
+      "file": "assets/scripts/render/BridgePresentation.ts",
+      "bytes": 368,
+      "sha256": "4d58bdb69514225b10073d9545150dc283bf969647f4b2e9830cf0c0b0404a0f"
+    },
+    {
+      "file": "assets/scripts/render/BridgePresentation.ts.meta",
+      "bytes": 170,
+      "sha256": "02dae2b8edc3dfa38f6360d34eed1f292bbe9dc23a9b3c0ba872a1ac4339ae43"
+    },
+    {
+      "file": "assets/scripts/render/CelebrationFrames.ts",
+      "bytes": 785,
+      "sha256": "1b48bbe1fb01038af45c240dbeb4b2059d56415401b24b07afe636a17157d5cb"
+    },
+    {
+      "file": "assets/scripts/render/CelebrationFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "de05f528e0e347f1f5a1d71597858178fce2f83ad04f68e52abf9d26419feb7e"
+    },
+    {
+      "file": "assets/scripts/render/CharacterArt.ts",
+      "bytes": 10883,
+      "sha256": "9d49f7bdf30473489a6c837e0c8f7eaca434e687f44992aa971d74e4fb702dc9"
+    },
+    {
+      "file": "assets/scripts/render/CharacterArt.ts.meta",
+      "bytes": 170,
+      "sha256": "e0648257f56dbaebb3806c425ad0daa86b134e00359f58b64bf4db2bbceb5a14"
+    },
+    {
+      "file": "assets/scripts/render/ColossusArt.ts",
+      "bytes": 5682,
+      "sha256": "2f28e07a6454567ecad034eeeda3c278bbb4381abe1b7d4a876fea80b08b29c4"
+    },
+    {
+      "file": "assets/scripts/render/ColossusArt.ts.meta",
+      "bytes": 170,
+      "sha256": "19f5ad5f4dda12209848b291d733d1228e27299c813d4501cd8569a1e2fa72f8"
+    },
+    {
+      "file": "assets/scripts/render/ColossusPresentation.ts",
+      "bytes": 3341,
+      "sha256": "7639641bd20a84a6d9f8750f9fc702acfd842463b9f57b0519b4de35d1447562"
+    },
+    {
+      "file": "assets/scripts/render/ColossusPresentation.ts.meta",
+      "bytes": 170,
+      "sha256": "a703d06e5981ee8d50f6ccef78cca78f231c224ab81f2fae53092793e5b3a8a9"
+    },
+    {
+      "file": "assets/scripts/render/CombatRenderer.ts",
+      "bytes": 20710,
+      "sha256": "0c0239e13cd7845bd04b934921a831951d0a425028c2517cbedac7ae048ea240"
+    },
+    {
+      "file": "assets/scripts/render/CombatRenderer.ts.meta",
+      "bytes": 170,
+      "sha256": "c8e738806f780d16e944208705768445e28518c57d04451996e6a17776eb9ba5"
+    },
+    {
+      "file": "assets/scripts/render/ComicActorArt.ts",
+      "bytes": 4276,
+      "sha256": "61cc5eda080869d47e7069537c635a484c0d9dcbec64003c9967a1e6c15b492e"
+    },
+    {
+      "file": "assets/scripts/render/ComicActorArt.ts.meta",
+      "bytes": 170,
+      "sha256": "829b05d611014462effda0ca5b25dbd8ca09552690f3965edd98d7ddfef49c6d"
+    },
+    {
+      "file": "assets/scripts/render/ComicAssets.ts",
+      "bytes": 10725,
+      "sha256": "67a8eeb8c1c52e12f1067eb2fe595af3f5397481f170fcbc0e81b484c4746217"
+    },
+    {
+      "file": "assets/scripts/render/ComicAssets.ts.meta",
+      "bytes": 170,
+      "sha256": "93561654e3a40bfa8772d73e1cf06bf145af03cd3c448d33454791b7b9448425"
+    },
+    {
+      "file": "assets/scripts/render/ComicCombatArt.ts",
+      "bytes": 9775,
+      "sha256": "8891860b1b85ddc3a30d1900c97370fd5b0561c0b0b52fe4cdf530b95499d101"
+    },
+    {
+      "file": "assets/scripts/render/ComicCombatArt.ts.meta",
+      "bytes": 170,
+      "sha256": "c7a011c6661c2391a664cd418d42c6d723cfb481d8d54d0fca7d2e6f736198ea"
+    },
+    {
+      "file": "assets/scripts/render/ComicEquipment.ts",
+      "bytes": 1751,
+      "sha256": "e9c96b100b2c413f922fac7c5b761470e2a5413aee828c283482031c8242e12d"
+    },
+    {
+      "file": "assets/scripts/render/ComicEquipment.ts.meta",
+      "bytes": 170,
+      "sha256": "7506f3f9dd1fcb379acc985c37c9da3a597e061a124f2a178300ffcaff157362"
+    },
+    {
+      "file": "assets/scripts/render/ComicFrames.ts",
+      "bytes": 28855,
+      "sha256": "a126a1f1800f5f71771422c9016cf0eb86774e137bc4221fa5ee2ad836de8be8"
+    },
+    {
+      "file": "assets/scripts/render/ComicFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "33f0fbd13b2d5db8571762daca53331fe2828f43280bee0c4c0dea2d5d3cd274"
+    },
+    {
+      "file": "assets/scripts/render/ComicLevelRenderer.ts",
+      "bytes": 6058,
+      "sha256": "f2d440647edc4912b190737cc17afe28c905978a485f2c32f189500f93ae5fea"
+    },
+    {
+      "file": "assets/scripts/render/ComicLevelRenderer.ts.meta",
+      "bytes": 170,
+      "sha256": "36bbe3d392505aa501a0b6b1476090e42e3349064f9118ea55a3ddaa6605e0e5"
+    },
+    {
+      "file": "assets/scripts/render/ComicObjectArt.ts",
+      "bytes": 3846,
+      "sha256": "3c0e4d7b08667c43aa3081f062c057bae8d810055d56637ca03a41a57ef62cd6"
+    },
+    {
+      "file": "assets/scripts/render/ComicObjectArt.ts.meta",
+      "bytes": 170,
+      "sha256": "5e1a0c0826c4e13924aadaf4a8cf546e04245d44e7f5779cd7d7e89275dce546"
+    },
+    {
+      "file": "assets/scripts/render/ComicPose.ts",
+      "bytes": 4948,
+      "sha256": "cc1712c58ec98e621c003ac6eda3f9a483f180f97b0c3a4ea750ff6a7280fdb5"
+    },
+    {
+      "file": "assets/scripts/render/ComicPose.ts.meta",
+      "bytes": 170,
+      "sha256": "b4a880ed76db0be8b4a6a78f5398230e1a37e274c6d4c6dc564bc94d57bcfe60"
+    },
+    {
+      "file": "assets/scripts/render/DirectFrames.ts",
+      "bytes": 19172,
+      "sha256": "5590aca2e44dae925329a4404dc4f2724929a84bb6ffd3a4d2d48c1533a4ea0b"
+    },
+    {
+      "file": "assets/scripts/render/DirectFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "5cc03e15581fa1fc1b74e008a0254e16cddd0f20a664736a1e049d70eceaf668"
+    },
+    {
+      "file": "assets/scripts/render/DirectPose.ts",
+      "bytes": 7639,
+      "sha256": "ce005e489ffac83915435a303e706b212673740228a4ccc3eb686f59cff645fd"
+    },
+    {
+      "file": "assets/scripts/render/DirectPose.ts.meta",
+      "bytes": 170,
+      "sha256": "2aa6c0ac26489ad283f749a5cf778c6912040ebe02066840fc9441aac9e9ffaf"
+    },
+    {
+      "file": "assets/scripts/render/FeedbackFrames.ts",
+      "bytes": 433,
+      "sha256": "b0e207aaa72295c26fb99c913b7b8d690996c096690fe6d390f28e684c6ecfc3"
+    },
+    {
+      "file": "assets/scripts/render/FeedbackFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "ee4dbb2ecbc62579c2eaa289c9128bd19fedc54ec952075d7bba5935aa23911d"
+    },
+    {
+      "file": "assets/scripts/render/Ink.ts",
+      "bytes": 2960,
+      "sha256": "3cca2d115c9342b2ed9ebeff9fcf9543de2d8d1f5a547a689e0c445d969f1db1"
+    },
+    {
+      "file": "assets/scripts/render/Ink.ts.meta",
+      "bytes": 170,
+      "sha256": "3a17fdc1c0337b2793d7c20160c399e1bf33873bfbb28492380273d41b11f069"
+    },
+    {
+      "file": "assets/scripts/render/LandContourPlan.ts",
+      "bytes": 478,
+      "sha256": "e336f435a27602d057b19731cf17264861492e87fb653c879046f764e0647692"
+    },
+    {
+      "file": "assets/scripts/render/LandContourPlan.ts.meta",
+      "bytes": 171,
+      "sha256": "ee2a9570136fb48937541b3017dfe456ddb1c07f36f96d8a3e2268ce12adc86a"
+    },
+    {
+      "file": "assets/scripts/render/LandDetailFrames.ts",
+      "bytes": 880,
+      "sha256": "b9b4c62aa284b22ed322160fa106e3647bd4b155c125f36385617366aca833a7"
+    },
+    {
+      "file": "assets/scripts/render/LandDetailFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "3ae6f2caa001ee67a7836b69653cbf9e11bba25232f7344dbfa1bae9854588bb"
+    },
+    {
+      "file": "assets/scripts/render/LandDrawnFrames.ts",
+      "bytes": 889,
+      "sha256": "2b9010d982906be1982a364d30dfe6fececbeeb560ac1b4960bb34675a5edd5b"
+    },
+    {
+      "file": "assets/scripts/render/LandDrawnFrames.ts.meta",
+      "bytes": 171,
+      "sha256": "35c856c42cb8a0ccd1dccf86691e6f3ea934ffd223791652af8111cdfa21aa46"
+    },
+    {
+      "file": "assets/scripts/render/LandDrawnPlan.ts",
+      "bytes": 4266,
+      "sha256": "51f9677536a392076cf1c27959a41bf58be61fdeb6ff7f7aeabbe9cc852d4451"
+    },
+    {
+      "file": "assets/scripts/render/LandDrawnPlan.ts.meta",
+      "bytes": 171,
+      "sha256": "ce3c8e5e857c046eb3c58d0b0387a8904f2000e55f84142853331447c7619d92"
+    },
+    {
+      "file": "assets/scripts/render/LandInkFrames.ts",
+      "bytes": 664,
+      "sha256": "2110d8fbac290ae13329079a8a0513da4c3fb697c09ab110918114aecab9701f"
+    },
+    {
+      "file": "assets/scripts/render/LandInkFrames.ts.meta",
+      "bytes": 171,
+      "sha256": "0936f4a8dc2f21f7090a40a97b1707f83054dd02b7dbd434e185b5b0a6e11c7a"
+    },
+    {
+      "file": "assets/scripts/render/LandPolishFrames.ts",
+      "bytes": 902,
+      "sha256": "2bcdee63a2260df8c6fd673bc44076adff6a22ac3a5551db0b471c20fd82cc5c"
+    },
+    {
+      "file": "assets/scripts/render/LandPolishFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "513f1e62139b60ff6b9eab4d70931d25a9547a5a72df2134680c0880108061b4"
+    },
+    {
+      "file": "assets/scripts/render/LandTerrainPlan.ts",
+      "bytes": 3328,
+      "sha256": "c4dc1a3364abf528baba2b6cee46f45c252449a7bb13e9bfaa13c61d2e5e7571"
+    },
+    {
+      "file": "assets/scripts/render/LandTerrainPlan.ts.meta",
+      "bytes": 170,
+      "sha256": "5d2c708b791e5cb33f612a8ad9eadb8d30ff513aeee3993e92103ef52d9d7e87"
+    },
+    {
+      "file": "assets/scripts/render/LevelRenderer.ts",
+      "bytes": 8249,
+      "sha256": "0b8ed63ccdabb64f2916fa935dcc087cabcfcb5b8d41b594cca99c84cfc58fa7"
+    },
+    {
+      "file": "assets/scripts/render/LevelRenderer.ts.meta",
+      "bytes": 170,
+      "sha256": "80e52abfa3b2e4d867cf7b1b5464c0e156590986db378180668fe47d88db1ca0"
+    },
+    {
+      "file": "assets/scripts/render/MechFrames.ts",
+      "bytes": 3306,
+      "sha256": "3079a6c44b7466927bacbd6793618a10e7a03d58cec15f176de6962f989c291a"
+    },
+    {
+      "file": "assets/scripts/render/MechFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "70f4927e5a76f5229159c703587ff75e70e694242e2bbb2f14e6e5f265b5f3cc"
+    },
+    {
+      "file": "assets/scripts/render/MechanicalEnemyArt.ts",
+      "bytes": 4282,
+      "sha256": "b47c8c4cf5c5121d5dd85cba26853cc9aadd33b0e35e227298a99c71c86d5302"
+    },
+    {
+      "file": "assets/scripts/render/MechanicalEnemyArt.ts.meta",
+      "bytes": 170,
+      "sha256": "e9f953325087152d9c2bf2ee6a04653dee184dbc783a01e5070ed89de58c03a5"
+    },
+    {
+      "file": "assets/scripts/render/MeleePose.ts",
+      "bytes": 1337,
+      "sha256": "b7cec67e76b5d5db2833a1ac0a4cf541a740aa5e89cbe0d2e26a0ef471541243"
+    },
+    {
+      "file": "assets/scripts/render/MeleePose.ts.meta",
+      "bytes": 170,
+      "sha256": "69fd13ff7c7f4b7cc3fc8a6ef25f4a3d16d7c6e50b0fd73cd33d9e85dc9753c0"
+    },
+    {
+      "file": "assets/scripts/render/MotionFrames.ts",
+      "bytes": 8329,
+      "sha256": "57c60fff65cd66a171feb97ad3004a9836d0e4da2dd4e065ab882c2f58094239"
+    },
+    {
+      "file": "assets/scripts/render/MotionFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "07feff52a3201dd231a144e0c9a816d72830c98416e2a2a73fdc81146f60b844"
+    },
+    {
+      "file": "assets/scripts/render/ObjectPresentation.ts",
+      "bytes": 2843,
+      "sha256": "405d799e122f030cd0d9a779f326ae8f5d8b953d7d1d9e1053b7b5930f82ca71"
+    },
+    {
+      "file": "assets/scripts/render/ObjectPresentation.ts.meta",
+      "bytes": 170,
+      "sha256": "e199bd34e23be22d0a638760dfde5356c8a503f05bb9deef01a62dd0a7604b69"
+    },
+    {
+      "file": "assets/scripts/render/ObjectRenderer.ts",
+      "bytes": 11179,
+      "sha256": "18b6d2a01aa9ac7ddbdbb4b3f7926271cb348c005de195d8074320b1b71ae7c1"
+    },
+    {
+      "file": "assets/scripts/render/ObjectRenderer.ts.meta",
+      "bytes": 170,
+      "sha256": "accac2821726a4725564516369e90388700248a663bef460957e09b437103d55"
+    },
+    {
+      "file": "assets/scripts/render/PoseInterpolation.ts",
+      "bytes": 1457,
+      "sha256": "cf85d9db548d9eaca9403f79c8b0c66d5fc1f20e5c22d621471ca9f8c6e91c7f"
+    },
+    {
+      "file": "assets/scripts/render/PoseInterpolation.ts.meta",
+      "bytes": 170,
+      "sha256": "56026d0c11cc5147c75726f5e806717056a7d45ce8d0a4c199fadd15b53bc1f1"
+    },
+    {
+      "file": "assets/scripts/render/ProjectileArt.ts",
+      "bytes": 4238,
+      "sha256": "4d3e959144ef6528d0451a1c8fdd7d5a589b37468e655fed6c840040a69903ef"
+    },
+    {
+      "file": "assets/scripts/render/ProjectileArt.ts.meta",
+      "bytes": 170,
+      "sha256": "d352485b606c3a69bd1e075fef21fa3f6bd53e4ab361ba219c4ba115927930e1"
+    },
+    {
+      "file": "assets/scripts/render/RifleActionFrames.ts",
+      "bytes": 2442,
+      "sha256": "4afb5fe056716f1c5e0e2c38d3dac8952f2f8656a958252b3b0f395819516a78"
+    },
+    {
+      "file": "assets/scripts/render/RifleActionFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "b21aaeab10c7b9041ae40801bef60e48079208deaddf1b5018ca900fe3c2356a"
+    },
+    {
+      "file": "assets/scripts/render/RocketAimFrames.ts",
+      "bytes": 2587,
+      "sha256": "f36ebf33d9c3e045358a180a895a409443fbb73fca2c9dee3b372d1b9849f90b"
+    },
+    {
+      "file": "assets/scripts/render/RocketAimFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "aaad0053f4fd313a6f4ac997f1152846ed5dc48e5280aa623c5413b8d154d044"
+    },
+    {
+      "file": "assets/scripts/render/RocketPresentation.ts",
+      "bytes": 622,
+      "sha256": "726233fdd02faab68a2bc58b30870d38f4c62a5390b466c1e94dd52e578a3a74"
+    },
+    {
+      "file": "assets/scripts/render/RocketPresentation.ts.meta",
+      "bytes": 170,
+      "sha256": "420f25712dd44bda83c6cefb61e0c581d513767d2093dbadb422e88029a4eb47"
+    },
+    {
+      "file": "assets/scripts/render/RocketWalkFrames.ts",
+      "bytes": 1906,
+      "sha256": "bf0f9be8ac07dae4e49777daef5f95d6a8d68aed1c3699baca7702b45604618f"
+    },
+    {
+      "file": "assets/scripts/render/RocketWalkFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "5fedd4c766a26bef92dec0540a51feb7e412ef658b98cc3ee674b41ef66966a4"
+    },
+    {
+      "file": "assets/scripts/render/SandbagFrames.ts",
+      "bytes": 498,
+      "sha256": "2dda187c2a3cf22e9041cbbe75363c8fd4a78b482a878149063ceeff5e0cdb71"
+    },
+    {
+      "file": "assets/scripts/render/SandbagFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "8acee5c2c111dae90a1df1e587656f780743a0d3599ef6513e3f061fbbe900a1"
+    },
+    {
+      "file": "assets/scripts/render/SceneryArt.ts",
+      "bytes": 10077,
+      "sha256": "13f42e2c984dfea5dada5461ead3a9fbcf264bf2b8588ac93bd7c89cb95ddb37"
+    },
+    {
+      "file": "assets/scripts/render/SceneryArt.ts.meta",
+      "bytes": 170,
+      "sha256": "a9e821cf54a080029d3ffbbf592bb23a073e2e95d301ede2589fd44c17c1fbe5"
+    },
+    {
+      "file": "assets/scripts/render/ShieldBreakFrames.ts",
+      "bytes": 1002,
+      "sha256": "5f111b426e0b5d9bd9e0b76b831e5c4cfe16bd52b420a25f385f4c6d13187fd8"
+    },
+    {
+      "file": "assets/scripts/render/ShieldBreakFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "48f6f2ae9de400846f1e25d2c996217b821c5a169aa639deaba09ef8e463d31a"
+    },
+    {
+      "file": "assets/scripts/render/ShotgunFrames.ts",
+      "bytes": 10947,
+      "sha256": "d3013c1292521731e5b9d08a1b0b5e604a9838af9112b9a22f3ddb7fed6f8fd1"
+    },
+    {
+      "file": "assets/scripts/render/ShotgunFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "057518362cdf5050d6669d9e72c14fde53c34de0ac5c794a39d2e7f139478bb1"
+    },
+    {
+      "file": "assets/scripts/render/StickmanAnimator.ts",
+      "bytes": 7244,
+      "sha256": "7e2bb8c4044fd20db88cd928967641e978f5f4bb316d7d673672393a3ae8e3e1"
+    },
+    {
+      "file": "assets/scripts/render/StickmanAnimator.ts.meta",
+      "bytes": 170,
+      "sha256": "aefce215a13be6d2cb4c96e7914ea6f70a45729bda1eed1414ce5f3093376a04"
+    },
+    {
+      "file": "assets/scripts/render/StickmanRenderer.ts",
+      "bytes": 1891,
+      "sha256": "803a2f9e193dbc55c36545ef6a03a2fb82acef7b3ee9fcecbe204b2be5412078"
+    },
+    {
+      "file": "assets/scripts/render/StickmanRenderer.ts.meta",
+      "bytes": 170,
+      "sha256": "f431bc45baa5727e10651bd7d3520c1d8e6f07e12dc82ff5a8c8e44171a8ca86"
+    },
+    {
+      "file": "assets/scripts/render/SupplementFrames.ts",
+      "bytes": 14870,
+      "sha256": "ef365eb794798625aa5fbc1f6ccac75bb1151508bf8d601642f7968c9b657995"
+    },
+    {
+      "file": "assets/scripts/render/SupplementFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "8e75386726157a0da78b160cb445b56730a584c98ab8e321cab5a46d934e7337"
+    },
+    {
+      "file": "assets/scripts/render/TankPresentation.ts",
+      "bytes": 1036,
+      "sha256": "ecbc79ed83c4449ecd3dd9cefaa6e314a3f119c71fb527e257814575d77af282"
+    },
+    {
+      "file": "assets/scripts/render/TankPresentation.ts.meta",
+      "bytes": 170,
+      "sha256": "0ab36340cbc75d4121da72bb4c41505468f7790bfa8fd1c8683decbe2200ed5f"
+    },
+    {
+      "file": "assets/scripts/render/TerrainInk.ts",
+      "bytes": 3084,
+      "sha256": "c65b48e89aa217d29864e7ceff15b01cb4ef13f161557b6674db8477e823a6bd"
+    },
+    {
+      "file": "assets/scripts/render/TerrainInk.ts.meta",
+      "bytes": 171,
+      "sha256": "85442f098b4f4f24de88c16f60ddc9429178511e86da0f31a5225ee9a34c0a35"
+    },
+    {
+      "file": "assets/scripts/render/TerrainSurface.ts",
+      "bytes": 952,
+      "sha256": "ef2cfc6d4ae6db17a2e228551830a05b11ef1d3b1acb6e275f5b094adf1abe0d"
+    },
+    {
+      "file": "assets/scripts/render/TerrainSurface.ts.meta",
+      "bytes": 170,
+      "sha256": "8efa1c1c64e6653009b93addf254715ab3fc2fafc9b6994e4366787d88875fe4"
+    },
+    {
+      "file": "assets/scripts/render/TerrainTiles.ts",
+      "bytes": 4272,
+      "sha256": "8aba82e00698b308882e092edb4a93ab3cf0d9b9152fedc108a43c1984790ef3"
+    },
+    {
+      "file": "assets/scripts/render/TerrainTiles.ts.meta",
+      "bytes": 170,
+      "sha256": "c04d82523a88670d50e2ebf7f54306826c20f91a23a836b3a4db7d807580dd8c"
+    },
+    {
+      "file": "assets/scripts/render/TerrainV088Frames.ts",
+      "bytes": 1030,
+      "sha256": "fd98d5a0a460a1fb72356ae21c52181696d3e4abd186d7893dd4ba4897007208"
+    },
+    {
+      "file": "assets/scripts/render/TerrainV088Frames.ts.meta",
+      "bytes": 170,
+      "sha256": "f1c331936dacd611c399bc92cece7495b97a0ac0c3ecd87392ae99f85878b089"
+    },
+    {
+      "file": "assets/scripts/render/UnifiedActorFrames.ts",
+      "bytes": 55649,
+      "sha256": "75e9283b28479eefce01309921ed5d3b55cc95af8be2603cbe60119f851052f0"
+    },
+    {
+      "file": "assets/scripts/render/UnifiedActorFrames.ts.meta",
+      "bytes": 170,
+      "sha256": "ae8dcdc47bab995114496e0f0c542dc4b1e629c9b3beea76cdee11808c739558"
+    },
+    {
+      "file": "assets/scripts/render/UnifiedSoilFrame.ts",
+      "bytes": 208,
+      "sha256": "1a45f9f8d937f874e6a2804ecd818ab494063b35de09548bf8e71152886072a9"
+    },
+    {
+      "file": "assets/scripts/render/UnifiedSoilFrame.ts.meta",
+      "bytes": 170,
+      "sha256": "45e86389e2a0eff94fe622bc5a469a35ef038d5dcb0d5743698386b91d72d52c"
+    },
+    {
+      "file": "assets/scripts/render/WeaponArt.ts",
+      "bytes": 2432,
+      "sha256": "82e007b2de3672f0e848c2cade142876a8ddc88ba76d93c8d92556bc6af39013"
+    },
+    {
+      "file": "assets/scripts/render/WeaponArt.ts.meta",
+      "bytes": 170,
+      "sha256": "0512e9557df2a1c18e6d6cc8e6a854cfe901d05436e58aa62da96b6f965561f9"
+    }
+  ]
+}

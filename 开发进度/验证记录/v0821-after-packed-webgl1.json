@@ -1,0 +1,7281 @@
+{
+  "version": "0.8.21",
+  "startedAt": "2026-11-12T06:22:49.110Z",
+  "passed": true,
+  "method": "Normal touch/keyboard input and read-only snapshots. Packed mode selects real mini-game atlas path before preload plus WebGL1 in desktop Chrome; not iPhone runtime.",
+  "viewport": {
+    "width": 852,
+    "height": 393
+  },
+  "engine": {
+    "version": "0.8.21",
+    "api": 6,
+    "webgl": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+    "dynamicAtlas": false,
+    "cleanup": true
+  },
+  "touch": [
+    {
+      "shoot": false,
+      "points": [
+        {
+          "angle": 0,
+          "player": {
+            "x": 1063.4842574764477,
+            "y": 360,
+            "vx": 277.8101393056086,
+            "vy": 0,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": 95.76,
+            "y": 0,
+            "axis": 1,
+            "vertical": 0,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 0
+          },
+          "shoot": false
+        },
+        {
+          "angle": 60,
+          "player": {
+            "x": 1130.3139243206313,
+            "y": 437.9392398441994,
+            "vx": 141.13412396090922,
+            "vy": 240.49151621045144,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": 47.87999357692248,
+            "y": 82.93059637476306,
+            "axis": 0.4999999329252556,
+            "vertical": 0.866025442510057,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 0
+          },
+          "shoot": false
+        },
+        {
+          "angle": 120,
+          "player": {
+            "x": 1096.406571893619,
+            "y": 534.7772640843764,
+            "vx": -137.6863318640603,
+            "vy": 242.47069292518822,
+            "health": 5,
+            "facing": -1,
+            "alive": true
+          },
+          "stick": {
+            "x": -47.879998134808346,
+            "y": 82.93059374326671,
+            "axis": -0.4999999805222259,
+            "vertical": 0.8660254150299365,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 0
+          },
+          "shoot": false
+        },
+        {
+          "angle": 180,
+          "player": {
+            "x": 995.590150113094,
+            "y": 553.8315825892507,
+            "vx": -278.82879450962304,
+            "vy": 1.9954724695749035,
+            "health": 5,
+            "facing": -1,
+            "alive": true
+          },
+          "stick": {
+            "x": -95.76,
+            "y": 0,
+            "axis": -1,
+            "vertical": 0,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 0
+          },
+          "shoot": false
+        },
+        {
+          "angle": -120,
+          "player": {
+            "x": 928.6804190857362,
+            "y": 476.04916315106556,
+            "vx": -141.142550977489,
+            "vy": -240.4750687223731,
+            "health": 5,
+            "facing": -1,
+            "alive": true
+          },
+          "stick": {
+            "x": -47.88000866079578,
+            "y": -82.93058766608446,
+            "axis": -0.5000000904427295,
+            "vertical": -0.8660253515672981,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 0
+          },
+          "shoot": false
+        },
+        {
+          "angle": -60,
+          "player": {
+            "x": 962.5871148929208,
+            "y": 379.2124346586969,
+            "vx": 137.68627981881994,
+            "vy": -242.4705475743351,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": 47.880004102909574,
+            "y": -82.93059029758177,
+            "axis": 0.5000000428457558,
+            "vertical": -0.8660253790474287,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 0
+          },
+          "shoot": false
+        }
+      ]
+    },
+    {
+      "shoot": true,
+      "points": [
+        {
+          "angle": 0,
+          "player": {
+            "x": 1065.898039996304,
+            "y": 360,
+            "vx": 277.83092828394456,
+            "vy": 0,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": 95.76,
+            "y": 0,
+            "axis": 1,
+            "vertical": 0,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 0
+          },
+          "shoot": true
+        },
+        {
+          "angle": 60,
+          "player": {
+            "x": 1132.729340521696,
+            "y": 437.9392398441994,
+            "vx": 141.13429504894233,
+            "vy": 240.49151621045144,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": 47.87999357692248,
+            "y": 82.93059637476306,
+            "axis": 0.4999999329252556,
+            "vertical": 0.866025442510057,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0.07866666666666669,
+            "shakePower": 3.1,
+            "blastCount": 0
+          },
+          "shoot": true
+        },
+        {
+          "angle": 120,
+          "player": {
+            "x": 1098.8220015394677,
+            "y": 534.7772640843764,
+            "vx": -137.6863304560491,
+            "vy": 242.47069292518822,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": -47.879998134808346,
+            "y": 82.93059374326671,
+            "axis": -0.4999999805222259,
+            "vertical": 0.8660254150299365,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 180,
+          "player": {
+            "x": 998.0055798695897,
+            "y": 553.8315825892507,
+            "vx": -278.82879449803545,
+            "vy": 1.9954724695749035,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": -95.76,
+            "y": 0,
+            "axis": -1,
+            "vertical": 0,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": -120,
+          "player": {
+            "x": 931.0958488431426,
+            "y": 476.04916315106556,
+            "vx": -141.14255097739365,
+            "vy": -240.4750687223731,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": -47.88000866079578,
+            "y": -82.93058766608446,
+            "axis": -0.5000000904427295,
+            "vertical": -0.8660253515672981,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": -60,
+          "player": {
+            "x": 965.0025446503349,
+            "y": 379.2124346586969,
+            "vx": 137.68627981882074,
+            "vy": -242.4705475743351,
+            "health": 5,
+            "facing": 1,
+            "alive": true
+          },
+          "stick": {
+            "x": 47.880004102909574,
+            "y": -82.93059029758177,
+            "axis": 0.5000000428457558,
+            "vertical": -0.8660253790474287,
+            "owner": 1
+          },
+          "impact": {
+            "hitStop": 0,
+            "shakeTime": 0,
+            "shakePower": 0,
+            "blastCount": 1
+          },
+          "shoot": true
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "wall": 0.016,
+      "time": 8.116666666666847,
+      "delta": 0.01666666666666572,
+      "dx": 0.6450076007340613,
+      "player": {
+        "x": 840.6450076007341,
+        "y": 360,
+        "vx": 50.75538913816511,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.032,
+      "time": 8.116666666666847,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 840.6450076007341,
+        "y": 360,
+        "vx": 50.75538913816511,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.048,
+      "time": 8.150000000000178,
+      "delta": 0.03333333333333144,
+      "dx": 3.344878687443952,
+      "player": {
+        "x": 843.989886288178,
+        "y": 360,
+        "vx": 126.33274189367266,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.064,
+      "time": 8.166666666666844,
+      "delta": 0.01666666666666572,
+      "dx": 2.459533374879811,
+      "player": {
+        "x": 846.4494196630578,
+        "y": 360,
+        "vx": 154.187890047178,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.08,
+      "time": 8.175000000000177,
+      "delta": 0.00833333333333286,
+      "dx": 1.3846707939386533,
+      "player": {
+        "x": 847.8340904569965,
+        "y": 360,
+        "vx": 166.1604952726323,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.096,
+      "time": 8.191666666666842,
+      "delta": 0.01666666666666572,
+      "dx": 3.0315821086377355,
+      "player": {
+        "x": 850.8656725656342,
+        "y": 360,
+        "vx": 186.79609656453778,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.112,
+      "time": 8.208333333333508,
+      "delta": 0.01666666666666572,
+      "dx": 3.32797265512545,
+      "player": {
+        "x": 854.1936452207597,
+        "y": 360,
+        "vx": 203.69109795047652,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.128,
+      "time": 8.225000000000174,
+      "delta": 0.01666666666666572,
+      "dx": 3.570636710456597,
+      "player": {
+        "x": 857.7642819312163,
+        "y": 360,
+        "vx": 217.5235551584397,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.14400000000000002,
+      "time": 8.24166666666684,
+      "delta": 0.01666666666666572,
+      "dx": 3.7693132352227394,
+      "player": {
+        "x": 861.533595166439,
+        "y": 360,
+        "vx": 228.84861326523435,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.16000000000000003,
+      "time": 8.258333333333505,
+      "delta": 0.01666666666666572,
+      "dx": 3.931975815963483,
+      "player": {
+        "x": 865.4655709824025,
+        "y": 360,
+        "vx": 238.12078661766225,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.17600000000000005,
+      "time": 8.27500000000017,
+      "delta": 0.01666666666666572,
+      "dx": 4.065152673190937,
+      "player": {
+        "x": 869.5307236555934,
+        "y": 360,
+        "vx": 245.71220008916512,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.19200000000000006,
+      "time": 8.291666666666837,
+      "delta": 0.01666666666666572,
+      "dx": 4.174188661801281,
+      "player": {
+        "x": 873.7049123173947,
+        "y": 360,
+        "vx": 251.927523757615,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.20800000000000007,
+      "time": 8.308333333333502,
+      "delta": 0.01666666666666572,
+      "dx": 4.263459778868992,
+      "player": {
+        "x": 877.9683720962637,
+        "y": 360,
+        "vx": 257.01620038530837,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.2240000000000001,
+      "time": 8.325000000000168,
+      "delta": 0.01666666666666572,
+      "dx": 4.336548787773722,
+      "player": {
+        "x": 882.3049208840374,
+        "y": 360,
+        "vx": 261.1824564328701,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.2400000000000001,
+      "time": 8.341666666666834,
+      "delta": 0.01666666666666572,
+      "dx": 4.396389007076209,
+      "player": {
+        "x": 886.7013098911136,
+        "y": 360,
+        "vx": 264.593498384206,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.2560000000000001,
+      "time": 8.3583333333335,
+      "delta": 0.01666666666666572,
+      "dx": 4.445382034890031,
+      "player": {
+        "x": 891.1466919260037,
+        "y": 360,
+        "vx": 267.38622332980384,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.27200000000000013,
+      "time": 8.366666666666832,
+      "delta": 0.00833333333333286,
+      "dx": 2.2382215240504593,
+      "player": {
+        "x": 893.3849134500541,
+        "y": 360,
+        "vx": 268.5865828860575,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.28800000000000014,
+      "time": 8.383333333333498,
+      "delta": 0.01666666666666572,
+      "dx": 4.502734979489674,
+      "player": {
+        "x": 897.8876484295438,
+        "y": 360,
+        "vx": 270.6554844111088,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.30400000000000016,
+      "time": 8.400000000000164,
+      "delta": 0.01666666666666572,
+      "dx": 4.532450752970931,
+      "player": {
+        "x": 902.4200991825147,
+        "y": 360,
+        "vx": 272.3493577147581,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.3200000000000002,
+      "time": 8.41666666666683,
+      "delta": 0.01666666666666572,
+      "dx": 4.556779970571483,
+      "player": {
+        "x": 906.9768791530862,
+        "y": 360,
+        "vx": 273.7361838802737,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.3360000000000002,
+      "time": 8.433333333333495,
+      "delta": 0.01666666666666572,
+      "dx": 4.576699049219428,
+      "player": {
+        "x": 911.5535782023056,
+        "y": 360,
+        "vx": 274.87162111115447,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.3520000000000002,
+      "time": 8.450000000000161,
+      "delta": 0.01666666666666572,
+      "dx": 4.593007411481494,
+      "player": {
+        "x": 916.1465856137871,
+        "y": 360,
+        "vx": 275.80123849026626,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.3680000000000002,
+      "time": 8.466666666666827,
+      "delta": 0.01666666666666572,
+      "dx": 4.606359569197707,
+      "player": {
+        "x": 920.7529451829848,
+        "y": 360,
+        "vx": 276.56234482714086,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.38400000000000023,
+      "time": 8.483333333333492,
+      "delta": 0.01666666666666572,
+      "dx": 4.617291391340018,
+      "player": {
+        "x": 925.3702365743248,
+        "y": 360,
+        "vx": 277.1854859915026,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.40000000000000024,
+      "time": 8.500000000000158,
+      "delta": 0.01666666666666572,
+      "dx": 4.626241610314992,
+      "player": {
+        "x": 929.9964781846398,
+        "y": 360,
+        "vx": 277.6956708262744,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.41600000000000026,
+      "time": 8.500000000000158,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 929.9964781846398,
+        "y": 360,
+        "vx": 277.6956708262744,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.4320000000000003,
+      "time": 8.53333333333349,
+      "delta": 0.03333333333333144,
+      "dx": 9.273138370868764,
+      "player": {
+        "x": 939.2696165555086,
+        "y": 360,
+        "vx": 278.455361962187,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.4480000000000003,
+      "time": 8.550000000000155,
+      "delta": 0.01666666666666572,
+      "dx": 4.644480925351104,
+      "player": {
+        "x": 943.9140974808597,
+        "y": 360,
+        "vx": 278.7353573360685,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.4640000000000003,
+      "time": 8.566666666666821,
+      "delta": 0.01666666666666572,
+      "dx": 4.648502517971792,
+      "player": {
+        "x": 948.5625999988315,
+        "y": 360,
+        "vx": 278.9645981593848,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.4800000000000003,
+      "time": 8.575000000000154,
+      "delta": 0.00833333333333286,
+      "dx": 2.325526080599275,
+      "player": {
+        "x": 950.8881260794308,
+        "y": 360,
+        "vx": 279.0631296719081,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.49600000000000033,
+      "time": 8.59166666666682,
+      "delta": 0.01666666666666572,
+      "dx": 4.6532103343503195,
+      "player": {
+        "x": 955.5413364137811,
+        "y": 360,
+        "vx": 279.2329554507449,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.5120000000000003,
+      "time": 8.608333333333485,
+      "delta": 0.01666666666666572,
+      "dx": 4.655649553575586,
+      "player": {
+        "x": 960.1969859673567,
+        "y": 360,
+        "vx": 279.371997038544,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.5280000000000004,
+      "time": 8.625000000000151,
+      "delta": 0.01666666666666572,
+      "dx": 4.657646617368982,
+      "player": {
+        "x": 964.8546325847257,
+        "y": 360,
+        "vx": 279.48583466243196,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.5440000000000004,
+      "time": 8.641666666666817,
+      "delta": 0.01666666666666572,
+      "dx": 4.659281674912336,
+      "player": {
+        "x": 969.513914259638,
+        "y": 360,
+        "vx": 279.57903702596633,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.5600000000000004,
+      "time": 8.658333333333482,
+      "delta": 0.01666666666666572,
+      "dx": 4.66062034680624,
+      "player": {
+        "x": 974.1745346064442,
+        "y": 360,
+        "vx": 279.6553446672514,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.5760000000000004,
+      "time": 8.675000000000148,
+      "delta": 0.01666666666666572,
+      "dx": 4.661716358653848,
+      "player": {
+        "x": 978.8362509650981,
+        "y": 360,
+        "vx": 279.71782007986644,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.5920000000000004,
+      "time": 8.691666666666814,
+      "delta": 0.01666666666666572,
+      "dx": 4.662613697259417,
+      "player": {
+        "x": 983.4988646623575,
+        "y": 360,
+        "vx": 279.76897062148555,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.6080000000000004,
+      "time": 8.70833333333348,
+      "delta": 0.01666666666666572,
+      "dx": 4.6633483759717365,
+      "player": {
+        "x": 988.1622130383292,
+        "y": 360,
+        "vx": 279.81084914294576,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.6240000000000004,
+      "time": 8.725000000000145,
+      "delta": 0.01666666666666572,
+      "dx": 4.663949880027076,
+      "player": {
+        "x": 992.8261629183563,
+        "y": 360,
+        "vx": 279.8451363763586,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.6400000000000005,
+      "time": 8.741666666666811,
+      "delta": 0.01666666666666572,
+      "dx": 4.664442349895239,
+      "player": {
+        "x": 997.4906052682516,
+        "y": 360,
+        "vx": 279.8732083887917,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.6560000000000005,
+      "time": 8.758333333333477,
+      "delta": 0.01666666666666572,
+      "dx": 4.664845550121299,
+      "player": {
+        "x": 1002.1554508183729,
+        "y": 360,
+        "vx": 279.89619180867146,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.6720000000000005,
+      "time": 8.76666666666681,
+      "delta": 0.00833333333333286,
+      "dx": 2.332550587201581,
+      "player": {
+        "x": 1004.4880014055744,
+        "y": 360,
+        "vx": 279.9060704641873,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.6880000000000005,
+      "time": 8.783333333333475,
+      "delta": 0.01666666666666572,
+      "dx": 4.665317550347822,
+      "player": {
+        "x": 1009.1533189559223,
+        "y": 360,
+        "vx": 279.9230970004078,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.7040000000000005,
+      "time": 8.800000000000141,
+      "delta": 0.01666666666666572,
+      "dx": 4.665562103646948,
+      "player": {
+        "x": 1013.8188810595692,
+        "y": 360,
+        "vx": 279.93703714922987,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.7200000000000005,
+      "time": 8.816666666666807,
+      "delta": 0.01666666666666572,
+      "dx": 4.665762326953768,
+      "player": {
+        "x": 1018.484643386523,
+        "y": 360,
+        "vx": 279.94845037777304,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.7360000000000005,
+      "time": 8.833333333333472,
+      "delta": 0.01666666666666572,
+      "dx": 4.665926255932504,
+      "player": {
+        "x": 1023.1505696424555,
+        "y": 360,
+        "vx": 279.95779473897323,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.7520000000000006,
+      "time": 8.850000000000138,
+      "delta": 0.01666666666666572,
+      "dx": 4.66606046962886,
+      "player": {
+        "x": 1027.8166301120843,
+        "y": 360,
+        "vx": 279.9654452548557,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.7680000000000006,
+      "time": 8.866666666666804,
+      "delta": 0.01666666666666572,
+      "dx": 4.666170354509177,
+      "player": {
+        "x": 1032.4828004665935,
+        "y": 360,
+        "vx": 279.9717089674856,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.7840000000000006,
+      "time": 8.88333333333347,
+      "delta": 0.01666666666666572,
+      "dx": 4.666260320640276,
+      "player": {
+        "x": 1037.1490607872338,
+        "y": 360,
+        "vx": 279.97683726164416,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.8000000000000006,
+      "time": 8.900000000000135,
+      "delta": 0.01666666666666572,
+      "dx": 4.6663339786784945,
+      "player": {
+        "x": 1041.8153947659123,
+        "y": 360,
+        "vx": 279.98103595378257,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.8160000000000006,
+      "time": 8.900000000000135,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 1041.8153947659123,
+        "y": 360,
+        "vx": 279.98103595378257,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.8320000000000006,
+      "time": 8.933333333333467,
+      "delta": 0.03333333333333144,
+      "dx": 9.332837944018593,
+      "player": {
+        "x": 1051.1482327099309,
+        "y": 360,
+        "vx": 279.98728801966655,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.8480000000000006,
+      "time": 8.950000000000133,
+      "delta": 0.01666666666666572,
+      "dx": 4.666484083627438,
+      "player": {
+        "x": 1055.8147167935583,
+        "y": 360,
+        "vx": 279.9895923107685,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.8640000000000007,
+      "time": 8.966666666666798,
+      "delta": 0.01666666666666572,
+      "dx": 4.666517180317442,
+      "player": {
+        "x": 1060.4812339738758,
+        "y": 360,
+        "vx": 279.9914789047577,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.8800000000000007,
+      "time": 8.975000000000131,
+      "delta": 0.00833333333333286,
+      "dx": 2.333269081618255,
+      "player": {
+        "x": 1062.814503055494,
+        "y": 360,
+        "vx": 279.9922897941821,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.8960000000000007,
+      "time": 8.991666666666797,
+      "delta": 0.01666666666666572,
+      "dx": 4.6665559244554515,
+      "player": {
+        "x": 1067.4810589799495,
+        "y": 360,
+        "vx": 279.99368741738436,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.9120000000000007,
+      "time": 9.008333333333463,
+      "delta": 0.01666666666666572,
+      "dx": 4.666575998612643,
+      "player": {
+        "x": 1072.147634978562,
+        "y": 360,
+        "vx": 279.99483169448126,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.9280000000000007,
+      "time": 9.025000000000128,
+      "delta": 0.01666666666666572,
+      "dx": 4.666592433942469,
+      "player": {
+        "x": 1076.8142274125046,
+        "y": 360,
+        "vx": 279.9957685493305,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.9440000000000007,
+      "time": 9.041666666666794,
+      "delta": 0.01666666666666572,
+      "dx": 4.666605890052551,
+      "player": {
+        "x": 1081.4808333025571,
+        "y": 360,
+        "vx": 279.99653558120673,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.9600000000000007,
+      "time": 9.05833333333346,
+      "delta": 0.01666666666666572,
+      "dx": 4.666616906983563,
+      "player": {
+        "x": 1086.1474502095407,
+        "y": 360,
+        "vx": 279.9971635737924,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.9760000000000008,
+      "time": 9.075000000000125,
+      "delta": 0.01666666666666572,
+      "dx": 4.666625926883853,
+      "player": {
+        "x": 1090.8140761364245,
+        "y": 360,
+        "vx": 279.997677730635,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 0.9920000000000008,
+      "time": 9.091666666666791,
+      "delta": 0.01666666666666572,
+      "dx": 4.666633311753685,
+      "player": {
+        "x": 1095.4807094481782,
+        "y": 360,
+        "vx": 279.998098686654,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 1.0080000000000007,
+      "time": 9.108333333333457,
+      "delta": 0.01666666666666572,
+      "dx": 4.666639357973509,
+      "player": {
+        "x": 1100.1473488061517,
+        "y": 360,
+        "vx": 279.9984433362924,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 1.0240000000000007,
+      "time": 9.125000000000123,
+      "delta": 0.01666666666666572,
+      "dx": 4.6666443081999205,
+      "player": {
+        "x": 1104.8139931143517,
+        "y": 360,
+        "vx": 279.9987255115504,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 1.0400000000000007,
+      "time": 9.141666666666788,
+      "delta": 0.01666666666666572,
+      "dx": 4.666648361102261,
+      "player": {
+        "x": 1109.480641475454,
+        "y": 360,
+        "vx": 279.99895653711184,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "wall": 1.0560000000000007,
+      "time": 9.158333333333454,
+      "delta": 0.01666666666666572,
+      "dx": 4.666651679338202,
+      "player": {
+        "x": 1114.1472931547921,
+        "y": 360,
+        "vx": 279.99914568484377,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.24000000000000002,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.1200000000000008,
+      "time": 9.216666666666784,
+      "delta": 0.05833333333333002,
+      "dx": 16.333299255883503,
+      "player": {
+        "x": 1130.4805924106756,
+        "y": 360,
+        "vx": 279.9995757596486,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.1816666666666667,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.1840000000000008,
+      "time": 9.283333333333447,
+      "delta": 0.06666666666666288,
+      "dx": 18.666648155776556,
+      "player": {
+        "x": 1149.1472405664522,
+        "y": 360,
+        "vx": 279.9998093765224,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.11500000000000005,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.2480000000000009,
+      "time": 9.35000000000011,
+      "delta": 0.06666666666666288,
+      "dx": 18.666658349187855,
+      "player": {
+        "x": 1167.81389891564,
+        "y": 360,
+        "vx": 279.9999143473503,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.048333333333333395,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.312000000000001,
+      "time": 9.40833333333344,
+      "delta": 0.05833333333333002,
+      "dx": 16.333329916767525,
+      "player": {
+        "x": 1184.1472288324076,
+        "y": 360,
+        "vx": 279.999957466153,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.376000000000001,
+      "time": 9.475000000000103,
+      "delta": 0.06666666666666288,
+      "dx": 18.666664810786415,
+      "player": {
+        "x": 1202.813893643194,
+        "y": 360,
+        "vx": 279.9999808883105,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.440000000000001,
+      "time": 9.541666666666766,
+      "delta": 0.06666666666666288,
+      "dx": 18.66666583276583,
+      "player": {
+        "x": 1221.4805594759598,
+        "y": 360,
+        "vx": 279.9999914125643,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.5040000000000011,
+      "time": 9.600000000000096,
+      "delta": 0.05833333333333002,
+      "dx": 16.33333299079254,
+      "player": {
+        "x": 1237.8138924667523,
+        "y": 360,
+        "vx": 279.99999573560564,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.5680000000000012,
+      "time": 9.666666666666758,
+      "delta": 0.06666666666666288,
+      "dx": 18.66666648059868,
+      "player": {
+        "x": 1256.480558947351,
+        "y": 360,
+        "vx": 279.9999980838841,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.6320000000000012,
+      "time": 9.733333333333421,
+      "delta": 0.06666666666666288,
+      "dx": 15.46203406802465,
+      "player": {
+        "x": 1271.9425930153757,
+        "y": 360,
+        "vx": -104.55590266528279,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0.044,
+        "shakeTime": 0.19666666666666668,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.6960000000000013,
+      "time": 9.741666666666754,
+      "delta": 0.00833333333333286,
+      "dx": -0.5663380838177545,
+      "player": {
+        "x": 1271.376254931558,
+        "y": 360,
+        "vx": -67.96057005814224,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.18833333333333335,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.7600000000000013,
+      "time": 9.808333333333417,
+      "delta": 0.06666666666666288,
+      "dx": 3.484094409821182,
+      "player": {
+        "x": 1274.860349341379,
+        "y": 360,
+        "vx": 123.65123750213712,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.1216666666666667,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.8240000000000014,
+      "time": 9.87500000000008,
+      "delta": 0.06666666666666288,
+      "dx": 11.844697201863482,
+      "player": {
+        "x": 1286.7050465432426,
+        "y": 360,
+        "vx": 209.74797250582577,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.05500000000000005,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.8880000000000015,
+      "time": 9.93333333333341,
+      "delta": 0.05833333333333002,
+      "dx": 13.531077116649612,
+      "player": {
+        "x": 1300.2361236598922,
+        "y": 360,
+        "vx": 245.11387558484304,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 1.9520000000000015,
+      "time": 10.000000000000073,
+      "delta": 0.06666666666666288,
+      "dx": 17.144479527457634,
+      "player": {
+        "x": 1317.3806031873498,
+        "y": 360,
+        "vx": 264.324653854473,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 2.0160000000000013,
+      "time": 10.05000000000007,
+      "delta": 0.04999999999999716,
+      "dx": 13.439600009325432,
+      "player": {
+        "x": 1330.8202031966753,
+        "y": 360,
+        "vx": 271.39718763553316,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 2.0800000000000014,
+      "time": 10.133333333333399,
+      "delta": 0.0833333333333286,
+      "dx": 22.902446270412156,
+      "player": {
+        "x": 1353.7226494670874,
+        "y": 360,
+        "vx": 276.8352021948572,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 2.1440000000000015,
+      "time": 10.191666666666729,
+      "delta": 0.05833333333333002,
+      "dx": 16.20709392586923,
+      "player": {
+        "x": 1369.9297433929567,
+        "y": 360,
+        "vx": 278.4284079204948,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "wall": 2.2080000000000015,
+      "time": 10.258333333333391,
+      "delta": 0.06666666666666288,
+      "dx": 18.59809335015143,
+      "player": {
+        "x": 1388.527836743108,
+        "y": 360,
+        "vx": 279.29383815890105,
+        "vy": 0,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.016,
+      "time": 8.091666666666848,
+      "delta": 0.01666666666666572,
+      "dx": 0.6450076007340613,
+      "player": {
+        "x": 840.6450076007341,
+        "y": 360,
+        "vx": 50.75538913816511,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.032,
+      "time": 8.108333333333514,
+      "delta": 0.01666666666666572,
+      "dx": 1.3740107109928203,
+      "player": {
+        "x": 842.0190183117269,
+        "y": 360,
+        "vx": 92.31038711002104,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.048,
+      "time": 8.12500000000018,
+      "delta": 0.01666666666666572,
+      "dx": 1.9708679764511317,
+      "player": {
+        "x": 843.989886288178,
+        "y": 360,
+        "vx": 126.33274189367266,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.064,
+      "time": 8.141666666666845,
+      "delta": 0.01666666666666572,
+      "dx": 2.459533374879811,
+      "player": {
+        "x": 846.4494196630578,
+        "y": 360,
+        "vx": 154.187890047178,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.08,
+      "time": 8.15833333333351,
+      "delta": 0.01666666666666572,
+      "dx": 2.8596187645385953,
+      "player": {
+        "x": 849.3090384275964,
+        "y": 360,
+        "vx": 176.9937564719962,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.096,
+      "time": 8.175000000000177,
+      "delta": 0.01666666666666572,
+      "dx": 3.1871809769093034,
+      "player": {
+        "x": 852.4962194045057,
+        "y": 360,
+        "vx": 195.66562066458346,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.112,
+      "time": 8.191666666666842,
+      "delta": 0.01666666666666572,
+      "dx": 3.4553662337235664,
+      "player": {
+        "x": 855.9515856382293,
+        "y": 360,
+        "vx": 210.95285009635023,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.128,
+      "time": 8.200000000000175,
+      "delta": 0.00833333333333286,
+      "dx": 1.8126962929869705,
+      "player": {
+        "x": 857.7642819312163,
+        "y": 360,
+        "vx": 217.5235551584397,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.14400000000000002,
+      "time": 8.21666666666684,
+      "delta": 0.01666666666666572,
+      "dx": 3.7693132352227394,
+      "player": {
+        "x": 861.533595166439,
+        "y": 360,
+        "vx": 228.84861326523435,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.16000000000000003,
+      "time": 8.233333333333507,
+      "delta": 0.01666666666666572,
+      "dx": 3.931975815963483,
+      "player": {
+        "x": 865.4655709824025,
+        "y": 360,
+        "vx": 238.12078661766225,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.17600000000000005,
+      "time": 8.233333333333507,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 865.4655709824025,
+        "y": 360,
+        "vx": 238.12078661766225,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.19200000000000006,
+      "time": 8.266666666666838,
+      "delta": 0.03333333333333144,
+      "dx": 8.239341334992218,
+      "player": {
+        "x": 873.7049123173947,
+        "y": 360,
+        "vx": 251.927523757615,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.20800000000000007,
+      "time": 8.283333333333504,
+      "delta": 0.01666666666666572,
+      "dx": 4.263459778868992,
+      "player": {
+        "x": 877.9683720962637,
+        "y": 360,
+        "vx": 257.01620038530837,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.2240000000000001,
+      "time": 8.30000000000017,
+      "delta": 0.01666666666666572,
+      "dx": 4.336548787773722,
+      "player": {
+        "x": 882.3049208840374,
+        "y": 360,
+        "vx": 261.1824564328701,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.2400000000000001,
+      "time": 8.316666666666835,
+      "delta": 0.01666666666666572,
+      "dx": 4.396389007076209,
+      "player": {
+        "x": 886.7013098911136,
+        "y": 360,
+        "vx": 264.593498384206,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.2560000000000001,
+      "time": 8.333333333333501,
+      "delta": 0.01666666666666572,
+      "dx": 4.445382034890031,
+      "player": {
+        "x": 891.1466919260037,
+        "y": 360,
+        "vx": 267.38622332980384,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.27200000000000013,
+      "time": 8.350000000000167,
+      "delta": 0.01666666666666572,
+      "dx": 4.48549413344756,
+      "player": {
+        "x": 895.6321860594512,
+        "y": 360,
+        "vx": 269.67271312765286,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.28800000000000014,
+      "time": 8.366666666666832,
+      "delta": 0.01666666666666572,
+      "dx": 4.32941678976897,
+      "player": {
+        "x": 899.9616028492202,
+        "y": 360.456089248396,
+        "vx": 256.67882334494436,
+        "vy": 35.88947984135858,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.30400000000000016,
+      "time": 8.383333333333498,
+      "delta": 0.01666666666666572,
+      "dx": 4.142784666032071,
+      "player": {
+        "x": 904.1043875152523,
+        "y": 361.42766153956194,
+        "vx": 246.04032617773512,
+        "vy": 65.27330069945114,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.3200000000000002,
+      "time": 8.391666666666831,
+      "delta": 0.00833333333333286,
+      "dx": 2.0122310286461698,
+      "player": {
+        "x": 906.1166185438984,
+        "y": 362.0768528298764,
+        "vx": 241.46772343754537,
+        "vy": 77.90295483773438,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.3360000000000002,
+      "time": 8.408333333333497,
+      "delta": 0.01666666666666572,
+      "dx": 3.9243066022984294,
+      "player": {
+        "x": 910.0409251461969,
+        "y": 363.65186752322273,
+        "vx": 233.58653089540593,
+        "vy": 99.67102472265687,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.3520000000000002,
+      "time": 8.425000000000162,
+      "delta": 0.01666666666666572,
+      "dx": 3.811108497164696,
+      "player": {
+        "x": 913.8520336433616,
+        "y": 365.539538486571,
+        "vx": 227.13395619022754,
+        "vy": 117.49321297259357,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.3680000000000002,
+      "time": 8.441666666666828,
+      "delta": 0.01666666666666572,
+      "dx": 3.718429727301441,
+      "player": {
+        "x": 917.570463370663,
+        "y": 367.68319075331266,
+        "vx": 221.85103484256487,
+        "vy": 132.08478657996181,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.38400000000000023,
+      "time": 8.458333333333494,
+      "delta": 0.01666666666666572,
+      "dx": 3.642550768257138,
+      "player": {
+        "x": 921.2130141389201,
+        "y": 370.0364227853553,
+        "vx": 217.5257446691413,
+        "vy": 144.03135662811522,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.40000000000000024,
+      "time": 8.47500000000016,
+      "delta": 0.01666666666666572,
+      "dx": 3.580426330975797,
+      "player": {
+        "x": 924.7934404698959,
+        "y": 372.56124421647274,
+        "vx": 213.98449658817339,
+        "vy": 153.8123809203387,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.41600000000000026,
+      "time": 8.491666666666825,
+      "delta": 0.01666666666666572,
+      "dx": 3.5295631436561052,
+      "player": {
+        "x": 928.323003613552,
+        "y": 375.226551165515,
+        "vx": 211.0851678800066,
+        "vy": 161.82040630498489,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.4320000000000003,
+      "time": 8.508333333333491,
+      "delta": 0.01666666666666572,
+      "dx": 3.4879198879979185,
+      "player": {
+        "x": 931.81092350155,
+        "y": 378.0068779284443,
+        "vx": 208.7113983033486,
+        "vy": 168.37682295882385,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.4480000000000003,
+      "time": 8.525000000000157,
+      "delta": 0.01666666666666572,
+      "dx": 3.453825273932125,
+      "player": {
+        "x": 935.2647487754821,
+        "y": 380.88137495021624,
+        "vx": 206.76792015021778,
+        "vy": 173.74476290331444,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.4640000000000003,
+      "time": 8.541666666666822,
+      "delta": 0.01666666666666572,
+      "dx": 3.6148293172203694,
+      "player": {
+        "x": 938.8795780927024,
+        "y": 383.37688281053204,
+        "vx": 220.0426441151209,
+        "vy": 142.25018057518602,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.4800000000000003,
+      "time": 8.558333333333488,
+      "delta": 0.01666666666666572,
+      "dx": 3.805495081438835,
+      "player": {
+        "x": 942.6850731741413,
+        "y": 385.42003184032035,
+        "vx": 230.9110688638084,
+        "vy": 116.46459746780094,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.49600000000000033,
+      "time": 8.575000000000154,
+      "delta": 0.01666666666666572,
+      "dx": 3.9615990061637376,
+      "player": {
+        "x": 946.646672180305,
+        "y": 387.0928207841295,
+        "vx": 239.80938244307265,
+        "vy": 95.35314759173667,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.5120000000000003,
+      "time": 8.59166666666682,
+      "delta": 0.01666666666666572,
+      "dx": 4.089406090012176,
+      "player": {
+        "x": 950.7360782703172,
+        "y": 388.46238453583493,
+        "vx": 247.09470542094772,
+        "vy": 78.0685543361385,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.5280000000000004,
+      "time": 8.600000000000152,
+      "delta": 0.00833333333333286,
+      "dx": 2.0852171517781244,
+      "player": {
+        "x": 952.8212954220953,
+        "y": 389.0510457786292,
+        "vx": 250.22605821337768,
+        "vy": 70.63934913531158,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.5440000000000004,
+      "time": 8.616666666666818,
+      "delta": 0.01666666666666572,
+      "dx": 4.239021513399848,
+      "player": {
+        "x": 957.0603169354952,
+        "y": 390.0656435602778,
+        "vx": 255.62315821893873,
+        "vy": 57.83460751449213,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.5600000000000004,
+      "time": 8.633333333333484,
+      "delta": 0.01666666666666572,
+      "dx": 4.316540428282337,
+      "player": {
+        "x": 961.3768573637775,
+        "y": 390.8963259661182,
+        "vx": 260.0419299709289,
+        "vy": 47.35097176430964,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.5760000000000004,
+      "time": 8.633333333333484,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 961.3768573637775,
+        "y": 390.8963259661182,
+        "vx": 260.0419299709289,
+        "vy": 47.35097176430964,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.5920000000000004,
+      "time": 8.666666666666815,
+      "delta": 0.03333333333333144,
+      "dx": 8.811977578276469,
+      "player": {
+        "x": 970.188834942054,
+        "y": 392.13325426634447,
+        "vx": 266.6217055793306,
+        "vy": 31.740305572884285,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.6080000000000004,
+      "time": 8.683333333333481,
+      "delta": 0.01666666666666572,
+      "dx": 4.285594960601429,
+      "player": {
+        "x": 974.4744299026554,
+        "y": 393.0452316849642,
+        "vx": 254.18086963725983,
+        "vy": 61.8762441259714,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.6240000000000004,
+      "time": 8.700000000000147,
+      "delta": 0.01666666666666572,
+      "dx": 4.1069063868363855,
+      "player": {
+        "x": 978.5813362894918,
+        "y": 394.39005364105685,
+        "vx": 243.99517465748863,
+        "vy": 86.5494637922522,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.6400000000000005,
+      "time": 8.716666666666812,
+      "delta": 0.01666666666666572,
+      "dx": 3.960608556271268,
+      "player": {
+        "x": 982.541944845763,
+        "y": 396.0892587312804,
+        "vx": 235.65583293607793,
+        "vy": 106.75018751048474,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.6560000000000005,
+      "time": 8.733333333333478,
+      "delta": 0.01666666666666572,
+      "dx": 3.840830023279068,
+      "player": {
+        "x": 986.3827748690421,
+        "y": 398.078608191789,
+        "vx": 228.82815740833271,
+        "vy": 123.2891412530335,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.6720000000000005,
+      "time": 8.750000000000144,
+      "delta": 0.01666666666666572,
+      "dx": 3.742763654759756,
+      "player": {
+        "x": 990.1255385238019,
+        "y": 400.30550777108243,
+        "vx": 223.23812948172977,
+        "vy": 136.83009130579237,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.6880000000000005,
+      "time": 8.76666666666681,
+      "delta": 0.01666666666666572,
+      "dx": 3.8513920553484695,
+      "player": {
+        "x": 993.9769305791503,
+        "y": 402.27080768962645,
+        "vx": 233.52731100446172,
+        "vy": 112.02700369852039,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 0,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.7040000000000005,
+      "time": 8.783333333333475,
+      "delta": 0.01666666666666572,
+      "dx": 3.99917627017669,
+      "player": {
+        "x": 997.976106849327,
+        "y": 403.87985917196005,
+        "vx": 241.9513803411241,
+        "vy": 91.71995310315944,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.15366666666666667,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.7200000000000005,
+      "time": 8.791666666666808,
+      "delta": 0.00833333333333286,
+      "dx": 2.046434876900207,
+      "player": {
+        "x": 1000.0225417262272,
+        "y": 404.5714562181954,
+        "vx": 245.57218522803046,
+        "vy": 82.99164554824208,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.14533333333333334,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.7360000000000005,
+      "time": 8.808333333333474,
+      "delta": 0.01666666666666572,
+      "dx": 4.1721776188169315,
+      "player": {
+        "x": 1004.1947193450442,
+        "y": 405.7634708743231,
+        "vx": 251.8128892849161,
+        "vy": 67.94781245889317,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.12866666666666668,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.7520000000000006,
+      "time": 8.82500000000014,
+      "delta": 0.01666666666666572,
+      "dx": 4.261813276131761,
+      "player": {
+        "x": 1008.4565326211759,
+        "y": 406.7394099314145,
+        "vx": 256.9223456171469,
+        "vy": 55.630963664471075,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.11200000000000002,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.7680000000000006,
+      "time": 8.841666666666805,
+      "delta": 0.01666666666666572,
+      "dx": 4.335200745347947,
+      "player": {
+        "x": 1012.7917333665239,
+        "y": 407.53844125058515,
+        "vx": 261.1056146478533,
+        "vy": 45.54678077546624,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.09533333333333335,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.7840000000000006,
+      "time": 8.858333333333471,
+      "delta": 0.01666666666666572,
+      "dx": 4.395285323285748,
+      "player": {
+        "x": 1017.1870186898096,
+        "y": 408.19263276426267,
+        "vx": 264.53058565169135,
+        "vy": 37.29055012457522,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.07866666666666669,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.8000000000000006,
+      "time": 8.875000000000137,
+      "delta": 0.01666666666666572,
+      "dx": 4.444478415029039,
+      "player": {
+        "x": 1021.6314971048387,
+        "y": 408.7282394749131,
+        "vx": 267.3347147409339,
+        "vy": 30.530920186185696,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.06200000000000003,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.8160000000000006,
+      "time": 8.891666666666802,
+      "delta": 0.01666666666666572,
+      "dx": 4.484754312078394,
+      "player": {
+        "x": 1026.116251416917,
+        "y": 409.1667571604775,
+        "vx": 269.6305414618974,
+        "vy": 24.99660327619957,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.045333333333333364,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.8320000000000006,
+      "time": 8.908333333333468,
+      "delta": 0.01666666666666572,
+      "dx": 4.517729427600443,
+      "player": {
+        "x": 1030.6339808445175,
+        "y": 409.5257850754177,
+        "vx": 271.51020540208833,
+        "vy": 20.46548782471442,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.0286666666666667,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.8480000000000006,
+      "time": 8.925000000000134,
+      "delta": 0.01666666666666572,
+      "dx": 4.544727168764439,
+      "player": {
+        "x": 1035.178708013282,
+        "y": 409.8197322705927,
+        "vx": 273.0491440753744,
+        "vy": 16.755724258836704,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.012000000000000037,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.8640000000000007,
+      "time": 8.9416666666668,
+      "delta": 0.01666666666666572,
+      "dx": 4.56683104971944,
+      "player": {
+        "x": 1039.7455390630014,
+        "y": 410.06039587906344,
+        "vx": 274.30912049429475,
+        "vy": 13.718426740804382,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.8800000000000007,
+      "time": 8.958333333333465,
+      "delta": 0.01666666666666572,
+      "dx": 4.584928176819403,
+      "player": {
+        "x": 1044.3304672398208,
+        "y": 410.2574345764652,
+        "vx": 275.34070193661785,
+        "vy": 11.231697856543896,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.8960000000000007,
+      "time": 8.975000000000131,
+      "delta": 0.01666666666666572,
+      "dx": 4.599744851318519,
+      "player": {
+        "x": 1048.9302120911393,
+        "y": 410.4187562175744,
+        "vx": 276.18528938775233,
+        "vy": 9.195736444432537,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 1,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.9120000000000007,
+      "time": 8.991666666666797,
+      "delta": 0.01666666666666572,
+      "dx": 4.6118757183892285,
+      "player": {
+        "x": 1053.5420878095285,
+        "y": 410.55083520628756,
+        "vx": 276.8767791076599,
+        "vy": 7.528832224256893,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.15366666666666667,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.9280000000000007,
+      "time": 9.00000000000013,
+      "delta": 0.00833333333333286,
+      "dx": 2.309783273931771,
+      "player": {
+        "x": 1055.8518710834603,
+        "y": 410.6076049488761,
+        "vx": 277.173992871819,
+        "vy": 6.812369110622537,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.14533333333333334,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.9440000000000007,
+      "time": 9.016666666666795,
+      "delta": 0.01666666666666572,
+      "dx": 4.626076533854302,
+      "player": {
+        "x": 1060.4779476173146,
+        "y": 410.705451470284,
+        "vx": 277.6862610557406,
+        "vy": 5.577496092185171,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.12866666666666668,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.9600000000000007,
+      "time": 9.033333333333461,
+      "delta": 0.01666666666666572,
+      "dx": 4.633434276661774,
+      "player": {
+        "x": 1065.1113818939764,
+        "y": 410.78556142644237,
+        "vx": 278.1056707717406,
+        "vy": 4.566467575844265,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.11200000000000002,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.9760000000000008,
+      "time": 9.033333333333461,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 1065.1113818939764,
+        "y": 410.78556142644237,
+        "vx": 278.1056707717406,
+        "vy": 4.566467575844265,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.11200000000000002,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 0.9920000000000008,
+      "time": 9.066666666666793,
+      "delta": 0.03333333333333144,
+      "dx": 9.283848616440082,
+      "player": {
+        "x": 1074.3952305104165,
+        "y": 410.90484922067697,
+        "vx": 278.73019314450653,
+        "vy": 3.0609947556601806,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.07866666666666669,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.0080000000000007,
+      "time": 9.083333333333458,
+      "delta": 0.01666666666666572,
+      "dx": 3.630491043853226,
+      "player": {
+        "x": 1078.0257215542697,
+        "y": 410.94471900988185,
+        "vx": 199.7189105903187,
+        "vy": 2.1932985839326853,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.06200000000000003,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.0240000000000007,
+      "time": 9.100000000000124,
+      "delta": 0.01666666666666572,
+      "dx": 2.6013605056784854,
+      "player": {
+        "x": 1080.6270820599482,
+        "y": 410.9732869621931,
+        "vx": 143.10485275165053,
+        "vy": 1.5715671088249232,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.045333333333333364,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.0400000000000007,
+      "time": 9.11666666666679,
+      "delta": 0.01666666666666572,
+      "dx": 1.8639562524087978,
+      "player": {
+        "x": 1082.491038312357,
+        "y": 410.9937567945031,
+        "vx": 102.5391076916093,
+        "vy": 1.1260770401409832,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.0286666666666667,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.0560000000000007,
+      "time": 9.133333333333455,
+      "delta": 0.01666666666666572,
+      "dx": 1.3355830163907285,
+      "player": {
+        "x": 1083.8266213287477,
+        "y": 411.0084240702754,
+        "vx": 73.47248121933573,
+        "vy": 0.8068694573792723,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.012000000000000037,
+        "shakePower": 3.1,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.0720000000000007,
+      "time": 9.150000000000121,
+      "delta": 0.01666666666666572,
+      "dx": 0.9569870491145593,
+      "player": {
+        "x": 1084.7836083778623,
+        "y": 411.0189336326071,
+        "vx": 52.64533325919876,
+        "vy": 0.5781472297579322,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.0880000000000007,
+      "time": 9.166666666666787,
+      "delta": 0.01666666666666572,
+      "dx": 0.6857111845040436,
+      "player": {
+        "x": 1085.4693195623663,
+        "y": 411.0264640630782,
+        "vx": 37.72202963580759,
+        "vy": 0.4142605922430569,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 2,
+      "kills": 0,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 0
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.1040000000000008,
+      "time": 9.183333333333453,
+      "delta": 0.01666666666666572,
+      "dx": 0.4913335337078024,
+      "player": {
+        "x": 1085.960653096074,
+        "y": 411.0318598522928,
+        "vx": 27.02901533244853,
+        "vy": 0.2968306850789917,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.17500000000000002,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.1200000000000008,
+      "time": 9.191666666666785,
+      "delta": 0.00833333333333286,
+      "dx": 0.36081745343017246,
+      "player": {
+        "x": 1086.3214705495043,
+        "y": 410.8770877984972,
+        "vx": 43.298094411625314,
+        "vy": -18.572646455477507,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.16666666666666669,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.1360000000000008,
+      "time": 9.208333333333451,
+      "delta": 0.01666666666666572,
+      "dx": 1.0779827267106157,
+      "player": {
+        "x": 1087.399453276215,
+        "y": 410.1542383644011,
+        "vx": 71.33896128583012,
+        "vy": -51.09547666050279,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.15000000000000002,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.1520000000000008,
+      "time": 9.225000000000117,
+      "delta": 0.01666666666666572,
+      "dx": 1.4807356070009519,
+      "player": {
+        "x": 1088.8801888832159,
+        "y": 408.96426130550566,
+        "vx": 94.29688133870727,
+        "vy": -77.72291792649047,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.13333333333333336,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.1680000000000008,
+      "time": 9.241666666666783,
+      "delta": 0.01666666666666572,
+      "dx": 1.8104817759851812,
+      "player": {
+        "x": 1090.690670659201,
+        "y": 407.39183249457466,
+        "vx": 113.09323651270347,
+        "vy": -99.52362296673229,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.1166666666666667,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.1840000000000008,
+      "time": 9.258333333333448,
+      "delta": 0.01666666666666572,
+      "dx": 2.0804551052422084,
+      "player": {
+        "x": 1092.7711257644432,
+        "y": 405.50627867268366,
+        "vx": 128.48239053943058,
+        "vy": -117.37253062196042,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.10000000000000003,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.2000000000000008,
+      "time": 9.275000000000114,
+      "delta": 0.01666666666666572,
+      "dx": 2.3014905724160144,
+      "player": {
+        "x": 1095.0726163368593,
+        "y": 403.3643597747618,
+        "vx": 141.08196420496594,
+        "vy": -131.9859802281447,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.08333333333333337,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.2160000000000009,
+      "time": 9.29166666666678,
+      "delta": 0.01666666666666572,
+      "dx": 2.4824591069120743,
+      "player": {
+        "x": 1097.5550754437713,
+        "y": 401.0125469050783,
+        "vx": 151.39762264061122,
+        "vy": -143.95046082928312,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.06666666666666671,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.2320000000000009,
+      "time": 9.308333333333445,
+      "delta": 0.01666666666666572,
+      "dx": 2.6306236114432977,
+      "player": {
+        "x": 1100.1856990552146,
+        "y": 398.4888873858278,
+        "vx": 159.8433694401223,
+        "vy": -153.74614904204006,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.050000000000000044,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.2480000000000009,
+      "time": 9.325000000000111,
+      "delta": 0.01666666666666572,
+      "dx": 2.7519304478175854,
+      "player": {
+        "x": 1102.9376295030322,
+        "y": 395.82453172976346,
+        "vx": 166.75816207759198,
+        "vy": -161.76618022938766,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.03333333333333338,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.264000000000001,
+      "time": 9.341666666666777,
+      "delta": 0.01666666666666572,
+      "dx": 2.8512480853160014,
+      "player": {
+        "x": 1105.7888775883482,
+        "y": 393.0449838196504,
+        "vx": 172.4195154610456,
+        "vy": -168.33242640311366,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.01666666666666672,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.280000000000001,
+      "time": 9.358333333333443,
+      "delta": 0.01666666666666572,
+      "dx": 2.93256248945886,
+      "player": {
+        "x": 1108.721440077807,
+        "y": 390.1711244686312,
+        "vx": 177.05463958012115,
+        "vy": -173.70841407782376,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 5.204170427930421e-17,
+        "shakePower": 3.75,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.296000000000001,
+      "time": 9.375000000000108,
+      "delta": 0.01666666666666572,
+      "dx": 2.9991370927989465,
+      "player": {
+        "x": 1111.720577170606,
+        "y": 387.22004944057505,
+        "vx": 180.8495582407418,
+        "vy": -178.10990051527713,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.312000000000001,
+      "time": 9.391666666666774,
+      "delta": 0.01666666666666572,
+      "dx": 3.0536437679272694,
+      "player": {
+        "x": 1114.7742209385333,
+        "y": 384.20575556310905,
+        "vx": 183.95657485362145,
+        "vy": -181.71353282087586,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.328000000000001,
+      "time": 9.400000000000107,
+      "delta": 0.00833333333333286,
+      "dx": 1.544100184895342,
+      "player": {
+        "x": 1116.3183211234286,
+        "y": 382.67856861455914,
+        "vx": 185.29202218744777,
+        "vy": -183.26243382599213,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.344000000000001,
+      "time": 9.416666666666773,
+      "delta": 0.01666666666666572,
+      "dx": 3.117451180092985,
+      "player": {
+        "x": 1119.4357723035216,
+        "y": 379.59026855030186,
+        "vx": 187.5937567062298,
+        "vy": -185.9320702986169,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.360000000000001,
+      "time": 9.433333333333438,
+      "delta": 0.01666666666666572,
+      "dx": 3.150511149717204,
+      "player": {
+        "x": 1122.5862834532388,
+        "y": 376.4636243156058,
+        "vx": 189.47825754217783,
+        "vy": -188.11778377829344,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.376000000000001,
+      "time": 9.433333333333438,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 1122.5862834532388,
+        "y": 376.4636243156058,
+        "vx": 189.47825754217783,
+        "vy": -188.11778377829344,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.392000000000001,
+      "time": 9.46666666666677,
+      "delta": 0.03333333333333144,
+      "dx": 6.377317487449773,
+      "player": {
+        "x": 1128.9636009406886,
+        "y": 370.12184587704076,
+        "vx": 192.28437501787644,
+        "vy": -191.3724221818392,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.408000000000001,
+      "time": 9.483333333333436,
+      "delta": 0.01666666666666572,
+      "dx": 3.2178828199239433,
+      "player": {
+        "x": 1132.1814837606125,
+        "y": 366.91706149779816,
+        "vx": 193.31861100487362,
+        "vy": -192.57196717265325,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.424000000000001,
+      "time": 9.500000000000101,
+      "delta": 0.01666666666666572,
+      "dx": 3.2327376218288464,
+      "player": {
+        "x": 1135.4142213824414,
+        "y": 363.69504797217235,
+        "vx": 194.16537181336815,
+        "vy": -193.55407154633335,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.440000000000001,
+      "time": 9.516666666666767,
+      "delta": 0.01666666666666572,
+      "dx": 3.433818057317694,
+      "player": {
+        "x": 1138.848039439759,
+        "y": 360.91501766294925,
+        "vx": 209.72455022459033,
+        "vy": -158.4686707584391,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.456000000000001,
+      "time": 9.533333333333433,
+      "delta": 0.01666666666666572,
+      "dx": 3.657295596303129,
+      "player": {
+        "x": 1142.5053350360622,
+        "y": 358.63892135429944,
+        "vx": 222.46332808248496,
+        "vy": -129.74317414932358,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.472000000000001,
+      "time": 9.550000000000098,
+      "delta": 0.01666666666666572,
+      "dx": 3.840263530092898,
+      "player": {
+        "x": 1146.345598566155,
+        "y": 356.7754113094405,
+        "vx": 232.89295727137215,
+        "vy": -106.22472667800344,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.488000000000001,
+      "time": 9.566666666666764,
+      "delta": 0.01666666666666572,
+      "dx": 3.9900650043134647,
+      "player": {
+        "x": 1150.3356635704686,
+        "y": 355.2496983270448,
+        "vx": 241.43201543151386,
+        "vy": -86.96945046858453,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.5040000000000011,
+      "time": 9.58333333333343,
+      "delta": 0.01666666666666572,
+      "dx": 4.112712078114555,
+      "player": {
+        "x": 1154.4483756485831,
+        "y": 354.00055018798713,
+        "vx": 248.42320494954336,
+        "vy": -71.20456367692245,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.5200000000000011,
+      "time": 9.591666666666763,
+      "delta": 0.00833333333333286,
+      "dx": 2.0952344524723685,
+      "player": {
+        "x": 1156.5436101010555,
+        "y": 353.4636455750721,
+        "vx": 251.42813429669414,
+        "vy": -64.42855354980358,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.5360000000000011,
+      "time": 9.608333333333428,
+      "delta": 0.01666666666666572,
+      "dx": 4.256287014036843,
+      "player": {
+        "x": 1160.7998971150923,
+        "y": 352.53825387332756,
+        "vx": 256.6073348758894,
+        "vy": -52.74963816755576,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.5520000000000012,
+      "time": 9.625000000000094,
+      "delta": 0.01666666666666572,
+      "dx": 4.330676224621357,
+      "player": {
+        "x": 1165.1305733397137,
+        "y": 351.7806072284661,
+        "vx": 260.8477056664359,
+        "vy": -43.18775098151397,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.5680000000000012,
+      "time": 9.64166666666676,
+      "delta": 0.01666666666666572,
+      "dx": 4.3915809590239405,
+      "player": {
+        "x": 1169.5221542987376,
+        "y": 351.1602986203517,
+        "vx": 264.31942763710987,
+        "vy": -35.35913988483928,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.5840000000000012,
+      "time": 9.658333333333426,
+      "delta": 0.01666666666666572,
+      "dx": 4.441445538087237,
+      "player": {
+        "x": 1173.9635998368249,
+        "y": 350.65243288648935,
+        "vx": 267.1618331806372,
+        "vy": -28.949615226104164,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.6000000000000012,
+      "time": 9.675000000000091,
+      "delta": 0.01666666666666572,
+      "dx": 4.4822712024556495,
+      "player": {
+        "x": 1178.4458710392805,
+        "y": 350.23662759174175,
+        "vx": 269.48899801184234,
+        "vy": -23.70194027538607,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.6160000000000012,
+      "time": 9.691666666666757,
+      "delta": 0.01666666666666572,
+      "dx": 4.515696429389209,
+      "player": {
+        "x": 1182.9615674686697,
+        "y": 349.89619500963926,
+        "vx": 271.3943194266315,
+        "vy": -19.405507411076183,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.6320000000000012,
+      "time": 9.708333333333423,
+      "delta": 0.01666666666666572,
+      "dx": 4.54306269060794,
+      "player": {
+        "x": 1187.5046301592777,
+        "y": 349.6174723853222,
+        "vx": 272.95426466341746,
+        "vy": -15.887885696530759,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.6480000000000012,
+      "time": 9.725000000000088,
+      "delta": 0.01666666666666572,
+      "dx": 4.565468290264789,
+      "player": {
+        "x": 1192.0700984495425,
+        "y": 349.3892736012152,
+        "vx": 274.23143980189167,
+        "vy": -13.007900621137523,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.6640000000000013,
+      "time": 9.741666666666754,
+      "delta": 0.01666666666666572,
+      "dx": 4.583812443744819,
+      "player": {
+        "x": 1196.6539108932873,
+        "y": 349.2024402388518,
+        "vx": 275.2771023648271,
+        "vy": -10.649968271507472,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.6800000000000013,
+      "time": 9.75833333333342,
+      "delta": 0.01666666666666572,
+      "dx": 4.598831366338118,
+      "player": {
+        "x": 1201.2527422596254,
+        "y": 349.049474019384,
+        "vx": 276.1332184624447,
+        "vy": -8.719456543187924,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.6960000000000013,
+      "time": 9.775000000000086,
+      "delta": 0.01666666666666572,
+      "dx": 4.611127820143565,
+      "player": {
+        "x": 1205.863870079769,
+        "y": 348.92423587132356,
+        "vx": 276.83414703976933,
+        "vy": -7.138887222034985,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.7120000000000013,
+      "time": 9.791666666666751,
+      "delta": 0.01666666666666572,
+      "dx": 4.621195305027641,
+      "player": {
+        "x": 1210.4850653847966,
+        "y": 348.82169954804795,
+        "vx": 277.40801882173616,
+        "vy": -5.8448265114354845,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.7280000000000013,
+      "time": 9.800000000000084,
+      "delta": 0.00833333333333286,
+      "dx": 2.3137889870254185,
+      "player": {
+        "x": 1212.798854371822,
+        "y": 348.77762773363565,
+        "vx": 277.6546784430619,
+        "vy": -5.288617729475408,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.7440000000000013,
+      "time": 9.81666666666675,
+      "delta": 0.01666666666666572,
+      "dx": 4.632980653445429,
+      "player": {
+        "x": 1217.4318350252674,
+        "y": 348.7016669570714,
+        "vx": 278.0798131154781,
+        "vy": -4.329953976394967,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.7600000000000013,
+      "time": 9.833333333333416,
+      "delta": 0.01666666666666572,
+      "dx": 4.639086891693751,
+      "player": {
+        "x": 1222.0709219169612,
+        "y": 348.6394755332705,
+        "vx": 278.42788394598495,
+        "vy": -3.545066479886853,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.7760000000000014,
+      "time": 9.833333333333416,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 1222.0709219169612,
+        "y": 348.6394755332705,
+        "vx": 278.42788394598495,
+        "vy": -3.545066479886853,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.7920000000000014,
+      "time": 9.866666666666747,
+      "delta": 0.03333333333333144,
+      "dx": 9.292265647370414,
+      "player": {
+        "x": 1231.3631875643316,
+        "y": 348.5468693439619,
+        "vx": 278.9461790942993,
+        "vy": -2.3763291259971564,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.8080000000000014,
+      "time": 9.883333333333413,
+      "delta": 0.01666666666666572,
+      "dx": 4.651530565240591,
+      "player": {
+        "x": 1236.0147181295722,
+        "y": 348.5127379669147,
+        "vx": 279.13720441626634,
+        "vy": -1.945573734888794,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.8240000000000014,
+      "time": 9.900000000000079,
+      "delta": 0.01666666666666572,
+      "dx": 4.654274274947284,
+      "player": {
+        "x": 1240.6689924045195,
+        "y": 348.4847935588813,
+        "vx": 279.2936027219774,
+        "vy": -1.592901049134244,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.8400000000000014,
+      "time": 9.916666666666744,
+      "delta": 0.01666666666666572,
+      "dx": 4.65652063446214,
+      "player": {
+        "x": 1245.3255130389816,
+        "y": 348.4619146126478,
+        "vx": 279.4216508245923,
+        "vy": -1.3041570755363867,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.8560000000000014,
+      "time": 9.93333333333341,
+      "delta": 0.01666666666666572,
+      "dx": 4.658359798078891,
+      "player": {
+        "x": 1249.9838728370605,
+        "y": 348.4431829157684,
+        "vx": 279.5264877440764,
+        "vy": -1.0677535045858844,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.8720000000000014,
+      "time": 9.950000000000076,
+      "delta": 0.01666666666666572,
+      "dx": 4.659865577892106,
+      "player": {
+        "x": 1254.6437384149526,
+        "y": 348.4278466994759,
+        "vx": 279.61232095411606,
+        "vy": -0.8742026309112554,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.8880000000000015,
+      "time": 9.966666666666741,
+      "delta": 0.01666666666666572,
+      "dx": 4.6610984061326235,
+      "player": {
+        "x": 1259.3048368210852,
+        "y": 348.4152904675613,
+        "vx": 279.68259524281086,
+        "vy": -0.7157365783487251,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.9040000000000015,
+      "time": 9.983333333333407,
+      "delta": 0.01666666666666572,
+      "dx": 4.662107760526169,
+      "player": {
+        "x": 1263.9669445816114,
+        "y": 348.4050102943501,
+        "vx": 279.740130964116,
+        "vy": -0.5859955477969097,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.9200000000000015,
+      "time": 9.99166666666674,
+      "delta": 0.00833333333333286,
+      "dx": 2.3313738397712314,
+      "player": {
+        "x": 1266.2983184213826,
+        "y": 348.4005917051964,
+        "vx": 279.7648607725433,
+        "vy": -0.5302306984491234,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.9360000000000015,
+      "time": 10.008333333333406,
+      "delta": 0.01666666666666572,
+      "dx": 4.663289345931389,
+      "player": {
+        "x": 1270.961607767314,
+        "y": 348.3929759655698,
+        "vx": 279.8074842832262,
+        "vy": -0.43411617904631505,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.9520000000000015,
+      "time": 10.025000000000071,
+      "delta": 0.01666666666666572,
+      "dx": 4.663901550317632,
+      "player": {
+        "x": 1275.6255093176317,
+        "y": 348.38674072533007,
+        "vx": 279.8423814622264,
+        "vy": -0.3554242661939255,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.9680000000000015,
+      "time": 10.041666666666737,
+      "delta": 0.01666666666666572,
+      "dx": 4.664402780875889,
+      "player": {
+        "x": 1280.2899120985076,
+        "y": 348.381635742393,
+        "vx": 279.8709528558696,
+        "vy": -0.29099677712314165,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 1.9840000000000015,
+      "time": 10.058333333333403,
+      "delta": 0.01666666666666572,
+      "dx": 4.664813153748355,
+      "player": {
+        "x": 1284.954725252256,
+        "y": 348.3774561358684,
+        "vx": 279.89434513450357,
+        "vy": -0.23824801047729538,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.0000000000000013,
+      "time": 10.075000000000069,
+      "delta": 0.01666666666666572,
+      "dx": 4.665149138639208,
+      "player": {
+        "x": 1289.6198743908951,
+        "y": 348.374034163471,
+        "vx": 279.91349711240576,
+        "vy": -0.19506097303740694,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.0160000000000013,
+      "time": 10.091666666666734,
+      "delta": 0.01666666666666572,
+      "dx": 4.665424219801935,
+      "player": {
+        "x": 1294.285298610697,
+        "y": 348.371232489433,
+        "vx": 279.92917742569654,
+        "vy": -0.15970241735104007,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.0320000000000014,
+      "time": 10.1083333333334,
+      "delta": 0.01666666666666572,
+      "dx": 4.665649437209595,
+      "player": {
+        "x": 1298.9509480479066,
+        "y": 348.36893867273807,
+        "vx": 279.9420153804056,
+        "vy": -0.13075328042619117,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.0480000000000014,
+      "time": 10.125000000000066,
+      "delta": 0.01666666666666572,
+      "dx": 4.665833829627218,
+      "player": {
+        "x": 1303.6167818775339,
+        "y": 348.367060654468,
+        "vx": 279.95252620873254,
+        "vy": -0.10705173175075203,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.0640000000000014,
+      "time": 10.141666666666731,
+      "delta": 0.01666666666666572,
+      "dx": 4.665984797369902,
+      "player": {
+        "x": 1308.2827666749038,
+        "y": 348.3655230631554,
+        "vx": 279.9611317471241,
+        "vy": -0.0876465449545953,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.0800000000000014,
+      "time": 10.158333333333397,
+      "delta": 0.01666666666666572,
+      "dx": 4.666108399303994,
+      "player": {
+        "x": 1312.9488750742078,
+        "y": 348.3642641898622,
+        "vx": 279.9681773660521,
+        "vy": -0.07175892175535899,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.0960000000000014,
+      "time": 10.175000000000063,
+      "delta": 0.01666666666666572,
+      "dx": 4.666209596008457,
+      "player": {
+        "x": 1317.6150846702162,
+        "y": 348.36323351158273,
+        "vx": 279.9739458309429,
+        "vy": -0.05875123604882903,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.1120000000000014,
+      "time": 10.191666666666729,
+      "delta": 0.01666666666666572,
+      "dx": 4.66629244886235,
+      "player": {
+        "x": 1322.2813771190786,
+        "y": 348.3623896635788,
+        "vx": 279.9786686505471,
+        "vy": -0.048101443734520063,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.1280000000000014,
+      "time": 10.200000000000061,
+      "delta": 0.00833333333333286,
+      "dx": 2.3331724883069,
+      "player": {
+        "x": 1324.6145496073855,
+        "y": 348.36202696369423,
+        "vx": 279.9806985968378,
+        "vy": -0.043523986152545116,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.1440000000000015,
+      "time": 10.216666666666727,
+      "delta": 0.01666666666666572,
+      "dx": 4.666389439298882,
+      "player": {
+        "x": 1329.2809390466844,
+        "y": 348.36140182571745,
+        "vx": 279.98419734765355,
+        "vy": -0.03563442595962891,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.1600000000000015,
+      "time": 10.233333333333393,
+      "delta": 0.01666666666666572,
+      "dx": 4.666439692095082,
+      "player": {
+        "x": 1333.9473787387794,
+        "y": 348.36089000603096,
+        "vx": 279.98706188254374,
+        "vy": -0.02917500040142856,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.1760000000000015,
+      "time": 10.233333333333393,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 1333.9473787387794,
+        "y": 348.36089000603096,
+        "vx": 279.98706188254374,
+        "vy": -0.02917500040142856,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.1920000000000015,
+      "time": 10.266666666666724,
+      "delta": 0.03333333333333144,
+      "dx": 9.33299535666606,
+      "player": {
+        "x": 1343.2803740954455,
+        "y": 348.3601278805178,
+        "vx": 279.9913273205111,
+        "vy": -0.01955658761217538,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.2080000000000015,
+      "time": 10.28333333333339,
+      "delta": 0.01666666666666572,
+      "dx": 4.666542100380639,
+      "player": {
+        "x": 1347.9469161958261,
+        "y": 348.3598469879183,
+        "vx": 279.99289941059084,
+        "vy": -0.016011579703351878,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.2240000000000015,
+      "time": 10.300000000000056,
+      "delta": 0.01666666666666572,
+      "dx": 4.666564680417423,
+      "player": {
+        "x": 1352.6134808762436,
+        "y": 348.35961701250875,
+        "vx": 279.99418652908577,
+        "vy": -0.01310917270849341,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.2400000000000015,
+      "time": 10.316666666666721,
+      "delta": 0.01666666666666572,
+      "dx": 4.666583167388126,
+      "player": {
+        "x": 1357.2800640436317,
+        "y": 348.3594287245685,
+        "vx": 279.9952403325804,
+        "vy": -0.010732882843854135,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.2560000000000016,
+      "time": 10.333333333333387,
+      "delta": 0.01666666666666572,
+      "dx": 4.666598303239425,
+      "player": {
+        "x": 1361.946662346871,
+        "y": 348.3592745674414,
+        "vx": 279.99610311390916,
+        "vy": -0.008787341253446447,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.2720000000000016,
+      "time": 10.350000000000053,
+      "delta": 0.01666666666666572,
+      "dx": 4.666610695426471,
+      "player": {
+        "x": 1366.6132730422976,
+        "y": 348.35914835426064,
+        "vx": 279.9968094995162,
+        "vy": -0.0071944665219874256,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.2880000000000016,
+      "time": 10.366666666666719,
+      "delta": 0.01666666666666572,
+      "dx": 4.666620841290978,
+      "player": {
+        "x": 1371.2798938835886,
+        "y": 348.3590450196481,
+        "vx": 279.9973878391362,
+        "vy": -0.005890330993541093,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.3040000000000016,
+      "time": 10.383333333333384,
+      "delta": 0.01666666666666572,
+      "dx": 4.666629148022366,
+      "player": {
+        "x": 1375.946523031611,
+        "y": 348.3589604164229,
+        "vx": 279.99786134356884,
+        "vy": -0.004822595130220476,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.3200000000000016,
+      "time": 10.391666666666717,
+      "delta": 0.00833333333333286,
+      "dx": 2.3333172071970694,
+      "player": {
+        "x": 1378.279840238808,
+        "y": 348.35892405255186,
+        "vx": 279.9980648636368,
+        "vy": -0.004363664525861487,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.3360000000000016,
+      "time": 10.408333333333383,
+      "delta": 0.01666666666666572,
+      "dx": 4.666638872171461,
+      "player": {
+        "x": 1382.9464791109795,
+        "y": 348.35886137694115,
+        "vx": 279.99841564434803,
+        "vy": -0.0035726663434382496,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.3520000000000016,
+      "time": 10.425000000000049,
+      "delta": 0.01666666666666572,
+      "dx": 4.666643910458561,
+      "player": {
+        "x": 1387.613123021438,
+        "y": 348.35881006249116,
+        "vx": 279.9987028393039,
+        "vy": -0.002925051805859557,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.3680000000000017,
+      "time": 10.441666666666714,
+      "delta": 0.01666666666666572,
+      "dx": 4.666648035459048,
+      "player": {
+        "x": 1392.279771056897,
+        "y": 348.35876804977295,
+        "vx": 279.9989379746464,
+        "vy": -0.0023948298678035055,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.3840000000000017,
+      "time": 10.45833333333338,
+      "delta": 0.01666666666666572,
+      "dx": 4.666651412724377,
+      "player": {
+        "x": 1396.9464224696214,
+        "y": 348.3587336526685,
+        "vx": 279.99913048718247,
+        "vy": -0.0019607208611604073,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.4000000000000017,
+      "time": 10.475000000000046,
+      "delta": 0.01666666666666572,
+      "dx": 4.666654177794953,
+      "player": {
+        "x": 1401.6130766474164,
+        "y": 348.3587054907012,
+        "vx": 279.99928810311604,
+        "vy": -0.0016053024672335692,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.4160000000000017,
+      "time": 10.491666666666712,
+      "delta": 0.01666666666666572,
+      "dx": 4.666656441643227,
+      "player": {
+        "x": 1406.2797330890596,
+        "y": 348.3586824336325,
+        "vx": 279.9994171481281,
+        "vy": -0.0013143104979160822,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.4320000000000017,
+      "time": 10.508333333333377,
+      "delta": 0.01666666666666572,
+      "dx": 4.666658295125444,
+      "player": {
+        "x": 1410.946391384185,
+        "y": 348.35866355610136,
+        "vx": 279.999522801248,
+        "vy": -0.0010760664237371312,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.4480000000000017,
+      "time": 10.525000000000043,
+      "delta": 0.01666666666666572,
+      "dx": 4.666659812628495,
+      "player": {
+        "x": 1415.6130511968136,
+        "y": 348.35864810048605,
+        "vx": 279.9996093027064,
+        "vy": -0.0008810086734682321,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.4640000000000017,
+      "time": 10.541666666666709,
+      "delta": 0.01666666666666572,
+      "dx": 4.666661055054874,
+      "player": {
+        "x": 1420.2797122518684,
+        "y": 348.3586354464985,
+        "vx": 279.9996801241106,
+        "vy": -0.0007213088946968794,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.4800000000000018,
+      "time": 10.558333333333374,
+      "delta": 0.01666666666666572,
+      "dx": 4.666662072267627,
+      "player": {
+        "x": 1424.946374324136,
+        "y": 348.35862508628975,
+        "vx": 279.9997381077722,
+        "vy": -0.0005905577745570228,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.4960000000000018,
+      "time": 10.57500000000004,
+      "delta": 0.01666666666666572,
+      "dx": 4.666662905090789,
+      "player": {
+        "x": 1429.6130372292268,
+        "y": 348.35861660406823,
+        "vx": 279.9997855807791,
+        "vy": -0.0004835078114991282,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.512000000000002,
+      "time": 10.591666666666706,
+      "delta": 0.01666666666666572,
+      "dx": 4.666663586948744,
+      "player": {
+        "x": 1434.2797008161756,
+        "y": 348.3586096594126,
+        "vx": 279.99982444838975,
+        "vy": -0.00039586271462776807,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.528000000000002,
+      "time": 10.600000000000039,
+      "delta": 0.00833333333333286,
+      "dx": 2.3333320096194257,
+      "player": {
+        "x": 1436.613032825795,
+        "y": 348.3586066744843,
+        "vx": 279.99984115433426,
+        "vy": -0.0003581913966004955,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.544000000000002,
+      "time": 10.616666666666704,
+      "delta": 0.01666666666666572,
+      "dx": 4.6666643851554,
+      "player": {
+        "x": 1441.2796972109504,
+        "y": 348.35860152975687,
+        "vx": 279.99986994816845,
+        "vy": -0.00029326231188477774,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 3,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.560000000000002,
+      "time": 10.63333333333337,
+      "delta": 0.01666666666666572,
+      "dx": 4.666664798723332,
+      "player": {
+        "x": 1445.9463620096737,
+        "y": 348.35859731761036,
+        "vx": 279.999893522566,
+        "vy": -0.00024010287345881405,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.15366666666666667,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.576000000000002,
+      "time": 10.63333333333337,
+      "delta": 0,
+      "dx": 0,
+      "player": {
+        "x": 1445.9463620096737,
+        "y": 348.35859731761036,
+        "vx": 279.999893522566,
+        "vy": -0.00024010287345881405,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.15366666666666667,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.592000000000002,
+      "time": 10.666666666666702,
+      "delta": 0.03333333333333144,
+      "dx": 9.333330551870631,
+      "player": {
+        "x": 1455.2796925615444,
+        "y": 348.35859104551014,
+        "vx": 279.99992862604154,
+        "vy": -0.00016094576919020148,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.12033333333333335,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.608000000000002,
+      "time": 10.683333333333367,
+      "delta": 0.01666666666666572,
+      "dx": 4.666665641517511,
+      "player": {
+        "x": 1459.946358203062,
+        "y": 348.35858873383506,
+        "vx": 279.99994156394524,
+        "vy": -0.0001317712508138087,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.10366666666666668,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.624000000000002,
+      "time": 10.700000000000033,
+      "delta": 0.01666666666666572,
+      "dx": 4.666665827345469,
+      "player": {
+        "x": 1464.6130240304074,
+        "y": 348.35858684119563,
+        "vx": 279.9999521566049,
+        "vy": -0.00010788517541281721,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.08700000000000002,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.640000000000002,
+      "time": 10.716666666666699,
+      "delta": 0.01666666666666572,
+      "dx": 4.666665979488698,
+      "player": {
+        "x": 1469.279690009896,
+        "y": 348.3585852916335,
+        "vx": 279.9999608291411,
+        "vy": -0.00008832891091168599,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.07033333333333336,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.656000000000002,
+      "time": 10.733333333333364,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666104052865,
+      "player": {
+        "x": 1473.946356113949,
+        "y": 348.35858402295935,
+        "vx": 279.9999679296132,
+        "vy": -0.00007231759574928263,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.053666666666666696,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.672000000000002,
+      "time": 10.75000000000003,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666206037689,
+      "player": {
+        "x": 1478.6130223199866,
+        "y": 348.3585829842568,
+        "vx": 279.99997374298806,
+        "vy": -0.000059208639628599224,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.03700000000000003,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.688000000000002,
+      "time": 10.766666666666696,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666289535215,
+      "player": {
+        "x": 1483.2796886095218,
+        "y": 348.3585821338391,
+        "vx": 279.9999785025768,
+        "vy": -0.00004847593411184588,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.02033333333333337,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.704000000000002,
+      "time": 10.783333333333362,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666357897611,
+      "player": {
+        "x": 1487.9463549674194,
+        "y": 348.35858143757594,
+        "vx": 279.99998239939856,
+        "vy": -0.0000396887380415502,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.0036666666666667035,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.720000000000002,
+      "time": 10.791666666666694,
+      "delta": 0.00833333333333286,
+      "dx": 2.333333200619336,
+      "player": {
+        "x": 1490.2796881680388,
+        "y": 348.35858113831046,
+        "vx": 279.99998407431724,
+        "vy": -0.000035911855254621846,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 4,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.736000000000002,
+      "time": 10.80833333333336,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666437925187,
+      "player": {
+        "x": 1494.946354605964,
+        "y": 348.35858062250605,
+        "vx": 279.99998696115375,
+        "vy": -0.000029402140297044023,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.15366666666666667,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.752000000000002,
+      "time": 10.825000000000026,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666479388823,
+      "player": {
+        "x": 1499.6130210853528,
+        "y": 348.35858020020106,
+        "vx": 279.9999893246956,
+        "vy": -0.00002407243646750333,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.137,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.768000000000002,
+      "time": 10.841666666666692,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666513336622,
+      "player": {
+        "x": 1504.2796875986894,
+        "y": 348.35857985444704,
+        "vx": 279.9999912598,
+        "vy": -0.000019708844037460873,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.12033333333333335,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.784000000000002,
+      "time": 10.858333333333357,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666541130553,
+      "player": {
+        "x": 1508.94635413982,
+        "y": 348.3585795713676,
+        "vx": 279.9999928441295,
+        "vy": -0.00001613623672108683,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.10366666666666668,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.800000000000002,
+      "time": 10.875000000000023,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666563886565,
+      "player": {
+        "x": 1513.6130207037065,
+        "y": 348.35857933960176,
+        "vx": 279.99999414126876,
+        "vy": -0.000013211233242500003,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.08700000000000002,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.816000000000002,
+      "time": 10.891666666666689,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666582517337,
+      "player": {
+        "x": 1518.2796872862239,
+        "y": 348.3585791498479,
+        "vx": 279.99999520327657,
+        "vy": -0.000010816442941720895,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.07033333333333336,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.832000000000002,
+      "time": 10.908333333333355,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666597770927,
+      "player": {
+        "x": 1522.9463538839948,
+        "y": 348.35857899449064,
+        "vx": 279.999996072775,
+        "vy": -0.00000885575447530017,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.053666666666666696,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.848000000000002,
+      "time": 10.92500000000002,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666610259654,
+      "player": {
+        "x": 1527.6130204942544,
+        "y": 348.35857886729485,
+        "vx": 279.9999967846601,
+        "vy": -0.000007250478530636215,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.03700000000000003,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.864000000000002,
+      "time": 10.941666666666686,
+      "delta": 0.01666666666666572,
+      "dx": 4.6666666204844205,
+      "player": {
+        "x": 1532.2796871147389,
+        "y": 348.3585787631557,
+        "vx": 279.9999973675023,
+        "vy": -0.000005936189747563527,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.02033333333333337,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.880000000000002,
+      "time": 10.958333333333352,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666628856092,
+      "player": {
+        "x": 1536.946353743595,
+        "y": 348.35857867789383,
+        "vx": 279.99999784469316,
+        "vy": -0.000004860141102436481,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.0036666666666667035,
+        "shakePower": 3.1,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.896000000000002,
+      "time": 10.975000000000017,
+      "delta": 0.01666666666666572,
+      "dx": 4.6666666357098165,
+      "player": {
+        "x": 1541.6130203793048,
+        "y": 348.3585786080873,
+        "vx": 279.999998235384,
+        "vy": -0.000003979146984863072,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 5,
+      "kills": 1,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "scenario": "combat",
+      "wall": 2.912000000000002,
+      "time": 10.991666666666683,
+      "delta": 0.01666666666666572,
+      "dx": 4.666666641321399,
+      "player": {
+        "x": 1546.2796870206262,
+        "y": 348.35857855093457,
+        "vx": 279.9999985552546,
+        "vy": -0.0000032578500075249235,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "hits": 6,
+      "kills": 2,
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.16666666666666669,
+        "shakePower": 3.75,
+        "blastCount": 2
+      }
+    }
+  ],
+  "burst": [
+    {
+      "time": 9.158333333333454,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.0",
+          "rect": [
+            1537,
+            1469,
+            121,
+            113
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.24000000000000002,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.216666666666784,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.05833333333333333
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.0",
+          "rect": [
+            1537,
+            1469,
+            121,
+            113
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.1816666666666667,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.283333333333447,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.12499999999999999
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.1",
+          "rect": [
+            859,
+            927,
+            205,
+            180
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.11500000000000005,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.35000000000011,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.19166666666666665
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.2",
+          "rect": [
+            1576,
+            3,
+            286,
+            254
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.048333333333333395,
+        "shakePower": 7,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.40833333333344,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.24999999999999997
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.2",
+          "rect": [
+            1576,
+            3,
+            286,
+            254
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.475000000000103,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.3166666666666668
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.3",
+          "rect": [
+            571,
+            439,
+            266,
+            247
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.541666666666766,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.3833333333333337
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.4",
+          "rect": [
+            1357,
+            439,
+            235,
+            232
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.600000000000096,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.4416666666666672
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.5",
+          "rect": [
+            320,
+            698,
+            207,
+            221
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 255
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.666666666666758,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.508333333333334
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.6",
+          "rect": [
+            1468,
+            698,
+            163,
+            202
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 235
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.733333333333421,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.5750000000000004
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.6",
+          "rect": [
+            1468,
+            698,
+            163,
+            202
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 199
+        }
+      ],
+      "impact": {
+        "hitStop": 0.044,
+        "shakeTime": 0.19666666666666668,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.741666666666754,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.5833333333333337
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.7",
+          "rect": [
+            3,
+            927,
+            113,
+            190
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 195
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.18833333333333335,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.808333333333417,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.6500000000000001
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.7",
+          "rect": [
+            3,
+            927,
+            113,
+            190
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 159
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.1216666666666667,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.87500000000008,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.7166666666666666
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.7",
+          "rect": [
+            3,
+            927,
+            113,
+            190
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 124
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0.05500000000000005,
+        "shakePower": 5.25,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 9.93333333333341,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.7749999999999997
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.7",
+          "rect": [
+            3,
+            927,
+            113,
+            190
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 93
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 10.000000000000073,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.8416666666666661
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.7",
+          "rect": [
+            3,
+            927,
+            113,
+            190
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 58
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 10.05000000000007,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.8916666666666659
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.7",
+          "rect": [
+            3,
+            927,
+            113,
+            190
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 31
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 10.133333333333399,
+      "effects": [
+        {
+          "x": 1138.9474849592725,
+          "y": 396,
+          "kind": "blast",
+          "size": 200,
+          "age": 0.974999999999999
+        }
+      ],
+      "frames": [
+        {
+          "name": "fx.burst.7",
+          "rect": [
+            3,
+            927,
+            113,
+            190
+          ],
+          "texture": [
+            2048,
+            1716
+          ],
+          "alpha": 0
+        }
+      ],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    },
+    {
+      "time": 10.191666666666729,
+      "effects": [],
+      "frames": [],
+      "impact": {
+        "hitStop": 0,
+        "shakeTime": 0,
+        "shakePower": 0,
+        "blastCount": 1
+      }
+    }
+  ],
+  "frames": [
+    "fx.burst.0",
+    "fx.burst.1",
+    "fx.burst.2",
+    "fx.burst.3",
+    "fx.burst.4",
+    "fx.burst.5",
+    "fx.burst.6",
+    "fx.burst.7"
+  ],
+  "captures": [
+    "reports/v0821-after-packed-webgl1/touch-swim.png",
+    "reports/v0821-after-packed-webgl1/touch-fire.png",
+    "reports/v0821-after-packed-webgl1/burst-00.png",
+    "reports/v0821-after-packed-webgl1/burst-01.png",
+    "reports/v0821-after-packed-webgl1/burst-02.png",
+    "reports/v0821-after-packed-webgl1/burst-03.png",
+    "reports/v0821-after-packed-webgl1/burst-04.png",
+    "reports/v0821-after-packed-webgl1/burst-05.png",
+    "reports/v0821-after-packed-webgl1/burst-06.png",
+    "reports/v0821-after-packed-webgl1/burst-07.png",
+    "reports/v0821-after-packed-webgl1/burst-08.png",
+    "reports/v0821-after-packed-webgl1/burst-09.png",
+    "reports/v0821-after-packed-webgl1/burst-10.png",
+    "reports/v0821-after-packed-webgl1/burst-11.png",
+    "reports/v0821-after-packed-webgl1/burst-12.png",
+    "reports/v0821-after-packed-webgl1/burst-13.png",
+    "reports/v0821-after-packed-webgl1/burst-14.png",
+    "reports/v0821-after-packed-webgl1/burst-15.png",
+    "reports/v0821-after-packed-webgl1/burst-16.png",
+    "reports/v0821-after-packed-webgl1/burst-17.png",
+    "reports/v0821-after-packed-webgl1/sequence.png"
+  ],
+  "pauses": 0,
+  "final": {
+    "time": 10.991666666666683,
+    "hits": 6,
+    "kills": 2,
+    "health": 5
+  },
+  "errors": [],
+  "warnings": [
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2"
+  ]
+}

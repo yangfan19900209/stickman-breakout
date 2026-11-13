@@ -1,0 +1,120 @@
+{
+  "source": "../素材/游戏美术/source/v079/sandbag-debris.png",
+  "sourceSHA256": "40c3f1eb36c094a6bb78de23cb9d900984c8ed55200e9ee53be8a04c87ce34eb",
+  "runtime": "assets/landart/sandbag-debris.png",
+  "size": [
+    320,
+    176
+  ],
+  "downsample": "4x premultiplied-alpha box filter",
+  "frames": [
+    {
+      "id": "bag.debris.0",
+      "sourceCrop": [
+        27,
+        243,
+        559,
+        278
+      ],
+      "atlas": [
+        4,
+        4,
+        140,
+        70
+      ],
+      "size": [
+        140,
+        70
+      ],
+      "sourceSize": [
+        140,
+        70
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "bag.debris.1",
+      "sourceCrop": [
+        672,
+        251,
+        554,
+        292
+      ],
+      "atlas": [
+        164,
+        4,
+        139,
+        73
+      ],
+      "size": [
+        139,
+        73
+      ],
+      "sourceSize": [
+        139,
+        73
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "bag.debris.2",
+      "sourceCrop": [
+        36,
+        792,
+        553,
+        265
+      ],
+      "atlas": [
+        4,
+        92,
+        139,
+        67
+      ],
+      "size": [
+        139,
+        67
+      ],
+      "sourceSize": [
+        139,
+        67
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "bag.debris.3",
+      "sourceCrop": [
+        643,
+        758,
+        577,
+        296
+      ],
+      "atlas": [
+        164,
+        92,
+        145,
+        74
+      ],
+      "size": [
+        145,
+        74
+      ],
+      "sourceSize": [
+        145,
+        74
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    }
+  ]
+}

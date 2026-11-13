@@ -1,0 +1,2122 @@
+{
+  "startedAt": "2026-11-12T01:55:39.938Z",
+  "error": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+  "stack": "page.waitForFunction: Timeout 30000ms exceeded.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\scripts\\verify-v0818-ocean.mjs:88:67",
+  "errors": [],
+  "failed": [],
+  "warnings": [],
+  "checks": [
+    "mobile grenade button: forward/left hand launch, held once, direction preserved with drag",
+    "pause/resume clears and restores aim presentation",
+    "full ocean clear with normal health/ammo; first diver 3 contacts, first shield diver 5 contacts",
+    "actual loaded atlas: shared harpoon/sonar, solid hit body, swimming shield, six-frame break"
+  ],
+  "grenades": [
+    {
+      "direction": 1,
+      "first": {
+        "owner": "player",
+        "kind": "bomb",
+        "tier": "standard",
+        "radius": 12,
+        "x": 913.735582111477,
+        "y": 396.50462766179254,
+        "vx": 341.0033307995384,
+        "vy": 3.2394183181328375,
+        "age": 0.08333333333333333,
+        "homing": 0
+      },
+      "later": {
+        "owner": "player",
+        "kind": "bomb",
+        "tier": "standard",
+        "radius": 12,
+        "x": 949.3104192644995,
+        "y": 396.84257679228307,
+        "vx": 317.816946884856,
+        "vy": 3.0191553763944863,
+        "age": 0.19166666666666665,
+        "homing": 0
+      }
+    },
+    {
+      "direction": -1,
+      "first": {
+        "owner": "player",
+        "kind": "bomb",
+        "tier": "standard",
+        "radius": 12,
+        "x": 787.748884069674,
+        "y": 396,
+        "vx": -341.01871715115476,
+        "vy": 4.176274804084983e-14,
+        "age": 0.08333333333333333,
+        "homing": 0
+      },
+      "later": {
+        "owner": "player",
+        "kind": "bomb",
+        "tier": "standard",
+        "radius": 12,
+        "x": 752.1724417506495,
+        "y": 396,
+        "vx": -317.8312870477013,
+        "vy": 3.89231068351851e-14,
+        "age": 0.19166666666666665,
+        "homing": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 12.308333333333275,
+      "id": "sea-0",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 12.541666666666595,
+      "id": "sea-0",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 14.233333333333166,
+      "id": "sea-0",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 15.44166666666643,
+      "id": "sea-1",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 15.67499999999975,
+      "id": "sea-1",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 15.866666666666406,
+      "id": "sea-1",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 17.38333333333299,
+      "id": "sea-2",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 17.55833333333298,
+      "id": "sea-2",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 18.46666666666626,
+      "id": "sea-2",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 18.84999999999957,
+      "id": "sea-3",
+      "kind": "diver",
+      "shielded": true,
+      "before": 5,
+      "after": 4,
+      "shield": 1,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 19.04999999999956,
+      "id": "sea-3",
+      "kind": "diver",
+      "shielded": true,
+      "before": 4,
+      "after": 3,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 19.266666666666215,
+      "id": "sea-3",
+      "kind": "diver",
+      "shielded": true,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 19.508333333332867,
+      "id": "sea-3",
+      "kind": "diver",
+      "shielded": true,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 19.733333333332855,
+      "id": "sea-3",
+      "kind": "diver",
+      "shielded": true,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 20.33333333333282,
+      "id": "sea-4",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 20.59166666666614,
+      "id": "sea-4",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 20.783333333332795,
+      "id": "sea-4",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 21.49999999999942,
+      "id": "sea-5",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 21.67499999999941,
+      "id": "sea-5",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 21.891666666666065,
+      "id": "sea-5",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 22.524999999999363,
+      "id": "sea-6",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 22.74999999999935,
+      "id": "sea-6",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 22.941666666666006,
+      "id": "sea-6",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 24.799999999999233,
+      "id": "sea-7",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 24.891666666665895,
+      "id": "sea-8",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 25.08333333333255,
+      "id": "sea-8",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 25.28333333333254,
+      "id": "sea-8",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 25.774999999999178,
+      "id": "sea-7",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 26.024999999999164,
+      "id": "sea-7",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 28.191666666665707,
+      "id": "sea-9",
+      "kind": "turret",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 28.874999999999,
+      "id": "sea-9",
+      "kind": "turret",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 29.066666666665657,
+      "id": "sea-9",
+      "kind": "turret",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 30.96666666666555,
+      "id": "sea-11",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 31.108333333332208,
+      "id": "sea-11",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 31.308333333332197,
+      "id": "sea-11",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 31.449999999998855,
+      "id": "sea-13",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 32.58333333333213,
+      "id": "sea-13",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 32.724999999998786,
+      "id": "sea-13",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 33.28333333333209,
+      "id": "sea-12",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 33.6166666666654,
+      "id": "sea-12",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 34.71666666666534,
+      "id": "sea-10",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 35.01666666666532,
+      "id": "sea-10",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 35.316666666665306,
+      "id": "sea-10",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 36.03333333333193,
+      "id": "sea-12",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 37.13333333333187,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 84,
+      "after": 81,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 37.36666666666519,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 81,
+      "after": 78,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 37.54166666666518,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 78,
+      "after": 75,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 37.733333333331835,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 75,
+      "after": 72,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 38.433333333331795,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 72,
+      "after": 67,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 38.574999999998454,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 67,
+      "after": 62,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 38.69999999999845,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 62,
+      "after": 57,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 38.899999999998435,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 57,
+      "after": 52,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 39.11666666666509,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 52,
+      "after": 47,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 39.308333333331746,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 47,
+      "after": 42,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 39.64166666666506,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 42,
+      "after": 37,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 39.99166666666504,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 37,
+      "after": 32,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 40.358333333331686,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 32,
+      "after": 27,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 40.72499999999833,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 27,
+      "after": 22,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 41.09166666666498,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 22,
+      "after": 17,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 41.45833333333162,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 17,
+      "after": 12,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 41.67499999999828,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 12,
+      "after": 9,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 41.98333333333159,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 9,
+      "after": 6,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 42.38333333333157,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 6,
+      "after": 3,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 42.683333333331554,
+      "id": "sea-14",
+      "kind": "captain",
+      "shielded": false,
+      "before": 3,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 43.966666666664814,
+      "id": "sea-15",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 44.1666666666648,
+      "id": "sea-15",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 44.34166666666479,
+      "id": "sea-15",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 46.241666666664685,
+      "id": "sea-17",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 46.45833333333134,
+      "id": "sea-16",
+      "kind": "diver",
+      "shielded": true,
+      "before": 5,
+      "after": 4,
+      "shield": 1,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 46.649999999997995,
+      "id": "sea-16",
+      "kind": "diver",
+      "shielded": true,
+      "before": 4,
+      "after": 3,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 46.883333333331315,
+      "id": "sea-16",
+      "kind": "diver",
+      "shielded": true,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 47.59999999999794,
+      "id": "sea-17",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 48.20833333333124,
+      "id": "sea-16",
+      "kind": "diver",
+      "shielded": true,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 48.483333333331224,
+      "id": "sea-16",
+      "kind": "diver",
+      "shielded": true,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 48.97499999999786,
+      "id": "sea-18",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 49.20833333333118,
+      "id": "sea-18",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 49.39999999999784,
+      "id": "sea-18",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 49.74999999999782,
+      "id": "sea-17",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 50.6583333333311,
+      "id": "sea-19",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 51.458333333331055,
+      "id": "sea-20",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 51.633333333331045,
+      "id": "sea-20",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 52.24999999999768,
+      "id": "sea-20",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 54.29166666666423,
+      "id": "sea-21",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 54.41666666666422,
+      "id": "sea-21",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 54.55833333333088,
+      "id": "sea-21",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 55.57499999999749,
+      "id": "sea-22",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 55.891666666664136,
+      "id": "sea-22",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 55.9333333333308,
+      "id": "sea-22",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 56.816666666664084,
+      "id": "sea-23",
+      "kind": "turret",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 57.48333333333071,
+      "id": "sea-23",
+      "kind": "turret",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 57.6833333333307,
+      "id": "sea-23",
+      "kind": "turret",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 58.716666666663976,
+      "id": "sea-24",
+      "kind": "mine",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 58.90833333333063,
+      "id": "sea-24",
+      "kind": "mine",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 58.90833333333063,
+      "id": "sea-25",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 60.058333333330566,
+      "id": "sea-26",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 60.24999999999722,
+      "id": "sea-26",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 60.44166666666388,
+      "id": "sea-26",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 61.55833333333048,
+      "id": "sea-28",
+      "kind": "mine",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 61.95833333333046,
+      "id": "sea-28",
+      "kind": "mine",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 63.79166666666369,
+      "id": "sea-29",
+      "kind": "turret",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 65.6249999999983,
+      "id": "sea-27",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "sonar"
+    },
+    {
+      "time": 67.47499999999977,
+      "id": "sea-27",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 67.775,
+      "id": "sea-27",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 69.1500000000011,
+      "id": "sea-29",
+      "kind": "turret",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 69.34166666666792,
+      "id": "sea-29",
+      "kind": "turret",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 70.18333333333526,
+      "id": "sea-30",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 70.4000000000021,
+      "id": "sea-30",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 70.63333333333561,
+      "id": "sea-30",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 73.3000000000044,
+      "id": "sea-31",
+      "kind": "diver",
+      "shielded": true,
+      "before": 5,
+      "after": 0,
+      "shield": 0,
+      "weapon": "torpedo"
+    },
+    {
+      "time": 74.87500000000566,
+      "id": "sea-32",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 76.29166666667345,
+      "id": "sea-33",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 76.48333333334027,
+      "id": "sea-33",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 76.70000000000711,
+      "id": "sea-33",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 77.41666666667435,
+      "id": "sea-36",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 77.45833333334105,
+      "id": "sea-34",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 77.65000000000786,
+      "id": "sea-34",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 77.84166666667468,
+      "id": "sea-34",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 78.50833333334188,
+      "id": "sea-36",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 78.7416666666754,
+      "id": "sea-36",
+      "kind": "kelp",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 79.47500000000932,
+      "id": "sea-35",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 80.71666666667697,
+      "id": "sea-35",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 81.00000000001053,
+      "id": "sea-35",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 82.58333333334512,
+      "id": "sea-37",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 82.75833333334526,
+      "id": "sea-37",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 82.9750000000121,
+      "id": "sea-37",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 83.77500000001274,
+      "id": "sea-38",
+      "kind": "turret",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 84.95833333334701,
+      "id": "sea-39",
+      "kind": "fish",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 85.15000000001383,
+      "id": "sea-39",
+      "kind": "fish",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 85.34166666668065,
+      "id": "sea-39",
+      "kind": "fish",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 87.67500000001584,
+      "id": "sea-40",
+      "kind": "diver",
+      "shielded": false,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 88.74166666668336,
+      "id": "sea-40",
+      "kind": "diver",
+      "shielded": false,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 89.02500000001692,
+      "id": "sea-40",
+      "kind": "diver",
+      "shielded": false,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 89.90000000001761,
+      "id": "sea-42",
+      "kind": "diver",
+      "shielded": true,
+      "before": 5,
+      "after": 4,
+      "shield": 1,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 90.13333333335113,
+      "id": "sea-42",
+      "kind": "diver",
+      "shielded": true,
+      "before": 4,
+      "after": 3,
+      "shield": 0,
+      "weapon": "harpoon"
+    },
+    {
+      "time": 90.32500000001795,
+      "id": "sea-42",
+      "kind": "diver",
+      "shielded": true,
+      "before": 3,
+      "after": 2,
+      "shield": 0,
+      "weapon": "torpedo"
+    },
+    {
+      "time": 90.51666666668477,
+      "id": "sea-42",
+      "kind": "diver",
+      "shielded": true,
+      "before": 2,
+      "after": 1,
+      "shield": 0,
+      "weapon": "torpedo"
+    },
+    {
+      "time": 91.15000000001861,
+      "id": "sea-42",
+      "kind": "diver",
+      "shielded": true,
+      "before": 1,
+      "after": 0,
+      "shield": 0,
+      "weapon": "torpedo"
+    },
+    {
+      "time": 91.6083333333523,
+      "id": "sea-41",
+      "kind": "mine",
+      "shielded": false,
+      "before": 2,
+      "after": 0,
+      "shield": 0,
+      "weapon": "torpedo"
+    }
+  ],
+  "geometry": {
+    "player-standard-harpoon": {
+      "owner": "player",
+      "kind": "harpoon",
+      "tier": "standard",
+      "width": 72,
+      "height": 8.154216867469879,
+      "frame": "shot.shared.harpoon"
+    },
+    "enemy-standard-harpoon": {
+      "owner": "enemy",
+      "kind": "harpoon",
+      "tier": "standard",
+      "width": 72,
+      "height": 8.154216867469879,
+      "frame": "shot.shared.harpoon"
+    },
+    "enemy-standard-sonar": {
+      "owner": "enemy",
+      "kind": "sonar",
+      "tier": "standard",
+      "width": 34,
+      "height": 42.9,
+      "frame": "shot.player.sonar"
+    },
+    "player-standard-sonar": {
+      "owner": "player",
+      "kind": "sonar",
+      "tier": "standard",
+      "width": 34,
+      "height": 42.9,
+      "frame": "shot.player.sonar"
+    },
+    "enemy-standard-torpedo": {
+      "owner": "enemy",
+      "kind": "torpedo",
+      "tier": "standard",
+      "width": 58,
+      "height": 31.65648854961832,
+      "frame": "shot.enemy.torpedo"
+    },
+    "enemy-mini-torpedo": {
+      "owner": "enemy",
+      "kind": "torpedo",
+      "tier": "mini",
+      "width": 66.69999999999999,
+      "height": 36.40496183206106,
+      "frame": "shot.enemy.torpedo"
+    },
+    "enemy-mini-sonar": {
+      "owner": "enemy",
+      "kind": "sonar",
+      "tier": "mini",
+      "width": 39.099999999999994,
+      "height": 49.334999999999994,
+      "frame": "shot.player.sonar"
+    },
+    "player-standard-torpedo": {
+      "owner": "player",
+      "kind": "torpedo",
+      "tier": "standard",
+      "width": 58,
+      "height": 31.65648854961832,
+      "frame": "shot.player.torpedo"
+    },
+    "enemy-boss-harpoon": {
+      "owner": "enemy",
+      "kind": "harpoon",
+      "tier": "boss",
+      "width": 90,
+      "height": 10.192771084337348,
+      "frame": "shot.shared.harpoon"
+    },
+    "enemy-boss-sonar": {
+      "owner": "enemy",
+      "kind": "sonar",
+      "tier": "boss",
+      "width": 42.5,
+      "height": 53.625,
+      "frame": "shot.player.sonar"
+    }
+  },
+  "captures": [
+    "reports/v0818-grenade-forward.png",
+    "reports/v0818-grenade-left.png",
+    "reports/v0818-aim-locked.png",
+    "reports/v0818-shot-harpoon.png",
+    "reports/v0818-aim-neutral.png",
+    "reports/v0818-impact.png",
+    "reports/v0818-shield-swim.png",
+    "reports/v0818-shield-hit.png",
+    "reports/v0818-shield-break.png",
+    "reports/v0818-aim-blocked.png",
+    "reports/v0818-shot-sonar.png",
+    "reports/v0818-shot-torpedo.png",
+    "reports/v0818-submarine.png",
+    "reports/v0818-ocean-complete.png",
+    "reports/v0818-linked-flight.png"
+  ],
+  "final": {
+    "chapter": 3,
+    "buildStage": "P0/P1-flight-slice",
+    "state": "playing",
+    "time": 0.33333333333333354,
+    "clearTime": 0,
+    "stage": "launch",
+    "introTime": 0.33333333333333354,
+    "player": {
+      "x": 220,
+      "y": 280,
+      "vx": 0,
+      "vy": 0,
+      "health": 5,
+      "facing": 1,
+      "alive": true
+    },
+    "cameraX": 0,
+    "cameraY": 40,
+    "furthestX": 220,
+    "retreatLimit": 0,
+    "weapon": "rifle",
+    "storedWeapon": "rifle",
+    "ammo": 0,
+    "grenades": 3,
+    "aim": 0,
+    "aimTarget": "",
+    "muzzle": {
+      "x": 262,
+      "y": 324,
+      "angle": 0,
+      "originX": 220,
+      "originY": 324
+    },
+    "lastShotWeapon": "rifle",
+    "lastShotMuzzle": {
+      "x": 262,
+      "y": 324,
+      "angle": 0,
+      "originX": 220,
+      "originY": 324
+    },
+    "shots": 0,
+    "hits": 0,
+    "kills": 0,
+    "collected": 0,
+    "airburstThrown": 0,
+    "knifeSerial": 0,
+    "dodgeCooldown": 0,
+    "dodgeTime": 0,
+    "dodgeSerial": 0,
+    "controls": {
+      "dodgeRemaining": 0,
+      "dodgeDuration": 1.8,
+      "enabled": false,
+      "shootHeld": false,
+      "hudHeight": 96,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "systemMenu": null,
+        "systemReservedLeft": null,
+        "safeInsets": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1325.538461538462,
+          "levelWidth": 243.6923076923077,
+          "trackWidth": 206.76923076923077,
+          "trackX": 1222.1538461538464,
+          "secondRow": false,
+          "objectiveX": 925.846153846154,
+          "objectiveWidth": 511.3846153846157
+        },
+        "joystick": {
+          "x": 171.92307692307693,
+          "y": 164.53846153846155,
+          "r": 95.76000000000002,
+          "baseR": 135,
+          "knobR": 64.80000000000001,
+          "hit": 270,
+          "unit": 1.8461538461538463
+        },
+        "jump": {
+          "x": 1188.7384615384615,
+          "y": 228.82153846153847,
+          "r": 64.80000000000001,
+          "hit": 151.75384615384618
+        },
+        "shoot": {
+          "x": 1404,
+          "y": 164.53846153846155,
+          "r": 108,
+          "hit": 241.84615384615384
+        },
+        "grenade": {
+          "x": 1415.076923076923,
+          "y": 366.02769230769235,
+          "r": 54.720000000000006,
+          "hit": 131.59384615384616
+        },
+        "pause": {
+          "x": 1502.769230769231,
+          "y": 668.3076923076923,
+          "hit": 81.23076923076924
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 0,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    },
+    "attackCooldown": {
+      "remaining": 0,
+      "duration": 0.22
+    },
+    "zone": "甲板试飞",
+    "levelWidth": 6500,
+    "boss": {
+      "id": "falcon",
+      "kind": "helicopter",
+      "x": 4750,
+      "y": 390,
+      "vx": 0,
+      "vy": 0,
+      "hp": 64,
+      "maxHp": 64,
+      "active": false,
+      "alive": true,
+      "mode": "approach",
+      "attack": "burst",
+      "angle": 3.141592653589793,
+      "timer": 0.9,
+      "facing": -1,
+      "phase": 1,
+      "travel": 0,
+      "attackCounts": {},
+      "bounds": {
+        "x": 4640,
+        "y": 390,
+        "w": 220,
+        "h": 150
+      }
+    },
+    "miniBoss": {
+      "id": "falcon",
+      "kind": "helicopter",
+      "x": 4750,
+      "y": 390,
+      "vx": 0,
+      "vy": 0,
+      "hp": 64,
+      "maxHp": 64,
+      "active": false,
+      "alive": true,
+      "mode": "approach",
+      "attack": "burst",
+      "angle": 3.141592653589793,
+      "timer": 0.9,
+      "facing": -1,
+      "phase": 1,
+      "travel": 0,
+      "attackCounts": {},
+      "bounds": {
+        "x": 4640,
+        "y": 390,
+        "w": 220,
+        "h": 150
+      }
+    },
+    "enemies": [
+      {
+        "id": "air-rifle-1",
+        "kind": "rifle",
+        "x": 1000,
+        "y": 320,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 983,
+          "y": 323,
+          "w": 34,
+          "h": 65
+        }
+      },
+      {
+        "id": "air-drone-1",
+        "kind": "drone",
+        "x": 1750,
+        "y": 570,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 1715,
+          "y": 570,
+          "w": 70,
+          "h": 48
+        }
+      },
+      {
+        "id": "air-rifle-2",
+        "kind": "rifle",
+        "x": 2350,
+        "y": 330,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 2333,
+          "y": 333,
+          "w": 34,
+          "h": 65
+        }
+      },
+      {
+        "id": "air-drone-2",
+        "kind": "drone",
+        "x": 2810,
+        "y": 600,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 2775,
+          "y": 600,
+          "w": 70,
+          "h": 48
+        }
+      }
+    ],
+    "bossVisibleBand": {
+      "min": 220,
+      "max": 355.13043478260875,
+      "bodyTopMargin": 224
+    },
+    "flightBounds": {
+      "floor": 80,
+      "ceiling": 780
+    },
+    "obstacles": [
+      {
+        "id": "launch-deck",
+        "kind": "deck",
+        "x": 0,
+        "y": 80,
+        "w": 660,
+        "h": 90
+      },
+      {
+        "id": "roof-a",
+        "kind": "roof",
+        "x": 1040,
+        "y": 80,
+        "w": 390,
+        "h": 120
+      },
+      {
+        "id": "bridge-a",
+        "kind": "bridge",
+        "x": 1700,
+        "y": 450,
+        "w": 310,
+        "h": 32
+      },
+      {
+        "id": "roof-b",
+        "kind": "roof",
+        "x": 2240,
+        "y": 80,
+        "w": 350,
+        "h": 160
+      },
+      {
+        "id": "bridge-b",
+        "kind": "bridge",
+        "x": 2810,
+        "y": 480,
+        "w": 330,
+        "h": 32
+      },
+      {
+        "id": "return-deck",
+        "kind": "deck",
+        "x": 6040,
+        "y": 80,
+        "w": 460,
+        "h": 90
+      },
+      {
+        "x": 5860,
+        "y": 80,
+        "w": 30,
+        "h": 700
+      }
+    ],
+    "pickups": [
+      {
+        "x": 1500,
+        "y": 320,
+        "kind": "airburst",
+        "source": "trial-airburst",
+        "active": true,
+        "age": 0
+      },
+      {
+        "x": 3430,
+        "y": 350,
+        "kind": "medkit",
+        "source": "trial-preboss-health",
+        "active": true,
+        "age": 0
+      },
+      {
+        "x": 3590,
+        "y": 350,
+        "kind": "rocket",
+        "source": "trial-preboss-rockets",
+        "active": true,
+        "age": 0
+      }
+    ],
+    "recoverySpawned": [],
+    "effects": [],
+    "airbursts": [],
+    "projectileStates": [],
+    "victory": {
+      "active": false,
+      "time": 0,
+      "phase": "idle",
+      "focus": 0,
+      "cheerTime": 0,
+      "resultProgress": 0,
+      "resultsReady": false,
+      "impactSerial": 0,
+      "haptic": "light",
+      "flash": 0
+    },
+    "impact": {
+      "hitStop": 0,
+      "shakeTime": 0,
+      "shakePower": 0,
+      "blastCount": 0
+    },
+    "bullets": 0,
+    "entryMode": "chapter02-preview",
+    "flightArt": {
+      "loaded": true,
+      "error": "",
+      "playerFrame": "hero.rifle.hover.0",
+      "playerSize": {
+        "width": 90.5,
+        "height": 90.5
+      },
+      "renderedMuzzle": {
+        "x": 262,
+        "y": 225.45833333333334,
+        "angle": 0
+      },
+      "scenery": {
+        "theme": "coastal-sky",
+        "imageFrames": 22,
+        "obstacles": 2,
+        "parallax": true
+      },
+      "projectiles": [],
+      "enemies": [],
+      "generatedFrames": 22
+    },
+    "oceanArt": null,
+    "chapterLoading": false,
+    "chapterAssets": {
+      "oceanLoaded": false,
+      "oceanFrames": 0,
+      "flightLoaded": true
+    },
+    "playerShots": 0,
+    "audio": {
+      "loaded": 9,
+      "played": 535,
+      "byEffect": {
+        "water-blast": 57,
+        "hit": 7,
+        "rifle": 238,
+        "melee-hit": 166,
+        "pickup": 11,
+        "sonar": 48,
+        "rocket": 8
+      },
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "active": "flight",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "hero.rifle.hover.0",
+      "playerSize": {
+        "width": 90.5,
+        "height": 90.5
+      },
+      "renderedMuzzle": {
+        "x": 262,
+        "y": 225.45833333333334,
+        "angle": 0
+      },
+      "scenery": {
+        "theme": "coastal-sky",
+        "imageFrames": 22,
+        "obstacles": 2,
+        "parallax": true
+      },
+      "projectiles": [],
+      "enemies": [],
+      "generatedFrames": 22
+    },
+    "visibleChunks": 9,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 5,
+        "supported": true
+      }
+    },
+    "presentation": {
+      "chapter": 3,
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 286.723076923077,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": false,
+      "resultProgress": 0,
+      "resultReady": false,
+      "resultPrimary": "再飞一次  →",
+      "resultCaption": "云端突围 · 抵达接应点",
+      "skipIntroVisible": false,
+      "bossBar": {
+        "visible": false,
+        "bottom": 564.7692307692307,
+        "builds": 56,
+        "samples": 1079
+      },
+      "controls": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "dodge",
+        "guide": "摇杆自由飞行 · 松手悬停 · 闪避短喷",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 82,
+          "joystick": 3
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "label": "闪避",
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "label": "攻击",
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "label": "空爆弹",
+            "frame": "ui.grenade"
+          }
+        ]
+      },
+      "objective": {
+        "visible": true,
+        "text": "甲板试飞 · 向右突围 →",
+        "x": 925.846153846154,
+        "y": 673.8461538461538
+      }
+    },
+    "display": {
+      "width": 1558.1538461538462,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 1.15,
+      "worldVisibleWidth": 1354.9163879598664,
+      "cameraY": 40,
+      "worldY": 0,
+      "worldX": 0,
+      "bossCeiling": 556.7692307692307,
+      "frameWidth": 844,
+      "frameHeight": 390,
+      "orientationPaused": false
+    }
+  }
+}

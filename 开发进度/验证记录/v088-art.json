@@ -1,0 +1,465 @@
+{
+  "tool": "image_gen.imagegen",
+  "atlases": [
+    {
+      "path": "assets/landart/boss-v088.png",
+      "sha256": "3d24c20a114d85ace00339b19736aa9b994d0f41c937042689dc304b1d3343a9",
+      "bytes": 2657748
+    },
+    {
+      "path": "assets/landart/terrain-v088.png",
+      "sha256": "5138009c157bb07373907932dc1fcb25dd09c24a53db1f83c09f42f2b84e2c77",
+      "bytes": 795620
+    }
+  ],
+  "records": [
+    {
+      "id": "rhino.idle",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        48,
+        80,
+        399,
+        394
+      ],
+      "region": [
+        4,
+        4,
+        351,
+        314
+      ],
+      "opaqueWhite": 26074,
+      "pixels": 66832
+    },
+    {
+      "id": "rhino.roll.0",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        491,
+        78,
+        842,
+        393
+      ],
+      "region": [
+        363,
+        4,
+        351,
+        315
+      ],
+      "opaqueWhite": 25905,
+      "pixels": 67271
+    },
+    {
+      "id": "rhino.roll.1",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        933,
+        84,
+        1286,
+        394
+      ],
+      "region": [
+        722,
+        4,
+        353,
+        310
+      ],
+      "opaqueWhite": 25710,
+      "pixels": 65859
+    },
+    {
+      "id": "rhino.fire",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        1380,
+        94,
+        1729,
+        394
+      ],
+      "region": [
+        1083,
+        4,
+        349,
+        300
+      ],
+      "opaqueWhite": 24979,
+      "pixels": 64767
+    },
+    {
+      "id": "rhino.ram-tell",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        48,
+        521,
+        395,
+        841
+      ],
+      "region": [
+        1440,
+        4,
+        347,
+        320
+      ],
+      "opaqueWhite": 26098,
+      "pixels": 65864
+    },
+    {
+      "id": "rhino.ram",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        456,
+        553,
+        846,
+        839
+      ],
+      "region": [
+        4,
+        332,
+        390,
+        286
+      ],
+      "opaqueWhite": 26882,
+      "pixels": 67946
+    },
+    {
+      "id": "rhino.damaged",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        933,
+        521,
+        1286,
+        837
+      ],
+      "region": [
+        402,
+        332,
+        353,
+        316
+      ],
+      "opaqueWhite": 27200,
+      "pixels": 67305
+    },
+    {
+      "id": "rhino.wreck",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "crop": [
+        1357,
+        594,
+        1739,
+        838
+      ],
+      "region": [
+        763,
+        332,
+        382,
+        244
+      ],
+      "opaqueWhite": 24148,
+      "pixels": 57177
+    },
+    {
+      "id": "colossus.idle",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        28,
+        31,
+        372,
+        330
+      ],
+      "region": [
+        1153,
+        332,
+        344,
+        299
+      ],
+      "opaqueWhite": 18418,
+      "pixels": 55967
+    },
+    {
+      "id": "colossus.walk.0",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        394,
+        29,
+        714,
+        330
+      ],
+      "region": [
+        1505,
+        332,
+        320,
+        301
+      ],
+      "opaqueWhite": 15428,
+      "pixels": 52406
+    },
+    {
+      "id": "colossus.walk.1",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        747,
+        30,
+        1024,
+        329
+      ],
+      "region": [
+        4,
+        656,
+        277,
+        299
+      ],
+      "opaqueWhite": 14288,
+      "pixels": 43805
+    },
+    {
+      "id": "colossus.walk.2",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        1092,
+        32,
+        1414,
+        330
+      ],
+      "region": [
+        289,
+        656,
+        322,
+        298
+      ],
+      "opaqueWhite": 15168,
+      "pixels": 50792
+    },
+    {
+      "id": "colossus.walk.3",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        21,
+        392,
+        358,
+        692
+      ],
+      "region": [
+        619,
+        656,
+        337,
+        300
+      ],
+      "opaqueWhite": 15112,
+      "pixels": 47925
+    },
+    {
+      "id": "colossus.fire",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        384,
+        398,
+        711,
+        692
+      ],
+      "region": [
+        964,
+        656,
+        327,
+        294
+      ],
+      "opaqueWhite": 18199,
+      "pixels": 55052
+    },
+    {
+      "id": "colossus.stomp-tell",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        738,
+        387,
+        1064,
+        692
+      ],
+      "region": [
+        1299,
+        656,
+        326,
+        305
+      ],
+      "opaqueWhite": 16007,
+      "pixels": 50238
+    },
+    {
+      "id": "colossus.stomp",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        1080,
+        427,
+        1432,
+        692
+      ],
+      "region": [
+        1633,
+        656,
+        352,
+        265
+      ],
+      "opaqueWhite": 18790,
+      "pixels": 56706
+    },
+    {
+      "id": "colossus.charge",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        11,
+        754,
+        372,
+        1048
+      ],
+      "region": [
+        4,
+        969,
+        361,
+        294
+      ],
+      "opaqueWhite": 18728,
+      "pixels": 56030
+    },
+    {
+      "id": "colossus.damaged",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        387,
+        752,
+        717,
+        1047
+      ],
+      "region": [
+        373,
+        969,
+        330,
+        295
+      ],
+      "opaqueWhite": 18012,
+      "pixels": 53698
+    },
+    {
+      "id": "colossus.collapse",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        722,
+        788,
+        1032,
+        1045
+      ],
+      "region": [
+        711,
+        969,
+        310,
+        257
+      ],
+      "opaqueWhite": 15776,
+      "pixels": 47988
+    },
+    {
+      "id": "colossus.wreck",
+      "source": "art/source/v088/colossus.png",
+      "sourceSHA256": "1fc86b08263a4c658d5eb040928c475dd51a9efbb1d278b14e37246779ff5202",
+      "crop": [
+        1057,
+        850,
+        1435,
+        1045
+      ],
+      "region": [
+        1029,
+        969,
+        378,
+        195
+      ],
+      "opaqueWhite": 15562,
+      "pixels": 42783
+    },
+    {
+      "id": "terrain088.deck.rib",
+      "source": "art/source/v088/terrain.png",
+      "sourceSHA256": "43a352ca7580dfd869c7ca7f8f67ab94744d7bad927273ca908ab68c0a726aca",
+      "crop": [
+        74,
+        93,
+        1462,
+        265
+      ],
+      "region": [
+        4,
+        4,
+        1388,
+        172
+      ]
+    },
+    {
+      "id": "terrain088.deck.panel",
+      "source": "art/source/v088/terrain.png",
+      "sourceSHA256": "43a352ca7580dfd869c7ca7f8f67ab94744d7bad927273ca908ab68c0a726aca",
+      "crop": [
+        74,
+        343,
+        1462,
+        514
+      ],
+      "region": [
+        4,
+        184,
+        1388,
+        171
+      ]
+    },
+    {
+      "id": "terrain088.grass",
+      "source": "art/source/v088/terrain.png",
+      "sourceSHA256": "43a352ca7580dfd869c7ca7f8f67ab94744d7bad927273ca908ab68c0a726aca",
+      "crop": [
+        52,
+        637,
+        1482,
+        758
+      ],
+      "region": [
+        4,
+        363,
+        1430,
+        121
+      ]
+    },
+    {
+      "id": "terrain088.concrete",
+      "source": "art/source/v088/terrain.png",
+      "sourceSHA256": "43a352ca7580dfd869c7ca7f8f67ab94744d7bad927273ca908ab68c0a726aca",
+      "crop": [
+        52,
+        851,
+        1482,
+        969
+      ],
+      "region": [
+        4,
+        492,
+        1430,
+        118
+      ]
+    }
+  ]
+}

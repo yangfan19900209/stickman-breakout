@@ -1,0 +1,175 @@
+{
+  "checkedAt": "2026-11-11T10:32:29.844Z",
+  "scope": "Read-only SHA-256 preservation audit; only this evidence JSON was written",
+  "checkpoint": "reports/anchors/PRE-V0817-20261111/manifest.json",
+  "gameplay": {
+    "name": "gameplay",
+    "checked": 53,
+    "matched": 53,
+    "changed": [],
+    "missing": [],
+    "added": [],
+    "unchanged": true,
+    "inventorySha256": "5b3169c8d7f3dc826865c0b9279b0d6bce1f102e2a62052c572b4eaa10711921",
+    "groups": [
+      {
+        "group": "camera",
+        "count": 1
+      },
+      {
+        "group": "combat",
+        "count": 10
+      },
+      {
+        "group": "core",
+        "count": 7
+      },
+      {
+        "group": "enemy",
+        "count": 7
+      },
+      {
+        "group": "level",
+        "count": 5
+      },
+      {
+        "group": "ocean",
+        "count": 22
+      },
+      {
+        "group": "player",
+        "count": 1
+      }
+    ]
+  },
+  "resources": {
+    "name": "runtime-resources-nonmeta",
+    "checked": 194,
+    "matched": 194,
+    "changed": [],
+    "missing": [],
+    "added": [],
+    "unchanged": true,
+    "inventorySha256": "0b829c41f8a90ba00216327e67f24487a2ed53281db5dfdc44682b8453c86f47",
+    "groups": [
+      {
+        "group": "landart",
+        "count": 15
+      },
+      {
+        "group": "level02",
+        "count": 161
+      },
+      {
+        "group": "resources",
+        "count": 18
+      }
+    ]
+  },
+  "intentionallyChangedIntegration": [
+    {
+      "file": "assets/scripts/core/InputManager.ts",
+      "reason": "Adds flight input routing; shared integration intentionally changed",
+      "expected": "914c9997065fd413f88879c2a532f90b68dd400e30ed261c6264d2c9d3fa0592",
+      "actual": "88d426a6227d7f87e15c6fcea28f72d2497efb3ae04dacea9a3e27408920d6fc"
+    },
+    {
+      "file": "assets/scripts/ocean/OceanAssets.ts",
+      "reason": "Adds chapter asset lifecycle; ocean gameplay excluded from this change",
+      "expected": "23bc6875d55676c7bfcea7336ba65b693285af6a0b690d4d976767484bdcefe1",
+      "actual": "020c8deda098b6a8ef674f1ac2afa041d0a7b95a4c8b224befe29a2c73d97f15"
+    }
+  ],
+  "ignored": "Asset .meta files are outside the requested nonmeta resource comparison; gameplay checks cover TypeScript source, not meta",
+  "checkpointArchives": {
+    "manifest": "reports/anchors/PRE-V0817-20261111/manifest.json",
+    "manifestSha256": "51e588949eea4b7aafcde62a1cc52cd720d07a4be4aa4aeaca92b931eceb105b",
+    "archives": [
+      {
+        "file": "reports/anchors/PRE-V0817-20261111/source.zip",
+        "expectedSha256": "ea287f03e779a416b6193f736d3c62324861be1831f9d3d3703851624eb89f21",
+        "actualSha256": "ea287f03e779a416b6193f736d3c62324861be1831f9d3d3703851624eb89f21",
+        "archiveHashMatches": true,
+        "entriesChecked": 0,
+        "entriesMatched": 0,
+        "entryChanged": [],
+        "entryMissing": [],
+        "extra": []
+      },
+      {
+        "file": "reports/anchors/PRE-V0817-20261111/web.zip",
+        "expectedSha256": "63a8f7de47e270edc92f3f86dacafe1cf4bee64a47761f8a0534631edbe5047b",
+        "actualSha256": "63a8f7de47e270edc92f3f86dacafe1cf4bee64a47761f8a0534631edbe5047b",
+        "archiveHashMatches": true,
+        "entriesChecked": 0,
+        "entriesMatched": 0,
+        "entryChanged": [],
+        "entryMissing": [],
+        "extra": []
+      },
+      {
+        "file": "reports/anchors/PRE-V0817-20261111/wechat.zip",
+        "expectedSha256": "38ce80b9421622d2ae10c0e6d1764011c5661f6165547b5726a2c97923345491",
+        "actualSha256": "38ce80b9421622d2ae10c0e6d1764011c5661f6165547b5726a2c97923345491",
+        "archiveHashMatches": true,
+        "entriesChecked": 0,
+        "entriesMatched": 0,
+        "entryChanged": [],
+        "entryMissing": [],
+        "extra": []
+      }
+    ]
+  },
+  "originalAnchor": {
+    "manifest": "reports/anchors/L1-V084-20261110/manifest.json",
+    "manifestSha256": "6bc7d6ce9fcbfa2de8c7194d0663d9cd0e65a162ed87e5ce769fb4d2c2aa2ae9",
+    "archives": [
+      {
+        "file": "reports/anchors/L1-V084-20261110/source.zip",
+        "expectedSha256": "79884306e00b65e32221668507bd980929f99da9af8c23c737cf506d6ec7a20d",
+        "actualSha256": "79884306e00b65e32221668507bd980929f99da9af8c23c737cf506d6ec7a20d",
+        "archiveHashMatches": true,
+        "entriesChecked": 1744,
+        "entriesMatched": 1744,
+        "entryChanged": [],
+        "entryMissing": [],
+        "extra": []
+      },
+      {
+        "file": "reports/anchors/L1-V084-20261110/web-mobile.zip",
+        "expectedSha256": "0bf119d6bf77a0fa49ceff0d1150f9df1d0a578850f64f9472b19836e6cb5dfe",
+        "actualSha256": "0bf119d6bf77a0fa49ceff0d1150f9df1d0a578850f64f9472b19836e6cb5dfe",
+        "archiveHashMatches": true,
+        "entriesChecked": 413,
+        "entriesMatched": 413,
+        "entryChanged": [],
+        "entryMissing": [],
+        "extra": []
+      },
+      {
+        "file": "reports/anchors/L1-V084-20261110/wechatgame.zip",
+        "expectedSha256": "4f6da59845347493441546a1f8e816e6b06066c1523a85924dbaa6556c68e96c",
+        "actualSha256": "4f6da59845347493441546a1f8e816e6b06066c1523a85924dbaa6556c68e96c",
+        "archiveHashMatches": true,
+        "entriesChecked": 424,
+        "entriesMatched": 424,
+        "entryChanged": [],
+        "entryMissing": [],
+        "extra": []
+      },
+      {
+        "file": "reports/anchors/L1-V084-20261110/evidence.zip",
+        "expectedSha256": "4c7425b89bbc13c52d0f7b3650ad201a10f636f536fc01c9981c97b698959ebf",
+        "actualSha256": "4c7425b89bbc13c52d0f7b3650ad201a10f636f536fc01c9981c97b698959ebf",
+        "archiveHashMatches": true,
+        "entriesChecked": 40,
+        "entriesMatched": 40,
+        "entryChanged": [],
+        "entryMissing": [],
+        "extra": []
+      }
+    ]
+  },
+  "evidenceBoundary": "File identity proves preservation in the selected scope; it is not a browser/device regression claim. V084 archive integrity is checked against its own manifest, not against current gameplay.",
+  "passed": true
+}

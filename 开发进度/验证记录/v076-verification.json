@@ -1,0 +1,257 @@
+{
+  "version": "0.7.6",
+  "checkedAt": "2026-11-07T10:12:06.622Z",
+  "sourceSHA256": "4144a386af231b63bec36eca630b75eefadd556c752831cde4e7ea8211133edf",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 217,
+    "passed": 217,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": "http://127.0.0.1:4190/",
+  "changes": [
+    "Solid scaffold posts and beam faces; ordinary jumping remains available",
+    "Grounded hydraulic lifts with rider/head/ceiling contact handling",
+    "Larger readable cover with foliage clearance and corrected spawn/recovery placement"
+  ],
+  "geometry": {
+    "fixedScaffolds": 8,
+    "solidPosts": 16,
+    "lifts": 2,
+    "cover": [
+      {
+        "id": "sandbags-01",
+        "x": 1857.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbags-01",
+        "breakable": true
+      },
+      {
+        "id": "sandbags-B",
+        "x": 3505.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbags-B",
+        "breakable": true
+      },
+      {
+        "id": "concrete-C",
+        "x": 3848.5,
+        "y": 150,
+        "w": 153,
+        "h": 64.38749999999999,
+        "kind": "crate",
+        "entityId": "concrete-C",
+        "breakable": false
+      },
+      {
+        "id": "arena-sandbag",
+        "x": 11575,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "arena-sandbag",
+        "breakable": true
+      },
+      {
+        "id": "sandbag-E1",
+        "x": 7697.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E1",
+        "breakable": true
+      },
+      {
+        "id": "sandbag-E2",
+        "x": 8525,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E2",
+        "breakable": true
+      },
+      {
+        "id": "sandbag-F",
+        "x": 9367.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-F",
+        "breakable": true
+      },
+      {
+        "id": "concrete-F",
+        "x": 9968.5,
+        "y": 150,
+        "w": 153,
+        "h": 64.38749999999999,
+        "kind": "crate",
+        "entityId": "concrete-F",
+        "breakable": false
+      }
+    ]
+  },
+  "browser": {
+    "evidence": "reports/v076-land-campaign.json",
+    "clearTime": 94.29166666668777,
+    "hp": 3,
+    "errors": 0,
+    "chapterLink": "reports/v076-chapter-link.json",
+    "mobile": "reports/v076-mobile.json"
+  },
+  "web": {
+    "entryTime": 1794046072993.5154,
+    "sha256": "8ab3497e82cb547895d0b9338e7a23b6fad69eb284efbec9c3c78a5cfe0f66cf",
+    "bytes": 11043162,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794046303088.2043,
+    "sha256": "7b269cac48c47ee80451ba975e96b15d86de9750a2ef7aecc99b05495b123243",
+    "bytes": 8004007,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 452562
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 1596843
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 1597384
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "art": {
+    "newGeneratedImages": 0,
+    "reused": [
+      "ink.steel",
+      "cover.sandbags",
+      "cover.concrete"
+    ],
+    "note": "Existing hand-drawn art retained; hydraulic support geometry uses the same collision dimensions."
+  },
+  "skill": "reports/v076-skill-verification.json",
+  "screenshots": [
+    {
+      "file": "reports/v076-land-start.png",
+      "sha256": "e341793e286f0740c4a83e66c5cf1218e8c69c99e5e416cd027926af33569380"
+    },
+    {
+      "file": "reports/v076-land-850.png",
+      "sha256": "2176cf5846ad84c3db5a1a5486725c5b70aecad02028a0dd4bbab5eed9bedf75"
+    },
+    {
+      "file": "reports/v076-land-1200.png",
+      "sha256": "5b3ed9ec1ca939cc31edc72795ffa6b745b3dd07228749ce694c6f31fd538880"
+    },
+    {
+      "file": "reports/v076-land-1850.png",
+      "sha256": "5641bf99c8803bc85c6c4455a9a9b1e8a962314aba0d532ec5b3031b16f76f8d"
+    },
+    {
+      "file": "reports/v076-land-2200.png",
+      "sha256": "5df9a1191d678dcc25480b974b6f861edcd4ff0f6431d58eefa52d520422dfd8"
+    },
+    {
+      "file": "reports/v076-land-3100.png",
+      "sha256": "c1e475a49bf23eda18b41c5bd4eaef13b9c218534cc2c1502b6d1ce5ab62fe6e"
+    },
+    {
+      "file": "reports/v076-land-3700.png",
+      "sha256": "507ad67eba720b277f4b70103736d305b2af9450c7c939e81e58f320ba8374d6"
+    },
+    {
+      "file": "reports/v076-land-4300.png",
+      "sha256": "3afb50a3406bb3183b4ffb85294c65a16a64626a80508e8ca8f2eb7375f0d801"
+    },
+    {
+      "file": "reports/v076-land-4900.png",
+      "sha256": "7abbb59cc1acdf1cb0cb457066a968a75f754ad16fde9a21a825a8c1a854d041"
+    },
+    {
+      "file": "reports/v076-land-5050.png",
+      "sha256": "5bcdc30861dc1a8b52ddd3301cbb3b5ea0c0331335637a11adae773632e0ad01"
+    },
+    {
+      "file": "reports/v076-land-5200.png",
+      "sha256": "f138c477f4bcedb9cdb1bacb13f3cfccd0475ae52fc468069b6328c23d8ab990"
+    },
+    {
+      "file": "reports/v076-land-6200.png",
+      "sha256": "3bb2eabe2ea8e3fcdeb368ba4ed1d008dbb468d6ccea7c09e540e5d9a6ad353b"
+    },
+    {
+      "file": "reports/v076-land-7350.png",
+      "sha256": "e5115176e0ba9f8edab7cfe2ca56ec0f2b3f0c9bb11dc2f831ac92055c4e8d76"
+    },
+    {
+      "file": "reports/v076-land-7900.png",
+      "sha256": "da510d02b92b49d4fcd4672b6343ccde185ba6847422aa85f5d71df2afb5fb39"
+    },
+    {
+      "file": "reports/v076-land-8050.png",
+      "sha256": "c97b3064e77bb152e2808e52e5b11cc805bbbbc0edb98d73b982ea406aae8cdf"
+    },
+    {
+      "file": "reports/v076-land-8250.png",
+      "sha256": "c367fb317eebc0deda595385bd5ac594c3a9d1617c8fb0bdb7dbd53bfad9513b"
+    },
+    {
+      "file": "reports/v076-land-9100.png",
+      "sha256": "9737c0a04bdb4fe845099a517a08a4c88bbd9b33039e87bcf05012ca0f282f18"
+    },
+    {
+      "file": "reports/v076-land-9900.png",
+      "sha256": "ca5929616d4935d39c549e857cae36ea2b9f0cd251404f04e3fff5b01ba04dee"
+    },
+    {
+      "file": "reports/v076-land-10800.png",
+      "sha256": "e499971034083e2d98a6bd16010cd27bd6bb8e57ca7e0183de1d3caa403bbcb3"
+    },
+    {
+      "file": "reports/v076-land-complete.png",
+      "sha256": "32c7abd8bea192ee2260a1c635e56660904f8c8c9073f8b0a0a055890e4c5447"
+    },
+    {
+      "file": "reports/v076-chapter-link.png",
+      "sha256": "213e81d59b7072bd31fef00ab87022c3b34b328e92d95011a2cdf8a10e78657f"
+    },
+    {
+      "file": "reports/v076-mobile-1600.png",
+      "sha256": "3222aff3f9d6fa6a6aa1800efacdd160a225bf6b24ca0bd6b20d3565f8df8b92"
+    },
+    {
+      "file": "reports/v076-mobile-3700.png",
+      "sha256": "bc082aa88de93624475bdc9788d56c3f49d906b0351602c3194263ac9a2b0aa2"
+    }
+  ],
+  "limitations": [
+    "WeChat runtime and physical phone not run; no upload or publication.",
+    "Chapter 2 gameplay/art unchanged: this run checks chapter entry; full chapter 2 campaign evidence remains V075."
+  ]
+}

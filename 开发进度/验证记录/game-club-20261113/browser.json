@@ -1,0 +1,232 @@
+{
+  "passed": true,
+  "startedAt": "2026-11-13T01:05:20.914Z",
+  "method": "Actual Cocos Web build and touch/keyboard input, with a simulated WeChat host and native overlay. No game-state changes. This does not confirm WeChat device behavior or server-side community access.",
+  "cases": [
+    {
+      "name": "wide-phone",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "inset": 59,
+      "homeBounds": {
+        "x": 74.84375,
+        "y": 296.921875,
+        "width": 163.75,
+        "height": 43.65625
+      },
+      "host": {
+        "created": 1,
+        "shown": 6,
+        "hidden": 6,
+        "destroyed": 0,
+        "taps": 2,
+        "options": [
+          {
+            "type": "text",
+            "text": "游戏圈",
+            "icon": "dark",
+            "style": {
+              "left": 74.85416666666667,
+              "top": 296.9333333333333,
+              "width": 163.74999999999997,
+              "height": 43.666666666666664,
+              "backgroundColor": "#f6f1e8",
+              "color": "#22201d",
+              "borderColor": "#22201d",
+              "borderWidth": 1,
+              "borderRadius": 5,
+              "fontSize": 13.1,
+              "lineHeight": 43.666666666666664,
+              "textAlign": "center"
+            }
+          }
+        ],
+        "toasts": []
+      },
+      "final": {
+        "enabled": true,
+        "supported": true,
+        "visible": true,
+        "background": false,
+        "tapRequests": 2,
+        "bounds": {
+          "left": 74.85416666666667,
+          "top": 296.9333333333333,
+          "width": 163.74999999999997,
+          "height": 43.666666666666664
+        },
+        "error": ""
+      },
+      "checks": [
+        "title tap",
+        "start hides",
+        "pause tap clears input",
+        "background/foreground preserves pause",
+        "rotation hides/restores",
+        "resume hides",
+        "return home reuses button"
+      ]
+    },
+    {
+      "name": "small-phone",
+      "viewport": {
+        "width": 667,
+        "height": 375
+      },
+      "inset": 0,
+      "homeBounds": {
+        "x": 49.515625,
+        "y": 283.328125,
+        "width": 156.25,
+        "height": 41.65625
+      },
+      "host": {
+        "created": 1,
+        "shown": 6,
+        "hidden": 6,
+        "destroyed": 0,
+        "taps": 2,
+        "options": [
+          {
+            "type": "text",
+            "text": "游戏圈",
+            "icon": "dark",
+            "style": {
+              "left": 49.52916666666666,
+              "top": 283.33333333333337,
+              "width": 156.24999999999997,
+              "height": 41.66666666666666,
+              "backgroundColor": "#f6f1e8",
+              "color": "#22201d",
+              "borderColor": "#22201d",
+              "borderWidth": 1,
+              "borderRadius": 5,
+              "fontSize": 12.499999999999996,
+              "lineHeight": 41.66666666666666,
+              "textAlign": "center"
+            }
+          }
+        ],
+        "toasts": []
+      },
+      "final": {
+        "enabled": true,
+        "supported": true,
+        "visible": true,
+        "background": false,
+        "tapRequests": 2,
+        "bounds": {
+          "left": 49.52916666666666,
+          "top": 283.33333333333337,
+          "width": 156.24999999999997,
+          "height": 41.66666666666666
+        },
+        "error": ""
+      },
+      "checks": [
+        "title tap",
+        "start hides",
+        "pause tap clears input",
+        "background/foreground preserves pause",
+        "rotation hides/restores",
+        "resume hides",
+        "return home reuses button"
+      ]
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "inset": 0,
+      "homeBounds": {
+        "x": 95,
+        "y": 544,
+        "width": 300,
+        "height": 80
+      },
+      "host": {
+        "created": 1,
+        "shown": 6,
+        "hidden": 6,
+        "destroyed": 0,
+        "taps": 2,
+        "options": [
+          {
+            "type": "text",
+            "text": "游戏圈",
+            "icon": "dark",
+            "style": {
+              "left": 95,
+              "top": 544,
+              "width": 300,
+              "height": 80,
+              "backgroundColor": "#f6f1e8",
+              "color": "#22201d",
+              "borderColor": "#22201d",
+              "borderWidth": 1,
+              "borderRadius": 5,
+              "fontSize": 22,
+              "lineHeight": 80,
+              "textAlign": "center"
+            }
+          }
+        ],
+        "toasts": []
+      },
+      "final": {
+        "enabled": true,
+        "supported": true,
+        "visible": true,
+        "background": false,
+        "tapRequests": 2,
+        "bounds": {
+          "left": 95,
+          "top": 544,
+          "width": 300,
+          "height": 80
+        },
+        "error": ""
+      },
+      "checks": [
+        "title tap",
+        "start hides",
+        "pause tap clears input",
+        "background/foreground preserves pause",
+        "rotation hides/restores",
+        "resume hides",
+        "return home reuses button"
+      ]
+    },
+    {
+      "name": "unsupported",
+      "passed": true
+    },
+    {
+      "name": "failure",
+      "passed": true
+    },
+    {
+      "name": "browser",
+      "passed": true
+    },
+    {
+      "name": "chapter-two-pause",
+      "passed": true
+    }
+  ],
+  "captures": [
+    "reports/game-club-20261113/wide-phone-home.png",
+    "reports/game-club-20261113/wide-phone-paused.png",
+    "reports/game-club-20261113/small-phone-home.png",
+    "reports/game-club-20261113/small-phone-paused.png",
+    "reports/game-club-20261113/desktop-home.png",
+    "reports/game-club-20261113/desktop-paused.png",
+    "reports/game-club-20261113/chapter-two-paused.png"
+  ],
+  "errors": [],
+  "failed": []
+}

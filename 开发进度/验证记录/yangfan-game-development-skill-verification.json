@@ -1,0 +1,75 @@
+{
+  "officialQuickValidator": "Not run: no usable Python interpreter. YAML was parsed with js-yaml; local references and file hashes were verified independently.",
+  "frontmatterAndLocalReferences": "passed",
+  "skillId": "yangfan-game-development",
+  "changedFiles": [
+    "SKILL.md",
+    "references/project-examples.md",
+    "references/project-organization.md",
+    "references/sprite-resource-pipeline.md",
+    "references/verification-and-delivery.md"
+  ],
+  "globalSync": "passed",
+  "filesMatched": 14,
+  "installedPath": "C:\\Users\\Administrator\\.codex\\skills\\yangfan-game-development",
+  "checkedAt": "2026-11-13T07:18:54.1919396Z",
+  "projectPath": "doc/skills/yangfan-game-development",
+  "files": [
+    {
+      "sha256": "a62203af025e5b01a0645722738fbb8f5caaa89157014817cf576876c32f9c43",
+      "file": "SKILL.md"
+    },
+    {
+      "sha256": "8ceafc0bb2da4318ae778d55543df7fb2220e339ba7225a5031de0601a7c7c8c",
+      "file": "agents/openai.yaml"
+    },
+    {
+      "sha256": "9a8bb2f28bcf6ee875c5143d1e9e764aad92bdcf776777c97a87f7499df33ebf",
+      "file": "references/asset-prompts.md"
+    },
+    {
+      "sha256": "1186554c64a3a5b4f29675791c3be657ea14272a4e99fff5823e48475dbd0838",
+      "file": "references/design-and-presentation.md"
+    },
+    {
+      "sha256": "ef18d37ef012a00eeec289463c1c0c81b25c6dba92c154038b752507f4d52af4",
+      "file": "references/gameplay-and-physics.md"
+    },
+    {
+      "sha256": "f7861074cdffdebe30d7cdd7783e8bbfda343f126892f9e8aa5b4a65604ab6d6",
+      "file": "references/performance-and-motion.md"
+    },
+    {
+      "sha256": "588c6fe4b16707061306d77d96b52720ad474b85e4eb74699c26f99fcf680a05",
+      "file": "references/project-examples.md"
+    },
+    {
+      "sha256": "123c4831450626833bb3effa6c6fbbf25b7ded3a52a4044a6368a1dc09e878d7",
+      "file": "references/project-organization.md"
+    },
+    {
+      "sha256": "40873cb1acf5b169d0efd764d8fb333cdab652216f7614509e9f13045fc7a401",
+      "file": "references/skill-maintenance.md"
+    },
+    {
+      "sha256": "ebd71b463bf91b55f434b92cb473bde469becfa19d6a186a42e1d12ea8614547",
+      "file": "references/skill-orchestration.md"
+    },
+    {
+      "sha256": "66490d48dbd09a92ea1b8181ef37707b4ad5822575d14fd124e996844e086b86",
+      "file": "references/sprite-resource-pipeline.md"
+    },
+    {
+      "sha256": "015d419ba7970c9ef3d9a459dfe16c2c91e6419cedde080557c67a3a893a05f4",
+      "file": "references/verification-and-delivery.md"
+    },
+    {
+      "sha256": "41a60e6f1924e6512944f715eb31df8046a6002643de4fa8413d7de66c01c4bf",
+      "file": "references/wechat-social.md"
+    },
+    {
+      "sha256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc",
+      "file": "scripts/inspect_sprite.py"
+    }
+  ]
+}

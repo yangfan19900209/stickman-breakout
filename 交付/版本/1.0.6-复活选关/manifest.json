@@ -1,0 +1,96 @@
+{
+  "version": "1.0.6",
+  "releaseName": "复活与通关选关",
+  "createdAt": "2026-11-13T09:40:02.689Z",
+  "sourceInputSHA256": "48fe2f561582fb597e9926cba31c2690d5aea933bbb77b6097e07d550590d43f",
+  "inputArchive": {
+    "file": "构建输入.zip",
+    "sha256": "2c2de3338b89e580f5f63b017c45ab47dc4889b0fdcce7c302933e8ff9bcf1b7"
+  },
+  "builds": [
+    {
+      "platform": "web-mobile",
+      "files": 434,
+      "bytes": 24257968,
+      "inputSHA256": "48fe2f561582fb597e9926cba31c2690d5aea933bbb77b6097e07d550590d43f"
+    },
+    {
+      "platform": "wechatgame",
+      "files": 447,
+      "bytes": 20924374,
+      "inputSHA256": "48fe2f561582fb597e9926cba31c2690d5aea933bbb77b6097e07d550590d43f"
+    }
+  ],
+  "archives": [
+    {
+      "file": "线条突围-Web-1.0.6.zip",
+      "bytes": 19204822,
+      "sha256": "c9cd5379d7ec9a496ff2109c02dbbea184ec97818347bbbef4127bc5ccd57dc2",
+      "entries": 434
+    },
+    {
+      "file": "线条突围-微信小游戏-1.0.6.zip",
+      "bytes": 18902565,
+      "sha256": "65f4608ab6385d49fa9f69fa1b9d9a3825bff3269f1ce7fe410c4d138e63e280",
+      "entries": 447
+    }
+  ],
+  "budget": {
+    "mainBytes": 3864129,
+    "totalBytes": 20924374,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 742034
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10487797
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4978245
+      },
+      {
+        "name": "level03",
+        "root": "subpackages/level03/",
+        "bytes": 683894
+      }
+    ],
+    "localBudget": {
+      "main": 4194304,
+      "total": 20971520
+    },
+    "basis": "Existing project limits; not a claim of current platform policy"
+  },
+  "validation": {
+    "typecheck": true,
+    "logic": 516,
+    "uiCases": 5,
+    "shareHostCases": 5,
+    "ordinaryInputTwoChapterCampaign": true,
+    "assistedLandClear": true,
+    "unassistedOceanClear": true,
+    "waterRevive": true
+  },
+  "checkpoints": [
+    "PRE-REVIVE-SELECT-20261113"
+  ],
+  "chapterAvailability": [
+    1,
+    2
+  ],
+  "thirdChapterOpen": false,
+  "uploaded": false,
+  "published": false,
+  "wechatDeviceVerified": false,
+  "scope": "Fixed artifact built from a shared-workspace snapshot, including existing ocean and recommendation work. Gameplay and sharing checks listed here apply to this frozen package. Subsequent workspace edits are not incorporated automatically."
+}

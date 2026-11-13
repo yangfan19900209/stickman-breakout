@@ -1,0 +1,45 @@
+{
+  "version": "1.0.6",
+  "startedAt": "2026-11-13T09:22:42.827Z",
+  "finishedAt": "2026-11-13T09:23:31.564Z",
+  "passed": true,
+  "method": "Actual Cocos build, real keyboard/touch. Natural combat deaths and revival. Saved-progress cases use declared legacy-storage fixtures; no game-state editing. WeChat share/lifecycle API simulated, no message sent.",
+  "cases": [
+    {
+      "name": "real-death-revive-second-death-restart",
+      "passed": true,
+      "shareRequests": 1,
+      "primaryHeight": 52.4,
+      "smallRestartHeight": 50
+    },
+    {
+      "name": "persisted-cleared-1-selection-replay",
+      "passed": true
+    },
+    {
+      "name": "persisted-cleared-2-selection-replay",
+      "passed": true
+    },
+    {
+      "name": "corrupt-records-remain-locked",
+      "passed": true
+    },
+    {
+      "name": "chapter-load-failure-retry-background",
+      "passed": true
+    }
+  ],
+  "captures": [
+    "../开发进度/验证记录/v106-revive-select/death-852.png",
+    "../开发进度/验证记录/v106-revive-select/revive-preparation.png",
+    "../开发进度/验证记录/v106-revive-select/revived-protection.png",
+    "../开发进度/验证记录/v106-revive-select/second-death-667.png",
+    "../开发进度/验证记录/v106-revive-select/chapter-select-cleared-1-667.png",
+    "../开发进度/验证记录/v106-revive-select/chapter-select-portrait-1.png",
+    "../开发进度/验证记录/v106-revive-select/chapter-select-cleared-2-667.png",
+    "../开发进度/验证记录/v106-revive-select/chapter-select-portrait-2.png",
+    "../开发进度/验证记录/v106-revive-select/chapter-load-failed.png"
+  ],
+  "errors": [],
+  "failed": []
+}

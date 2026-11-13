@@ -1,0 +1,383 @@
+{
+  "evidence": "model-only, ordinary inputs, no state edits",
+  "runs": [
+    {
+      "policy": "input-only-normal-clear",
+      "observeBoss": 0,
+      "state": "complete",
+      "simulationSeconds": 32.84999999999878,
+      "executionMs": 111,
+      "player": {
+        "x": 6281.516863940551,
+        "y": 324.9702926241994,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "shots": 113,
+      "hits": 28,
+      "kills": 5,
+      "ammo": 0,
+      "airburstThrown": 0,
+      "boss": {
+        "id": "falcon",
+        "kind": "helicopter",
+        "x": 4179.218937167916,
+        "y": 346.6522950249053,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 64,
+        "active": true,
+        "alive": false,
+        "mode": "dead",
+        "attack": "sweep",
+        "angle": 3.141592653589793,
+        "timer": 0,
+        "facing": -1,
+        "phase": 2,
+        "travel": 667.4166666666747,
+        "attackCounts": {
+          "burst": 1,
+          "missiles": 1,
+          "sweep": 1
+        },
+        "bounds": {
+          "x": 4069.218937167916,
+          "y": 346.6522950249053,
+          "w": 220,
+          "h": 150
+        }
+      },
+      "pickups": [
+        {
+          "x": 3430,
+          "y": 350,
+          "kind": "medkit",
+          "source": "trial-preboss-health",
+          "active": true,
+          "age": 29.649999999998958
+        },
+        {
+          "x": 4179.218937167916,
+          "y": 401.6522950249053,
+          "kind": "medkit",
+          "source": "after-falcon",
+          "active": true,
+          "age": 8.391666666666831
+        }
+      ],
+      "recoverySpawned": [
+        "after-falcon"
+      ],
+      "health": [],
+      "phases": [
+        {
+          "at": 17.666666666666305,
+          "mode": "approach",
+          "attack": "burst",
+          "hp": 64
+        },
+        {
+          "at": 18.46666666666626,
+          "mode": "tell",
+          "attack": "burst",
+          "hp": 55
+        },
+        {
+          "at": 19.091666666666224,
+          "mode": "fire",
+          "attack": "burst",
+          "hp": 37
+        },
+        {
+          "at": 19.791666666666185,
+          "mode": "recover",
+          "attack": "burst",
+          "hp": 37
+        },
+        {
+          "at": 20.99999999999945,
+          "mode": "tell",
+          "attack": "missiles",
+          "hp": 19
+        },
+        {
+          "at": 21.858333333332734,
+          "mode": "fire",
+          "attack": "missiles",
+          "hp": 10
+        },
+        {
+          "at": 22.508333333332697,
+          "mode": "recover",
+          "attack": "missiles",
+          "hp": 10
+        },
+        {
+          "at": 23.41666666666598,
+          "mode": "tell",
+          "attack": "sweep",
+          "hp": 6
+        },
+        {
+          "at": 24.274999999999263,
+          "mode": "charge",
+          "attack": "sweep",
+          "hp": 2
+        },
+        {
+          "at": 24.46666666666592,
+          "mode": "dead",
+          "attack": "sweep",
+          "hp": 0
+        }
+      ]
+    },
+    {
+      "policy": "input-only-observe-patterns",
+      "observeBoss": 12,
+      "state": "complete",
+      "simulationSeconds": 47.65833333333127,
+      "executionMs": 96,
+      "player": {
+        "x": 6280.84243434963,
+        "y": 296.09151144490266,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "shots": 128,
+      "hits": 36,
+      "kills": 5,
+      "ammo": 0,
+      "airburstThrown": 0,
+      "boss": {
+        "id": "falcon",
+        "kind": "helicopter",
+        "x": 3842.0012585436125,
+        "y": 339.13602842248065,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 64,
+        "active": true,
+        "alive": false,
+        "mode": "dead",
+        "attack": "burst",
+        "angle": -2.5219462037091667,
+        "timer": 0,
+        "facing": -1,
+        "phase": 2,
+        "travel": 2226.892503853434,
+        "attackCounts": {
+          "burst": 3,
+          "missiles": 2,
+          "sweep": 2,
+          "dive": 2
+        },
+        "bounds": {
+          "x": 3732.0012585436125,
+          "y": 339.13602842248065,
+          "w": 220,
+          "h": 150
+        }
+      },
+      "pickups": [
+        {
+          "x": 3880,
+          "y": 394.13602842248065,
+          "kind": "medkit",
+          "source": "after-falcon",
+          "active": true,
+          "age": 9.58333333333343
+        }
+      ],
+      "recoverySpawned": [
+        "after-falcon"
+      ],
+      "health": [
+        {
+          "at": 33.858333333332055,
+          "health": 4,
+          "x": 3434.7028240428467,
+          "y": 233.34912336033534
+        },
+        {
+          "at": 33.89166666666539,
+          "health": 5,
+          "x": 3434.7028240428467,
+          "y": 254.6824566936687
+        }
+      ],
+      "phases": [
+        {
+          "at": 17.666666666666305,
+          "mode": "approach",
+          "attack": "burst",
+          "hp": 64
+        },
+        {
+          "at": 18.46666666666626,
+          "mode": "tell",
+          "attack": "burst",
+          "hp": 55
+        },
+        {
+          "at": 19.091666666666224,
+          "mode": "fire",
+          "attack": "burst",
+          "hp": 46
+        },
+        {
+          "at": 19.791666666666185,
+          "mode": "recover",
+          "attack": "burst",
+          "hp": 46
+        },
+        {
+          "at": 20.99999999999945,
+          "mode": "tell",
+          "attack": "missiles",
+          "hp": 46
+        },
+        {
+          "at": 21.858333333332734,
+          "mode": "fire",
+          "attack": "missiles",
+          "hp": 46
+        },
+        {
+          "at": 22.508333333332697,
+          "mode": "recover",
+          "attack": "missiles",
+          "hp": 46
+        },
+        {
+          "at": 23.71666666666596,
+          "mode": "tell",
+          "attack": "sweep",
+          "hp": 46
+        },
+        {
+          "at": 24.574999999999246,
+          "mode": "charge",
+          "attack": "sweep",
+          "hp": 46
+        },
+        {
+          "at": 25.333333333332536,
+          "mode": "recover",
+          "attack": "sweep",
+          "hp": 46
+        },
+        {
+          "at": 26.5416666666658,
+          "mode": "tell",
+          "attack": "dive",
+          "hp": 46
+        },
+        {
+          "at": 27.399999999999086,
+          "mode": "charge",
+          "attack": "dive",
+          "hp": 46
+        },
+        {
+          "at": 27.47499999999908,
+          "mode": "recover",
+          "attack": "dive",
+          "hp": 46
+        },
+        {
+          "at": 28.683333333332346,
+          "mode": "tell",
+          "attack": "burst",
+          "hp": 46
+        },
+        {
+          "at": 29.30833333333231,
+          "mode": "fire",
+          "attack": "burst",
+          "hp": 46
+        },
+        {
+          "at": 30.00833333333227,
+          "mode": "recover",
+          "attack": "burst",
+          "hp": 46
+        },
+        {
+          "at": 31.216666666665535,
+          "mode": "tell",
+          "attack": "missiles",
+          "hp": 37
+        },
+        {
+          "at": 32.07499999999882,
+          "mode": "fire",
+          "attack": "missiles",
+          "hp": 37
+        },
+        {
+          "at": 32.724999999998786,
+          "mode": "recover",
+          "attack": "missiles",
+          "hp": 28
+        },
+        {
+          "at": 33.93333333333205,
+          "mode": "tell",
+          "attack": "sweep",
+          "hp": 18
+        },
+        {
+          "at": 34.791666666665336,
+          "mode": "charge",
+          "attack": "sweep",
+          "hp": 15
+        },
+        {
+          "at": 34.858333333332,
+          "mode": "recover",
+          "attack": "sweep",
+          "hp": 14
+        },
+        {
+          "at": 35.76666666666528,
+          "mode": "tell",
+          "attack": "dive",
+          "hp": 11
+        },
+        {
+          "at": 36.624999999998565,
+          "mode": "charge",
+          "attack": "dive",
+          "hp": 7
+        },
+        {
+          "at": 36.858333333331885,
+          "mode": "recover",
+          "attack": "dive",
+          "hp": 6
+        },
+        {
+          "at": 37.76666666666517,
+          "mode": "tell",
+          "attack": "burst",
+          "hp": 2
+        },
+        {
+          "at": 38.083333333331815,
+          "mode": "dead",
+          "attack": "burst",
+          "hp": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9394 @@
+{
+  "version": "0.7.7",
+  "createdAt": "2026-11-09T03:07:24.737Z",
+  "scope": "Chrome WebGL calls, real keyboard, virtual clock; not device FPS",
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "errors": [],
+  "frames": 1148,
+  "medianDrawCalls": 26,
+  "p95DrawCalls": 28,
+  "medianTextureBinds": 16,
+  "peakEnemies": 3,
+  "peakProjectiles": 8,
+  "samples": [
+    {
+      "time": 8.116666666666847,
+      "x": 840,
+      "enemies": 1,
+      "projectiles": 0,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 18
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.150000000000178,
+      "x": 842.0190183117269,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.18333333333351,
+      "x": 846.4494196630578,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.21666666666684,
+      "x": 852.4962194045057,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.24166666666684,
+      "x": 857.7642819312163,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.27500000000017,
+      "x": 865.4655709824025,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 8.308333333333502,
+      "x": 873.7049123173947,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.341666666666834,
+      "x": 882.3049208840374,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.375000000000165,
+      "x": 891.1466919260037,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.408333333333497,
+      "x": 900.1505212015584,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.433333333333495,
+      "x": 906.9768791530862,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.466666666666827,
+      "x": 916.1465856137871,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.500000000000158,
+      "x": 925.3702365743248,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.53333333333349,
+      "x": 934.6300476144766,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.566666666666821,
+      "x": 943.9140974808597,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.600000000000152,
+      "x": 953.2143951183582,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.625000000000151,
+      "x": 960.1969859673567,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.658333333333482,
+      "x": 969.513914259638,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.691666666666814,
+      "x": 978.8362509650981,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.725000000000145,
+      "x": 988.1622130383292,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 8.741666666666811,
+      "x": 992.8261629183563,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.791666666666808,
+      "x": 1006.8206264809189,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.816666666666807,
+      "x": 1013.8188810595692,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.850000000000138,
+      "x": 1022.5592128702904,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.88333333333347,
+      "x": 1030.5938091820015,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.916666666666801,
+      "x": 1038.155336841527,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.950000000000133,
+      "x": 1045.3997571003417,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 8.983333333333464,
+      "x": 1052.4316139117136,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.016666666666795,
+      "x": 1059.3209851832103,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.041666666666794,
+      "x": 1064.4234029631305,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.075000000000125,
+      "x": 1071.1669309796737,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.108333333333457,
+      "x": 1077.8630296801473,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.141666666666788,
+      "x": 1083.099674019728,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.17500000000012,
+      "x": 1086.6099016945077,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.208333333333451,
+      "x": 1088.9628776710615,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.23333333333345,
+      "x": 1090.202848951929,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.266666666666781,
+      "x": 1091.3713022420595,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.300000000000113,
+      "x": 1092.1545399052907,
+      "enemies": 1,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.333333333333444,
+      "x": 1092.6795598117644,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.366666666666775,
+      "x": 1093.0314911796415,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.400000000000107,
+      "x": 1093.2673978303585,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.425000000000106,
+      "x": 1093.3917159172279,
+      "enemies": 0,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.458333333333437,
+      "x": 1094.9365252326027,
+      "enemies": 0,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.491666666666768,
+      "x": 1098.1478185739825,
+      "enemies": 0,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.5250000000001,
+      "x": 1102.476189564392,
+      "enemies": 0,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.541666666666766,
+      "x": 1104.9389029300708,
+      "enemies": 0,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 9.591666666666763,
+      "x": 1113.1324659703332,
+      "enemies": 0,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 9.616666666666761,
+      "x": 1117.5444000908826,
+      "enemies": 0,
+      "projectiles": 1,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.650000000000093,
+      "x": 1123.637269567166,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.683333333333424,
+      "x": 1129.8972188049788,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.716666666666756,
+      "x": 1136.2691649562319,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.750000000000087,
+      "x": 1142.7161848836583,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.783333333333418,
+      "x": 1149.2135282681852,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.81666666666675,
+      "x": 1155.7446044747921,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.841666666666748,
+      "x": 1160.6582079213038,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.87500000000008,
+      "x": 1167.2238118742016,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.908333333333411,
+      "x": 1173.8006445081419,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.941666666666743,
+      "x": 1180.385003952075,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 9.975000000000074,
+      "x": 1186.9744087676293,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.008333333333406,
+      "x": 1193.5671955969208,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.033333333333404,
+      "x": 1198.513319307394,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.066666666666736,
+      "x": 1205.109567848605,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.100000000000067,
+      "x": 1211.7069421643937,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.133333333333399,
+      "x": 1218.3050711094495,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.16666666666673,
+      "x": 1224.9037058976298,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.200000000000061,
+      "x": 1231.5026797625972,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.22500000000006,
+      "x": 1236.4520639171328,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.258333333333391,
+      "x": 1243.6427416214992,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.291666666666723,
+      "x": 1251.539809934985,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.325000000000054,
+      "x": 1259.9103860340945,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.34166666666672,
+      "x": 1264.2222143210429,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.391666666666717,
+      "x": 1277.4991025164452,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.416666666666716,
+      "x": 1284.2711337556375,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.450000000000047,
+      "x": 1293.3896469131146,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.483333333333379,
+      "x": 1302.5789819762786,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.51666666666671,
+      "x": 1311.8157903825227,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.550000000000042,
+      "x": 1321.084421122286,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.583333333333373,
+      "x": 1330.374383010119,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 10.616666666666704,
+      "x": 1339.6786435941078,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.641666666666703,
+      "x": 1346.663322836649,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.675000000000034,
+      "x": 1355.9822190699172,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.708333333333366,
+      "x": 1365.3058749256702,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.741666666666697,
+      "x": 1374.6327212517863,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.775000000000029,
+      "x": 1383.961706214143,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.80833333333336,
+      "x": 1393.2921247472434,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.833333333333359,
+      "x": 1400.2905887058157,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.86666666666669,
+      "x": 1409.6224745921897,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.900000000000022,
+      "x": 1418.9548376728108,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.933333333333353,
+      "x": 1428.2875206263013,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 10.966666666666685,
+      "x": 1437.6204179969884,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.000000000000016,
+      "x": 1446.953459095821,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.025000000000015,
+      "x": 1453.9533050940836,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.058333333333346,
+      "x": 1462.6951365358932,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.091666666666677,
+      "x": 1470.7307380803848,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.125000000000009,
+      "x": 1478.2929395675937,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.141666666666675,
+      "x": 1481.9475288631309,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 11.191666666666672,
+      "x": 1492.5699710882793,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.21666666666667,
+      "x": 1497.747635451938,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.250000000000002,
+      "x": 1504.562070044865,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.283333333333333,
+      "x": 1511.3056988448843,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.316666666666665,
+      "x": 1518.001865102542,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.349999999999996,
+      "x": 1524.6662162666194,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.383333333333328,
+      "x": 1531.309241135703,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.416666666666659,
+      "x": 1537.9379705617446,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.441666666666658,
+      "x": 1542.9030353018647,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.474999999999989,
+      "x": 1549.517132408402,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.50833333333332,
+      "x": 1556.717827747487,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.541666666666652,
+      "x": 1564.6216110823384,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 11.574999999999983,
+      "x": 1572.4053316227141,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.608333333333315,
+      "x": 1579.798692223649,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.633333333333313,
+      "x": 1585.1667023005557,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.666666666666645,
+      "x": 1592.1605040113657,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.699999999999976,
+      "x": 1599.0243661861016,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.733333333333308,
+      "x": 1605.8011272850347,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.766666666666639,
+      "x": 1612.5195027868258,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.79999999999997,
+      "x": 1619.1987412524527,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.824999999999969,
+      "x": 1624.1904232462693,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.8583333333333,
+      "x": 1629.401940860011,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.891666666666632,
+      "x": 1632.89532558677,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.924999999999963,
+      "x": 1635.2370113976315,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.94166666666663,
+      "x": 1636.1000742440044,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 11.991666666666626,
+      "x": 1637.8588775978515,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.016666666666625,
+      "x": 1638.413359240291,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.049999999999956,
+      "x": 1638.9358599702857,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.083333333333288,
+      "x": 1639.2861026836695,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.11666666666662,
+      "x": 1639.5208773954287,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 12.14999999999995,
+      "x": 1639.678251591023,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.183333333333282,
+      "x": 1641.2114042086205,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.216666666666613,
+      "x": 1644.4148838318097,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.241666666666612,
+      "x": 1647.574910429741,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.274999999999944,
+      "x": 1652.4880788223672,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.308333333333275,
+      "x": 1657.9572507754751,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.341666666666606,
+      "x": 1663.799123060841,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.374999999999938,
+      "x": 1669.8908238500835,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.40833333333327,
+      "x": 1676.1499896935456,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.433333333333268,
+      "x": 1680.9203018168012,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.4666666666666,
+      "x": 1687.3508790794128,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.49999999999993,
+      "x": 1694.4285573882692,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.533333333333262,
+      "x": 1702.2498799417544,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.566666666666594,
+      "x": 1710.5696821395336,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.599999999999925,
+      "x": 1719.2236252354235,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.624999999999924,
+      "x": 1725.8656001678812,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.658333333333255,
+      "x": 1734.8615582937612,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 12.691666666666586,
+      "x": 1743.968742262503,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.724999999999918,
+      "x": 1753.1504831433522,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.741666666666584,
+      "x": 1757.761278175608,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.79166666666658,
+      "x": 1771.6474194706486,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.81666666666658,
+      "x": 1778.6115242913531,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.84999999999991,
+      "x": 1787.9110327764863,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.883333333333242,
+      "x": 1797.221692636017,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.916666666666574,
+      "x": 1806.5398274853471,
+      "enemies": 0,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.949999999999905,
+      "x": 1815.8629729701838,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 12.983333333333237,
+      "x": 1825.1894771844438,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 13.016666666666568,
+      "x": 1834.5182328223655,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 13.041666666666567,
+      "x": 1841.515820468436,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 13.074999999999898,
+      "x": 1850.8468805855027,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 13.10833333333323,
+      "x": 1860.1786901364035,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.141666666666561,
+      "x": 1869.5110020478264,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.174999999999892,
+      "x": 1878.8436507015776,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.208333333333224,
+      "x": 1888.176525080462,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.233333333333222,
+      "x": 1895.1762832206464,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.266666666666554,
+      "x": 1904.5093886439452,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.299999999999885,
+      "x": 1913.8425692046137,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.333333333333217,
+      "x": 1923.1758001313672,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.366666666666548,
+      "x": 1932.5090648195173,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.39999999999988,
+      "x": 1941.8423521386085,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.424999999999878,
+      "x": 1948.8423278900232,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.45833333333321,
+      "x": 1958.17563837336,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.491666666666541,
+      "x": 1967.5089563898828,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.524999999999872,
+      "x": 1976.8422794560508,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.541666666666538,
+      "x": 1981.5089423386023,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 13.591666666666535,
+      "x": 1995.5089346270959,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.616666666666534,
+      "x": 2002.5089321959608,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.649999999999865,
+      "x": 2011.2509064662147,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.683333333333197,
+      "x": 2019.2866037514755,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 13.716666666666528,
+      "x": 2026.8488694156417,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 18
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.74999999999986,
+      "x": 2034.093784373761,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.783333333333191,
+      "x": 2041.1259727919937,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.816666666666523,
+      "x": 2048.0155663462165,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.841666666666521,
+      "x": 2053.1181012646875,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.874999999999853,
+      "x": 2059.861739663566,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.908333333333184,
+      "x": 2066.5579123555312,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.941666666666515,
+      "x": 2073.2222678326534,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 13.974999999999847,
+      "x": 2079.865295592858,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.008333333333178,
+      "x": 2086.494026956876,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 18
+        }
+      ]
+    },
+    {
+      "time": 14.033333333333177,
+      "x": 2091.4590927182708,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.066666666666508,
+      "x": 2098.073190787178,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.09999999999984,
+      "x": 2104.682529999194,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.133333333333171,
+      "x": 2111.2886792540394,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 18
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.166666666666503,
+      "x": 2117.892690216647,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.199999999999834,
+      "x": 2124.4952678391046,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.224999999999833,
+      "x": 2129.4465511017634,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.258333333333164,
+      "x": 2136.047661606973,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.291666666666496,
+      "x": 2142.648294994693,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.324999999999827,
+      "x": 2149.2486085609958,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.341666666666493,
+      "x": 2152.54867987506,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.39166666666649,
+      "x": 2162.44866322316,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.416666666666488,
+      "x": 2167.398564668432,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.44999999999982,
+      "x": 2173.9983730555223,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.483333333333151,
+      "x": 2180.5981336073646,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.516666666666483,
+      "x": 2187.197862094282,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.549999999999814,
+      "x": 2193.7975690874364,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.583333333333146,
+      "x": 2200.397261672891,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.616666666666477,
+      "x": 2206.9969446005757,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.641666666666476,
+      "x": 2211.9467024169826,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.674999999999807,
+      "x": 2218.5463754593093,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.708333333333139,
+      "x": 2225.1460452868437,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.74166666666647,
+      "x": 2231.7457129594377,
+      "enemies": 2,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.774999999999801,
+      "x": 2238.345379187533,
+      "enemies": 2,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 18
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.808333333333133,
+      "x": 2244.9450444473514,
+      "enemies": 2,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.833333333333131,
+      "x": 2249.894792953146,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.866666666666463,
+      "x": 2256.4944572218697,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.899999999999794,
+      "x": 2263.0941211682816,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.933333333333126,
+      "x": 2270.285141670807,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.966666666666457,
+      "x": 2278.1824397687715,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 14.999999999999789,
+      "x": 2286.553169897023,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.024999999999787,
+      "x": 2293.0458972597053,
+      "enemies": 2,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.058333333333119,
+      "x": 2301.9012159880126,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.09166666666645,
+      "x": 2310.914126549299,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.124999999999782,
+      "x": 2320.0326740753235,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.141666666666447,
+      "x": 2324.620178264532,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.191666666666444,
+      "x": 2338.4588560254415,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.216666666666443,
+      "x": 2345.4079974573715,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.249999999999774,
+      "x": 2354.6934055991223,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 18
+        }
+      ]
+    },
+    {
+      "time": 15.283333333333106,
+      "x": 2360.9261518788385,
+      "enemies": 2,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.316666666666437,
+      "x": 2364.126150517431,
+      "enemies": 2,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.349999999999769,
+      "x": 2365.7690845993657,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.3833333333331,
+      "x": 2366.612595082473,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.416666666666432,
+      "x": 2367.045667804584,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.44166666666643,
+      "x": 2367.225465966182,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.474999999999762,
+      "x": 2367.360326208037,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.508333333333093,
+      "x": 2367.429565764882,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 18
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.541666666666424,
+      "x": 2368.89876163081,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.574999999999756,
+      "x": 2372.0593697612753,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.608333333333087,
+      "x": 2376.3537654387715,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.633333333333086,
+      "x": 2380.088682979346,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.666666666666417,
+      "x": 2385.5435842522106,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.699999999999749,
+      "x": 2391.375890614539,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.73333333333308,
+      "x": 2397.4611791738107,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 18
+        }
+      ]
+    },
+    {
+      "time": 15.766666666666412,
+      "x": 2403.7160467709837,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.799999999999743,
+      "x": 2410.0845865966494,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.824999999999742,
+      "x": 2414.9125366210806,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.858333333333073,
+      "x": 2421.397427395871,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 15.891666666666405,
+      "x": 2427.9201563685465,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 15.924999999999736,
+      "x": 2434.46824904377,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 15.941666666666402,
+      "x": 2437.7490735781485,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 15.991666666666399,
+      "x": 2448.7784452745727,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 16.0166666666664,
+      "x": 2454.8419228047687,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 16.04999999999973,
+      "x": 2463.2927496010484,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 16.083333333333062,
+      "x": 2472.034521111837,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 16.116666666666394,
+      "x": 2480.97131869705,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 16.149999999999725,
+      "x": 2490.0388461694483,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 28,
+          "binds": 19
+        }
+      ]
+    },
+    {
+      "time": 16.183333333333056,
+      "x": 2499.194004505843,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.216666666666388,
+      "x": 2497.425252538524,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 18
+        }
+      ]
+    },
+    {
+      "time": 16.241666666666386,
+      "x": 2498.574675623281,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.274999999999718,
+      "x": 2502.3948765548716,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 18
+        }
+      ]
+    },
+    {
+      "time": 16.30833333333305,
+      "x": 2508.0326467228683,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.34166666666638,
+      "x": 2514.888769985085,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.374999999999712,
+      "x": 2522.561579749508,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.408333333333044,
+      "x": 2530.781830847686,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.433333333333042,
+      "x": 2537.195258771052,
+      "enemies": 0,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.466666666666374,
+      "x": 2545.9758518244953,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.499999999999705,
+      "x": 2554.9386722679674,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.533333333333037,
+      "x": 2564.0236433839123,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.566666666666368,
+      "x": 2573.1904945442516,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.5999999999997,
+      "x": 2582.4122315397194,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 18
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.624999999999698,
+      "x": 2589.353422501556,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.65833333333303,
+      "x": 2598.6313387335485,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 16.69166666666636,
+      "x": 2607.92752487296,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 18
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.724999999999692,
+      "x": 2617.2359576975537,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.741666666666358,
+      "x": 2621.8934469144324,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.791666666666355,
+      "x": 2635.8747445342574,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.816666666666354,
+      "x": 2642.868848408091,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.849999999999685,
+      "x": 2652.1966256869214,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.883333333333017,
+      "x": 2661.5262346855448,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.916666666666348,
+      "x": 2670.2657147504983,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 16.94999999999968,
+      "x": 2678.2997401199477,
+      "enemies": 1,
+      "projectiles": 2,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 16.98333333333301,
+      "x": 2685.86088506543,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.016666666666342,
+      "x": 2693.10504878335,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.04166666666634,
+      "x": 2698.394435086798,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.074999999999672,
+      "x": 2705.314147818131,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.108333333333004,
+      "x": 2712.1283466647333,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.141666666666335,
+      "x": 2718.871817439265,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.174999999999667,
+      "x": 2725.5678777692715,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.208333333332998,
+      "x": 2732.23215792792,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.233333333332997,
+      "x": 2737.5820049118643,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.266666666666328,
+      "x": 2745.360361327118,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.29999999999966,
+      "x": 2753.6513624611403,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.33333333333299,
+      "x": 2762.2859996266466,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.366666666666323,
+      "x": 2771.1509829125976,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.399999999999654,
+      "x": 2780.1703718206086,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.424999999999653,
+      "x": 2786.6388816685094,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.458333333332984,
+      "x": 2794.669709476655,
+      "enemies": 1,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.491666666666315,
+      "x": 2802.2287110326974,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 17.524999999999647,
+      "x": 2809.471437993709,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.541666666666313,
+      "x": 2813.0082802402417,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.59166666666631,
+      "x": 2823.390770177368,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.61666666666631,
+      "x": 2828.4927870057413,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.64999999999964,
+      "x": 2835.2359371964744,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.68333333333297,
+      "x": 2840.5041210931718,
+      "enemies": 2,
+      "projectiles": 3,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 17.716666666666303,
+      "x": 2844.0354903653306,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.749999999999634,
+      "x": 2846.4026379784127,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.783333333332966,
+      "x": 2847.9893844753865,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.816666666666297,
+      "x": 2849.0530124602856,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.841666666666296,
+      "x": 2849.613523136103,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.874999999999627,
+      "x": 2850.141705162105,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.90833333333296,
+      "x": 2850.49575616209,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 17.94166666666629,
+      "x": 2852.1607451842606,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 17.97499999999962,
+      "x": 2855.4525973922327,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.008333333332953,
+      "x": 2859.8349686058045,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.03333333333295,
+      "x": 2863.616247494408,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.066666666666283,
+      "x": 2869.114836125582,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.099999999999614,
+      "x": 2874.9764269999428,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.133333333332946,
+      "x": 2881.081345554668,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.166666666666277,
+      "x": 2887.3493715312975,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.19999999999961,
+      "x": 2893.7267316824855,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.224999999999607,
+      "x": 2898.559329842064,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.25833333333294,
+      "x": 2905.048600660885,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.29166666666627,
+      "x": 2911.5742656648754,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.3249999999996,
+      "x": 2918.124326420745,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.341666666666267,
+      "x": 2921.405876320276,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.391666666666264,
+      "x": 2931.2681155734513,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.416666666666263,
+      "x": 2936.206117787521,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 18.449999999999594,
+      "x": 2942.794713256972,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.483333333332926,
+      "x": 2949.386957565346,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.516666666666257,
+      "x": 2955.981647763595,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.54999999999959,
+      "x": 2962.577977490858,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.58333333333292,
+      "x": 2969.1754062272844,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.61666666666625,
+      "x": 2976.3649284237495,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.64166666666625,
+      "x": 2982.2351828301653,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.67499999999958,
+      "x": 2990.5039310588254,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 18.708333333332913,
+      "x": 2999.1236516557856,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 18.741666666666244,
+      "x": 3007.9786360668213,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 18.774999999999576,
+      "x": 3016.991322528539,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 18.808333333332907,
+      "x": 3026.10971983613,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.833333333332906,
+      "x": 3032.9964528492164,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.866666666666237,
+      "x": 3042.223052110911,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.89999999999957,
+      "x": 3051.4848394564297,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.9333333333329,
+      "x": 3060.770214079918,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.96666666666623,
+      "x": 3070.07139972866,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 18.999999999999563,
+      "x": 3079.383183824578,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.02499999999956,
+      "x": 3086.371827807438,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.058333333332893,
+      "x": 3095.694460106163,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 19.091666666666224,
+      "x": 3105.0206203214852,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.124999999999556,
+      "x": 3114.3491453700226,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.14166666666622,
+      "x": 3117.994568703819,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 19.19166666666622,
+      "x": 3123.8193277073415,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.216666666666217,
+      "x": 3125.153139218637,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.24999999999955,
+      "x": 3126.153584058581,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.28333333333288,
+      "x": 3126.667229566056,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.31666666666621,
+      "x": 3126.9309439627077,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.349999999999543,
+      "x": 3127.066339448484,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.383333333332875,
+      "x": 3127.1358538087215,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.416666666666206,
+      "x": 3127.1715436712857,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.441666666666205,
+      "x": 3127.186360978748,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.474999999999536,
+      "x": 3127.1974749170117,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.508333333332867,
+      "x": 3127.204141769893,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 19.5416666666662,
+      "x": 3127.2086106950237,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.57499999999953,
+      "x": 3127.2116063051226,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.60833333333286,
+      "x": 3127.213614322622,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.63333333333286,
+      "x": 3127.2146725076846,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.666666666666192,
+      "x": 3128.643331199227,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.699999999999523,
+      "x": 3131.776766449092,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.733333333332855,
+      "x": 3136.6443043721783,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.766666666666186,
+      "x": 3142.9841255205292,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.799999999999518,
+      "x": 3150.310847628217,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.824999999999516,
+      "x": 3156.2534036438924,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.858333333332848,
+      "x": 3164.5902833321475,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.89166666666618,
+      "x": 3173.2556738122394,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.92499999999951,
+      "x": 3182.1412716614386,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.941666666666176,
+      "x": 3180.7036343887435,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 19.991666666666173,
+      "x": 3182.263902697628,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.016666666666172,
+      "x": 3185.342143710467,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.049999999999503,
+      "x": 3190.979913878464,
+      "enemies": 0,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.083333333332835,
+      "x": 3197.8360371406807,
+      "enemies": 0,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.116666666666166,
+      "x": 3205.5088469051034,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.149999999999498,
+      "x": 3213.7290980032813,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.18333333333283,
+      "x": 3222.3163100015036,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 20.21666666666616,
+      "x": 3231.1495032471366,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.24166666666616,
+      "x": 3237.885939423563,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 20.27499999999949,
+      "x": 3246.9709105395077,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.308333333332822,
+      "x": 3256.137761699847,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.341666666666153,
+      "x": 3265.359498695315,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.374999999999485,
+      "x": 3274.618026766313,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.408333333332816,
+      "x": 3283.9012166327543,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.433333333332815,
+      "x": 3290.8747920285555,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.466666666666146,
+      "x": 3300.183224853149,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.499999999999478,
+      "x": 3309.499866876318,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.53333333333281,
+      "x": 3318.822011689853,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.56666666666614,
+      "x": 3328.1478451340804,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.599999999999472,
+      "x": 3337.4761511414026,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.62499999999947,
+      "x": 3344.47350184114,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 17
+        },
+        {
+          "calls": 26,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 20.658333333332802,
+      "x": 3353.8043386782592,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.691666666666134,
+      "x": 3363.1359985601352,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.724999999999465,
+      "x": 3372.4682101454105,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.74166666666613,
+      "x": 3377.134463375284,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.791666666666128,
+      "x": 3391.133620847974,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 20.816666666666126,
+      "x": 3398.1333552321926,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 20.849999999999458,
+      "x": 3407.4664382697024,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 20.88333333333279,
+      "x": 3416.7996038247275,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 20.91666666666612,
+      "x": 3426.1328246928974,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 20.949999999999452,
+      "x": 3435.4660826385775,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 20.983333333332784,
+      "x": 3444.7993654380557,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 21.016666666666115,
+      "x": 3454.132664897533,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.041666666666114,
+      "x": 3461.132647046688,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.074999999999445,
+      "x": 3470.4659635587623,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 21.108333333332777,
+      "x": 3479.7992856164688,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.141666666666108,
+      "x": 3489.132611391523,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.17499999999944,
+      "x": 3498.4659396583907,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.20833333333277,
+      "x": 3507.7992695955704,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.23333333333277,
+      "x": 3514.7992678058654,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.2666666666661,
+      "x": 3524.1325994527188,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.299999999999432,
+      "x": 3533.465931655571,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.333333333332764,
+      "x": 3542.79926423112,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.366666666666095,
+      "x": 3552.132597056496,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 15
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.399999999999427,
+      "x": 3561.4659300493345,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.424999999999425,
+      "x": 3568.4659298699007,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.458333333332757,
+      "x": 3577.7992630341496,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.491666666666088,
+      "x": 3587.1325962541423,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.52499999999942,
+      "x": 3596.465929511501,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 15
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.541666666666085,
+      "x": 3601.1325961501666,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.591666666666082,
+      "x": 3615.1325960931035,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.61666666666608,
+      "x": 3622.132596075114,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.649999999999412,
+      "x": 3631.465929391495,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.683333333332744,
+      "x": 3640.799262713465,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.716666666666075,
+      "x": 3650.1325960391814,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 21.749999999999407,
+      "x": 3659.465929367409,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.783333333332738,
+      "x": 3668.7992626973196,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.81666666666607,
+      "x": 3678.1325960283584,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.841666666666068,
+      "x": 3685.1325960271492,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.8749999999994,
+      "x": 3694.4659293593436,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.90833333333273,
+      "x": 3703.7992626919136,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        },
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.941666666666062,
+      "x": 3713.1325960247354,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 13
+        }
+      ]
+    },
+    {
+      "time": 21.974999999999394,
+      "x": 3722.4659293577256,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 23,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.008333333332725,
+      "x": 3731.7992626908294,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.033333333332724,
+      "x": 3738.7992626907085,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.066666666666055,
+      "x": 3748.1325960239274,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.099999999999387,
+      "x": 3757.4659293571845,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 16
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.13333333333272,
+      "x": 3766.7992626904665,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.16666666666605,
+      "x": 3776.1325960237655,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.19999999999938,
+      "x": 3785.4659293570758,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.22499999999938,
+      "x": 3792.465929357064,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.25833333333271,
+      "x": 3801.7992626903856,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.291666666666043,
+      "x": 3811.1325960237114,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.324999999999374,
+      "x": 3820.4659293570394,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.34166666666604,
+      "x": 3825.132596023704,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.391666666666037,
+      "x": 3839.1325960237,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.416666666666035,
+      "x": 3846.132596023699,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 15
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.449999999999367,
+      "x": 3855.465929357031,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 22.4833333333327,
+      "x": 3864.7992626903633,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 24,
+          "binds": 14
+        },
+        {
+          "calls": 24,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.51666666666603,
+      "x": 3874.1325960236954,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.54999999999936,
+      "x": 3882.8745725848635,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.583333333332693,
+      "x": 3890.91027140577,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.616666666666024,
+      "x": 3898.4725380993104,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.641666666666023,
+      "x": 3903.9295583089515,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.674999999999354,
+      "x": 3911.0072363030704,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.708333333332686,
+      "x": 3917.927322431895,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.741666666666017,
+      "x": 3924.741771574321,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.77499999999935,
+      "x": 3932.076766899326,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.80833333333268,
+      "x": 3940.070574206922,
+      "enemies": 0,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.83333333333268,
+      "x": 3946.364670781456,
+      "enemies": 0,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.86666666666601,
+      "x": 3955.032815176362,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.89999999999934,
+      "x": 3963.920259029866,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 22.933333333332673,
+      "x": 3972.9547037065536,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 14
+        },
+        {
+          "calls": 25,
+          "binds": 14
+        }
+      ]
+    },
+    {
+      "time": 22.966666666666004,
+      "x": 3982.0876859818045,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 16
+        },
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 22.999999999999336,
+      "x": 3990.695363212496,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        },
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.024999999999334,
+      "x": 3996.7032938673347,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        },
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.058333333332666,
+      "x": 4004.3001073706314,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        },
+        {
+          "calls": 25,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.091666666665997,
+      "x": 4011.568180437867,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 25,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.12499999999933,
+      "x": 4018.6158922008685,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.141666666665994,
+      "x": 4022.0808587196248,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.19166666666599,
+      "x": 4032.3168758111115,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.21666666666599,
+      "x": 4037.372715502146,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.24999999999932,
+      "x": 4044.0723519205158,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.283333333332653,
+      "x": 4051.330385975046,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.316666666665984,
+      "x": 4059.272604600274,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.349999999999316,
+      "x": 4067.6734458584297,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.383333333332647,
+      "x": 4076.3817110610016,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.41666666666598,
+      "x": 4085.2960486961483,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.441666666665977,
+      "x": 4092.0752463429853,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.47499999999931,
+      "x": 4100.609155798082,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.50833333333264,
+      "x": 4108.505383066868,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.54166666666597,
+      "x": 4115.97415918317,
+      "enemies": 1,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.574999999999303,
+      "x": 4123.156406223262,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.608333333332634,
+      "x": 4130.1465870797965,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.633333333332633,
+      "x": 4135.302129494873,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.666666666665964,
+      "x": 4142.095718069828,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.699999999999296,
+      "x": 4148.82537336612,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.733333333332627,
+      "x": 4155.5121729041175,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.76666666666596,
+      "x": 4162.170245368241,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.79999999999929,
+      "x": 4168.809061498882,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.82499999999929,
+      "x": 4173.779441730595,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.85833333333262,
+      "x": 4180.398547746399,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.89166666666595,
+      "x": 4187.01124388561,
+      "enemies": 1,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.924999999999283,
+      "x": 4193.619643356048,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.94166666666595,
+      "x": 4196.9226948493515,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 23.991666666665946,
+      "x": 4206.828751392774,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.016666666665945,
+      "x": 4212.146615196826,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.049999999999276,
+      "x": 4219.894833130365,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.083333333332607,
+      "x": 4228.165631835937,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.11666666666594,
+      "x": 4236.7867269086755,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.14999999999927,
+      "x": 4245.642632658379,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.1833333333326,
+      "x": 4254.655936711874,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.216666666665933,
+      "x": 4263.774748003614,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.24166666666593,
+      "x": 4270.6616991780675,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.274999999999263,
+      "x": 4279.888504018207,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 24.308333333332595,
+      "x": 4289.150429167078,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.341666666665926,
+      "x": 4298.435896162915,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.374999999999257,
+      "x": 4304.668676208372,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.40833333333259,
+      "x": 4309.835158912711,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.433333333332588,
+      "x": 4314.029648874967,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.46666666666592,
+      "x": 4319.91761574899,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.49999999999925,
+      "x": 4326.040214665022,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.533333333332582,
+      "x": 4332.320092142256,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.566666666665913,
+      "x": 4338.705396591875,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 24.599999999999245,
+      "x": 4345.161370854477,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.624999999999243,
+      "x": 4350.035397078514,
+      "enemies": 0,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.658333333332575,
+      "x": 4356.5637065097335,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 16
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.691666666665906,
+      "x": 4363.115539878186,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.724999999999238,
+      "x": 4369.683141813326,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.741666666665903,
+      "x": 4372.9711567732165,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.7916666666659,
+      "x": 4382.846570930038,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.8166666666659,
+      "x": 4387.788726673948,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.84999999999923,
+      "x": 4394.381236109539,
+      "enemies": 0,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.883333333332562,
+      "x": 4400.976104027875,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.916666666665893,
+      "x": 4407.572552884476,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.949999999999225,
+      "x": 4414.1700614756855,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 24.983333333332556,
+      "x": 4421.359637200412,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 25.016666666665888,
+      "x": 4429.255966834856,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 26,
+          "binds": 15
+        }
+      ]
+    },
+    {
+      "time": 25.041666666665886,
+      "x": 4435.498694625161,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 26,
+          "binds": 15
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.074999999999218,
+      "x": 4444.118433040131,
+      "enemies": 1,
+      "projectiles": 8,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.10833333333255,
+      "x": 4452.973429394936,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.14166666666588,
+      "x": 4461.986123862802,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.174999999999212,
+      "x": 4471.104526537074,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 18
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.208333333332543,
+      "x": 4480.293787541132,
+      "enemies": 1,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.233333333332542,
+      "x": 4487.217864305005,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.266666666665873,
+      "x": 4496.479653436936,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.299999999999205,
+      "x": 4505.765029257893,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.333333333332536,
+      "x": 4515.066215709322,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.366666666665868,
+      "x": 4524.378000343298,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.3999999999992,
+      "x": 4533.696889151485,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.424999999999198,
+      "x": 4540.689277175619,
+      "enemies": 1,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.45833333333253,
+      "x": 4550.015437570044,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.49166666666586,
+      "x": 4559.343962738639,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.524999999999192,
+      "x": 4568.674073062763,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.541666666665858,
+      "x": 4573.339551841845,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.591666666665855,
+      "x": 4587.337131090358,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 25.616666666665854,
+      "x": 4594.336367922459,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.649999999999185,
+      "x": 4603.668982105232,
+      "enemies": 2,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.683333333332516,
+      "x": 4613.001833377529,
+      "enemies": 2,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.716666666665848,
+      "x": 4622.334843575685,
+      "enemies": 2,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.74999999999918,
+      "x": 4631.667960305032,
+      "enemies": 2,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.78333333333251,
+      "x": 4641.00114844437,
+      "enemies": 3,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.816666666665842,
+      "x": 4650.334384451258,
+      "enemies": 3,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.84166666666584,
+      "x": 4657.334333162169,
+      "enemies": 3,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.874999999999172,
+      "x": 4666.667618164621,
+      "enemies": 3,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.908333333332504,
+      "x": 4676.000919100795,
+      "enemies": 3,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.941666666665835,
+      "x": 4685.334230717663,
+      "enemies": 3,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 25.974999999999167,
+      "x": 4694.667549494015,
+      "enemies": 3,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 26.008333333332498,
+      "x": 4704.000873069511,
+      "enemies": 3,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 26.033333333332497,
+      "x": 4711.000867927326,
+      "enemies": 3,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.066666666665828,
+      "x": 4720.334196415061,
+      "enemies": 3,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 26.09999999999916,
+      "x": 4729.667526500292,
+      "enemies": 3,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 26.13333333333249,
+      "x": 4735.927766536615,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 26.166666666665822,
+      "x": 4739.141880940517,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 27,
+          "binds": 16
+        }
+      ]
+    },
+    {
+      "time": 26.199999999999154,
+      "x": 4740.792062298008,
+      "enemies": 3,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 27,
+          "binds": 16
+        },
+        {
+          "calls": 28,
+          "binds": 19
+        }
+      ]
+    },
+    {
+      "time": 26.224999999999152,
+      "x": 4741.4771656518615,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.258333333332484,
+      "x": 4741.991037446628,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.291666666665815,
+      "x": 4742.254868023049,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.324999999999147,
+      "x": 4742.390323157509,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.341666666665812,
+      "x": 4742.430837993716,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.39166666666581,
+      "x": 4742.495573728188,
+      "enemies": 3,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.416666666665808,
+      "x": 4742.5103975634365,
+      "enemies": 3,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.44999999999914,
+      "x": 4742.521516397963,
+      "enemies": 3,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.48333333333247,
+      "x": 4742.5272249979525,
+      "enemies": 3,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.516666666665802,
+      "x": 4742.530155890913,
+      "enemies": 3,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.549999999999134,
+      "x": 4742.531660661532,
+      "enemies": 3,
+      "projectiles": 5,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.583333333332465,
+      "x": 4742.532433236528,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.616666666665797,
+      "x": 4743.960558216116,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.641666666665795,
+      "x": 4746.185008423402,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.674999999999127,
+      "x": 4750.216561790999,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.708333333332458,
+      "x": 4755.094769519942,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.74166666666579,
+      "x": 4761.131863411526,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.77499999999912,
+      "x": 4768.25566137052,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.808333333332452,
+      "x": 4776.107898850009,
+      "enemies": 2,
+      "projectiles": 4,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.83333333333245,
+      "x": 4782.327390956483,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.866666666665783,
+      "x": 4790.9252338552915,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.899999999999114,
+      "x": 4799.765553206696,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.933333333332445,
+      "x": 4808.768409384965,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.966666666665777,
+      "x": 4817.880217256503,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 26.99999999999911,
+      "x": 4827.065057632088,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 27.024999999999107,
+      "x": 4833.986804813167,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 18
+        }
+      ]
+    },
+    {
+      "time": 27.05833333333244,
+      "x": 4843.246398725965,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 27.09166666666577,
+      "x": 4852.530303047532,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 27.1249999999991,
+      "x": 4861.830503123421,
+      "enemies": 2,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 27.141666666665767,
+      "x": 4866.484958039329,
+      "enemies": 2,
+      "projectiles": 7,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 27.191666666665764,
+      "x": 4880.460072171189,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    },
+    {
+      "time": 27.216666666665763,
+      "x": 4885.515433907359,
+      "enemies": 2,
+      "projectiles": 6,
+      "draws": [
+        {
+          "calls": 28,
+          "binds": 17
+        },
+        {
+          "calls": 28,
+          "binds": 17
+        }
+      ]
+    }
+  ]
+}

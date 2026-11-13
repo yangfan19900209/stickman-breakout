@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>线条突围 · 评价与推荐交互设计</title>
+    <style>
+      :root {
+        font-family: "Microsoft YaHei", system-ui, sans-serif;
+        color: #24231f;
+        background: #e8e5de;
+        --paper: #f6f1e8;
+        --ink: #22201d;
+        --muted: #6c665d;
+        --red: #ad3526;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      button,
+      select {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:disabled {
+        cursor: default;
+        opacity: 0.55;
+      }
+      button:focus-visible,
+      select:focus-visible {
+        outline: 3px solid #ad3526;
+        outline-offset: 3px;
+      }
+      button:hover {
+        filter: brightness(0.96);
+      }
+      .shell {
+        max-width: 1220px;
+        margin: auto;
+        padding: 30px 28px 48px;
+      }
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+        color: var(--muted);
+      }
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-size: 28px;
+        margin: 8px 0;
+      }
+      header p {
+        margin: 6px 0;
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .badge {
+        border: 1px solid #a39c8e;
+        border-radius: 20px;
+        padding: 6px 12px;
+        white-space: nowrap;
+        font-size: 12px;
+      }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .tabs {
+        display: flex;
+        border: 1px solid #39362e;
+        border-radius: 7px;
+        overflow: hidden;
+      }
+      .tabs button {
+        padding: 10px 16px;
+        border: 0;
+        background: #f8f5ed;
+      }
+      .tabs button[aria-pressed="true"] {
+        background: var(--ink);
+        color: white;
+      }
+      .select-label {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12px;
+      }
+      .select-label select {
+        padding: 8px;
+        border: 1px solid #b9b3a7;
+        border-radius: 5px;
+        background: #faf8f2;
+      }
+      .help {
+        background: none;
+        border: 0;
+        text-decoration: underline;
+        margin-left: auto;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .frame {
+        background: #181818;
+        padding: 10px;
+        border-radius: 22px;
+        box-shadow: 0 12px 40px #2222;
+        width: fit-content;
+        max-width: 100%;
+        margin: auto;
+      }
+      .viewport {
+        overflow: hidden;
+        border-radius: 14px;
+        position: relative;
+      }
+      .game {
+        width: 844px;
+        height: 390px;
+        position: relative;
+        transform-origin: 0 0;
+        overflow: hidden;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .cover {
+        position: absolute;
+        inset: 0;
+        background: url("../../源码/assets/landart/title-cover.jpg") center
+          bottom/cover no-repeat;
+      }
+      .capsule {
+        position: absolute;
+        right: 18px;
+        top: 12px;
+        border: 1px solid #2224;
+        border-radius: 30px;
+        padding: 5px 13px;
+        font: 16px sans-serif;
+        background: #fff5;
+        letter-spacing: 6px;
+        z-index: 2;
+      }
+      .home-content {
+        position: absolute;
+        left: 38px;
+        top: 24px;
+        width: 210px;
+      }
+      .game .tiny {
+        font-size: 10px;
+        color: var(--muted);
+      }
+      .mark {
+        background: var(--red);
+        color: white;
+        padding: 1px 5px;
+        margin-right: 9px;
+      }
+      .title {
+        font-size: 53px;
+        font-weight: 900;
+        line-height: 1.03;
+        letter-spacing: -3px;
+        margin: 8px 0 8px;
+      }
+      .tagline {
+        font-size: 17px;
+        margin: 0 0 4px;
+      }
+      .subline {
+        font-size: 10px;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .home-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .comic {
+        min-height: 44px;
+        border: 2px solid #24221d;
+        border-radius: 10px;
+        box-shadow:
+          inset 0 0 0 3px #f8f6ef,
+          inset 0 0 0 4px #24221d;
+        background: #fffefa;
+        color: #24221d;
+        font-size: 14px;
+        padding: 8px 6px;
+        line-height: 1.15;
+      }
+      .comic.full {
+        grid-column: 1/-1;
+        font-size: 17px;
+        font-weight: bold;
+        min-height: 48px;
+      }
+      .recommend {
+        color: var(--red);
+      }
+      .new-dot {
+        display: none;
+      }
+      .version {
+        position: absolute;
+        left: 270px;
+        top: 25px;
+        font-size: 10px;
+        color: var(--muted);
+      }
+      .result-scene {
+        display: none;
+        position: absolute;
+        inset: 0;
+        background: url("../../开发进度/验证记录/v103-mobile-ending-settlement.png")
+          center/100% 100% no-repeat;
+      }
+      .result-card {
+        position: absolute;
+        right: 60px;
+        top: 45px;
+        width: 224px;
+        height: 310px;
+        background: #fbf9f3;
+        border: 2px solid #222;
+        padding: 0 16px 12px;
+        text-align: center;
+      }
+      .result-kicker {
+        background: #222;
+        color: white;
+        margin: 0 -16px;
+        padding: 9px 3px;
+        font-size: 9px;
+      }
+      .result-card h2 {
+        font-size: 29px;
+        margin: 14px 0 6px;
+      }
+      .result-caption {
+        font-size: 10px;
+        color: #6c665d;
+        margin: 0;
+      }
+      .stats {
+        font-size: 12px;
+        line-height: 1.8;
+        border-top: 1px solid #d0cbc1;
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+      .result-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-top: 9px;
+      }
+      .result-buttons .comic {
+        font-size: 11px;
+        min-height: 37px;
+      }
+      .result-buttons .full {
+        font-size: 13px;
+        min-height: 41px;
+      }
+      .invite {
+        position: absolute;
+        left: 36px;
+        top: 56px;
+        width: 258px;
+        padding: 10px 18px;
+        background: #fffdf6f2;
+        border: 1.5px solid #484034;
+        box-shadow: 3px 3px 0 #342c1c24;
+        border-radius: 2px;
+      }
+      .invite h3 {
+        font-size: 16px;
+        margin: 0 0 5px;
+      }
+      .invite p {
+        font-size: 11px;
+        margin: 0 0 8px;
+        color: #6c665d;
+      }
+      .invite .comic {
+        min-width: 130px;
+      }
+      .dismiss {
+        position: absolute;
+        right: 2px;
+        top: 1px;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        background: none;
+        color: #696258;
+        font-size: 23px;
+      }
+      .invite h3 {
+        padding-right: 25px;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: #16161685;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+      }
+      .overlay[hidden],
+      .invite[hidden],
+      .home-content[hidden],
+      .cover[hidden],
+      .result-scene[hidden],
+      .capsule[hidden] {
+        display: none;
+      }
+      .dialog {
+        background: #fffdf7;
+        width: 380px;
+        max-width: calc(100% - 80px);
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 12px 45px #0003;
+        position: relative;
+        text-align: center;
+      }
+      .dialog h3 {
+        font-size: 21px;
+        margin: 5px 0 13px;
+      }
+      .dialog p {
+        font-size: 13px;
+        line-height: 1.8;
+        color: #696258;
+        margin: 10px 0 16px;
+      }
+      .dialog .comic {
+        min-width: 120px;
+      }
+      .host-slot {
+        border: 1px dashed #a69e8e;
+        min-height: 100px;
+        padding: 18px 12px;
+        margin: 14px 0;
+        color: #575146;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .dialog .prototype-note {
+        font-size: 10px;
+        line-height: 1.8;
+        margin: 0;
+        color: #8d7354;
+      }
+      .toast {
+        position: absolute;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 8;
+        background: #25231fed;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      .toast[hidden] {
+        display: none;
+      }
+      .below {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 24px;
+        margin-top: 26px;
+      }
+      .panel {
+        background: #f4f1ea;
+        border: 1px solid #d0cabd;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .panel h2 {
+        font-size: 16px;
+        margin: 0 0 10px;
+      }
+      .panel p {
+        font-size: 13px;
+        color: #6b6559;
+        line-height: 1.9;
+        margin: 6px 0;
+      }
+      .panel .description {
+        color: #37332b;
+      }
+      .simulator {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 12px 0;
+      }
+      .simulator button,
+      .reset {
+        background: #fffdf8;
+        border: 1px solid #a9a292;
+        border-radius: 6px;
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+      .state {
+        font-size: 12px;
+        padding: 9px 10px;
+        background: #e8e2d5;
+        border-radius: 5px;
+        line-height: 1.8;
+        min-height: 58px;
+      }
+      .caption {
+        max-width: 864px;
+        margin: 14px auto 0;
+        font-size: 12px;
+        color: #766e61;
+        line-height: 1.8;
+      }
+      .link {
+        color: inherit;
+      }
+      .footer {
+        margin-top: 22px;
+        font-size: 12px;
+        color: #7a7265;
+      }
+      .portrait-note {
+        display: none;
+      }
+      a {
+        color: #80502e;
+      }
+      @media (max-width: 700px) {
+        .shell {
+          padding: 18px 14px;
+        }
+        header {
+          display: block;
+        }
+        h1 {
+          font-size: 23px;
+        }
+        .badge {
+          display: inline-block;
+          margin-top: 10px;
+        }
+        .below {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .help {
+          margin-left: 0;
+        }
+        .toolbar {
+          gap: 8px;
+        }
+        .tabs button {
+          padding: 9px 12px;
+        }
+        .frame {
+          padding: 6px;
+          border-radius: 15px;
+        }
+        .viewport {
+          border-radius: 9px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div>
+          <div class="eyebrow">STICKMAN BREAKOUT / EXPERIENCE DESIGN 01</div>
+          <h1>让喜欢，成为自愿的推荐。</h1>
+          <p>首页固定入口 + 通关轻提示。保留战斗、欢呼与继续闯关的节奏。</p>
+        </div>
+        <span class="badge">交互设计稿 · 未接入微信</span>
+      </header>
+      <div class="toolbar">
+        <div class="tabs" aria-label="预览场景">
+          <button data-scene="home" aria-pressed="true">首页 · 首版</button
+          ><button data-scene="result" aria-pressed="false">通关 · 后续</button>
+        </div>
+        <label class="select-label"
+          >画面
+          <select id="size" aria-label="画面尺寸">
+            <option value="844,390">844 × 390</option>
+            <option value="667,375">667 × 375</option>
+            <option value="932,430">932 × 430</option>
+            <option value="1280,720">1280 × 720</option>
+          </select></label
+        >
+        <label class="select-label"
+          >环境
+          <select id="environment" aria-label="模拟环境">
+            <option value="supported">支持推荐组件</option>
+            <option value="old">低版本微信</option>
+            <option value="error">打开失败</option>
+            <option value="web">Web 版</option>
+          </select></label
+        >
+        <button class="help" id="rating-help">评分与推荐的区别 ↗</button>
+      </div>
+      <div class="frame">
+        <div class="viewport" id="viewport">
+          <div class="game" id="game">
+            <div class="cover" id="cover"></div>
+            <div class="capsule" aria-hidden="true">··· ◉</div>
+            <div class="home-content" id="home">
+              <div class="tiny">
+                <span class="mark">01</span>STICKMAN BREAKOUT
+              </div>
+              <div class="title">线条<br />突围</div>
+              <p class="tagline">冲出重围。</p>
+              <div class="subline">奔跑 · 开火 · 直面机甲</div>
+              <div class="home-buttons">
+                <button class="comic full" data-demo="开始突围">
+                  开始突围　 →</button
+                ><button class="comic" data-demo="游戏圈">游戏圈</button
+                ><button class="comic" data-demo="分享游戏">分享游戏</button
+                ><button class="comic" data-demo="纪录与好友榜">纪录榜</button
+                ><button class="comic recommend" id="home-recommend">
+                  推荐游戏
+                </button>
+              </div>
+            </div>
+            <div class="version" id="version">布局示意</div>
+            <div class="result-scene" id="result">
+              <div class="invite" id="invite">
+                <button
+                  class="dismiss"
+                  id="dismiss-invite"
+                  aria-label="关闭通关推荐提示"
+                >
+                  ×
+                </button>
+                <h3>喜欢这次突围？</h3>
+                <p>让更多朋友发现《线条突围》。</p>
+                <button class="comic recommend" id="result-recommend">
+                  推荐游戏
+                </button>
+              </div>
+              <div class="result-card">
+                <div class="result-kicker">MISSION COMPLETE / 01</div>
+                <h2>突围成功</h2>
+                <p class="result-caption">废弃前哨站 · 战线已突破</p>
+                <div class="stats">
+                  用时 04:32.18 · 新纪录<br />击败 38 · 剩余生命 ♥♥♥
+                </div>
+                <div class="result-buttons">
+                  <button class="comic full" id="continue">进入第二关 →</button
+                  ><button class="comic" data-demo="重玩本关">重玩本关</button
+                  ><button class="comic" id="return-home">返回首页</button
+                  ><button class="comic" data-demo="纪录与好友榜">纪录榜</button
+                  ><button class="comic" data-demo="分享挑战">分享挑战</button>
+                </div>
+              </div>
+            </div>
+            <div class="overlay" id="overlay" hidden>
+              <section
+                class="dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="dialog-title"
+              >
+                <button
+                  class="dismiss"
+                  id="close-dialog"
+                  aria-label="关闭说明或组件示意"
+                >
+                  ×
+                </button>
+                <h3 id="dialog-title"></h3>
+                <div id="dialog-body"></div>
+                <button class="comic" id="dialog-action">知道了</button>
+              </section>
+            </div>
+            <div class="toast" id="toast" role="status" hidden></div>
+          </div>
+        </div>
+      </div>
+      <p class="caption" id="caption">
+        首页：保留主按钮，底部两列放「纪录榜」与「推荐游戏」。点击推荐查看返回分支；没有自动弹窗。
+      </p>
+      <div class="below">
+        <section class="panel">
+          <h2 id="design-title">01 / 主动点击，直接进入</h2>
+          <p class="description" id="design-description">
+            推荐入口与游戏圈、分享保持同级。微信负责实际推荐界面，游戏只处理进入、关闭和恢复。
+          </p>
+          <p>
+            评分、写评价：通过微信搜索结果或小游戏更多面板进入评分主页。此接入打开「推荐组件」，不把推荐回调当作打星成功。
+          </p>
+          <p>
+            <a href="../功能/WECHAT-EVALUATION-PLAN.md" class="link"
+              >查看完整接入计划 →</a
+            >
+          </p>
+        </section>
+        <section class="panel">
+          <h2>返回分支模拟</h2>
+          <p>
+            以下控件仅供审阅设计，不会出现在游戏里。先点击画面中的「推荐游戏」。
+          </p>
+          <div class="simulator">
+            <button data-outcome="true" disabled>模拟已推荐返回</button
+            ><button data-outcome="false" disabled>模拟未推荐返回</button
+            ><button data-outcome="unknown" disabled>模拟状态未知</button>
+          </div>
+          <div class="state" id="state" aria-live="polite">
+            尚未打开组件。任何分支都不发奖励。
+          </div>
+          <p><button class="reset" id="reset">重置演示</button></p>
+        </section>
+      </div>
+      <div class="footer">
+        2026-11-13 ·
+        封面复用项目既有图片，结算背景来自历史画面；成绩为示例。官方组件区域只表示流程，不模拟官方实际外观。页面不连接微信。
+      </div>
+    </main>
+    <script>
+      const $ = (s) => document.querySelector(s),
+        all = (s) => [...document.querySelectorAll(s)];
+      let scene = "home",
+        nativeOpen = false,
+        recommended = false,
+        promptDismissed = false,
+        toastTimer,
+        returnFocus;
+      const overlay = $("#overlay"),
+        game = $("#game");
+      function notify(message) {
+        clearTimeout(toastTimer);
+        $("#toast").textContent = message;
+        $("#toast").hidden = false;
+        toastTimer = setTimeout(() => ($("#toast").hidden = true), 2800);
+      }
+      function setState(message) {
+        $("#state").textContent = message;
+      }
+      function fit() {
+        const [w, h] = $("#size").value.split(",").map(Number);
+        const available = Math.max(
+          260,
+          document.querySelector(".shell").clientWidth - 56,
+        );
+        const scale = Math.min(1, available / w);
+        game.style.width = w + "px";
+        game.style.height = h + "px";
+        game.style.transform = `scale(${scale})`;
+        $("#viewport").style.width = w * scale + "px";
+        $("#viewport").style.height = h * scale + "px";
+        const large = h >= 600;
+        const home = $("#home");
+        home.style.left = (large ? 90 : 38) + "px";
+        home.style.top = (large ? 70 : 18) + "px";
+        home.style.transform = large ? "scale(1.45)" : "none";
+        home.style.transformOrigin = "top left";
+        $("#version").style.left = (large ? 460 : 270) + "px";
+        $("#version").style.top = (large ? 72 : 25) + "px";
+        const card = $(".result-card");
+        card.style.transform = large ? "scale(1.65)" : "none";
+        card.style.transformOrigin = "top right";
+        card.style.top = (large ? 80 : 45) + "px";
+        card.style.right = (large ? 90 : Math.max(32, w * 0.1)) + "px";
+        card.style.height =
+          (large ? 350 : Math.max(310, Math.ceil(h * 0.9) - 45)) + "px";
+        card.style.width =
+          (large ? 224 : Math.max(224, Math.round(w * 0.28))) + "px";
+        $("#invite").style.top = (large ? 55 : 28) + "px";
+        $("#invite").style.left = (large ? 65 : 36) + "px";
+        $("#invite").style.transform = large ? "scale(1.35)" : "none";
+        $("#invite").style.transformOrigin = "top left";
+      }
+      function availability() {
+        const web = $("#environment").value === "web";
+        $("#home-recommend").hidden = web;
+        $("#invite").hidden = web || recommended || promptDismissed;
+        all(".capsule").forEach((n) => (n.hidden = web));
+      }
+      function setScene(next) {
+        if (nativeOpen || !overlay.hidden) return;
+        scene = next;
+        $("#home").hidden = scene !== "home";
+        $("#cover").hidden = scene !== "home";
+        $("#version").hidden = scene !== "home";
+        $("#result").style.display = scene === "result" ? "block" : "none";
+        all("[data-scene]").forEach((b) =>
+          b.setAttribute("aria-pressed", String(b.dataset.scene === scene)),
+        );
+        $("#caption").textContent =
+          scene === "home"
+            ? "首页：保留主按钮，底部两列放「纪录榜」与「推荐游戏」。点击推荐查看返回分支；没有自动弹窗。"
+            : "通关候选：仅在庆祝与成绩展示完成后出现可关闭的轻提示。主按钮随时可用，正式方案有会话与 7 天频控。";
+        $("#design-title").textContent =
+          scene === "home"
+            ? "01 / 主动点击，直接进入"
+            : "02 / 等待高光完整落幕";
+        $("#design-description").textContent =
+          scene === "home"
+            ? "推荐入口与游戏圈、分享保持同级。微信负责实际推荐界面，游戏只处理进入、关闭和恢复。"
+            : "提示放在结算左上方空白区。关闭后不补弹；继续下一关会取消本次提示。小屏空间不足时直接省略提示。";
+        availability();
+      }
+      function modal(title, html, native = false) {
+        returnFocus = document.activeElement;
+        nativeOpen = native;
+        $("#dialog-title").textContent = title;
+        $("#dialog-body").innerHTML = html;
+        $("#dialog-action").hidden = native;
+        overlay.hidden = false;
+        all("[data-outcome]").forEach((b) => (b.disabled = !native));
+        ["#home", "#result"].forEach((s) => ($(s).inert = true));
+        $("#close-dialog").focus();
+      }
+      function closeModal(outcome) {
+        const wasNative = nativeOpen;
+        nativeOpen = false;
+        overlay.hidden = true;
+        all("[data-outcome]").forEach((b) => (b.disabled = true));
+        ["#home", "#result"].forEach((s) => ($(s).inert = false));
+        if (wasNative) {
+          if (outcome === "true") {
+            recommended = true;
+            notify("感谢推荐，继续突围！");
+            setState(
+              "关闭时状态：已推荐。回原页面；停止后续主动提示，无奖励。此状态不证明本次新增推荐。",
+            );
+          } else {
+            if (outcome === "false") recommended = false;
+            setState(
+              "关闭时状态：" +
+                (outcome === "false" ? "未推荐" : "未知") +
+                "。安静返回原页面，不弹追问、不发奖励。",
+            );
+          }
+          availability();
+        }
+        if (
+          returnFocus &&
+          returnFocus.isConnected &&
+          !returnFocus.closest("[hidden]")
+        )
+          returnFocus.focus();
+      }
+      function openRecommendation() {
+        if (nativeOpen || !overlay.hidden) return;
+        const env = $("#environment").value;
+        if (env === "web") return;
+        if (scene === "result") promptDismissed = true;
+        if (env === "old") {
+          modal(
+            "当前微信暂不支持此入口",
+            "<p>可更新微信后重试。</p><p>想打分或写评价，可从微信小游戏更多面板中的体验评价入口，或微信搜索结果的评分入口，进入评分主页。</p>",
+          );
+          setState("兼容分支：不创建组件，不影响正常游戏。");
+          return;
+        }
+        if (env === "error") {
+          notify("暂时无法打开，请稍后再试。");
+          setState("模拟打开失败。已回原界面；可以再次手动点击，无自动重试。");
+          availability();
+          return;
+        }
+        modal(
+          "微信官方推荐组件",
+          '<div class="host-slot">这里由微信展示推荐内容<br>玩家自主决定是否推荐</div><p class="prototype-note">流程占位示意，不是微信实际 UI。<br>请用画面下方的模拟按钮查看返回分支。</p>',
+          true,
+        );
+        setState(
+          "模拟组件已显示：下层输入已隔离。关闭后回到" +
+            (scene === "home" ? "首页" : "结算") +
+            "。",
+        );
+      }
+      all("[data-scene]").forEach(
+        (b) => (b.onclick = () => setScene(b.dataset.scene)),
+      );
+      $("#home-recommend").onclick = $("#result-recommend").onclick =
+        openRecommendation;
+      all("[data-outcome]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            if (nativeOpen) closeModal(b.dataset.outcome);
+          }),
+      );
+      $("#close-dialog").onclick = () => closeModal("unknown");
+      $("#dialog-action").onclick = () => closeModal("unknown");
+      $("#dismiss-invite").onclick = () => {
+        promptDismissed = true;
+        availability();
+        setState("通关提示已关闭，本次演示不再出现。首页固定入口保留。");
+      };
+      $("#return-home").onclick = () => {
+        promptDismissed = true;
+        setScene("home");
+      };
+      $("#continue").onclick = () => {
+        promptDismissed = true;
+        availability();
+        notify("正式接入后直接进入第二关");
+        setState("继续闯关优先；推荐提示已取消，不会在第二关延迟弹出。");
+      };
+      all("[data-demo]").forEach(
+        (b) =>
+          (b.onclick = () =>
+            notify("设计稿：保留原有「" + b.dataset.demo + "」流程")),
+      );
+      $("#rating-help").onclick = () => {
+        if (!overlay.hidden) return;
+        modal(
+          "评分与推荐分别进行",
+          "<p><b>推荐游戏：</b>游戏内入口打开微信官方推荐组件。</p><p><b>打分与写评价：</b>通过微信搜索结果或小游戏更多面板进入评分主页。当前资料没有给出直接打开评分编辑页的接口。</p>",
+        );
+      };
+      $("#environment").onchange = () => {
+        if (!overlay.hidden) closeModal("unknown");
+        availability();
+        setState(
+          "当前演示环境：" + $("#environment").selectedOptions[0].text + "。",
+        );
+      };
+      $("#size").onchange = fit;
+      $("#reset").onclick = () => {
+        if (!overlay.hidden) closeModal("unknown");
+        recommended = false;
+        promptDismissed = false;
+        $("#toast").hidden = true;
+        $("#environment").value = "supported";
+        availability();
+        setState("已重置。没有推荐状态、没有提示冷却；重新点击入口体验。");
+      };
+      document.addEventListener("keydown", (e) => {
+        if (overlay.hidden) return;
+        if (e.key === "Escape") {
+          e.preventDefault();
+          closeModal("unknown");
+        }
+        if (e.key === "Tab") {
+          const candidates = [
+            ...overlay.querySelectorAll("button:not([hidden])"),
+          ];
+          const first = candidates[0],
+            last = candidates[candidates.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+      window.addEventListener("resize", fit);
+      fit();
+      availability();
+    </script>
+  </body>
+</html>

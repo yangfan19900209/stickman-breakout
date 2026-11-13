@@ -1,0 +1,34 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: 开始突围 touch height 41.666666666666664",
+  "stack": "AssertionError [ERR_ASSERTION]: 开始突围 touch height 41.666666666666664\n    at click (file:///C:/Users/Administrator/Desktop/%E7%BA%BF%E6%9D%A1%E7%AA%81%E5%9B%B4/%E6%BA%90%E7%A0%81/scripts/verify-v107-revive.mjs:12:78)\n    at async boot (file:///C:/Users/Administrator/Desktop/%E7%BA%BF%E6%9D%A1%E7%AA%81%E5%9B%B4/%E6%BA%90%E7%A0%81/scripts/verify-v107-revive.mjs:33:17)\n    at async file:///C:/Users/Administrator/Desktop/%E7%BA%BF%E6%9D%A1%E7%AA%81%E5%9B%B4/%E6%BA%90%E7%A0%81/scripts/verify-v107-revive.mjs:66:23",
+  "cases": [
+    {
+      "name": "chapter-1-free-recommend-share-repeat-reset",
+      "passed": true,
+      "ordinaryInputDeaths": 4,
+      "revivals": 4,
+      "shareRequests": 2,
+      "minimumViewport": "667x375"
+    },
+    {
+      "name": "chapter-2-free-recommend-share-repeat-reset",
+      "passed": true,
+      "ordinaryInputDeaths": 4,
+      "revivals": 4,
+      "shareRequests": 2,
+      "minimumViewport": "667x375"
+    }
+  ],
+  "captures": [
+    "../开发进度/验证记录/v107-social-revive/chapter-1-free.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-1-social-options.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-1-native-ownership.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-1-credit-ready.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-free.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-social-options.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-native-ownership.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-credit-ready.png"
+  ],
+  "errors": [],
+  "failed": []
+}

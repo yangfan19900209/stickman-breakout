@@ -1,0 +1,107 @@
+{
+  "startedAt": "2026-11-10T02:00:16.549Z",
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "captures": [
+    {
+      "x": 1600,
+      "player": {
+        "x": 1602.3888888888696,
+        "y": 271.91249999999997,
+        "vx": 280,
+        "vy": -31.5,
+        "health": 3,
+        "grounded": false,
+        "facing": 1,
+        "animation": "Fall",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 1,
+        "canJump": true
+      },
+      "objects": [
+        {
+          "id": "upper-crate-A",
+          "frame": "crate.debris",
+          "width": 68.75,
+          "height": 25,
+          "alive": false,
+          "y": 258
+        },
+        {
+          "id": "hanging-01",
+          "frame": "polish.crate",
+          "width": 51.718309859154935,
+          "height": 51,
+          "alive": true,
+          "y": 410
+        },
+        {
+          "id": "crate-02",
+          "frame": "crate.debris",
+          "width": 80,
+          "height": 25,
+          "alive": false,
+          "y": 148
+        },
+        {
+          "id": "barrel-03",
+          "frame": "polish.barrel",
+          "width": 43,
+          "height": 50.75409836065574,
+          "alive": true,
+          "y": 150
+        }
+      ]
+    },
+    {
+      "x": 3700,
+      "player": {
+        "x": 3700.722222222287,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 2,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "objects": [
+        {
+          "id": "cargo-B",
+          "frame": "polish.crate",
+          "width": 58.816901408450704,
+          "height": 58,
+          "alive": true,
+          "y": 440
+        },
+        {
+          "id": "concrete-C",
+          "frame": "cover.concrete",
+          "width": 153,
+          "height": 64.38749999999999,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "upper-crate-C",
+          "frame": "polish.crate",
+          "width": 51.718309859154935,
+          "height": 51,
+          "alive": true,
+          "y": 260
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

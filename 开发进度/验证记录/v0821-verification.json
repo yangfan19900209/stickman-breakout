@@ -1,0 +1,181 @@
+{
+  "version": "0.8.21",
+  "checkedAt": "2026-11-12T06:26:57.788Z",
+  "passed": true,
+  "scope": "Chapter 2 ordinary impacts and explosions no longer pause swimming; remove geometric blast outlines while preserving authored frames and actual player damage feedback.",
+  "builds": {
+    "web-mobile": {
+      "entry": "index.html",
+      "entryTime": 1794464547135.9824,
+      "fileCount": 431,
+      "bytes": 23684464,
+      "sha256": "396d3a3451855b2da113a05ff430f5164e755c8cd3da8860a63fd415404a3ce2",
+      "creatorExitCode": 36
+    },
+    "wechatgame": {
+      "entry": "game.js",
+      "entryTime": 1794464446110.7617,
+      "fileCount": 441,
+      "bytes": 20442649,
+      "sha256": "ed329e4ed6c242f3b73c68372e9f074c629eecc1924f68fd25d73486741e4019",
+      "creatorExitCode": 36
+    }
+  },
+  "runtimeInputs": {
+    "fileCount": 343,
+    "sha256": "6431d13f80cb5653049810e858dfd4b6120ea1ed96214f70b544b0404bda1b29"
+  },
+  "checks": {
+    "logic": {
+      "tests": 388,
+      "passed": 388,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "typecheck": true,
+    "ocean": {
+      "complete": true,
+      "health": 4,
+      "time": 107.3916666666982,
+      "linkedChapter": 3
+    },
+    "touchCases": 2,
+    "healthyImpactPauseSamples": {
+      "before": 12,
+      "after": 0
+    },
+    "explosion": {
+      "frames": [
+        "fx.burst.0",
+        "fx.burst.1",
+        "fx.burst.2",
+        "fx.burst.3",
+        "fx.burst.4",
+        "fx.burst.5",
+        "fx.burst.6",
+        "fx.burst.7"
+      ],
+      "sequence": 18,
+      "engine": {
+        "version": "0.8.21",
+        "api": 6,
+        "webgl": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "dynamicAtlas": false,
+        "cleanup": true
+      },
+      "visualReview": "Entire flash, expansion and dissipation sequence visually checked in actual packed-atlas/WebGL1 browser rendering."
+    },
+    "localBudget": {
+      "mainBytes": 4189058,
+      "totalBytes": 20442649,
+      "mainRemaining": 5246,
+      "totalRemaining": 528871
+    },
+    "protectedFiles": 680,
+    "imagesUnchanged": 185,
+    "changedExistingSources": [
+      "assets/scripts/ocean/OceanCombatTuning.ts",
+      "assets/scripts/ocean/OceanRenderer.ts",
+      "assets/scripts/ocean/OceanSession.ts",
+      "assets/scripts/platform/PlatformBridge.ts"
+    ],
+    "skillFilesMatched": 12,
+    "documentationLinks": true
+  },
+  "boundaries": [
+    "Browser input and read-only snapshots; no gameplay state edits or damage overrides.",
+    "Packed atlas path configured before assets load; desktop WebGL1 is not WeChat or iPhone verification. No phone FPS claim.",
+    "Chapter 2 fully cleared in current browser build; chapters 1 and 3 full clears were not repeated.",
+    "Both builds local; no upload or publication."
+  ],
+  "evidence": [
+    {
+      "file": "reports/logic-results.json",
+      "bytes": 67,
+      "sha256": "6352832ad6508157b0f07a55fa6fe8ff864c2d9f2ae4275d3bbde49e8d57018e"
+    },
+    {
+      "file": "reports/v0821-after-packed-webgl1.json",
+      "bytes": 164198,
+      "sha256": "ce7556b6d8b31e1edffa2e62baf8a540c0a0b3c61a020354a4972838a1d1ad33"
+    },
+    {
+      "file": "reports/v0821-before-packed-webgl1.json",
+      "bytes": 170713,
+      "sha256": "52ba9f29cf30e6df2a144782921e93926aa2a455d567eeac570043f881556cf5"
+    },
+    {
+      "file": "reports/v0821-budget.json",
+      "bytes": 28166,
+      "sha256": "1609a7a9993d33394624fef993c330b2485ef8c96c2ec5ed591bfb271f94a659"
+    },
+    {
+      "file": "reports/v0821-explosion-assets.json",
+      "bytes": 2158,
+      "sha256": "3a0c9666cf4ee181ebc99101d5ea4401292fb036e5509296045cdcb6a25c36e1"
+    },
+    {
+      "file": "reports/v0821-ocean.json",
+      "bytes": 141228,
+      "sha256": "c57630fb8d4062002a4f0d70acd32c53148d1b26fdfe82b3e42074044f4d309c"
+    },
+    {
+      "file": "reports/v0821-preservation.json",
+      "bytes": 117784,
+      "sha256": "7afdbb80b83527cb6306d5f9a83fa2f7fa0502fc984853f69e9b8fe38cd5fa87"
+    },
+    {
+      "file": "reports/v0821-skill-validation.log",
+      "bytes": 17,
+      "sha256": "6cf9e7f0d34ccd36dbd28f270cd28dd04277b2e1516bd4333ce7bb501d7b18d4"
+    },
+    {
+      "file": "reports/v0821-skill-verification.json",
+      "bytes": 2167,
+      "sha256": "98834dc0ce1fdc6f20c07380a1a86f665f12a492bd7d343174e0cb865a9e2b03"
+    },
+    {
+      "file": "reports/v0821-typecheck.log",
+      "bytes": 72,
+      "sha256": "3c7e147f90bb1a2c68d87d0b86163576675eae685ee0fb8bcc87f158c47cf834"
+    }
+  ],
+  "screenshots": [
+    "reports/v0821-grenade-forward.png",
+    "reports/v0821-grenade-left.png",
+    "reports/v0821-aim-locked.png",
+    "reports/v0821-shot-harpoon.png",
+    "reports/v0821-impact.png",
+    "reports/v0821-aim-neutral.png",
+    "reports/v0821-shield-swim.png",
+    "reports/v0821-shield-hit.png",
+    "reports/v0821-shield-break.png",
+    "reports/v0821-shot-sonar.png",
+    "reports/v0821-aim-blocked.png",
+    "reports/v0821-shot-torpedo.png",
+    "reports/v0821-submarine.png",
+    "reports/v0821-ocean-complete.png",
+    "reports/v0821-linked-flight.png",
+    "reports/v0821-after-packed-webgl1/touch-swim.png",
+    "reports/v0821-after-packed-webgl1/touch-fire.png",
+    "reports/v0821-after-packed-webgl1/burst-00.png",
+    "reports/v0821-after-packed-webgl1/burst-01.png",
+    "reports/v0821-after-packed-webgl1/burst-02.png",
+    "reports/v0821-after-packed-webgl1/burst-03.png",
+    "reports/v0821-after-packed-webgl1/burst-04.png",
+    "reports/v0821-after-packed-webgl1/burst-05.png",
+    "reports/v0821-after-packed-webgl1/burst-06.png",
+    "reports/v0821-after-packed-webgl1/burst-07.png",
+    "reports/v0821-after-packed-webgl1/burst-08.png",
+    "reports/v0821-after-packed-webgl1/burst-09.png",
+    "reports/v0821-after-packed-webgl1/burst-10.png",
+    "reports/v0821-after-packed-webgl1/burst-11.png",
+    "reports/v0821-after-packed-webgl1/burst-12.png",
+    "reports/v0821-after-packed-webgl1/burst-13.png",
+    "reports/v0821-after-packed-webgl1/burst-14.png",
+    "reports/v0821-after-packed-webgl1/burst-15.png",
+    "reports/v0821-after-packed-webgl1/burst-16.png",
+    "reports/v0821-after-packed-webgl1/burst-17.png",
+    "reports/v0821-after-packed-webgl1/sequence.png"
+  ]
+}

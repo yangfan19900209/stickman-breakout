@@ -1,0 +1,287 @@
+{
+  "version": "0.8.15",
+  "checkedAt": "2026-11-11T06:47:15.190Z",
+  "sourceSHA256": "2dc77325aff09be80f333f62d7952cc3470e2d3c33909b29e272c2f8734eb639",
+  "typecheck": {
+    "status": "passed",
+    "log": "reports/v0815-typecheck.log"
+  },
+  "logic": {
+    "tests": 335,
+    "passed": 335,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "report": "reports/v0815-mobile.json",
+    "method": "Complete normal-keyboard campaign; read-only snapshots and controlled clock; normal health, ammo and enemy states, no teleports or deliberate cease-fire tour.",
+    "state": "complete",
+    "health": 4,
+    "miniFightDuration": 8.083333333332877,
+    "fightDuration": 24.22500000001928,
+    "encounter": {
+      "lockedSamples": 1121,
+      "released": true,
+      "reward": true,
+      "rifleBossHits": 39
+    },
+    "attacks": {
+      "salvo": 1,
+      "sweep": 0,
+      "stomp": 1,
+      "laser": 1,
+      "missiles": 1,
+      "burst": 1,
+      "charge": 2,
+      "leap": 2
+    },
+    "applicationErrors": 0
+  },
+  "platforms": {
+    "report": "reports/v0815-platforms.json",
+    "method": "Normal keyboard route to low and high decks, then CDP two-finger down+jump. Read-only snapshots, no teleports or state edits. Simulated phone viewport.",
+    "states": [
+      {
+        "name": "low-deck",
+        "x": 1250.2123717168472,
+        "y": 260,
+        "dropCount": 0
+      },
+      {
+        "name": "high-deck",
+        "x": 1659.65681616128,
+        "y": 348,
+        "dropCount": 0
+      },
+      {
+        "name": "touch-down-ready",
+        "x": 1661.4345939390578,
+        "y": 348,
+        "dropCount": 0
+      },
+      {
+        "name": "drop-through",
+        "x": 1661.4345939390578,
+        "y": 342.25,
+        "dropCount": 1
+      },
+      {
+        "name": "ground-landing",
+        "x": 1661.4345939390578,
+        "y": 150,
+        "dropCount": 1
+      }
+    ],
+    "noLifts": true
+  },
+  "model": {
+    "report": "reports/v0815-model-campaign.json",
+    "state": "complete",
+    "health": 4,
+    "fightDuration": 20.750000000016513
+  },
+  "web": {
+    "entryTime": 1794379416296.5605,
+    "sha256": "d111c4698de2cfdf89fddd4c7b3628e535acde1eafe746187d1f8eb3283993f3",
+    "bytes": 22768778,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794379524296.7166,
+    "sha256": "6a0eda82f7644c4ee72285ffb16819b0242a24dfeb8edba22ee2a80db10e51e6",
+    "bytes": 19598407,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 597172
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10303434
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V0815-20261111",
+    "checkpointEntriesVerified": 446,
+    "preservedFiles": [
+      "assets/scripts/camera/CameraFollow.ts",
+      "assets/scripts/combat/WeaponSystem.ts",
+      "assets/scripts/enemy/TankBoss.ts",
+      "assets/scripts/enemy/EnemyController.ts",
+      "assets/scripts/enemy/EnemyTactics.ts",
+      "assets/scripts/ui/ControlLayout.ts",
+      "assets/scripts/platform/SafeAreaInsets.ts",
+      "assets/scripts/core/InputManager.ts",
+      "assets/scripts/core/TouchInputManager.ts",
+      "assets/scripts/level/MechanismController.ts",
+      "assets/scripts/render/ComicAssets.ts",
+      "assets/scripts/render/ShieldBreakFrames.ts"
+    ],
+    "dependenciesUnchanged": true
+  },
+  "skill": {
+    "report": "reports/v0815-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v0815-mobile-projectile-player-standard-bullet.png",
+      "sha256": "119f9b7b9f3c60b260a7a93aecbc4c866950335be9e6e434c5e3a3de4d89e277",
+      "capturedAt": "2026-11-11T06:44:54.315Z"
+    },
+    {
+      "file": "reports/v0815-mobile-projectile-enemy-standard-bullet.png",
+      "sha256": "4dfacd79b1e9af8065ce1100c78920a7c4753ecdfc74fa102f63f89693531991",
+      "capturedAt": "2026-11-11T06:44:56.632Z"
+    },
+    {
+      "file": "reports/v0815-mobile-projectile-player-standard-rocket.png",
+      "sha256": "90d7af5624ab0c3803c48442aeb50482f586aac02fe2448f2c672e96adc031d2",
+      "capturedAt": "2026-11-11T06:45:14.386Z"
+    },
+    {
+      "file": "reports/v0815-mobile-mini-platform-layout.png",
+      "sha256": "d994052380295b0892c8d79671084fc200935fafb94ca61f40b2b2859de39d88",
+      "capturedAt": "2026-11-11T06:45:16.360Z"
+    },
+    {
+      "file": "reports/v0815-mobile-projectile-enemy-mini-bullet.png",
+      "sha256": "92da8c4acd28d92ea5e490a8cea7fc15425e30f70cde499da01d6dbd0bbc01c3",
+      "capturedAt": "2026-11-11T06:45:18.383Z"
+    },
+    {
+      "file": "reports/v0815-mobile-mini-defeated-reward.png",
+      "sha256": "042c1246c5471dd43e01f3e611d2ccd5a7176dc611612ed4ed89887f4dcdb296",
+      "capturedAt": "2026-11-11T06:45:24.505Z"
+    },
+    {
+      "file": "reports/v0815-mobile-boss-size.png",
+      "sha256": "e230a3dbaa731fe998dd09ea7ecea83bc630feac7c3293f19302fc115a678e39",
+      "capturedAt": "2026-11-11T06:45:46.646Z"
+    },
+    {
+      "file": "reports/v0815-mobile-tell-leap.png",
+      "sha256": "ceadaec596afd3fcae603560eb41986f964ea5d646a92c459197c3f61741df4d",
+      "capturedAt": "2026-11-11T06:45:47.082Z"
+    },
+    {
+      "file": "reports/v0815-mobile-leaping.png",
+      "sha256": "7be1ca4eb01868fdcce77c90ede6092d9b9fab1b69c856ee8dbd3cd21e41b1a3",
+      "capturedAt": "2026-11-11T06:45:47.950Z"
+    },
+    {
+      "file": "reports/v0815-mobile-landing.png",
+      "sha256": "d1f3f0adb5b1f40543f912d8135c0eb1c7a71be9a9f450545b0c140c563d3330",
+      "capturedAt": "2026-11-11T06:45:48.588Z"
+    },
+    {
+      "file": "reports/v0815-mobile-tell-salvo.png",
+      "sha256": "daa6816b61c928fe7ad57fe98ce3b6ffd7f24daf80010551e1f38dcc6dc5a274",
+      "capturedAt": "2026-11-11T06:45:50.042Z"
+    },
+    {
+      "file": "reports/v0815-mobile-tell-charge.png",
+      "sha256": "d71878073cdd2fd2b15ea29d2e602cd3772b9b2aa65873b0535579f97ada69e7",
+      "capturedAt": "2026-11-11T06:45:52.182Z"
+    },
+    {
+      "file": "reports/v0815-mobile-charging.png",
+      "sha256": "a8894e12e5ebc1507cd883ad3f9f7a164b016273aa569abcd8cbb84aacd24fda",
+      "capturedAt": "2026-11-11T06:45:52.979Z"
+    },
+    {
+      "file": "reports/v0815-mobile-pursuit-outside-arena.png",
+      "sha256": "13f9317ba29329ff45c867531cdd929eeb7637fa5d2880e61e42e7e3c0ce1f74",
+      "capturedAt": "2026-11-11T06:45:53.263Z"
+    },
+    {
+      "file": "reports/v0815-mobile-tell-laser.png",
+      "sha256": "c37df35815b2f47baf5b73cefdc032d6f7e363e0ad75cfa243d8ca9be24727a8",
+      "capturedAt": "2026-11-11T06:45:54.782Z"
+    },
+    {
+      "file": "reports/v0815-mobile-enrage.png",
+      "sha256": "a657dc96fcae423b472e9038b4993a764187253f79e7552aaa1ab3bd8da1d50d",
+      "capturedAt": "2026-11-11T06:45:56.310Z"
+    },
+    {
+      "file": "reports/v0815-mobile-tell-burst.png",
+      "sha256": "1d3da4930db5953a858c2636d25b60b9934473edcc617e3d8927b1ea81f3632a",
+      "capturedAt": "2026-11-11T06:45:58.964Z"
+    },
+    {
+      "file": "reports/v0815-mobile-projectile-enemy-boss-bullet.png",
+      "sha256": "7d20315dcfd2f59bf7f71cd3ae16022206d73238e9e27b4dd59f05f2e5535dae",
+      "capturedAt": "2026-11-11T06:45:59.648Z"
+    },
+    {
+      "file": "reports/v0815-mobile-tell-stomp.png",
+      "sha256": "33304ef6dd44259fdbea54caf899c82c94778beff7be9c50debd39ca7230a86d",
+      "capturedAt": "2026-11-11T06:46:02.130Z"
+    },
+    {
+      "file": "reports/v0815-mobile-tell-missiles.png",
+      "sha256": "8f0359f280214e8be5555690d4043fa903ea34322b1f772a9bb4d53156825b49",
+      "capturedAt": "2026-11-11T06:46:03.262Z"
+    },
+    {
+      "file": "reports/v0815-mobile-projectile-enemy-boss-rocket.png",
+      "sha256": "90e3f2b7adda0a936d4590fe42cd3ccea0ee17839ab5f39255d1b332d5283ac1",
+      "capturedAt": "2026-11-11T06:46:04.182Z"
+    },
+    {
+      "file": "reports/v0815-mobile-result.png",
+      "sha256": "9b3e63f215ade1b3a8b105e7c6b98ce05fb6e2e9bebc2b07e7e5ae58e217ed22",
+      "capturedAt": "2026-11-11T06:46:07.369Z"
+    },
+    {
+      "file": "reports/v0815-platform-low-deck.png",
+      "sha256": "87e7609c87b2ea8049ce5be7e764ae232102a917825df94539fa2847999f9d66",
+      "capturedAt": "2026-11-11T06:44:58.785Z"
+    },
+    {
+      "file": "reports/v0815-platform-high-deck.png",
+      "sha256": "f80c8c61bb521dee49155675707410fc1d184397554ba17b104f68ab16bffe73",
+      "capturedAt": "2026-11-11T06:45:01.598Z"
+    },
+    {
+      "file": "reports/v0815-platform-touch-down-ready.png",
+      "sha256": "87e6f2977857df647431be5396fc64cd4fabdd55a9a602551d3fba614d2814c0",
+      "capturedAt": "2026-11-11T06:45:01.964Z"
+    },
+    {
+      "file": "reports/v0815-platform-drop-through.png",
+      "sha256": "1e2d5da666734c9faf5a7f31d3ea8425eddb9fcce0ae725d5396390fbac7c337",
+      "capturedAt": "2026-11-11T06:45:02.234Z"
+    },
+    {
+      "file": "reports/v0815-platform-ground-landing.png",
+      "sha256": "3b2379c9c8298b45c164d207eacb381e03d716f60eacc653e8d6431d429e5487",
+      "capturedAt": "2026-11-11T06:45:03.370Z"
+    }
+  ],
+  "limitations": [
+    "Browser phone viewport and system controls are simulated; no iPhone/WeChat hardware test",
+    "Stronger rifle shortens normal boss fights; all eight attack states remain in behavior regressions but not every attack appears during this playthrough",
+    "No upload or publication"
+  ]
+}

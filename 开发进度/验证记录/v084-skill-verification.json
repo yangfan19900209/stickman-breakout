@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-11-10T06:56:18.993Z",
+  "officialValidator": "passed",
+  "filesMatched": 11,
+  "installedPath": "C:/Users/Administrator/.codex/skills/cocos-2d-action-games",
+  "changedFiles": [
+    "references/asset-prompts.md",
+    "references/design-and-presentation.md",
+    "references/performance-and-motion.md",
+    "references/project-examples.md",
+    "SKILL.md"
+  ],
+  "files": [
+    {
+      "file": "agents/openai.yaml",
+      "sha256": "97f227a02eb924aa591c233add91960114b2511573fa284a2182f285962df1c2"
+    },
+    {
+      "file": "references/asset-prompts.md",
+      "sha256": "6531c3a48f0a4be62ab61cb9a8abec9cdb66234edc7ebae01a09e45900a46f77"
+    },
+    {
+      "file": "references/design-and-presentation.md",
+      "sha256": "fa6b985e49096b8019a30790621cd9f1a05d5a7d6b1a5385ee60c8eac374db1d"
+    },
+    {
+      "file": "references/gameplay-and-physics.md",
+      "sha256": "4671242ded1e9f32e12ab25440b0209782399a7b60829f35cfd83ba1cf1d13eb"
+    },
+    {
+      "file": "references/performance-and-motion.md",
+      "sha256": "c93b542004cbc32d5406ec87f0ef1eee2f361a9ee1f5ca4efb8c9f472e8077db"
+    },
+    {
+      "file": "references/project-examples.md",
+      "sha256": "321f19b2727891d9e6567438d964477402652c35a4e875c0f7523cecb5edbe97"
+    },
+    {
+      "file": "references/skill-maintenance.md",
+      "sha256": "b7b574b7b9587c9034e8f3dd2f56131f73fc8834e2db466917a8f74c8c8fdd64"
+    },
+    {
+      "file": "references/sprite-resource-pipeline.md",
+      "sha256": "ce655a715abc1316e011e8debcf5d6762e8c94eb9cebd66455ace447986de14d"
+    },
+    {
+      "file": "references/verification-and-delivery.md",
+      "sha256": "d6ffed671cc08115b10838f693033e9d72b99adeb1852622d95e89f04557f5e1"
+    },
+    {
+      "file": "scripts/inspect_sprite.py",
+      "sha256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc"
+    },
+    {
+      "file": "SKILL.md",
+      "sha256": "a56d7597fd3b5d034c40e1dfb4a9ce315c81019f9d07b1cdf798c73cf86ca69c"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "checkedAt": "2026-11-12T01:40:34.968Z",
+  "method": "Built-in image generation; crop and alpha-preserving area downsample into one local level02 atlas.",
+  "atlas": {
+    "path": "assets/level02/combat-v0818.png",
+    "width": 768,
+    "height": 384,
+    "bytes": 101285,
+    "sha256": "dd433bf3f6e84d354091b492b2fb8d79eab01cdd9a61b767f01af12c966b5d7a"
+  },
+  "records": [
+    {
+      "id": "shot.shared.harpoon",
+      "source": "art/source/v0818/harpoon.png",
+      "sourceSHA256": "a1661331550abf34cd2ad8a103376fdec501241976583384f362773f4d7dd9ba",
+      "crop": [
+        48,
+        245,
+        2075,
+        235
+      ],
+      "region": [
+        4,
+        4,
+        208,
+        24
+      ],
+      "visiblePixels": 153156,
+      "darkPixelRatio": 0.8526012692940531
+    },
+    {
+      "id": "projectile.water-grenade",
+      "source": "art/source/v0818/grenade.png",
+      "sourceSHA256": "1eb881a017f9a306a26f3d0af9a75f77e4d0ee60a13e4170a660d221f843f8c5",
+      "crop": [
+        211,
+        136,
+        1038,
+        762
+      ],
+      "region": [
+        220,
+        4,
+        83,
+        61
+      ],
+      "visiblePixels": 512907,
+      "darkPixelRatio": 0.5980947813151312
+    },
+    {
+      "id": "enemy.shield.aim",
+      "source": "art/source/v0818/shield-diver.png",
+      "sourceSHA256": "ebd7ce5429e43482861ff6a34a27ca51a8440ae7618077290ad8ee97c12e1991",
+      "crop": [
+        45,
+        38,
+        469,
+        551
+      ],
+      "region": [
+        311,
+        4,
+        122,
+        143
+      ],
+      "visiblePixels": 118141,
+      "darkPixelRatio": 0.4937489948451427
+    },
+    {
+      "id": "enemy.shield.swim.0",
+      "source": "art/source/v0818/shield-diver.png",
+      "sourceSHA256": "ebd7ce5429e43482861ff6a34a27ca51a8440ae7618077290ad8ee97c12e1991",
+      "crop": [
+        585,
+        45,
+        612,
+        508
+      ],
+      "region": [
+        441,
+        4,
+        159,
+        132
+      ],
+      "visiblePixels": 118390,
+      "darkPixelRatio": 0.48901934284990284
+    },
+    {
+      "id": "enemy.shield.swim.1",
+      "source": "art/source/v0818/shield-diver.png",
+      "sourceSHA256": "ebd7ce5429e43482861ff6a34a27ca51a8440ae7618077290ad8ee97c12e1991",
+      "crop": [
+        39,
+        660,
+        601,
+        526
+      ],
+      "region": [
+        608,
+        4,
+        156,
+        137
+      ],
+      "visiblePixels": 118706,
+      "darkPixelRatio": 0.48487860765251967
+    },
+    {
+      "id": "enemy.shield.hit",
+      "source": "art/source/v0818/shield-diver.png",
+      "sourceSHA256": "ebd7ce5429e43482861ff6a34a27ca51a8440ae7618077290ad8ee97c12e1991",
+      "crop": [
+        681,
+        655,
+        540,
+        566
+      ],
+      "region": [
+        4,
+        155,
+        140,
+        147
+      ],
+      "visiblePixels": 127086,
+      "darkPixelRatio": 0.4850022819193302
+    }
+  ]
+}

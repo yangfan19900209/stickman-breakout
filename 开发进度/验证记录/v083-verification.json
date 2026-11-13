@@ -1,0 +1,689 @@
+{
+  "version": "0.8.3",
+  "checkedAt": "2026-11-10T03:31:08.358Z",
+  "sourceSHA256": "90ebe07ffd1946a3c0d3726d4c1b7e0c513db13ff61e5407148903b4584ddb7b",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 262,
+    "passed": 262,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": "http://127.0.0.1:4190/",
+  "oceanPreview": "http://127.0.0.1:4190/level02.html",
+  "changes": [
+    "Whole rifle and rocket upward/diagonal gait frames retain stride during fire; frame-specific barrels drive projectiles",
+    "Ground down+jump slide uses real collision, locked direction and cooldown; aerial second jump preserved",
+    "Contextual knife uses active-only sweep, low cutting pose and held-press ammo protection; hurt poses override aim and firing in both chapters",
+    "Flat ink/paper touch controls share style, native capsule reservation and unchanged touch targets; contextual double-jump/slide labels and entry/pause help"
+  ],
+  "browser": {
+    "land": {
+      "time": 95.91666666668907,
+      "hp": 3,
+      "rocketPickups": [
+        {
+          "x": 4852.505368748369,
+          "ammo": 5
+        },
+        {
+          "x": 13352.599178403785,
+          "ammo": 5
+        }
+      ],
+      "report": "reports/v083-land-campaign.json"
+    },
+    "ocean": {
+      "time": 86.7916666666818,
+      "hp": 3,
+      "report": "reports/v083-browser-campaign.json"
+    },
+    "actions": "reports/v083-actions.json",
+    "details": "reports/v083-browser-details.json",
+    "touch": "reports/v083-browser-lifecycle.json",
+    "capsule": "reports/v083-menu.json",
+    "errors": 0
+  },
+  "web": {
+    "entryTime": 1794280916963.133,
+    "sha256": "4d882233db0957b2c8c612839fc21e88af456ad5eaa5a5e3958c866b31b24c26",
+    "bytes": 16662885,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794281019936.3298,
+    "sha256": "d5ce89ae3ec13ef9d3b03e85cc9656f08141c241f13a1dd895a423651fbc4247",
+    "bytes": 13553016,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 545430
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 5509339
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 3141029
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false,
+    "limitReference": "https://docs.cocos.com/creator/3.8/manual/zh/editor/publish/subpackage.html"
+  },
+  "art": {
+    "generatedImages": 2,
+    "newCompleteFrames": 28,
+    "feedbackFramesFromV081": 2,
+    "manifest": "art/v083-motion-manifest.json",
+    "prompts": "art/source/v083/GENERATION.md",
+    "runtime": [
+      {
+        "file": "assets/landart/cast.png",
+        "bytes": 2064226,
+        "sha256": "0cd9c0b74da752f1298cce4e6a0d3429c50ff53289760840a7009568c8480997"
+      },
+      {
+        "file": "assets/landart/soil.png",
+        "bytes": 236629,
+        "sha256": "a1318a1406dcdaa252fcd7bd4c5fef62772167460ec559d2bebf869e1675de5c"
+      },
+      {
+        "file": "assets/landart/motion.png",
+        "bytes": 929283,
+        "sha256": "ccd05fb968881dc84aeabf4332553f64878c8f718875f3c73762c46334053eb6"
+      }
+    ],
+    "inspection": "reports/v083-motion-inspection.json",
+    "baseCast": "art/v081-art-manifest.json"
+  },
+  "skill": "reports/v083-skill-verification.json",
+  "screenshots": [
+    {
+      "file": "reports/v083-land-start.png",
+      "sha256": "9bdbfa1832b10a716a3309421181676ac3001011d788259033346d4085752b48"
+    },
+    {
+      "file": "reports/v083-land-850.png",
+      "sha256": "536fe82a57decd0cd86cc9d5f197139b761d5037fc9b335acef41d7cdfb8831c"
+    },
+    {
+      "file": "reports/v083-land-1200.png",
+      "sha256": "0526684d9d615fbe2c0a4d7553db5e86a563fe341c4a25d0b3cace213556145a"
+    },
+    {
+      "file": "reports/v083-land-1850.png",
+      "sha256": "4316e485d09e854523edbf1daf9b4de390626fd9367e4075486e31ec75a0b335"
+    },
+    {
+      "file": "reports/v083-land-2200.png",
+      "sha256": "a3ac7fb998155cc243722d928b57de25a4e7269e10ab8f392702c6f36eb0984b"
+    },
+    {
+      "file": "reports/v083-land-3100.png",
+      "sha256": "0ab62e9104a378fbfaeb63fa47a3a1ffeb4af3bb139e521fecb1f018b903886f"
+    },
+    {
+      "file": "reports/v083-land-3700.png",
+      "sha256": "eccb71388e5e03fe124a976cdf62dcd35e440db912feaadc940a09a915a7aa1d"
+    },
+    {
+      "file": "reports/v083-land-4300.png",
+      "sha256": "c1807ffd8afc9b4777b3ee4fd9ad63f18900e7620b3f2c75684eb9d9224adf2f"
+    },
+    {
+      "file": "reports/v083-rocket-pickup-1.png",
+      "sha256": "9ded969f00924bc5071e41c96416f9c85981dded7a829e430f8f28c14991186e"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-stride-0.png",
+      "sha256": "9ded969f00924bc5071e41c96416f9c85981dded7a829e430f8f28c14991186e"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-stride-1.png",
+      "sha256": "936e561fa85c39f54b526d630f740ec6d04fffb6f6d7ddb45bb3790d939dcc94"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-stride-2.png",
+      "sha256": "818c43de535d4d65729dfe262100a31e40a76f83a7857bc72a80d455da13d1c0"
+    },
+    {
+      "file": "reports/v083-land-4900.png",
+      "sha256": "903a607d5d0462d87e8a452f28d836281f24ea5dd5d1127fa35fca9acf6337a7"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-stride-3.png",
+      "sha256": "ef6090fbc0e5f4e288d9f9038cb274507722d12f57698d914f6627d5146bbbe7"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-idle-1.png",
+      "sha256": "34a054a9e705b47c40826b625794f6390fbd22741b6d0023d31680a5a4ee7ca4"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-jump-1.png",
+      "sha256": "6bc26aeedde301c9c45490f614b0116b3251b4f936d7bba923c0f2556b6f50dd"
+    },
+    {
+      "file": "reports/v083-land-5050.png",
+      "sha256": "7046557db2534c9d39da226b85a26ddfc63273518dd3c2e8282dedeb118c9815"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-jump-2.png",
+      "sha256": "81f29700c57b3bc64f975db7573ddee1e452741e9ded71dcf2f6397a961d602c"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-fall-0.png",
+      "sha256": "f438457f9f02c9c8777fafea319d9e234e864ff89897c346164ec843bed3b422"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-fall-1.png",
+      "sha256": "0d0e7a2446f30f592ee3bf5cd84be97b93c098bfcdbac065cfcc314d8e0a1bc0"
+    },
+    {
+      "file": "reports/v083-land-5200.png",
+      "sha256": "d1cee593bb6b4d02437dbec3eae8d3697ccfef44b165599c2d394c22201bb0cb"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-crouch-walk-1.png",
+      "sha256": "ea8afcefa42fe54b535ddfb77f699907e721c53800b7faf3dba709a50201b475"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-crouch-1.png",
+      "sha256": "681539b011ac6e21486aa7fc7d4523e33a2e3eb1171d91062f1e33658ba042c9"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-crouch-0.png",
+      "sha256": "1d005f9fdb3490dd46257eba7aad67035eb82e4c56c86cc7ade0f9123764fba6"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-crouch-fire-0.png",
+      "sha256": "badbfce6fa914c07f7663dd1f22cd4ac2fe1dcfa80025f279216affc88b8bbde"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-crouch-fire-1.png",
+      "sha256": "b1e73dca9ac4a483c4f1fe6ec6b7c0620369c6b19326db765038aaa1b21113ec"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-crouch-fire-2.png",
+      "sha256": "d88f45f723ebaa6e7a144cc6966c5dca4e70d1124e500833201685ddd1dae249"
+    },
+    {
+      "file": "reports/v083-land-6200.png",
+      "sha256": "e2d8431ed5d287ec3bd4d9ddfe616f6cf71fa8bc10f0d96956d1edea03ff6bf2"
+    },
+    {
+      "file": "reports/v083-land-7350.png",
+      "sha256": "e5f5b430213e686dec8afc886ed0568e8a816110089fc64efe9d377ad9a2094a"
+    },
+    {
+      "file": "reports/v083-land-7900.png",
+      "sha256": "2395bca4719d2cfab55c33eb774cd3e24b93f3f339f71cc066cd629e3d2f7878"
+    },
+    {
+      "file": "reports/v083-land-8050.png",
+      "sha256": "1d062d625e57762637799f9ce5f320915a6bb4e71926727762672a457e2d5f2f"
+    },
+    {
+      "file": "reports/v083-land-8250.png",
+      "sha256": "a2bfd2f560de437943031b7ba52109f6041215912398d82f366707c5d22e050e"
+    },
+    {
+      "file": "reports/v083-land-9100.png",
+      "sha256": "a95dde5f29486654baf82be5d66405586928e912191012eb86b9d99ff0c84cef"
+    },
+    {
+      "file": "reports/v083-land-9900.png",
+      "sha256": "94cde63194a1b51884385635067a96c613637a1587a7764600570089aa2436d4"
+    },
+    {
+      "file": "reports/v083-land-10800.png",
+      "sha256": "d7e2e7e4513b0197d808081396bc65ab45c75c778b218a5034cacb0b74c7ab65"
+    },
+    {
+      "file": "reports/v083-land-11100.png",
+      "sha256": "a83f523bed7af3c08313410aef9935ca0cc70570229d48b0409b1ada9dd1a0b5"
+    },
+    {
+      "file": "reports/v083-land-11400.png",
+      "sha256": "2ca826d182fafcb0148741c7a2bbcd3cb71dcd1e8e45fcb3b11036147dca8201"
+    },
+    {
+      "file": "reports/v083-land-11800.png",
+      "sha256": "7578b4e4c151b074c43abef08f7b4bc1fa0ef0f8d0feb83a6f445c3ee65ca9ef"
+    },
+    {
+      "file": "reports/v083-land-12350.png",
+      "sha256": "4ac3fca33b2cc54d55939fa1bdf3813ba07af8da662d087434a655e259c3f55c"
+    },
+    {
+      "file": "reports/v083-land-12600.png",
+      "sha256": "4a0f3af9c90436ede941956882c4808809bd03595469773bb05fa4b00c95f63d"
+    },
+    {
+      "file": "reports/v083-land-13000.png",
+      "sha256": "1a80ee2f343a0d24348c53638a6357a21595e05a6498aa5bb4e6239f0fe5bce5"
+    },
+    {
+      "file": "reports/v083-land-13200.png",
+      "sha256": "c7b1c4996698f6ee61e14daff5078f928b755ffc944571b09489faf425f7c17f"
+    },
+    {
+      "file": "reports/v083-rocket-pickup-2.png",
+      "sha256": "57f346eeb5aae5f4b8678147217d59971b88b4bd176f79a8399a225ba7d6df75"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-stand-fire-2.png",
+      "sha256": "d24bf736e6dd95708ab233a20ab4b9031739b5d5aaef6a8a4b24c7271093ef39"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-idle-3.png",
+      "sha256": "506a6efd52194a4c438d2f3894b50c8b13ef460512daef048599e3f09faa8532"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-idle-0.png",
+      "sha256": "e9384c16206a794a4923c13f43367c4b1eb965f7491b93524cb305215c6ab362"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-stand-fire-0.png",
+      "sha256": "8c7ecb0c6d6eaf56067d90686f8dbeb4def022f36db6dd17294b0502ea26c122"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-stand-fire-1.png",
+      "sha256": "5f0c619801b6206102f07c718b53b4ac5548175419e2bdef9f1070ea45b9b431"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-idle-2.png",
+      "sha256": "2c292699885148156b111ad981dcc1d5ca0930fa4fa802da22a85b3a4874a564"
+    },
+    {
+      "file": "reports/v083-cast-direct-rocket-crouch-walk-0.png",
+      "sha256": "5494b0ac972bf1a232b9a6dcdb3b66e880040a7e970e9bc6384f4d2f4f81fd19"
+    },
+    {
+      "file": "reports/v083-land-complete.png",
+      "sha256": "2c5ce3977f1ab639ade97271013062d9084434105cae751a4c3d20b093980881"
+    },
+    {
+      "file": "reports/v083-chapter-link.png",
+      "sha256": "977fca432b80599de054c22c44a262724716b3546d0c8b63cebe2d3fc2cf1be2"
+    },
+    {
+      "file": "reports/v083-mobile-1600.png",
+      "sha256": "b78ef004d5fd5dafb03a9ebbe7195fb314ba875053347a133f3cb460111df8ba"
+    },
+    {
+      "file": "reports/v083-mobile-3700.png",
+      "sha256": "6e0297eca667ff564b005f4b08b2a299508e2eb41171c25817f1ab164ead35ac"
+    },
+    {
+      "file": "reports/v083-shore.png",
+      "sha256": "93a2e4cf9a023eb2cf28358800c9dcf4d12cd61970c5fee79d112da32c6bcd1b"
+    },
+    {
+      "file": "reports/v083-walk-0.png",
+      "sha256": "e229ef361b55406b30c05f32fb862821de3f50acd603a339738e70f70dccb6cf"
+    },
+    {
+      "file": "reports/v083-walk-1.png",
+      "sha256": "1de2fa4fc034730dd9a1842d358e85397686f719756e8425a4de8b90a9edf3b3"
+    },
+    {
+      "file": "reports/v083-walk-2.png",
+      "sha256": "54caf10588a3cbf9ae94a1c9483237fad6e89c5a1f9344fd4a0c443c0a34a7c2"
+    },
+    {
+      "file": "reports/v083-walk-3.png",
+      "sha256": "f3d4964be3a145c5e0b49763e97c95643a1a086d11170993e64c70a57b1aa086"
+    },
+    {
+      "file": "reports/v083-walk-4.png",
+      "sha256": "832242f5031917d5ff606ab81db74e4b44270c72216316110a0fac72f1f67a45"
+    },
+    {
+      "file": "reports/v083-entry-reach.png",
+      "sha256": "2839535d9f91167d83305eb95e619f5ce24875d64b1dcdedbc27820d623d3616"
+    },
+    {
+      "file": "reports/v083-entry-open.png",
+      "sha256": "23385f2e5169b82778b806a846242e1a0d6b102f2b555bfc44f76d82b21b8fab"
+    },
+    {
+      "file": "reports/v083-entry-take.png",
+      "sha256": "dc69223ad36d0a5d00fb4b247a695545c267c7d642d6c86116fa59607589d4ac"
+    },
+    {
+      "file": "reports/v083-equip.png",
+      "sha256": "0a3ea6ccd59b6f57c0da80af45a201002ccfd2981f2c7620529cb47591e4b98d"
+    },
+    {
+      "file": "reports/v083-equip-tank.png",
+      "sha256": "b65b5c6f65308cf162c43894f006089b26354f823c658dc3ee59dbca2bd192f0"
+    },
+    {
+      "file": "reports/v083-entry-walk.png",
+      "sha256": "1a24dcb0c1f73c5b477068d1add64f93dbd929ebac765d499ee92d4f8bcd9dfb"
+    },
+    {
+      "file": "reports/v083-dive.png",
+      "sha256": "9e0ad5904aa1a619c4d2ea81dfaca440eea902779464d74a6bac4ce12193b2af"
+    },
+    {
+      "file": "reports/v083-shallow.png",
+      "sha256": "bd1cf86f26b279df5f4d849bab9440bd920e6ab5395a15a122d924bb75e949a1"
+    },
+    {
+      "file": "reports/v083-shallow-animated.png",
+      "sha256": "f995eb8725da88fd1271bcf4d8a93f77b02701b357d737068bacec66a5815a3c"
+    },
+    {
+      "file": "reports/v083-weapon-harpoon.png",
+      "sha256": "2bee6060bd8bd35935bcbd37a59652294f967ccb2b4ee87702407dc6da37d4d3"
+    },
+    {
+      "file": "reports/v083-zone-1.png",
+      "sha256": "2bee6060bd8bd35935bcbd37a59652294f967ccb2b4ee87702407dc6da37d4d3"
+    },
+    {
+      "file": "reports/v083-enemy-burst.png",
+      "sha256": "89543fcb773efc0308a270df95c0d93330e1092be1785fb1d8ef942c822ebf04"
+    },
+    {
+      "file": "reports/v083-enemy-projectile.png",
+      "sha256": "5e9d76e91501e60082c200d2bd7bad3f5ecf070a990b43d14cb4b3999ee18d47"
+    },
+    {
+      "file": "reports/v083-explosion-peak.png",
+      "sha256": "ef5739febc941eeb48f9b6bfa7455af2447d8b61626c7797b59fb8378da26fe3"
+    },
+    {
+      "file": "reports/v083-enemy-marksman.png",
+      "sha256": "ec34e2c9f7d2ef1586304dd5f47c0614103e2cd1eb8a5d25f828f4f089e26859"
+    },
+    {
+      "file": "reports/v083-enemy-torpedo.png",
+      "sha256": "d48338271cebacfa1062b99e4c695f79a9b52477e6ab4a927871dd533dc904e8"
+    },
+    {
+      "file": "reports/v083-zone-2.png",
+      "sha256": "8e406dcc219a3240d5cbef51dafa0734481eaf54777c9f1c9281571cf59c7b1c"
+    },
+    {
+      "file": "reports/v083-weapon-sonar.png",
+      "sha256": "7627a74b2044bfcc6d375a90dd49350d1b4fe9adba9bc43afaed0b1afbf1dce1"
+    },
+    {
+      "file": "reports/v083-reef.png",
+      "sha256": "cc639c85eade688ce6676eb3a90957b29af10b52d1baf85c0b2eee50a0baffdd"
+    },
+    {
+      "file": "reports/v083-zone-3.png",
+      "sha256": "39388375a02969d62ec558d4a953de52edfa71abbcca9b9b8375bf3c46ba064f"
+    },
+    {
+      "file": "reports/v083-wreck.png",
+      "sha256": "c2f46827962b5ea72966a45f09f0e80942c9b8bdc479be9a7ceeb14f8fee8eb2"
+    },
+    {
+      "file": "reports/v083-enemy-dash.png",
+      "sha256": "cdd52708c7a3023580f99493360ca3fd3af3b02ff70d1d737a143ec6efa9ac3f"
+    },
+    {
+      "file": "reports/v083-enemy-fan.png",
+      "sha256": "985d15194ed57bbabbd0950b0a31a5d7caf2169f3180ed9a8be4d395f7d9acb9"
+    },
+    {
+      "file": "reports/v083-zone-4.png",
+      "sha256": "78435fee78ce698a6d30471c7343f6052d666b09371c4cdaac0ed637cd0aac26"
+    },
+    {
+      "file": "reports/v083-deep.png",
+      "sha256": "19ca0b153002d1a23b1ec414fb90705dc2acbb7cf95641f37f649eef51000012"
+    },
+    {
+      "file": "reports/v083-zone-5.png",
+      "sha256": "e6d271042e3034125fe877dd6ee85cc5fd0c064f446b043c29b9dbb84f26efac"
+    },
+    {
+      "file": "reports/v083-pipeline.png",
+      "sha256": "6ca3c2fe2ec84b2f6ac950cba8c7f1341e67fb193ffbba70c293fa1643cf5960"
+    },
+    {
+      "file": "reports/v083-weapon-torpedo.png",
+      "sha256": "d5c982d66038418114959914adbb92651e14bea1b1ca4ac17322f12f3005a82d"
+    },
+    {
+      "file": "reports/v083-zone-6.png",
+      "sha256": "ab1aa960dd593a72c77e5a8dfa2c8c9511da78411e5adb0a33b762f8bbd9f315"
+    },
+    {
+      "file": "reports/v083-zone-7.png",
+      "sha256": "5062f181e3e92375467361be029ed3e569d4e542b1a8f02fdffe2ff2657c8ebc"
+    },
+    {
+      "file": "reports/v083-boss-cannon.png",
+      "sha256": "009ab7a18b3d6acfc3a68c98e5e7516ec18134d076683f3bd55b75e56f21e347"
+    },
+    {
+      "file": "reports/v083-boss-sweep.png",
+      "sha256": "5793f339f613442b94e2ed8b18e9ec09014af39c28d580b69dd645ef21115ed7"
+    },
+    {
+      "file": "reports/v083-boss-fan.png",
+      "sha256": "094e7c8701975450e0fa299866fe3368af82dcc276333580f958b4b39b172443"
+    },
+    {
+      "file": "reports/v083-boss-ring.png",
+      "sha256": "6612b2b4b58380872a69ead1f8d48546f5c52ad0bc29b7871b2635e703c1f47b"
+    },
+    {
+      "file": "reports/v083-collapse.png",
+      "sha256": "0fa3e0b01e7c1a9dac15dc3c861ed3b0f6aca7adddfe7bdccad60991c5e4f21c"
+    },
+    {
+      "file": "reports/v083-cheer.png",
+      "sha256": "157cc938ca448d6d7ef22c65aa1071a2dd44a31e5284f56d365587aec79a7fd2"
+    },
+    {
+      "file": "reports/v083-result.png",
+      "sha256": "f182315efaccc90941ed89d281ac4c84acf4c867b31c6a97d33833ca32209b84"
+    },
+    {
+      "file": "reports/v083-mobile-touch.png",
+      "sha256": "a9b1e37b71828f6bdbd7d07fa1d3f1f2b2725ffc5044bfede070bd77b8f5a330"
+    },
+    {
+      "file": "reports/v083-portrait.png",
+      "sha256": "405d91051283ecea526f41833f5471812e83b0d50c00b35b48b97ba79ad8059a"
+    },
+    {
+      "file": "reports/v083-underpass-right.png",
+      "sha256": "a4944d15defccf59a7648653c6188652be906f66c618d53fae4395e16e86bf07"
+    },
+    {
+      "file": "reports/v083-underpass-left.png",
+      "sha256": "f252b1e7a078b6d6f2ccc4a67d0be452c2beebb08f949eba28a86c9dff9fb7f4"
+    },
+    {
+      "file": "reports/v083-single-jump.png",
+      "sha256": "bd04fbdb3f115e2fa8519af36253f2e34d025d14b2eea9f1def66e8543b5cc9f"
+    },
+    {
+      "file": "reports/v083-stone-after-fire.png",
+      "sha256": "9dcb0d5306531350d3fb564c830f6bc7f4962447a8db7d94bfde3021053f84b0"
+    },
+    {
+      "file": "reports/v083-bridge-intact.png",
+      "sha256": "26bbcfe192420654c8982228fe557a9442ed135896bb2e4a019fac31df444b6e"
+    },
+    {
+      "file": "reports/v083-bridge-on-deck.png",
+      "sha256": "2d80debd89e053d6c45f3661ac7bf2f2fadb82ff63410274f1cacf8033f38875"
+    },
+    {
+      "file": "reports/v083-bridge-released.png",
+      "sha256": "726da446abca7355591543c3e2a3711a6d7b411dddbd7273a6557be1b58fd549"
+    },
+    {
+      "file": "reports/v083-concrete-contact.png",
+      "sha256": "0c305c5d0a27eae6db5e2d129cd22dc5bb665e5881c5be05a21d2ebdfd1d2d67"
+    },
+    {
+      "file": "reports/v083-concrete-edge-release.png",
+      "sha256": "6ebc0f1adcb1138dff50c394fbad7b87a44228c6f5ec8502dab49cb33ed14c68"
+    },
+    {
+      "file": "reports/v083-rocket-obtained.png",
+      "sha256": "c6f36474ffc6350915518e1422fd4c0fef74712cf42c661a232acddb688a6522"
+    },
+    {
+      "file": "reports/v083-rocket-left-0.png",
+      "sha256": "a3282c35980d96d2fa3fd92e554b38bd58bdae3918cd1ede8732f7df16b4498e"
+    },
+    {
+      "file": "reports/v083-rocket-left-1.png",
+      "sha256": "c71577f168e9521a46aa01b01814431959e1cb81869c11bcba8369ef513d37b1"
+    },
+    {
+      "file": "reports/v083-rocket-left-2.png",
+      "sha256": "f32998c5b2ec53e6f2f35df8512ad6cf45a493e44e5968120d15b3f95876e308"
+    },
+    {
+      "file": "reports/v083-rocket-left-3.png",
+      "sha256": "5ac330c67fc1eda79b4412c5ef8cc230db709c525d5633ff6dd54334c033a82f"
+    },
+    {
+      "file": "reports/v083-rocket-right-0.png",
+      "sha256": "e04adf0d7e3657017c316edc19bb94f3a0587c29a9dbd69b5d9c3a0c34f0a279"
+    },
+    {
+      "file": "reports/v083-rocket-right-1.png",
+      "sha256": "20d3177f7a123e8bd06b0dd9c1ad88aea2c2b3070642a9d77a88a9d41a351ae8"
+    },
+    {
+      "file": "reports/v083-rocket-right-2.png",
+      "sha256": "17256d4572b46b20908220c96574197b58bdb6792061549b9ff0d4c8b3ed20bf"
+    },
+    {
+      "file": "reports/v083-rocket-right-3.png",
+      "sha256": "5f35303016515f7c7a8eda1ba37e49f51e543f93fc781f62624a278d3a006208"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyA-0.png",
+      "sha256": "b74ab570e1cc1320be647a4bf2b9a8f7d79efb0b00689a2cadc33b4b563822e2"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyA-1.png",
+      "sha256": "d558d53d286cb665441c0f41092928cc5bd64a02813bea5e919c618e16adfe28"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyA-2.png",
+      "sha256": "e4cdebda37a1eec04dd1e34515e9a44e012a82d7d459b788f0fbbe315fe8b427"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyA-3.png",
+      "sha256": "ca426899d014735219519202c5ac109dddd6b1b47b4a428924d2d270beef866c"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyD-0.png",
+      "sha256": "4285542ad5323c3cf388417a25719c7e45c591e1ba8f8959d318cd8eecebf047"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyD-1.png",
+      "sha256": "85c5bc1f6d372da69d482eafd6436dc053b390d7cf70e64fb948266fa13ee195"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyD-2.png",
+      "sha256": "014f57f1c4df8fff86eaf69cce38937148dbf7d6d5e174808683bcd34400da42"
+    },
+    {
+      "file": "reports/v083-rocket-aim-KeyD-3.png",
+      "sha256": "56f33000ef9018bf0be6e9a879761a87a353b2ec73d2efc91e33ebdab635ffea"
+    },
+    {
+      "file": "reports/v083-rocket-moving-fire.png",
+      "sha256": "8dfca595b327bbb57035d0f74bc4e903b5866e5f26d46be28e3e30305bc77ece"
+    },
+    {
+      "file": "reports/v083-rocket-up.png",
+      "sha256": "7fb594c3875e8ee19b867a021d7f55a86c76c482a08293daa8a3d0f569b09e73"
+    },
+    {
+      "file": "reports/v083-menu-fallback.png",
+      "sha256": "b2e3eb863290b910bb04ba5e64fe9350bb15746f756d561f8d8f256be9902df7"
+    },
+    {
+      "file": "reports/v083-menu-mobile.png",
+      "sha256": "8199489fac02e233eed30db78b062aed0f030b4b255d6ffa0cc4d226207c6b45"
+    },
+    {
+      "file": "reports/v083-menu-updated.png",
+      "sha256": "8ff8af303fe50a9688c3a320bbe59c70b7b41f2a2cb3a35a9327e717f56c4c8a"
+    },
+    {
+      "file": "reports/v083-menu-compact.png",
+      "sha256": "273f0e1c78b1ff1561fb55b46602382b6781bf61cccfedfc302a20e8cc83cb1d"
+    },
+    {
+      "file": "reports/v083-menu-ocean.png",
+      "sha256": "5cafc37546d3fefa29fc51a6b15619c5d91f95130fb68de3c93a66fa92f6ca9b"
+    },
+    {
+      "file": "reports/v083-controls-guide.png",
+      "sha256": "f4256514ba9f16f13cd8eeae4bc6c6aa61749ab3e76cef053cf0d110298e4da0"
+    },
+    {
+      "file": "reports/v083-aim-walk-KeyD.png",
+      "sha256": "7681feff4ef6985763a66b55ce43ee75c3e3690049167c1a790c16626b9ad1c4"
+    },
+    {
+      "file": "reports/v083-aim-walk-KeyA.png",
+      "sha256": "1eb361c3d0977fba1d083a4d1a73aa27f2b0fca8f88bd8c4ee1e4166e1bed573"
+    },
+    {
+      "file": "reports/v083-jump-second-available.png",
+      "sha256": "302a5e48c235eaa2976235597b6442798365980d71a35711aa78d231cab02bf2"
+    },
+    {
+      "file": "reports/v083-double-jump.png",
+      "sha256": "c6cca5454e48d9fc2a3437cbce7dbbf17e66c56588048d24d3de36ba81081126"
+    },
+    {
+      "file": "reports/v083-keyboard-slide.png",
+      "sha256": "bb71f2b0047e051522ed1832e826f0dffd745ad6fb2723174b38c5f13389b701"
+    },
+    {
+      "file": "reports/v083-touch-slide-ready.png",
+      "sha256": "477d734c2c2faf35c8de3d717fd4f5c718b38f45d26aa1a8075d2732a9be93f6"
+    },
+    {
+      "file": "reports/v083-touch-slide.png",
+      "sha256": "347aa6c50cc125018e05a513ad8eb5608fc0449b134b6fb79e850756e4c8bbba"
+    },
+    {
+      "file": "reports/v083-close-knife-active.png",
+      "sha256": "410e98cba018da04b12c02010a1f93486ae35554ecd6e0cb4a4c37813f588da6"
+    },
+    {
+      "file": "reports/v083-player-hurt.png",
+      "sha256": "38a2f3767e50fd45c21be4df2ab8f061a20fbaa5dc9e2b562a8283de84f837b0"
+    },
+    {
+      "file": "reports/v083-pause-control-guide.png",
+      "sha256": "1e14efbf4574fae377b9a0180e7f21d5c179883c36d30e2905f22336689e1011"
+    }
+  ],
+  "limitations": [
+    "WeChat and iPhone hardware were not run. Capsule API/bounds are simulated in Chrome touch tests. No upload or publication.",
+    "Browser routes use ordinary keys and read-only snapshots with a controlled clock; they do not measure device FPS."
+  ]
+}

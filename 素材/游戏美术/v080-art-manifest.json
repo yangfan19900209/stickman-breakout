@@ -1,0 +1,455 @@
+{
+  "sources": [
+    {
+      "path": "../素材/游戏美术/source/v080/rocket-walk.png",
+      "sha256": "7681bbd63635997730d5d6038791c1a15b0c1f81325b1fb6de281d6b39566342"
+    },
+    {
+      "path": "../素材/游戏美术/source/v080/base-scenery.png",
+      "sha256": "03eeca1620569f673b81b78be684ba6b910f2d6bdc59a019b25938eefd1f3566"
+    },
+    {
+      "path": "../素材/游戏美术/source/v080/supplies.png",
+      "sha256": "ca87ab1a7abed42692a405d87bd1d6cf3d4cbf58e87419d7af697792a42752a5"
+    }
+  ],
+  "runtime": "assets/landart/polish.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "frames": [
+    {
+      "id": "direct.rocket.stride.0",
+      "sourceCrop": [
+        43,
+        116,
+        330,
+        323
+      ],
+      "atlas": [
+        4,
+        4,
+        103,
+        101
+      ],
+      "size": [
+        103,
+        101
+      ],
+      "sourceSize": [
+        103,
+        101
+      ],
+      "anchor": [
+        0.37019417475728156,
+        0.006138613861386139
+      ]
+    },
+    {
+      "id": "direct.rocket.stride.1",
+      "sourceCrop": [
+        437,
+        115,
+        317,
+        323
+      ],
+      "atlas": [
+        132,
+        4,
+        99,
+        101
+      ],
+      "size": [
+        99,
+        101
+      ],
+      "sourceSize": [
+        99,
+        101
+      ],
+      "anchor": [
+        0.35383838383838384,
+        0.006138613861386139
+      ]
+    },
+    {
+      "id": "direct.rocket.stride.2",
+      "sourceCrop": [
+        817,
+        113,
+        317,
+        325
+      ],
+      "atlas": [
+        260,
+        4,
+        99,
+        101
+      ],
+      "size": [
+        99,
+        101
+      ],
+      "sourceSize": [
+        99,
+        101
+      ],
+      "anchor": [
+        0.3663636363636364,
+        0.006138613861386139
+      ]
+    },
+    {
+      "id": "direct.rocket.stride.3",
+      "sourceCrop": [
+        1199,
+        110,
+        317,
+        324
+      ],
+      "atlas": [
+        388,
+        4,
+        99,
+        101
+      ],
+      "size": [
+        99,
+        101
+      ],
+      "sourceSize": [
+        99,
+        101
+      ],
+      "anchor": [
+        0.37262626262626264,
+        0.006138613861386139
+      ]
+    },
+    {
+      "id": "direct.rocket.stride.4",
+      "sourceCrop": [
+        43,
+        628,
+        331,
+        319
+      ],
+      "atlas": [
+        4,
+        116,
+        103,
+        99
+      ],
+      "size": [
+        103,
+        99
+      ],
+      "sourceSize": [
+        103,
+        99
+      ],
+      "anchor": [
+        0.37019417475728156,
+        0.006262626262626262
+      ]
+    },
+    {
+      "id": "direct.rocket.stride.5",
+      "sourceCrop": [
+        435,
+        630,
+        319,
+        318
+      ],
+      "atlas": [
+        132,
+        116,
+        99,
+        99
+      ],
+      "size": [
+        99,
+        99
+      ],
+      "sourceSize": [
+        99,
+        99
+      ],
+      "anchor": [
+        0.3601010101010101,
+        0.006262626262626262
+      ]
+    },
+    {
+      "id": "direct.rocket.stride.6",
+      "sourceCrop": [
+        817,
+        626,
+        317,
+        322
+      ],
+      "atlas": [
+        260,
+        116,
+        99,
+        100
+      ],
+      "size": [
+        99,
+        100
+      ],
+      "sourceSize": [
+        99,
+        100
+      ],
+      "anchor": [
+        0.3663636363636364,
+        0.0062
+      ]
+    },
+    {
+      "id": "direct.rocket.stride.7",
+      "sourceCrop": [
+        1198,
+        625,
+        318,
+        317
+      ],
+      "atlas": [
+        388,
+        116,
+        99,
+        99
+      ],
+      "size": [
+        99,
+        99
+      ],
+      "sourceSize": [
+        99,
+        99
+      ],
+      "anchor": [
+        0.3757575757575758,
+        0.006262626262626262
+      ]
+    },
+    {
+      "id": "polish.bunker",
+      "sourceCrop": [
+        66,
+        50,
+        644,
+        509
+      ],
+      "atlas": [
+        4,
+        236,
+        322,
+        254
+      ],
+      "size": [
+        322,
+        254
+      ],
+      "sourceSize": [
+        322,
+        254
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "polish.tower",
+      "sourceCrop": [
+        948,
+        36,
+        377,
+        523
+      ],
+      "atlas": [
+        508,
+        236,
+        184,
+        254
+      ],
+      "size": [
+        184,
+        254
+      ],
+      "sourceSize": [
+        184,
+        254
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "polish.factory",
+      "sourceCrop": [
+        43,
+        614,
+        710,
+        384
+      ],
+      "atlas": [
+        4,
+        508,
+        470,
+        254
+      ],
+      "size": [
+        470,
+        254
+      ],
+      "sourceSize": [
+        470,
+        254
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "polish.tent",
+      "sourceCrop": [
+        818,
+        640,
+        662,
+        361
+      ],
+      "atlas": [
+        508,
+        508,
+        466,
+        255
+      ],
+      "size": [
+        466,
+        255
+      ],
+      "sourceSize": [
+        466,
+        255
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "polish.crate",
+      "sourceCrop": [
+        60,
+        80,
+        521,
+        512
+      ],
+      "atlas": [
+        4,
+        800,
+        144,
+        142
+      ],
+      "size": [
+        144,
+        142
+      ],
+      "sourceSize": [
+        144,
+        142
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "polish.barrel",
+      "sourceCrop": [
+        712,
+        64,
+        454,
+        538
+      ],
+      "atlas": [
+        164,
+        800,
+        122,
+        144
+      ],
+      "size": [
+        122,
+        144
+      ],
+      "sourceSize": [
+        122,
+        144
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "polish.ammo",
+      "sourceCrop": [
+        36,
+        695,
+        559,
+        506
+      ],
+      "atlas": [
+        324,
+        800,
+        144,
+        131
+      ],
+      "size": [
+        144,
+        131
+      ],
+      "sourceSize": [
+        144,
+        131
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "polish.grenades",
+      "sourceCrop": [
+        653,
+        689,
+        543,
+        533
+      ],
+      "atlas": [
+        484,
+        800,
+        144,
+        142
+      ],
+      "size": [
+        144,
+        142
+      ],
+      "sourceSize": [
+        144,
+        142
+      ],
+      "anchor": [
+        0.5,
+        0
+      ]
+    }
+  ]
+}

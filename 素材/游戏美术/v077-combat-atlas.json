@@ -1,0 +1,1007 @@
+{
+  "processing": "RGBA pixel-preserving packing, 3px gutter, 2px edge extrusion, no resizing or quantization",
+  "texture": "assets/level02/combat-atlas.png",
+  "size": [
+    2048,
+    1716
+  ],
+  "sha256": "67a524559cfd1ba924f65cd1ad15834e75604df0e0b85eb6575efb0ad94ee2d8",
+  "frames": [
+    {
+      "id": "diver.entry.steep",
+      "runtimeSource": "assets/level02/diver.entry.steep.png",
+      "sourceSha256": "4d9ba4632dd0584c7ef500443e052cc88b8a63ceb520c9e7b91370f92fd4253b",
+      "atlas": [
+        3,
+        3,
+        268,
+        430
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.entry.diagonal",
+      "runtimeSource": "assets/level02/diver.entry.diagonal.png",
+      "sourceSha256": "bc1b2511ef23bd292646b4ede2d7928c9b50345c1a1796db2e7949a7b7ab7dc7",
+      "atlas": [
+        277,
+        3,
+        375,
+        301
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.harpoon.hover.0",
+      "runtimeSource": "assets/level02/diver.harpoon.hover.0.png",
+      "sourceSha256": "543bcf8f941e09e8c5fa31bf61999452e03e3576f27b1776d1e6426cb52aef70",
+      "atlas": [
+        658,
+        3,
+        223,
+        271
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.harpoon.hover.1",
+      "runtimeSource": "assets/level02/diver.harpoon.hover.1.png",
+      "sourceSha256": "4e0e0b989ef185b0547c4d5e441878e6b992e30c39f36e007fcf4258dbaff547",
+      "atlas": [
+        887,
+        3,
+        215,
+        270
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.hover.1",
+      "runtimeSource": "assets/level02/diver.torpedo.hover.1.png",
+      "sourceSha256": "e40fc60dcd5dae5c0ea393d5756f039757cde6eca54388ec416866c904358447",
+      "atlas": [
+        1108,
+        3,
+        235,
+        268
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.hover.0",
+      "runtimeSource": "assets/level02/diver.torpedo.hover.0.png",
+      "sourceSha256": "fb26209179130751fb838f5c31a3e1b74e79d89b621b0a12611851433e8f3683",
+      "atlas": [
+        1349,
+        3,
+        221,
+        265
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.2",
+      "runtimeSource": "assets/level02/fx.burst.2.png",
+      "sourceSha256": "8b8bafad5fde817afdd6dd88a67af0d7f091f95300c0551c4aaecfb6031cad79",
+      "atlas": [
+        1576,
+        3,
+        286,
+        254
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.swim.1",
+      "runtimeSource": "assets/level02/diver.torpedo.swim.1.png",
+      "sourceSha256": "365a35c54245e9014b44f7d6c68e73bb9f1c59d8caf964066f7ecc9f74acba30",
+      "atlas": [
+        3,
+        439,
+        260,
+        253
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.swim.0",
+      "runtimeSource": "assets/level02/diver.torpedo.swim.0.png",
+      "sourceSha256": "9189c50dbad79ab2ff9b9ce00621fc82d21bb146104bc2b2d22ef0ef44898ecf",
+      "atlas": [
+        269,
+        439,
+        296,
+        248
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.3",
+      "runtimeSource": "assets/level02/fx.burst.3.png",
+      "sourceSha256": "dfedbcf4ed75e2225fa80324024b4d034ea278ddf5c82f96b5ca33bc89be52e0",
+      "atlas": [
+        571,
+        439,
+        266,
+        247
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.swim.2",
+      "runtimeSource": "assets/level02/diver.torpedo.swim.2.png",
+      "sourceSha256": "2c9afd01c65794e0af290398abcaab22ae49739c422ceddcb5ba2a5481246556",
+      "atlas": [
+        843,
+        439,
+        251,
+        241
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.harpoon.fire",
+      "runtimeSource": "assets/level02/diver.harpoon.fire.png",
+      "sourceSha256": "06333fd59eed5f5e29ba2f94cab353e44757b1b4e6d9beac675796842705aff4",
+      "atlas": [
+        1100,
+        439,
+        251,
+        233
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.4",
+      "runtimeSource": "assets/level02/fx.burst.4.png",
+      "sourceSha256": "cb9b2e1d77764a74446dcec61ba70a1f624a0d2749cb1aedcbb1bca4632c5084",
+      "atlas": [
+        1357,
+        439,
+        235,
+        232
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.harpoon.swim.1",
+      "runtimeSource": "assets/level02/diver.harpoon.swim.1.png",
+      "sourceSha256": "849ad41e534aeaf821680eced8e27457731dac4e99f3c4fc8d3554077cacba82",
+      "atlas": [
+        1598,
+        439,
+        286,
+        230
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.boost",
+      "runtimeSource": "assets/level02/diver.torpedo.boost.png",
+      "sourceSha256": "1a3ca942da63a7cf6f26b423ea9a6c515a97e0eda6159c8c7f27a16b7b0b66ed",
+      "atlas": [
+        3,
+        698,
+        311,
+        223
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.5",
+      "runtimeSource": "assets/level02/fx.burst.5.png",
+      "sourceSha256": "4c3ec4102c587a75efca3d84261aa54dc927aa35072cc8abc2e6b20e2373e620",
+      "atlas": [
+        320,
+        698,
+        207,
+        221
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.harpoon.swim.0",
+      "runtimeSource": "assets/level02/diver.harpoon.swim.0.png",
+      "sourceSha256": "97f85c1085a3a0452190439668f34d596f1bfc2d14871aa7ca934a4eed7645b6",
+      "atlas": [
+        533,
+        698,
+        311,
+        209
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.cheer.0",
+      "runtimeSource": "assets/level02/diver.cheer.0.png",
+      "sourceSha256": "b9f6803ebbd6f44b1c9965a7232bb0ae0ad0e2399fc7cadf93ecb32da73c2610",
+      "atlas": [
+        850,
+        698,
+        134,
+        204
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.hover.0",
+      "runtimeSource": "assets/level02/diver.hover.0.png",
+      "sourceSha256": "ad7ccf6d339bce9448f6502c5eba131fd55218edd0a61412e361c1c5e3339aa5",
+      "atlas": [
+        990,
+        698,
+        146,
+        204
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.hover.1",
+      "runtimeSource": "assets/level02/diver.hover.1.png",
+      "sourceSha256": "d8fdc18b0d076eeed8ebe6b74baa10a903586cf60295e2bb65fdb83ecce69bda",
+      "atlas": [
+        1142,
+        698,
+        152,
+        204
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.surface",
+      "runtimeSource": "assets/level02/diver.surface.png",
+      "sourceSha256": "bf4997b47adbdeb36dab5d31dcde6a0b28b6b5e394fd545ed771d9b978722125",
+      "atlas": [
+        1300,
+        698,
+        162,
+        202
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.6",
+      "runtimeSource": "assets/level02/fx.burst.6.png",
+      "sourceSha256": "c07b7906b992f26f2f1fc4ea04531a102dd6a621e039bf24d92807ee06ad5440",
+      "atlas": [
+        1468,
+        698,
+        163,
+        202
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.equip.tank",
+      "runtimeSource": "assets/level02/diver.equip.tank.png",
+      "sourceSha256": "7ccc447961ebe2e27326f03c3d030f69fbb577569fa31e09bc189cff0f4b12dd",
+      "atlas": [
+        1637,
+        698,
+        124,
+        201
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.cheer.1",
+      "runtimeSource": "assets/level02/diver.cheer.1.png",
+      "sourceSha256": "e69fac5db68fc941a8c0cb03d41bdbeda1327c9dc758d88bba977f67075011d1",
+      "atlas": [
+        1767,
+        698,
+        150,
+        199
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.equip.mask",
+      "runtimeSource": "assets/level02/diver.equip.mask.png",
+      "sourceSha256": "fcef9bbdf13cc804381e1f0e3285ee75003414c27037f7be1bed1c53cae33b9c",
+      "atlas": [
+        1923,
+        698,
+        108,
+        198
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.7",
+      "runtimeSource": "assets/level02/fx.burst.7.png",
+      "sourceSha256": "a948187021620fd400c7ae370ee3f4add563981f4b2fdb70fb057ba80fd76d7d",
+      "atlas": [
+        3,
+        927,
+        113,
+        190
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.cliff.leap",
+      "runtimeSource": "assets/level02/diver.cliff.leap.png",
+      "sourceSha256": "4bc8ff0e5f4449697a893c28194ec134ca381ee136b0de0055d38ac24fb06b64",
+      "atlas": [
+        122,
+        927,
+        207,
+        189
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.equip.ready",
+      "runtimeSource": "assets/level02/diver.equip.ready.png",
+      "sourceSha256": "5914bd474d45dc413c9588429968b20f6ea21e1ebc2dc50a773cb6fda61da2c1",
+      "atlas": [
+        335,
+        927,
+        177,
+        185
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.captain.idle",
+      "runtimeSource": "assets/level02/enemy.captain.idle.png",
+      "sourceSha256": "bff8c8039b2dee7974860ebc0d76013d7097d47b102aad918af67f5cbaa45295",
+      "atlas": [
+        518,
+        927,
+        176,
+        185
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.hit",
+      "runtimeSource": "assets/level02/diver.hit.png",
+      "sourceSha256": "5075f8741c86838b818746b55ced879f42fbe8b3faa9b967c8ff8826323e5a3b",
+      "atlas": [
+        700,
+        927,
+        153,
+        183
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.1",
+      "runtimeSource": "assets/level02/fx.burst.1.png",
+      "sourceSha256": "86e939ad6157603e90e7801eae601ea28595f7cfee9f8d3f13ec49544c878d04",
+      "atlas": [
+        859,
+        927,
+        205,
+        180
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.harpoon.boost",
+      "runtimeSource": "assets/level02/diver.harpoon.boost.png",
+      "sourceSha256": "e097c9a26b4dc4fce0e193302a78770a9c2f1a35933e9fce94ec03d9a3c362de",
+      "atlas": [
+        1070,
+        927,
+        346,
+        178
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.sonar.up90",
+      "runtimeSource": "assets/level02/diver.sonar.up90.png",
+      "sourceSha256": "b2553bf19e079416841fdc1a5aa0b1975f6ec06ed96ced95202ff2f9fd525ed3",
+      "atlas": [
+        1422,
+        927,
+        106,
+        178
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.swim.1",
+      "runtimeSource": "assets/level02/diver.swim.1.png",
+      "sourceSha256": "a9bfc4dbe1254c1d38a90f13d6f5bb197b93e94ef50935d07f7ac1221ae415e8",
+      "atlas": [
+        1534,
+        927,
+        208,
+        178
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.swim.0",
+      "runtimeSource": "assets/level02/diver.swim.0.png",
+      "sourceSha256": "8628164768d35b28a8aa37237022eb95200a89fac0282f103c06e8cdf7cb6ebe",
+      "atlas": [
+        1748,
+        927,
+        204,
+        177
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.sonar.up45",
+      "runtimeSource": "assets/level02/diver.sonar.up45.png",
+      "sourceSha256": "a09d6fa700b891390e560042f2322c2f04bbc596c8816731381275f26c05097a",
+      "atlas": [
+        3,
+        1123,
+        122,
+        172
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.swim.3",
+      "runtimeSource": "assets/level02/diver.swim.3.png",
+      "sourceSha256": "30403f893274abe6b5e193540daa2bc5c0259b40cad562ec87ffb9e278ee6aa3",
+      "atlas": [
+        131,
+        1123,
+        190,
+        172
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.sonar.fire",
+      "runtimeSource": "assets/level02/diver.sonar.fire.png",
+      "sourceSha256": "d6f6d6d2389f0ab9589aa46563af5b85b3f53fcc2ae907cbd8ebffb39fa859f3",
+      "atlas": [
+        327,
+        1123,
+        131,
+        170
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.diver.aim",
+      "runtimeSource": "assets/level02/enemy.diver.aim.png",
+      "sourceSha256": "9044f79141435ad66007b013235d1eebaed17a68f282fc0c0e3440f10783e389",
+      "atlas": [
+        464,
+        1123,
+        142,
+        170
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.sonar.charged",
+      "runtimeSource": "assets/level02/fx.sonar.charged.png",
+      "sourceSha256": "fec08fbff6778e4cd949a13a039082500390820d58c9dd3dcf92530b815094f3",
+      "atlas": [
+        612,
+        1123,
+        145,
+        170
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.water.glide",
+      "runtimeSource": "assets/level02/diver.water.glide.png",
+      "sourceSha256": "b9ffe9ef1839f899dfc650f265fe2d57ae784dc3792dd76c0cedab819172ed17",
+      "atlas": [
+        763,
+        1123,
+        206,
+        169
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.sonar.down45",
+      "runtimeSource": "assets/level02/diver.sonar.down45.png",
+      "sourceSha256": "f1162d369863d8554c6bf0620c00b5824138be92bb6a9283d97f49d3de2a65be",
+      "atlas": [
+        975,
+        1123,
+        119,
+        168
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.swim.2",
+      "runtimeSource": "assets/level02/diver.swim.2.png",
+      "sourceSha256": "b31d9847dbc53e365b0e34d7e3fa7c2fd973091acc1aa81b12c078ad362bee89",
+      "atlas": [
+        1100,
+        1123,
+        204,
+        168
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.pressure-gap-ring",
+      "runtimeSource": "assets/level02/fx.pressure-gap-ring.png",
+      "sourceSha256": "169566ac4d166789f9a1ef3db84794a239714c7f32b3fdef28251b42608ef0df",
+      "atlas": [
+        1310,
+        1123,
+        162,
+        166
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.water-blast.2",
+      "runtimeSource": "assets/level02/fx.water-blast.2.png",
+      "sourceSha256": "393ebcfe3a381cf5cf4f4df240cb893b5f519e0af4fea356aa989d9a89191e22",
+      "atlas": [
+        1478,
+        1123,
+        182,
+        166
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.down45",
+      "runtimeSource": "assets/level02/diver.torpedo.down45.png",
+      "sourceSha256": "2a5c799aca760280de2651d336d4a15cf56e99d143a5a50339121a73784e0908",
+      "atlas": [
+        1666,
+        1123,
+        132,
+        164
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.up45",
+      "runtimeSource": "assets/level02/diver.torpedo.up45.png",
+      "sourceSha256": "5f8408e4866df8be2c4069fb7ac3cf91dcd9198c65c0ce776338e81cf4b33fe5",
+      "atlas": [
+        1804,
+        1123,
+        150,
+        164
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.knife.windup",
+      "runtimeSource": "assets/level02/diver.knife.windup.png",
+      "sourceSha256": "ea45da319199321896bc31fa1bd36f430630ca91cd484c66260238f53cfda6a0",
+      "atlas": [
+        3,
+        1301,
+        138,
+        162
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.captain.defeat",
+      "runtimeSource": "assets/level02/enemy.captain.defeat.png",
+      "sourceSha256": "86071dcdfffc53f6f149660d7a6859309613b381b41ea290c7696a95e06ebd41",
+      "atlas": [
+        147,
+        1301,
+        164,
+        162
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.death",
+      "runtimeSource": "assets/level02/diver.death.png",
+      "sourceSha256": "1ecb4d7a31f58ec4e98a6d11640a15a7bf3c8c293b5c5e012d3a447f0b7aa258",
+      "atlas": [
+        317,
+        1301,
+        144,
+        161
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.charge.fire",
+      "runtimeSource": "assets/level02/diver.charge.fire.png",
+      "sourceSha256": "8a3d14346a4a2e790e8bf20e7999c23287d015e6e05b128d1f4e882b9f869a7c",
+      "atlas": [
+        467,
+        1301,
+        144,
+        160
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.torpedo.fire",
+      "runtimeSource": "assets/level02/diver.torpedo.fire.png",
+      "sourceSha256": "bb183633700611f24a6fecd60691691cb1e36dd782fdbbbedad933fd7d4f8598",
+      "atlas": [
+        617,
+        1301,
+        154,
+        160
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.knife.strike",
+      "runtimeSource": "assets/level02/diver.knife.strike.png",
+      "sourceSha256": "c067f0b711c710344adc6a7b298a260c4106b2bad8a4d3042ab865e3f210b1e1",
+      "atlas": [
+        777,
+        1301,
+        195,
+        159
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.sonar.down90",
+      "runtimeSource": "assets/level02/diver.sonar.down90.png",
+      "sourceSha256": "a64509260dd2f8e9a4e893f098bcc165c3448c096c86a910130fec88d545b276",
+      "atlas": [
+        978,
+        1301,
+        126,
+        159
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.diver.fire",
+      "runtimeSource": "assets/level02/enemy.diver.fire.png",
+      "sourceSha256": "575b33ddabe66c9c5c648a23b2956de37d89e9ddd0d4bb75059562055be018fc",
+      "atlas": [
+        1110,
+        1301,
+        206,
+        159
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.captain.charge",
+      "runtimeSource": "assets/level02/enemy.captain.charge.png",
+      "sourceSha256": "122c73163022d00d60b18bf9e0ba6709636243b4cb3754511012e3a46509e5dc",
+      "atlas": [
+        1322,
+        1301,
+        170,
+        154
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.diver.swim",
+      "runtimeSource": "assets/level02/enemy.diver.swim.png",
+      "sourceSha256": "3da1804e8563baaacb187202fc2dab8dd16633d284d3929972cabf571c61b3f9",
+      "atlas": [
+        1498,
+        1301,
+        206,
+        150
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "diver.boost",
+      "runtimeSource": "assets/level02/diver.boost.png",
+      "sourceSha256": "6de17c56a68d92cbed569c02edf564cac4b65dbd1bfc197824069910d77b4287",
+      "atlas": [
+        1710,
+        1301,
+        216,
+        148
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.diver.defeat",
+      "runtimeSource": "assets/level02/enemy.diver.defeat.png",
+      "sourceSha256": "7bbc017c70c8e142b03b0a4f9329ab52b93623ad7d925b52b32844a046892ff9",
+      "atlas": [
+        3,
+        1469,
+        118,
+        148
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.sonar.2",
+      "runtimeSource": "assets/level02/fx.sonar.2.png",
+      "sourceSha256": "7f9280284bdc56c8d95cb6e71a75291c517d92246f88ddbae72833d16331455a",
+      "atlas": [
+        127,
+        1469,
+        106,
+        147
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.water-blast.3",
+      "runtimeSource": "assets/level02/fx.water-blast.3.png",
+      "sourceSha256": "6e9348a9fccd63d584ca333061abccea31b8f778f12f0572d3e85790d5b788e0",
+      "atlas": [
+        239,
+        1469,
+        157,
+        146
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "enemy.captain.dash",
+      "runtimeSource": "assets/level02/enemy.captain.dash.png",
+      "sourceSha256": "5d05150e2e80040721e8fb596e4fa23dbf70f39f7ec38a291c463eaee54d2fac",
+      "atlas": [
+        402,
+        1469,
+        220,
+        144
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.impact",
+      "runtimeSource": "assets/level02/fx.impact.png",
+      "sourceSha256": "5b3df9d7d3129aea5abc7d970ecc5a942e5023a84b998dd171c8c2e35e62a485",
+      "atlas": [
+        628,
+        1469,
+        178,
+        138
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "projectile.depth-charge",
+      "runtimeSource": "assets/level02/projectile.depth-charge.png",
+      "sourceSha256": "3aa7280da4734676dac60462ec8e832c5edfabe439c7a3cf5efe23ddd00aabc0",
+      "atlas": [
+        812,
+        1469,
+        115,
+        136
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.bubble.burst",
+      "runtimeSource": "assets/level02/fx.bubble.burst.png",
+      "sourceSha256": "ae3b3b5b43d4203d9b2f38041b4600b1e65904877d6bd8a7a5a2effb23f13fd0",
+      "atlas": [
+        933,
+        1469,
+        148,
+        128
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.splash.1",
+      "runtimeSource": "assets/level02/fx.splash.1.png",
+      "sourceSha256": "7a0b678ad37db61447cab2152b7a122e7897559408c2764d2ce2f107b7d4532a",
+      "atlas": [
+        1087,
+        1469,
+        160,
+        128
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.bubble.trail",
+      "runtimeSource": "assets/level02/fx.bubble.trail.png",
+      "sourceSha256": "57c91bee1c32da852536dfabcda66a03c9fd4944e308028ad22f54537499d840",
+      "atlas": [
+        1253,
+        1469,
+        62,
+        124
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.sonar.1",
+      "runtimeSource": "assets/level02/fx.sonar.1.png",
+      "sourceSha256": "d01decffc9afcd20854cfcbd3e999f8fb7e74e4abe8085df312301031e4a3c7b",
+      "atlas": [
+        1321,
+        1469,
+        90,
+        118
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.laser-charge",
+      "runtimeSource": "assets/level02/fx.laser-charge.png",
+      "sourceSha256": "e7665f6e87d4f62a5f3c523590ff521152e421e48374b6d628e622a76fea36eb",
+      "atlas": [
+        1417,
+        1469,
+        114,
+        117
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.burst.0",
+      "runtimeSource": "assets/level02/fx.burst.0.png",
+      "sourceSha256": "2b53c7b2d9862696b1c4ac2f886ad955d86c494be5b3a7f8e8d5d470cbdb5900",
+      "atlas": [
+        1537,
+        1469,
+        121,
+        113
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.water-blast.1",
+      "runtimeSource": "assets/level02/fx.water-blast.1.png",
+      "sourceSha256": "b75aa95187bd01e91d0620319528ffb1d8ac08fea43e30fb529bc0da40372fb0",
+      "atlas": [
+        1664,
+        1469,
+        109,
+        110
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.bubble.single",
+      "runtimeSource": "assets/level02/fx.bubble.single.png",
+      "sourceSha256": "db81d0e1db3338b8929d5541012a757047e5fb019771af3d231c138e316df334",
+      "atlas": [
+        1779,
+        1469,
+        108,
+        109
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.splash.2",
+      "runtimeSource": "assets/level02/fx.splash.2.png",
+      "sourceSha256": "e7014f53282b544d8853e14362a09e81bf25511176ea9ecb9d7f9602d9e58ce3",
+      "atlas": [
+        1893,
+        1469,
+        152,
+        90
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.boost.wake",
+      "runtimeSource": "assets/level02/fx.boost.wake.png",
+      "sourceSha256": "25379f5f6d93453d08b2464bf44aa07e54091f5a9d2824095e455d52b766ece1",
+      "atlas": [
+        3,
+        1623,
+        174,
+        89
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "projectile.enemy-torpedo",
+      "runtimeSource": "assets/level02/projectile.enemy-torpedo.png",
+      "sourceSha256": "4f89c5e7dbd2091aed92306db5065521d64e5a0de93d2f73af29311120b07935",
+      "atlas": [
+        183,
+        1623,
+        146,
+        87
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "projectile.micro-torpedo",
+      "runtimeSource": "assets/level02/projectile.micro-torpedo.png",
+      "sourceSha256": "6183252469ee96a4c20d10addc590d561733fb3d2690ea63fdad19684a806244",
+      "atlas": [
+        335,
+        1623,
+        174,
+        86
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.sonar.0",
+      "runtimeSource": "assets/level02/fx.sonar.0.png",
+      "sourceSha256": "c5482386b8b08e6bd66adbc4d3dea36cc078f0cda6977fc014ef2cfb19695051",
+      "atlas": [
+        515,
+        1623,
+        66,
+        85
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.splash.0",
+      "runtimeSource": "assets/level02/fx.splash.0.png",
+      "sourceSha256": "1570ab8c7628c1151d075dc130e6bfdffeca1a9b9c08b962a719f88ce17bf7ec",
+      "atlas": [
+        587,
+        1623,
+        108,
+        66
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "projectile.pressure-bolt",
+      "runtimeSource": "assets/level02/projectile.pressure-bolt.png",
+      "sourceSha256": "b402c04be66ea62a8c6de699aa05ecd45ac2c7d471468a86087001276df6928e",
+      "atlas": [
+        701,
+        1623,
+        154,
+        55
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.water-blast.0",
+      "runtimeSource": "assets/level02/fx.water-blast.0.png",
+      "sourceSha256": "47259922d49ff55154cef0d7924f1e05894eaf57f708ac644f669dd5f4c0ba4b",
+      "atlas": [
+        861,
+        1623,
+        48,
+        48
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.surface-ripple",
+      "runtimeSource": "assets/level02/fx.surface-ripple.png",
+      "sourceSha256": "d430315ef476ae6ee2a9d293d72861d8db80312c339ab8891cd8c8021f27715d",
+      "atlas": [
+        915,
+        1623,
+        168,
+        47
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "fx.laser-beam",
+      "runtimeSource": "assets/level02/fx.laser-beam.png",
+      "sourceSha256": "78adca7d0f2455dcc4e4cbe0c1a45717e3a7eb3355b7dfb9b0da9d9feb6b6bc0",
+      "atlas": [
+        1089,
+        1623,
+        172,
+        43
+      ],
+      "pixelsIdentical": true
+    },
+    {
+      "id": "projectile.harpoon",
+      "runtimeSource": "assets/level02/projectile.harpoon.png",
+      "sourceSha256": "c21106ea397da5d268f7ec92f6162ed95fdebd080cd9226a8a42b85e569b3dde",
+      "atlas": [
+        1267,
+        1623,
+        75,
+        30
+      ],
+      "pixelsIdentical": true
+    }
+  ]
+}

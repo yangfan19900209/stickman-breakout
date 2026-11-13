@@ -1,0 +1,1265 @@
+{
+  "version": "0.8.24",
+  "startedAt": "2026-11-12T08:18:12.527Z",
+  "passed": true,
+  "method": "Same real multi-touch upward trajectories on archived V0823 and current V0824; natural grenade depletion and normal 2D swimming/flying. Read-only snapshots. Packed textures/WebGL1, not phone runtime.",
+  "viewport": {
+    "width": 852,
+    "height": 393
+  },
+  "touch": [
+    {
+      "baseline": true,
+      "shoot": false,
+      "startX": 110,
+      "samples": [
+        {
+          "angle": 70,
+          "player": {
+            "x": 140.4166666666667,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 32.75184895671346,
+            "y": 89.98496535486707,
+            "axis": 0.34202014365824407,
+            "vertical": 0.9396926206648607,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 80,
+          "player": {
+            "x": 184.75000000000023,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": 0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 100,
+          "player": {
+            "x": 193.50000000000023,
+            "y": 150,
+            "vx": -153.33333333333331,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": -0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 110,
+          "player": {
+            "x": 151.7361111111112,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -32.75184895671344,
+            "y": 89.98496535486709,
+            "axis": -0.3420201436582439,
+            "vertical": 0.9396926206648609,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 95,
+          "player": {
+            "x": 140.62500000000009,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -8.346036051650591,
+            "y": 95.39560410325282,
+            "axis": -0.08715576495040299,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 85,
+          "player": {
+            "x": 140.62500000000009,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 8.346036051650616,
+            "y": 95.39560410325282,
+            "axis": 0.08715576495040325,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": false
+        }
+      ],
+      "diagonal": []
+    },
+    {
+      "baseline": true,
+      "shoot": true,
+      "startX": 110,
+      "samples": [
+        {
+          "angle": 70,
+          "player": {
+            "x": 140.4166666666667,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 32.75184895671346,
+            "y": 89.98496535486707,
+            "axis": 0.34202014365824407,
+            "vertical": 0.9396926206648607,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 80,
+          "player": {
+            "x": 184.75000000000023,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": 0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 100,
+          "player": {
+            "x": 193.50000000000023,
+            "y": 150,
+            "vx": -153.33333333333331,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": -0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 110,
+          "player": {
+            "x": 156.40277777777789,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -32.75184895671344,
+            "y": 89.98496535486709,
+            "axis": -0.3420201436582439,
+            "vertical": 0.9396926206648609,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 95,
+          "player": {
+            "x": 145.29166666666677,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -8.346036051650591,
+            "y": 95.39560410325282,
+            "axis": -0.08715576495040299,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 85,
+          "player": {
+            "x": 145.29166666666677,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 8.346036051650616,
+            "y": 95.39560410325282,
+            "axis": 0.08715576495040325,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": true
+        }
+      ],
+      "diagonal": []
+    },
+    {
+      "baseline": false,
+      "shoot": false,
+      "startX": 110,
+      "samples": [
+        {
+          "angle": 70,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 32.75184895671346,
+            "y": 89.98496535486707,
+            "axis": 0.34202014365824407,
+            "vertical": 0.9396926206648607,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 80,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": 0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 100,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": -0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 110,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -32.75184895671344,
+            "y": 89.98496535486709,
+            "axis": -0.3420201436582439,
+            "vertical": 0.9396926206648609,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 95,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -8.346036051650591,
+            "y": 95.39560410325282,
+            "axis": -0.08715576495040299,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": false
+        },
+        {
+          "angle": 85,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 8.346036051650616,
+            "y": 95.39560410325282,
+            "axis": 0.08715576495040325,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": false
+        }
+      ],
+      "diagonal": [
+        {
+          "angle": 45,
+          "player": {
+            "x": 142.75000000000006,
+            "y": 150,
+            "vx": 279.99999999999994,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 62,
+          "player": {
+            "x": 153.86111111111117,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 57,
+          "player": {
+            "x": 153.86111111111117,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 54,
+          "player": {
+            "x": 153.86111111111117,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 49,
+          "player": {
+            "x": 184.2777754483498,
+            "y": 150,
+            "vx": 279.9999600669482,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        }
+      ]
+    },
+    {
+      "baseline": false,
+      "shoot": true,
+      "startX": 110,
+      "samples": [
+        {
+          "angle": 70,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 32.75184895671346,
+            "y": 89.98496535486707,
+            "axis": 0.34202014365824407,
+            "vertical": 0.9396926206648607,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 80,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": 0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 100,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -16.628553765498157,
+            "y": 94.30518967516018,
+            "axis": -0.17364822227963825,
+            "vertical": 0.984807745145783,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 110,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -32.75184895671344,
+            "y": 89.98496535486709,
+            "axis": -0.3420201436582439,
+            "vertical": 0.9396926206648609,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 95,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -8.346036051650591,
+            "y": 95.39560410325282,
+            "axis": -0.08715576495040299,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": true
+        },
+        {
+          "angle": 85,
+          "player": {
+            "x": 110,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 8.346036051650616,
+            "y": 95.39560410325282,
+            "axis": 0.08715576495040325,
+            "vertical": 0.9961946961492567,
+            "owner": 1
+          },
+          "shoot": true
+        }
+      ],
+      "diagonal": [
+        {
+          "angle": 45,
+          "player": {
+            "x": 140.4166666666667,
+            "y": 150,
+            "vx": 279.99999999999994,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 62,
+          "player": {
+            "x": 151.52777777777783,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Idle",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 57,
+          "player": {
+            "x": 151.52777777777783,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 54,
+          "player": {
+            "x": 151.52777777777783,
+            "y": 150,
+            "vx": 0,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Shoot",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 1.5707963267948966,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        },
+        {
+          "angle": 49,
+          "player": {
+            "x": 181.94444211501644,
+            "y": 150,
+            "vx": 279.9999600669482,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0.7853981633974483,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          }
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "initial": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "跳跃",
+          "frame": "ui.jump",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": false,
+          "cooldown": 0,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        }
+      ],
+      "held": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "跳跃",
+          "frame": "ui.jump",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": true,
+          "cooldown": 3,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 240,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        }
+      ],
+      "disabled": {
+        "action": "grenade",
+        "held": false,
+        "cooldown": 0,
+        "label": "手雷",
+        "frame": "ui.grenade",
+        "opacity": 80,
+        "cooldownOpacity": 45
+      },
+      "final": {
+        "x": 110,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Idle",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true,
+        "canDropThrough": false,
+        "dropCount": 0
+      }
+    },
+    {
+      "chapter": 2,
+      "initial": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "冲刺",
+          "frame": "ui.dash",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": false,
+          "cooldown": 0,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        }
+      ],
+      "held": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "冲刺",
+          "frame": "ui.dash",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": true,
+          "cooldown": 4,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 240,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        }
+      ],
+      "disabled": {
+        "action": "grenade",
+        "held": false,
+        "cooldown": 0,
+        "label": "手雷",
+        "frame": "ui.grenade",
+        "opacity": 80,
+        "cooldownOpacity": 45
+      },
+      "final": {
+        "x": 843.7471960415546,
+        "y": 397.1777879021269,
+        "vx": -0.0004574088517496855,
+        "vy": 9.55775469753368e-28,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      }
+    },
+    {
+      "chapter": 3,
+      "initial": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "闪避",
+          "frame": "ui.dash",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": false,
+          "cooldown": 0,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "空爆弹",
+          "frame": "ui.grenade",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        }
+      ],
+      "held": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "闪避",
+          "frame": "ui.dash",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": true,
+          "cooldown": 3,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 240,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "空爆弹",
+          "frame": "ui.grenade",
+          "opacity": 200,
+          "cooldownOpacity": 45
+        }
+      ],
+      "disabled": {
+        "action": "grenade",
+        "held": false,
+        "cooldown": 0,
+        "label": "空爆弹",
+        "frame": "ui.grenade",
+        "opacity": 80,
+        "cooldownOpacity": 45
+      },
+      "final": {
+        "x": 237.14022821656997,
+        "y": 341.2150867324327,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      }
+    }
+  ],
+  "captures": [
+    "reports/v0824-up-before-aim.png",
+    "reports/v0824-up-before-fire.png",
+    "reports/v0824-up-after-aim.png",
+    "reports/v0824-up-after-fire.png",
+    "reports/v0824-chapter1-ready-controls.png",
+    "reports/v0824-chapter1-held-controls.png",
+    "reports/v0824-chapter1-disabled-grenade.png",
+    "reports/v0824-chapter2-ready-controls.png",
+    "reports/v0824-chapter2-held-controls.png",
+    "reports/v0824-chapter2-disabled-grenade.png",
+    "reports/v0824-chapter3-ready-controls.png",
+    "reports/v0824-chapter3-held-controls.png",
+    "reports/v0824-chapter3-disabled-grenade.png"
+  ],
+  "errors": [],
+  "warnings": [
+    "This device does not support WebGL2",
+    "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+    "This device does not support WebGL2",
+    "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+    "This device does not support WebGL2",
+    "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+    "This device does not support WebGL2",
+    "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2"
+  ],
+  "failed": []
+}

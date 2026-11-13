@@ -1,0 +1,231 @@
+{
+  "version": "0.6.1",
+  "date": "2026-11-05",
+  "creator": "3.8.8",
+  "sourceSHA256": "4cd0752a6cefb7abae6b35aec9dc486409172565153decf7754f596711190c03",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 153,
+    "passed": 153,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "passedUnique": 18,
+    "latestResults": [
+      {
+        "title": "blank right tap and hold share the weapon; jump/grenade never cause extra shots",
+        "file": "v04-actions.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 844x390",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 852x393",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 932x430",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 1280x720",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "movement, fire, grenade, HUD priority and simultaneous release stay independent",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "viewport height changes retain fingers; browser blur signal clears input and pauses",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "real keys: bypass living soldiers, activate boss, retreat freely and re-enter",
+        "file": "v042-bypass.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "real HUD tap and Q switch knife/gun atomically with cached visible sprites and no accidental shot",
+        "file": "v056-repairs.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "held ordinary attack plays three knife cuts, then a real enemy hit produces stop and recoil without firing",
+        "file": "v056-repairs.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "mobile ordinary button uses crouch and airborne knife sectors while jump/movement ownership survives",
+        "file": "v056-repairs.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "upward rocket emerges from the visible tube for both facing directions",
+        "file": "v057-rocket-muzzle.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "mobile real-key route can enter and leave the 42-percent underpass standing, with normal cover and combat",
+        "file": "v057-underpass.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "ordinary player bullets visibly travel at the reduced 760 speed in the real Web build",
+        "file": "v058-shotgun.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "real shotgun pickup uses intact sprites through running, crouch-walking, firing, jumping and repeated weapon switches",
+        "file": "v058-shotgun.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-results.json"
+      },
+      {
+        "title": "crate breaks through real shots, releases one supply and debris settles on the road",
+        "file": "v061-campaign.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-final.json"
+      },
+      {
+        "title": "real keyboard completes expanded six-zone campaign, mini boss and both final boss phases",
+        "file": "v061-campaign.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-final-campaign.json"
+      },
+      {
+        "title": "real keyboard grenade creates a near-ground blast and physical fragments land without crossing the road",
+        "file": "v061-fragments.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v061-browser-final.json"
+      }
+    ],
+    "finalScope": "After the last particle-only correction: real-shot crate debris, ground-level grenade fragments and full keyboard campaign. The remaining input/weapon/bypass checks use the preceding build of unchanged gameplay code.",
+    "runs": [
+      {
+        "report": "reports/v061-browser-results.json",
+        "startTime": "2026-11-05T08:51:59.342Z",
+        "duration": 641066.9550000001,
+        "expected": 15,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 1
+      },
+      {
+        "report": "reports/v061-browser-campaign-attempt2.json",
+        "startTime": "2026-11-05T09:03:06.767Z",
+        "duration": 164735.538,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      {
+        "report": "reports/v061-browser-campaign-retest.json",
+        "startTime": "2026-11-05T09:12:48.948Z",
+        "duration": 286619.16099999996,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      {
+        "report": "reports/v061-browser-final.json",
+        "startTime": "2026-11-05T09:45:35.444Z",
+        "duration": 177653.346,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      {
+        "report": "reports/v061-browser-final-campaign.json",
+        "startTime": "2026-11-05T09:52:40.155Z",
+        "duration": 296775.607,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    ]
+  },
+  "campaign": {
+    "seconds": 101.41666666669344,
+    "health": 4,
+    "kills": 32,
+    "length": 12400,
+    "previousLength": 8200,
+    "miniBossToFinalDistance": 5880,
+    "miniBossDefeatedAt": 51.91666666666436,
+    "finalBossEnteredAt": 80.48333333334345,
+    "finalDebrisSamples": 25010,
+    "minFinalDebrisY": 153,
+    "attackCounts": {
+      "salvo": 2,
+      "sweep": 1,
+      "stomp": 2,
+      "laser": 1,
+      "missiles": 1,
+      "burst": 0
+    },
+    "phases": [
+      1,
+      2
+    ],
+    "errors": []
+  },
+  "web": {
+    "files": 56,
+    "bytes": 6409348,
+    "sha256": "d1170777d2964f4231a94e44086bd25016315940be1c89942f386221dff4bc77",
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "files": 55,
+    "bytes": 3574999,
+    "sha256": "62f18f2a3a3fbc4d69798b0d39ff53a3ccd341235f847bd3333d94c87c3c8ef2",
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "published": false,
+  "screenshots": [
+    "reports/v061-crate-break.png",
+    "reports/v061-crate-settled.png",
+    "reports/v061-fragments-blast.png",
+    "reports/v061-fragments-settled.png",
+    "reports/v061-transport.png",
+    "reports/v061-blockade.png",
+    "reports/v061-boss-laser.png",
+    "reports/v061-boss-missiles.png",
+    "reports/v061-boss-wreck.png",
+    "reports/v061-complete.png"
+  ],
+  "limitations": [
+    "Browser input and simulated touch verified; no physical Android/iOS or WeChat runtime verification.",
+    "Local builds only; GitHub Pages and WeChat development uploads were not updated.",
+    "The optional-enemy bypass route passed after combat-death retries; earlier attempts remain in the browser report.",
+    "Earlier campaign input policies died at or just after the mini boss; the final targeted retest improves evasion and uses existing medical supplies through normal input, with unchanged game parameters. Original results are preserved."
+  ]
+}

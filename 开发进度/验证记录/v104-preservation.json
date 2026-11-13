@@ -1,0 +1,48 @@
+{
+  "version": "1.0.4",
+  "passed": true,
+  "checkedAt": "2026-11-13T06:31:13.806Z",
+  "checkpoint": "PRE-V104-20261113",
+  "changed": [
+    "assets/scripts/GameManager.ts",
+    "assets/scripts/combat/ProjectileManager.ts",
+    "assets/scripts/core/GameConfig.ts",
+    "assets/scripts/core/ReleaseConfig.ts",
+    "assets/scripts/platform/ShareBridge.ts"
+  ],
+  "protectedFiles": 706,
+  "imagesUnchanged": 185,
+  "dependencyLockPreserved": true,
+  "shareCover": {
+    "path": "subpackages/landart/share-cover.jpg",
+    "sha256": "26271d85a82f41c8c6ee4065a31ddfaf645c6f566a7c1c2be6fa18dc72bc4cdb",
+    "bytes": 337403
+  },
+  "preservedReleases": [
+    {
+      "directory": "release/1.0.0",
+      "files": 441,
+      "sha256": "4bca47a91ad3422769ed16ebdbf91ff40153340d718c58c04914e2e655e704d1"
+    },
+    {
+      "directory": "release/1.0.0-game-club",
+      "files": 441,
+      "sha256": "612bd876f93f59746b4c780ab3dbbde63d7b1c65fb6241595d88e4b8920d2561"
+    },
+    {
+      "directory": "release/1.0.1",
+      "files": 441,
+      "sha256": "df976d580b93a12b979e2669627f16ce8571d977e787e8fa720104420df09f14"
+    },
+    {
+      "directory": "release/1.0.2",
+      "files": 441,
+      "sha256": "498a19e22504b8a57ebcedd6f7517b2fa5e1ccd8cc5aac564fd44247a8d42fab"
+    },
+    {
+      "directory": "release/1.0.3",
+      "files": 444,
+      "sha256": "ebec2911ab07c919afe910e4496825437fa7bf0e3055d9bce0eb6d5e91d8f0a9"
+    }
+  ]
+}

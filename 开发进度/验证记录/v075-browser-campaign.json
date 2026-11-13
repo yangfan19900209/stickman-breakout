@@ -1,0 +1,3464 @@
+{
+  "startedAt": "2026-11-07T09:30:50.158Z",
+  "checkpoints": [
+    {
+      "zone": "浅海训练",
+      "time": 9.850000000000081,
+      "hp": 5,
+      "x": 843.989886288178
+    },
+    {
+      "zone": "水草暗礁",
+      "time": 19.499999999999535,
+      "hp": 3,
+      "x": 2409.0466855162995
+    },
+    {
+      "zone": "沉船前哨",
+      "time": 28.091666666665713,
+      "hp": 4,
+      "x": 4300.003184268753
+    },
+    {
+      "zone": "深水断层",
+      "time": 43.591666666664835,
+      "hp": 3,
+      "x": 6209.370105183406
+    },
+    {
+      "zone": "潜艇防线",
+      "time": 55.75833333333081,
+      "hp": 5,
+      "x": 8509.425342313722
+    },
+    {
+      "zone": "战前整备",
+      "time": 66.54166666666569,
+      "hp": 5,
+      "x": 10806.307917078393
+    },
+    {
+      "zone": "巨型潜艇",
+      "time": 67.95000000000014,
+      "hp": 5,
+      "x": 11200.641250411698
+    }
+  ],
+  "final": {
+    "chapter": 2,
+    "state": "complete",
+    "time": 81.59166666667767,
+    "clearTime": 81.59166666667767,
+    "stage": "swimming",
+    "introTime": 7.2,
+    "entryPhase": "dive",
+    "chest": {
+      "x": 410,
+      "y": 720,
+      "phase": 2
+    },
+    "player": {
+      "x": 11382.670326887775,
+      "y": 645,
+      "vx": 0,
+      "vy": 0,
+      "health": 3,
+      "facing": 1,
+      "alive": true
+    },
+    "cameraX": 11226.843871989622,
+    "cameraY": 446.9549505840841,
+    "weapon": "harpoon",
+    "ammo": 0,
+    "aim": -0.25165327240792146,
+    "muzzle": {
+      "x": 11427.854145478814,
+      "y": 679.2756722039898
+    },
+    "lastShotWeapon": "harpoon",
+    "lastShotMuzzle": {
+      "x": 11427.847753415708,
+      "y": 379.6586761446948,
+      "angle": -0.253352067048885
+    },
+    "aimTarget": "submarine",
+    "shots": 229,
+    "hits": 147,
+    "kills": 25,
+    "grenades": 3,
+    "depthThrown": 0,
+    "boostCooldown": 0,
+    "knifeSerial": 0,
+    "protectedPress": false,
+    "zone": "巨型潜艇",
+    "levelWidth": 12400,
+    "boss": {
+      "x": 11860,
+      "y": 327.6064336651527,
+      "hp": 0,
+      "maxHp": 180,
+      "active": true,
+      "phase": 3,
+      "attack": "ring",
+      "mode": "dead",
+      "timer": 2.6250000000000013,
+      "angle": 2.960690313402426,
+      "serial": 4,
+      "laserHp": 30,
+      "torpedoHp": 32,
+      "cannonHp": 36,
+      "angleStart": 2.441592653589793,
+      "angleEnd": 3.061592653589793,
+      "ringRadius": 0,
+      "ringGap": 2.960690313402426,
+      "ringHit": false,
+      "beamActive": false,
+      "hit": 0.12,
+      "attackCounts": {
+        "cannon": 1,
+        "sweep": 1,
+        "fan": 1,
+        "ring": 1
+      }
+    },
+    "miniBoss": {
+      "id": "sea-12",
+      "kind": "captain",
+      "x": 5717.999999999956,
+      "y": 338.2945674823692,
+      "homeY": 360,
+      "homeX": 5860,
+      "role": "burst",
+      "burstLeft": 0,
+      "burstTimer": 0.16,
+      "attack": "torpedo",
+      "attackCounts": {
+        "dash": 1,
+        "fan": 1
+      },
+      "vx": 0,
+      "vy": 0,
+      "hp": 0,
+      "maxHp": 72,
+      "active": true,
+      "mode": "dead",
+      "timer": 0.5916666666666686,
+      "angle": 3.0603125685249477,
+      "serial": 2,
+      "hit": 0,
+      "deadTime": 41.39999999999829
+    },
+    "enemies": [
+      {
+        "id": "sea-0",
+        "kind": "diver",
+        "x": 1392.399999999987,
+        "y": 315.5618509652677,
+        "homeY": 350,
+        "homeX": 1450,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "burst",
+        "attackCounts": {
+          "burst": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.8116666666666692,
+        "angle": 3.1134876714051303,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 70.39166666666875
+      },
+      {
+        "id": "sea-1",
+        "kind": "fish",
+        "x": 1964.3999999999896,
+        "y": 287.56036321486107,
+        "homeY": 300,
+        "homeX": 2010,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "dash",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 8,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.3599999999999997,
+        "angle": 3.1413144577940533,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 67.53333333333315
+      },
+      {
+        "id": "sea-2",
+        "kind": "diver",
+        "x": 2525.9999999999945,
+        "y": 427.49443916277914,
+        "homeY": 400,
+        "homeX": 2550,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "marksman",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.1966666666666673,
+        "angle": -3.0193878799587357,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 64.2083333333305
+      },
+      {
+        "id": "sea-3",
+        "kind": "diver",
+        "x": 2671.5999999999935,
+        "y": 248.8042647188525,
+        "homeY": 280,
+        "homeX": 2700,
+        "role": "torpedo",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "torpedo",
+        "attackCounts": {
+          "torpedo": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.7833333333333354,
+        "angle": 3.111452112545318,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 62.674999999997084
+      },
+      {
+        "id": "sea-4",
+        "kind": "kelp",
+        "x": 2900,
+        "y": 230,
+        "homeY": 230,
+        "homeX": 2900,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": -2.0249999999999955,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 61.833333333330465
+      },
+      {
+        "id": "sea-5",
+        "kind": "fish",
+        "x": 3178.7999999999906,
+        "y": 355.98485291279025,
+        "homeY": 380,
+        "homeX": 3220,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "dash",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 8,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.4483333333333333,
+        "angle": 3.1390048830748682,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 60.199999999997225
+      },
+      {
+        "id": "sea-6",
+        "kind": "diver",
+        "x": 3443.1999999999916,
+        "y": 296.8013674921376,
+        "homeY": 280,
+        "homeX": 3480,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "burst",
+        "attackCounts": {
+          "burst": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.024999999999999634,
+        "angle": -3.105380170820055,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 58.57499999999732
+      },
+      {
+        "id": "sea-7",
+        "kind": "kelp",
+        "x": 3880,
+        "y": 70,
+        "homeY": 70,
+        "homeX": 3880,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": -1.6499999999999966,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 56.04999999999746
+      },
+      {
+        "id": "sea-8",
+        "kind": "turret",
+        "x": 4630,
+        "y": 320,
+        "homeY": 320,
+        "homeX": 4630,
+        "role": "marksman",
+        "burstLeft": 1,
+        "burstTimer": 0.12666666666666668,
+        "attack": "burst",
+        "attackCounts": {
+          "burst": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 15,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.4,
+        "angle": 3.066547233396662,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 53.31666666666428
+      },
+      {
+        "id": "sea-9",
+        "kind": "diver",
+        "x": 5050.800000000027,
+        "y": 408.01320802035906,
+        "homeY": 400,
+        "homeX": 5080,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "marksman",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.5883333333333368,
+        "angle": -3.028531079628233,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 51.17499999999774
+      },
+      {
+        "id": "sea-10",
+        "kind": "diver",
+        "x": 5206.000000000022,
+        "y": 264.67381534965415,
+        "homeY": 250,
+        "homeX": 5230,
+        "role": "torpedo",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "torpedo",
+        "attackCounts": {
+          "torpedo": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 1.2950000000000008,
+        "angle": 2.9823376991867123,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 49.708333333331154
+      },
+      {
+        "id": "sea-11",
+        "kind": "fish",
+        "x": 5109.278891956562,
+        "y": 354.4936334273072,
+        "homeY": 350,
+        "homeX": 5320,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "dash",
+        "attackCounts": {
+          "dash": 1
+        },
+        "vx": -362.2557748004377,
+        "vy": 96.93169566109205,
+        "hp": 0,
+        "maxHp": 8,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.24166666666666647,
+        "angle": 2.880139573775385,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 49.29166666666451
+      },
+      {
+        "id": "sea-12",
+        "kind": "captain",
+        "x": 5717.999999999956,
+        "y": 338.2945674823692,
+        "homeY": 360,
+        "homeX": 5860,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "torpedo",
+        "attackCounts": {
+          "dash": 1,
+          "fan": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 72,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.5916666666666686,
+        "angle": 3.0603125685249477,
+        "serial": 2,
+        "hit": 0,
+        "deadTime": 41.39999999999829
+      },
+      {
+        "id": "sea-13",
+        "kind": "fish",
+        "x": 6453.200000000043,
+        "y": 446.97918952298056,
+        "homeY": 420,
+        "homeX": 6500,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "dash",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 8,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.6033333333333342,
+        "angle": -3.1045117005956935,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 38.458333333331794
+      },
+      {
+        "id": "sea-14",
+        "kind": "diver",
+        "x": 7135.200000000023,
+        "y": 370.7611385047146,
+        "homeY": 365,
+        "homeX": 7160,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "burst",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.7283333333333338,
+        "angle": 3.0677664975343037,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 36.308333333331916
+      },
+      {
+        "id": "sea-15",
+        "kind": "fish",
+        "x": 7194.000000000051,
+        "y": 162.7713495763783,
+        "homeY": 210,
+        "homeX": 7250,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "dash",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 8,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.3266666666666668,
+        "angle": 2.58388251687206,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 34.674999999998676
+      },
+      {
+        "id": "sea-16",
+        "kind": "kelp",
+        "x": 7470,
+        "y": 70,
+        "homeY": 70,
+        "homeX": 7470,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": -2.199999999999995,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 33.24999999999876
+      },
+      {
+        "id": "sea-17",
+        "kind": "fish",
+        "x": 7676.800000000039,
+        "y": 341.708811809581,
+        "homeY": 380,
+        "homeX": 7720,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "dash",
+        "attackCounts": {
+          "dash": 1
+        },
+        "vx": -374.87363339390333,
+        "vy": 9.734422738579594,
+        "hp": 0,
+        "maxHp": 8,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.65,
+        "angle": 3.1156312767537706,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 32.024999999998826
+      },
+      {
+        "id": "sea-18",
+        "kind": "diver",
+        "x": 8216.000000000022,
+        "y": 296.48126410539163,
+        "homeY": 300,
+        "homeX": 8240,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "marksman",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.16000000000000114,
+        "angle": 3.0352555378038457,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 29.30833333333231
+      },
+      {
+        "id": "sea-19",
+        "kind": "turret",
+        "x": 8730,
+        "y": 220,
+        "homeY": 220,
+        "homeX": 8730,
+        "role": "torpedo",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "burst",
+        "attackCounts": {
+          "burst": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 15,
+        "active": true,
+        "mode": "dead",
+        "timer": 1.1916666666666673,
+        "angle": 2.910836716941329,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 26.30833333333248
+      },
+      {
+        "id": "sea-20",
+        "kind": "mine",
+        "x": 9020,
+        "y": 330,
+        "homeY": 330,
+        "homeX": 9020,
+        "role": "torpedo",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 2,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.15000000000000002,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 27.258333333332427
+      },
+      {
+        "id": "sea-21",
+        "kind": "diver",
+        "x": 9446.400000000021,
+        "y": 293.18809245735963,
+        "homeY": 320,
+        "homeX": 9470,
+        "role": "torpedo",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "torpedo",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.2550000000000008,
+        "angle": 3.0318727388903235,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 23.016666666666
+      },
+      {
+        "id": "sea-22",
+        "kind": "diver",
+        "x": 9733.19999999996,
+        "y": 554.6903580068666,
+        "homeY": 510,
+        "homeX": 9690,
+        "role": "burst",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "burst",
+        "attackCounts": {
+          "burst": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 12,
+        "maxHp": 12,
+        "active": false,
+        "mode": "rest",
+        "timer": 0.25,
+        "angle": -0.5631935402761427,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sea-23",
+        "kind": "mine",
+        "x": 9840,
+        "y": 400,
+        "homeY": 400,
+        "homeX": 9840,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 2,
+        "active": true,
+        "mode": "dead",
+        "timer": -1.0083333333333322,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 21.58333333333275
+      },
+      {
+        "id": "sea-24",
+        "kind": "turret",
+        "x": 10250,
+        "y": 250,
+        "homeY": 250,
+        "homeX": 10250,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0.16,
+        "attack": "burst",
+        "attackCounts": {
+          "burst": 1
+        },
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 15,
+        "active": true,
+        "mode": "dead",
+        "timer": 1.3900000000000008,
+        "angle": 2.9665221714905217,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 19.099999999999557
+      },
+      {
+        "id": "sea-25",
+        "kind": "diver",
+        "x": 10539.200000000055,
+        "y": 461.96831799232257,
+        "homeY": 420,
+        "homeX": 10600,
+        "role": "marksman",
+        "burstLeft": 0,
+        "burstTimer": 0,
+        "attack": "marksman",
+        "attackCounts": {},
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 12,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.1716666666666672,
+        "angle": -2.924516404879889,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 17.29999999999966
+      }
+    ],
+    "objects": [
+      {
+        "x": 1180,
+        "y": 70,
+        "drop": "sonar",
+        "id": "sea-crate-0",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 3270,
+        "y": 70,
+        "drop": "sonar",
+        "id": "sea-crate-1",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 4800,
+        "y": 320,
+        "drop": "depth-charge",
+        "id": "sea-crate-2",
+        "hp": 0,
+        "vy": 0,
+        "deadTime": 53.29999999999762
+      },
+      {
+        "x": 6440,
+        "y": 70,
+        "drop": "torpedo",
+        "id": "sea-crate-3",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 9100,
+        "y": 70,
+        "drop": "sonar",
+        "id": "sea-crate-4",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 10600,
+        "y": 70,
+        "drop": "torpedo",
+        "id": "sea-crate-5",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 11000,
+        "y": 70,
+        "drop": "depth-charge",
+        "id": "sea-crate-6",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      }
+    ],
+    "pickups": [
+      {
+        "x": 2671.5999999999935,
+        "y": 90,
+        "vy": -65,
+        "kind": "torpedo",
+        "source": "sea-3",
+        "active": true
+      },
+      {
+        "x": 4800,
+        "y": 340,
+        "vy": -65,
+        "kind": "depth-charge",
+        "source": "sea-crate-2",
+        "active": true
+      },
+      {
+        "x": 5050.800000000027,
+        "y": 90,
+        "vy": -65,
+        "kind": "sonar",
+        "source": "sea-9",
+        "active": true
+      },
+      {
+        "x": 5206.000000000022,
+        "y": 90,
+        "vy": -65,
+        "kind": "torpedo",
+        "source": "sea-10",
+        "active": true
+      },
+      {
+        "x": 5647.999999999956,
+        "y": 90,
+        "vy": -65,
+        "kind": "torpedo",
+        "source": "sea-12",
+        "active": true
+      },
+      {
+        "x": 8216.000000000022,
+        "y": 129.375,
+        "vy": -65,
+        "kind": "sonar",
+        "source": "sea-18",
+        "active": true
+      },
+      {
+        "x": 9446.400000000021,
+        "y": 90,
+        "vy": -65,
+        "kind": "torpedo",
+        "source": "sea-21",
+        "active": true
+      }
+    ],
+    "recoverySpawned": [
+      "kelp-rest",
+      "captain-prep",
+      "abyss-rest"
+    ],
+    "effects": [],
+    "projectileStates": [],
+    "victory": {
+      "active": true,
+      "time": 6.550000000000115,
+      "phase": "settlement",
+      "focus": 1,
+      "cheerTime": 3.3000000000001153,
+      "resultProgress": 1,
+      "resultsReady": true,
+      "impactSerial": 5,
+      "haptic": "light",
+      "flash": 0
+    },
+    "bullets": 0,
+    "entryMode": "chapter02-preview",
+    "oceanArt": {
+      "loaded": true,
+      "error": "",
+      "playerFrame": "diver.cheer.1",
+      "playerSize": {
+        "width": 63.21,
+        "height": 83.58
+      },
+      "scenery": {
+        "fishSchools": 2,
+        "bubbles": 8,
+        "time": 88.14166666667778,
+        "terrain": "unified-ink-v075",
+        "palette": "blue-gray"
+      },
+      "projectiles": []
+    },
+    "chapterLoading": false,
+    "playerShots": 229,
+    "audio": {
+      "loaded": 11,
+      "played": 251,
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "active": "ocean",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "diver.cheer.1"
+    },
+    "visibleChunks": 12,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 5,
+        "supported": true
+      }
+    },
+    "presentation": {
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 245,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": true,
+      "resultProgress": 1,
+      "resultReady": true
+    },
+    "display": {
+      "width": 1280,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 2.299997594793256,
+      "worldVisibleWidth": 556.5223211092348,
+      "cameraY": 446.9549505840841,
+      "frameWidth": 1280,
+      "frameHeight": 720,
+      "orientationPaused": false
+    },
+    "controls": {
+      "shootHeld": false,
+      "hudHeight": 52,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "joystick": {
+          "x": 98,
+          "y": 94,
+          "r": 58,
+          "baseR": 78,
+          "knobR": 38,
+          "hit": 156,
+          "unit": 1
+        },
+        "jump": {
+          "x": 1072,
+          "y": 129.92000000000002,
+          "r": 38,
+          "hit": 88
+        },
+        "shoot": {
+          "x": 1194,
+          "y": 94,
+          "r": 61,
+          "hit": 136
+        },
+        "grenade": {
+          "x": 1200,
+          "y": 209,
+          "r": 33,
+          "hit": 78
+        },
+        "pause": {
+          "x": 1248,
+          "y": 690,
+          "hit": 48
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 330,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    }
+  },
+  "errors": [],
+  "failed": [],
+  "captures": [
+    "shore",
+    "walk-0",
+    "walk-1",
+    "walk-2",
+    "walk-3",
+    "walk-4",
+    "entry-reach",
+    "entry-open",
+    "entry-take",
+    "equip",
+    "equip-tank",
+    "entry-walk",
+    "dive",
+    "shallow",
+    "shallow-animated",
+    "weapon-harpoon",
+    "zone-1",
+    "enemy-burst",
+    "enemy-projectile",
+    "explosion-peak",
+    "enemy-torpedo",
+    "zone-2",
+    "weapon-sonar",
+    "reef",
+    "zone-3",
+    "wreck",
+    "enemy-dash",
+    "enemy-fan",
+    "zone-4",
+    "deep",
+    "zone-5",
+    "pipeline",
+    "zone-6",
+    "zone-7",
+    "boss-cannon",
+    "boss-sweep",
+    "boss-fan",
+    "boss-ring",
+    "collapse",
+    "cheer",
+    "result"
+  ],
+  "presentation": [
+    {
+      "name": "shore",
+      "time": 0.08333333333333333,
+      "stage": "shore",
+      "entryPhase": "approach",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 0
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 110,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.idle.0",
+        "playerSize": {
+          "width": 60.800000000000004,
+          "height": 83.84
+        },
+        "scenery": {
+          "fishSchools": 1,
+          "bubbles": 5,
+          "time": 0.08333333333333333,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "walk-0",
+      "time": 0.20833333333333331,
+      "stage": "shore",
+      "entryPhase": "approach",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 0
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 145.00000000000003,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.3",
+        "playerSize": {
+          "width": 60.160000000000004,
+          "height": 80
+        },
+        "scenery": {
+          "fishSchools": 1,
+          "bubbles": 5,
+          "time": 0.20833333333333331,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "walk-1",
+      "time": 0.3416666666666669,
+      "stage": "shore",
+      "entryPhase": "approach",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 0
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 182.3333333333335,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.6",
+        "playerSize": {
+          "width": 53.120000000000005,
+          "height": 79.36
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 0.3416666666666669,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "walk-2",
+      "time": 0.45000000000000057,
+      "stage": "shore",
+      "entryPhase": "approach",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 0
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 212.66666666666697,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.0",
+        "playerSize": {
+          "width": 75.52,
+          "height": 78.08
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 0.45000000000000057,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "walk-3",
+      "time": 0.591666666666667,
+      "stage": "shore",
+      "entryPhase": "approach",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 0
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 252.3333333333338,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.4",
+        "playerSize": {
+          "width": 64,
+          "height": 79.36
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 0.591666666666667,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "walk-4",
+      "time": 0.7249999999999999,
+      "stage": "shore",
+      "entryPhase": "approach",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 0
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 289.66666666666686,
+        "y": 720,
+        "vx": 279.9999999999977,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.7",
+        "playerSize": {
+          "width": 55.68,
+          "height": 76.16
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 4,
+          "time": 0.7249999999999999,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "entry-reach",
+      "time": 0.974999999999999,
+      "stage": "equipping",
+      "entryPhase": "reach",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 0
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 350,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "shore.reach",
+        "playerSize": {
+          "width": 60.125,
+          "height": 67.895
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 4,
+          "time": 0.974999999999999,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "entry-open",
+      "time": 1.4749999999999972,
+      "stage": "equipping",
+      "entryPhase": "open",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 1
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 350,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "shore.reach",
+        "playerSize": {
+          "width": 60.125,
+          "height": 67.895
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 1.4749999999999972,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "entry-take",
+      "time": 2.0833333333333286,
+      "stage": "equipping",
+      "entryPhase": "take",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 350,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "shore.take",
+        "playerSize": {
+          "width": 59.57,
+          "height": 70.67
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 4,
+          "time": 2.0833333333333286,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "equip",
+      "time": 2.674999999999993,
+      "stage": "equipping",
+      "entryPhase": "mask",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 350,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.equip.mask",
+        "playerSize": {
+          "width": 43.2,
+          "height": 79.4
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 2.674999999999993,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "equip-tank",
+      "time": 3.333333333333324,
+      "stage": "equipping",
+      "entryPhase": "tank",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 350,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.equip.tank",
+        "playerSize": {
+          "width": 49.400000000000006,
+          "height": 80.4
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 3.333333333333324,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "entry-walk",
+      "time": 4.383333333333341,
+      "stage": "equipping",
+      "entryPhase": "walk",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 357.291666666665,
+        "y": 720,
+        "vx": 174.99999999999773,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.hover.1",
+        "playerSize": {
+          "width": 70.168,
+          "height": 88.2
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 4,
+          "time": 4.383333333333341,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "dive",
+      "time": 5.091666666666709,
+      "stage": "diving",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 473.0468749999995,
+        "y": 717.7980474455362,
+        "vx": 174.99999999999773,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.cliff.leap",
+        "playerSize": {
+          "width": 86.94,
+          "height": 79.38
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 4,
+          "time": 5.091666666666709,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "shallow",
+      "time": 8.575000000000154,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 840,
+        "y": 360,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.hover.1",
+        "playerSize": {
+          "width": 70.168,
+          "height": 88.2
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 25,
+          "time": 8.575000000000154,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "shallow-animated",
+      "time": 9.775000000000086,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 840,
+        "y": 360,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.hover.1",
+        "playerSize": {
+          "width": 70.168,
+          "height": 88.2
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 24,
+          "time": 9.775000000000086,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "weapon-harpoon",
+      "time": 9.850000000000081,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 843.989886288178,
+        "y": 360,
+        "vx": 126.33274189367266,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 24,
+          "time": 9.850000000000081,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "zone-1",
+      "time": 9.850000000000081,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 843.989886288178,
+        "y": 360,
+        "vx": 126.33274189367266,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 24,
+          "time": 9.850000000000081,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "enemy-burst",
+      "time": 9.950000000000076,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 863.481231093922,
+        "y": 360,
+        "vx": 233.71631129795583,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 25,
+          "time": 9.950000000000076,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "enemy-projectile",
+      "time": 10.091666666666734,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 893.8434772006345,
+        "y": 375.226551165515,
+        "vx": 204.5165256815014,
+        "vy": 161.82040630498489,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 25,
+          "time": 10.091666666666734,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "explosion-peak",
+      "time": 11.499999999999988,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 1093.995041669264,
+        "y": 344.18721490066383,
+        "vx": 223.13753796749018,
+        "vy": 87.1855072241616,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 23,
+          "time": 11.499999999999988,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 1392.399999999987,
+          "y": 345.5618509652677,
+          "kind": "blast",
+          "size": 85,
+          "age": 0.3000000000000001
+        },
+        {
+          "x": 1085.8187545458243,
+          "y": 389.8070497143413,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.15833333333333333
+        },
+        {
+          "x": 1101.2292316821845,
+          "y": 389.37382445619005,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.05833333333333333
+        }
+      ]
+    },
+    {
+      "name": "enemy-torpedo",
+      "time": 17.758333333332967,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 2268.120954982528,
+        "y": 340.0930501996298,
+        "vx": 195.3035145837538,
+        "vy": 195.30346054222164,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 18,
+          "time": 17.758333333332967,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "enemy",
+            "kind": "torpedo",
+            "width": 54,
+            "height": 32.06825938566553
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 2525.9999999999945,
+          "y": 457.49443916277914,
+          "kind": "blast",
+          "size": 85,
+          "age": 0.37500000000000033
+        },
+        {
+          "x": 3265.520462348524,
+          "y": 401.1122999854504,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "name": "zone-2",
+      "time": 19.499999999999535,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 2409.0466855162995,
+        "y": 336.2936464660705,
+        "vx": 189.50997889186792,
+        "vy": 197.27155550805557,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 21,
+          "time": 19.499999999999535,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 2671.5999999999935,
+          "y": 278.8042647188525,
+          "kind": "blast",
+          "size": 85,
+          "age": 0.5833333333333337
+        },
+        {
+          "x": 2396.327600473318,
+          "y": 353.9292967791,
+          "kind": "blast",
+          "size": 190,
+          "age": 0.30833333333333346
+        },
+        {
+          "x": 2873,
+          "y": 253.89516154050924,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.008333333333333333
+        }
+      ]
+    },
+    {
+      "name": "weapon-sonar",
+      "time": 19.758333333332853,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "sonar",
+      "player": {
+        "x": 2474.532948749062,
+        "y": 351.22050970326785,
+        "vx": 275.9234967245025,
+        "vy": 8.886926230574355,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 23,
+          "time": 19.758333333332853,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 2671.5999999999935,
+          "y": 278.8042647188525,
+          "kind": "blast",
+          "size": 85,
+          "age": 0.8416666666666661
+        },
+        {
+          "x": 2396.327600473318,
+          "y": 353.9292967791,
+          "kind": "blast",
+          "size": 190,
+          "age": 0.5666666666666671
+        },
+        {
+          "x": 2900,
+          "y": 260,
+          "kind": "blast",
+          "size": 85,
+          "age": 0
+        },
+        {
+          "x": 2873,
+          "y": 271.71200963655656,
+          "kind": "hit",
+          "size": 28,
+          "age": 0
+        }
+      ]
+    },
+    {
+      "name": "reef",
+      "time": 20.958333333332785,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "sonar",
+      "player": {
+        "x": 2808.3209514252003,
+        "y": 347.36424630371556,
+        "vx": 234.8394103098237,
+        "vy": -109.02729767571824,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 18,
+          "time": 20.958333333332785,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 49.54696132596685
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "zone-3",
+      "time": 28.091666666665713,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "sonar",
+      "player": {
+        "x": 4300.003184268753,
+        "y": 459.2791813277248,
+        "vx": 275.48847579132786,
+        "vy": 10.88196194784455,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 23,
+          "time": 28.091666666665713,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 48.57142857142857
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 4585,
+          "y": 357.4048230173546,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.16666666666666666
+        },
+        {
+          "x": 4693.649328520983,
+          "y": 401.59664453610475,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.09999999999999999
+        }
+      ]
+    },
+    {
+      "name": "wreck",
+      "time": 29.149999999998986,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 4453.905580352045,
+        "y": 343.34693523644347,
+        "vx": 267.82559050930683,
+        "vy": -8.911921401144635,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 24,
+          "time": 29.149999999998986,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 4630,
+          "y": 350,
+          "kind": "blast",
+          "size": 120,
+          "age": 0.8749999999999993
+        },
+        {
+          "x": 4695.417203635049,
+          "y": 329.9,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.175
+        },
+        {
+          "x": 4430.5629172475965,
+          "y": 366.99499994082754,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.175
+        },
+        {
+          "x": 4950.269302806967,
+          "y": 333.35202928010926,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.05833333333333333
+        }
+      ]
+    },
+    {
+      "name": "enemy-dash",
+      "time": 31.89999999999883,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 4889.132228510021,
+        "y": 388.0673601423153,
+        "vx": 0.0003032050881177485,
+        "vy": -238.12078489243467,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 20,
+          "time": 31.89999999999883,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "enemy",
+            "kind": "torpedo",
+            "width": 54,
+            "height": 32.06825938566553
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 5206.000000000022,
+          "y": 294.67381534965415,
+          "kind": "blast",
+          "size": 85,
+          "age": 0.016666666666666666
+        },
+        {
+          "x": 5179.891265783617,
+          "y": 326.67381534965415,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.016666666666666666
+        }
+      ]
+    },
+    {
+      "name": "enemy-fan",
+      "time": 37.94999999999849,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 5432.640290839683,
+        "y": 262.14759489848143,
+        "vx": -1.098293765831522e-12,
+        "vy": -0.03446905519636944,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 16,
+          "time": 37.94999999999849,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 5673.999999999956,
+          "y": 423.36218712248353,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.14166666666666666
+        }
+      ]
+    },
+    {
+      "name": "zone-4",
+      "time": 43.591666666664835,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 6209.370105183406,
+        "y": 348.47746074087394,
+        "vx": 271.7777897988145,
+        "vy": -19.761262333511645,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 19,
+          "time": 43.591666666664835,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 6453.200000000043,
+          "y": 476.97918952298056,
+          "kind": "blast",
+          "size": 85,
+          "age": 0.4583333333333339
+        },
+        {
+          "x": 7078.1842428648815,
+          "y": 385.9568617113125,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.13333333333333333
+        }
+      ]
+    },
+    {
+      "name": "deep",
+      "time": 45.949999999998035,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 6805.77041550992,
+        "y": 369.01810136143416,
+        "vx": 276.5129361081221,
+        "vy": -8.298493712809561,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 25,
+          "time": 45.949999999998035,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 7135.200000000023,
+          "y": 400.7611385047146,
+          "kind": "blast",
+          "size": 85,
+          "age": 0.6666666666666667
+        }
+      ]
+    },
+    {
+      "name": "zone-5",
+      "time": 55.75833333333081,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 8509.425342313722,
+        "y": 349.1804002753227,
+        "vx": 275.94503182517883,
+        "vy": 6.4436374088147685,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 18,
+          "time": 55.75833333333081,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 8730,
+          "y": 250,
+          "kind": "blast",
+          "size": 120,
+          "age": 0.47500000000000064
+        },
+        {
+          "x": 8816.230833758797,
+          "y": 221.8,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.008333333333333333
+        }
+      ]
+    },
+    {
+      "name": "pipeline",
+      "time": 56.84166666666408,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 8812.437376511376,
+        "y": 349.6909678163923,
+        "vx": 279.99999083443623,
+        "vy": 0.00001456474312306709,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 19,
+          "time": 56.84166666666408,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "zone-6",
+      "time": 66.54166666666569,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "sonar",
+      "player": {
+        "x": 10806.307917078393,
+        "y": 355.2580102678272,
+        "vx": 279.9999999986563,
+        "vy": 1.8399767838884898e-9,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 27,
+          "time": 66.54166666666569,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 48.57142857142857
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "zone-7",
+      "time": 67.95000000000014,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "sonar",
+      "player": {
+        "x": 11200.641250411698,
+        "y": 355.2580102679727,
+        "vx": 279.9999999999997,
+        "vy": 8.418517114205126e-17,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 26,
+          "time": 67.95000000000014,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 48.57142857142857
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 11490.599583773874,
+          "y": 399.00801022854694,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.12499999999999999
+        }
+      ]
+    },
+    {
+      "name": "boss-cannon",
+      "time": 69.45000000000134,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "sonar",
+      "player": {
+        "x": 11386.849669725809,
+        "y": 347.0148589596601,
+        "vx": 0.000001327566797450807,
+        "vy": -9.158186205654833e-10,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 35,
+          "time": 69.45000000000134,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 48.57142857142857
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 11538,
+          "y": 355.7701119338179,
+          "kind": "hit",
+          "size": 28,
+          "age": 0.175
+        },
+        {
+          "x": 11901.266250411796,
+          "y": 399.0080102679727,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.15833333333333333
+        }
+      ]
+    },
+    {
+      "name": "boss-sweep",
+      "time": 72.8416666666707,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "sonar",
+      "player": {
+        "x": 11375.5061868958,
+        "y": 349.34779012457045,
+        "vx": -1.8127216562607831e-7,
+        "vy": 0.000011587076036174764,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 37,
+          "time": 72.8416666666707,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 49.54696132596685
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          },
+          {
+            "owner": "player",
+            "kind": "sonar",
+            "width": 38,
+            "height": 52.698113207547166
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "name": "boss-fan",
+      "time": 76.84166666667389,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 11375.506186881441,
+        "y": 188.32854355348152,
+        "vx": -4.2495118981600495e-40,
+        "vy": -9.710066264020705e-28,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 35,
+          "time": 76.84166666667389,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": [
+        {
+          "x": 11556,
+          "y": 343.9544493916564,
+          "kind": "hit",
+          "size": 28,
+          "age": 0
+        }
+      ]
+    },
+    {
+      "name": "boss-ring",
+      "time": 79.7416666666762,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 11382.667897577567,
+        "y": 345.45770287612277,
+        "vx": 0.05286968458468264,
+        "vy": 0.04469480517386424,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.harpoon.fire",
+        "playerSize": {
+          "width": 81.928,
+          "height": 76.244
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 37,
+          "time": 79.7416666666762,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": [
+          {
+            "owner": "player",
+            "kind": "harpoon",
+            "width": 19,
+            "height": 7.6
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          },
+          {
+            "owner": "enemy",
+            "kind": "bolt",
+            "width": 44,
+            "height": 15.714285714285714
+          }
+        ]
+      },
+      "effects": [
+        {
+          "x": 11368.23495080119,
+          "y": 70,
+          "kind": "hit",
+          "size": 20,
+          "age": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "name": "collapse",
+      "time": 81.59166666667767,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 11382.670326887775,
+        "y": 345.4597565586429,
+        "vx": 0,
+        "vy": 0,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.hover.1",
+        "playerSize": {
+          "width": 64.05,
+          "height": 85.47
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 35,
+          "time": 81.59166666667767,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": [
+        {
+          "x": 11556,
+          "y": 346.47805859302747,
+          "kind": "hit",
+          "size": 28,
+          "age": 0
+        }
+      ]
+    },
+    {
+      "name": "cheer",
+      "time": 81.59166666667767,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 11382.670326887775,
+        "y": 590.459756558643,
+        "vx": 0,
+        "vy": 0,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.cheer.1",
+        "playerSize": {
+          "width": 63.21,
+          "height": 83.58
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 12,
+          "time": 85.34166666667765,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    },
+    {
+      "name": "result",
+      "time": 81.59166666667767,
+      "stage": "swimming",
+      "entryPhase": "dive",
+      "chest": {
+        "x": 410,
+        "y": 720,
+        "phase": 2
+      },
+      "weapon": "harpoon",
+      "player": {
+        "x": 11382.670326887775,
+        "y": 645,
+        "vx": 0,
+        "vy": 0,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.cheer.1",
+        "playerSize": {
+          "width": 63.21,
+          "height": 83.58
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 8,
+          "time": 88.14166666667778,
+          "terrain": "unified-ink-v075",
+          "palette": "blue-gray"
+        },
+        "projectiles": []
+      },
+      "effects": []
+    }
+  ],
+  "weapons": [
+    "harpoon",
+    "sonar"
+  ],
+  "enemyAttacks": [
+    "burst",
+    "torpedo",
+    "dash",
+    "fan"
+  ]
+}

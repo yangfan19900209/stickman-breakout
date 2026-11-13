@@ -1,0 +1,218 @@
+{
+  "version": "0.7.0",
+  "checkedAt": "2026-11-06T08:35:55.316Z",
+  "creator": "3.8.8",
+  "sourceSHA256": "af5e04521fbeda9cddf62a9677a0639b26341d3d5b1430bebbc026c144b31629",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 185,
+    "passed": 185,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "sea": {
+      "evidence": "reports/v070-browser-campaign.json",
+      "seconds": 73.9250000000049,
+      "health": 3,
+      "kills": 22,
+      "zones": [
+        {
+          "zone": "浅海训练",
+          "time": 7.483333333333495,
+          "hp": 5,
+          "x": 842.9371134390641
+        },
+        {
+          "zone": "水草暗礁",
+          "time": 14.924999999999793,
+          "hp": 4,
+          "x": 2402.429479388549
+        },
+        {
+          "zone": "沉船前哨",
+          "time": 22.683333333332687,
+          "hp": 4,
+          "x": 4306.511360512992
+        },
+        {
+          "zone": "深水断层",
+          "time": 32.433333333332136,
+          "hp": 5,
+          "x": 6205.9836210102285
+        },
+        {
+          "zone": "潜艇防线",
+          "time": 43.13333333333153,
+          "hp": 5,
+          "x": 8510.089507552673
+        },
+        {
+          "zone": "战前整备",
+          "time": 53.84166666666425,
+          "hp": 5,
+          "x": 10807.397778199967
+        },
+        {
+          "zone": "巨型潜艇",
+          "time": 55.274999999997505,
+          "hp": 5,
+          "x": 11232.666666666668
+        }
+      ]
+    },
+    "land": {
+      "evidence": "reports/v070-land-campaign.json",
+      "seconds": 89.97500000001767,
+      "health": 3
+    },
+    "lifecycle": "reports/v070-browser-lifecycle.json",
+    "chapterLink": "reports/v070-chapter-link.json",
+    "input": "Real keyboard and CDP simulated two-finger touch; read-only snapshots; no debug teleport or forced damage",
+    "errors": 0
+  },
+  "resources": {
+    "images": 115,
+    "processing": "Runtime PNGs: submarine hull and terrain retain dimensions; other sprites resized to 50 percent; all quantized to 128 colors (lossy). Background JPG 1280 wide quality 88. Source PNGs retained unchanged.",
+    "manifest": "art/level02-runtime.json",
+    "sourceCropsUnchanged": 116
+  },
+  "web": {
+    "files": 299,
+    "bytes": 8466610,
+    "sha256": "818e8f492ed919adce9cea6d6c1b98884e04661ca013d1701eaa0de253fe6e47",
+    "entryTime": 1793953907075.192,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "files": 311,
+    "bytes": 5500744,
+    "sha256": "f6ff8dc6b510e98ffc7e7c9cd2710b5fa2783d424c4d6d3c19b8a96d6923238a",
+    "entryTime": 1793953931174.665,
+    "mainBytes": 4170988,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 394912
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 766569
+      }
+    ],
+    "requiredBundlesPresent": true,
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    {
+      "file": "reports/v070-title.png",
+      "sha256": "9bfd67fe53824763ff63417be6fc0545bd2f26c674358dff64ba6016cac11ce9"
+    },
+    {
+      "file": "reports/v070-shore.png",
+      "sha256": "e8c7ede1c20b6f9082692b71a375cbd3af99b1248b483617075b15d14bda541b"
+    },
+    {
+      "file": "reports/v070-equip.png",
+      "sha256": "b72ee0eea1e249c329359485b5ac9b84978a8aa2c36364736758cadbfb4c23ee"
+    },
+    {
+      "file": "reports/v070-dive.png",
+      "sha256": "3ff226dbf1e4d80acc2e1fe2233268d350ecd2eea15cb95cfe7a5099b9a67831"
+    },
+    {
+      "file": "reports/v070-shallow.png",
+      "sha256": "0d89d8a0eceab846c69ce43ac3717fd997dbe95e45421d1356091f41a3ea2c67"
+    },
+    {
+      "file": "reports/v070-zone-1.png",
+      "sha256": "9a812392f6502f3e14d0bdfcd88ced39bb31a65f31a9b2e278352075d6559754"
+    },
+    {
+      "file": "reports/v070-zone-2.png",
+      "sha256": "3c55644fb4d1786267a954260d9448ef57e67457323884bfe0b0e9d64fcb0b33"
+    },
+    {
+      "file": "reports/v070-zone-3.png",
+      "sha256": "cfaf6d86719aa36545f265be40d91f274c14293ac834c3e34d654a700af69ecf"
+    },
+    {
+      "file": "reports/v070-zone-4.png",
+      "sha256": "c07f8c9e6e2f8e76f689d784a2b5ffe9785b3a2c059ac92f7d655d18ec11f9df"
+    },
+    {
+      "file": "reports/v070-zone-5.png",
+      "sha256": "fa723a63c24b543ebb8a8f033730d2a178de1bb6443c2b3bb873ce54e4efe854"
+    },
+    {
+      "file": "reports/v070-zone-6.png",
+      "sha256": "5dac5850270b1cd3ffc3e46ad089ce38e8158b1780dfa31a33591ab218592c58"
+    },
+    {
+      "file": "reports/v070-zone-7.png",
+      "sha256": "a4a94d9de7241eca424da6275236d95859cb62a3b51f66a7a6a479529ced2f06"
+    },
+    {
+      "file": "reports/v070-boss-cannon.png",
+      "sha256": "304ab2aec92a467687d79f7790aa4059ea52da6dd9d82795898486cb78fe1f47"
+    },
+    {
+      "file": "reports/v070-boss-sweep.png",
+      "sha256": "e789188e20e98159c72e0b7b783d83cd1c21b1d1165dd8d1e297ad5067a0b437"
+    },
+    {
+      "file": "reports/v070-boss-fan.png",
+      "sha256": "9a56f0f7816f67e053447c3e9234a84907bdc7c106b4e4ac0fcdf06ba885c72b"
+    },
+    {
+      "file": "reports/v070-boss-ring.png",
+      "sha256": "eb0f64f3551a943aaffe14d9047977c9007c93355f5102b7f0b92cb2078d6348"
+    },
+    {
+      "file": "reports/v070-boss-laser.png",
+      "sha256": "578e67e8fae317465fd08e28f6ca6d5161cc8e7b56ab8264fbdbdc7cba4b8fde"
+    },
+    {
+      "file": "reports/v070-collapse.png",
+      "sha256": "e6f08630066e839f5dd5c3c75c3e730941b24b5c89c1b464811d53732ca8540a"
+    },
+    {
+      "file": "reports/v070-cheer.png",
+      "sha256": "75d3997d5587103eba124d3337a1e1639aed222e90ae80d60b6e8b20ebf28007"
+    },
+    {
+      "file": "reports/v070-result.png",
+      "sha256": "130e997f9b25916824b5b6bf78343790c30c98484429fcd4aed852b715f689d6"
+    },
+    {
+      "file": "reports/v070-mobile-touch.png",
+      "sha256": "50dbca1030b711b950a19b5713c7aa9641de2e6a5174bdda322de3b19659bc69"
+    },
+    {
+      "file": "reports/v070-portrait.png",
+      "sha256": "405d91051283ecea526f41833f5471812e83b0d50c00b35b48b97ba79ad8059a"
+    },
+    {
+      "file": "reports/v070-land-complete.png",
+      "sha256": "0eda906e80cecce348ad89ea44f5814381f4801719881c989634829284ad8986"
+    },
+    {
+      "file": "reports/v070-chapter-link.png",
+      "sha256": "58bf185998d5ee3173645ee01724edd06b0196574df2118e88beabbeeb1dc036"
+    }
+  ],
+  "limitations": [
+    "First playable version: outlined geometric terrain with local artwork and key-pose animation; further art and transition polish pending.",
+    "Normal-input automated timing is not a human difficulty or duration guarantee.",
+    "WeChat package built and inspected only; no WeChat Developer Tools, phone hardware, real vibration or device performance verification.",
+    "Generated art has additional variants not yet used; tether-cut supplies and full underwater ambience remain future design work."
+  ]
+}

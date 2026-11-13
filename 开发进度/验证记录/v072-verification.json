@@ -1,0 +1,213 @@
+{
+  "version": "0.7.2",
+  "checkedAt": "2026-11-07T01:27:39.505Z",
+  "sourceSHA256": "0b5ce70f063268d5ba8a35ffc9af1a8358c880f73d7aa93d08e75f0f412e5f99",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 190,
+    "passed": 190,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": "http://127.0.0.1:4190/level02.html",
+  "changes": [
+    "Continuous seabed, shaped reefs and ceilings, full wreck girders and sealed machinery",
+    "Shared art/collision reef contours",
+    "Distance-driven shore walking and native-scale whole-body transition poses",
+    "Swimming fish schools, rising bubbles, rooted kelp, parallax and seabed framing"
+  ],
+  "geometry": {
+    "landforms": 13,
+    "collisionBands": 402,
+    "maxHorizontalContourError": 2.9136996888269096
+  },
+  "browser": {
+    "evidence": "reports/v072-browser-campaign.json",
+    "lifecycle": "reports/v072-browser-lifecycle.json",
+    "errors": 0,
+    "clearTime": 74.64166666667214,
+    "hp": 3,
+    "kills": 22,
+    "shoreFrames": [
+      "player.run.3",
+      "player.run.6",
+      "player.run.1",
+      "player.run.4",
+      "player.run.7"
+    ],
+    "shallowAmbient": {
+      "fishSchools": 2,
+      "bubbles": 25,
+      "time": 8.30000000000017,
+      "terrain": "illustrated-solid"
+    }
+  },
+  "web": {
+    "files": 302,
+    "bytes": 8512516,
+    "sha256": "437435f8d7d46ceb7964b33eda85dc412dc660e9a5115c2ab08318e0037a05da",
+    "entryTime": 1794014743968.8052,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "files": 313,
+    "bytes": 5530661,
+    "sha256": "d6b67e4ff8f33d63ef83514d0190bb5c0df3b05e0153c41c71cb82ae3b24c5dd",
+    "entryTime": 1794014768032.885,
+    "mainBytes": 4188828,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 406989
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 766569
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    {
+      "file": "reports/v072-shore.png",
+      "sha256": "afabd7d590b1cc0d13c0d4e712633f735ec755d9e574bb803edc671d4a037311"
+    },
+    {
+      "file": "reports/v072-walk-0.png",
+      "sha256": "b7500f2f9793e0d3d5a53edd2b14a884fa5231b14bf9e117091db399c4d9d56f"
+    },
+    {
+      "file": "reports/v072-walk-1.png",
+      "sha256": "fe78c2f5f7b1007b7ade2b5ee09168df0418e059f40e47c9bae6f52561abd14a"
+    },
+    {
+      "file": "reports/v072-walk-2.png",
+      "sha256": "a0969e4a2e07721daa7da2c58075d89c9058131810cc4833a1128c4c5cac2f29"
+    },
+    {
+      "file": "reports/v072-walk-3.png",
+      "sha256": "91f3cc1749b3123cebf40f14fe28060b682ef4d734376b2982e39ae58b39607b"
+    },
+    {
+      "file": "reports/v072-walk-4.png",
+      "sha256": "fc4bfd2bdbbe05143e0150e0250b7d1c734fbf7a2c2a087cd44ef113b6fb8766"
+    },
+    {
+      "file": "reports/v072-equip.png",
+      "sha256": "6722f606671c046641c44d6db9d3351f6d750422d14699823756ceffd611cbe2"
+    },
+    {
+      "file": "reports/v072-equip-tank.png",
+      "sha256": "4a320872c2a5aea8efe4e9c1510f7a1563d51323584449bee934b7633703ccdd"
+    },
+    {
+      "file": "reports/v072-dive.png",
+      "sha256": "43f306cff2bb2dc24e7979f8464c6549f8132931fd094cd29271ebe835c40f1f"
+    },
+    {
+      "file": "reports/v072-shallow.png",
+      "sha256": "4a4787c41c6dcd33da09f126240e89ed78d15a17dd2f7d57062052db24f86908"
+    },
+    {
+      "file": "reports/v072-shallow-animated.png",
+      "sha256": "4e61033e375bbc3d784982c3f7afe9c694690f288bb8630ccef2c3ed42382d6e"
+    },
+    {
+      "file": "reports/v072-zone-1.png",
+      "sha256": "8d27a81e85f73d0a6795ae3bdadcfb515198778f5625d72428432a2c12057a40"
+    },
+    {
+      "file": "reports/v072-zone-2.png",
+      "sha256": "95105591b13fd5402659f8273ef0102a68f116937c726b4023bda6d9981a4986"
+    },
+    {
+      "file": "reports/v072-reef.png",
+      "sha256": "2fbed6fef7fc9bb0637219e64ffba94c0cf18f6e5920b15f6d3e2673aa98296b"
+    },
+    {
+      "file": "reports/v072-zone-3.png",
+      "sha256": "0810c2fcb2531ba5c8f7b6ce253edd308a72562b14d5e782585bd36a4510fd01"
+    },
+    {
+      "file": "reports/v072-wreck.png",
+      "sha256": "3ad45fcb25056b50370ec8fd87adc330dd1e96e1b12254011131472537180f7f"
+    },
+    {
+      "file": "reports/v072-zone-4.png",
+      "sha256": "637b2770b51d56da2728de86a3ad44feb51690e26b84943153531d69d9c3bf0d"
+    },
+    {
+      "file": "reports/v072-deep.png",
+      "sha256": "e2fdf34ef19a866e8b7a52a267ca3de9b9873823522487cbb5455def3b802994"
+    },
+    {
+      "file": "reports/v072-zone-5.png",
+      "sha256": "63ef25807da867184eaa60f0cd996d10ad2eb7db5381a300261adca9ae0b50fb"
+    },
+    {
+      "file": "reports/v072-pipeline.png",
+      "sha256": "a29737c157b98f2617ea925b8b6297d206dfe0b96cfa27239935e89a85884a54"
+    },
+    {
+      "file": "reports/v072-zone-6.png",
+      "sha256": "12824af689cde29b7d78756a11d54cf2b0787da70533ae4173be535034451db9"
+    },
+    {
+      "file": "reports/v072-zone-7.png",
+      "sha256": "19e514df84fd1b081c89652e0dcbad65459ac811bb6ce9b967f3d28e5f4748f1"
+    },
+    {
+      "file": "reports/v072-boss-cannon.png",
+      "sha256": "376ec67036a6a2e3e8a3e18c15a6b2b4f37259ab36f3598974b336addd3285f5"
+    },
+    {
+      "file": "reports/v072-boss-sweep.png",
+      "sha256": "dedc3bcbc984c3a09e7de0fac3a4201be956e8a88229b7d1b064d9492959daed"
+    },
+    {
+      "file": "reports/v072-boss-fan.png",
+      "sha256": "3d4830979cebc04eba0ede848b243b576643a5aa4f7695b8277e72a8f7adbd59"
+    },
+    {
+      "file": "reports/v072-boss-ring.png",
+      "sha256": "ba0d59e2ca441ddf11bfdc62cb8d3ee12423c8eb68649c7600b9c46bf2731ab6"
+    },
+    {
+      "file": "reports/v072-boss-laser.png",
+      "sha256": "727276cdb96999c1b83457c109827974265bcdd97860f00f202c78cee6a51c45"
+    },
+    {
+      "file": "reports/v072-collapse.png",
+      "sha256": "f7559488a20e59ae5bf20f9932cf751c2f1a7ffe21bc919986ca2394a20dca6e"
+    },
+    {
+      "file": "reports/v072-cheer.png",
+      "sha256": "4c9b5115c97bb4b90451b4751e5ed8530d7ee47f594e4df711a57cb4d4e20349"
+    },
+    {
+      "file": "reports/v072-result.png",
+      "sha256": "02a58ae185885fec3c818d7396fa30828de9dd17836ca368cafa7f5e0fdb64f3"
+    },
+    {
+      "file": "reports/v072-mobile-touch.png",
+      "sha256": "37f92c3f2bd97755c12682059dfcde6d748c22f409ffa74afdeb259188649b5a"
+    },
+    {
+      "file": "reports/v072-portrait.png",
+      "sha256": "405d91051283ecea526f41833f5471812e83b0d50c00b35b48b97ba79ad8059a"
+    }
+  ],
+  "limitations": [
+    "Browser keyboard and simulated touch verified; WeChat Developer Tools and physical phone not run.",
+    "No external publication or upload.",
+    "Automated playthrough duration is not a human difficulty estimate."
+  ]
+}

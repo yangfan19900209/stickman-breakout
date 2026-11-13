@@ -1,0 +1,291 @@
+{
+  "version": "0.8.6",
+  "checkedAt": "2026-11-10T09:29:47.412Z",
+  "sourceSHA256": "9540e9f107ebd3cbdf8b122e34d30cb779c5a9f28931b7591f49b02030d0a618",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 275,
+    "passed": 275,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "changes": [
+    "Generated complete enemy loadouts and unified physical projectiles",
+    "Perception delay, vulnerable bounded dodge, locked attacks and real-range fish charge",
+    "16400-unit route with 44 enemies and two additional encounter areas"
+  ],
+  "baseline": {
+    "id": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "preservedFirstChapterFiles": 268,
+    "changed": [
+      "assets/scripts/GameManager.ts",
+      "assets/scripts/ocean/OceanAssets.ts",
+      "assets/scripts/ocean/OceanEnemyPatterns.ts",
+      "assets/scripts/ocean/OceanFrames.ts",
+      "assets/scripts/ocean/OceanLevel.ts",
+      "assets/scripts/ocean/OceanRenderer.ts",
+      "assets/scripts/ocean/OceanSession.ts",
+      "assets/scripts/platform/AudioBridge.ts",
+      "assets/scripts/platform/PlatformBridge.ts",
+      "assets/scripts/ui/HUDController.ts"
+    ],
+    "additions": [
+      "assets/level02/combat-v086.png",
+      "assets/level02/combat-v086.png.meta",
+      "assets/scripts/ocean/OceanCombatFrames.ts",
+      "assets/scripts/ocean/OceanCombatFrames.ts.meta",
+      "assets/scripts/ocean/OceanEnemyPose.ts",
+      "assets/scripts/ocean/OceanEnemyPose.ts.meta",
+      "assets/scripts/ui/ActionFeedback.ts",
+      "assets/scripts/ui/ActionFeedback.ts.meta",
+      "assets/scripts/ui/StatusBarCache.ts",
+      "assets/scripts/ui/StatusBarCache.ts.meta"
+    ],
+    "scope": "Accepted first chapter gameplay, physics, level, enemies, supplies and art unchanged"
+  },
+  "browser": {
+    "land": {
+      "report": "reports/v086-chapter1-route.json",
+      "time": 89.85000000001757,
+      "health": 2
+    },
+    "sea": {
+      "report": "reports/v086-ocean.json",
+      "time": 113.6666666667032,
+      "health": 4,
+      "attacks": {
+        "harpoon": 17,
+        "sonar": 11,
+        "torpedo": 4,
+        "dash": 5
+      },
+      "dodges": 11,
+      "peakActiveShots": 9,
+      "peakEnemyShots": 7
+    },
+    "touch": "reports/v086-controls.json",
+    "capsule": "reports/v086-menu.json",
+    "applicationErrors": 0,
+    "failedRequests": 0,
+    "browserDiagnostics": [
+      {
+        "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+        "location": {
+          "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+          "line": 40431,
+          "column": 0,
+          "lineNumber": 40431,
+          "columnNumber": 0
+        }
+      },
+      {
+        "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+        "location": {
+          "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+          "line": 40431,
+          "column": 0,
+          "lineNumber": 40431,
+          "columnNumber": 0
+        }
+      }
+    ]
+  },
+  "web": {
+    "entryTime": 1794302312682.8914,
+    "sha256": "fe9932fbc440cf090e0ce10086c678f4cca64a91c57ee9eb3da607b41d8fb47c",
+    "bytes": 18662585,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794302433378.948,
+    "sha256": "7d5c148c2e2836879a281fa8edba215987f7368be8e6d78e913b80be7d68f16b",
+    "bytes": 15536873,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 558515
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 6784682
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 3836458
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "art": "reports/v086-art.json",
+  "skill": "reports/v086-skill-verification.json",
+  "screenshots": [
+    {
+      "file": "reports/v086-chapter1-start.png",
+      "sha256": "69192e51d6daf40aaa96ba1535ed9b6cae9936365ccfb0fc744f97494344fc30"
+    },
+    {
+      "file": "reports/v086-chapter1-mini.png",
+      "sha256": "5be602abee1f9ec3607eda597d5201d2e54f16fb6d4445028a8d115caecdd028"
+    },
+    {
+      "file": "reports/v086-chapter1-boss.png",
+      "sha256": "61bfdb0668f5b969ad8c860e226c32e255fc30f410c080dd429351f87a425f97"
+    },
+    {
+      "file": "reports/v086-chapter1-cheer.png",
+      "sha256": "d6e9376495f594dfcd3976393dbc2db676af85a52535a8f3b1e1649b0506b423"
+    },
+    {
+      "file": "reports/v086-chapter1-complete.png",
+      "sha256": "15b402080ceb7299cbade64debf51b613cbd55edf6473e53c9dddd5beea67b55"
+    },
+    {
+      "file": "reports/v086-sea-enemy-harpoon.png",
+      "sha256": "0835d07980b6d5cc5ac6984544d3696dd0c0718fbf8bd0a05a90157a89852825"
+    },
+    {
+      "file": "reports/v086-sea-evade.png",
+      "sha256": "3b1824616cf1d1fef72bd1949169699a55b8f59d5f4ee8bb95e9898afa849da5"
+    },
+    {
+      "file": "reports/v086-sea-fish-tell.png",
+      "sha256": "dc420a244693626d0173cdc39f04cd7ded764ccb3e715b32fba82e57546f3d50"
+    },
+    {
+      "file": "reports/v086-sea-enemy-sonar.png",
+      "sha256": "0536837b82e3f1b7390bbc6ae12a1ae72e9230def755ab0cc97947521e90180a"
+    },
+    {
+      "file": "reports/v086-sea-enemy-torpedo.png",
+      "sha256": "31f85e9d9f143f11eb64c3f26f3744636cb8bc8b949a16f9d7a24b0bc8293fb7"
+    },
+    {
+      "file": "reports/v086-sea-fish-attack.png",
+      "sha256": "84906641fb960895885a4a3e334e13e85237ff41291b89f6266e249e01f89f05"
+    },
+    {
+      "file": "reports/v086-sea-trench.png",
+      "sha256": "15b5282da2008a4bc7b05835e7fec6a7b49fe5f25af5b2c755cdf8879bdecab8"
+    },
+    {
+      "file": "reports/v086-sea-dock.png",
+      "sha256": "1d98bfd85733f007ccac7141c3d937b543069241c73c7c06f95c222ab8bd6129"
+    },
+    {
+      "file": "reports/v086-sea-boss.png",
+      "sha256": "3b01ff726b39850f93ef31aa4ac70a6696a235f47b96bc3899bc61fd7286bff2"
+    },
+    {
+      "file": "reports/v086-sea-cheer.png",
+      "sha256": "50ecf4ba216e03b4fc98ce2a378c31b231a8b721c955e735ca9399d09b5854fb"
+    },
+    {
+      "file": "reports/v086-sea-complete.png",
+      "sha256": "2748737ef017dbf00fd27e751a98fa44af88f3de0e383aec3f0ed9de73ece34b"
+    },
+    {
+      "file": "reports/v086-controls-land-idle.png",
+      "sha256": "75df85e8ee57b63b8b3c59dc3cebb0d3871adce14d15e4c078dbbf6ea8c14def"
+    },
+    {
+      "file": "reports/v086-controls-land-pressed.png",
+      "sha256": "30a9c10b4f668b014e37c2d47be10b78377d870cefe74b058741a5f03951b7da"
+    },
+    {
+      "file": "reports/v086-controls-knife.png",
+      "sha256": "3e24170abde79feee387850dc6013175e01d09cd7c25578d96a1c1953526d035"
+    },
+    {
+      "file": "reports/v086-controls-knife-recovery.png",
+      "sha256": "0c57dc6418201d0477b15a4b6cce7878cd17b980819bed687fe243869247e706"
+    },
+    {
+      "file": "reports/v086-controls-double-ready.png",
+      "sha256": "c57bd7a660f25db6053e25251f36dd9d737c79a309e864e6f2c6e576b0191055"
+    },
+    {
+      "file": "reports/v086-controls-double-spent.png",
+      "sha256": "e623aa204624c3e98a89705d0642d6cbc3ceb5ca2a7202d6667513da91ccb8df"
+    },
+    {
+      "file": "reports/v086-controls-slide-ready.png",
+      "sha256": "d6d11231160106ba0676e9fe68e2f810bac9190cb0cd28a2eca30e98842a7b5f"
+    },
+    {
+      "file": "reports/v086-controls-slide-pressed.png",
+      "sha256": "84055955312bb170bb22ceb58441ccd3e99280f6fbf16072d38bc8b1688a2a1f"
+    },
+    {
+      "file": "reports/v086-controls-grenade-2.png",
+      "sha256": "5b880eb17c0b8030007a5777ae197b3a99e0c2354051f5b092c5df7e1cf568ca"
+    },
+    {
+      "file": "reports/v086-controls-grenade-1.png",
+      "sha256": "6716eee539cb6fdda0008f86cf6aa61763558dd25d34902c23f08cc19cef2c49"
+    },
+    {
+      "file": "reports/v086-controls-grenade-0.png",
+      "sha256": "9b81b9a63d027fdf363ab37b7106092e25f6c070740c8f03665bf19074215bbc"
+    },
+    {
+      "file": "reports/v086-controls-pause-panel.png",
+      "sha256": "74ec8edd73e15b32e438df6f22678bd03fac0e60b66983d5709f55a64e31bf9b"
+    },
+    {
+      "file": "reports/v086-controls-shore.png",
+      "sha256": "7e6467c22b12dece5573ace23633bb30894fa10bc0c8087a2261156330272c06"
+    },
+    {
+      "file": "reports/v086-controls-ocean-idle.png",
+      "sha256": "ee40bfcbc552a12bcea08969026bd8ee5dfe13ad8d1f9672beacc32b0f8fb9bb"
+    },
+    {
+      "file": "reports/v086-controls-ocean-multitouch.png",
+      "sha256": "e00b5176c9d3203b32c11b789671c8b460aedd2ae7c7a3ffbdf7a79f991fc7be"
+    },
+    {
+      "file": "reports/v086-controls-ocean-boost-cooldown.png",
+      "sha256": "c98104b83f6fa6bb51d4637da6f41796da371eea9f19d5c757b8190636224f52"
+    },
+    {
+      "file": "reports/v086-controls-ocean-recovered.png",
+      "sha256": "166da904d496076d61fdd5fa222716a3d3445a632f9992b9f0dc162a36ae13f7"
+    },
+    {
+      "file": "reports/v086-menu-fallback.png",
+      "sha256": "0485b9c1d6c97ab4091bf48ddd787d3f32af863e23244ef24e2add897754d6b7"
+    },
+    {
+      "file": "reports/v086-menu-mobile.png",
+      "sha256": "befaab6b90aae439f1aca109ec8e284287660cf3386d9eab63a45ae6917e958c"
+    },
+    {
+      "file": "reports/v086-menu-updated.png",
+      "sha256": "a65bd497180c6854feb4e953f1e7b032775d3926adafd719a069abe9f47e845e"
+    },
+    {
+      "file": "reports/v086-menu-compact.png",
+      "sha256": "bb06ea042b2eaf8cd2b26156c7b06e6db3572028edb60d2420b4a3b9b7a9371a"
+    },
+    {
+      "file": "reports/v086-menu-ocean.png",
+      "sha256": "52046ed1e1deebb313b4857335ad68e7b18774774b21ea753d76eb9d4f1b805c"
+    }
+  ],
+  "preview": "http://127.0.0.1:4190/level02.html",
+  "limitations": [
+    "Fixed-clock Chrome playthroughs do not establish human difficulty or device FPS.",
+    "WeChat/iPhone hardware not tested; package built locally only. No upload or publication."
+  ]
+}

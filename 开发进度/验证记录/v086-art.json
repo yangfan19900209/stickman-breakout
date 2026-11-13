@@ -1,0 +1,354 @@
+{
+  "tool": "image_gen.imagegen",
+  "atlas": {
+    "path": "assets/level02/combat-v086.png",
+    "width": 2048,
+    "height": 512,
+    "bytes": 695201,
+    "sha256": "a6f90940ae1e1f39e0f8cecc902ca81551028d2c464650d9b702d36d0f55cc62"
+  },
+  "records": [
+    {
+      "id": "enemy.harpoon.aim",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        37,
+        39,
+        285,
+        306
+      ],
+      "region": [
+        4,
+        4,
+        200,
+        214
+      ],
+      "opaqueWhite": 9441,
+      "pixels": 41489
+    },
+    {
+      "id": "enemy.harpoon.swim.0",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        376,
+        39,
+        350,
+        289
+      ],
+      "region": [
+        212,
+        4,
+        245,
+        202
+      ],
+      "opaqueWhite": 8389,
+      "pixels": 39754
+    },
+    {
+      "id": "enemy.harpoon.swim.1",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        735,
+        38,
+        329,
+        308
+      ],
+      "region": [
+        465,
+        4,
+        230,
+        216
+      ],
+      "opaqueWhite": 9278,
+      "pixels": 41785
+    },
+    {
+      "id": "enemy.harpoon.evade",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        1100,
+        40,
+        289,
+        282
+      ],
+      "region": [
+        703,
+        4,
+        202,
+        197
+      ],
+      "opaqueWhite": 9341,
+      "pixels": 39294
+    },
+    {
+      "id": "enemy.sonar.aim",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        70,
+        394,
+        252,
+        306
+      ],
+      "region": [
+        913,
+        4,
+        176,
+        214
+      ],
+      "opaqueWhite": 9972,
+      "pixels": 42258
+    },
+    {
+      "id": "enemy.sonar.swim.0",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        409,
+        395,
+        316,
+        287
+      ],
+      "region": [
+        1097,
+        4,
+        221,
+        201
+      ],
+      "opaqueWhite": 8821,
+      "pixels": 40282
+    },
+    {
+      "id": "enemy.sonar.swim.1",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        771,
+        394,
+        295,
+        308
+      ],
+      "region": [
+        1326,
+        4,
+        207,
+        216
+      ],
+      "opaqueWhite": 9842,
+      "pixels": 42364
+    },
+    {
+      "id": "enemy.sonar.evade",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        1133,
+        394,
+        257,
+        285
+      ],
+      "region": [
+        1541,
+        4,
+        180,
+        200
+      ],
+      "opaqueWhite": 9892,
+      "pixels": 39981
+    },
+    {
+      "id": "enemy.torpedo.aim",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        55,
+        752,
+        267,
+        306
+      ],
+      "region": [
+        1729,
+        4,
+        187,
+        214
+      ],
+      "opaqueWhite": 11562,
+      "pixels": 43810
+    },
+    {
+      "id": "enemy.torpedo.swim.0",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        402,
+        752,
+        323,
+        290
+      ],
+      "region": [
+        4,
+        228,
+        226,
+        203
+      ],
+      "opaqueWhite": 9919,
+      "pixels": 41631
+    },
+    {
+      "id": "enemy.torpedo.swim.1",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        760,
+        752,
+        307,
+        310
+      ],
+      "region": [
+        238,
+        228,
+        215,
+        217
+      ],
+      "opaqueWhite": 10993,
+      "pixels": 43724
+    },
+    {
+      "id": "enemy.torpedo.evade",
+      "source": "enemy-loadouts.png",
+      "sourceSHA256": "5a514a563562a35a256eb58316865a2ab21f04bedad93615bed45e79a4cf6466",
+      "crop": [
+        1125,
+        752,
+        267,
+        281
+      ],
+      "region": [
+        461,
+        228,
+        187,
+        197
+      ],
+      "opaqueWhite": 10941,
+      "pixels": 41010
+    },
+    {
+      "id": "shot.player.sonar",
+      "source": "projectiles.png",
+      "sourceSHA256": "d7f0e4260e449e7f2c887e10cf830be1cf47eb0c2e6f428b49bd502f02da05d6",
+      "crop": [
+        584,
+        66,
+        340,
+        429
+      ],
+      "region": [
+        656,
+        228,
+        119,
+        150
+      ],
+      "opaqueWhite": 39095,
+      "pixels": 80969
+    },
+    {
+      "id": "shot.player.torpedo",
+      "source": "projectiles.png",
+      "sourceSHA256": "d7f0e4260e449e7f2c887e10cf830be1cf47eb0c2e6f428b49bd502f02da05d6",
+      "crop": [
+        991,
+        144,
+        524,
+        286
+      ],
+      "region": [
+        783,
+        228,
+        183,
+        100
+      ],
+      "opaqueWhite": 57772,
+      "pixels": 94318
+    },
+    {
+      "id": "shot.enemy.sonar",
+      "source": "projectiles.png",
+      "sourceSHA256": "d7f0e4260e449e7f2c887e10cf830be1cf47eb0c2e6f428b49bd502f02da05d6",
+      "crop": [
+        584,
+        543,
+        343,
+        437
+      ],
+      "region": [
+        974,
+        228,
+        120,
+        153
+      ],
+      "opaqueWhite": 24250,
+      "pixels": 85003
+    },
+    {
+      "id": "shot.enemy.torpedo",
+      "source": "projectiles.png",
+      "sourceSHA256": "d7f0e4260e449e7f2c887e10cf830be1cf47eb0c2e6f428b49bd502f02da05d6",
+      "crop": [
+        991,
+        624,
+        524,
+        288
+      ],
+      "region": [
+        1102,
+        228,
+        183,
+        101
+      ],
+      "opaqueWhite": 43841,
+      "pixels": 94516
+    },
+    {
+      "id": "shot.player.harpoon",
+      "source": "harpoon-darts.png",
+      "sourceSHA256": "e96ff2175be41b93b114ef3901872a8d95c02fdc4b5d5ca8967b5c7101be4d70",
+      "crop": [
+        71,
+        70,
+        2027,
+        274
+      ],
+      "region": [
+        1293,
+        228,
+        243,
+        33
+      ],
+      "opaqueWhite": 100747,
+      "pixels": 196360
+    },
+    {
+      "id": "shot.enemy.harpoon",
+      "source": "harpoon-darts.png",
+      "sourceSHA256": "e96ff2175be41b93b114ef3901872a8d95c02fdc4b5d5ca8967b5c7101be4d70",
+      "crop": [
+        71,
+        390,
+        2027,
+        275
+      ],
+      "region": [
+        1544,
+        228,
+        243,
+        33
+      ],
+      "opaqueWhite": 71566,
+      "pixels": 207973
+    }
+  ]
+}

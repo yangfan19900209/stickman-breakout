@@ -1,0 +1,550 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: {\"shoot\":true,\"baseline\":false,\"nearEdge\":false,\"release\":{\"shootHeld\":false,\"hudHeight\":95.26717557251908,\"stick\":{\"x\":-36.64122137404581,\"y\":3.6641221374045756,\"axis\":-0.26598812955658546,\"vertical\":0.026598812955658503,\"owner\":1},\"layout\":{\"systemMenu\":null,\"systemReservedLeft\":null,\"safeInsets\":{\"left\":0,\"right\":0,\"bottom\":0,\"top\":0},\"hud\":{\"levelX\":1330.0763358778622,\"levelWidth\":241.83206106870227,\"trackWidth\":205.19083969465646,\"trackX\":1227.480916030534,\"secondRow\":false,\"objectiveX\":926.1068702290074,\"objectiveWidth\":522.1374045801523},\"joystick\":{\"x\":171.6412213740458,\"y\":164.31297709923663,\"r\":95.76,\"baseR\":135,\"knobR\":64.8,\"hit\":270,\"unit\":1.83206106870229},\"jump\":{\"x\":1192.1770992366414,\"y\":228.46809160305344,\"r\":64.8,\"hit\":151.58473282442748},\"shoot\":{\"x\":1407.114503816794,\"y\":164.31297709923663,\"r\":107.99999999999999,\"hit\":241.64885496183203},\"grenade\":{\"x\":1418.1068702290077,\"y\":365.5062595419847,\"r\":54.72,\"hit\":131.42473282442748},\"pause\":{\"x\":1505.9541984732823,\"y\":668.7022900763359,\"hit\":80.61068702290076}},\"floating\":{\"originX\":171.6412213740458,\"originY\":164.31297709923666,\"baseX\":171.6412213740458,\"baseY\":164.31297709923666,\"owners\":[{\"id\":1,\"role\":\"move\"}]}}}\n\n1 !== null\n",
+  "stack": "AssertionError [ERR_ASSERTION]: {\"shoot\":true,\"baseline\":false,\"nearEdge\":false,\"release\":{\"shootHeld\":false,\"hudHeight\":95.26717557251908,\"stick\":{\"x\":-36.64122137404581,\"y\":3.6641221374045756,\"axis\":-0.26598812955658546,\"vertical\":0.026598812955658503,\"owner\":1},\"layout\":{\"systemMenu\":null,\"systemReservedLeft\":null,\"safeInsets\":{\"left\":0,\"right\":0,\"bottom\":0,\"top\":0},\"hud\":{\"levelX\":1330.0763358778622,\"levelWidth\":241.83206106870227,\"trackWidth\":205.19083969465646,\"trackX\":1227.480916030534,\"secondRow\":false,\"objectiveX\":926.1068702290074,\"objectiveWidth\":522.1374045801523},\"joystick\":{\"x\":171.6412213740458,\"y\":164.31297709923663,\"r\":95.76,\"baseR\":135,\"knobR\":64.8,\"hit\":270,\"unit\":1.83206106870229},\"jump\":{\"x\":1192.1770992366414,\"y\":228.46809160305344,\"r\":64.8,\"hit\":151.58473282442748},\"shoot\":{\"x\":1407.114503816794,\"y\":164.31297709923663,\"r\":107.99999999999999,\"hit\":241.64885496183203},\"grenade\":{\"x\":1418.1068702290077,\"y\":365.5062595419847,\"r\":54.72,\"hit\":131.42473282442748},\"pause\":{\"x\":1505.9541984732823,\"y\":668.7022900763359,\"hit\":80.61068702290076}},\"floating\":{\"originX\":171.6412213740458,\"originY\":164.31297709923666,\"baseX\":171.6412213740458,\"baseY\":164.31297709923666,\"owners\":[{\"id\":1,\"role\":\"move\"}]}}}\n\n1 !== null\n\n    at file:///C:/Users/Administrator/Desktop/%E7%BA%BF%E6%9D%A1%E7%AA%81%E5%9B%B4/scripts/verify-v101-controls.mjs:39:10",
+  "cases": [
+    {
+      "baseline": false,
+      "shoot": false,
+      "nearEdge": false,
+      "origin": {
+        "x": 171.6412213740458,
+        "y": 164.31297709923663
+      },
+      "samples": [
+        {
+          "distanceCss": 50,
+          "side": 1,
+          "player": {
+            "x": 177.7500000000002,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 91.60305343511453,
+            "y": 9.160305343511453,
+            "axis": 0.9492666639514604,
+            "vertical": 0.09492666639514603,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 25,
+          "side": -1,
+          "player": {
+            "x": 151.7361111111112,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -45.80152671755725,
+            "y": 4.580152671755712,
+            "axis": -0.3798678852890644,
+            "vertical": 0.03798678852890633,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 16,
+          "side": 1,
+          "player": {
+            "x": 180.08333333333354,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 29.31297709923666,
+            "y": 2.9313088919370216,
+            "axis": 0.17488433212906082,
+            "vertical": 0.017488499925984422,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 12,
+          "side": -1,
+          "player": {
+            "x": 154.06944444444454,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -21.984732824427482,
+            "y": 2.1984956464694676,
+            "axis": -0.08378053947390052,
+            "vertical": 0.008378139173362017,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 11,
+          "side": 1,
+          "player": {
+            "x": 177.7500000000002,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 20.15267175572521,
+            "y": 2.015278357585885,
+            "axis": 0.06100457965043522,
+            "vertical": 0.006100491814353092,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 20,
+          "side": -1,
+          "player": {
+            "x": 151.7361111111112,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -36.64122137404581,
+            "y": 3.6641221374045756,
+            "axis": -0.26598812955658546,
+            "vertical": 0.026598812955658503,
+            "owner": 1
+          }
+        }
+      ],
+      "reverse": {
+        "x": 100.87500000000014,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true,
+        "canDropThrough": false,
+        "dropCount": 0
+      },
+      "downs": [
+        {
+          "x": 89.76388888888903,
+          "y": 150,
+          "vx": 0,
+          "vy": 0,
+          "health": 5,
+          "grounded": true,
+          "facing": -1,
+          "animation": "Crouch",
+          "crouched": true,
+          "hitTime": 0,
+          "meleeActive": false,
+          "aimPitch": 0,
+          "airJumpsRemaining": 1,
+          "jumpCount": 0,
+          "canJump": true,
+          "canDropThrough": false,
+          "dropCount": 0
+        },
+        {
+          "x": 89.76388888888903,
+          "y": 150,
+          "vx": 0,
+          "vy": 0,
+          "health": 5,
+          "grounded": true,
+          "facing": -1,
+          "animation": "Crouch",
+          "crouched": true,
+          "hitTime": 0,
+          "meleeActive": false,
+          "aimPitch": 0,
+          "airJumpsRemaining": 1,
+          "jumpCount": 0,
+          "canJump": true,
+          "canDropThrough": false,
+          "dropCount": 0
+        }
+      ],
+      "stopped": {
+        "x": 89.76388888888903,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Idle",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true,
+        "canDropThrough": false,
+        "dropCount": 0
+      }
+    },
+    {
+      "baseline": false,
+      "shoot": false,
+      "nearEdge": true,
+      "origin": {
+        "x": 749.2396946564885,
+        "y": 164.31297709923663
+      },
+      "samples": [
+        {
+          "distanceCss": 50,
+          "side": 1,
+          "player": {
+            "x": 177.7500000000002,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 91.60305343511448,
+            "y": 9.160305343511453,
+            "axis": 0.9492666639514598,
+            "vertical": 0.09492666639514603,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 25,
+          "side": -1,
+          "player": {
+            "x": 151.7361111111112,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -45.801526717557294,
+            "y": 4.580152671755712,
+            "axis": -0.37986788528906495,
+            "vertical": 0.03798678852890636,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 16,
+          "side": 1,
+          "player": {
+            "x": 180.08333333333354,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 29.312977099236605,
+            "y": 2.9313088919370216,
+            "axis": 0.17488433212906013,
+            "vertical": 0.017488499925984384,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 12,
+          "side": -1,
+          "player": {
+            "x": 154.06944444444454,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -21.98473282442751,
+            "y": 2.1984956464694676,
+            "axis": -0.08378053947390085,
+            "vertical": 0.00837813917336204,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 11,
+          "side": 1,
+          "player": {
+            "x": 177.7500000000002,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": 20.152671755725123,
+            "y": 2.015278357585885,
+            "axis": 0.06100457965043417,
+            "vertical": 0.0061004918143530125,
+            "owner": 1
+          }
+        },
+        {
+          "distanceCss": 20,
+          "side": -1,
+          "player": {
+            "x": 151.7361111111112,
+            "y": 150,
+            "vx": -280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": -1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "stick": {
+            "x": -36.64122137404581,
+            "y": 3.6641221374045756,
+            "axis": -0.26598812955658546,
+            "vertical": 0.026598812955658503,
+            "owner": 1
+          }
+        }
+      ],
+      "reverse": {
+        "x": 100.87500000000014,
+        "y": 150,
+        "vx": -280,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Run",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true,
+        "canDropThrough": false,
+        "dropCount": 0
+      },
+      "downs": [
+        {
+          "x": 89.76388888888903,
+          "y": 150,
+          "vx": 0,
+          "vy": 0,
+          "health": 5,
+          "grounded": true,
+          "facing": -1,
+          "animation": "Crouch",
+          "crouched": true,
+          "hitTime": 0,
+          "meleeActive": false,
+          "aimPitch": 0,
+          "airJumpsRemaining": 1,
+          "jumpCount": 0,
+          "canJump": true,
+          "canDropThrough": false,
+          "dropCount": 0
+        },
+        {
+          "x": 89.76388888888903,
+          "y": 150,
+          "vx": 0,
+          "vy": 0,
+          "health": 5,
+          "grounded": true,
+          "facing": -1,
+          "animation": "Crouch",
+          "crouched": true,
+          "hitTime": 0,
+          "meleeActive": false,
+          "aimPitch": 0,
+          "airJumpsRemaining": 1,
+          "jumpCount": 0,
+          "canJump": true,
+          "canDropThrough": false,
+          "dropCount": 0
+        }
+      ],
+      "stopped": {
+        "x": 89.76388888888903,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Idle",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true,
+        "canDropThrough": false,
+        "dropCount": 0
+      }
+    }
+  ],
+  "captures": [
+    "reports/v101-controls-after-move-center.png",
+    "reports/v101-controls-after-move-edge.png"
+  ],
+  "errors": [],
+  "failed": []
+}

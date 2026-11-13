@@ -1,0 +1,125 @@
+{
+  "processing": "Original-alpha crops; unwanted atlas borders excluded; separate 192-color runtime quantization is lossy",
+  "frames": [
+    {
+      "id": "drawn.grass",
+      "sheet": "../素材/游戏美术/source/v075/drawn-terrain.png",
+      "sheetSHA256": "70ebf6b36cb214bb04686c8e5fab9285c462f9f50ecba676370e56a098329abf",
+      "crop": [
+        23,
+        142,
+        586,
+        246
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.grass.png",
+      "sourceSHA256": "63f5d0c1fbb70c8e9f6d752a0918507ff61d873048578f0f62236d35371c4954",
+      "runtime": "assets/landart/drawn-terrain.png",
+      "runtimeSHA256": "837f212707e94d0754f4ed9c1a8e495a2443480d0b69fa4d617d1609f5086fdd"
+    },
+    {
+      "id": "drawn.concrete",
+      "sheet": "../素材/游戏美术/source/v075/drawn-terrain.png",
+      "sheetSHA256": "70ebf6b36cb214bb04686c8e5fab9285c462f9f50ecba676370e56a098329abf",
+      "crop": [
+        633,
+        72,
+        599,
+        316
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.concrete.png",
+      "sourceSHA256": "1c50e2155226970b4a41753ae90e5603995171e932c20d82fb44b58fc986b5c6",
+      "runtime": "assets/landart/drawn-terrain.png",
+      "runtimeSHA256": "837f212707e94d0754f4ed9c1a8e495a2443480d0b69fa4d617d1609f5086fdd"
+    },
+    {
+      "id": "drawn.steel",
+      "sheet": "../素材/游戏美术/source/v075/drawn-terrain.png",
+      "sheetSHA256": "70ebf6b36cb214bb04686c8e5fab9285c462f9f50ecba676370e56a098329abf",
+      "crop": [
+        17,
+        511,
+        610,
+        245
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.steel.png",
+      "sourceSHA256": "6a064d13aada9b11102b50532ae251ac869abafe0fa4a1dd02b608eb631076af",
+      "runtime": "assets/landart/drawn-terrain.png",
+      "runtimeSHA256": "837f212707e94d0754f4ed9c1a8e495a2443480d0b69fa4d617d1609f5086fdd"
+    },
+    {
+      "id": "drawn.wall",
+      "sheet": "../素材/游戏美术/source/v075/drawn-terrain.png",
+      "sheetSHA256": "70ebf6b36cb214bb04686c8e5fab9285c462f9f50ecba676370e56a098329abf",
+      "crop": [
+        670,
+        420,
+        542,
+        351
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.wall.png",
+      "sourceSHA256": "7179db38b7f44d3d020e8c7491d1024cb4db7cb74203eb99510047b57d8d9a4c",
+      "runtime": "assets/landart/drawn-terrain.png",
+      "runtimeSHA256": "837f212707e94d0754f4ed9c1a8e495a2443480d0b69fa4d617d1609f5086fdd"
+    },
+    {
+      "id": "drawn.coast",
+      "sheet": "../素材/游戏美术/source/v075/drawn-terrain.png",
+      "sheetSHA256": "70ebf6b36cb214bb04686c8e5fab9285c462f9f50ecba676370e56a098329abf",
+      "crop": [
+        22,
+        814,
+        508,
+        413
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.coast.png",
+      "sourceSHA256": "e43bfe4c82f9bf1b24176c4bf1353fe83f5eb1e5550f341a887dc4ab52eb1255",
+      "runtime": "assets/landart/drawn-terrain.png",
+      "runtimeSHA256": "837f212707e94d0754f4ed9c1a8e495a2443480d0b69fa4d617d1609f5086fdd"
+    },
+    {
+      "id": "drawn.factory",
+      "sheet": "../素材/游戏美术/source/v075/drawn-terrain.png",
+      "sheetSHA256": "70ebf6b36cb214bb04686c8e5fab9285c462f9f50ecba676370e56a098329abf",
+      "crop": [
+        530,
+        806,
+        705,
+        421
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.factory.png",
+      "sourceSHA256": "c7810dc36f2d38d1f4515a74eddfa7dc0181f6be9c91b7d646a6159ad59155b2",
+      "runtime": "assets/landart/drawn-terrain.png",
+      "runtimeSHA256": "837f212707e94d0754f4ed9c1a8e495a2443480d0b69fa4d617d1609f5086fdd"
+    },
+    {
+      "id": "drawn.fill.soil",
+      "sheet": "../素材/游戏美术/source/v075/drawn-fill-repeat.png",
+      "sheetSHA256": "92c6b68ef58723aafd290aa2303bbc4378a3cd51846c2356a9a9a8861fd1b53e",
+      "crop": [
+        8,
+        8,
+        752,
+        1008
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.fill.soil.png",
+      "sourceSHA256": "5fc0da75ea11ab351595f80ef62b311410e8fafc8fa4800e8f04e36654815a96",
+      "runtime": "assets/landart/drawn-fill.png",
+      "runtimeSHA256": "2f18ab54249ec315e29d380207080efc7a88a7234dbfb39571c98068f287ba1c"
+    },
+    {
+      "id": "drawn.fill.concrete",
+      "sheet": "../素材/游戏美术/source/v075/drawn-fill-repeat.png",
+      "sheetSHA256": "92c6b68ef58723aafd290aa2303bbc4378a3cd51846c2356a9a9a8861fd1b53e",
+      "crop": [
+        776,
+        8,
+        752,
+        1008
+      ],
+      "source": "../素材/游戏美术/slices/v075/drawn.fill.concrete.png",
+      "sourceSHA256": "a4495274db9451810737b8570a8ea5a39244b061cf97053b5af10393abcc03db",
+      "runtime": "assets/landart/drawn-fill.png",
+      "runtimeSHA256": "2f18ab54249ec315e29d380207080efc7a88a7234dbfb39571c98068f287ba1c"
+    }
+  ]
+}

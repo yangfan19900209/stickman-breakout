@@ -1,0 +1,305 @@
+{
+  "processing": "Original-alpha crops; runtime resize and 192-color palette quantization are lossy. Torpedo background repaired by built-in imagegen before cropping.",
+  "frames": [
+    {
+      "id": "land.grass",
+      "sheet": "../素材/游戏美术/source/v074/land.png",
+      "sheetSHA256": "3f28dbe3f71cda1cf961f17ecff3d3954c45d21d4a0971effed14324b266723b",
+      "crop": [
+        13,
+        147,
+        598,
+        207
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.grass.png",
+      "sourceSHA256": "1b32f34f0cde3aede4ad70f2426260d8840d0a488e872f120edfde5f763b210f",
+      "runtime": "assets/landart/terrain.png",
+      "runtimeSHA256": "b72ec2c9e3ad177374ce2d25f53bcea0a1bdbf8f593d4c39bb47e4228376bbca"
+    },
+    {
+      "id": "land.concrete",
+      "sheet": "../素材/游戏美术/source/v074/land.png",
+      "sheetSHA256": "3f28dbe3f71cda1cf961f17ecff3d3954c45d21d4a0971effed14324b266723b",
+      "crop": [
+        642,
+        81,
+        599,
+        273
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.concrete.png",
+      "sourceSHA256": "9842a0001f1488c8ea4b8750657e9aa4523866f5b926fe199d7775fa50e7e87b",
+      "runtime": "assets/landart/terrain.png",
+      "runtimeSHA256": "b72ec2c9e3ad177374ce2d25f53bcea0a1bdbf8f593d4c39bb47e4228376bbca"
+    },
+    {
+      "id": "land.steel",
+      "sheet": "../素材/游戏美术/source/v074/land.png",
+      "sheetSHA256": "3f28dbe3f71cda1cf961f17ecff3d3954c45d21d4a0971effed14324b266723b",
+      "crop": [
+        7,
+        497,
+        621,
+        217
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.steel.png",
+      "sourceSHA256": "1f0af6b8f2da1b32e098f0a9b1d972becf0b36c6005e55e6be624fb066cca735",
+      "runtime": "assets/landart/terrain.png",
+      "runtimeSHA256": "b72ec2c9e3ad177374ce2d25f53bcea0a1bdbf8f593d4c39bb47e4228376bbca"
+    },
+    {
+      "id": "land.wall",
+      "sheet": "../素材/游戏美术/source/v074/land.png",
+      "sheetSHA256": "3f28dbe3f71cda1cf961f17ecff3d3954c45d21d4a0971effed14324b266723b",
+      "crop": [
+        686,
+        398,
+        514,
+        335
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.wall.png",
+      "sourceSHA256": "8c50dfc4eb83776dafd09b49717a7e72cacf8a03540f5c72aaeb5e8fc01ea28e",
+      "runtime": "assets/landart/terrain.png",
+      "runtimeSHA256": "b72ec2c9e3ad177374ce2d25f53bcea0a1bdbf8f593d4c39bb47e4228376bbca"
+    },
+    {
+      "id": "land.coast",
+      "sheet": "../素材/游戏美术/source/v074/landmarks.png",
+      "sheetSHA256": "f3fa094e643b107e287c80ea9604b73a2beda212f658cb2c5ab4e4d66229386e",
+      "crop": [
+        23,
+        185,
+        760,
+        556
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.coast.png",
+      "sourceSHA256": "3e3f9c254a757d2e5ea54726bd1dc1e961e27d43bc9587c06afe86e683838155",
+      "runtime": "assets/landart/landmarks.png",
+      "runtimeSHA256": "f1399db7a610b2a7ed254cedbcd16488a7b472643e88ddc85ecf24a0cc101d69"
+    },
+    {
+      "id": "land.factory",
+      "sheet": "../素材/游戏美术/source/v074/landmarks.png",
+      "sheetSHA256": "f3fa094e643b107e287c80ea9604b73a2beda212f658cb2c5ab4e4d66229386e",
+      "crop": [
+        803,
+        167,
+        941,
+        574
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.factory.png",
+      "sourceSHA256": "bad38624be6cee2bf79158011c18814b16e729256f47a1d5c20eec9e9ba8755d",
+      "runtime": "assets/landart/landmarks.png",
+      "runtimeSHA256": "f1399db7a610b2a7ed254cedbcd16488a7b472643e88ddc85ecf24a0cc101d69"
+    },
+    {
+      "id": "land.fill.soil",
+      "sheet": "../素材/游戏美术/source/v074/fill.png",
+      "sheetSHA256": "0c1169b5b78ad8f080afe21b11166b6941a6ea2178ad61fb4849f4d503ed1fbb",
+      "crop": [
+        0,
+        0,
+        768,
+        1024
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.fill.soil.png",
+      "sourceSHA256": "aa776382950c074a1ec225855fa7162b27b4b76a6216cf71fce89bf38c56bba5",
+      "runtime": "assets/landart/fill.png",
+      "runtimeSHA256": "b223411d97d8a70ac2f2a31dffd26fa72fa0856d0c3215946ca65d569acf9f24"
+    },
+    {
+      "id": "land.fill.concrete",
+      "sheet": "../素材/游戏美术/source/v074/fill.png",
+      "sheetSHA256": "0c1169b5b78ad8f080afe21b11166b6941a6ea2178ad61fb4849f4d503ed1fbb",
+      "crop": [
+        768,
+        0,
+        768,
+        1024
+      ],
+      "source": "../素材/游戏美术/slices/v074/land.fill.concrete.png",
+      "sourceSHA256": "2c49bd4b8a945bcdd638d8413891fede06ff40c2030f927488fbc6c78bbbd388",
+      "runtime": "assets/landart/fill.png",
+      "runtimeSHA256": "b223411d97d8a70ac2f2a31dffd26fa72fa0856d0c3215946ca65d569acf9f24"
+    },
+    {
+      "id": "diver.torpedo.hover.0",
+      "sheet": "../素材/游戏美术/source/v074/torpedo-alpha.png",
+      "sheetSHA256": "27e35ffe74af8a4a30f7e4b1596eb6b09db0cf37cf0a77b487e98b57f0a027f3",
+      "crop": [
+        78,
+        24,
+        369,
+        442
+      ],
+      "source": "../素材/游戏美术/slices/v074/diver.torpedo.hover.0.png",
+      "sourceSHA256": "5c780c51790f81ed32980dd38eb4b10b429211825ed5fbff24b94f766204b2f9",
+      "runtime": "assets/level02/diver.torpedo.hover.0.png",
+      "runtimeSHA256": "fb26209179130751fb838f5c31a3e1b74e79d89b621b0a12611851433e8f3683"
+    },
+    {
+      "id": "diver.torpedo.hover.1",
+      "sheet": "../素材/游戏美术/source/v074/torpedo-alpha.png",
+      "sheetSHA256": "27e35ffe74af8a4a30f7e4b1596eb6b09db0cf37cf0a77b487e98b57f0a027f3",
+      "crop": [
+        555,
+        23,
+        391,
+        446
+      ],
+      "source": "../素材/游戏美术/slices/v074/diver.torpedo.hover.1.png",
+      "sourceSHA256": "b829bc2b47412f2ba28b897ab4194ecc9726a06a82d71c0c9bf4145728a49326",
+      "runtime": "assets/level02/diver.torpedo.hover.1.png",
+      "runtimeSHA256": "e40fc60dcd5dae5c0ea393d5756f039757cde6eca54388ec416866c904358447"
+    },
+    {
+      "id": "diver.torpedo.swim.0",
+      "sheet": "../素材/游戏美术/source/v074/torpedo-alpha.png",
+      "sheetSHA256": "27e35ffe74af8a4a30f7e4b1596eb6b09db0cf37cf0a77b487e98b57f0a027f3",
+      "crop": [
+        1012,
+        41,
+        493,
+        413
+      ],
+      "source": "../素材/游戏美术/slices/v074/diver.torpedo.swim.0.png",
+      "sourceSHA256": "e801f923f9147e20b4ffee5b1e51fb782c7cec5cba293cd2abd44df345209c71",
+      "runtime": "assets/level02/diver.torpedo.swim.0.png",
+      "runtimeSHA256": "9189c50dbad79ab2ff9b9ce00621fc82d21bb146104bc2b2d22ef0ef44898ecf"
+    },
+    {
+      "id": "diver.torpedo.swim.1",
+      "sheet": "../素材/游戏美术/source/v074/torpedo-alpha.png",
+      "sheetSHA256": "27e35ffe74af8a4a30f7e4b1596eb6b09db0cf37cf0a77b487e98b57f0a027f3",
+      "crop": [
+        42,
+        547,
+        434,
+        421
+      ],
+      "source": "../素材/游戏美术/slices/v074/diver.torpedo.swim.1.png",
+      "sourceSHA256": "d8e6321945c5026003d0fabea2d81e59940c088f639513d7ecf4bace0f585317",
+      "runtime": "assets/level02/diver.torpedo.swim.1.png",
+      "runtimeSHA256": "365a35c54245e9014b44f7d6c68e73bb9f1c59d8caf964066f7ecc9f74acba30"
+    },
+    {
+      "id": "diver.torpedo.swim.2",
+      "sheet": "../素材/游戏美术/source/v074/torpedo-alpha.png",
+      "sheetSHA256": "27e35ffe74af8a4a30f7e4b1596eb6b09db0cf37cf0a77b487e98b57f0a027f3",
+      "crop": [
+        539,
+        550,
+        419,
+        401
+      ],
+      "source": "../素材/游戏美术/slices/v074/diver.torpedo.swim.2.png",
+      "sourceSHA256": "69b53a052f7e611e323ce53bd45185527776255b9d52cdf7228785e5eab7ceb0",
+      "runtime": "assets/level02/diver.torpedo.swim.2.png",
+      "runtimeSHA256": "2c9afd01c65794e0af290398abcaab22ae49739c422ceddcb5ba2a5481246556"
+    },
+    {
+      "id": "diver.torpedo.boost",
+      "sheet": "../素材/游戏美术/source/v074/torpedo-alpha.png",
+      "sheetSHA256": "27e35ffe74af8a4a30f7e4b1596eb6b09db0cf37cf0a77b487e98b57f0a027f3",
+      "crop": [
+        998,
+        560,
+        519,
+        372
+      ],
+      "source": "../素材/游戏美术/slices/v074/diver.torpedo.boost.png",
+      "sourceSHA256": "75f4d9837450546f24005ba9a64dd32926bbdbc61758ec6de6244ba0f83a14b1",
+      "runtime": "assets/level02/diver.torpedo.boost.png",
+      "runtimeSHA256": "1a3ca942da63a7cf6f26b423ea9a6c515a97e0eda6159c8c7f27a16b7b0b66ed"
+    },
+    {
+      "id": "chest.closed",
+      "sheet": "../素材/游戏美术/source/v074/entry.png",
+      "sheetSHA256": "69359b8eac27d55bc275ebaeced4e26d780d6396f738837833b19ae0a29a7c52",
+      "crop": [
+        107,
+        114,
+        333,
+        323
+      ],
+      "source": "../素材/游戏美术/slices/v074/chest.closed.png",
+      "sourceSHA256": "53148381afa3adfea7d980f411c47030a9dbb71d20754007fcbaa69b314362db",
+      "runtime": "assets/level02/chest.closed.png",
+      "runtimeSHA256": "6803d5fb595fd3c560f706c2707e8a937e0554d279c59f8993b5e867f2db102d"
+    },
+    {
+      "id": "chest.half",
+      "sheet": "../素材/游戏美术/source/v074/entry.png",
+      "sheetSHA256": "69359b8eac27d55bc275ebaeced4e26d780d6396f738837833b19ae0a29a7c52",
+      "crop": [
+        590,
+        88,
+        350,
+        350
+      ],
+      "source": "../素材/游戏美术/slices/v074/chest.half.png",
+      "sourceSHA256": "95452c7cae78826b13cf09afebe7494160300b7e601ae617c8d8b7bec3654180",
+      "runtime": "assets/level02/chest.half.png",
+      "runtimeSHA256": "bb2519b68aee791375651795d02dfef81c8c9deaed6a69fbd2e1b32f2429e20b"
+    },
+    {
+      "id": "chest.open",
+      "sheet": "../素材/游戏美术/source/v074/entry.png",
+      "sheetSHA256": "69359b8eac27d55bc275ebaeced4e26d780d6396f738837833b19ae0a29a7c52",
+      "crop": [
+        1090,
+        15,
+        352,
+        423
+      ],
+      "source": "../素材/游戏美术/slices/v074/chest.open.png",
+      "sourceSHA256": "f45ec24960b808e46e74b51350020ebc007c7d32ad02bf74eb6b63acbdfbf15f",
+      "runtime": "assets/level02/chest.open.png",
+      "runtimeSHA256": "3053259bec50e8a3e23aff7d809f0fb675c417839265e60c6e6076fd4c6858db"
+    },
+    {
+      "id": "shore.reach",
+      "sheet": "../素材/游戏美术/source/v074/entry.png",
+      "sheetSHA256": "69359b8eac27d55bc275ebaeced4e26d780d6396f738837833b19ae0a29a7c52",
+      "crop": [
+        106,
+        606,
+        325,
+        367
+      ],
+      "source": "../素材/游戏美术/slices/v074/shore.reach.png",
+      "sourceSHA256": "c07278c6a75ddf7525497903c35d24111d90e21975117edde6c89d69b1275ecb",
+      "runtime": "assets/level02/shore.reach.png",
+      "runtimeSHA256": "3c7406c72a3adc8f5142b685067835240c175286b6045c105cb063bae2f0c846"
+    },
+    {
+      "id": "shore.take",
+      "sheet": "../素材/游戏美术/source/v074/entry.png",
+      "sheetSHA256": "69359b8eac27d55bc275ebaeced4e26d780d6396f738837833b19ae0a29a7c52",
+      "crop": [
+        597,
+        590,
+        322,
+        382
+      ],
+      "source": "../素材/游戏美术/slices/v074/shore.take.png",
+      "sourceSHA256": "fa1775de7057ef3df2e834931968a2f97c9b1f7e224fbd92c28a5d0a2e63e20d",
+      "runtime": "assets/level02/shore.take.png",
+      "runtimeSHA256": "fd1179f1f6f4956aa176e1cba833284c4c7f245b6ef9526a68fc580895e096d4"
+    },
+    {
+      "id": "shore.mask",
+      "sheet": "../素材/游戏美术/source/v074/entry.png",
+      "sheetSHA256": "69359b8eac27d55bc275ebaeced4e26d780d6396f738837833b19ae0a29a7c52",
+      "crop": [
+        1100,
+        505,
+        277,
+        468
+      ],
+      "source": "../素材/游戏美术/slices/v074/shore.mask.png",
+      "sourceSHA256": "88707d5246742c5689fff4dce12a7839358db90cf3e0dfa24de45702fa9ebf60",
+      "runtime": "assets/level02/shore.mask.png",
+      "runtimeSHA256": "4756e711c4d639ee66a0ed7d2490a6f8d6ff481871738ace1156b993ad519639"
+    }
+  ]
+}

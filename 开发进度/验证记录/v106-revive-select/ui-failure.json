@@ -1,0 +1,23 @@
+{
+  "error": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+  "stack": "page.waitForFunction: Timeout 30000ms exceeded.\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\源码\\scripts\\verify-v106-ui.mjs:68:64",
+  "cases": [
+    {
+      "name": "real-death-revive-second-death-restart",
+      "passed": true,
+      "shareRequests": 1,
+      "primaryHeight": 52.4,
+      "smallRestartHeight": 50
+    }
+  ],
+  "captures": [
+    "../开发进度/验证记录/v106-revive-select/death-852.png",
+    "../开发进度/验证记录/v106-revive-select/revive-preparation.png",
+    "../开发进度/验证记录/v106-revive-select/revived-protection.png",
+    "../开发进度/验证记录/v106-revive-select/second-death-667.png",
+    "../开发进度/验证记录/v106-revive-select/chapter-select-cleared-1-667.png",
+    "../开发进度/验证记录/v106-revive-select/chapter-select-portrait-1.png"
+  ],
+  "errors": [],
+  "failed": []
+}

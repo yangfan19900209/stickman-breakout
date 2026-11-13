@@ -1,0 +1,267 @@
+{
+  "version": "0.7.3",
+  "checkedAt": "2026-11-07T02:01:42.019Z",
+  "sourceSHA256": "869fd5b46d957b17e4c5a0fbccd2e86a10dccb4ae6c99d2f6ac3b29f6a437ddc",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 196,
+    "passed": 196,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": "http://127.0.0.1:4190/level02.html",
+  "changes": [
+    "Generated detailed reef, seabed, wreck and pumping station sprites",
+    "Unlimited harpoon default with sonar and torpedo drops",
+    "Burst, marksman, limited-homing torpedo divers and captain pattern cycle",
+    "Eight-frame underwater blast animation and short impact flashes"
+  ],
+  "assets": {
+    "frames": 22,
+    "manifest": "art/v073-manifest.json",
+    "generation": "art/v073-generation.json",
+    "runtimeBytes": 528823
+  },
+  "geometry": {
+    "landforms": 13,
+    "collisionBands": 803,
+    "method": "80 sampled bands through each illustrated solid body; coral fronds, cables and supports are decoration"
+  },
+  "browser": {
+    "evidence": "reports/v073-browser-campaign.json",
+    "lifecycle": "reports/v073-browser-lifecycle.json",
+    "upgrades": "reports/v073-browser-upgrades.json",
+    "errors": 0,
+    "clearTime": 82.61666666667848,
+    "hp": 1,
+    "kills": 25,
+    "shoreFrames": [
+      "player.run.3",
+      "player.run.6",
+      "player.run.1",
+      "player.run.4",
+      "player.run.7"
+    ],
+    "shallowAmbient": {
+      "fishSchools": 2,
+      "bubbles": 25,
+      "time": 8.30000000000017,
+      "terrain": "generated-modular"
+    },
+    "weapons": [
+      "harpoon",
+      "sonar",
+      "torpedo"
+    ],
+    "enemyAttacks": [
+      "torpedo",
+      "burst",
+      "dash",
+      "fan"
+    ]
+  },
+  "web": {
+    "files": 346,
+    "bytes": 9070290,
+    "sha256": "9d22d13ef3b7bf1f40b537c043f83ecfea103bd24fff092110c8ce3513792fbc",
+    "entryTime": 1794016433692.573,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "files": 357,
+    "bytes": 6077635,
+    "sha256": "1a50619945519744541f56cd989c5e3e479d98d1530c23ea3d5ffa65b2dddad6",
+    "entryTime": 1794016507920.885,
+    "mainBytes": 4188828,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 419857
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 1300675
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    {
+      "file": "reports/v073-shore.png",
+      "sha256": "284206f573031e5a0b67cb05742223e9a89eadf6783946c3866fa2db823fcbc3"
+    },
+    {
+      "file": "reports/v073-walk-0.png",
+      "sha256": "c1147af6f1b1c3cd5bff82cf1687b8074be13fed40b6a92857a6194391b5dc80"
+    },
+    {
+      "file": "reports/v073-walk-1.png",
+      "sha256": "da067597e1f67cfd22c77c0e4b878793e557b925735929569461b2911d2b910d"
+    },
+    {
+      "file": "reports/v073-walk-2.png",
+      "sha256": "265c93e72e04e5e425af21cf5415f38289fd5020e32ab194f86709972f162e6f"
+    },
+    {
+      "file": "reports/v073-walk-3.png",
+      "sha256": "72a70038e72b255a64ae8944010b0986afd78779be6205f5a3674d3bf309e141"
+    },
+    {
+      "file": "reports/v073-walk-4.png",
+      "sha256": "9435b07a52db121bd7b27f1ce6e4d9b93057c3791274cbd3ae05740b148b9594"
+    },
+    {
+      "file": "reports/v073-equip.png",
+      "sha256": "c48716bd4a5f5abb06e264660c037718b772470c0d156f738a00065295ff8f91"
+    },
+    {
+      "file": "reports/v073-equip-tank.png",
+      "sha256": "9c5a919693207b4506154df3383f3a437085cafa044ec34ff4db059f0ff87c50"
+    },
+    {
+      "file": "reports/v073-dive.png",
+      "sha256": "ffd0c61c0548cabf974d190919ef14717c3fb17b46df1a097fc50d1d9dea28f8"
+    },
+    {
+      "file": "reports/v073-shallow.png",
+      "sha256": "6bf9e7b5d1a5eabef354fd528c8abf4c446b3ad5e5177f9e6a06e30e0edcbeeb"
+    },
+    {
+      "file": "reports/v073-shallow-animated.png",
+      "sha256": "40c69249f2ca0c6dfc6004a34eaa1858542b2d56af4e673babef1a4d4ae48db4"
+    },
+    {
+      "file": "reports/v073-weapon-harpoon.png",
+      "sha256": "ad81a7bd7dd6e7e132d1b0292109e24d3615083197f9784f2a83f216c0c3ff89"
+    },
+    {
+      "file": "reports/v073-zone-1.png",
+      "sha256": "ad81a7bd7dd6e7e132d1b0292109e24d3615083197f9784f2a83f216c0c3ff89"
+    },
+    {
+      "file": "reports/v073-explosion-peak.png",
+      "sha256": "ec1e4b1964238f905321a208f821b70309cc845db49b07d53261d3f3fe565384"
+    },
+    {
+      "file": "reports/v073-enemy-torpedo.png",
+      "sha256": "5c811f5a3aa1dce97151ac882fbd1e9fe7200229f0ddb2add2fcd973d7b24932"
+    },
+    {
+      "file": "reports/v073-zone-2.png",
+      "sha256": "ba8e132bd2c4d31725b242a288ab897410a6ba19adbc9f7e3a20d223c346d268"
+    },
+    {
+      "file": "reports/v073-weapon-sonar.png",
+      "sha256": "445a831b396e0142c85f69b023c5e81c0a9909ea874b264194b72be0b80fc441"
+    },
+    {
+      "file": "reports/v073-reef.png",
+      "sha256": "4f92fa32b892cff708c80e7f8fdfa037dd1ba3ac7370a3e8f81f0bae2880d294"
+    },
+    {
+      "file": "reports/v073-enemy-burst.png",
+      "sha256": "f3d0f9c5f425e07d194b6441d4183ea2267247f8158e67ea5a0717eaf5f3ae39"
+    },
+    {
+      "file": "reports/v073-zone-3.png",
+      "sha256": "c608f2a94ae5b46e5a9dc8803f192d615ae223db9533409294c5e061b121889d"
+    },
+    {
+      "file": "reports/v073-wreck.png",
+      "sha256": "f47e35b06b7b4d0e72ff0d939db27b38e66633e9a8d77ee85c7ae32244ec5d64"
+    },
+    {
+      "file": "reports/v073-enemy-dash.png",
+      "sha256": "4bf53daf009bfd6be99a85113b409a3519a33559ded0276d58c76e82165549a9"
+    },
+    {
+      "file": "reports/v073-enemy-fan.png",
+      "sha256": "1f60c737a4e7c0dd678f43eebfd84ee7a4e3f8707cdf4c8f85773f45ba6d8cfc"
+    },
+    {
+      "file": "reports/v073-zone-4.png",
+      "sha256": "8999268a92570da863df7ecd9c01ab7afc76bc9cb1db66c2f9a91d6f23a2c312"
+    },
+    {
+      "file": "reports/v073-deep.png",
+      "sha256": "5bcf6e9b09f07774c4895ae83a1a01a1ea560dc185647f73dfff2938db6adb12"
+    },
+    {
+      "file": "reports/v073-zone-5.png",
+      "sha256": "279f7dbad9d7e3c4accc9fe5f9b6e49ee588c2516a8678aacd4eb496cd020a97"
+    },
+    {
+      "file": "reports/v073-pipeline.png",
+      "sha256": "44c7df7c08b0f58802becfab73ed366c1e8b16156c40f2e46db423b914060123"
+    },
+    {
+      "file": "reports/v073-zone-6.png",
+      "sha256": "769073d650a96e604100b4c677fcd0626d490d0b88aa998a72f0d014339103a8"
+    },
+    {
+      "file": "reports/v073-zone-7.png",
+      "sha256": "4752588883874e90bbc6d4e7f284a7191272c7ec7118d3e5a611f097aa1c5b22"
+    },
+    {
+      "file": "reports/v073-boss-cannon.png",
+      "sha256": "95591c4dc4cd4065a82d8288080e20231459b629c85efc49ebc75d3554aee1fb"
+    },
+    {
+      "file": "reports/v073-boss-sweep.png",
+      "sha256": "b1b1359431391a6a050f4ab923a91f8aa64c102beaa7133b9f6b832854d90be8"
+    },
+    {
+      "file": "reports/v073-boss-fan.png",
+      "sha256": "7d909bc49201221d87819eea56c54bf36e23d11d716688f97f7367d8e9746232"
+    },
+    {
+      "file": "reports/v073-boss-ring.png",
+      "sha256": "443b5b038e92b700853cb930668ca216b377eb810ce9830f21ac3cb83840f795"
+    },
+    {
+      "file": "reports/v073-collapse.png",
+      "sha256": "572326e9494ec6b2b8e8b459e46828b3eda870923250b2a1ac62940a736ab0e5"
+    },
+    {
+      "file": "reports/v073-cheer.png",
+      "sha256": "4bab143b6b2d051d46d64bbf7afa7af2b52c33029e65f2c5b1432cf35a1973e4"
+    },
+    {
+      "file": "reports/v073-result.png",
+      "sha256": "33ef0225f77abfa0c7eb9e2af950970985c585df71e905759bfa63d9cb67809d"
+    },
+    {
+      "file": "reports/v073-mobile-touch.png",
+      "sha256": "7fddc3288beb5b251d0e9fba21d6da2d0a444fd1e5164f6955f93b364b7b5577"
+    },
+    {
+      "file": "reports/v073-portrait.png",
+      "sha256": "405d91051283ecea526f41833f5471812e83b0d50c00b35b48b97ba79ad8059a"
+    },
+    {
+      "file": "reports/v073-weapon-torpedo.png",
+      "sha256": "a490c902da510858b2a0f1f4a663677b7bde9bebebd53635fecefea5d0596721"
+    },
+    {
+      "file": "reports/v073-torpedo-flight.png",
+      "sha256": "55da4c068a3129cc3bdf7a5e984a53017b46a1bd05f86138c13e68b9b17284a9"
+    },
+    {
+      "file": "reports/v073-torpedo-blast.png",
+      "sha256": "de9e9ececf0e911522062c3e537d9734af15a1b3528c9f20095cfd4089c618e8"
+    }
+  ],
+  "limitations": [
+    "Browser keyboard and simulated touch verified; WeChat Developer Tools and physical phone not run.",
+    "No external publication or upload.",
+    "Automated playthrough duration is not a human difficulty estimate."
+  ]
+}

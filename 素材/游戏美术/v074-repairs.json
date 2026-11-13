@@ -1,0 +1,15 @@
+{
+  "tool": "built-in imagegen",
+  "edits": [
+    {
+      "source": "../素材/游戏美术/source/v074/torpedo.png",
+      "output": "../素材/游戏美术/source/v074/torpedo-alpha.png",
+      "prompt": "Use case: background-extraction. Edit only the background of this six-frame diver animation sheet. Remove the pale white/checkered background completely to true alpha=0 transparency. Preserve all six FULL sprites exactly, including every opaque white face, helmet, body, tank, gun and black outline; do NOT erase white inside the sprites, redraw, resize, relocate or crop any character. Preserve original 1536x1024 layout and all poses. No shadow, no halo, no checkerboard pixels in the output. Transparent outside each complete sprite, opaque white inside."
+    },
+    {
+      "source": "../素材/游戏美术/source/v074/land.png",
+      "output": "../素材/游戏美术/source/v074/landmarks.png",
+      "prompt": "Use case: precise-object-edit. Use attached land terrain artwork as strict style/design reference. Create TWO clean isolated game sprites on a 2048x1024 transparent canvas in two side-by-side cells, at least 150 pixels TRANSPARENT horizontal gap. Left cell: redraw the complete bottom-left COASTAL CLIFF with a broad FLAT walkable grass plateau and sheer eroded right edge, layered rock wall, fissures, roots and solid white interior. Right cell: redraw the complete bottom-right INDUSTRIAL PUMP HOUSE AND LOADING GANTRY, preserving the whole curved pipe at far left, entire foundation, tower, crane arm and hook at far right. Both complete assets fit entirely in their own rectangular cells with 40px margins, no interleaving across cells. Bold ink outlines, detailed hatching, opaque ivory faces. NO sea, characters, text, labels, grid, baked shadows, fake checkerboard. Preserve drawing quality and complete boundaries."
+    }
+  ]
+}

@@ -1,0 +1,764 @@
+{
+  "version": "0.8.16",
+  "checkedAt": "2026-11-11T07:38:44.042Z",
+  "sourceSHA256": "5c96bebd9c44609c41c7fab432fa1f9b9c956463f31bfeb0681910ae5c4bb9e4",
+  "sourceChanges": [
+    "assets/scripts/GameManager.ts",
+    "assets/scripts/core/GameConfig.ts",
+    "assets/scripts/ocean/OceanCombatTuning.ts",
+    "assets/scripts/ocean/OceanEnemyPose.ts",
+    "assets/scripts/ocean/OceanRenderer.ts",
+    "assets/scripts/ocean/OceanSession.ts",
+    "assets/scripts/platform/PlatformBridge.ts",
+    "assets/scripts/player/PlayerController.ts"
+  ],
+  "typecheck": {
+    "status": "passed",
+    "log": "reports/v0816-typecheck.log"
+  },
+  "logic": {
+    "tests": 343,
+    "passed": 343,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "land": {
+    "report": "reports/v0816-mobile.json",
+    "method": "Complete normal-keyboard campaign; read-only snapshots and controlled clock; normal health, ammo and enemy states, no teleports or deliberate cease-fire tour.",
+    "state": "complete",
+    "health": 3,
+    "bossFightDuration": 30.033333333357234,
+    "attacks": {
+      "salvo": 1,
+      "sweep": 0,
+      "stomp": 1,
+      "laser": 1,
+      "missiles": 1,
+      "burst": 1,
+      "charge": 2,
+      "leap": 3
+    }
+  },
+  "ocean": {
+    "report": "reports/v0816-ocean.json",
+    "method": "Complete ordinary-keyboard route with normal health/ammo; nine-second lower-lane retreat at the submarine tests persistent pursuit and the camera edge, then normal combat. Read-only snapshots, fixed clock, simulated phone.",
+    "state": "complete",
+    "health": 4,
+    "pursuit": {
+      "edgeSamples": 146,
+      "lockedSamples": 263,
+      "minHullX": 14948,
+      "travel": 932.2684528896455,
+      "reward": true
+    },
+    "geometry": {
+      "player-standard-harpoon": {
+        "owner": "player",
+        "kind": "harpoon",
+        "tier": "standard",
+        "width": 72,
+        "height": 23.180321665089874
+      },
+      "enemy-standard-harpoon": {
+        "owner": "enemy",
+        "kind": "harpoon",
+        "tier": "standard",
+        "width": 72,
+        "height": 23.180321665089874
+      },
+      "enemy-standard-sonar": {
+        "owner": "enemy",
+        "kind": "sonar",
+        "tier": "standard",
+        "width": 56,
+        "height": 70.65882352941176
+      },
+      "player-standard-sonar": {
+        "owner": "player",
+        "kind": "sonar",
+        "tier": "standard",
+        "width": 56,
+        "height": 70.65882352941176
+      },
+      "enemy-standard-torpedo": {
+        "owner": "enemy",
+        "kind": "torpedo",
+        "tier": "standard",
+        "width": 58,
+        "height": 31.65648854961832
+      },
+      "enemy-mini-torpedo": {
+        "owner": "enemy",
+        "kind": "torpedo",
+        "tier": "mini",
+        "width": 66.69999999999999,
+        "height": 36.40496183206106
+      },
+      "enemy-mini-sonar": {
+        "owner": "enemy",
+        "kind": "sonar",
+        "tier": "mini",
+        "width": 64.39999999999999,
+        "height": 81.25764705882352
+      },
+      "player-standard-torpedo": {
+        "owner": "player",
+        "kind": "torpedo",
+        "tier": "standard",
+        "width": 58,
+        "height": 31.65648854961832
+      },
+      "enemy-boss-harpoon": {
+        "owner": "enemy",
+        "kind": "harpoon",
+        "tier": "boss",
+        "width": 90,
+        "height": 28.975402081362343
+      },
+      "enemy-boss-sonar": {
+        "owner": "enemy",
+        "kind": "sonar",
+        "tier": "boss",
+        "width": 70,
+        "height": 88.3235294117647
+      }
+    }
+  },
+  "oceanPatterns": {
+    "report": "reports/v0816-ocean-patterns.json",
+    "method": "Normal-keyboard art/attack tour: hold fire after the first submarine phase until all six patterns occur, then finish; normal damage, no state edits. Not sustained-fire difficulty evidence.",
+    "health": 4,
+    "attacks": {
+      "cannon": 2,
+      "sweep": 2,
+      "fan": 2,
+      "ring": 1,
+      "laser": 1,
+      "torpedo": 1
+    },
+    "bossTorpedo": {
+      "owner": "enemy",
+      "kind": "torpedo",
+      "tier": "boss",
+      "width": 72.5,
+      "height": 39.5706106870229
+    }
+  },
+  "jump": {
+    "report": "reports/v0816-jump.json",
+    "method": "16 ms real CDP touch tap versus held touch; read-only snapshots, no state edits, phone viewport.",
+    "results": [
+      {
+        "hold": false,
+        "startY": 150,
+        "peak": 273.75,
+        "jumpCount": 1,
+        "airJumps": 1
+      },
+      {
+        "hold": true,
+        "startY": 150,
+        "peak": 273.75,
+        "jumpCount": 1,
+        "airJumps": 1
+      }
+    ]
+  },
+  "platforms": {
+    "report": "reports/v0816-platforms.json",
+    "method": "Normal keyboard route to low and high decks, then CDP two-finger down+jump. Read-only snapshots, no teleports or state edits. Simulated phone viewport."
+  },
+  "models": [
+    {
+      "report": "reports/v0816-model-campaign.json",
+      "method": "Input-only model campaign, normal damage and inventory",
+      "health": 1,
+      "fightDuration": 28.76666666668956
+    },
+    {
+      "report": "reports/v0816-ocean-model.json",
+      "method": "Full input-only model campaign at 50 ms decision cadence; normal health and inventory; no encounter edits.",
+      "health": 5,
+      "fightDuration": 10.391666666674936
+    }
+  ],
+  "web": {
+    "entryTime": 1794381630521.7073,
+    "sha256": "b89c1b90e2dc2dc48169da052ecc65eda1be2cadc0612e78b8037857d2a61a21",
+    "bytes": 22773656,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794381893000.8545,
+    "sha256": "e1a7e78373ee53ee951142a1bdbedfc671499497b038c3891dae05a4d18db73b",
+    "bytes": 19600299,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 599064
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10303434
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false,
+    "budget": {
+      "main": 4194304,
+      "total": 20971520,
+      "source": "Existing project local budgets; not a new platform policy claim"
+    }
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V0816-20261111",
+    "checkpointEntriesVerified": 453,
+    "preservedFiles": [
+      "assets/scripts/level/LevelData.ts",
+      "assets/scripts/combat/WeaponSystem.ts",
+      "assets/scripts/enemy/TankBoss.ts",
+      "assets/scripts/enemy/ColossusBoss.ts",
+      "assets/scripts/enemy/EnemyController.ts",
+      "assets/scripts/enemy/EnemyTactics.ts",
+      "assets/scripts/camera/CameraFollow.ts",
+      "assets/scripts/ui/ControlLayout.ts",
+      "assets/scripts/platform/SafeAreaInsets.ts",
+      "assets/scripts/core/InputManager.ts",
+      "assets/scripts/core/TouchInputManager.ts",
+      "assets/scripts/level/MechanismController.ts",
+      "assets/scripts/render/ColossusPresentation.ts"
+    ],
+    "dependenciesUnchanged": true
+  },
+  "skill": {
+    "report": "reports/v0816-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16,
+    "changedFiles": [
+      "references/gameplay-and-physics.md",
+      "references/verification-and-delivery.md"
+    ]
+  },
+  "screenshots": [
+    {
+      "file": "reports/v0816-mobile-projectile-player-standard-bullet.png",
+      "sha256": "119f9b7b9f3c60b260a7a93aecbc4c866950335be9e6e434c5e3a3de4d89e277",
+      "capturedAt": "2026-11-11T07:22:33.145Z"
+    },
+    {
+      "file": "reports/v0816-mobile-projectile-enemy-standard-bullet.png",
+      "sha256": "19dea75dadef4cc7dbc4463d22c34491d72be03820c04bc77b714b8544b60cf8",
+      "capturedAt": "2026-11-11T07:22:37.018Z"
+    },
+    {
+      "file": "reports/v0816-mobile-projectile-player-standard-rocket.png",
+      "sha256": "20982b1d1120469075c5dc79049b0948d0992507d3f7163b24f71f7b545b4a52",
+      "capturedAt": "2026-11-11T07:23:03.127Z"
+    },
+    {
+      "file": "reports/v0816-mobile-mini-platform-layout.png",
+      "sha256": "a341ae1b4f922cdf26a8e32a5c2705673d11a5e9f60d44c9f3bfc8a7c7127b8f",
+      "capturedAt": "2026-11-11T07:23:04.900Z"
+    },
+    {
+      "file": "reports/v0816-mobile-projectile-enemy-mini-bullet.png",
+      "sha256": "6551f2ae1d97e6bee6273dd73101dd7d2c60f4c225d76f3e5d988984e51fd555",
+      "capturedAt": "2026-11-11T07:23:09.163Z"
+    },
+    {
+      "file": "reports/v0816-mobile-mini-defeated-reward.png",
+      "sha256": "00fa79887c495355725ea989ed608a78194152d6dd14482aff6c162302e28ab2",
+      "capturedAt": "2026-11-11T07:23:15.235Z"
+    },
+    {
+      "file": "reports/v0816-mobile-boss-size.png",
+      "sha256": "cb68857c6091acf94ff31351fd7f7c3dbe23b0f6d57e9381aa43159d89074232",
+      "capturedAt": "2026-11-11T07:24:18.048Z"
+    },
+    {
+      "file": "reports/v0816-mobile-tell-leap.png",
+      "sha256": "470a7ab28b7339c00c980a7168a602551702c40eaa7c27dbef5417867ed65786",
+      "capturedAt": "2026-11-11T07:24:18.977Z"
+    },
+    {
+      "file": "reports/v0816-mobile-leaping.png",
+      "sha256": "19edfe7605f0cc7bce5efa6e0608779b93ab899151ee7d97d948fd7e0922cca4",
+      "capturedAt": "2026-11-11T07:24:22.438Z"
+    },
+    {
+      "file": "reports/v0816-mobile-landing.png",
+      "sha256": "a9b989d766caeac39811a48725fe3d67a531fdd8f40ee6fbde07eb2d4c14c602",
+      "capturedAt": "2026-11-11T07:24:24.249Z"
+    },
+    {
+      "file": "reports/v0816-mobile-tell-salvo.png",
+      "sha256": "373be4320ca9aac2b65a578037d20cbb707b58a9f767482ce6fa2a6654fe2682",
+      "capturedAt": "2026-11-11T07:24:27.736Z"
+    },
+    {
+      "file": "reports/v0816-mobile-tell-charge.png",
+      "sha256": "fb64ebea726f6d0a1b6bacc880b28204aca8ecf9baaeef0f0c06cb5fd3458835",
+      "capturedAt": "2026-11-11T07:24:33.257Z"
+    },
+    {
+      "file": "reports/v0816-mobile-charging.png",
+      "sha256": "f6afa76cb6ad67ccb3da850af6fcef3810d79beb53b1433ddb607cae9c077610",
+      "capturedAt": "2026-11-11T07:24:35.640Z"
+    },
+    {
+      "file": "reports/v0816-mobile-pursuit-outside-arena.png",
+      "sha256": "98449b93a9dd5b4c675d8830a0ae35470c197aeec5125f182dfb5b60c9cb9fb4",
+      "capturedAt": "2026-11-11T07:24:36.203Z"
+    },
+    {
+      "file": "reports/v0816-mobile-tell-laser.png",
+      "sha256": "cb169a70d7d4da1018283d6da0ff6f4d05e464d91769093b43b96caa1fb2d9ee",
+      "capturedAt": "2026-11-11T07:24:40.851Z"
+    },
+    {
+      "file": "reports/v0816-mobile-tell-missiles.png",
+      "sha256": "da684ca2c5ca5e54d14569c53b3026a10d881d69cda22be371f2efcccb9d8478",
+      "capturedAt": "2026-11-11T07:24:59.304Z"
+    },
+    {
+      "file": "reports/v0816-mobile-projectile-enemy-boss-rocket.png",
+      "sha256": "b91ad0c51cb2238fecf91f2479a0b64fe86fbdc317a5bfce8664b61a3f004318",
+      "capturedAt": "2026-11-11T07:25:01.473Z"
+    },
+    {
+      "file": "reports/v0816-mobile-enrage.png",
+      "sha256": "f27c8af9af50c20d53b302c31967daad79e8b9910f799e0b95c3ba581fd201d4",
+      "capturedAt": "2026-11-11T07:25:03.090Z"
+    },
+    {
+      "file": "reports/v0816-mobile-tell-burst.png",
+      "sha256": "15b85d953c44ff66e3c0ff31ae8e6f5ffdbe6317bbfcb344f4a64aff0d665000",
+      "capturedAt": "2026-11-11T07:25:08.815Z"
+    },
+    {
+      "file": "reports/v0816-mobile-projectile-enemy-boss-bullet.png",
+      "sha256": "51a5dfe8864f4754087ad6aa8a9c8bc42ec0821a09faab56ada285fa0cf0b683",
+      "capturedAt": "2026-11-11T07:25:10.209Z"
+    },
+    {
+      "file": "reports/v0816-mobile-tell-stomp.png",
+      "sha256": "dffd70bce26f16f0e122c2391b292c8e35869409bf8b73ef697050c067cd8abe",
+      "capturedAt": "2026-11-11T07:25:15.021Z"
+    },
+    {
+      "file": "reports/v0816-mobile-result.png",
+      "sha256": "88c7c012862fbf45e25199126749b753cf9a125d09a01e23942082755c55e806",
+      "capturedAt": "2026-11-11T07:25:22.470Z"
+    },
+    {
+      "file": "reports/v0816-sea-thick-harpoon.png",
+      "sha256": "02cd0d0a318c500504645a1914a989c1685eb00ac4168446bb678380c9e90978",
+      "capturedAt": "2026-11-11T07:29:51.928Z"
+    },
+    {
+      "file": "reports/v0816-sea-enemy-harpoon.png",
+      "sha256": "331a5e5d6440c4df92bee8b3bfcd78ead9e0f342b8b99b27dd628df3840fcae0",
+      "capturedAt": "2026-11-11T07:29:53.196Z"
+    },
+    {
+      "file": "reports/v0816-sea-evade.png",
+      "sha256": "8206456395b4cbfba36a2a3df6deede87e4846bcdfc660374ee56f1d47e16bf9",
+      "capturedAt": "2026-11-11T07:29:55.869Z"
+    },
+    {
+      "file": "reports/v0816-sea-fish-tell.png",
+      "sha256": "7dfd0a11b2dfdd49386a23333a1e73ceaf1f4eaceca12d6244aef2bcd82232c8",
+      "capturedAt": "2026-11-11T07:30:00.655Z"
+    },
+    {
+      "file": "reports/v0816-sea-enemy-sonar.png",
+      "sha256": "776515f26dccead1a70fab0825691c61450b85423169077790adb7991c3c3eaa",
+      "capturedAt": "2026-11-11T07:30:04.138Z"
+    },
+    {
+      "file": "reports/v0816-sea-enemy-torpedo.png",
+      "sha256": "bee96c9f040752bf0031d0105fa8fdf4d7d26c905b62d069a99953d095724fb4",
+      "capturedAt": "2026-11-11T07:30:08.649Z"
+    },
+    {
+      "file": "reports/v0816-sea-fish-attack.png",
+      "sha256": "7c858e771f2c82d21cf2b1924693fa6660ebbacd29dbb2b403d46066d858ad98",
+      "capturedAt": "2026-11-11T07:30:10.139Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-warning-torpedo.png",
+      "sha256": "9df64763987005a7751ad8e9b8d88c41c80fe4813cbd5eab1889a4d96e15d629",
+      "capturedAt": "2026-11-11T07:30:14.904Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-torpedo.png",
+      "sha256": "3c260e8df3f40d2b74ff43e6e9747b0d1f7f594380051c10dcc5e62f7e00146b",
+      "capturedAt": "2026-11-11T07:30:15.738Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-pilot.png",
+      "sha256": "2c7eeba277524e8404d354838a350bf986ceb396e1ed0712facca4af2bcd271c",
+      "capturedAt": "2026-11-11T07:30:16.488Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-warning-sonar.png",
+      "sha256": "ef5b47674135695da92796da0ce68233cbab2814915417d03e1830b067df8a26",
+      "capturedAt": "2026-11-11T07:30:17.485Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-damaged.png",
+      "sha256": "79375e353359b945f75059b163115a4d67c51df28931e09b43c37e434522a712",
+      "capturedAt": "2026-11-11T07:30:18.219Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-sonar.png",
+      "sha256": "cd0a0c033508fee2c2eff3c334a101f554d8f04e0309aba19f173d1737683f45",
+      "capturedAt": "2026-11-11T07:30:18.662Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-warning-dash.png",
+      "sha256": "0f96d9e0d8a9d8a7bf38738b48842660e26d31bc41211c5119f8f67608b304d9",
+      "capturedAt": "2026-11-11T07:30:20.138Z"
+    },
+    {
+      "file": "reports/v0816-sea-mini-wreck.png",
+      "sha256": "700295c5198be52a8a221961cae314a563e1a36f4a9bf919dc023872a0c4661f",
+      "capturedAt": "2026-11-11T07:30:21.654Z"
+    },
+    {
+      "file": "reports/v0816-sea-trench.png",
+      "sha256": "376ad36d6b3d338167193ecab87b123d0bc163e5763ea289404e342bb73c63e9",
+      "capturedAt": "2026-11-11T07:30:46.938Z"
+    },
+    {
+      "file": "reports/v0816-sea-dock.png",
+      "sha256": "b7e42b11d6737935af72715e83f9cb1b533047084a49c0758204d00a04551397",
+      "capturedAt": "2026-11-11T07:30:56.346Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-idle-cannon.png",
+      "sha256": "66c1fc6f1ecef95cb515bfb5401c178a6d91e04b62a16d26054ec69bc5c682a0",
+      "capturedAt": "2026-11-11T07:31:02.843Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-tell-cannon.png",
+      "sha256": "bf0423bd4b06f3181552925cc1d0b3f7639944066b1be8f8398cd99f7cf22c5c",
+      "capturedAt": "2026-11-11T07:31:03.626Z"
+    },
+    {
+      "file": "reports/v0816-sea-retreat-edge.png",
+      "sha256": "7801f5fb20a7e45db884531a872f108d7afc7f70873097d22d38662b9edfef07",
+      "capturedAt": "2026-11-11T07:31:03.943Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-fire-cannon.png",
+      "sha256": "e196fd52cbe9dfe5f809c04c527149bf2636b8fb8eed08030539ce7b34971985",
+      "capturedAt": "2026-11-11T07:31:04.299Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-rest-cannon.png",
+      "sha256": "d026497c4d036ff4591a2d9ed20a4307c56887e6cdaa4dee4fe13620a49e9153",
+      "capturedAt": "2026-11-11T07:31:04.701Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-tell-fan.png",
+      "sha256": "226430a909042bc15e2e74f6416f0163bc5e57c874946a2cb95dc885182dc33e",
+      "capturedAt": "2026-11-11T07:31:05.385Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-fire-fan.png",
+      "sha256": "d34a3ae25fb804bc129d2206c18b765a3db79759191f0a75698d3192cbc87266",
+      "capturedAt": "2026-11-11T07:31:05.951Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-rest-fan.png",
+      "sha256": "de5bacb488256dfd3e761858cc51801c2b439722b04d7629a2b4f45d68cd8000",
+      "capturedAt": "2026-11-11T07:31:06.350Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-tell-laser.png",
+      "sha256": "1994f69a59861308b4db7e30147a24291712658b9a2b4ce28eb443d3ff9ef81d",
+      "capturedAt": "2026-11-11T07:31:07.001Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-fire-laser.png",
+      "sha256": "a33d66c3940cb95071c82ee0f91146542198aaa09b043d8453489d060db46e16",
+      "capturedAt": "2026-11-11T07:31:07.564Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-rest-laser.png",
+      "sha256": "9fb4274c0b1ba2a266b32aa4300d8f1dda0455a8a5871669be8ca5941f75804b",
+      "capturedAt": "2026-11-11T07:31:08.282Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-tell-ring.png",
+      "sha256": "17e78dbc6e5ee2d9024696a27d8098b41f6262e2524b5795cd129ea0c780dd1b",
+      "capturedAt": "2026-11-11T07:31:08.966Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-fire-ring.png",
+      "sha256": "aec32c47a50688784950e7629f6792d92773061ce824e457a2796b3bb15563bd",
+      "capturedAt": "2026-11-11T07:31:09.784Z"
+    },
+    {
+      "file": "reports/v0816-sea-boss-rest-ring.png",
+      "sha256": "3dee9348afd3c0bfc3fa33865bb309b3bdf4ed8e13345e29ab98e3b4c57c0667",
+      "capturedAt": "2026-11-11T07:31:12.736Z"
+    },
+    {
+      "file": "reports/v0816-sea-cheer.png",
+      "sha256": "a8d3d4b585021b6ce3e1d241c30d4a8c540a8b7b8566e11b77335a94a1387da8",
+      "capturedAt": "2026-11-11T07:31:20.999Z"
+    },
+    {
+      "file": "reports/v0816-sea-complete.png",
+      "sha256": "349def154c46e3060f8f7bae0105f5e444f69170ddeadca380762d2530c319fc",
+      "capturedAt": "2026-11-11T07:31:22.561Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-thick-harpoon.png",
+      "sha256": "1aa569d602e3d5019ea0ab06a712fc6bbb4dfe752fadce236c7a3970c3c5ad6d",
+      "capturedAt": "2026-11-11T07:34:24.872Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-enemy-harpoon.png",
+      "sha256": "10c7cef1504886a4b571eef408235484690a3899afc009055b757a9391b8eeeb",
+      "capturedAt": "2026-11-11T07:34:25.546Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-evade.png",
+      "sha256": "213af463b93f885bda1f2657bb420e2a80a4272bef144be26e96707a113706be",
+      "capturedAt": "2026-11-11T07:34:26.928Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-fish-tell.png",
+      "sha256": "fa53e2f58890fe00f26ba29526136da0abe339d821f45d9bf274dc0c9149b997",
+      "capturedAt": "2026-11-11T07:34:30.085Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-enemy-sonar.png",
+      "sha256": "9e817d12f750a4001e499cd3be475f19b05ce03db2ab82f3a8950ebed0079001",
+      "capturedAt": "2026-11-11T07:34:31.979Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-enemy-torpedo.png",
+      "sha256": "a331d70da5e96903c6706902c6897dc419c38fcbbc4498d36c4332f293c564c7",
+      "capturedAt": "2026-11-11T07:34:34.463Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-fish-attack.png",
+      "sha256": "257957f7d454d44067dc74cf2e976c8dc0a42d3ee273aac3ef250cea2fac9b52",
+      "capturedAt": "2026-11-11T07:34:35.156Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-mini-warning-torpedo.png",
+      "sha256": "9e8076b4331c3439810029c149398dbca62d0f0adc6804f0486bdfbcc61ec6cf",
+      "capturedAt": "2026-11-11T07:34:38.125Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-mini-torpedo.png",
+      "sha256": "f19d82a4c1e31ce43b464710409fda776427048b22c7675a5043a570a2c5332f",
+      "capturedAt": "2026-11-11T07:34:38.644Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-mini-pilot.png",
+      "sha256": "f7ff5871b6ba1f07940022808137eb1580124b45e0e595a0e8c5ee9647bde8d2",
+      "capturedAt": "2026-11-11T07:34:39.185Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-mini-damaged.png",
+      "sha256": "78020aa936a027a5209afdb6844b7ba2948bb67cc5d9c6492c1e2e8fdcdfa058",
+      "capturedAt": "2026-11-11T07:34:39.733Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-mini-warning-sonar.png",
+      "sha256": "070918da04b3d3c9aa1effecf123bed0f05293487e566d20a1a5579a03359f2e",
+      "capturedAt": "2026-11-11T07:34:39.923Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-mini-sonar.png",
+      "sha256": "b4bbd368bc94b9a421917f15f8cde1b825c25b95585433723587985a9a518147",
+      "capturedAt": "2026-11-11T07:34:40.466Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-mini-wreck.png",
+      "sha256": "07cb7600717643a3344a0cb85131bad9d2a6000a8f162bd4027f32cc848bc2fd",
+      "capturedAt": "2026-11-11T07:34:41.487Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-trench.png",
+      "sha256": "79b3057a33dd6f35eca95a346efe4be0ccdca4ef869c492d1164e6514307fd10",
+      "capturedAt": "2026-11-11T07:34:54.015Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-dock.png",
+      "sha256": "d0aab85a2840a92fc6202f0cc8e1a7a7a4d755d4f97e0d87a3c1e962d5b085f2",
+      "capturedAt": "2026-11-11T07:34:58.721Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-idle-cannon.png",
+      "sha256": "644f6827970bb292645f5b183e33cde560d71bffc2989498c3aec9b495af723a",
+      "capturedAt": "2026-11-11T07:35:02.373Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss.png",
+      "sha256": "cf06959dd0ed7ea917268c93beeb1d72ee10fbb76b7d06d4ec5831690916c10c",
+      "capturedAt": "2026-11-11T07:35:02.563Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-tell-cannon.png",
+      "sha256": "9ef98ffeb4346e58bcd59c49504a07b567c9e98aee0d9d0bd1f2bd8945e09ec7",
+      "capturedAt": "2026-11-11T07:35:03.169Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-fire-cannon.png",
+      "sha256": "1b31f64ced9bfeb3120809bceec2b14c08e64ec61992c2bf252e83122393dd06",
+      "capturedAt": "2026-11-11T07:35:03.742Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-rest-cannon.png",
+      "sha256": "dc22ec67d31ab2bd2e1e7b9936b551adcadbec5741c89582c97a5febe815c295",
+      "capturedAt": "2026-11-11T07:35:04.117Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-tell-sweep.png",
+      "sha256": "e1b1be3b2a43a8daa0f76ba42da2cde4810c0042251d759b809500a08536fdf6",
+      "capturedAt": "2026-11-11T07:35:04.680Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-fire-sweep.png",
+      "sha256": "615f1f15375f17d76f7344528ce6848ac647b412a446773202533c262f774957",
+      "capturedAt": "2026-11-11T07:35:05.381Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-rest-sweep.png",
+      "sha256": "8b38f9ec3e0cebc7198a700bbdde515e0c7767121c3aec83488f4c9b677382b1",
+      "capturedAt": "2026-11-11T07:35:06.061Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-tell-fan.png",
+      "sha256": "fc7c6fd37988a0b882a02c081a8b620a5bc4a62627a5dcdbde0c0ddd9994cfe4",
+      "capturedAt": "2026-11-11T07:35:06.598Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-fire-fan.png",
+      "sha256": "ff8b185f1def17c616a4ba4ade0512d5a0f7bdda2c6a3aaedc47f928ec734ae0",
+      "capturedAt": "2026-11-11T07:35:07.162Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-rest-fan.png",
+      "sha256": "6877c4c7a13c37a5e9364309298fadddaa6002d712be8dae75cd2d59de6277b1",
+      "capturedAt": "2026-11-11T07:35:07.545Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-tell-ring.png",
+      "sha256": "f36f30cdb4232d721e4c5b8233fccef71797079a3fae67ec16afba5349fb4423",
+      "capturedAt": "2026-11-11T07:35:08.083Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-fire-ring.png",
+      "sha256": "06c696ef8cca73908cdf068977843cce531af5c1750dcbfa84ef1353d6bc32dc",
+      "capturedAt": "2026-11-11T07:35:08.801Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-rest-ring.png",
+      "sha256": "30126e7b1ab1c4911b079738b325a45022bc3436f2d982e23d6d317e6848c190",
+      "capturedAt": "2026-11-11T07:35:10.026Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-tell-laser.png",
+      "sha256": "6727b82308770f20a4daccfe89a8d204aed466c6694427f1c77d3419863d57c1",
+      "capturedAt": "2026-11-11T07:35:10.543Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-fire-laser.png",
+      "sha256": "8e9eb04c0f4de592b1d04e7154dd7f0fe916a2298abb46b1b0529e95ae0da3cb",
+      "capturedAt": "2026-11-11T07:35:11.080Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-rest-laser.png",
+      "sha256": "f12e4b6a8b0467013373ca271712c9c5cd5b544ba7222c5208c29de6891342b9",
+      "capturedAt": "2026-11-11T07:35:11.743Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-tell-torpedo.png",
+      "sha256": "9c00f788ba9472cdc57d46782fe9b100485618f0b84b8fbff3a9ffd56f55831a",
+      "capturedAt": "2026-11-11T07:35:13.375Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-fire-torpedo.png",
+      "sha256": "a08c3e9a509d366f10045ec5fe3e243f507afc8828158fd71d9b34bd8fa5e375",
+      "capturedAt": "2026-11-11T07:35:13.960Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-boss-rest-torpedo.png",
+      "sha256": "b81120f138f3e007b61c278be18567632f4f3d0ee3171873fb1f37e0b067948d",
+      "capturedAt": "2026-11-11T07:35:14.396Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-cheer.png",
+      "sha256": "d8827f2eeb325e361187c0304ee8fb07ac95cb5d002814d7c7e541c46e998feb",
+      "capturedAt": "2026-11-11T07:35:18.826Z"
+    },
+    {
+      "file": "reports/v0816-ocean-patterns-complete.png",
+      "sha256": "cb207c2b9b4702f64f4c30bbfad4dcc4ac92c8a08f3832788490077e7c2f1bdc",
+      "capturedAt": "2026-11-11T07:35:19.880Z"
+    },
+    {
+      "file": "reports/v0816-jump-tap-apex.png",
+      "sha256": "dd465e0b6ddd8f0e7c8f53386d12ee7814dca329cc001e5a3364c57af6599d8c",
+      "capturedAt": "2026-11-11T07:23:44.255Z"
+    },
+    {
+      "file": "reports/v0816-jump-held-apex.png",
+      "sha256": "febba98655f513941b0fff0c967aa1ace720049b89278f237d5ffcd2553d20e6",
+      "capturedAt": "2026-11-11T07:23:47.194Z"
+    },
+    {
+      "file": "reports/v0816-platform-low-deck.png",
+      "sha256": "efd31bdcbba713a71440b2128e34317dbdda60601af3a01347ffa68afff8e2d5",
+      "capturedAt": "2026-11-11T07:23:49.251Z"
+    },
+    {
+      "file": "reports/v0816-platform-high-deck.png",
+      "sha256": "92c3bf54b3a42fd61c32ffbda180dd4af23613d7e1aa29227388e446690f9439",
+      "capturedAt": "2026-11-11T07:23:53.217Z"
+    },
+    {
+      "file": "reports/v0816-platform-touch-down-ready.png",
+      "sha256": "97400e0b07ddfb24f74507ebffdf223750e2a01f9bb6073d3e5909a13cb59fc7",
+      "capturedAt": "2026-11-11T07:23:53.762Z"
+    },
+    {
+      "file": "reports/v0816-platform-drop-through.png",
+      "sha256": "277c362fd3fca00b0046bdda4c4755c4d7eb57ddf7a565ff5369e9c18c8ce6ee",
+      "capturedAt": "2026-11-11T07:23:54.225Z"
+    },
+    {
+      "file": "reports/v0816-platform-ground-landing.png",
+      "sha256": "3861e9a7b3ac1e7899106a45559810b9e0f990c34b60414c39d09dec6b0a39a6",
+      "capturedAt": "2026-11-11T07:23:56.355Z"
+    }
+  ],
+  "limitations": [
+    "Phone Chrome viewports and touch injection are simulated, no iPhone/WeChat hardware run",
+    "Submarine six-pattern tour deliberately holds fire; normal damage and inventory remain, not sustained-fire difficulty evidence",
+    "No upload or publication"
+  ]
+}

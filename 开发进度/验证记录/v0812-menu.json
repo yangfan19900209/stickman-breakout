@@ -1,0 +1,462 @@
+{
+  "startedAt": "2026-11-11T03:21:47.051Z",
+  "environment": "Chrome touch at DPR 3; iPhone 15 Pro viewport, native design-coordinate safe area and capsule/extra button simulated, not WeChat hardware",
+  "layouts": [
+    {
+      "name": "menu-fallback",
+      "chapter": 1,
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "bossCeiling": 513.7862595419847,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "layout": {
+        "systemMenu": {
+          "x": 1363.053435114504,
+          "y": 632.0610687022901,
+          "w": 183.20610687022904,
+          "h": 73.28244274809161
+        },
+        "systemReservedLeft": 1275.114503816794,
+        "safeInsets": {
+          "left": 108.09160305343512,
+          "right": 0,
+          "bottom": 38.47328244274809,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1025.954198473282,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 923.3587786259538,
+          "secondRow": true,
+          "objectiveX": 780.4580152671756,
+          "objectiveWidth": 512.9770992366412
+        },
+        "joystick": {
+          "x": 279.7328244274809,
+          "y": 202.78625954198472,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 266.9413740458015,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 202.78625954198472,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 403.9795419847328,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1201.8320610687022,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      }
+    },
+    {
+      "name": "menu-mobile",
+      "chapter": 1,
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "bossCeiling": 513.7862595419847,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "layout": {
+        "systemMenu": {
+          "x": 1385.0381679389313,
+          "y": 639.3893129770993,
+          "w": 161.22137404580155,
+          "h": 58.62595419847329
+        },
+        "systemReservedLeft": 1304.4274809160304,
+        "safeInsets": {
+          "left": 108.09160305343512,
+          "right": 0,
+          "bottom": 38.47328244274809,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1055.2671755725185,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 952.6717557251902,
+          "secondRow": true,
+          "objectiveX": 780.4580152671756,
+          "objectiveWidth": 512.9770992366412
+        },
+        "joystick": {
+          "x": 279.7328244274809,
+          "y": 202.78625954198472,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 266.9413740458015,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 202.78625954198472,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 403.9795419847328,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1231.1450381679385,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      }
+    },
+    {
+      "name": "menu-updated",
+      "chapter": 1,
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "bossCeiling": 513.7862595419847,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "layout": {
+        "systemMenu": {
+          "x": 1348.3969465648856,
+          "y": 639.3893129770993,
+          "w": 197.86259541984734,
+          "h": 58.62595419847329
+        },
+        "systemReservedLeft": 1267.7862595419847,
+        "safeInsets": {
+          "left": 108.09160305343512,
+          "right": 0,
+          "bottom": 38.47328244274809,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1018.6259541984728,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 916.0305343511445,
+          "secondRow": true,
+          "objectiveX": 780.4580152671756,
+          "objectiveWidth": 512.9770992366412
+        },
+        "joystick": {
+          "x": 279.7328244274809,
+          "y": 202.78625954198472,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 266.9413740458015,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 202.78625954198472,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 403.9795419847328,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1194.5038167938928,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      }
+    },
+    {
+      "name": "menu-notch-right",
+      "chapter": 1,
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 0,
+        "worldY": -60,
+        "bossCeiling": 513.7862595419847,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "layout": {
+        "systemMenu": {
+          "x": 1348.3969465648856,
+          "y": 639.3893129770993,
+          "w": 197.86259541984734,
+          "h": 58.62595419847329
+        },
+        "systemReservedLeft": 1267.7862595419847,
+        "safeInsets": {
+          "left": 0,
+          "right": 108.09160305343516,
+          "bottom": 38.47328244274809,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1018.6259541984728,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 916.0305343511445,
+          "secondRow": true,
+          "objectiveX": 780.4580152671756,
+          "objectiveWidth": 512.9770992366412
+        },
+        "joystick": {
+          "x": 171.6412213740458,
+          "y": 202.78625954198472,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1084.085496183206,
+          "y": 266.9413740458015,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1299.0229007633588,
+          "y": 202.78625954198472,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1310.0152671755725,
+          "y": 403.9795419847328,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1194.5038167938928,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      }
+    },
+    {
+      "name": "menu-compact",
+      "chapter": 1,
+      "display": {
+        "width": 1280.64,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 914.7428571428572,
+        "cameraY": 0,
+        "worldY": -62.20659572948745,
+        "bossCeiling": 505.52,
+        "frameWidth": 667,
+        "frameHeight": 375,
+        "orientationPaused": false
+      },
+      "layout": {
+        "systemMenu": {
+          "x": 1096.3200000000002,
+          "y": 635.52,
+          "w": 168.96000000000004,
+          "h": 61.44000000000001
+        },
+        "systemReservedLeft": 1011.8400000000003,
+        "safeInsets": {
+          "left": 0,
+          "right": 0,
+          "bottom": 40.32000000000001,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 781.4400000000002,
+          "levelWidth": 192,
+          "trackWidth": 153.6,
+          "trackX": 704.6400000000002,
+          "secondRow": true,
+          "objectiveX": 640.32,
+          "objectiveWidth": 537.6
+        },
+        "joystick": {
+          "x": 173.4,
+          "y": 206.04000000000002,
+          "r": 95.75999999999999,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.92
+        },
+        "jump": {
+          "x": 907.6800000000001,
+          "y": 270.9936,
+          "r": 64.8,
+          "hit": 152.64
+        },
+        "shoot": {
+          "x": 1124.64,
+          "y": 206.04000000000002,
+          "r": 108,
+          "hit": 242.88
+        },
+        "grenade": {
+          "x": 1136.16,
+          "y": 409.08000000000004,
+          "r": 54.72,
+          "hit": 132.48
+        },
+        "pause": {
+          "x": 935.0400000000002,
+          "y": 666.24,
+          "hit": 84.47999999999999
+        }
+      }
+    },
+    {
+      "name": "menu-ocean",
+      "chapter": 2,
+      "display": {
+        "width": 1560.9160305343512,
+        "height": 720,
+        "portrait": false,
+        "zoom": 1.4,
+        "combatZoom": 1.4,
+        "worldVisibleWidth": 1114.940021810251,
+        "cameraY": 488.5687657677549,
+        "worldY": 0,
+        "bossCeiling": 513.7862595419847,
+        "frameWidth": 852,
+        "frameHeight": 393,
+        "orientationPaused": false
+      },
+      "layout": {
+        "systemMenu": {
+          "x": 1385.0381679389313,
+          "y": 639.3893129770993,
+          "w": 161.22137404580155,
+          "h": 58.62595419847329
+        },
+        "systemReservedLeft": 1304.4274809160304,
+        "safeInsets": {
+          "left": 108.09160305343512,
+          "right": 0,
+          "bottom": 38.47328244274809,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1055.2671755725185,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 952.6717557251902,
+          "secondRow": true,
+          "objectiveX": 780.4580152671756,
+          "objectiveWidth": 512.9770992366412
+        },
+        "joystick": {
+          "x": 279.7328244274809,
+          "y": 202.78625954198472,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 266.9413740458015,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 202.78625954198472,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 403.9795419847328,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1231.1450381679385,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      }
+    }
+  ],
+  "captures": [
+    "menu-fallback",
+    "menu-mobile",
+    "menu-updated",
+    "menu-notch-right",
+    "menu-compact",
+    "menu-ocean"
+  ],
+  "errors": [],
+  "failed": [],
+  "pausedByTouch": true,
+  "orientationRestored": true
+}

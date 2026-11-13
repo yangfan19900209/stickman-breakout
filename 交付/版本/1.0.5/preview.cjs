@@ -1,0 +1,7 @@
+const http=require('http'),fs=require('fs'),path=require('path'),{spawn}=require('child_process');
+const root=path.join(__dirname,'web-mobile'),port=4195;
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.wasm':'application/wasm','.png':'image/png','.jpg':'image/jpeg','.wav':'audio/wav','.webmanifest':'application/manifest+json'};
+const open=()=>spawn('powershell.exe',['-NoProfile','-Command',"Start-Process 'http://127.0.0.1:"+port+"/level02.html'"],{windowsHide:true,stdio:'ignore'});
+const server=http.createServer((req,res)=>{try{const url=new URL(req.url,'http://127.0.0.1'),file=path.resolve(root,decodeURIComponent(url.pathname).replace(/^\//,'')||'index.html');if(!file.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}if(!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);res.end();return;}res.writeHead(200,{'Content-Type':mime[path.extname(file)]||'application/octet-stream','Cache-Control':'no-store'});res.end(fs.readFileSync(file));}catch{res.writeHead(400);res.end();}});
+server.on('error',e=>{if(e.code==='EADDRINUSE'){console.log('Port 4195 is occupied. Close the previous preview before retrying.');process.exitCode=1;}else throw e;});
+server.listen(port,'127.0.0.1',()=>{console.log('Fixed 1.0.5 preview: http://127.0.0.1:'+port+'/level02.html');if(process.argv.includes('--open'))open();});

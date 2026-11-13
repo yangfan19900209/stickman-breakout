@@ -1,0 +1,62 @@
+{
+  "version": "1.0.6",
+  "passed": true,
+  "startedAt": "2026-11-13T09:37:25.933Z",
+  "method": "Actual Cocos build and ordinary touchscreen/keyboard inputs. WeChat API host is simulated; attempts and native-share requests observed synchronously, no actual message sent or real WeChat panel claimed.",
+  "cases": [
+    {
+      "mode": "normal",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "pending-image",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "empty-export",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "failed-export",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "expired-card",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 6,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    }
+  ],
+  "captures": [
+    "../开发进度/验证记录/v106-revive-select/share/normal-title.png",
+    "../开发进度/验证记录/v106-revive-select/share/normal-records.png",
+    "../开发进度/验证记录/v106-revive-select/share/pending-image-title.png",
+    "../开发进度/验证记录/v106-revive-select/share/pending-image-records.png",
+    "../开发进度/验证记录/v106-revive-select/share/empty-export-title.png",
+    "../开发进度/验证记录/v106-revive-select/share/empty-export-records.png",
+    "../开发进度/验证记录/v106-revive-select/share/failed-export-title.png",
+    "../开发进度/验证记录/v106-revive-select/share/failed-export-records.png",
+    "../开发进度/验证记录/v106-revive-select/share/expired-card-title.png",
+    "../开发进度/验证记录/v106-revive-select/share/expired-card-records.png"
+  ],
+  "errors": [],
+  "failed": []
+}

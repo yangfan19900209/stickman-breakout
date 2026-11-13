@@ -1,0 +1,5960 @@
+{
+  "version": "0.8.10",
+  "startedAt": "2026-11-11T01:14:23.113Z",
+  "method": "Normal keyboard route followed by deliberate platform ascent and descent to observe pursuit; read-only snapshots, no health/position edits. This is a navigation demonstration, not continuous-fire combat evidence.",
+  "viewport": {
+    "width": 844,
+    "height": 390,
+    "dpr": 2
+  },
+  "landed": true,
+  "descended": true,
+  "enemyJumps": {
+    "m1": {
+      "kind": "melee",
+      "jumps": 1,
+      "x": 480.08713500193943,
+      "y": 150
+    },
+    "r1": {
+      "kind": "ranged",
+      "jumps": 1,
+      "x": 753.9147257369852,
+      "y": 200.75409836065575
+    },
+    "r3": {
+      "kind": "ranged",
+      "jumps": 1,
+      "x": 2009.793018749172,
+      "y": 150
+    },
+    "shield-B": {
+      "kind": "shield",
+      "jumps": 2,
+      "x": 2750.6484227481546,
+      "y": 213
+    },
+    "m4": {
+      "kind": "melee",
+      "jumps": 2,
+      "x": 2765.6843970313716,
+      "y": 213
+    },
+    "r5": {
+      "kind": "ranged",
+      "jumps": 1,
+      "x": 3250.3516838792584,
+      "y": 150
+    },
+    "turret-B": {
+      "kind": "turret",
+      "jumps": 1,
+      "x": 3633.4867182044777,
+      "y": 150
+    },
+    "shield-C": {
+      "kind": "shield",
+      "jumps": 1,
+      "x": 3990.935558617149,
+      "y": 204.1875
+    },
+    "turret-C": {
+      "kind": "turret",
+      "jumps": 1,
+      "x": 5784.774912385875,
+      "y": 150
+    }
+  },
+  "events": [
+    {
+      "time": 26.516666666665802,
+      "phase": "up",
+      "player": {
+        "x": 5415.809535414993,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 6039.999999999978,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.5666666666658,
+      "phase": "up",
+      "player": {
+        "x": 5419.35120208166,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 6029.999999999976,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.608333333332464,
+      "phase": "up",
+      "player": {
+        "x": 5417.337313192771,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 6021.6666666666415,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.65833333333246,
+      "phase": "up",
+      "player": {
+        "x": 5408.96231319277,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 6011.66666666664,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.724999999999124,
+      "phase": "up",
+      "player": {
+        "x": 5390.7262020816615,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5998.333333333304,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.77499999999912,
+      "phase": "up",
+      "player": {
+        "x": 5376.726202081663,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5988.333333333302,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.816666666665785,
+      "phase": "up",
+      "player": {
+        "x": 5365.059535414998,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5979.999999999967,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.866666666665783,
+      "phase": "up",
+      "player": {
+        "x": 5351.059535415,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5969.999999999965,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.899999999999114,
+      "phase": "up",
+      "player": {
+        "x": 5341.726202081668,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5963.333333333298,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.899999999999114,
+      "phase": "up",
+      "player": {
+        "x": 5341.726202081668,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5963.333333333298,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.94166666666578,
+      "phase": "up",
+      "player": {
+        "x": 5330.059535415003,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5954.999999999963,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.97499999999911,
+      "phase": "up",
+      "player": {
+        "x": 5322.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5948.333333333295,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 26.983333333332443,
+      "phase": "up",
+      "player": {
+        "x": 5321.726202081669,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5946.666666666628,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.03333333333244,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5936.666666666626,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.083333333332437,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5926.666666666624,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.133333333332434,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5916.666666666622,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.1749999999991,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5908.333333333288,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.224999999999095,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5898.333333333286,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.274999999999093,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5888.333333333284,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.32499999999909,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5878.333333333282,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.38333333333242,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5866.666666666613,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 96,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.433333333332417,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5856.6666666666115,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.433333333332417,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5856.6666666666115,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.458333333332416,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5851.666666666611,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.508333333332413,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5841.666666666609,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.55833333333241,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5831.666666666607,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.608333333332407,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5821.666666666605,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.64999999999907,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5813.33333333327,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 27.716666666665734,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5799.9999999999345,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.76666666666573,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5789.999999999933,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 27.81666666666573,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5779.999999999931,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 27.858333333332393,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5771.666666666596,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 27.90833333333239,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5761.666666666594,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 27.958333333332387,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5751.666666666592,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.008333333332384,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5741.666666666591,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.04999999999905,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5733.333333333256,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.11666666666571,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5719.99999999992,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.16666666666571,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5709.999999999918,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.216666666665706,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5699.999999999916,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.25833333333237,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5691.6666666665815,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.308333333332367,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5681.66666666658,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.358333333332364,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5671.666666666578,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.40833333333236,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5661.666666666576,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.449999999999026,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5653.333333333241,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.51666666666569,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5639.999999999905,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.566666666665686,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5629.999999999904,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.616666666665683,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5619.999999999902,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.658333333332347,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5611.666666666567,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.708333333332344,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5601.666666666565,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.75833333333234,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5591.666666666563,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.80833333333234,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5581.6666666665615,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.849999999999003,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5573.333333333227,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 28.916666666665666,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5559.999999999891,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 28.966666666665663,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5549.999999999889,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.01666666666566,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5539.999999999887,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 29.058333333332325,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5531.666666666552,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 29.10833333333232,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5521.666666666551,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.10833333333232,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5521.666666666551,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.13333333333232,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5516.66666666655,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.183333333332317,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5506.666666666548,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.24999999999898,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5493.333333333212,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 29.299999999998978,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5488.333333333211,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "jump-tell",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 29.341666666665642,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5488.333333333211,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "jump-tell",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 29.39166666666564,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5488.333333333211,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "jump-tell",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 29.441666666665636,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5488.333333333211,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "jump-tell",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 29.491666666665633,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5488.333333333211,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "jump-tell",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 29.533333333332298,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5488.333333333211,
+        "y": 150,
+        "vy": 0,
+        "grounded": true,
+        "mode": "jump-tell",
+        "hp": 89,
+        "jumps": 0
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 29.583333333332295,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5480.333333333211,
+        "y": 171.16666666666666,
+        "vy": 620,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.649999999998958,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5464.333333333211,
+        "y": 209.5,
+        "vy": 540,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.699999999998955,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5452.333333333211,
+        "y": 234.75,
+        "vy": 480,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.74166666666562,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5442.333333333211,
+        "y": 253.5,
+        "vy": 430,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.791666666665616,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5430.333333333211,
+        "y": 273.25,
+        "vy": 370,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.841666666665613,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 5
+      },
+      "mini": {
+        "x": 5418.333333333211,
+        "y": 290,
+        "vy": 310,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.85833333333228,
+      "phase": "up",
+      "player": {
+        "x": 5318.948424303891,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5414.333333333211,
+        "y": 294.9166666666667,
+        "vy": 290,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.866666666665612,
+      "phase": "up",
+      "player": {
+        "x": 5317.779704849142,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5412.333333333211,
+        "y": 297.25,
+        "vy": 280,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.91666666666561,
+      "phase": "up",
+      "player": {
+        "x": 5311.529455964723,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5400.333333333211,
+        "y": 309.5,
+        "vy": 220,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 29.983333333332272,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5384.333333333211,
+        "y": 321.1666666666667,
+        "vy": 140,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 30.03333333333227,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5372.333333333211,
+        "y": 326.4166666666667,
+        "vy": 80,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 30.074999999998933,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5362.333333333211,
+        "y": 328.5,
+        "vy": 30,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 30.12499999999893,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5350.3858803065,
+        "y": 328.25,
+        "vy": -30,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.174999999998928,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5340.867921066835,
+        "y": 325,
+        "vy": -90,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.224999999998925,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5334.231605560696,
+        "y": 318.75,
+        "vy": -150,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.26666666666559,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5330.264601804838,
+        "y": 311.25,
+        "vy": -200,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.316666666665586,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5326.838532081069,
+        "y": 299.5,
+        "vy": -260,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.38333333333225,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5323.826634561856,
+        "y": 279.1666666666667,
+        "vy": -340,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.433333333332246,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5322.349714597532,
+        "y": 260.4166666666667,
+        "vy": -400,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.47499999999891,
+      "phase": "up",
+      "player": {
+        "x": 5306.099024233823,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5322.151305997069,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 30.524999999998908,
+      "phase": "down",
+      "player": {
+        "x": 5302.307357567156,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5322.151305997069,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 30.574999999998905,
+      "phase": "down",
+      "player": {
+        "x": 5292.015690900489,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5322.151305997069,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 30.624999999998902,
+      "phase": "down",
+      "player": {
+        "x": 5278.015690900491,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5322.151305997069,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 30.666666666665567,
+      "phase": "down",
+      "player": {
+        "x": 5266.349024233826,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5322.151305997069,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 30.716666666665564,
+      "phase": "down",
+      "player": {
+        "x": 5252.349024233828,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5322.151305997069,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 30.783333333332227,
+      "phase": "down",
+      "player": {
+        "x": 5233.682357567163,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5328.1929726637345,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 30.833333333332224,
+      "phase": "down",
+      "player": {
+        "x": 5219.682357567165,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5335.442972663733,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 30.874999999998888,
+      "phase": "down",
+      "player": {
+        "x": 5208.0156909005,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5341.484639330398,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 30.924999999998885,
+      "phase": "down",
+      "player": {
+        "x": 5194.015690900502,
+        "y": 260,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5348.734639330396,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 30.974999999998882,
+      "phase": "down",
+      "player": {
+        "x": 5180.015690900504,
+        "y": 259.5,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5355.984639330394,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.02499999999888,
+      "phase": "down",
+      "player": {
+        "x": 5166.015690900505,
+        "y": 256.25,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5363.234639330392,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.066666666665544,
+      "phase": "down",
+      "player": {
+        "x": 5154.34902423384,
+        "y": 251.25,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5369.2763059970575,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.11666666666554,
+      "phase": "down",
+      "player": {
+        "x": 5140.349024233842,
+        "y": 242.5,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5376.526305997056,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.183333333332204,
+      "phase": "down",
+      "player": {
+        "x": 5121.682357567178,
+        "y": 226.16666666666666,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5386.19297266372,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.2333333333322,
+      "phase": "down",
+      "player": {
+        "x": 5107.68235756718,
+        "y": 215.4583333333331,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5384.817972663718,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.274999999998865,
+      "phase": "down",
+      "player": {
+        "x": 5096.0156909005145,
+        "y": 212.7499999999998,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5376.484639330383,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.324999999998862,
+      "phase": "down",
+      "player": {
+        "x": 5082.015690900516,
+        "y": 209.49999999999986,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5366.4846393303815,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.37499999999886,
+      "phase": "down",
+      "player": {
+        "x": 5068.015690900518,
+        "y": 206.24999999999991,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5356.48463933038,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.424999999998857,
+      "phase": "down",
+      "player": {
+        "x": 5054.01569090052,
+        "y": 202.99999999999997,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5346.484639330378,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.46666666666552,
+      "phase": "down",
+      "player": {
+        "x": 5045.682357567186,
+        "y": 200.29166666666669,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5338.151305997043,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.516666666665518,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 197.04166666666674,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5328.151305997041,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.58333333333218,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 192.70833333333348,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5314.817972663705,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.63333333333218,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 194.16666666666663,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5304.817972663704,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.674999999998843,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 196.87499999999991,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5296.484639330369,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.72499999999884,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 200.12499999999986,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5286.484639330367,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.774999999998837,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 203.3749999999998,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5276.484639330365,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.824999999998834,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 206.62499999999974,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5266.484639330363,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 31.8666666666655,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 209.33333333333303,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5258.151305997028,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.916666666665495,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 212.58333333333297,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5248.151305997027,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 31.98333333333216,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 216.91666666666623,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5234.817972663691,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 32.03333333333216,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 220.16666666666617,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5224.817972663689,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 32.07499999999882,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 222.87499999999946,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5216.484639330354,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "chasing",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 32.12499999999882,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 226.1249999999994,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.17499999999882,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 229.37499999999935,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.224999999998815,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 232.6249999999993,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.26666666666548,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 235.33333333333258,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.316666666665476,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 238.58333333333252,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.38333333333214,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 242.91666666666578,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.433333333332136,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 246.16666666666572,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.4749999999988,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 248.874999999999,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.5249999999988,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 252.12499999999895,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.574999999998795,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 255.3749999999989,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.62499999999879,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 258.62499999999886,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.666666666665456,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 261.3333333333321,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 261.3333333333321,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.71666666666545,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 264.58333333333206,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 264.58333333333206,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.783333333332116,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 268.9166666666653,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 268.9166666666653,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.833333333332114,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 272.16666666666526,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 272.16666666666526,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.87499999999878,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 274.8749999999985,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 274.8749999999985,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 32.924999999998775,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 278.1249999999985,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 278.1249999999985,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 32.97499999999877,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 281.3749999999985,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 281.3749999999985,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.02499999999877,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 284.62499999999864,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 284.62499999999864,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.066666666665434,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 287.33333333333206,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 287.33333333333206,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.11666666666543,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 290.5833333333322,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 290.5833333333322,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.183333333332094,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 294.91666666666566,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 294.91666666666566,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.23333333333209,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 298.1666666666658,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 298.1666666666658,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.274999999998755,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 300.8749999999992,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 300.8749999999992,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.32499999999875,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 304.1249999999993,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 304.1249999999993,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.37499999999875,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 307.37499999999943,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 307.37499999999943,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.42499999999875,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 310.62499999999955,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 310.62499999999955,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.46666666666541,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 313.333333333333,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 313.333333333333,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.51666666666541,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 316.5833333333331,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 316.5833333333331,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.fire"
+    },
+    {
+      "time": 33.58333333333207,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 319.4583333333333,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 319.4583333333333,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 33.63333333333207,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 316.2083333333332,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 316.2083333333332,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 33.67499999999873,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 313.4999999999998,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5211.484639330353,
+        "y": 313.4999999999998,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 33.72499999999873,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 310.24999999999966,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5212.692972663686,
+        "y": 310.24999999999966,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 33.77499999999873,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 306.99999999999955,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5219.9429726636845,
+        "y": 306.99999999999955,
+        "vy": 0,
+        "grounded": true,
+        "mode": "repositioning",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.1"
+    },
+    {
+      "time": 33.824999999998724,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 303.74999999999943,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5227.192972663683,
+        "y": 304.3333333333328,
+        "vy": -30,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 33.86666666666539,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 301.041666666666,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5233.234639330348,
+        "y": 301.8333333333328,
+        "vy": -80,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 33.916666666665385,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 297.7916666666659,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5240.484639330346,
+        "y": 296.0833333333328,
+        "vy": -140,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 33.98333333333205,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 293.4583333333324,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5250.15130599701,
+        "y": 283.7499999999995,
+        "vy": -220,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 34.033333333332045,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 290.2083333333323,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5257.401305997008,
+        "y": 270.9999999999995,
+        "vy": -280,
+        "grounded": false,
+        "mode": "jumping",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.roll.0"
+    },
+    {
+      "time": 34.07499999999871,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 287.49999999999886,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 34.12499999999871,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 284.24999999999875,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 34.174999999998704,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 280.99999999999864,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 34.2249999999987,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 277.74999999999864,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 34.266666666665365,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 275.0416666666654,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 34.31666666666536,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 271.79166666666544,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.idle"
+    },
+    {
+      "time": 34.383333333332025,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 267.4583333333322,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.43333333333202,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 264.20833333333223,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.47499999999869,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 261.499999999999,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.524999999998684,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 258.249999999999,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.57499999999868,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 254.99999999999906,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.62499999999868,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 251.74999999999912,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.66666666666534,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 249.04166666666583,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.71666666666534,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 245.7916666666659,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.783333333332,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 241.45833333333263,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.833333333332,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 238.2083333333327,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.874999999998664,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 235.4999999999994,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.92499999999866,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 232.24999999999946,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 34.97499999999866,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 228.99999999999952,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.024999999998656,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 225.74999999999957,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.06666666666532,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 223.0416666666663,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.11666666666532,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 219.79166666666634,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.18333333333198,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 215.4583333333331,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.23333333333198,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 212.20833333333314,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.27499999999864,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 209.49999999999986,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.32499999999864,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 206.24999999999991,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.374999999998636,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 202.99999999999997,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "aiming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram-tell"
+    },
+    {
+      "time": 35.42499999999863,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 199.75000000000003,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5263.442972663674,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.4666666666653,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 197.04166666666674,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5249.276305997008,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.516666666665294,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 193.7916666666668,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5232.27630599701,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.58333333333196,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 194.16666666666663,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5209.609639330346,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.633333333331954,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 197.41666666666657,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5192.609639330348,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.67499999999862,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 200.12499999999986,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5178.442972663683,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.724999999998616,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 203.3749999999998,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5161.4429726636845,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.77499999999861,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 206.62499999999974,
+        "hp": 4
+      },
+      "mini": {
+        "x": 5144.442972663686,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.79166666666528,
+      "phase": "down",
+      "player": {
+        "x": 5042.904579789409,
+        "y": 207.70833333333306,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5138.77630599702,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.79999999999861,
+      "phase": "down",
+      "player": {
+        "x": 5041.735860334659,
+        "y": 208.24999999999972,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5135.942972663687,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.84999999999861,
+      "phase": "down",
+      "player": {
+        "x": 5035.48561145024,
+        "y": 211.49999999999966,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5118.942972663689,
+        "y": 260,
+        "vy": 0,
+        "grounded": true,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.91666666666527,
+      "phase": "down",
+      "player": {
+        "x": 5030.05517971934,
+        "y": 215.83333333333292,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5096.276305997025,
+        "y": 257.6666666666667,
+        "vy": -70,
+        "grounded": false,
+        "mode": "ramming",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 35.96666666666527,
+      "phase": "down",
+      "player": {
+        "x": 5032.987026052249,
+        "y": 219.08333333333286,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5087.776305997026,
+        "y": 252.41666666666666,
+        "vy": -130,
+        "grounded": false,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 36.00833333333193,
+      "phase": "down",
+      "player": {
+        "x": 5034.5249236075215,
+        "y": 221.79166666666615,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5087.776305997026,
+        "y": 245.75,
+        "vy": -180,
+        "grounded": false,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 36.05833333333193,
+      "phase": "down",
+      "player": {
+        "x": 5034.5249236075215,
+        "y": 225.0416666666661,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5087.776305997026,
+        "y": 235,
+        "vy": -240,
+        "grounded": false,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    },
+    {
+      "time": 36.10833333333193,
+      "phase": "down",
+      "player": {
+        "x": 5034.5249236075215,
+        "y": 228.29166666666603,
+        "hp": 3
+      },
+      "mini": {
+        "x": 5087.776305997026,
+        "y": 228.29166666666603,
+        "vy": 0,
+        "grounded": true,
+        "mode": "recovering",
+        "hp": 89,
+        "jumps": 1
+      },
+      "frame": "rhino.ram"
+    }
+  ],
+  "captures": [
+    "reports/v0810-pursuit-enemy-melee.png",
+    "reports/v0810-pursuit-enemy-ranged.png",
+    "reports/v0810-pursuit-enemy-shield.png",
+    "reports/v0810-pursuit-enemy-turret.png",
+    "reports/v0810-pursuit-boss-anticipation.png",
+    "reports/v0810-pursuit-boss-rising.png",
+    "reports/v0810-pursuit-boss-falling.png",
+    "reports/v0810-pursuit-boss-landed.png",
+    "reports/v0810-pursuit-boss-followed-down.png",
+    "reports/v0810-pursuit-result.png"
+  ],
+  "errors": [],
+  "failed": [],
+  "final": {
+    "state": "playing",
+    "time": 36.10833333333193,
+    "player": {
+      "x": 5034.5249236075215,
+      "y": 228.29166666666603,
+      "vx": 0,
+      "vy": 0,
+      "health": 3,
+      "grounded": true,
+      "facing": 1,
+      "animation": "Idle",
+      "crouched": false,
+      "slideTime": 0,
+      "slideProgress": 1,
+      "slideCooldown": 0,
+      "slideSerial": 0,
+      "hitTime": 0,
+      "meleeActive": false,
+      "aimPitch": 0,
+      "airJumpsRemaining": 1,
+      "jumpCount": 0,
+      "canJump": true
+    },
+    "cameraX": 4566.821796004206,
+    "kills": 16,
+    "melee": {
+      "swings": 4,
+      "hits": 4,
+      "time": 0,
+      "stage": 0,
+      "state": "idle",
+      "action": "melee_combo_reset",
+      "stance": "jump",
+      "comboRemaining": 0,
+      "heavyHits": 0,
+      "blockedHits": 2,
+      "crateProtection": false
+    },
+    "weapon": "rocket",
+    "weaponPresentation": {
+      "id": "rocket",
+      "name": "追踪火箭筒",
+      "ammo": 3,
+      "icon": "weapon.rocket",
+      "ammoText": "剩余 3 发",
+      "projectile": "rocket",
+      "sound": "rocket",
+      "width": 66,
+      "mode": "ranged",
+      "muzzleExtra": 9
+    },
+    "weaponShot": {
+      "x": 5283.94712318865,
+      "y": 301.8438661710037,
+      "pitch": 0,
+      "flash": 0
+    },
+    "playerWeapon": "rocket",
+    "ammo": 3,
+    "grenades": 0,
+    "grenadesThrown": 3,
+    "destroyedObjects": 10,
+    "explosions": 11,
+    "feedback": {
+      "shakeTime": 0,
+      "shakePower": 7,
+      "hitStop": 0,
+      "hitFlash": 0,
+      "blasts": [],
+      "particles": [
+        {
+          "kind": "spark",
+          "x": 5023.818409682843,
+          "y": 259.71012072392625,
+          "vx": -60.27211612596731,
+          "vy": -32.86716262619698
+        },
+        {
+          "kind": "spark",
+          "x": 5101.253335741196,
+          "y": 158.41142285677387,
+          "vx": 184.25922932141714,
+          "vy": -352.7577874698363
+        },
+        {
+          "kind": "spark",
+          "x": 4993.737704310257,
+          "y": 192.93597302571357,
+          "vx": -155.26381730259786,
+          "vy": -243.73289219949996
+        },
+        {
+          "kind": "spark",
+          "x": 5042.746447125302,
+          "y": 191.12775351456432,
+          "vx": -0.49936630768061224,
+          "vy": -249.44305907681346
+        }
+      ],
+      "peakParticles": 156,
+      "droppedParticles": 0
+    },
+    "combo": 0,
+    "bestCombo": 10,
+    "objects": [
+      {
+        "id": "entry-crate",
+        "kind": "wood",
+        "x": 300,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 35.53333333333196
+      },
+      {
+        "id": "crate-01",
+        "kind": "wood",
+        "x": 420,
+        "y": 150,
+        "w": 76,
+        "h": 54,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 33.45833333333208
+      },
+      {
+        "id": "barrel-01",
+        "kind": "barrel",
+        "x": 660,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 2,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-02",
+        "kind": "barrel",
+        "x": 735,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-A",
+        "kind": "wood",
+        "x": 1350,
+        "y": 260,
+        "w": 55,
+        "h": 50,
+        "health": 1,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "hanging-01",
+        "kind": "hanging",
+        "x": 1530,
+        "y": 410,
+        "w": 54,
+        "h": 48,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-02",
+        "kind": "wood",
+        "x": 1750,
+        "y": 150,
+        "w": 64,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 28.733333333332343
+      },
+      {
+        "id": "sandbags-01",
+        "kind": "sandbag",
+        "x": 1860,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 27.599999999999074
+      },
+      {
+        "id": "barrel-03",
+        "kind": "barrel",
+        "x": 2230,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 25.699999999999182
+      },
+      {
+        "id": "crate-03",
+        "kind": "wood",
+        "x": 2710,
+        "y": 150,
+        "w": 72,
+        "h": 60,
+        "health": 2,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-B",
+        "kind": "concrete",
+        "x": 3055,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "bridge-rope",
+        "kind": "rope",
+        "x": 3178,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbags-B",
+        "kind": "sandbag",
+        "x": 3508,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 18.358333333332933
+      },
+      {
+        "id": "cargo-B",
+        "kind": "hanging",
+        "x": 3590,
+        "y": 440,
+        "w": 65,
+        "h": 55,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-C",
+        "kind": "concrete",
+        "x": 3851,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-C",
+        "kind": "wood",
+        "x": 4420,
+        "y": 260,
+        "w": 56,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 7.016666666666805
+      },
+      {
+        "id": "barrel-C1",
+        "kind": "barrel",
+        "x": 5620,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 9.225000000000117
+      },
+      {
+        "id": "barrel-C2",
+        "kind": "barrel",
+        "x": 5680,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 9.225000000000117
+      },
+      {
+        "id": "rocket-before-tank",
+        "kind": "wood",
+        "x": 4880,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 0,
+        "alive": false,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 13.683333333333197
+      },
+      {
+        "id": "cargo-C",
+        "kind": "hanging",
+        "x": 5980,
+        "y": 425,
+        "w": 56,
+        "h": 50,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "rocket-before-colossus",
+        "kind": "wood",
+        "x": 13270,
+        "y": 150,
+        "w": 58,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "arena-sandbag",
+        "kind": "sandbag",
+        "x": 13977.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "arena-barrel",
+        "kind": "barrel",
+        "x": 14190,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "grenades-E",
+        "kind": "wood",
+        "x": 6950,
+        "y": 150,
+        "w": 55,
+        "h": 50,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-E1",
+        "kind": "sandbag",
+        "x": 7700,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-E1",
+        "kind": "barrel",
+        "x": 7895,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-E",
+        "kind": "wood",
+        "x": 8220,
+        "y": 266,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-E2",
+        "kind": "sandbag",
+        "x": 8527.5,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "upper-crate-F",
+        "kind": "wood",
+        "x": 9070,
+        "y": 260,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-F",
+        "kind": "sandbag",
+        "x": 9370,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-F",
+        "kind": "barrel",
+        "x": 9570,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "bridge-rope-F",
+        "kind": "rope",
+        "x": 9793,
+        "y": 378,
+        "w": 14,
+        "h": 108,
+        "health": 2,
+        "alive": true,
+        "solid": false,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-F",
+        "kind": "concrete",
+        "x": 9971,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-F",
+        "kind": "wood",
+        "x": 10330,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "concrete-G",
+        "kind": "concrete",
+        "x": 11080,
+        "y": 150,
+        "w": 148,
+        "h": 64,
+        "health": 10000,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-G1",
+        "kind": "barrel",
+        "x": 11690,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "crate-G",
+        "kind": "wood",
+        "x": 12010,
+        "y": 150,
+        "w": 56,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "sandbag-G",
+        "kind": "sandbag",
+        "x": 12270,
+        "y": 150,
+        "w": 145,
+        "h": 64,
+        "health": 6,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "barrel-G2",
+        "kind": "barrel",
+        "x": 12855,
+        "y": 150,
+        "w": 38,
+        "h": 58,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "id": "grenades-before-final",
+        "kind": "wood",
+        "x": 13090,
+        "y": 150,
+        "w": 53,
+        "h": 48,
+        "health": 3,
+        "alive": true,
+        "solid": true,
+        "triggered": false,
+        "falling": false,
+        "vy": 0,
+        "deadTime": 0
+      }
+    ],
+    "pickups": [],
+    "recoveryPoints": [
+      {
+        "id": "after-industry",
+        "x": 3756,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-tank",
+        "x": 5460,
+        "y": 260,
+        "purpose": "before-boss"
+      },
+      {
+        "id": "after-freight",
+        "x": 8810,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "after-blockade",
+        "x": 10800,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-colossus",
+        "x": 13180,
+        "y": 150,
+        "purpose": "before-boss"
+      }
+    ],
+    "recoverySpawned": [
+      "after-industry"
+    ],
+    "victory": {
+      "active": false,
+      "time": 0,
+      "phase": "idle",
+      "focus": 0,
+      "cheerTime": 0,
+      "resultProgress": 0,
+      "resultsReady": false,
+      "impactSerial": 0,
+      "haptic": "light",
+      "flash": 0
+    },
+    "projectileStates": [],
+    "remaining": 22,
+    "guardHealth": 132,
+    "boss": {
+      "x": 14440,
+      "y": 150,
+      "vx": 0,
+      "stride": 0,
+      "movementTurns": 0,
+      "kind": "colossus",
+      "name": "重装裁决者",
+      "attack": "salvo",
+      "introTime": 1.3,
+      "phase": 1,
+      "active": false,
+      "mode": "dormant",
+      "warningX": 0,
+      "warningTargetY": 185,
+      "muzzle": {
+        "x": 14285.12,
+        "y": 271.44
+      },
+      "warningTime": 0,
+      "windup": 0,
+      "summons": 0,
+      "beam": {
+        "active": false,
+        "time": 0,
+        "x": 0,
+        "y": 0,
+        "endX": 0,
+        "endY": 0,
+        "length": 0,
+        "angle": 0,
+        "hits": 0
+      },
+      "attackCounts": {
+        "salvo": 0,
+        "sweep": 0,
+        "stomp": 0,
+        "laser": 0,
+        "missiles": 0,
+        "burst": 0
+      }
+    },
+    "miniBoss": {
+      "x": 5087.776305997026,
+      "y": 228.29166666666603,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "jumpCount": 1,
+      "mode": "recovering",
+      "windup": 0,
+      "ramEndX": 5089.1045797894085,
+      "movementTurns": 2,
+      "moveTargetX": 5312.904579789409,
+      "attackCounts": {
+        "bombard": 0,
+        "burst": 1,
+        "ram": 1,
+        "fan": 0
+      },
+      "muzzle": {
+        "x": 4992.776305997026,
+        "y": 299.79166666666606
+      },
+      "health": 89,
+      "maxHealth": 96,
+      "active": true,
+      "phase": 1,
+      "warningX": 5042.904579789409,
+      "warningTime": 0,
+      "attack": "ram",
+      "warningPoints": []
+    },
+    "levelWidth": 14800,
+    "exitX": 14670,
+    "arena": {
+      "start": 13440,
+      "end": 14770
+    },
+    "arenaEntered": false,
+    "zones": [
+      {
+        "id": "A",
+        "name": "道路遭遇",
+        "start": 0,
+        "end": 1850,
+        "cleared": true
+      },
+      {
+        "id": "B",
+        "name": "工业突破",
+        "start": 1850,
+        "end": 3800,
+        "cleared": true
+      },
+      {
+        "id": "C",
+        "name": "机械阵地",
+        "start": 3800,
+        "end": 6740,
+        "cleared": false
+      },
+      {
+        "id": "E",
+        "name": "运输栈道",
+        "start": 6740,
+        "end": 8840,
+        "cleared": false
+      },
+      {
+        "id": "F",
+        "name": "封锁哨线",
+        "start": 8840,
+        "end": 10940,
+        "cleared": false
+      },
+      {
+        "id": "G",
+        "name": "维修长廊",
+        "start": 10940,
+        "end": 13340,
+        "cleared": false
+      },
+      {
+        "id": "D",
+        "name": "裁决者决战",
+        "start": 13340,
+        "end": 14800,
+        "cleared": false
+      }
+    ],
+    "mechanisms": [
+      {
+        "id": "bridge-B",
+        "kind": "bridge",
+        "x": 3080,
+        "y": 296,
+        "w": 210,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 150,
+        "maxY": 296
+      },
+      {
+        "id": "lift-C",
+        "kind": "lift",
+        "x": 4960,
+        "y": 204.29166666666603,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "lift-E",
+        "kind": "lift",
+        "x": 7960,
+        "y": 286.5,
+        "w": 180,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 168,
+        "maxY": 296
+      },
+      {
+        "id": "bridge-F",
+        "kind": "bridge",
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "released": false,
+        "landed": false,
+        "minY": 150,
+        "maxY": 296
+      }
+    ],
+    "terrain": [
+      {
+        "x": 0,
+        "y": -240,
+        "w": 14800,
+        "h": 390,
+        "kind": "ground",
+        "slope": {
+          "left": 150,
+          "right": 150
+        },
+        "oneWay": false
+      },
+      {
+        "x": 1150,
+        "y": 236,
+        "w": 340,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 2300,
+        "y": 242,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 3300,
+        "y": 236,
+        "w": 160,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 4300,
+        "y": 236,
+        "w": 250,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 5200,
+        "y": 236,
+        "w": 390,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 7300,
+        "y": 236,
+        "w": 360,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 8190,
+        "y": 242,
+        "w": 300,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 9000,
+        "y": 236,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 11300,
+        "y": 236,
+        "w": 340,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 12500,
+        "y": 242,
+        "w": 320,
+        "h": 24,
+        "kind": "platform",
+        "supported": true,
+        "oneWay": true
+      },
+      {
+        "x": 657.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-01",
+        "oneWay": false
+      },
+      {
+        "x": 732.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-02",
+        "oneWay": false
+      },
+      {
+        "x": 1350.6267605633802,
+        "y": 260,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "upper-crate-A",
+        "oneWay": false
+      },
+      {
+        "x": 2714.056338028169,
+        "y": 150,
+        "w": 63.887323943661976,
+        "h": 63,
+        "kind": "crate",
+        "entityId": "crate-03",
+        "oneWay": false
+      },
+      {
+        "x": 3064.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-B",
+        "oneWay": false
+      },
+      {
+        "x": 3860.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-C",
+        "oneWay": false
+      },
+      {
+        "x": 13273.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "rocket-before-colossus",
+        "oneWay": false
+      },
+      {
+        "x": 13975,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "arena-sandbag",
+        "oneWay": false
+      },
+      {
+        "x": 14187.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "arena-barrel",
+        "oneWay": false
+      },
+      {
+        "x": 6950.62676056338,
+        "y": 150,
+        "w": 53.74647887323944,
+        "h": 53,
+        "kind": "crate",
+        "entityId": "grenades-E",
+        "oneWay": false
+      },
+      {
+        "x": 7697.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E1",
+        "oneWay": false
+      },
+      {
+        "x": 7892.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-E1",
+        "oneWay": false
+      },
+      {
+        "x": 8222.140845070422,
+        "y": 266,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "upper-crate-E",
+        "oneWay": false
+      },
+      {
+        "x": 8525,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-E2",
+        "oneWay": false
+      },
+      {
+        "x": 9070.640845070422,
+        "y": 260,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "upper-crate-F",
+        "oneWay": false
+      },
+      {
+        "x": 9367.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-F",
+        "oneWay": false
+      },
+      {
+        "x": 9567.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-F",
+        "oneWay": false
+      },
+      {
+        "x": 9980.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-F",
+        "oneWay": false
+      },
+      {
+        "x": 10332.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "crate-F",
+        "oneWay": false
+      },
+      {
+        "x": 11089.6125,
+        "y": 150,
+        "w": 128.775,
+        "h": 54.18749999999999,
+        "kind": "crate",
+        "entityId": "concrete-G",
+        "oneWay": false
+      },
+      {
+        "x": 11687.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-G1",
+        "oneWay": false
+      },
+      {
+        "x": 12012.140845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "crate-G",
+        "oneWay": false
+      },
+      {
+        "x": 12267.5,
+        "y": 150,
+        "w": 150,
+        "h": 66.875,
+        "kind": "crate",
+        "entityId": "sandbag-G",
+        "oneWay": false
+      },
+      {
+        "x": 12852.5,
+        "y": 150,
+        "w": 43,
+        "h": 50.75409836065574,
+        "kind": "crate",
+        "entityId": "barrel-G2",
+        "oneWay": false
+      },
+      {
+        "x": 13090.640845070422,
+        "y": 150,
+        "w": 51.718309859154935,
+        "h": 51,
+        "kind": "crate",
+        "entityId": "grenades-before-final",
+        "oneWay": false
+      },
+      {
+        "x": 3080,
+        "y": 296,
+        "w": 210,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 4960,
+        "y": 204.29166666666603,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 7960,
+        "y": 286.5,
+        "w": 180,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      },
+      {
+        "x": 9690,
+        "y": 296,
+        "w": 220,
+        "h": 24,
+        "kind": "platform",
+        "oneWay": true
+      }
+    ],
+    "exitOpen": false,
+    "bullets": 0,
+    "shots": 93,
+    "hits": 60,
+    "peakBullets": 5,
+    "droppedBullets": 0,
+    "enemies": [
+      {
+        "id": "m1",
+        "x": 480.08713500193943,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r1",
+        "x": 753.9147257369852,
+        "y": 200.75409836065575,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r2",
+        "x": 1260.3105087858949,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m2",
+        "x": 1424.7971754525522,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r3",
+        "x": 2009.793018749172,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m3",
+        "x": 2536.8430087859124,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r4",
+        "x": 2487.725508785863,
+        "y": 266,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "m4",
+        "x": 2765.6843970313716,
+        "y": 213,
+        "grounded": true,
+        "jumpCount": 2,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "r5",
+        "x": 3250.3516838792584,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-B",
+        "x": 2750.6484227481546,
+        "y": 213,
+        "grounded": true,
+        "jumpCount": 2,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 3,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-B",
+        "x": 3633.4867182044777,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-C",
+        "x": 3990.935558617149,
+        "y": 204.1875,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "shield",
+        "shield": 2,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "charge-C",
+        "x": 4508.3180087858755,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-C1",
+        "x": 4746.0455087858945,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "rifle-C2",
+        "x": 5405.036006899202,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 0,
+        "state": "Dead",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "turret-C",
+        "x": 5784.774912385875,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 0,
+        "state": "Dead",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "recover"
+      },
+      {
+        "id": "shield-C2",
+        "x": 6271.387499999981,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 3,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-C3",
+        "x": 6530,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E0",
+        "x": 7140,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E1",
+        "x": 7480,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-E1",
+        "x": 7870,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-E",
+        "x": 8120,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 3,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E2",
+        "x": 8380,
+        "y": 266,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-E3",
+        "x": 8725,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-F0",
+        "x": 8925,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-F1",
+        "x": 9160,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-F",
+        "x": 9645,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 3,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-F",
+        "x": 9760,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-F",
+        "x": 10200,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-F2",
+        "x": 10500,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-G1",
+        "x": 11270,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 3,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-G1",
+        "x": 11440,
+        "y": 260,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "charge-G1",
+        "x": 11810,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "melee",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "shield-G2",
+        "x": 12470,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "shield",
+        "shield": 3,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "rifle-G2",
+        "x": 12640,
+        "y": 266,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "ranged",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "turret-G",
+        "x": 12980,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 3,
+        "state": "Idle",
+        "kind": "turret",
+        "shield": 0,
+        "windup": 0,
+        "action": "patrol"
+      },
+      {
+        "id": "outpost-tank",
+        "x": 5087.776305997026,
+        "y": 228.29166666666603,
+        "grounded": true,
+        "jumpCount": 1,
+        "health": 89,
+        "state": "Attack",
+        "kind": "guard",
+        "shield": 0,
+        "windup": 0,
+        "action": "ram"
+      },
+      {
+        "id": "gate-colossus",
+        "x": 14440,
+        "y": 150,
+        "grounded": true,
+        "jumpCount": 0,
+        "health": 132,
+        "state": "Idle",
+        "kind": "colossus",
+        "shield": 0,
+        "windup": 0,
+        "action": "salvo"
+      }
+    ],
+    "chapter": 1,
+    "entryMode": "campaign",
+    "oceanArt": null,
+    "chapterLoading": false,
+    "playerShots": 82,
+    "audio": {
+      "loaded": 9,
+      "played": 171,
+      "byEffect": {
+        "rifle": 79,
+        "step": 66,
+        "knife": 4,
+        "melee-hit": 4,
+        "hit": 4,
+        "blast": 9,
+        "pickup": 2,
+        "rocket": 3
+      },
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "requested": "comic",
+      "active": "comic",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "direct.rocket.idle.0",
+      "equipment": {
+        "pose": "direct.rocket.idle.0",
+        "body": "direct.rocket.idle.0",
+        "weapon": null,
+        "grip": null,
+        "bakedRifle": false,
+        "bakedWeapon": "rocket"
+      },
+      "renderedPlayer": {
+        "body": "direct.rocket.idle.0",
+        "weapon": "baked.rocket",
+        "weaponVisible": true
+      },
+      "renderedBoss": {
+        "frame": "",
+        "width": 0,
+        "height": 0,
+        "x": 0,
+        "y": 0,
+        "visible": false
+      },
+      "renderedMiniBoss": {
+        "frame": "rhino.ram",
+        "width": 195,
+        "height": 143,
+        "x": 5087.776305997026,
+        "y": 228.29166666666603,
+        "visible": true
+      },
+      "objects": [],
+      "pickups": [],
+      "mechanisms": [
+        {
+          "x": 395.95100359164735,
+          "y": 204.29166666666603,
+          "width": 180,
+          "height": 24,
+          "segments": [
+            {
+              "x": 395.95100359164735,
+              "y": 203.857931726907,
+              "width": 82.8,
+              "height": 24.867469879518072
+            },
+            {
+              "x": 478.75100359164753,
+              "y": 203.857931726907,
+              "width": 14.399999999999636,
+              "height": 24.867469879518072
+            },
+            {
+              "x": 493.15100359164717,
+              "y": 203.857931726907,
+              "width": 82.8,
+              "height": 24.867469879518072
+            }
+          ]
+        }
+      ],
+      "hudWeapon": {
+        "text": "追踪火箭筒\n剩余 3 发 · 切刀",
+        "id": "rocket",
+        "frame": "weapon.rocket",
+        "switch": {
+          "x": 387.69230769230774,
+          "y": 673.8461538461538
+        }
+      },
+      "combat": {
+        "rockets": [],
+        "bossBeam": {
+          "visible": false,
+          "x": 0,
+          "y": 0,
+          "length": 0,
+          "angle": 0
+        }
+      },
+      "terrain": "unified-drawn-v075"
+    },
+    "visibleChunks": 9,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 0,
+        "supported": false
+      }
+    },
+    "presentation": {
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 286.723076923077,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": false,
+      "resultProgress": 0,
+      "resultReady": false,
+      "bossBar": {
+        "visible": true,
+        "builds": 2,
+        "samples": 636
+      },
+      "controls": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "jump",
+        "guide": "空中再点跳＝二段跳   ·   ↓＋跳跃＝滑铲",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 219,
+          "joystick": 1
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.jump"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "frame": "ui.grenade"
+          }
+        ]
+      },
+      "objective": {
+        "visible": true,
+        "text": "机械阵地 · 向右突围 →",
+        "x": 925.846153846154,
+        "y": 673.8461538461538
+      }
+    },
+    "display": {
+      "width": 1558.1538461538462,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 1.4,
+      "worldVisibleWidth": 1112.967032967033,
+      "cameraY": 0.1501921134397899,
+      "frameWidth": 844,
+      "frameHeight": 390,
+      "orientationPaused": false
+    },
+    "controls": {
+      "shootHeld": false,
+      "hudHeight": 96,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "systemMenu": null,
+        "hud": {
+          "levelX": 1325.538461538462,
+          "trackX": 1222.1538461538464,
+          "secondRow": false,
+          "objectiveX": 925.846153846154,
+          "objectiveWidth": 511.3846153846157
+        },
+        "joystick": {
+          "x": 171.92307692307693,
+          "y": 164.53846153846155,
+          "r": 95.76000000000002,
+          "baseR": 135,
+          "knobR": 64.80000000000001,
+          "hit": 270,
+          "unit": 1.8461538461538463
+        },
+        "jump": {
+          "x": 1188.7384615384615,
+          "y": 228.82153846153847,
+          "r": 64.80000000000001,
+          "hit": 151.75384615384618
+        },
+        "shoot": {
+          "x": 1404,
+          "y": 164.53846153846155,
+          "r": 108,
+          "hit": 241.84615384615384
+        },
+        "grenade": {
+          "x": 1415.076923076923,
+          "y": 366.02769230769235,
+          "r": 54.720000000000006,
+          "hit": 131.59384615384616
+        },
+        "pause": {
+          "x": 1502.769230769231,
+          "y": 668.3076923076923,
+          "hit": 81.23076923076924
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 0,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    }
+  }
+}

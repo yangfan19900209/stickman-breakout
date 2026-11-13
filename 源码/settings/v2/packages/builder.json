@@ -1,0 +1,27 @@
+{
+  "__version__": "1.3.9",
+  "bundleConfig": {
+    "custom": {
+      "chapter-local": {
+        "displayName": "Chapter local subpackage",
+        "configs": {
+          "miniGame": {
+            "configMode": "overwrite",
+            "preferredOptions": { "compressionType": "subpackage", "isRemote": false },
+            "overwriteSettings": {
+              "wechatgame": { "compressionType": "subpackage", "isRemote": false }
+            }
+          },
+          "web": {
+            "configMode": "auto",
+            "preferredOptions": { "compressionType": "merge_dep", "isRemote": false }
+          },
+          "native": {
+            "configMode": "auto",
+            "preferredOptions": { "compressionType": "merge_dep", "isRemote": false }
+          }
+        }
+      }
+    }
+  }
+}

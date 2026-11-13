@@ -1,0 +1,42 @@
+{
+  "version": "1.0.7",
+  "passed": true,
+  "startedAt": "2026-11-13T10:15:34.726Z",
+  "finishedAt": "2026-11-13T10:16:39.111Z",
+  "method": "Final frozen Cocos build, real touch and keyboard, natural damage/deaths. Chapter 2 uses declared legacy cleared-save fixture. Share/PageManager API is simulated; no real messages or recommendations sent.",
+  "cases": [
+    {
+      "name": "chapter-1-free-recommend-share-repeat-reset",
+      "passed": true,
+      "ordinaryInputDeaths": 4,
+      "revivals": 4,
+      "shareRequests": 2,
+      "minimumViewport": "667x375"
+    },
+    {
+      "name": "chapter-2-free-recommend-share-repeat-reset",
+      "passed": true,
+      "ordinaryInputDeaths": 4,
+      "revivals": 4,
+      "shareRequests": 2,
+      "minimumViewport": "667x375"
+    },
+    {
+      "name": "web-unavailable-restart",
+      "passed": true
+    }
+  ],
+  "captures": [
+    "../开发进度/验证记录/v107-social-revive/chapter-1-free.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-1-social-options.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-1-native-ownership.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-1-credit-ready.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-free.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-social-options.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-native-ownership.png",
+    "../开发进度/验证记录/v107-social-revive/chapter-2-credit-ready.png",
+    "../开发进度/验证记录/v107-social-revive/web-exhausted.png"
+  ],
+  "errors": [],
+  "failed": []
+}

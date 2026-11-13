@@ -1,0 +1,293 @@
+{
+  "version": "0.8.12",
+  "checkedAt": "2026-11-11T03:24:34.333Z",
+  "sourceSHA256": "dd2ba5dea8e9cb25bed079e0f1b7a6ab80a489efdf978e76352bc4a347ac6608",
+  "typecheck": {
+    "status": "passed",
+    "log": "reports/v0812-typecheck.log"
+  },
+  "logic": {
+    "tests": 317,
+    "passed": 317,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "ui": {
+    "report": "reports/v0812-menu.json",
+    "method": "Chrome touch at DPR 3; iPhone 15 Pro viewport, native design-coordinate safe area and capsule/extra button simulated, not WeChat hardware",
+    "layoutCases": 6,
+    "pausedByTouch": true,
+    "orientationRestored": true,
+    "groundFraction": {
+      "before": 0.3611111111111111,
+      "normal": 0.20833333333333334,
+      "boss": 0.2
+    }
+  },
+  "progression": {
+    "report": "reports/v0812-retreat.json",
+    "retreatDistance": 960,
+    "arenaRetreatMargin": 140,
+    "wall": {
+      "furthestX": 1815.6429272723822,
+      "retreatLimit": 855.6429272723822,
+      "retreatDistance": 960
+    },
+    "stoppedAt": 868.6429272723822
+  },
+  "browser": {
+    "report": "reports/v0812-mobile.json",
+    "method": "Complete normal-keyboard campaign; read-only snapshots and controlled clock; normal health, ammo and enemy states, no teleports or deliberate cease-fire tour.",
+    "viewport": {
+      "width": 852,
+      "height": 393,
+      "dpr": 3
+    },
+    "health": 3,
+    "miniFightDuration": 17.016666666665703,
+    "fightDuration": 38.32500000002251,
+    "miniAttacks": {
+      "bombard": 1,
+      "burst": 2,
+      "ram": 1,
+      "fan": 1
+    },
+    "finalAttacks": {
+      "salvo": 2,
+      "sweep": 1,
+      "stomp": 1,
+      "laser": 2,
+      "missiles": 2,
+      "burst": 1,
+      "charge": 2,
+      "leap": 3
+    },
+    "framing": {
+      "samples": 1265,
+      "minHeadClearance": 15.720106173499062,
+      "worst": {
+        "time": 107.07500000003128,
+        "mode": "leaping",
+        "attack": "leap",
+        "drawn": {
+          "frame": "colossus.stomp-tell",
+          "width": 344.25600000000003,
+          "height": 322.08000000000004,
+          "x": 13757.929272931357,
+          "y": 278.3333333333333,
+          "visible": true
+        },
+        "display": {
+          "width": 1560.9160305343512,
+          "height": 720,
+          "portrait": false,
+          "zoom": 1.4,
+          "combatZoom": 0.7879411000604105,
+          "worldVisibleWidth": 1981.0059792726609,
+          "cameraY": 0.0012087096523919474,
+          "worldY": 25.80787681254479,
+          "bossCeiling": 513.7862595419847,
+          "frameWidth": 852,
+          "frameHeight": 393,
+          "orientationPaused": false
+        },
+        "bossY": 278.3333333333333,
+        "windup": 0,
+        "top": 498.06615336848563
+      }
+    },
+    "applicationErrors": 0,
+    "failedRequests": 0
+  },
+  "model": {
+    "report": "reports/v0812-model-campaign.json",
+    "health": 3,
+    "fightDuration": 29.375000000023377
+  },
+  "web": {
+    "entryTime": 1794367242514.6045,
+    "sha256": "a5425eb9f1cae91a0d89f45e3db5472544c9eb8af38e8a7dde323c72784b0fcd",
+    "bytes": 22692398,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794367368322.62,
+    "sha256": "8b0e3e9524a6f5b2b82785a3d75d0b018b7438cf9bdd89d8701afc4331dc4de7",
+    "bytes": 19529051,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 592738
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10238512
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V0812-20261111",
+    "checkpointEntriesVerified": 549,
+    "preservedFiles": [
+      "assets/scripts/combat/WeaponSystem.ts",
+      "assets/scripts/combat/MeleeSystem.ts",
+      "assets/scripts/enemy/EnemyController.ts",
+      "assets/scripts/enemy/EnemyTactics.ts",
+      "assets/scripts/enemy/GroundPursuit.ts",
+      "assets/scripts/enemy/TankBoss.ts",
+      "assets/scripts/enemy/ColossusBoss.ts",
+      "assets/scripts/level/LevelData.ts"
+    ],
+    "dependenciesUnchanged": true
+  },
+  "skill": {
+    "report": "reports/v0812-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v0812-mobile-projectile-player-standard-bullet.png",
+      "sha256": "a71eab9f9b1a41e1f72ec18e95f8324388f1e5cece2601650ccf6ea554fe3cb0"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-enemy-standard-bullet.png",
+      "sha256": "7b71cd288ab292d7e1f3af92017b739590ceccf1181944446eba1b22993f7949"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-enemy-standard-cannon.png",
+      "sha256": "b8ab2b8193ba84a4333de4da7c65a0e6f27189e81888b9ad8f0e9436d788e7cd"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-player-standard-rocket.png",
+      "sha256": "ed194fd2491893b6de513f372af77231d96d700c19f32ac29be4d8f45503bfb2"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-enemy-mini-bullet.png",
+      "sha256": "ac3d0522ed997dc0367cbefa437c552b086f924e9cb127c4156d387c73052edd"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-enemy-mini-cannon.png",
+      "sha256": "4e404a825968592d010af2d5a278626382d8124b8680c989ff5637d713c22657"
+    },
+    {
+      "file": "reports/v0812-mobile-boss-size.png",
+      "sha256": "e87fbe992336cc12852afc5ea43fb009cfbbb1c195bc8467ddea4f955e0e14f3"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-salvo.png",
+      "sha256": "95a2eee24203f3b55fa91e12d1880e7ddcdebaded4bba7a66c74645656e581fc"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-enemy-boss-cannon.png",
+      "sha256": "c7e8a7481862c65a3c14f0163dbb10cabe4d60a0b54a52529541e5f37f439bd1"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-charge.png",
+      "sha256": "1066a600419f6d679217b0981db952f627f32ace536376b94c0832851d69b121"
+    },
+    {
+      "file": "reports/v0812-mobile-charging.png",
+      "sha256": "13b2d32784de26d37188a4dd1f1209e04f63973d2a7f264a413142194c8f07ca"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-laser.png",
+      "sha256": "77fb971594ce0ed784e68155c4e11335d77046a7b575df54cb589090118c19c8"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-leap.png",
+      "sha256": "0684c2b241d0f8e1b89b15c2ad8bcde00984ff99d48c0bc3b5d457930bdd80b0"
+    },
+    {
+      "file": "reports/v0812-mobile-leaping.png",
+      "sha256": "565bfdedb14c7dda4ad7078f34d9067e5359e4ae6c66d21bb489b31bfab18625"
+    },
+    {
+      "file": "reports/v0812-mobile-landing.png",
+      "sha256": "b55e5f9307155b5cfa8f5054828c3b40a1c25e231fc324bdd6104e195cfa9b98"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-missiles.png",
+      "sha256": "d38926464a0fb303c944ade9e8a515b2b9e2edb29279d63308cc392889c704a7"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-enemy-boss-rocket.png",
+      "sha256": "2a482908c986550484818496eb72d47ce6f2c301aa2320ab949b81de6ab0c21a"
+    },
+    {
+      "file": "reports/v0812-mobile-enrage.png",
+      "sha256": "0acda1736ecc06f290f596049bbb44dd85c846548d9700a011d0608fa74012c0"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-burst.png",
+      "sha256": "9c86d24ec6146d683fac00e7bbf011beb3a90c24d58be5fd823cd5f87f128cdb"
+    },
+    {
+      "file": "reports/v0812-mobile-projectile-enemy-boss-bullet.png",
+      "sha256": "e39c8afc11c2caee5c5927e92e42d0ad300cd7a0691db34db5f84cbd7455c472"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-stomp.png",
+      "sha256": "0a1709aa86536aad49100f8fb74f5edf79cda07ae10f9133d4d00a5f03f92d1b"
+    },
+    {
+      "file": "reports/v0812-mobile-tell-sweep.png",
+      "sha256": "3461b9810c15c20eb5d65118d29c23d9735fbcebc1e7c12b480efbdb1ce9ca03"
+    },
+    {
+      "file": "reports/v0812-mobile-result.png",
+      "sha256": "3c509692e26f3b28471e973bee2bbdce7dde558c6000b280e494c34246767be2"
+    },
+    {
+      "file": "reports/v0812-menu-fallback.png",
+      "sha256": "9914dcf2c3da8f1bd45858b7e46fe222f0539ccaa24f43108452ddf255e4f901"
+    },
+    {
+      "file": "reports/v0812-menu-mobile.png",
+      "sha256": "0af935232797e5a9fc2eb68c76aca2e16b679d07bcb71624e0a5616e0768ca28"
+    },
+    {
+      "file": "reports/v0812-menu-updated.png",
+      "sha256": "7b74ce80eeadc8e47c00b869e1d44317460f30f2e480fcfab6085e0322373c21"
+    },
+    {
+      "file": "reports/v0812-menu-notch-right.png",
+      "sha256": "5cbb45c611692d87da4fa3e2ec4328284b321678edb4a86575c32ff03721e13c"
+    },
+    {
+      "file": "reports/v0812-menu-compact.png",
+      "sha256": "2e80dc327c4e0be993e3f7cf6c0dcb47c289d44f9fef21b96f1e2dbee0358f00"
+    },
+    {
+      "file": "reports/v0812-menu-ocean.png",
+      "sha256": "4e23883a9b766e9f56b0483ef150bde793956ba3139baf60a2444a822da7b7be"
+    },
+    {
+      "file": "reports/v0812-retreat-wall.png",
+      "sha256": "2031de9e2ba2e77dddebc6d99ae952f153f61ee3a07dbf1099073b92b017e27a"
+    }
+  ],
+  "limitations": [
+    "iPhone 15 Pro geometry, Cocos native safe-area contract and WeChat controls are browser simulations; not real iPhone/WeChat validation",
+    "Earlier normal-input failures and pre-fix framing evidence are retained separately; only the last build supplies delivery assertions",
+    "Normal-keyboard campaigns use a controlled clock, without gameplay state mutations",
+    "No upload or publication"
+  ]
+}

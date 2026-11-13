@@ -1,0 +1,179 @@
+{
+  "version": "0.8.18",
+  "checkedAt": "2026-11-12T01:53:57.511Z",
+  "method": "Transpile the current OceanAssets/FlightAssets source and execute with controlled mock cc bundle/texture callbacks. No game source or engine state is changed.",
+  "boundary": "Mock lifecycle and callback-order evidence only. This does not prove Cocos GPU/resource reference counting, real texture decoding, or device memory release. Real chapter switching/reloading is separately covered by v0818-ocean.json.",
+  "sources": {
+    "assets/scripts/ocean/OceanAssets.ts": "7f61b264e911f0af4af9d3c3cf0f5c46e5d6badd3f9774f1be4f04ff16692ec9",
+    "assets/scripts/flight/FlightAssets.ts": "69318e391e87ef941d25c17294b1e2a4e55e47f6dbf8b12148d69ebd4600c2f9"
+  },
+  "cases": [
+    {
+      "loader": "Ocean",
+      "name": "old texture success arrives after replacement is ready",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Ocean",
+      "name": "old bundle success arrives after replacement is ready",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Ocean",
+      "name": "old failure cannot clear a newer in-flight promise",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Ocean",
+      "name": "current texture failure reports error and permits retry",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Ocean",
+      "name": "current bundle failure reports error and permits retry",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Flight",
+      "name": "old texture success arrives after replacement is ready",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 1,
+        "bundleRemoveCalls": 1
+      }
+    },
+    {
+      "loader": "Flight",
+      "name": "old bundle success arrives after replacement is ready",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Flight",
+      "name": "old failure cannot clear a newer in-flight promise",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 1,
+        "bundleRemoveCalls": 1
+      }
+    },
+    {
+      "loader": "Flight",
+      "name": "current texture failure reports error and permits retry",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Flight",
+      "name": "current bundle failure reports error and permits retry",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 0,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    },
+    {
+      "loader": "Ocean",
+      "name": "release between texture resolution and frame/allSettled continuation",
+      "passed": true,
+      "final": {
+        "ready": true,
+        "frameCount": 1,
+        "error": "",
+        "pendingBundles": 0,
+        "pendingTextures": 0,
+        "textureReleaseCalls": 1,
+        "bundleReleaseCalls": 0,
+        "bundleRemoveCalls": 0
+      }
+    }
+  ],
+  "passed": 11,
+  "failed": 0
+}

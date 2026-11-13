@@ -1,0 +1,234 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/v061-campaign.spec.ts",
+      "tests/browser/v061-fragments.spec.ts",
+      "--reporter=list,json"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "v061-campaign.spec.ts",
+      "file": "v061-campaign.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "crate breaks through real shots, releases one supply and debris settles on the road",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8538,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:45:36.067Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ce76df60ace61a98bc78-dfe120ab2cfc853c01a4",
+          "file": "v061-campaign.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "real keyboard completes expanded six-zone campaign, mini boss and both final boss phases",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 152313,
+                  "error": {
+                    "message": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5890.838737606914,\"trace\":[{\"time\":20.0999999999995,\"x\":3808.500000000034,\"y\":287.86666666666684,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":25.124999999999215,\"x\":3833.111111111147,\"y\":227,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":30.158333333332262,\"x\":4093.5,\"y\":208.75,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":35.166666666665314,\"x\":5069.999999999901,\"y\":334.08333333333195,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.21666666666503,\"x\":5600.444444444273,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":45.24166666666474,\"x\":5721.652777777595,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":50.266666666664456,\"x\":5724.041666666484,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":55.28333333333084,\"x\":5858.527777777581,\"y\":266.1666666666667,\"health\":1,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m",
+                    "stack": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5890.838737606914,\"trace\":[{\"time\":20.0999999999995,\"x\":3808.500000000034,\"y\":287.86666666666684,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":25.124999999999215,\"x\":3833.111111111147,\"y\":227,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":30.158333333332262,\"x\":4093.5,\"y\":208.75,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":35.166666666665314,\"x\":5069.999999999901,\"y\":334.08333333333195,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.21666666666503,\"x\":5600.444444444273,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":45.24166666666474,\"x\":5721.652777777595,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":50.266666666664456,\"x\":5724.041666666484,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":55.28333333333084,\"x\":5858.527777777581,\"y\":266.1666666666667,\"health\":1,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts:128:123",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                      "column": 123,
+                      "line": 128
+                    },
+                    "snippet": "  126 |   await page.screenshot({ path: 'reports/v061-complete.png' });\n  127 |   writeFileSync('reports/v061-campaign.json', JSON.stringify({ snapshot: end, trace, captures, phases: [...phases], warnings: [...warnings], miniDeathAt, bossEntryAt, minFinalDebrisY, finalDebrisSamples, errors }, null, 2));\n> 128 |   expect(end.state, JSON.stringify({ state: end.state, hp: end.player.health, x: end.player.x, trace: trace.slice(-8) })).toBe('complete');\n      |                                                                                                                           ^\n  129 |   expect(end.levelWidth).toBe(12400); expect(end.zones).toHaveLength(6);\n  130 |   expect(end.miniBoss.health).toBe(0); expect(end.guardHealth).toBe(0);\n  131 |   expect(end.player.health).toBeGreaterThan(0); expect(end.exitOpen).toBe(true);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                        "column": 123,
+                        "line": 128
+                      },
+                      "message": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5890.838737606914,\"trace\":[{\"time\":20.0999999999995,\"x\":3808.500000000034,\"y\":287.86666666666684,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":25.124999999999215,\"x\":3833.111111111147,\"y\":227,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":30.158333333332262,\"x\":4093.5,\"y\":208.75,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":35.166666666665314,\"x\":5069.999999999901,\"y\":334.08333333333195,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.21666666666503,\"x\":5600.444444444273,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":45.24166666666474,\"x\":5721.652777777595,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":50.266666666664456,\"x\":5724.041666666484,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":55.28333333333084,\"x\":5858.527777777581,\"y\":266.1666666666667,\"health\":1,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n\n  126 |   await page.screenshot({ path: 'reports/v061-complete.png' });\n  127 |   writeFileSync('reports/v061-campaign.json', JSON.stringify({ snapshot: end, trace, captures, phases: [...phases], warnings: [...warnings], miniDeathAt, bossEntryAt, minFinalDebrisY, finalDebrisSamples, errors }, null, 2));\n> 128 |   expect(end.state, JSON.stringify({ state: end.state, hp: end.player.health, x: end.player.x, trace: trace.slice(-8) })).toBe('complete');\n      |                                                                                                                           ^\n  129 |   expect(end.levelWidth).toBe(12400); expect(end.zones).toHaveLength(6);\n  130 |   expect(end.miniBoss.health).toBe(0); expect(end.guardHealth).toBe(0);\n  131 |   expect(end.player.health).toBeGreaterThan(0); expect(end.exitOpen).toBe(true);\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts:128:123"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:45:44.780Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v061-campaign-real-keyboar-d90af--and-both-final-boss-phases\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v061-campaign-real-keyboar-d90af--and-both-final-boss-phases\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                    "column": 123,
+                    "line": 128
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ce76df60ace61a98bc78-e7e96730a5ce9e47cd5f",
+          "file": "v061-campaign.spec.ts",
+          "line": 76,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v061-fragments.spec.ts",
+      "file": "v061-fragments.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real keyboard grenade creates a near-ground blast and physical fragments land without crossing the road",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15105,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:48:17.582Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e4f0bb43df6dfa0abce-e0a1b3e6f0b494d7486d",
+          "file": "v061-fragments.spec.ts",
+          "line": 18,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T09:45:35.444Z",
+    "duration": 177653.346,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

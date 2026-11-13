@@ -1,0 +1,337 @@
+{
+  "scope": "Second-level source assets, not runtime integration",
+  "tool": "built-in imagegen",
+  "assets": [
+    {
+      "id": "hero-swim",
+      "file": "hero-swim.png",
+      "rows": 2,
+      "cols": 4,
+      "transparent": true,
+      "role": "player",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/slices/v057/direct.knife.idle.0.png"
+      ],
+      "frames": [
+        "diver.hover.0",
+        "diver.hover.1",
+        "diver.swim.0",
+        "diver.swim.1",
+        "diver.swim.2",
+        "diver.swim.3",
+        "diver.boost",
+        "diver.hit"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Create exactly EIGHT complete full-body player scuba-diver sprites, equal 4 columns by 2 rows, landscape canvas target 2048x1024. Turn the SAME friendly little soldier into a scuba hero: keep white dome military helmet with its narrow rim, recognizable big simple eye seen through one rounded rectangular dive mask, tiny breathing regulator, one white scuba cylinder strapped to back with black band and short hose, white diving suit with black gloves and belt, short broad black-tipped flippers. No backpack and cylinder together. Weapon is a compact white cylindrical sonar gun with two concentric rings on a single round front opening, held in both natural hands, aimed horizontally RIGHT. EVERY frame includes the whole diver and gun; no loose gun. All frames exact same head size/body scale, pure side view RIGHT. The pose order reading left to right: top row 1 neutral hovering with knees slightly bent; 2 alternate hovering gentle fin kick; 3 streamlined horizontal swim kick A, gun forwards; 4 horizontal swim kick B with opposite fin raised. Bottom row 5 horizontal swim kick C legs extended; 6 horizontal swim kick D knees tucked; 7 streamlined fast boost with fins swept backwards; 8 slight recoil from taking a hit with body curling but helmet and mask intact. Distinct readable limb positions, not eight repeated standing soldiers. No bubbles, motion streaks, shots or effects baked in. Keep isolated within cells and at least 40px separation.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-f9a27667-369d-4a96-8116-d9c579e865e5.png"
+    },
+    {
+      "id": "submarine-hull",
+      "file": "submarine-hull.png",
+      "rows": 2,
+      "cols": 2,
+      "transparent": true,
+      "role": "boss",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/slices/v057/direct.knife.idle.0.png"
+      ],
+      "frames": [
+        "submarine.assembled-reference",
+        "submarine.hull.intact",
+        "submarine.hull.damaged",
+        "submarine.hull.wreck"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Create a FOUR-panel 2x2 submarine boss asset sheet, landscape target 3072x1536. EXACTLY four long side-view hulls, bow facing LEFT, tail propeller RIGHT. Giant retro-futurist attack submarine built from simple rounded white armored plates, broad black visor-like bridge windows, few large round portholes, segmented belly and strong readable silhouette. Huge versus the soldier: about eight soldier body lengths. Still same ink comic world, NOT a realistic technical blueprint; keep line weight readable and matched at in-game display scale. Each hull fits entirely in its cell, identical overall scale and aligned bow/stern between rows. Top left: complete assembled boss design reference, with one top front twin cannon, one top rear laser turret with round emitter, one lower midsection twin torpedo pod, bridge and tail propeller. This is the only fully armed panel. Top right: CLEAN INTACT BASE HULL of the identical submarine, keep bridge and fins, REMOVE those 3 guns/pods cleanly leaving simple circular attachment sockets on their exact positions, no duplicate weapon barrels. Bottom left: SAME BASE HULL moderately damaged, a few large cracked plates and open side panel exposing one big circular reactor weakpoint, all three gun mount sockets still visible, NO guns. Bottom right: SAME BASE HULL ruined wreck, cracked nose and belly, broken bridge, bent tail, still a single complete readable vessel silhouette without scattered objects; no guns. Do not tilt or change camera angle, no external explosions, beams, missiles, smoke, bubbles, seabed or water backdrop. Transparent background, opaque white hulls.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-49f87025-7d60-4f30-b138-1fd62aeaccc5.png"
+    },
+    {
+      "id": "hero-combat",
+      "file": "hero-combat.png",
+      "rows": 3,
+      "cols": 4,
+      "transparent": true,
+      "role": "player",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png"
+      ],
+      "frames": [
+        "diver.sonar.fire",
+        "diver.sonar.up45",
+        "diver.sonar.up90",
+        "diver.sonar.down45",
+        "diver.sonar.down90",
+        "diver.charge.fire",
+        "diver.torpedo.fire",
+        "diver.torpedo.up45",
+        "diver.torpedo.down45",
+        "diver.knife.windup",
+        "diver.knife.strike",
+        "diver.death"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Use the supplied scuba player sheet as STRICT identity reference; keep EXACT same dome helmet, one visible big eye, rounded square dive mask, regulator, single back tank, suit, black gloves and flippers. Create exactly TWELVE complete full-body combat poses in a spacious 3 rows x 4 columns grid, target 2048x1536. All face RIGHT with unchanged head size and character scale. Frame order reading left to right: 1 firing the short ring-muzzle sonar gun horizontally; 2 holding its barrel at exactly +45 degrees; 3 holding its barrel exactly vertically upwards above the helmet; 4 holding barrel at exactly -45 degrees down-right; 5 holding barrel vertically down below the chest, fins moved aside; 6 horizontally holding a broader double-ring charged sonar cannon, slightly braced; 7 horizontally holding a single long torpedo tube with open circular muzzle at right and its rear at left; 8 holding that same torpedo tube +45 degrees; 9 holding same tube -45 degrees; 10 no gun, short diving knife drawn backwards in a clear windup; 11 no gun, knife forward in a fully extended slash follow-through, different body posture; 12 defeated limp diver with closed eye and loose fins, no gun, intact body. Sonar poses and torpedo poses must visibly follow the requested barrel angles, do NOT only tilt the whole canvas. Whole natural arms grip the correct weapon, no extra hands. No shots, torpedoes, sonic rings, knife trails, bubbles, damage bursts or text baked into character frames. Every limb and gun fits its cell.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-66e7af78-a768-4ef6-8504-1a96ddfb3126.png"
+    },
+    {
+      "id": "diver-enemies",
+      "file": "diver-enemies.png",
+      "rows": 2,
+      "cols": 4,
+      "transparent": true,
+      "role": "enemy",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png"
+      ],
+      "frames": [
+        "enemy.diver.swim",
+        "enemy.diver.aim",
+        "enemy.diver.fire",
+        "enemy.diver.defeat",
+        "enemy.captain.idle",
+        "enemy.captain.charge",
+        "enemy.captain.dash",
+        "enemy.captain.defeat"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Use the supplied scuba hero only as art style/scale reference. Design clearly distinct hostile scuba soldiers for the same game, NOT copies of the hero's dome helmet. Eight isolated COMPLETE body sprites, 2 rows x 4 equal cells target 2048x1024, all face LEFT. Top row is the SAME enemy shooter in FOUR states: streamlined swimming with spear-like pressure gun; stationary aiming with gun tucked; firing stance gun extended left; defeated curled body with closed eye. Identity: angular low dive hood instead of helmet, narrow rectangular mask with angry brow, TWO small back cylinders, black shoulder vest, white sleeves, pointed short flippers. Bottom row is the SAME heavy diver miniboss in FOUR states: braced neutral holding large double-ring sonar cannon; clearly crouched/tucked charging attack with planted elbows in water; horizontal propulsion dash with cannon forwards and fins back; slumped defeated with cracked outer shoulder armor and closed mask. Heavy miniboss has large ROUND metal diving helmet with circular crossbar window, white rounded armor, two compact back thrusters, broader shoulders, about 1.4x shooter size. Maintain constant scale within each row, don't make mini gigantic. No environment, effects, speech marks, bubbles, projectiles or labels. All devices held naturally by complete hands. No truncated fins, weapons or tanks.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-4235e4b1-d777-4deb-b431-450a2c0bb240.png"
+    },
+    {
+      "id": "submarine-modules",
+      "file": "submarine-modules.png",
+      "rows": 3,
+      "cols": 4,
+      "transparent": true,
+      "role": "boss-modules",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/submarine-hull.png"
+      ],
+      "frames": [
+        "module.cannon.idle",
+        "module.cannon.aim",
+        "module.cannon.broken",
+        "module.laser.idle",
+        "module.laser.charge",
+        "module.laser.broken",
+        "module.torpedo.closed",
+        "module.torpedo.open",
+        "module.torpedo.broken",
+        "module.reactor.closed",
+        "module.reactor.open",
+        "module.propeller"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Use the supplied submarine sheet as STRICT mechanical design reference. Create a clean modular BOSS PARTS sheet with exactly TWELVE independent components in 3 rows x 4 equal cells, target 2048x1536. No submarine hull, no characters. Components must fit the circular mounts of the reference hull and retain its rounded white plates, simple black outlines and limited gray undersides. Read in row order: 1 the top-front twin cannon facing LEFT on its round pivot base, horizontal barrels; 2 SAME cannon with both barrels aimed up-left 30 degrees, identical base; 3 same cannon destroyed, short broken barrel stubs, base intact; 4 reference rear single round laser turret facing LEFT, dormant; 5 SAME laser turret charged, open inner white lens with black concentric circles, no glow outside; 6 destroyed laser with cracked lens and drooping barrel; 7 closed reference belly twin torpedo pod, dark closed hatches; 8 same pod opened with two torpedo noses visible inside, no ejected missile; 9 pod destroyed and empty; 10 closed circular reactor armor cover matching damaged hull side panel; 11 opened reactor with bold ring core and black radial segments; 12 isolated reference tail propeller and short shaft, side view. Keep matching part size across its state variants, all mounts visible, clear external alpha and opaque white metal. No firing beams, muzzle flashes, detached debris, smoke, bubbles, numbers or extra tiny objects.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-8128fe86-014e-4cfa-92f5-45c1b375af7e.png"
+    },
+    {
+      "id": "hero-transition",
+      "file": "hero-transition.png",
+      "rows": 2,
+      "cols": 4,
+      "transparent": true,
+      "role": "player-sequence",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png",
+        "C:/Users/Administrator/Desktop/线条突围/art/slices/v057/direct.knife.idle.0.png"
+      ],
+      "frames": [
+        "diver.equip.mask",
+        "diver.equip.tank",
+        "diver.equip.ready",
+        "diver.cliff.leap",
+        "diver.water.glide",
+        "diver.surface",
+        "diver.cheer.0",
+        "diver.cheer.1"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Make EIGHT full-body story-action key poses in 2 rows x 4 equal cells, landscape 2048x1024. Reference 1 is the final scuba identity; reference 2 is the original soldier identity before changing. Preserve SAME head size and helmet shape across all eight frames. Facing RIGHT or right three-quarter. Whole original soldier becomes the exact reference scuba hero, no extra characters. Frame order: 1 standing soldier with helmet, white suit and original boots, both hands bringing rounded dive mask onto the face; 2 same soldier with mask/regulator on, tightening front straps of a SINGLE cylinder already on the back, short broad flippers now worn; 3 fully equipped scuba hero braced at cliff edge with knees bent and ring-muzzle sonar gun held safely; 4 full equipped hero leaping forward, one arm extends and fins trail; 5 full equipped hero diving down-right headfirst, arms and gun tucked forward, tank and flippers visible; 6 hero rising/treading water upright with hands spreading for balance, gun holstered/absent; 7 hero standing on an unseen surface, mask raised onto forehead below helmet so happy eye shows, fist raised overhead, tank still on back and flippers still on; 8 SAME celebration with both fists raised, knees slightly flexed, same face/equipment. Do NOT draw the cliff, water surface, support floor, splash, bubbles or trails. Actual transparent background, full feet and hands fit cells. Key poses only, no lettered storyboard or panels.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-8069d31f-4d1e-4f94-8223-a62a31dc9020.png",
+      "reviewNote": "Generated fifth pose is horizontal glide, not headfirst dive. Keep as extra glide; use hero-entry for actual entry."
+    },
+    {
+      "id": "marine-life",
+      "file": "marine-life.png",
+      "rows": 3,
+      "cols": 4,
+      "transparent": true,
+      "role": "ecology",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png"
+      ],
+      "frames": [
+        "fish.attack.idle",
+        "fish.attack.tell",
+        "fish.attack.dash",
+        "fish.attack.defeat",
+        "kelp.hostile.idle",
+        "kelp.hostile.tell",
+        "kelp.hostile.strike",
+        "kelp.hostile.cut",
+        "fish.ambient.0",
+        "fish.ambient.1",
+        "kelp.ambient.0",
+        "kelp.ambient.1"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Create a marine creature and seaweed GAME SPRITE SHEET, exactly TWELVE isolated assets in 3 rows x 4 equal cells, target 2048x1536. Supplied scuba sheet is STYLE reference only, DO NOT include any diver or gun. Top row FOUR frames of SAME hostile small spike-fish facing LEFT: 1 ordinary swimming, large angry brow, short pointed snout and exactly three black dorsal spines; 2 telegraph, tail curled and body compressed; 3 fast straight lunge, body stretched with tail straight behind, no trails; 4 defeated fish tilted with closed/X eye, no blood. Consistent identity and scale. Middle row FOUR states of SAME rooted hostile kelp: 1 thick black knotted root bulb with three tall white ribbon leaves curled loosely; 2 leaves folded shut into tense dark bud; 3 one long leaf whips left while other leaves open, obvious lunging silhouette and root stays at bottom center; 4 cut stump with short ragged leaves, no floating debris. Bottom row: 1 harmless school of THREE tiny round smooth fish facing right, no spikes or frowns; 2 alternate shape of SAME three-fish school; 3 decorative plain slender flowing sea grass tuft without black bulb; 4 alternate sway of SAME harmless sea grass. Decorative species visibly softer/simpler than attacking ones, but same ink contour style. Keep each school grouped as one cutout inside cell. No environment, bubbles, particles, text, containers or extra items. Do not crop the attacking kelp extension.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-6c779ca4-165c-4f60-ae39-764f05c19068.png"
+    },
+    {
+      "id": "terrain",
+      "file": "terrain.png",
+      "rows": 3,
+      "cols": 4,
+      "transparent": true,
+      "role": "terrain",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/slices/v057/direct.knife.idle.0.png"
+      ],
+      "frames": [
+        "terrain.seabed.left",
+        "terrain.seabed.middle",
+        "terrain.seabed.right",
+        "terrain.rock.pillar",
+        "terrain.rock.arch",
+        "terrain.rock.ceiling",
+        "terrain.cliff",
+        "terrain.coral.shelf",
+        "terrain.wreck.deck",
+        "terrain.wreck.wall",
+        "terrain.pipe.straight",
+        "terrain.pipe.elbow"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Create twelve modular 2D SIDE VIEW underwater terrain pieces, 3 rows x 4 equal cells target 2048x1536. Reference soldier is style only; DO NOT draw a soldier. Bold black exterior contours, opaque paper-white rock or metal interiors, only a few large round pebbles and simple seams. Low detail readable at game size. NO isometric top surfaces. Ordered pieces: 1 flat rectangular seabed MIDDLE tile, level top rim, left/right edges straight and compatible at identical height; 2 matching seabed LEFT END cap, vertical outer left rock wall and straight joining right edge; 3 matching RIGHT END cap; 4 freestanding tall oval broken reef pillar; 5 rounded stone arch with a completely transparent swim-through opening; 6 rocky overhang/ceiling with flat top edge and hanging short stalactites; 7 large sea-cliff edge with walkable flat upper ledge and tall steep right wall, no ocean; 8 low coral-rock shelf, clearly solid top; 9 rectangular broken ship deck segment with bolted edge and sparse cracks; 10 vertical wreck bulkhead segment with large open hatch/swim-through hole, actual alpha opening; 11 straight thick metal pipeline section with two connector rings; 12 matching 90-degree elbow pipe. Each fully isolated with generous empty space, one item per cell, no scenery panorama, ground shadow, bubbles, labels, character, weapons or tiny loose debris. Matching terrain thickness and line weight, intended for individual cropping.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-99e85c51-aa53-49a1-b7e5-e2d779e95545.png",
+      "reviewNote": "Actual first two cells are left cap then middle; corrected semantic order. Seams and collision contours require integration validation."
+    },
+    {
+      "id": "props-weapons",
+      "file": "props-weapons.png",
+      "rows": 3,
+      "cols": 4,
+      "transparent": true,
+      "role": "props",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png",
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/submarine-hull.png"
+      ],
+      "frames": [
+        "item.sonar",
+        "item.charge-sonar",
+        "item.torpedo-launcher",
+        "item.knife",
+        "item.medkit",
+        "item.energy",
+        "item.torpedo-ammo",
+        "item.depth-charge",
+        "object.sealed-crate",
+        "object.crate-broken",
+        "object.anchored-mine",
+        "object.seabed-turret"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Design exactly TWELVE isolated underwater game props, 3 rows x 4 equal cells, target 2048x1536, each complete and centered with large transparent gaps. Reference 1 defines hero weapon design; reference 2 defines submarine/industrial equipment style. No characters or submarine hull. Ordered: 1 short player sonar gun pointed RIGHT, white single cylinder with two black concentric mouth rings and black grip; 2 broader charged sonar cannon rightwards, double barrel-ring collar and chunky capacitor body, not a bullet rifle; 3 long single open torpedo launch tube rightwards with grip; 4 short diving knife with white blade and black handle; 5 medium sealed medical case with simple bold PLUS pictogram, no words; 6 chunky cylindrical energy cell with simple lightning symbol; 7 three compact micro torpedoes in one ammo holder, as a single pickup; 8 round compact depth-charge bomb with clear mechanical timer dial but no digits; 9 opaque white SEALED supply crate with reinforced black corners, no words; 10 same-size crate broken open with lid hanging, all pieces remain inside one compact cell; 11 one round anchored spiked sea mine with short chain ending in a weight, entire chain visible; 12 squat stationary seafloor pressure cannon with twin barrels facing LEFT on broad bolted base. Exact icon geometry readable small, all white body fills opaque, no glow, text, bubbles, discharge effects or background.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-cc38586c-6b5a-4947-86c3-ef0fbb041484.png"
+    },
+    {
+      "id": "combat-effects",
+      "file": "combat-effects.png",
+      "rows": 3,
+      "cols": 4,
+      "transparent": true,
+      "role": "combat-effects",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png",
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/submarine-hull.png"
+      ],
+      "frames": [
+        "fx.sonar.0",
+        "fx.sonar.1",
+        "fx.sonar.2",
+        "fx.sonar.charged",
+        "projectile.micro-torpedo",
+        "projectile.enemy-torpedo",
+        "projectile.pressure-bolt",
+        "projectile.depth-charge",
+        "fx.laser-charge",
+        "fx.laser-beam",
+        "fx.pressure-gap-ring",
+        "fx.impact"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Create a clean 12-cell underwater combat EFFECTS and PROJECTILES sheet, 3 rows x 4 equal cells target 2048x1536. References set cartoon line language and weapon identity only; draw NO characters, guns, submarine or scenery. Black/dark-gray outlines, opaque white highlights, true transparent negative space. Row 1: three progressive frames of a directional SONAR pulse traveling RIGHT, each a clean nested crescent pair opening left and convex right, stages small/medium/large; fourth cell a stronger wider triple-crescent charged pulse, still directional, do not make target icons. Row 2: white player micro torpedo facing RIGHT with black nose band, tiny tail fins and a few attached exhaust bubbles; darker enemy torpedo facing LEFT with broad white highlights; compact spear-like pressure bolt facing LEFT; compact round depth-charge projectile with simple clock-face fuse but no numerals. Row 3: compact circular laser charge orb with concentric black rings and brilliant opaque white core; one HORIZONTAL laser beam segment with straight parallel black edges and solid white center extending only within its cell, no diagonal streaks; one large circular pressure shock ring with an unmistakable open 90-degree wedge GAP at upper-right, center and gap genuinely transparent; one compact starburst impact with round pressure puffs, no fire. Keep every effect isolated fully within own cell with margin; no cross-cell streaks or random little extra icons. Do not put opaque rectangular backgrounds behind effects.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-f59c4e87-86a3-4d17-9720-703323100e31.png"
+    },
+    {
+      "id": "water-effects",
+      "file": "water-effects.png",
+      "rows": 3,
+      "cols": 4,
+      "transparent": true,
+      "role": "water-effects",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png"
+      ],
+      "frames": [
+        "fx.splash.0",
+        "fx.splash.1",
+        "fx.splash.2",
+        "fx.surface-ripple",
+        "fx.bubble.single",
+        "fx.bubble.trail",
+        "fx.bubble.burst",
+        "fx.boost.wake",
+        "fx.water-blast.0",
+        "fx.water-blast.1",
+        "fx.water-blast.2",
+        "fx.water-blast.3"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Create exactly TWELVE isolated WATER VFX sprites, 3 rows x 4 equal cells target 2048x1536, no characters or items. Hero sheet is line-style reference only. All monochrome comic ink, no orange flames, NO smoke/fire clouds, no blue color. Row 1: THREE sequential water-entry splash frames sharing the same bottom-center origin, small crown splash / taller spreading crown with a few large drops / falling low splash and drops; cell 4 separate horizontal elliptical water surface ripple with open transparent center. Row 2: 1 a single large round bubble outlined black with small white highlight and mostly transparent interior; 2 compact vertical trail of five bubbles of varied size; 3 expanding burst of seven bubbles spaced around a clear center; 4 short horizontal leftward propulsion wake made of tapered white ribbons and three outlined bubbles. Row 3 is a FOUR-frame UNDERWATER EXPLOSION/pressure burst animation, centered within each cell: 1 tiny bright white core inside black ring; 2 expanding lobed bubble pressure shell; 3 large broken ring with several white rounded pressure lobes, peak shock; 4 dissipating thin ring fragments and separated bubbles. No background water rectangle, no ground, no labels. Keep white splash highlights opaque, transparent holes truly alpha, black contour heavy enough for mobile. Generous margin to keep drops from adjacent cells touching.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-2979538f-7162-4e5f-9c68-0a9c61d824d5.png"
+    },
+    {
+      "id": "hero-entry",
+      "file": "hero-entry.png",
+      "rows": 1,
+      "cols": 2,
+      "transparent": true,
+      "role": "player-sequence",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/level02/hero-swim.png"
+      ],
+      "frames": [
+        "diver.entry.diagonal",
+        "diver.entry.steep"
+      ],
+      "prompt": "2D side-view game asset for the black-and-white ink action game Stickman Breakout. Thick confident rounded black outer contours, simpler thin interior lines, solid opaque white interiors and restrained flat gray shadows. The small helmeted soldier reference establishes the world style, proportions and readable rounded forms. No realistic rendering, painting, noisy hatching or tiny machinery detail. No words, labels, numbers, grid borders, logos, watermark or ground shadow. All complete subjects with generous transparent margins, separate nonoverlapping silhouettes. True transparent alpha around subjects, never inside white body/metal fills. Create exactly TWO full-body HEADFIRST DIVE key poses of the reference scuba hero, arranged LEFT and RIGHT in two spacious equal cells, landscape target 1536x1024. Match helmet, mask, regulator, SINGLE white tank, black gloves, white suit and flippers EXACTLY. Body must be DIVING DOWNWARD: the head and gun are at the LOWER RIGHT of each cell, with both flippers at the UPPER LEFT. Do NOT draw a horizontal swimming pose or upright standing diver. Left cell: clean full extended body angled DOWN-RIGHT about 45 degrees, hips and fins above and behind helmet; both hands hold short ring-muzzle sonar gun tucked ahead of face pointing along downward body axis. Right cell: steeper near-vertical headfirst descent, head and muzzle LOWEST, fins HIGHEST, whole figure about 70 degrees downward-right, both arms extended alongside head and natural shoulder anatomy. All body parts within each cell, consistent scale, no water, splash, bubbles, streaks, ground, text or extra limbs. True transparent alpha, opaque white suit. These are physical downward-entry silhouettes, not a straight upright character with only the gun tilted down.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-fb52acd9-a922-42f3-b598-1d02654fa4e3.png"
+    },
+    {
+      "id": "coast-background",
+      "file": "coast-background.png",
+      "rows": 1,
+      "cols": 1,
+      "transparent": false,
+      "role": "background",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/v064/cover.png"
+      ],
+      "frames": [
+        "background.coast"
+      ],
+      "prompt": "A production BACKGROUND illustration for a 2D side-scrolling underwater ink-comic game, landscape target 2560x1440. Monochrome black/gray line drawing on a warm off-white opaque paper background. Use the provided soldier illustration ONLY to establish the visual world: simple rounded readable forms, restrained details. This is distant scenery: outlines much lighter and thinner than gameplay characters; gentle flat pale-gray depth planes, very subtle paper texture, no realistic painting. Do not draw any character, enemy, live submarine, bullets, UI, text, letters, logos or watermarks. Reserve the central 65 percent of the picture as calm uncluttered negative space for combat. No dark foreground silhouette that would hide gameplay. Full-bleed scene, not a sprite sheet or panel collage. Scene: sea-cliff approach at the beginning of a diving chapter. Distant rocky coastal cliffs recede on the FAR LEFT, calm sea horizon across center-right, sparse large soft comic clouds in upper sky, a tiny abandoned lookout silhouette far left. Camera looks SIDEWAYS across the water, not top-down. Water occupies lower third, shown as gentle broad horizontal strokes, fading toward horizon. Cliff forms frame the edge rather than fill the playable center. Bright, airy quiet transition from military outpost to open sea. Do not add a readable foreground walking platform; solid cliffs will be separate game assets. Same restrained paper/ink mood as reference without copying its characters, combat or title layout.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-abd7a7dc-1be9-4b53-880d-b817f94f0507.png"
+    },
+    {
+      "id": "undersea-background",
+      "file": "undersea-background.png",
+      "rows": 1,
+      "cols": 1,
+      "transparent": false,
+      "role": "background",
+      "reference": [
+        "C:/Users/Administrator/Desktop/线条突围/art/source/v064/cover.png"
+      ],
+      "frames": [
+        "background.undersea"
+      ],
+      "prompt": "A production BACKGROUND illustration for a 2D side-scrolling underwater ink-comic game, landscape target 2560x1440. Monochrome black/gray line drawing on a warm off-white opaque paper background. Use the provided soldier illustration ONLY to establish the visual world: simple rounded readable forms, restrained details. This is distant scenery: outlines much lighter and thinner than gameplay characters; gentle flat pale-gray depth planes, very subtle paper texture, no realistic painting. Do not draw any character, enemy, live submarine, bullets, UI, text, letters, logos or watermarks. Reserve the central 65 percent of the picture as calm uncluttered negative space for combat. No dark foreground silhouette that would hide gameplay. Full-bleed scene, not a sprite sheet or panel collage. Scene: wide underwater landscape transitioning from shallow reef toward deep wreck field. A faint surface band at very top with soft diagonal light shafts, distant smooth rock pillars and kelp silhouettes at far left, a pale broken ship silhouette and large arch in the FAR BACKGROUND toward right, layered distant seabed ridge only along bottom edge. Sparse tiny decorative fish in two far-away groups near outer edges, no attack fish. Pale gray water and generous empty middle for free swimming and combat. Slightly darker toward bottom but never black, high foreground readability. All rocks/wrecks are visibly distant and low contrast, not bold playable collision structures. No live submarine boss baked into background. No dramatic color lighting or neon blues.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1aad5-e858-7101-96c2-7efecc724a9b\\exec-88a59f9c-541d-4dbf-9fbd-4b303ae872d1.png"
+    }
+  ]
+}

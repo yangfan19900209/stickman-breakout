@@ -1,0 +1,158 @@
+[
+  {
+    "from": "assets",
+    "to": "源码/assets"
+  },
+  {
+    "from": "scripts",
+    "to": "源码/scripts"
+  },
+  {
+    "from": "tests",
+    "to": "源码/tests"
+  },
+  {
+    "from": "types",
+    "to": "源码/types"
+  },
+  {
+    "from": "settings",
+    "to": "源码/settings"
+  },
+  {
+    "from": "build-config",
+    "to": "源码/build-config"
+  },
+  {
+    "from": "build-templates",
+    "to": "源码/build-templates"
+  },
+  {
+    "from": "web-shell",
+    "to": "源码/web-shell"
+  },
+  {
+    "from": "node_modules",
+    "to": "源码/node_modules"
+  },
+  {
+    "from": "build",
+    "to": "源码/build"
+  },
+  {
+    "from": "profiles",
+    "to": "源码/profiles"
+  },
+  {
+    "from": "package.json",
+    "to": "源码/package.json"
+  },
+  {
+    "from": "package-lock.json",
+    "to": "源码/package-lock.json"
+  },
+  {
+    "from": "tsconfig.json",
+    "to": "源码/tsconfig.json"
+  },
+  {
+    "from": "tsconfig.check.json",
+    "to": "源码/tsconfig.check.json"
+  },
+  {
+    "from": "playwright.config.ts",
+    "to": "源码/playwright.config.ts"
+  },
+  {
+    "from": "art",
+    "to": "素材/游戏美术"
+  },
+  {
+    "from": "doc/art",
+    "to": "素材/说明"
+  },
+  {
+    "from": "宣传",
+    "to": "运营/宣传"
+  },
+  {
+    "from": "提交素材",
+    "to": "运营/提交素材"
+  },
+  {
+    "from": "备案截图",
+    "to": "运营/备案截图"
+  },
+  {
+    "from": "doc/LEVEL-02-DESIGN.md",
+    "to": "开发计划/关卡/LEVEL-02-DESIGN.md"
+  },
+  {
+    "from": "doc/LEVEL-03-DESIGN.md",
+    "to": "开发计划/关卡/LEVEL-03-DESIGN.md"
+  },
+  {
+    "from": "doc/WECHAT-SOCIAL-PLAN.md",
+    "to": "开发计划/功能/WECHAT-SOCIAL-PLAN.md"
+  },
+  {
+    "from": "doc/WECHAT-EVALUATION-PLAN.md",
+    "to": "开发计划/功能/WECHAT-EVALUATION-PLAN.md"
+  },
+  {
+    "from": "doc/prototypes",
+    "to": "开发计划/原型"
+  },
+  {
+    "from": "doc/DEVELOPMENT.md",
+    "to": "开发进度/开发记录.md"
+  },
+  {
+    "from": "doc/iterations",
+    "to": "开发进度/迭代记录"
+  },
+  {
+    "from": "reports/anchors",
+    "to": "历史归档/体验锚点"
+  },
+  {
+    "from": "reports",
+    "to": "开发进度/验证记录"
+  },
+  {
+    "from": "release",
+    "to": "交付/版本"
+  },
+  {
+    "from": "doc/releases",
+    "to": "交付/更新说明"
+  },
+  {
+    "from": "build-web-mobile.log",
+    "to": "开发进度/工程整理/2026-11-13/整理前构建日志/build-web-mobile.log"
+  },
+  {
+    "from": "build-web-mobile.stderr.log",
+    "to": "开发进度/工程整理/2026-11-13/整理前构建日志/build-web-mobile.stderr.log"
+  },
+  {
+    "from": "build-web-mobile.stdout.log",
+    "to": "开发进度/工程整理/2026-11-13/整理前构建日志/build-web-mobile.stdout.log"
+  },
+  {
+    "from": "build-wechatgame.log",
+    "to": "开发进度/工程整理/2026-11-13/整理前构建日志/build-wechatgame.log"
+  },
+  {
+    "from": "build-wechatgame.stderr.log",
+    "to": "开发进度/工程整理/2026-11-13/整理前构建日志/build-wechatgame.stderr.log"
+  },
+  {
+    "from": "build-wechatgame.stdout.log",
+    "to": "开发进度/工程整理/2026-11-13/整理前构建日志/build-wechatgame.stdout.log"
+  },
+  {
+    "from": "tmp/organization-before-tests.log",
+    "to": "开发进度/工程整理/2026-11-13/整理前测试.log"
+  }
+]

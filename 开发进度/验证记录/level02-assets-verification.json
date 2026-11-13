@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-11-06T07:25:46.120Z",
+  "scope": "Source asset inspection and local gallery, not game runtime",
+  "sourceImages": 14,
+  "transparentSourceSheets": 12,
+  "opaqueBackgrounds": 2,
+  "regions": 116,
+  "sourceBytes": 15758449,
+  "sha256Verified": true,
+  "sourceCropPixelCheck": "Passed by prepare-level02-assets.py; no resize or recolor",
+  "gallery": {
+    "browser": "installed Chrome",
+    "viewports": [
+      [
+        1600,
+        1000
+      ],
+      [
+        844,
+        390
+      ]
+    ],
+    "imagesLoaded": 130,
+    "filter": true,
+    "tabs": true,
+    "backgroundSwitch": true,
+    "errors": []
+  },
+  "runtimeIntegrated": false,
+  "gameBuilt": false,
+  "published": false,
+  "limitations": [
+    "Cell gaps and crop alpha validated; animation timing, in-game scale, muzzle sockets and terrain seams await integration.",
+    "A source-candidate is not proof of a complete animation or playable level."
+  ]
+}

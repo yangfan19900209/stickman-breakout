@@ -1,0 +1,82 @@
+{
+  "checkedAt": "2026-11-13T09:40:06.053Z",
+  "yaml": true,
+  "maintainedReference": {
+    "file": "references\\gameplay-and-physics.md",
+    "projectSHA256": "68466f71584f263a325eed60019beee610a7ec1d4d274fe233590e5496c48816",
+    "installedSHA256": "68466f71584f263a325eed60019beee610a7ec1d4d274fe233590e5496c48816"
+  },
+  "files": [
+    {
+      "file": "agents\\openai.yaml",
+      "projectSHA256": "8ceafc0bb2da4318ae778d55543df7fb2220e339ba7225a5031de0601a7c7c8c",
+      "installedSHA256": "8ceafc0bb2da4318ae778d55543df7fb2220e339ba7225a5031de0601a7c7c8c"
+    },
+    {
+      "file": "references\\asset-prompts.md",
+      "projectSHA256": "9a8bb2f28bcf6ee875c5143d1e9e764aad92bdcf776777c97a87f7499df33ebf",
+      "installedSHA256": "9a8bb2f28bcf6ee875c5143d1e9e764aad92bdcf776777c97a87f7499df33ebf"
+    },
+    {
+      "file": "references\\design-and-presentation.md",
+      "projectSHA256": "1186554c64a3a5b4f29675791c3be657ea14272a4e99fff5823e48475dbd0838",
+      "installedSHA256": "1186554c64a3a5b4f29675791c3be657ea14272a4e99fff5823e48475dbd0838"
+    },
+    {
+      "file": "references\\gameplay-and-physics.md",
+      "projectSHA256": "68466f71584f263a325eed60019beee610a7ec1d4d274fe233590e5496c48816",
+      "installedSHA256": "68466f71584f263a325eed60019beee610a7ec1d4d274fe233590e5496c48816"
+    },
+    {
+      "file": "references\\performance-and-motion.md",
+      "projectSHA256": "f7861074cdffdebe30d7cdd7783e8bbfda343f126892f9e8aa5b4a65604ab6d6",
+      "installedSHA256": "f7861074cdffdebe30d7cdd7783e8bbfda343f126892f9e8aa5b4a65604ab6d6"
+    },
+    {
+      "file": "references\\project-examples.md",
+      "projectSHA256": "588c6fe4b16707061306d77d96b52720ad474b85e4eb74699c26f99fcf680a05",
+      "installedSHA256": "588c6fe4b16707061306d77d96b52720ad474b85e4eb74699c26f99fcf680a05"
+    },
+    {
+      "file": "references\\project-organization.md",
+      "projectSHA256": "123c4831450626833bb3effa6c6fbbf25b7ded3a52a4044a6368a1dc09e878d7",
+      "installedSHA256": "123c4831450626833bb3effa6c6fbbf25b7ded3a52a4044a6368a1dc09e878d7"
+    },
+    {
+      "file": "references\\skill-maintenance.md",
+      "projectSHA256": "40873cb1acf5b169d0efd764d8fb333cdab652216f7614509e9f13045fc7a401",
+      "installedSHA256": "40873cb1acf5b169d0efd764d8fb333cdab652216f7614509e9f13045fc7a401"
+    },
+    {
+      "file": "references\\skill-orchestration.md",
+      "projectSHA256": "ebd71b463bf91b55f434b92cb473bde469becfa19d6a186a42e1d12ea8614547",
+      "installedSHA256": "ebd71b463bf91b55f434b92cb473bde469becfa19d6a186a42e1d12ea8614547"
+    },
+    {
+      "file": "references\\sprite-resource-pipeline.md",
+      "projectSHA256": "66490d48dbd09a92ea1b8181ef37707b4ad5822575d14fd124e996844e086b86",
+      "installedSHA256": "66490d48dbd09a92ea1b8181ef37707b4ad5822575d14fd124e996844e086b86"
+    },
+    {
+      "file": "references\\verification-and-delivery.md",
+      "projectSHA256": "b7ed600c0b310aa8d14b052c91ba6f5915e98a1cfcf8eaf258d168ffd5b67041",
+      "installedSHA256": "b7ed600c0b310aa8d14b052c91ba6f5915e98a1cfcf8eaf258d168ffd5b67041"
+    },
+    {
+      "file": "references\\wechat-social.md",
+      "projectSHA256": "feee3e389cd81f49d9d77251217db60bceca7d549843f6a44d66b68e0a56d1d0",
+      "installedSHA256": "92c4af8b774ae72f19a681be976adf42a4294804d1ea2babb9b80e6ef58d2675"
+    },
+    {
+      "file": "scripts\\inspect_sprite.py",
+      "projectSHA256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc",
+      "installedSHA256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc"
+    },
+    {
+      "file": "SKILL.md",
+      "projectSHA256": "a62203af025e5b01a0645722738fbb8f5caaa89157014817cf576876c32f9c43",
+      "installedSHA256": "a62203af025e5b01a0645722738fbb8f5caaa89157014817cf576876c32f9c43"
+    }
+  ],
+  "officialValidator": "Python unavailable; YAML and relative references checked independently, not an official validator run."
+}

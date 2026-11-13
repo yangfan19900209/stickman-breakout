@@ -1,0 +1,18 @@
+{
+  "tool": "built-in imagegen",
+  "prompts": {
+    "terrain": "Edit the LAND terrain atlas (first reference) into a polished hand-drawn monochrome cartoon game style that matches the accepted SEA atlas (second reference) and the small SOLDIER (third reference). Keep the land atlas's six separate complete objects and 2-column x 3-row layout: grassy earth cross-section; reinforced cracked concrete berm; steel catwalk with rail, beam, rivets, braces and cables; rooted natural rock wall; coastal cliff; factory. Retain believable organic ground, curved grass blades, exposed roots, rounded embedded stones and readable steel construction. REDUCE engraving, stippled noise and tiny scratch marks substantially, but preserve rich coherent hand-drawn material and structural forms. This must look like illustrated game terrain, NOT blank geometric polygons, vector icons, wireframe platforms or flat gray rectangles. Rounded uneven contours, expressive organic pen strokes, opaque ivory-white interiors with small gray shadow patches. Outer lines approximately 4-5 pixels at full source size, interior lines 2-3 pixels, same visual weight family as the sea atlas; no heavy icon borders. Moderate purposeful detail, about 8-12 rounded stones per ground block and several curved roots, not hundreds of pebbles. Grass crown follows a clear nearly horizontal walkable surface. Metal catwalk has a shallow solid beam and airy full supports below, complete left/right ends. Every object contained in its cell with generous gaps; no clipping. True transparent background outside assets, opaque interiors. No text, no grid, no detached fragments or extra objects. Preserve the six-cell arrangement of the first reference.",
+    "fill": "Create a game terrain MATERIAL atlas for the same hand-drawn black-and-white cartoon world as the supplied sea terrain and soldier. Two equal vertical rectangular panels side by side with no gap, no frame, no label: LEFT is the inside of earthy ground, RIGHT is the inside of weathered pale concrete with embedded rounded rubble. Both panels opaque warm-white / very pale neutral gray, subtle filled shadows, smooth organic pen lines. These are seamless interior material swatches: NO surface horizon, NO grass crowns, NO horizontal soil layers, NO beams, borders or repeating panel frames. Earth contains a varied natural scattering of softly rounded irregular stones, small curved roots and shallow rock creases; concrete contains larger irregular rounded slab islands, a few short cracks and embedded stones. Moderate illustrated detail at a consistent scale, not blank space decorated with a few thin angular polygons, not vector geometric shapes. No dense stippling, noisy speckle or realistic engraving. Outer stone contours 3-4 source pixels, smaller internal lines 1.5-2 pixels; large quiet ivory fills between groups. Distribute material smoothly through the full image with no bands or large high-contrast seams at panel edges. Aim 1536x1024 with each material taking half the width. Pure monochrome ivory/gray/black, no yellow tint, no blue, no gradients, no transparent holes, no outside background."
+  },
+  "references": {
+    "terrain": [
+      "../素材/游戏美术/source/v074/land.png",
+      "../素材/游戏美术/source/v075/sea-lines.png",
+      "../素材/游戏美术/slices/v053/player.idle.0.png"
+    ],
+    "fill": [
+      "../素材/游戏美术/source/v075/sea-lines.png",
+      "../素材/游戏美术/slices/v053/player.idle.0.png"
+    ]
+  }
+}

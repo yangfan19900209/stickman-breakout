@@ -1,0 +1,103 @@
+{
+  "version": "1.0.7",
+  "releaseName": "分享与推荐复活",
+  "createdAt": "2026-11-13T10:20:43.950Z",
+  "sourceInputSHA256": "84abff8b66191f112441e2a116938c4926f91c1c7ec0f059043fb71d1445b62a",
+  "inputArchive": {
+    "file": "构建输入.zip",
+    "sha256": "e52dac00a954eb2490be39ab99524465e88db01f1ca0c875ccaeb678318ea6c6"
+  },
+  "builds": [
+    {
+      "platform": "web-mobile",
+      "files": 434,
+      "bytes": 24263129,
+      "inputSHA256": "84abff8b66191f112441e2a116938c4926f91c1c7ec0f059043fb71d1445b62a"
+    },
+    {
+      "platform": "wechatgame",
+      "files": 447,
+      "bytes": 20927030,
+      "inputSHA256": "84abff8b66191f112441e2a116938c4926f91c1c7ec0f059043fb71d1445b62a"
+    }
+  ],
+  "archives": [
+    {
+      "file": "线条突围-Web-1.0.7.zip",
+      "bytes": 19205904,
+      "sha256": "34bab053aa31e3dc6bfaed330076ac31387884283528500d7fa3edc36ab15335",
+      "entries": 434
+    },
+    {
+      "file": "线条突围-微信小游戏-1.0.7.zip",
+      "bytes": 18903383,
+      "sha256": "bf26117acc3c1648a6fe34cf66b595dcfa5e29c0b4c63169206c478258e6f595",
+      "entries": 447
+    }
+  ],
+  "budget": {
+    "mainBytes": 3864129,
+    "totalBytes": 20927030,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 744690
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10487797
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4978245
+      },
+      {
+        "name": "level03",
+        "root": "subpackages/level03/",
+        "bytes": 683894
+      }
+    ],
+    "localBudget": {
+      "main": 4194304,
+      "total": 20971520
+    },
+    "basis": "Existing project limits, not a statement of current platform policy"
+  },
+  "validation": {
+    "typecheck": true,
+    "logic": 524,
+    "revivalBrowserCases": 3,
+    "recommendationCases": 13,
+    "shareHostCases": 5,
+    "twoChapterSmoke": true,
+    "naturalDeathsPerChapter": 4,
+    "revivalsPerChapter": 4
+  },
+  "rules": {
+    "freePerChapterAttempt": 1,
+    "additionalLives": "Unlimited one-at-a-time credits",
+    "share": "Request issued; cancelling also retains credit",
+    "recommendation": "Official close result isRecommended === true; includes already recommended",
+    "rating": "No verified star/text review callback; not rewarded",
+    "fastestTime": "All revived runs excluded; progress retained"
+  },
+  "checkpoints": [
+    "PRE-SHARE-REVIVE-20261113"
+  ],
+  "chapterAvailability": [
+    1,
+    2
+  ],
+  "thirdChapterOpen": false,
+  "uploadedToWechat": false,
+  "publishedToWechat": false,
+  "wechatDeviceVerified": false
+}

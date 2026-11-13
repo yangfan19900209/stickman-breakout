@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-11-10T10:09:58.8451428Z",
+  "displayName": "杨帆游戏开发体系",
+  "skillId": "yangfan-game-development",
+  "previousSkillId": "cocos-2d-action-games",
+  "projectPath": "C:/Users/Administrator/Desktop/线条突围/doc/skills/yangfan-game-development",
+  "installedPath": "C:/Users/Administrator/.codex/skills/yangfan-game-development",
+  "officialValidator": {
+    "project": "passed",
+    "installed": "passed"
+  },
+  "metadata": "passed",
+  "checkedLinks": 140,
+  "brokenLinks": [],
+  "filesMatched": 12,
+  "oldInstalledDirectoryExists": false,
+  "defaultEntriesUpdated": [
+    "AGENTS.md",
+    "C:/Users/Administrator/.codex/AGENTS.md"
+  ],
+  "changes": [
+    {
+      "file": "agents/openai.yaml",
+      "change": "modified"
+    },
+    {
+      "file": "references/project-examples.md",
+      "change": "modified"
+    },
+    {
+      "file": "references/skill-maintenance.md",
+      "change": "modified"
+    },
+    {
+      "file": "references/skill-orchestration.md",
+      "change": "added"
+    },
+    {
+      "file": "SKILL.md",
+      "change": "modified"
+    }
+  ],
+  "preservedSpecialistFiles": [
+    "references/asset-prompts.md",
+    "references/design-and-presentation.md",
+    "references/gameplay-and-physics.md",
+    "references/performance-and-motion.md",
+    "references/sprite-resource-pipeline.md",
+    "references/verification-and-delivery.md",
+    "scripts/inspect_sprite.py"
+  ],
+  "validationScope": "Skill format, UI metadata, document links, current default entry points, and project/installed SHA-256 equality; game tests were not rerun for this documentation-only change.",
+  "historicalEvidence": "Prior reports and immutable experience anchors retain their original version and skill name.",
+  "files": [
+    {
+      "file": "agents/openai.yaml",
+      "sha256": "8ceafc0bb2da4318ae778d55543df7fb2220e339ba7225a5031de0601a7c7c8c"
+    },
+    {
+      "file": "references/asset-prompts.md",
+      "sha256": "56b53212f1bea50acf54ab697bb588f198484928ce38ae3ec182d719a3c57f90"
+    },
+    {
+      "file": "references/design-and-presentation.md",
+      "sha256": "e62ee6e6be3dea4e73cfbb5ae8bd2759dbec39a422bd42026739be891716698b"
+    },
+    {
+      "file": "references/gameplay-and-physics.md",
+      "sha256": "6c4a2a60cae74bfb8f3aff2f0a7c11e637aee0c90e598fdb6d6ac819c767246f"
+    },
+    {
+      "file": "references/performance-and-motion.md",
+      "sha256": "f29b94dcbe21a5bec19ae2cf45394db95d2ac4265ec772c628b5e2776a98fcca"
+    },
+    {
+      "file": "references/project-examples.md",
+      "sha256": "ab67f278c2e9da5c1c0fa6dcb43a2f8b36fb54d957e5cd65eef311ba0f2353c1"
+    },
+    {
+      "file": "references/skill-maintenance.md",
+      "sha256": "40873cb1acf5b169d0efd764d8fb333cdab652216f7614509e9f13045fc7a401"
+    },
+    {
+      "file": "references/skill-orchestration.md",
+      "sha256": "ebd71b463bf91b55f434b92cb473bde469becfa19d6a186a42e1d12ea8614547"
+    },
+    {
+      "file": "references/sprite-resource-pipeline.md",
+      "sha256": "ce655a715abc1316e011e8debcf5d6762e8c94eb9cebd66455ace447986de14d"
+    },
+    {
+      "file": "references/verification-and-delivery.md",
+      "sha256": "62ebe1b352311978faa035bff0058043758466b6cec5727f91f23e79b9a28bcb"
+    },
+    {
+      "file": "scripts/inspect_sprite.py",
+      "sha256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc"
+    },
+    {
+      "file": "SKILL.md",
+      "sha256": "7b802c37cd3ff820b5c7d3cc0b16b0b3e8edd8b0568ad838318871ccdc1f527e"
+    }
+  ]
+}

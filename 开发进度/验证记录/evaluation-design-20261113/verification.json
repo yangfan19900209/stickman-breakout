@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-13",
+  "type": "design prototype, not production game",
+  "status": "complete",
+  "checks": {
+    "dimensionsReviewed": [
+      "667x375",
+      "844x390",
+      "932x430",
+      "1280x720"
+    ],
+    "measuredHomeTargetAt667x375": {
+      "width": 101,
+      "height": 44,
+      "bottomClearance": 17.84375
+    },
+    "flowsReviewed": [
+      "manual open from home",
+      "true closure suppresses candidate prompt",
+      "false closure silent return",
+      "unknown closure silent return",
+      "old-client explanatory dialog",
+      "open-error return",
+      "web recommendation entry hidden",
+      "candidate prompt dismissal retained across scene switches",
+      "continue cancels candidate prompt"
+    ],
+    "sourceOfChecks": "CUA real clicks and DOM geometry against local HTML prototype; screenshots captured",
+    "nativeWechat": "not tested",
+    "fullGameRegression": "not run; runtime files not changed by this design task"
+  },
+  "artifacts": [
+    {
+      "file": "doc/WECHAT-EVALUATION-PLAN.md",
+      "size": 16898,
+      "sha256": "e3d24154b3383032d042d5a77e2ac5c1271a3a5fbcb3d61bec2f75bcf93f48f4"
+    },
+    {
+      "file": "doc/prototypes/wechat-evaluation.html",
+      "size": 27957,
+      "sha256": "7221615cfef511d695bd265dd72300bba76d3b554ee8c958a5acfff8841df89f"
+    },
+    {
+      "file": "reports/evaluation-design-20261113/home-design.jpg",
+      "size": 115701,
+      "sha256": "66fc263112eec60a1750f15e08b744c9dc9c07989eb2657a21900da1c2ad18f2"
+    },
+    {
+      "file": "reports/evaluation-design-20261113/result-design.jpg",
+      "size": 96405,
+      "sha256": "57259f75b4e023dad50c71e83e163f3fdc3a7bf7de78a432332b66b9e7f9092f"
+    }
+  ]
+}

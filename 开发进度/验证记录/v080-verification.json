@@ -1,0 +1,493 @@
+{
+  "version": "0.8.0",
+  "checkedAt": "2026-11-09T08:21:38.624Z",
+  "sourceSHA256": "cb71838c3e64d27ea451dd59b7c95c08fa712d6ae05f45352fea52e2a3f24319",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 239,
+    "passed": 239,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": "http://127.0.0.1:4190/",
+  "oceanPreview": "http://127.0.0.1:4190/level02.html",
+  "changes": [
+    "Six alternating whole rocket gait poses retain phase through firing",
+    "Concrete/steel contact uses the solid roof, excluding rings and loose edge stones",
+    "Bullet cases refill finite held/holstered weapons; grenade icons and full-supply messages are distinct; moving supplies retain support",
+    "Land backgrounds, boxes and barrels share bold ink; floating deck caps keep uniform scale",
+    "Deep enemy coordination and bounded stagger, committed warnings, varied boss sweep lanes",
+    "Water impacts gain pressure rings, brief bounded local hitstop, death audio and a new pressure sound; leaving a cut crate releases protected fire"
+  ],
+  "browser": {
+    "land": {
+      "time": 77.2000000000075,
+      "hp": 1,
+      "report": "reports/v080-land-campaign.json"
+    },
+    "ocean": {
+      "time": 91.76666666668577,
+      "hp": 2,
+      "attacks": [
+        "burst",
+        "marksman",
+        "torpedo",
+        "dash",
+        "fan"
+      ],
+      "report": "reports/v080-browser-campaign.json"
+    },
+    "errors": 0,
+    "rocket": "reports/v080-browser-rocket.json",
+    "contact": "reports/v080-browser-contact.json",
+    "touch": "reports/v080-browser-lifecycle.json",
+    "firstOceanAttempt": "reports/v080-ocean-first-attempt.json"
+  },
+  "web": {
+    "entryTime": 1794210752886.3474,
+    "sha256": "15494b373da8c427c184548c7b867f71d2d0f358962a9dd7ea2d8e5049837ebe",
+    "bytes": 13309617,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794210823385.1023,
+    "sha256": "191ea64a584ae71ea4fdf50e0c44d6e559dedfb312f92accedf4b3f37f6648e6",
+    "bytes": 10247893,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 471102
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 2278544
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 3141029
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "art": {
+    "generatedImages": 3,
+    "manifest": "art/v080-art-manifest.json",
+    "prompts": "art/source/v080/GENERATION.md",
+    "runtime": "assets/landart/polish.png",
+    "bytes": 623651,
+    "sha256": "1aa2a2424e6a8c6d12868cbd86e5ea23d0755eecef2756d9b3b0a76c185814d5",
+    "frames": 16
+  },
+  "performance": {
+    "simulation": "reports/v080-simulation.json",
+    "crowds": [
+      {
+        "enemies": 8,
+        "shots": 72,
+        "ticks": 6000,
+        "medianMs": 0.02209999999999468,
+        "p95Ms": 0.06419999999999959,
+        "maxMs": 0.6007999999999925,
+        "totalMs": 168.09769999999918
+      },
+      {
+        "enemies": 24,
+        "shots": 72,
+        "ticks": 6000,
+        "medianMs": 0.02780000000001337,
+        "p95Ms": 0.048299999999983356,
+        "maxMs": 0.6259999999999764,
+        "totalMs": 188.9710999999998
+      }
+    ],
+    "render": "reports/v080-render-profile.json",
+    "medianDrawCalls": 35,
+    "p95DrawCalls": 40,
+    "scope": "Local Node CPU and Chrome draw-call measurement; not device FPS"
+  },
+  "skill": "reports/v080-skill-verification.json",
+  "screenshots": [
+    {
+      "file": "reports/v080-land-start.png",
+      "sha256": "8314258fbf97bc023856872688cdaa526f9af0415a164a009d24d5cd03a3a164"
+    },
+    {
+      "file": "reports/v080-land-850.png",
+      "sha256": "877133ba612fa9f03580e5782f361e0de05f139883aa66302164c38a2d4256bb"
+    },
+    {
+      "file": "reports/v080-land-1200.png",
+      "sha256": "fb9ba1ebdc0f0f8de61296b9a9e337af69a24f72daca785835ce7fdbbb3fd791"
+    },
+    {
+      "file": "reports/v080-land-1850.png",
+      "sha256": "77666bbfa8054ee4e61bf52dfab51733e7843645ff0f93f117cab02c642b8297"
+    },
+    {
+      "file": "reports/v080-land-2200.png",
+      "sha256": "cbab7427e2fc560ff2623349f04b1098d8de7e6ab6270ab7f6c9954d0cfcefeb"
+    },
+    {
+      "file": "reports/v080-land-3100.png",
+      "sha256": "6d4053e5d47ddff55bb7a7eac436327998fa3d101cc2b8994bbda05f9282bb9b"
+    },
+    {
+      "file": "reports/v080-land-3700.png",
+      "sha256": "4aa1c01af19416ca2639617fe3f04fd0f0e2b7d4190d9b9a2a69bdccd2fff05e"
+    },
+    {
+      "file": "reports/v080-land-4300.png",
+      "sha256": "301fd940eaedc4bfc5e2811bd2a650e2ce624eeaa86444cd82cdc26ae6932581"
+    },
+    {
+      "file": "reports/v080-land-4900.png",
+      "sha256": "86aee16756d4d5f1ed9a548f1a16a91d0e323895ea3a97794f913586ba1999f6"
+    },
+    {
+      "file": "reports/v080-land-5050.png",
+      "sha256": "e6001f6a7155020ce53ec2f6e40e57e9b103d9ccd244dc8a8dea517aadbeba46"
+    },
+    {
+      "file": "reports/v080-land-5200.png",
+      "sha256": "c42d5c292a138b46d394de7969c79bf6e20355b1d63fea0afeef7d29a600ddab"
+    },
+    {
+      "file": "reports/v080-land-6200.png",
+      "sha256": "a9f4c169e7531b72be429b2c8ad42b85b3b3707ffd0595efe7478313ccd523cc"
+    },
+    {
+      "file": "reports/v080-land-7350.png",
+      "sha256": "f4b0322f4dcb26e38a68997e6a5de15c6620c1252c30380e197f3ad19e97035f"
+    },
+    {
+      "file": "reports/v080-land-7900.png",
+      "sha256": "32315c79862954d40514fd0be02f1eb8843122e3319f10074f8ad72756c50fac"
+    },
+    {
+      "file": "reports/v080-land-8050.png",
+      "sha256": "1b50dbec6d5fea67fc0c7668db9b124ecb4e7576bc74e85246a8dc7142856652"
+    },
+    {
+      "file": "reports/v080-land-8250.png",
+      "sha256": "c59524b4463ef1dfd07a8d53b900ff644cee033ca834cd3a6da0e7cb963c4bdf"
+    },
+    {
+      "file": "reports/v080-land-9100.png",
+      "sha256": "780997ebeb1aa9a0e86d5b8a47939b796c4609fd1c3f995b76aa370c7fcccad4"
+    },
+    {
+      "file": "reports/v080-land-9900.png",
+      "sha256": "6505f3fac81740a315a67195ff434e27fb2bfdb6a8eeb4119ede1b9f69f190ea"
+    },
+    {
+      "file": "reports/v080-land-10800.png",
+      "sha256": "e896f33c08133ff7b5dbacb5a625ef1eac276c2ce6b888ac1b2b7ca9c9511883"
+    },
+    {
+      "file": "reports/v080-land-complete.png",
+      "sha256": "86dd595bb693b77dc03e433dd7c9dfbb6e7c7e7132ad51ccf37c6885dd11689b"
+    },
+    {
+      "file": "reports/v080-chapter-link.png",
+      "sha256": "797aabda73afcfd95f6dd53deb0b225a3888e6bf4a93bd986f8f9938f1759a66"
+    },
+    {
+      "file": "reports/v080-mobile-1600.png",
+      "sha256": "3db33e137b11872a60ff7dd7658d4b3878e06abcefb6dd60f305668e906aaa06"
+    },
+    {
+      "file": "reports/v080-mobile-3700.png",
+      "sha256": "d24eb683757d0d8c2544ecf58451db1ea3355b1615ab97c47272edf7a9c25a21"
+    },
+    {
+      "file": "reports/v080-shore.png",
+      "sha256": "1a54c9e4387e8fa3f51bbcda36fc3c365307cab498aec33a2b38a7cbebfeb54d"
+    },
+    {
+      "file": "reports/v080-walk-0.png",
+      "sha256": "a281df6180c80e37b66a03166a351f23ef06352bd7e0af1c56d3216628184ccc"
+    },
+    {
+      "file": "reports/v080-walk-1.png",
+      "sha256": "c6b381730ff1e407ccf9fb790660e738dae87429c0b4fa1081f81ac0e35205c7"
+    },
+    {
+      "file": "reports/v080-walk-2.png",
+      "sha256": "083b6b87a481f7aca9b4618e47390456b2d8173ea9f3e3eaa12159308ec5df8d"
+    },
+    {
+      "file": "reports/v080-walk-3.png",
+      "sha256": "9471468b13d2249bb559ee3f8610ab878b4b29559074030501412d7c88cce7d9"
+    },
+    {
+      "file": "reports/v080-walk-4.png",
+      "sha256": "9cfc6d77818d9c7b10a50350df2f061904eee3c3e2f1ecfca94ed2686998e5d7"
+    },
+    {
+      "file": "reports/v080-entry-reach.png",
+      "sha256": "034b647d4aa29c3c566195a4740bbb514cac305f93f4ac4d7998c546732c3b8c"
+    },
+    {
+      "file": "reports/v080-entry-open.png",
+      "sha256": "d89206b568dfbf4fd002e83b951112fa792edccea7002be81917d3580064aead"
+    },
+    {
+      "file": "reports/v080-entry-take.png",
+      "sha256": "393c61dc39e782fb765ddae5383799122aecbb456cdf47b6f1b4e0cd9e7569a9"
+    },
+    {
+      "file": "reports/v080-equip.png",
+      "sha256": "06deef262cb1c334f77124e0e3afd156365f95d6eb69fdf5fe13ecfb9a401ffe"
+    },
+    {
+      "file": "reports/v080-equip-tank.png",
+      "sha256": "f10b400861132a13f426600b96312514675f5e75b66f3e5107ad50883667835a"
+    },
+    {
+      "file": "reports/v080-entry-walk.png",
+      "sha256": "d0b504a05bfeb42e99a029de1d30e2ffb4743213b0e1a7f3c7cf27dd409af199"
+    },
+    {
+      "file": "reports/v080-dive.png",
+      "sha256": "ceee317ec24e62024885b686fbc23f2ed6510640e3c44d9915b5c1ca67ce212d"
+    },
+    {
+      "file": "reports/v080-shallow.png",
+      "sha256": "a1607dc2c2f786209ce07bd1ee2caaecb1a589e2bb14bbc65ef788610a325bdb"
+    },
+    {
+      "file": "reports/v080-shallow-animated.png",
+      "sha256": "87f062324ae7530cf6165f6167437e3115e64f238ce10f4eb196a3aff7dac421"
+    },
+    {
+      "file": "reports/v080-weapon-harpoon.png",
+      "sha256": "1f26c96f55c5c6ade4c202fa2fe3b81127c243eba037ced066401cf1d4b7573f"
+    },
+    {
+      "file": "reports/v080-zone-1.png",
+      "sha256": "1f26c96f55c5c6ade4c202fa2fe3b81127c243eba037ced066401cf1d4b7573f"
+    },
+    {
+      "file": "reports/v080-enemy-burst.png",
+      "sha256": "7aed1d256494c0105eaa759e0fa4d13e56cb22563fa31f46b5e5a08450c12462"
+    },
+    {
+      "file": "reports/v080-enemy-projectile.png",
+      "sha256": "0e2d66c57f4c7b5fa41c95d13813c783af41c3e99b2110eda47c1b167fe18610"
+    },
+    {
+      "file": "reports/v080-explosion-peak.png",
+      "sha256": "8166ea38ab99c3aed4e93449de0fbce103c10f2951ac4575d3bc7db06699d5cc"
+    },
+    {
+      "file": "reports/v080-enemy-marksman.png",
+      "sha256": "e4696fbb50569267dac4e8236f7fe9d612c9df90f252d9b820c911ec6bc50018"
+    },
+    {
+      "file": "reports/v080-enemy-torpedo.png",
+      "sha256": "83400a6e6a363a7112dfd0b112406b3fbdb53cefacc27eb855bb049d32407527"
+    },
+    {
+      "file": "reports/v080-zone-2.png",
+      "sha256": "5aaa85c573e9ec0e93cd1f01fafb7c9c2ebce0f67e301327df4ec19c575ba56b"
+    },
+    {
+      "file": "reports/v080-weapon-sonar.png",
+      "sha256": "f36207f1e367d49fc8128e1a58bd517a4adfdbaa2d295ce5acb9f79f6b3da0be"
+    },
+    {
+      "file": "reports/v080-reef.png",
+      "sha256": "9d21f77e55c54dfa4a4506901fe396ecea0f9fa769d19f2de6c42134556883e9"
+    },
+    {
+      "file": "reports/v080-zone-3.png",
+      "sha256": "60f0acc5788c195b6088694a3935a16395aec75eadddae4e9ecec2f9a9806331"
+    },
+    {
+      "file": "reports/v080-wreck.png",
+      "sha256": "17dd2254a0efc077742f0b683d27ca754f289f4ca325cb4c053d1895d7072e55"
+    },
+    {
+      "file": "reports/v080-enemy-dash.png",
+      "sha256": "8035d78ad49b5037e02318274708dad918867f18ab118edfdc3e4648efe80184"
+    },
+    {
+      "file": "reports/v080-enemy-fan.png",
+      "sha256": "b4a124e0eaf70b813649d75cc210dbb20b33451eb465b2d3571ec41627a69c69"
+    },
+    {
+      "file": "reports/v080-zone-4.png",
+      "sha256": "fc84ad3048fe332a13da37d19c6430592c827d95cb1396243fd0f00a8b4b2ccc"
+    },
+    {
+      "file": "reports/v080-deep.png",
+      "sha256": "8d16567940769635c22e5f41731868dfcfc47df80665ee5b5739d7fd53f9cdd1"
+    },
+    {
+      "file": "reports/v080-zone-5.png",
+      "sha256": "48e97c810e1f37386f547c1a6ff19f7b64fe7aa2e8bb7c252a31949d912d827b"
+    },
+    {
+      "file": "reports/v080-pipeline.png",
+      "sha256": "a9fa480cee01caa4ee4844c58d0e398b8fa4f01713754ab1bd68def5dad6d8d1"
+    },
+    {
+      "file": "reports/v080-weapon-torpedo.png",
+      "sha256": "9c91feb517e6d2bb39c446f209eb71a27695c630879bffc9b8810669faf95633"
+    },
+    {
+      "file": "reports/v080-zone-6.png",
+      "sha256": "576499e4ea3c98535a142485d6a9bb9ae56a726a523fde336f767d2e02979371"
+    },
+    {
+      "file": "reports/v080-zone-7.png",
+      "sha256": "5dfa4f0ba1049e1dd1fb8d3863b8cb2426f435d88e8d6ac1810ac70419b825c0"
+    },
+    {
+      "file": "reports/v080-boss-cannon.png",
+      "sha256": "77935df773668287a00233949141430aedd49fc0f567e38d57aa4043c95b1cba"
+    },
+    {
+      "file": "reports/v080-boss-sweep.png",
+      "sha256": "d19ad2e5d65812f6fd669a30037cbe031f768a43575cad1bb4a4d142fafb33a1"
+    },
+    {
+      "file": "reports/v080-boss-fan.png",
+      "sha256": "548e853084ac1ff0b0f5bbc3a523dfd64a21674399206ccf67d9d72b65da792b"
+    },
+    {
+      "file": "reports/v080-boss-ring.png",
+      "sha256": "fafa00336d5199882a3ba9e78fa419b7d224c58d046de08dc8e0a06ec6f11f75"
+    },
+    {
+      "file": "reports/v080-collapse.png",
+      "sha256": "0d2685dc1ff5ba56132893ce6da890a3568943277368bc72b80ae1ae47bc4756"
+    },
+    {
+      "file": "reports/v080-cheer.png",
+      "sha256": "1ec1afe71c1453a930aaf04438b939bd1d3db87fb8cfd015e9d23ea01b5d4c58"
+    },
+    {
+      "file": "reports/v080-result.png",
+      "sha256": "b3c3adb3c2cf7a29cb6ce7e26f601837dba6bf2b13c4a19cea1422da4372d7ee"
+    },
+    {
+      "file": "reports/v080-mobile-touch.png",
+      "sha256": "348150531c512bf3b4bc8dfc7b4b3996669775f73765d5673d0f130b06c0cf5c"
+    },
+    {
+      "file": "reports/v080-portrait.png",
+      "sha256": "405d91051283ecea526f41833f5471812e83b0d50c00b35b48b97ba79ad8059a"
+    },
+    {
+      "file": "reports/v080-torpedo-flight.png",
+      "sha256": "4575708a6575ef1f31b1c782029d2a44308283d47f8ea4f5efb97fe5e8c7ca0f"
+    },
+    {
+      "file": "reports/v080-torpedo-blast.png",
+      "sha256": "b978f7b1624acce1d35dd6227d19aacfdd877245eea1ca227cfd65eef0d877ea"
+    },
+    {
+      "file": "reports/v080-torpedo-swim-0.png",
+      "sha256": "e24d6cfef84a23ffbd08f0daca1144882a514d878fd7931c4b99e616f976e5d8"
+    },
+    {
+      "file": "reports/v080-torpedo-swim-1.png",
+      "sha256": "577c11ac11ed1a7a2bc3544862d44c86d38e91bf1e67eb7767ad0bc9cce8fb68"
+    },
+    {
+      "file": "reports/v080-torpedo-swim-2.png",
+      "sha256": "1b4fdadfed178c0ae45796f58f7b5100710d55e479a04673186a5e69480d05f4"
+    },
+    {
+      "file": "reports/v080-torpedo-swim-3.png",
+      "sha256": "431bc12c56f183a8b6a7fb0e374b79d3be50380fe8210f49c712de9c8dabb0ac"
+    },
+    {
+      "file": "reports/v080-torpedo-fire-swim-0.png",
+      "sha256": "eb70d67d837bad49961824bd283a5a217cf850002636c4c6a8f420a143cdafca"
+    },
+    {
+      "file": "reports/v080-torpedo-fire-swim-1.png",
+      "sha256": "32a05ff7ed87f4a6fdd66ee364c1a993ced44e6385dd032d36c0208a692a8556"
+    },
+    {
+      "file": "reports/v080-torpedo-fire-swim-2.png",
+      "sha256": "a40c232ce60e4692303c428a923f953202a44723c267abc8987c9982839ac28a"
+    },
+    {
+      "file": "reports/v080-torpedo-fire-swim-3.png",
+      "sha256": "153d80de40096246c99df8935f4a1031b9a6ca558adf9657b9f755fa42b8c217"
+    },
+    {
+      "file": "reports/v080-underpass-right.png",
+      "sha256": "58de5f363fe8c03407c6f8656fa127d0624cbbea63d10b50abc18780d6b3ab75"
+    },
+    {
+      "file": "reports/v080-underpass-left.png",
+      "sha256": "edc11671e8e7be60439a3a1d7becea47206b1f9c8d375d02dfe01dc7369ec778"
+    },
+    {
+      "file": "reports/v080-single-jump.png",
+      "sha256": "86deb6a74b9da766e1fa6bbb9475bfe6162e51eeddc90dd355fced9c76144274"
+    },
+    {
+      "file": "reports/v080-rocket-left-0.png",
+      "sha256": "3e00a237d22c48c32c257a40672b4e78c398203373e685e518a2f590b2fc3e72"
+    },
+    {
+      "file": "reports/v080-rocket-left-1.png",
+      "sha256": "aaf5d8954aa16d45680c8f6ebbb8dda46aa48953f987580fc8660bb40b618145"
+    },
+    {
+      "file": "reports/v080-rocket-left-2.png",
+      "sha256": "d57d3e28f38aea534b8c639fd3e6044fcec2bd2a297bc22839d0014f9d134405"
+    },
+    {
+      "file": "reports/v080-rocket-left-3.png",
+      "sha256": "81c20b5500524491ac78c97de686b1f86cd330c24cc946bebeead225e0bba489"
+    },
+    {
+      "file": "reports/v080-rocket-right-0.png",
+      "sha256": "01c394a38c3f87aa66a3d1cbd6e8d3ba69d86c15b6394d8d793a7706a4249e1d"
+    },
+    {
+      "file": "reports/v080-rocket-right-1.png",
+      "sha256": "d4152ee385678909af75f75de405c9acba808368a5c4a3d623891538040c41ce"
+    },
+    {
+      "file": "reports/v080-rocket-right-2.png",
+      "sha256": "f141b19109baa4810a7a57d4090f3defde97ad63519789ac1d0862e86c6816c6"
+    },
+    {
+      "file": "reports/v080-rocket-right-3.png",
+      "sha256": "26e47c3ec7431398b87087562ad196c6367fd853b29853837a9f46d9ca59bca7"
+    },
+    {
+      "file": "reports/v080-rocket-moving-fire.png",
+      "sha256": "7079fe5b4c7594235193d4f87eae8ce0e841ffcce9342f6504dd377ca52a5750"
+    },
+    {
+      "file": "reports/v080-concrete-contact.png",
+      "sha256": "4c46aa7bc9ba201ac051cdf52d8e1a79a5e5c95eddadeff6e0fa2439f13086d7"
+    },
+    {
+      "file": "reports/v080-concrete-edge-release.png",
+      "sha256": "9b3fedf26b4009f07ae275889f66cac03ea21fa8d989581f2425832c6a54a42d"
+    }
+  ],
+  "limitations": [
+    "WeChat and iPhone hardware were not run. No upload or publication.",
+    "Difficulty verified on normal-input routes; broader player playtesting remains useful."
+  ]
+}

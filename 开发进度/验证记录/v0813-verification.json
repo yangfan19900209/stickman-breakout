@@ -1,0 +1,414 @@
+{
+  "version": "0.8.13",
+  "checkedAt": "2026-11-11T04:25:32.500Z",
+  "sourceSHA256": "fea528179af8698d21dc71b6c32d76c38bd7a067eaf9940fc2c081050a5e945e",
+  "typecheck": {
+    "status": "passed",
+    "log": "reports/v0813-typecheck.log"
+  },
+  "logic": {
+    "tests": 322,
+    "passed": 322,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "report": "reports/v0813-mobile.json",
+    "method": "Complete normal-keyboard campaign; read-only snapshots and controlled clock; normal health, ammo and enemy states, no teleports or deliberate cease-fire tour.",
+    "health": 4,
+    "miniFightDuration": 7.5416666666662415,
+    "fightDuration": 36.15000000002877,
+    "finalAttacks": {
+      "salvo": 2,
+      "sweep": 1,
+      "stomp": 1,
+      "laser": 2,
+      "missiles": 1,
+      "burst": 1,
+      "charge": 2,
+      "leap": 2
+    },
+    "pursuit": {
+      "outsideArenaSamples": 1169,
+      "minBossX": 13161.468624272136,
+      "barSamples": 1274
+    },
+    "framing": {
+      "samples": 1236,
+      "minHeadClearance": 15.769317696569829,
+      "worst": {
+        "time": 96.50000000002287,
+        "mode": "leaping",
+        "attack": "leap",
+        "drawn": {
+          "frame": "colossus.stomp-tell",
+          "width": 344.25600000000003,
+          "height": 322.08000000000004,
+          "x": 13161.473664843475,
+          "y": 278.25,
+          "visible": true
+        },
+        "display": {
+          "width": 1560.9160305343512,
+          "height": 720,
+          "portrait": false,
+          "zoom": 1.4,
+          "combatZoom": 0.787977156895277,
+          "worldVisibleWidth": 1980.9153309526694,
+          "cameraY": 0.0008815987868011787,
+          "worldY": 25.80271912415455,
+          "bossCeiling": 513.7862595419847,
+          "frameWidth": 852,
+          "frameHeight": 393,
+          "orientationPaused": false
+        },
+        "bossY": 278.25,
+        "windup": 0,
+        "top": 498.01694184541486
+      }
+    },
+    "applicationErrors": 0
+  },
+  "controls": {
+    "report": "reports/v0813-controls.json",
+    "cases": [
+      {
+        "angle": 0,
+        "dx": 112.08333333333371,
+        "vx": 280,
+        "crouched": false,
+        "aim": 0
+      },
+      {
+        "angle": 45,
+        "dx": 112.08333333333371,
+        "vx": 279.99999999999994,
+        "crouched": false,
+        "aim": 0.7853981633974483
+      },
+      {
+        "angle": -45,
+        "dx": 107.41666666666703,
+        "vx": 280,
+        "crouched": false,
+        "aim": 0
+      }
+    ],
+    "launcherFrames": [
+      "direct.rocket.stride.0",
+      "direct.rocket.stride.1",
+      "direct.rocket.stride.2",
+      "direct.rocket.stride.4"
+    ],
+    "slideRemoved": true
+  },
+  "progression": {
+    "report": "reports/v0813-retreat.json",
+    "edge": {
+      "name": "retreat-wall",
+      "player": {
+        "x": 869.1068708670355,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Idle",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "cameraX": 856.1068708670355,
+      "cameraStoppedBeforePlayer": true,
+      "progression": {
+        "furthestX": 1816.1068708670355,
+        "retreatLimit": 856.1068708670355,
+        "retreatDistance": 960
+      },
+      "objective": {
+        "visible": true,
+        "text": "后方已封锁 · 向右突围 →",
+        "x": 926.1068702290074,
+        "y": 674.1984732824427
+      }
+    }
+  },
+  "ui": {
+    "report": "reports/v0813-menu.json",
+    "cases": 6,
+    "bothChapters": true
+  },
+  "model": {
+    "report": "reports/v0813-model-campaign.json",
+    "health": 5,
+    "fightDuration": 35.47500000002523,
+    "attacks": {
+      "salvo": 2,
+      "sweep": 1,
+      "stomp": 1,
+      "laser": 2,
+      "missiles": 1,
+      "burst": 1,
+      "charge": 2,
+      "leap": 2
+    }
+  },
+  "web": {
+    "entryTime": 1794370928196.9536,
+    "sha256": "65080dbcacad264bd05497515a092921cd6242ddaf49f3ef0181ad6e581e82ed",
+    "bytes": 22694631,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794370987504.522,
+    "sha256": "5277b95e01ef8cc472bd18326971ed0508fc39a3f9da5b2d0ebfa2a6888645f0",
+    "bytes": 19529402,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 593089
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10238512
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V0813-20261111",
+    "checkpointEntriesVerified": 419,
+    "preservedFiles": [
+      "assets/scripts/combat/WeaponSystem.ts",
+      "assets/scripts/enemy/TankBoss.ts",
+      "assets/scripts/enemy/EnemyController.ts",
+      "assets/scripts/enemy/EnemyTactics.ts",
+      "assets/scripts/ui/ControlLayout.ts",
+      "assets/scripts/platform/SafeAreaInsets.ts"
+    ],
+    "dependenciesUnchanged": true
+  },
+  "skill": {
+    "report": "reports/v0813-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v0813-mobile-projectile-player-standard-bullet.png",
+      "sha256": "b0ab3b0e1cc0aaad3eb10dc2d36dd17c07708d1cc86600578f66e8b870e90e97",
+      "capturedAt": "2026-11-11T04:22:42.863Z"
+    },
+    {
+      "file": "reports/v0813-mobile-projectile-enemy-standard-bullet.png",
+      "sha256": "ee1553b822dd6f9fd7207c4fac8821886caf1e3f04de706c03b81a8364f187c6",
+      "capturedAt": "2026-11-11T04:22:46.394Z"
+    },
+    {
+      "file": "reports/v0813-mobile-projectile-enemy-standard-cannon.png",
+      "sha256": "dd9600b0e37d47761b56ec992bb603414d46b6e6b655a446491a3a0c35bcfca6",
+      "capturedAt": "2026-11-11T04:23:04.062Z"
+    },
+    {
+      "file": "reports/v0813-mobile-projectile-player-standard-rocket.png",
+      "sha256": "27f8751a00608bdfd3e1011e18b21a4aec2a4d4140aaddac0d37d8a11903fd14",
+      "capturedAt": "2026-11-11T04:23:14.663Z"
+    },
+    {
+      "file": "reports/v0813-mobile-projectile-enemy-mini-bullet.png",
+      "sha256": "2a98652ee5e7152d7748249ccb28546895a1e8023312ea087a38b5775768036e",
+      "capturedAt": "2026-11-11T04:23:20.248Z"
+    },
+    {
+      "file": "reports/v0813-mobile-boss-size.png",
+      "sha256": "94ac1a4f5ed2e95c5c13e3b54fd158afb03244177340291fce98424d500dd1ae",
+      "capturedAt": "2026-11-11T04:24:07.844Z"
+    },
+    {
+      "file": "reports/v0813-mobile-pursuit-outside-arena.png",
+      "sha256": "81a3b0faa7480a9317e94b66f90f606020bae68bfaf3e0cd1b66cf86c8c55335",
+      "capturedAt": "2026-11-11T04:24:10.633Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-salvo.png",
+      "sha256": "8ad172141ea976238e16338f3690bf79dba1f98c625745bff07d93b8c557fd8f",
+      "capturedAt": "2026-11-11T04:24:13.274Z"
+    },
+    {
+      "file": "reports/v0813-mobile-projectile-enemy-boss-cannon.png",
+      "sha256": "118980a01554c0ef95dfe34ab80b5d194b6220e901d336dfdcfb2389b77e7c0c",
+      "capturedAt": "2026-11-11T04:24:15.176Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-charge.png",
+      "sha256": "3e8de9e5c1d31ee4025d17fe874c8231c29835daa61338205f11351229a32f8f",
+      "capturedAt": "2026-11-11T04:24:17.542Z"
+    },
+    {
+      "file": "reports/v0813-mobile-charging.png",
+      "sha256": "86fa6b1bcb6d972df6c018062f08639b10113b60efd872fc6ad21c95fd67a403",
+      "capturedAt": "2026-11-11T04:24:19.092Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-laser.png",
+      "sha256": "c6be989620933b9c75204f5bef9cabcf046607b1dbc0d2fb8bec5e10486dc163",
+      "capturedAt": "2026-11-11T04:24:20.985Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-leap.png",
+      "sha256": "f249709560aab74f8574a7978f4fd101a30671b5f550b5d8f4b3c1b6b3c1e063",
+      "capturedAt": "2026-11-11T04:24:24.239Z"
+    },
+    {
+      "file": "reports/v0813-mobile-leaping.png",
+      "sha256": "c54924627aa3e9aa02973d765eb67845b97e55b27a420e11fddee72bed2e9d9e",
+      "capturedAt": "2026-11-11T04:24:25.838Z"
+    },
+    {
+      "file": "reports/v0813-mobile-landing.png",
+      "sha256": "6260b4234e26ead0f65a7735807ab516dfdfe27fd31cfbd8624637deb0d1745b",
+      "capturedAt": "2026-11-11T04:24:26.945Z"
+    },
+    {
+      "file": "reports/v0813-mobile-enrage.png",
+      "sha256": "fe4e5bf68b91389434b7978e75bf7c06a3c8feef62f66baba40e91f43c1278cb",
+      "capturedAt": "2026-11-11T04:24:28.334Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-burst.png",
+      "sha256": "43eac4093d82330121cf2b11daf21a2b4b2f2fc0226bc9b20ed4946c2a2d6aa7",
+      "capturedAt": "2026-11-11T04:24:33.039Z"
+    },
+    {
+      "file": "reports/v0813-mobile-projectile-enemy-boss-bullet.png",
+      "sha256": "d62b43e3325e380f8a5752b7d1eb46864dc61249932a74f8476e9741ff03f61f",
+      "capturedAt": "2026-11-11T04:24:34.260Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-stomp.png",
+      "sha256": "dd99aac72c14108b36a7353047e6cc109dab412a0d757f50e1e834f7f80a2932",
+      "capturedAt": "2026-11-11T04:24:38.583Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-missiles.png",
+      "sha256": "f8d019b5824959306e7a2350c72074ec431fd2717d3600829c3ae43aae912f16",
+      "capturedAt": "2026-11-11T04:24:40.401Z"
+    },
+    {
+      "file": "reports/v0813-mobile-projectile-enemy-boss-rocket.png",
+      "sha256": "a3065ac836902b8f057d60dfb475e0a080a8bb3d914c93f75595355d1374f76d",
+      "capturedAt": "2026-11-11T04:24:42.075Z"
+    },
+    {
+      "file": "reports/v0813-mobile-tell-sweep.png",
+      "sha256": "3db4083f39c4901db884d8eb57ef73d7f14f20d531e0ab54a78fc3beb9282e11",
+      "capturedAt": "2026-11-11T04:24:46.410Z"
+    },
+    {
+      "file": "reports/v0813-mobile-result.png",
+      "sha256": "d475f30b5678ee11df1125bf44cd46e4206b15709b577bf9748a4fb3587a392c",
+      "capturedAt": "2026-11-11T04:24:56.783Z"
+    },
+    {
+      "file": "reports/v0813-joystick-0.png",
+      "sha256": "fcd52c40b30169623a7b04432873aeb92cc8ba11d08ba0a0d60ac7bfdc66ddfa",
+      "capturedAt": "2026-11-11T04:10:42.705Z"
+    },
+    {
+      "file": "reports/v0813-joystick-45.png",
+      "sha256": "734c01d442200087ff0c22b3b1914f2e6ac11b29e738a6081aa181f19e077fd9",
+      "capturedAt": "2026-11-11T04:10:46.823Z"
+    },
+    {
+      "file": "reports/v0813-joystick--45.png",
+      "sha256": "d2f4b05cbc759bac49e7b159e1804d9a2527efc08785e9db3c7f74d080d32621",
+      "capturedAt": "2026-11-11T04:10:51.092Z"
+    },
+    {
+      "file": "reports/v0813-crouch-jump.png",
+      "sha256": "500d46e228d94f8a7e0c94a52d0db56de4e6be0a653c2d7b3d42e6f7f1d9e371",
+      "capturedAt": "2026-11-11T04:10:55.223Z"
+    },
+    {
+      "file": "reports/v0813-launcher-gait-1.png",
+      "sha256": "040c9111de8fc86d90bcbd6220b8e777b68e8f70644a4842a0efac2a6da160d2",
+      "capturedAt": "2026-11-11T04:11:23.492Z"
+    },
+    {
+      "file": "reports/v0813-launcher-gait-2.png",
+      "sha256": "d0e6df151a5c3040c3024007a7e53e79a78887f31aca48964c4ed3ff5ea797ec",
+      "capturedAt": "2026-11-11T04:11:25.264Z"
+    },
+    {
+      "file": "reports/v0813-launcher-gait-3.png",
+      "sha256": "7fde87f2c1fb679f38dc58228b4806bc08b42157c5a3bb8306b861098f72b82b",
+      "capturedAt": "2026-11-11T04:11:25.956Z"
+    },
+    {
+      "file": "reports/v0813-launcher-gait-4.png",
+      "sha256": "32fbb765dc3886852a6c69e37cb5d41a0a0241723c0287e628de472dbc488380",
+      "capturedAt": "2026-11-11T04:11:26.575Z"
+    },
+    {
+      "file": "reports/v0813-menu-fallback.png",
+      "sha256": "fd3017bc5e3c8db8b5d2283eba1fb9f814e5f6e4ceb8dbe04a260c21bbed9003",
+      "capturedAt": "2026-11-11T04:01:15.011Z"
+    },
+    {
+      "file": "reports/v0813-menu-mobile.png",
+      "sha256": "8ebfb123198ffd9537ba91e8c3f30af9f865083cd2e1f1d8b13f3a43182d9a9e",
+      "capturedAt": "2026-11-11T04:01:16.554Z"
+    },
+    {
+      "file": "reports/v0813-menu-updated.png",
+      "sha256": "7c76cb7b228bbbb493937cf334dd81bca64f32e298b9e680db6b2e236a404b84",
+      "capturedAt": "2026-11-11T04:01:18.644Z"
+    },
+    {
+      "file": "reports/v0813-menu-notch-right.png",
+      "sha256": "b5ce743ad7ff45bcacdc79496837d2dcca7ad90bf6cbfb4eef5ac53dacbdd01b",
+      "capturedAt": "2026-11-11T04:01:20.111Z"
+    },
+    {
+      "file": "reports/v0813-menu-compact.png",
+      "sha256": "0b6d2c97605344bdf4543dae90520e08b614aa063c07604cb7470d2960f21ed1",
+      "capturedAt": "2026-11-11T04:01:22.036Z"
+    },
+    {
+      "file": "reports/v0813-menu-ocean.png",
+      "sha256": "a34c67c49a1672a9f1f65fb0b76e10a0fdc7464b9bdab47e44d24a13c0c29d41",
+      "capturedAt": "2026-11-11T04:01:28.791Z"
+    },
+    {
+      "file": "reports/v0813-retreat-wall.png",
+      "sha256": "7849610c0c394bb876c17e8489a90fdc66aeee4fecb10688dfeca00471655d05",
+      "capturedAt": "2026-11-11T04:01:45.061Z"
+    }
+  ],
+  "limitations": [
+    "Phone viewport and WeChat system controls are simulated; no iPhone/WeChat hardware test",
+    "Animation capture deliberately leaves launchers alive and is separate from the uninterrupted campaign",
+    "No upload or publication"
+  ]
+}

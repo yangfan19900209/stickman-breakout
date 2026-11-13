@@ -1,0 +1,15 @@
+{
+  "reviewedAt": "2026-11-10T08:05:45.236Z",
+  "files": [
+    {
+      "file": "references/verification-and-delivery.md",
+      "sha256": "e1454c18c968435fe044ee4b731409e4b5dc8485b179f57aee862c1e5cd003d3",
+      "retained": [
+        "Mouse-to-touch duplication and letterbox mapping",
+        "Scene script class registration and missing-script build log checks",
+        "Expanded Creator 3.8.8 bundle preset structure"
+      ]
+    }
+  ],
+  "method": "Preserved reviewed installed content and added only the local accepted-version anchor section; sync checks the reviewed hash again."
+}

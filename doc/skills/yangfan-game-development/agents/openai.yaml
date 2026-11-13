@@ -1,0 +1,6 @@
+interface:
+  display_name: "杨帆游戏开发体系"
+  short_description: "按任务组合已安装的游戏开发技能，验证后总结经验、更新方法并修正指导"
+  default_prompt: "使用 $yangfan-game-development 开发或迭代当前游戏，按需组合已安装的游戏开发技能，完成验证后自动总结、更新和修正本体系，并同步技能副本。"
+policy:
+  allow_implicit_invocation: true

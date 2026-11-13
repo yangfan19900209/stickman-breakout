@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-13",
+  "scope": "Research and design only",
+  "sources": 24,
+  "failedSources": [],
+  "checkedDocuments": [
+    "doc/WECHAT-SOCIAL-PLAN.md",
+    "doc/README.md",
+    "doc/skills/yangfan-game-development/SKILL.md",
+    "doc/skills/yangfan-game-development/references/wechat-social.md",
+    "doc/skills/yangfan-game-development/references/verification-and-delivery.md"
+  ],
+  "brokenLocalLinks": [],
+  "officialTypesSha256": "917ccb15aef4eb858d5d7e6f2f00033b6620aad29d5f4f254b31451d63a104dd",
+  "gameplayModified": false,
+  "gameBuildRun": false,
+  "wechatDeviceTested": false,
+  "documentHashes": {
+    "doc/WECHAT-SOCIAL-PLAN.md": "6b768517352c0f1abd6e5491c64c529a1f5a5d00bd770bebf2561060f0ee279d",
+    "doc/README.md": "e83e5720f38bcacd014fc4341b9298387b4a8687c50b9ed35fd4091fafd7ba71",
+    "doc/skills/yangfan-game-development/SKILL.md": "080ad563adceafbc417d9f6d4ec7a01f88b29e46228a585c6395d7b2fb5a6cea",
+    "doc/skills/yangfan-game-development/references/wechat-social.md": "b3f3375a70386cfeec15c11464b97f25ba48e6402bee97e286731cb722419ca9",
+    "doc/skills/yangfan-game-development/references/verification-and-delivery.md": "6c2d94e6cc71fc83a31401311651a9fb6c07ef1dfc89f6002b0c7100533a5205"
+  },
+  "finalDesignReview": {
+    "scope": "two released chapters",
+    "exampleMillisecondsMatchDisplayedSeconds": true,
+    "openDataMessages": "main-to-subdomain only",
+    "runtimeImplementation": "not performed"
+  }
+}

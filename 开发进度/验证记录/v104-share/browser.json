@@ -1,0 +1,62 @@
+{
+  "version": "1.0.4",
+  "passed": true,
+  "startedAt": "2026-11-13T06:17:03.822Z",
+  "method": "Actual Cocos build and ordinary touchscreen/keyboard inputs. WeChat API host is simulated; attempts and native-share requests observed synchronously, no actual message sent or real WeChat panel claimed.",
+  "cases": [
+    {
+      "mode": "normal",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "pending-image",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "empty-export",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "failed-export",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 3,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    },
+    {
+      "mode": "expired-card",
+      "passed": true,
+      "nativeShareRequests": 3,
+      "attempts": 6,
+      "toasts": 0,
+      "packagedCoverAvailable": true
+    }
+  ],
+  "captures": [
+    "reports/v104-share/normal-title.png",
+    "reports/v104-share/normal-records.png",
+    "reports/v104-share/pending-image-title.png",
+    "reports/v104-share/pending-image-records.png",
+    "reports/v104-share/empty-export-title.png",
+    "reports/v104-share/empty-export-records.png",
+    "reports/v104-share/failed-export-title.png",
+    "reports/v104-share/failed-export-records.png",
+    "reports/v104-share/expired-card-title.png",
+    "reports/v104-share/expired-card-records.png"
+  ],
+  "errors": [],
+  "failed": []
+}

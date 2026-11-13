@@ -1,0 +1,195 @@
+{
+  "generator": "imagegen",
+  "source": "../素材/游戏美术/source/v0814/shield-break.png",
+  "sourceSHA256": "a07828c7235d66d498390ab0861b3cbc206ccdd671e64dbb1060f6f97e7bb802",
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "reference": "assets/landart/cast.png",
+  "output": "assets/landart/shield-break.png",
+  "outputSHA256": "687f6c44a3eac101af772d1937d073d056216599f3a804c5289d2687348570a1",
+  "atlasSize": [
+    512,
+    512
+  ],
+  "method": "Equal-cell resampling, preserved alpha, shared scale and ground anchor; no procedural replacement art",
+  "cells": [
+    {
+      "id": "shield.break.0",
+      "sourceCrop": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "shield.break.1",
+      "sourceCrop": [
+        512,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "shield.break.2",
+      "sourceCrop": [
+        1024,
+        0,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "shield.break.3",
+      "sourceCrop": [
+        0,
+        512,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "shield.break.4",
+      "sourceCrop": [
+        512,
+        512,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "shield.break.5",
+      "sourceCrop": [
+        1024,
+        512,
+        512,
+        512
+      ]
+    }
+  ],
+  "frames": {
+    "shield.break.0": {
+      "atlas": [
+        4,
+        4,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "sourceSize": [
+        106,
+        106
+      ],
+      "anchor": [
+        0.5,
+        0.09
+      ]
+    },
+    "shield.break.1": {
+      "atlas": [
+        172,
+        4,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "sourceSize": [
+        106,
+        106
+      ],
+      "anchor": [
+        0.5,
+        0.09
+      ]
+    },
+    "shield.break.2": {
+      "atlas": [
+        340,
+        4,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "sourceSize": [
+        106,
+        106
+      ],
+      "anchor": [
+        0.5,
+        0.09
+      ]
+    },
+    "shield.break.3": {
+      "atlas": [
+        4,
+        172,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "sourceSize": [
+        106,
+        106
+      ],
+      "anchor": [
+        0.5,
+        0.09
+      ]
+    },
+    "shield.break.4": {
+      "atlas": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "sourceSize": [
+        106,
+        106
+      ],
+      "anchor": [
+        0.5,
+        0.09
+      ]
+    },
+    "shield.break.5": {
+      "atlas": [
+        340,
+        172,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "sourceSize": [
+        106,
+        106
+      ],
+      "anchor": [
+        0.5,
+        0.09
+      ]
+    }
+  }
+}

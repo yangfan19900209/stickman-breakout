@@ -1,0 +1,112 @@
+{
+  "version": "0.6.5",
+  "date": "2026-11-06",
+  "creator": "3.8.8",
+  "sourceSHA256": "87533158d4217c592ff73401a264ce00714156167b20754966c080fb11c42f8c",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 173,
+    "passed": 173,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "evidence": "reports/v065-browser-results.json",
+    "startTime": "2026-11-06T05:53:42.464Z",
+    "duration": 52927.045999999995,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": [
+      {
+        "title": "vertical and diagonal rockets emerge along the raised barrel on both sides",
+        "status": "passed"
+      },
+      {
+        "title": "jumping, falling and crouching keep the aimed muzzle attached to the full soldier",
+        "status": "passed"
+      },
+      {
+        "title": "phone landscape joystick plus attack fires straight from the raised tube",
+        "status": "passed"
+      }
+    ]
+  },
+  "rocketAim": {
+    "frames": 8,
+    "sourceSize": [
+      1774,
+      887
+    ],
+    "atlasSize": [
+      1024,
+      512
+    ],
+    "processing": "Complete-body crops, uniform half-resolution runtime frames, 128-color RGBA quantization; original preserved.",
+    "assets": [
+      {
+        "file": "art/source/v065/rocket-aim.png",
+        "bytes": 868260,
+        "sha256": "9076c8a0a36e55a02de1d0fd263b19d6ca607fd12bfc6a542dd4912f85323b65"
+      },
+      {
+        "file": "assets/resources/comic/rocket-aim.png",
+        "bytes": 27949,
+        "sha256": "dd9fd49fffa20b2e48b47a2dcaaa526bcef7cc9a0c627c5d95c7472d7ee7924a"
+      }
+    ],
+    "behavior": "Full raised aiming poses share measured muzzle/rear sockets and initial velocity; no horizontal exit before upward flight"
+  },
+  "web": {
+    "files": 62,
+    "bytes": 7510938,
+    "sha256": "5c1bf2e051deeb543baf30998b3af631c1466350452cd72494b9dff69d2f07ff",
+    "runtimeVerified": true,
+    "browser": "installed Chrome"
+  },
+  "wechat": {
+    "files": 74,
+    "bytes": 4658192,
+    "sha256": "76e22ad9a433481f893719df6399fa1468191f83ab4564a7f5a54e14e0a0717e",
+    "mainBytes": 4170873,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 319044
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    "reports/v065-up-right.png",
+    "reports/v065-up-right-flight.png",
+    "reports/v065-diagonal-right.png",
+    "reports/v065-diagonal-right-flight.png",
+    "reports/v065-up-left.png",
+    "reports/v065-up-left-flight.png",
+    "reports/v065-diagonal-left.png",
+    "reports/v065-diagonal-left-flight.png",
+    "reports/v065-jump-up.png",
+    "reports/v065-jump-up-flight.png",
+    "reports/v065-fall-up.png",
+    "reports/v065-fall-up-flight.png",
+    "reports/v065-crouch-up.png",
+    "reports/v065-crouch-up-flight.png",
+    "reports/v065-jump-diagonal.png",
+    "reports/v065-jump-diagonal-flight.png",
+    "reports/v065-touch-up.png"
+  ],
+  "limitations": [
+    "Browser checks use real keyboard input and simulated two-finger touch. No physical-phone test.",
+    "WeChat built locally; not run in Developer Tools, uploaded or published.",
+    "This iteration checks launcher aim and launch; it does not repeat a browser full-campaign run."
+  ]
+}

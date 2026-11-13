@@ -1,0 +1,186 @@
+{
+  "version": "0.8.4",
+  "checkedAt": "2026-11-10T06:58:28.274Z",
+  "sourceSHA256": "9bab41b8940867ae1af45238177bd092ad657de321a9a84d05fe7eeb08d82e94",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 262,
+    "passed": 262,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": "http://127.0.0.1:4190/",
+  "oceanPreview": "http://127.0.0.1:4190/level02.html",
+  "changes": [
+    "Generated 12 complete comic UI sprites matching the actual soldier and scenery; no procedural button/icon fallback",
+    "Jump, double jump, ground slide and underwater dash use distinct generated images; water labels and help say dash",
+    "Generated joystick, inventory badge, pause and menu plates share the art; pressed/disabled states and radial cooldown consume sprites",
+    "Existing hit areas, independent touch ownership and native capsule exclusion retained"
+  ],
+  "browser": {
+    "controls": "reports/v084-controls.json",
+    "capsule": "reports/v084-menu.json",
+    "applicationErrors": 0,
+    "failedRequests": 0,
+    "browserDiagnostics": [
+      {
+        "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+        "location": {
+          "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+          "line": 40431,
+          "column": 0,
+          "lineNumber": 40431,
+          "columnNumber": 0
+        }
+      },
+      {
+        "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+        "location": {
+          "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+          "line": 40431,
+          "column": 0,
+          "lineNumber": 40431,
+          "columnNumber": 0
+        }
+      }
+    ],
+    "scope": "Focused UI, both chapter entry flows, touch states and orientation; full campaigns were not repeated for this UI change"
+  },
+  "web": {
+    "entryTime": 1794293524544.8987,
+    "sha256": "3f57359a4ca3a3193819e8781769d6ce105d7a3dbfb7b1327fdd0f48f7943d76",
+    "bytes": 17945503,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794293857733.0806,
+    "sha256": "3b0164a050e1f897a76d1b7b72f6d8e6fcdde9207dda8208bba9a706c3a01a2b",
+    "bytes": 14831380,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 548451
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 6784682
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 3141029
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "art": {
+    "generator": "built-in image_gen",
+    "selectedSource": "art/source/v084/controls-comic-final.png",
+    "manifest": "art/v084-controls-manifest.json",
+    "prompts": "art/source/v084/GENERATION.md",
+    "atlas": "assets/landart/controls.png",
+    "frames": 12,
+    "atlasSHA256": "8dc1ec226deec5f7fa30f7827835721aace5db513a1075094dbf81e27857699f",
+    "inspection": "reports/v084-control-art-inspection.json"
+  },
+  "skill": "reports/v084-skill-verification.json",
+  "screenshots": [
+    {
+      "file": "reports/v084-controls-land-idle.png",
+      "sha256": "75df85e8ee57b63b8b3c59dc3cebb0d3871adce14d15e4c078dbbf6ea8c14def"
+    },
+    {
+      "file": "reports/v084-controls-land-pressed.png",
+      "sha256": "2d55569d5789151207760300f8380b7d3264e1b88af5f1a87f9ad0fd0fc8be87"
+    },
+    {
+      "file": "reports/v084-controls-knife.png",
+      "sha256": "47dfb225449ba817833221073c0d696050664a39806b5c1fbf12d20395c3467d"
+    },
+    {
+      "file": "reports/v084-controls-double-ready.png",
+      "sha256": "28029fa0df0002ef49107eecba0af2348b0f732a1942eadc86b7e6a18c4beaef"
+    },
+    {
+      "file": "reports/v084-controls-double-spent.png",
+      "sha256": "ba29b05a3f9704bfe70fc90719099fee4a8dddc89a8aaa176d09b4b779d33ed6"
+    },
+    {
+      "file": "reports/v084-controls-slide-ready.png",
+      "sha256": "5bf7a95cb9d86fe5a75ec63c0f9f1ffcccfd856e581373f43e0266d41349e30a"
+    },
+    {
+      "file": "reports/v084-controls-slide-pressed.png",
+      "sha256": "97f2cc70d6d63543689cd16695b036507e4358589a77b850d6396a92baa9a9ef"
+    },
+    {
+      "file": "reports/v084-controls-grenade-2.png",
+      "sha256": "b39584c9a60262c5b3a8aa0cf1221e2899842a78545d104d310d6076b057da80"
+    },
+    {
+      "file": "reports/v084-controls-grenade-1.png",
+      "sha256": "845659c6c60a78eb2892bb17bc2b4f54a0a2320291147168bcbcfe744e27beda"
+    },
+    {
+      "file": "reports/v084-controls-grenade-0.png",
+      "sha256": "ddb8c843394386acd5a6823a470a07c2d086a2e5bb179488b7b6cfebe042f147"
+    },
+    {
+      "file": "reports/v084-controls-pause-panel.png",
+      "sha256": "74ec8edd73e15b32e438df6f22678bd03fac0e60b66983d5709f55a64e31bf9b"
+    },
+    {
+      "file": "reports/v084-controls-shore.png",
+      "sha256": "5eaeb3f298077ef853aec46ec382b6aa763176b90617c8e6c93caa5cee92eb3c"
+    },
+    {
+      "file": "reports/v084-controls-ocean-idle.png",
+      "sha256": "712fca4bc958249177594f37388c8ba1597c0fc781db1bbfc66c3ddbc657f4f4"
+    },
+    {
+      "file": "reports/v084-controls-ocean-multitouch.png",
+      "sha256": "e86d656085f25c49a33b3db4d97dcee6f7393db5a7d0919cac9a51407cb729e0"
+    },
+    {
+      "file": "reports/v084-controls-ocean-boost-cooldown.png",
+      "sha256": "df0efae26f34eefe6abebd167e3eba2116f6e1f1ee1e0eefcd8d8ceaf93c8b08"
+    },
+    {
+      "file": "reports/v084-controls-ocean-recovered.png",
+      "sha256": "ebc98638c40fca06abb5af511ca82ed02acc3b2b355a441e35b50c4033a82944"
+    },
+    {
+      "file": "reports/v084-menu-fallback.png",
+      "sha256": "0485b9c1d6c97ab4091bf48ddd787d3f32af863e23244ef24e2add897754d6b7"
+    },
+    {
+      "file": "reports/v084-menu-mobile.png",
+      "sha256": "befaab6b90aae439f1aca109ec8e284287660cf3386d9eab63a45ae6917e958c"
+    },
+    {
+      "file": "reports/v084-menu-updated.png",
+      "sha256": "a65bd497180c6854feb4e953f1e7b032775d3926adafd719a069abe9f47e845e"
+    },
+    {
+      "file": "reports/v084-menu-compact.png",
+      "sha256": "bb06ea042b2eaf8cd2b26156c7b06e6db3572028edb60d2420b4a3b9b7a9371a"
+    },
+    {
+      "file": "reports/v084-menu-ocean.png",
+      "sha256": "3226f33767913f6928c5e5f60e9862da23bf6418afad10b136ede51660363d8b"
+    }
+  ],
+  "limitations": [
+    "WeChat and iPhone hardware not run. Native menu APIs and bounds were simulated in Chrome. No upload/publication.",
+    "Two retained Chrome diagnostics concern preventDefault on synthetic non-cancelable touchCancel events; ownership clearing passed. No device FPS claim."
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Administrator\\Desktop\\线条突围\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/v061-campaign.spec.ts",
+      "-g",
+      "real keyboard completes",
+      "--reporter=list,json"
+    ],
+    "configFile": "C:\\Users\\Administrator\\Desktop\\线条突围\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/线条突围/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Administrator/Desktop/线条突围/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "url": "http://127.0.0.1:4190",
+      "reuseExistingServer": true,
+      "timeout": 15000
+    }
+  },
+  "suites": [
+    {
+      "title": "v061-campaign.spec.ts",
+      "file": "v061-campaign.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real keyboard completes expanded six-zone campaign, mini boss and both final boss phases",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 163208,
+                  "error": {
+                    "message": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5890.838737606914,\"trace\":[{\"time\":5.025000000000039,\"x\":1029,\"y\":261.75,\"health\":4,\"zone\":\"A\",\"boss\":132},{\"time\":10.058333333333403,\"x\":1950.1111111110838,\"y\":150,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":15.099999999999783,\"x\":2988.5000000000273,\"y\":252,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":20.141666666666165,\"x\":3728.8333333333603,\"y\":276.46666666666675,\"health\":3,\"zone\":\"B\",\"boss\":132},{\"time\":25.191666666665878,\"x\":4625.74999999995,\"y\":278.5,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":30.216666666665592,\"x\":5286.70833333321,\"y\":348.4958333333317,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":35.24999999999864,\"x\":5663.2361111109385,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.27499999999836,\"x\":5859.680555555364,\"y\":272.5,\"health\":2,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m",
+                    "stack": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5890.838737606914,\"trace\":[{\"time\":5.025000000000039,\"x\":1029,\"y\":261.75,\"health\":4,\"zone\":\"A\",\"boss\":132},{\"time\":10.058333333333403,\"x\":1950.1111111110838,\"y\":150,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":15.099999999999783,\"x\":2988.5000000000273,\"y\":252,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":20.141666666666165,\"x\":3728.8333333333603,\"y\":276.46666666666675,\"health\":3,\"zone\":\"B\",\"boss\":132},{\"time\":25.191666666665878,\"x\":4625.74999999995,\"y\":278.5,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":30.216666666665592,\"x\":5286.70833333321,\"y\":348.4958333333317,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":35.24999999999864,\"x\":5663.2361111109385,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.27499999999836,\"x\":5859.680555555364,\"y\":272.5,\"health\":2,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts:122:123",
+                    "location": {
+                      "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                      "column": 123,
+                      "line": 122
+                    },
+                    "snippet": "  120 |   await page.screenshot({ path: 'reports/v061-complete.png' });\n  121 |   writeFileSync('reports/v061-campaign.json', JSON.stringify({ snapshot: end, trace, captures, phases: [...phases], warnings: [...warnings], miniDeathAt, bossEntryAt, errors }, null, 2));\n> 122 |   expect(end.state, JSON.stringify({ state: end.state, hp: end.player.health, x: end.player.x, trace: trace.slice(-8) })).toBe('complete');\n      |                                                                                                                           ^\n  123 |   expect(end.levelWidth).toBe(12400); expect(end.zones).toHaveLength(6);\n  124 |   expect(end.miniBoss.health).toBe(0); expect(end.guardHealth).toBe(0);\n  125 |   expect(end.player.health).toBeGreaterThan(0); expect(end.exitOpen).toBe(true);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                        "column": 123,
+                        "line": 122
+                      },
+                      "message": "Error: {\"state\":\"dying\",\"hp\":0,\"x\":5890.838737606914,\"trace\":[{\"time\":5.025000000000039,\"x\":1029,\"y\":261.75,\"health\":4,\"zone\":\"A\",\"boss\":132},{\"time\":10.058333333333403,\"x\":1950.1111111110838,\"y\":150,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":15.099999999999783,\"x\":2988.5000000000273,\"y\":252,\"health\":4,\"zone\":\"B\",\"boss\":132},{\"time\":20.141666666666165,\"x\":3728.8333333333603,\"y\":276.46666666666675,\"health\":3,\"zone\":\"B\",\"boss\":132},{\"time\":25.191666666665878,\"x\":4625.74999999995,\"y\":278.5,\"health\":3,\"zone\":\"C\",\"boss\":132},{\"time\":30.216666666665592,\"x\":5286.70833333321,\"y\":348.4958333333317,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":35.24999999999864,\"x\":5663.2361111109385,\"y\":150,\"health\":2,\"zone\":\"C\",\"boss\":132},{\"time\":40.27499999999836,\"x\":5859.680555555364,\"y\":272.5,\"health\":2,\"zone\":\"C\",\"boss\":132}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"complete\"\u001b[39m\nReceived: \u001b[31m\"dying\"\u001b[39m\n\n  120 |   await page.screenshot({ path: 'reports/v061-complete.png' });\n  121 |   writeFileSync('reports/v061-campaign.json', JSON.stringify({ snapshot: end, trace, captures, phases: [...phases], warnings: [...warnings], miniDeathAt, bossEntryAt, errors }, null, 2));\n> 122 |   expect(end.state, JSON.stringify({ state: end.state, hp: end.player.health, x: end.player.x, trace: trace.slice(-8) })).toBe('complete');\n      |                                                                                                                           ^\n  123 |   expect(end.levelWidth).toBe(12400); expect(end.zones).toHaveLength(6);\n  124 |   expect(end.miniBoss.health).toBe(0); expect(end.guardHealth).toBe(0);\n  125 |   expect(end.player.health).toBeGreaterThan(0); expect(end.exitOpen).toBe(true);\n    at C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts:122:123"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:03:07.488Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v061-campaign-real-keyboar-d90af--and-both-final-boss-phases\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Administrator\\Desktop\\线条突围\\test-results\\v061-campaign-real-keyboar-d90af--and-both-final-boss-phases\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\线条突围\\tests\\browser\\v061-campaign.spec.ts",
+                    "column": 123,
+                    "line": 122
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ce76df60ace61a98bc78-e7e96730a5ce9e47cd5f",
+          "file": "v061-campaign.spec.ts",
+          "line": 76,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T09:03:06.767Z",
+    "duration": 164735.538,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

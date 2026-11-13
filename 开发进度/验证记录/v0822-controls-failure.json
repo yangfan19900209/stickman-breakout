@@ -1,0 +1,2515 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(cooling.cooldown>0)\n",
+  "touch": [
+    {
+      "baseline": true,
+      "shoot": false,
+      "points": [
+        {
+          "degrees": 55,
+          "player": {
+            "x": 126.41666666666667,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 54.92567454212056,
+            "y": -78.44200326415084,
+            "axis": 0.5735763841073575,
+            "vertical": -0.8191520808704139,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 65,
+          "player": {
+            "x": 142.37497982824817,
+            "y": 150,
+            "vx": 236.66626323162825,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 40.469931012608434,
+            "y": -86.78803076366414,
+            "axis": 0.4226183271993362,
+            "vertical": -0.9063077565127834,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 70,
+          "player": {
+            "x": 156.95040890827795,
+            "y": 150,
+            "vx": 191.53128044861668,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 32.75184895671346,
+            "y": -89.98496535486709,
+            "axis": 0.34202014365824407,
+            "vertical": -0.9396926206648609,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 75,
+          "player": {
+            "x": 166.847860619079,
+            "y": 150,
+            "vx": 144.93860739981608,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 24.78450186536855,
+            "y": -92.49705977643583,
+            "axis": 0.25881894178538584,
+            "vertical": -0.9659258539728053,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 78,
+          "player": {
+            "x": 172.26457678211491,
+            "y": 150,
+            "vx": 47.81969610528519,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Crouch",
+            "crouched": true,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 19.90962651757439,
+            "y": -93.66741360756525,
+            "axis": 0.20791172219689213,
+            "vertical": -0.9781475940639646,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 80,
+          "player": {
+            "x": 174.59435651526923,
+            "y": 150,
+            "vx": 39.93908113978794,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Crouch",
+            "crouched": true,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 16.628549608461274,
+            "y": -94.30519040815804,
+            "axis": 0.1736481788686432,
+            "vertical": -0.9848077528003136,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 82,
+          "player": {
+            "x": 177.2618414715189,
+            "y": 150,
+            "vx": 32.00981947499575,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Crouch",
+            "crouched": true,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 13.327218751850404,
+            "y": -94.82806989673641,
+            "axis": 0.13917312815215543,
+            "vertical": -0.9902680649199709,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": true,
+      "shoot": true,
+      "points": [
+        {
+          "degrees": 55,
+          "player": {
+            "x": 128.75,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 54.92567454212056,
+            "y": -78.44200326415084,
+            "axis": 0.5735763841073575,
+            "vertical": -0.8191520808704139,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 5,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 65,
+          "player": {
+            "x": 146.68053202184507,
+            "y": 150,
+            "vx": 236.66626323162825,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 40.469931012608434,
+            "y": -86.78803076366414,
+            "axis": 0.4226183271993362,
+            "vertical": -0.9063077565127834,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 2,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 70,
+          "player": {
+            "x": 159.65986709813637,
+            "y": 150,
+            "vx": 191.53128044861668,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 32.75184895671346,
+            "y": -89.98496535486709,
+            "axis": 0.34202014365824407,
+            "vertical": -0.9396926206648609,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 8,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 75,
+          "player": {
+            "x": 171.972962265601,
+            "y": 150,
+            "vx": 144.93860739981608,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 24.78450186536855,
+            "y": -92.49705977643583,
+            "axis": 0.25881894178538584,
+            "vertical": -0.9659258539728053,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 5,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 78,
+          "player": {
+            "x": 176.1941860260048,
+            "y": 150,
+            "vx": 47.81969610528519,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Crouch",
+            "crouched": true,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 19.90962651757439,
+            "y": -93.66741360756525,
+            "axis": 0.20791172219689213,
+            "vertical": -0.9781475940639646,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 2,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 80,
+          "player": {
+            "x": 179.5224427876538,
+            "y": 150,
+            "vx": 39.93908113978794,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Crouch",
+            "crouched": true,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 16.628549608461274,
+            "y": -94.30519040815804,
+            "axis": 0.1736481788686432,
+            "vertical": -0.9848077528003136,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 8,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        },
+        {
+          "degrees": 82,
+          "player": {
+            "x": 181.65643075265353,
+            "y": 150,
+            "vx": 32.00981947499575,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Crouch",
+            "crouched": true,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 13.327218751850404,
+            "y": -94.82806989673641,
+            "axis": 0.13917312815215543,
+            "vertical": -0.9902680649199709,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump"
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 5,
+              "label": "攻击",
+              "frame": "ui.attack"
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": false,
+      "shoot": false,
+      "points": [
+        {
+          "degrees": 55,
+          "player": {
+            "x": 128.75,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 54.92567454212056,
+            "y": -78.44200326415084,
+            "axis": 0.5735763841073575,
+            "vertical": -0.8191520808704139,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 65,
+          "player": {
+            "x": 140.4166666666667,
+            "y": 150,
+            "vx": 279.99999999999994,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 40.469931012608434,
+            "y": -86.78803076366414,
+            "axis": 0.4226183271993362,
+            "vertical": -0.9063077565127834,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 70,
+          "player": {
+            "x": 168.41666666666683,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 32.75184895671346,
+            "y": -89.98496535486709,
+            "axis": 0.34202014365824407,
+            "vertical": -0.9396926206648609,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 75,
+          "player": {
+            "x": 187.08333333333357,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 24.78450186536855,
+            "y": -92.49705977643583,
+            "axis": 0.25881894178538584,
+            "vertical": -0.9659258539728053,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 78,
+          "player": {
+            "x": 208.08333333333366,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 19.90962651757439,
+            "y": -93.66741360756525,
+            "axis": 0.20791172219689213,
+            "vertical": -0.9781475940639646,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 80,
+          "player": {
+            "x": 226.7500000000004,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 16.628549608461274,
+            "y": -94.30519040815804,
+            "axis": 0.1736481788686432,
+            "vertical": -0.9848077528003136,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 82,
+          "player": {
+            "x": 247.75000000000048,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": false,
+          "stick": {
+            "x": 13.327218751850404,
+            "y": -94.82806989673641,
+            "axis": 0.13917312815215543,
+            "vertical": -0.9902680649199709,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": false,
+              "cooldown": 0,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": false,
+      "shoot": true,
+      "points": [
+        {
+          "degrees": 55,
+          "player": {
+            "x": 128.75,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 54.92567454212056,
+            "y": -78.44200326415084,
+            "axis": 0.5735763841073575,
+            "vertical": -0.8191520808704139,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 5,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 65,
+          "player": {
+            "x": 149.75000000000009,
+            "y": 150,
+            "vx": 279.99999999999994,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 40.469931012608434,
+            "y": -86.78803076366414,
+            "axis": 0.4226183271993362,
+            "vertical": -0.9063077565127834,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 2,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 70,
+          "player": {
+            "x": 168.41666666666683,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 32.75184895671346,
+            "y": -89.98496535486709,
+            "axis": 0.34202014365824407,
+            "vertical": -0.9396926206648609,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 8,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 75,
+          "player": {
+            "x": 189.4166666666669,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 24.78450186536855,
+            "y": -92.49705977643583,
+            "axis": 0.25881894178538584,
+            "vertical": -0.9659258539728053,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 5,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 78,
+          "player": {
+            "x": 208.08333333333366,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 19.90962651757439,
+            "y": -93.66741360756525,
+            "axis": 0.20791172219689213,
+            "vertical": -0.9781475940639646,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 2,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 80,
+          "player": {
+            "x": 231.41666666666708,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": false,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 16.628549608461274,
+            "y": -94.30519040815804,
+            "axis": 0.1736481788686432,
+            "vertical": -0.9848077528003136,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 7,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "degrees": 82,
+          "player": {
+            "x": 247.75000000000048,
+            "y": 150,
+            "vx": 280,
+            "vy": 0,
+            "health": 5,
+            "grounded": true,
+            "facing": 1,
+            "animation": "Run",
+            "crouched": false,
+            "hitTime": 0,
+            "meleeActive": true,
+            "aimPitch": 0,
+            "airJumpsRemaining": 1,
+            "jumpCount": 0,
+            "canJump": true,
+            "canDropThrough": false,
+            "dropCount": 0
+          },
+          "shoot": true,
+          "stick": {
+            "x": 13.327218751850404,
+            "y": -94.82806989673641,
+            "axis": 0.13917312815215543,
+            "vertical": -0.9902680649199709,
+            "owner": 1
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 6,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fire": [
+    {
+      "rest": {
+        "id": "player.idle.0",
+        "x": 379.0796074154854,
+        "y": 150
+      },
+      "records": [
+        {
+          "time": 0.03333333333333333,
+          "actor": {
+            "id": "player.stand-shoot.0",
+            "x": 375.0796074154854,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 143.29078947368419,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 149.62412280701756,
+              "y": 187.89473684210526,
+              "width": 4.845070422535211,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.008333333333333333
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.12
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 8,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.049999999999999996,
+          "actor": {
+            "id": "player.stand-shoot.0",
+            "x": 376.0751629710409,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 144.28634502923978,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 162.29078947368424,
+              "y": 187.89473684210526,
+              "width": 16.95774647887324,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.025
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.10333333333333333
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 8,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.06666666666666667,
+          "actor": {
+            "id": "player.stand-shoot.1",
+            "x": 376.9284963043743,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 145.13967836257308,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 174.95745614035093,
+              "y": 187.89473684210526,
+              "width": 31.492957746478872,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.041666666666666664
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.08666666666666667
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 7,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.08333333333333333,
+          "actor": {
+            "id": "player.stand-shoot.1",
+            "x": 377.6396074154854,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 145.85078947368424,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 187.6241228070176,
+              "y": 187.89473684210526,
+              "width": 43.6056338028169,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.05833333333333333
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.07
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 7,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.09999999999999999,
+          "actor": {
+            "id": "player.stand-shoot.2",
+            "x": 378.20849630437425,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 146.4196783625731,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 200.2907894736843,
+              "y": 187.89473684210526,
+              "width": 55.71830985915493,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.075
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.053333333333333344
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 6,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.11666666666666665,
+          "actor": {
+            "id": "player.stand-shoot.2",
+            "x": 378.6351629710409,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 146.84634502923973,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 212.95745614035098,
+              "y": 187.89473684210526,
+              "width": 67.83098591549296,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.09166666666666666
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.03666666666666668
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 5,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.13333333333333333,
+          "actor": {
+            "id": "player.stand-shoot.3",
+            "x": 378.91960741548536,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 147.13078947368422,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 225.62412280701767,
+              "y": 187.89473684210526,
+              "width": 79.94366197183098,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.10833333333333332
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.020000000000000018
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 5,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.15,
+          "actor": {
+            "id": "player.stand-shoot.3",
+            "x": 379.0618296377076,
+            "y": 150
+          },
+          "muzzle": {
+            "x": 147.27301169590646,
+            "y": 187.89473684210526,
+            "pitch": 0
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 238.29078947368436,
+              "y": 187.89473684210526,
+              "width": 86,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.12499999999999999
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0.0033333333333333513
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 4,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.16666666666666666,
+          "actor": {
+            "id": "player.idle.0",
+            "x": 379.0796074154854,
+            "y": 150
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 250.95745614035104,
+              "y": 187.89473684210526,
+              "width": 86,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.14166666666666666
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 4,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.18333333333333332,
+          "actor": {
+            "id": "player.idle.0",
+            "x": 379.0796074154854,
+            "y": 150
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 263.62412280701767,
+              "y": 187.89473684210526,
+              "width": 86,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.15833333333333333
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 3,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.19999999999999998,
+          "actor": {
+            "id": "player.idle.0",
+            "x": 379.0796074154854,
+            "y": 150
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 276.2907894736843,
+              "y": 187.89473684210526,
+              "width": 86,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.175
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 2,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        },
+        {
+          "time": 0.21666666666666665,
+          "actor": {
+            "id": "player.idle.0",
+            "x": 379.0796074154854,
+            "y": 150
+          },
+          "bullets": [
+            {
+              "owner": "player",
+              "kind": "bullet",
+              "tier": "standard",
+              "frame": "projectile.bullet",
+              "x": 288.9574561403509,
+              "y": 187.89473684210526,
+              "width": 86,
+              "height": 19,
+              "fullWidth": 86,
+              "age": 0.19166666666666665
+            }
+          ],
+          "shot": {
+            "x": 143.2907894736842,
+            "y": 187.89473684210526,
+            "pitch": 0,
+            "flash": 0
+          },
+          "buttons": [
+            {
+              "action": "jump",
+              "held": false,
+              "cooldown": 0,
+              "label": "跳跃",
+              "frame": "ui.jump",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "shoot",
+              "held": true,
+              "cooldown": 2,
+              "label": "攻击",
+              "frame": "ui.attack",
+              "opacity": 150,
+              "cooldownOpacity": 45
+            },
+            {
+              "action": "grenade",
+              "held": false,
+              "cooldown": 0,
+              "label": "手雷",
+              "frame": "ui.grenade",
+              "opacity": 112,
+              "cooldownOpacity": 45
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "before": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "跳跃",
+          "frame": "ui.jump",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": false,
+          "cooldown": 0,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        }
+      ],
+      "held": [
+        {
+          "action": "jump",
+          "held": true,
+          "cooldown": 0,
+          "label": "二段跳",
+          "frame": "ui.doubleJump",
+          "opacity": 150,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": true,
+          "cooldown": 7,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 150,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        }
+      ],
+      "grenade": {
+        "action": "grenade",
+        "held": true,
+        "cooldown": 8,
+        "label": "手雷",
+        "frame": "ui.grenade",
+        "opacity": 150,
+        "cooldownOpacity": 45
+      },
+      "final": {
+        "x": 184.19444444444463,
+        "y": 273.6666666666667,
+        "vx": 0,
+        "vy": -10,
+        "health": 5,
+        "grounded": false,
+        "facing": 1,
+        "animation": "Fall",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 1,
+        "canJump": true,
+        "canDropThrough": false,
+        "dropCount": 0
+      }
+    },
+    {
+      "chapter": 2,
+      "before": [
+        {
+          "action": "jump",
+          "held": false,
+          "cooldown": 0,
+          "label": "冲刺",
+          "frame": "ui.dash",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": false,
+          "cooldown": 0,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        }
+      ],
+      "held": [
+        {
+          "action": "jump",
+          "held": true,
+          "cooldown": 8,
+          "label": "冲刺",
+          "frame": "ui.dash",
+          "opacity": 80,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "shoot",
+          "held": true,
+          "cooldown": 1,
+          "label": "攻击",
+          "frame": "ui.attack",
+          "opacity": 150,
+          "cooldownOpacity": 45
+        },
+        {
+          "action": "grenade",
+          "held": false,
+          "cooldown": 0,
+          "label": "手雷",
+          "frame": "ui.grenade",
+          "opacity": 112,
+          "cooldownOpacity": 45
+        }
+      ],
+      "grenade": {
+        "action": "grenade",
+        "held": true,
+        "cooldown": 0,
+        "label": "手雷",
+        "frame": "ui.grenade",
+        "opacity": 150,
+        "cooldownOpacity": 45
+      },
+      "final": {
+        "x": 982.458381927467,
+        "y": 502.4583299429648,
+        "vx": 3.4896894061477752,
+        "vy": 3.4896881327248708,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "This device does not support WebGL2",
+    "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+    "This device does not support WebGL2",
+    "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+    "This device does not support WebGL2"
+  ]
+}

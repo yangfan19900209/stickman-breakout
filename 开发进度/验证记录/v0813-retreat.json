@@ -1,0 +1,92 @@
+{
+  "startedAt": "2026-11-11T04:01:13.519Z",
+  "version": "0.8.13",
+  "method": "Normal keyboard inputs and read-only snapshots; no teleports, damage edits or invincibility",
+  "states": [
+    {
+      "name": "advanced",
+      "player": {
+        "x": 1802.1902042003687,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "progression": {
+        "furthestX": 1802.1902042003687,
+        "retreatLimit": 842.1902042003687,
+        "retreatDistance": 960
+      }
+    },
+    {
+      "name": "retreat-wall",
+      "player": {
+        "x": 869.1068708670355,
+        "y": 150,
+        "vx": 0,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": -1,
+        "animation": "Idle",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "cameraX": 856.1068708670355,
+      "cameraStoppedBeforePlayer": true,
+      "progression": {
+        "furthestX": 1816.1068708670355,
+        "retreatLimit": 856.1068708670355,
+        "retreatDistance": 960
+      },
+      "objective": {
+        "visible": true,
+        "text": "后方已封锁 · 向右突围 →",
+        "x": 926.1068702290074,
+        "y": 674.1984732824427
+      }
+    },
+    {
+      "name": "forward-again",
+      "player": {
+        "x": 992.8568708670372,
+        "y": 150,
+        "vx": 280,
+        "vy": 0,
+        "health": 4,
+        "grounded": true,
+        "facing": 1,
+        "animation": "Run",
+        "crouched": false,
+        "hitTime": 0,
+        "meleeActive": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "progression": {
+        "furthestX": 1816.1068708670355,
+        "retreatLimit": 856.1068708670355,
+        "retreatDistance": 960
+      }
+    }
+  ],
+  "errors": [],
+  "screenshot": "reports/v0813-retreat-wall.png"
+}

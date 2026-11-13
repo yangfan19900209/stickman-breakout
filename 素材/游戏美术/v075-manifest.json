@@ -1,0 +1,194 @@
+{
+  "processing": "Original-alpha crops; 192-color quantization, panorama downsampling (lossy); source sheets unchanged",
+  "frames": [
+    {
+      "id": "ink.rocks",
+      "sheet": "../素材/游戏美术/source/v075/land-lines.png",
+      "sheetSHA256": "240c798b68d4d50ff525bdfed90c4c8af026b3631d0e41c7b3d331f2f651abc4",
+      "crop": [
+        125,
+        130,
+        394,
+        196
+      ],
+      "source": "../素材/游戏美术/slices/v075/ink.rocks.png",
+      "sourceSHA256": "e83cc0836b88f4b71b027319a5b342606403455dfd8eb0bf22fafa1a5dc37578",
+      "runtime": "assets/landart/ink.png",
+      "runtimeSHA256": "290c5d1c3f014d32a14a8add186237624a3ee19bd5fd3a00151e8e0ac718443f"
+    },
+    {
+      "id": "ink.grass",
+      "sheet": "../素材/游戏美术/source/v075/land-lines.png",
+      "sheetSHA256": "240c798b68d4d50ff525bdfed90c4c8af026b3631d0e41c7b3d331f2f651abc4",
+      "crop": [
+        707,
+        160,
+        435,
+        153
+      ],
+      "source": "../素材/游戏美术/slices/v075/ink.grass.png",
+      "sourceSHA256": "0ea6f28e13d590521a7dc4eea9519c564a822a250fd0614b0c76d66a5c0ba9d1",
+      "runtime": "assets/landart/ink.png",
+      "runtimeSHA256": "290c5d1c3f014d32a14a8add186237624a3ee19bd5fd3a00151e8e0ac718443f"
+    },
+    {
+      "id": "ink.steel",
+      "sheet": "../素材/游戏美术/source/v075/land-lines.png",
+      "sheetSHA256": "240c798b68d4d50ff525bdfed90c4c8af026b3631d0e41c7b3d331f2f651abc4",
+      "crop": [
+        67,
+        564,
+        512,
+        263
+      ],
+      "source": "../素材/游戏美术/slices/v075/ink.steel.png",
+      "sourceSHA256": "32e9282edc0bfdbb264971fc217ea4533dff6a6c38ea2bda538762b4dc63d622",
+      "runtime": "assets/landart/ink.png",
+      "runtimeSHA256": "290c5d1c3f014d32a14a8add186237624a3ee19bd5fd3a00151e8e0ac718443f"
+    },
+    {
+      "id": "ink.factory",
+      "sheet": "../素材/游戏美术/source/v075/land-lines.png",
+      "sheetSHA256": "240c798b68d4d50ff525bdfed90c4c8af026b3631d0e41c7b3d331f2f651abc4",
+      "crop": [
+        679,
+        469,
+        505,
+        365
+      ],
+      "source": "../素材/游戏美术/slices/v075/ink.factory.png",
+      "sourceSHA256": "5c2c3435ef423c6b13329857cd0d5968979aaa81b7dfad5116497553f3be5974",
+      "runtime": "assets/landart/ink.png",
+      "runtimeSHA256": "290c5d1c3f014d32a14a8add186237624a3ee19bd5fd3a00151e8e0ac718443f"
+    },
+    {
+      "id": "ink.coast",
+      "sheet": "../素材/游戏美术/source/v075/land-lines.png",
+      "sheetSHA256": "240c798b68d4d50ff525bdfed90c4c8af026b3631d0e41c7b3d331f2f651abc4",
+      "crop": [
+        32,
+        948,
+        560,
+        263
+      ],
+      "source": "../素材/游戏美术/slices/v075/ink.coast.png",
+      "sourceSHA256": "aa16ea22a0510ce63843ada2f32780f3758aa89493e54ff4d688f59d69e55a27",
+      "runtime": "assets/landart/ink.png",
+      "runtimeSHA256": "290c5d1c3f014d32a14a8add186237624a3ee19bd5fd3a00151e8e0ac718443f"
+    },
+    {
+      "id": "ink.rubble",
+      "sheet": "../素材/游戏美术/source/v075/land-lines.png",
+      "sheetSHA256": "240c798b68d4d50ff525bdfed90c4c8af026b3631d0e41c7b3d331f2f651abc4",
+      "crop": [
+        713,
+        986,
+        443,
+        216
+      ],
+      "source": "../素材/游戏美术/slices/v075/ink.rubble.png",
+      "sourceSHA256": "16a20ccc0beb112ae0531edf6700c22e6f16c10c7d414944aaf992fe9b1c75e5",
+      "runtime": "assets/landart/ink.png",
+      "runtimeSHA256": "290c5d1c3f014d32a14a8add186237624a3ee19bd5fd3a00151e8e0ac718443f"
+    },
+    {
+      "id": "reef.seabed",
+      "sheet": "../素材/游戏美术/source/v075/sea-lines.png",
+      "sheetSHA256": "d7a293ceff39558bd4223ee1f2204005de61b76f164733abc71d347ff617bda6",
+      "crop": [
+        40,
+        115,
+        660,
+        253
+      ],
+      "source": "../素材/游戏美术/slices/v075/reef.seabed.png",
+      "sourceSHA256": "90c17f343aef11157d25ab55307b7b4421caaf4c5224c15c3c65a8c24bc0b8c7",
+      "runtime": "assets/level02/v075-reef.seabed.png",
+      "runtimeSHA256": "7a1ae047b6281fe2cb3080c47e755887e1e645079a64d87b4f6ed2bc642f4881"
+    },
+    {
+      "id": "reef.pillar",
+      "sheet": "../素材/游戏美术/source/v075/sea-lines.png",
+      "sheetSHA256": "d7a293ceff39558bd4223ee1f2204005de61b76f164733abc71d347ff617bda6",
+      "crop": [
+        757,
+        12,
+        643,
+        359
+      ],
+      "source": "../素材/游戏美术/slices/v075/reef.pillar.png",
+      "sourceSHA256": "9f220dca7fb7e7ee7040224535d6777224b8066991d7bca1f043f3ef0572dbac",
+      "runtime": "assets/level02/v075-reef.pillar.png",
+      "runtimeSHA256": "b004ffa725c1cf1b64855045a8268b2d4d2b16f4915731b0f717ca58fac4e4bd"
+    },
+    {
+      "id": "reef.ceiling",
+      "sheet": "../素材/游戏美术/source/v075/sea-lines.png",
+      "sheetSHA256": "d7a293ceff39558bd4223ee1f2204005de61b76f164733abc71d347ff617bda6",
+      "crop": [
+        43,
+        453,
+        637,
+        244
+      ],
+      "source": "../素材/游戏美术/slices/v075/reef.ceiling.png",
+      "sourceSHA256": "3f92dc01ed3adc29d183e66f2f8a7881850d182527d9ac7d99ba0955a5b27059",
+      "runtime": "assets/level02/v075-reef.ceiling.png",
+      "runtimeSHA256": "80c0aebc79867804cea4ee3c2aaac9b9b9c89716abe740f9cd3f1c228465326f"
+    },
+    {
+      "id": "reef.deck",
+      "sheet": "../素材/游戏美术/source/v075/sea-lines.png",
+      "sheetSHA256": "d7a293ceff39558bd4223ee1f2204005de61b76f164733abc71d347ff617bda6",
+      "crop": [
+        717,
+        411,
+        692,
+        296
+      ],
+      "source": "../素材/游戏美术/slices/v075/reef.deck.png",
+      "sourceSHA256": "b95890def4d48c3e8c801b3c0dbd858dccf08aad8db8ae5bb855ce58e4721b17",
+      "runtime": "assets/level02/v075-reef.deck.png",
+      "runtimeSHA256": "9576cb3b790c6acf949b46fc01b1c206ab95e8d58b2b1462ba66202f257040e4"
+    },
+    {
+      "id": "reef.bulkhead",
+      "sheet": "../素材/游戏美术/source/v075/sea-lines.png",
+      "sheetSHA256": "d7a293ceff39558bd4223ee1f2204005de61b76f164733abc71d347ff617bda6",
+      "crop": [
+        37,
+        743,
+        623,
+        331
+      ],
+      "source": "../素材/游戏美术/slices/v075/reef.bulkhead.png",
+      "sourceSHA256": "2afc387cef5d8ec53c733efbdcf0e2ad8c749fff0f34c6fedb84d1ae69403b6c",
+      "runtime": "assets/level02/v075-reef.bulkhead.png",
+      "runtimeSHA256": "9b16581878f0bc069ff298eecc0c971fc95fe8529f84fbc463e5696056f26540"
+    },
+    {
+      "id": "reef.pump",
+      "sheet": "../素材/游戏美术/source/v075/sea-lines.png",
+      "sheetSHA256": "d7a293ceff39558bd4223ee1f2204005de61b76f164733abc71d347ff617bda6",
+      "crop": [
+        706,
+        738,
+        707,
+        336
+      ],
+      "source": "../素材/游戏美术/slices/v075/reef.pump.png",
+      "sourceSHA256": "43866abee6d151868ea03cbaedde7892c16d0b73ee33ce4099bd49cda54d8dec",
+      "runtime": "assets/level02/v075-reef.pump.png",
+      "runtimeSHA256": "9f4d627f8af74799e64ef50918037f24df0933365fbb9971acbd075a75175722"
+    },
+    {
+      "id": "background.undersea",
+      "sheet": "../素材/游戏美术/source/v075/water.png",
+      "sheetSHA256": "2cdbcdc65277051f779fd4187940827ce1705eed70fbe528187999adaa6b8df0",
+      "source": "../素材/游戏美术/source/v075/water.png",
+      "sourceSHA256": "2cdbcdc65277051f779fd4187940827ce1705eed70fbe528187999adaa6b8df0",
+      "runtime": "assets/level02/v075-background.undersea.png",
+      "runtimeSHA256": "0016617de62d1031d2a05feb2cc7189721984d7414ee413e27b1f75d32324c95"
+    }
+  ]
+}

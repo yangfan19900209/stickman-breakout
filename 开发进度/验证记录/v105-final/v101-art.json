@@ -1,0 +1,844 @@
+{
+  "tool": "image_gen.imagegen",
+  "generatedImage": "exec-9cd5430b-8000-462d-a429-ff92961d56bd.png",
+  "draftImage": "exec-53522353-180e-4141-8a21-e0fa7266b8d0.png",
+  "lineWeightEdit": "exec-63fd07a4-9196-4ba0-812b-6e48e626344e.png",
+  "prompt": "art/source/v101/prompt.txt",
+  "refinements": "art/source/v101/refinement-prompts.txt",
+  "operation": "redraw compact full poses; refine contour thickness and alpha using imagegen; exact RGBA crops; unchanged runtime scale .88; replaced existing atlas",
+  "atlas": {
+    "path": "assets/landart/boss-v088.png",
+    "size": [
+      2048,
+      2048
+    ],
+    "bytes": 2167073,
+    "sha256": "f24fb758644d6896d9d4352213098098c79f0dc65804b1851d026a33d1880a0a"
+  },
+  "records": [
+    {
+      "id": "rhino.idle",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        48,
+        80,
+        399,
+        394
+      ],
+      "region": [
+        4,
+        4,
+        351,
+        314
+      ],
+      "pivot": [
+        245,
+        391
+      ],
+      "sockets": {
+        "muzzle": [
+          79,
+          221
+        ]
+      },
+      "opaqueWhite": 25958,
+      "pixels": 66832,
+      "pixelSHA256": "2db8b625db5b6a7551ff28a79c9937bed058ed692a0ac13e13f1aaf631370a8f"
+    },
+    {
+      "id": "rhino.roll.0",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        491,
+        78,
+        842,
+        393
+      ],
+      "region": [
+        363,
+        4,
+        351,
+        315
+      ],
+      "pivot": [
+        689,
+        391
+      ],
+      "sockets": {
+        "muzzle": [
+          524,
+          222
+        ]
+      },
+      "opaqueWhite": 25771,
+      "pixels": 67271,
+      "pixelSHA256": "cc9e75d9a40bdd999d2c934aebfc2fea07f541c44b6bd4b2342dff3421bdd98d"
+    },
+    {
+      "id": "rhino.roll.1",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        933,
+        84,
+        1286,
+        394
+      ],
+      "region": [
+        722,
+        4,
+        353,
+        310
+      ],
+      "pivot": [
+        1133,
+        392
+      ],
+      "sockets": {
+        "muzzle": [
+          968,
+          226
+        ]
+      },
+      "opaqueWhite": 25574,
+      "pixels": 65859,
+      "pixelSHA256": "874102d6d1a8a258c3dd503079b15c3ae2accd616d874c9bc2317d6b46299df2"
+    },
+    {
+      "id": "rhino.fire",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        1380,
+        94,
+        1729,
+        394
+      ],
+      "region": [
+        1083,
+        4,
+        349,
+        300
+      ],
+      "pivot": [
+        1576,
+        391
+      ],
+      "sockets": {
+        "muzzle": [
+          1447,
+          228
+        ]
+      },
+      "opaqueWhite": 24847,
+      "pixels": 64767,
+      "pixelSHA256": "75c4af1d10ea96c088a91d89471b87115bbc0a8c6034a9205e244510de66b793"
+    },
+    {
+      "id": "rhino.ram-tell",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        48,
+        521,
+        395,
+        841
+      ],
+      "region": [
+        1440,
+        4,
+        347,
+        320
+      ],
+      "pivot": [
+        245,
+        836
+      ],
+      "sockets": {
+        "muzzle": [
+          93,
+          632
+        ]
+      },
+      "opaqueWhite": 25994,
+      "pixels": 65864,
+      "pixelSHA256": "22deb5a24446b73328f589e26a39d351b598c0fc34466588faa7146f16888f27"
+    },
+    {
+      "id": "rhino.ram",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        456,
+        553,
+        846,
+        839
+      ],
+      "region": [
+        4,
+        332,
+        390,
+        286
+      ],
+      "pivot": [
+        690,
+        836
+      ],
+      "sockets": {
+        "muzzle": [
+          500,
+          693
+        ]
+      },
+      "opaqueWhite": 26775,
+      "pixels": 67946,
+      "pixelSHA256": "ec9d5745768c4634d916cdc403fff008ac81051ad8a22c2747bdfa87d461a4c2"
+    },
+    {
+      "id": "rhino.damaged",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        933,
+        521,
+        1286,
+        837
+      ],
+      "region": [
+        402,
+        332,
+        353,
+        316
+      ],
+      "pivot": [
+        1133,
+        835
+      ],
+      "sockets": {
+        "muzzle": [
+          964,
+          667
+        ]
+      },
+      "opaqueWhite": 27028,
+      "pixels": 67305,
+      "pixelSHA256": "67a24b1dd0971aa85888fc28b1ada0f8b28cbed36fde72ac258503d7a4cbf4af"
+    },
+    {
+      "id": "rhino.wreck",
+      "source": "art/source/v088/rhino.png",
+      "sourceSHA256": "57ee8c9c2df2952dfd9b11dbfdad478572797dd52a07ad938f2cbb5592e6ece3",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "crop": [
+        1357,
+        594,
+        1739,
+        838
+      ],
+      "region": [
+        763,
+        332,
+        382,
+        244
+      ],
+      "pivot": [
+        1576,
+        835
+      ],
+      "sockets": {
+        "muzzle": [
+          1400,
+          730
+        ]
+      },
+      "opaqueWhite": 24005,
+      "pixels": 57177,
+      "pixelSHA256": "02b36f86a43fb955c126de3b7e71f1498c21ffc644f9db338a2e6bf6822c82ca"
+    },
+    {
+      "id": "colossus.idle",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        50,
+        108,
+        325,
+        334
+      ],
+      "region": [
+        1153,
+        332,
+        275,
+        226
+      ],
+      "pivot": [
+        190,
+        331
+      ],
+      "sockets": {
+        "muzzle": [
+          64,
+          230
+        ],
+        "core": [
+          183,
+          210
+        ],
+        "leftPod": [
+          118,
+          162
+        ],
+        "rightPod": [
+          264,
+          162
+        ]
+      },
+      "opaqueWhite": 18647,
+      "pixels": 36406,
+      "pixelSHA256": "9cc829eaa4c31d3d981fd97d7a96f2a64d614445f60d3e074e510999e9b0a2d1"
+    },
+    {
+      "id": "colossus.walk.0",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        404,
+        109,
+        683,
+        335
+      ],
+      "region": [
+        1436,
+        332,
+        279,
+        226
+      ],
+      "pivot": [
+        548,
+        332
+      ],
+      "sockets": {
+        "muzzle": [
+          416,
+          229
+        ],
+        "core": [
+          539,
+          207
+        ],
+        "leftPod": [
+          476,
+          163
+        ],
+        "rightPod": [
+          620,
+          163
+        ]
+      },
+      "opaqueWhite": 14987,
+      "pixels": 36426,
+      "pixelSHA256": "5d11277b7b01a670532f6df4bfd61a0fb302822d870f6dcabb2b7c1d2994a9d2"
+    },
+    {
+      "id": "colossus.walk.1",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        769,
+        110,
+        1020,
+        334
+      ],
+      "region": [
+        1723,
+        332,
+        251,
+        224
+      ],
+      "pivot": [
+        907,
+        331
+      ],
+      "sockets": {
+        "muzzle": [
+          781,
+          230
+        ],
+        "core": [
+          888,
+          207
+        ],
+        "leftPod": [
+          832,
+          171
+        ],
+        "rightPod": [
+          974,
+          164
+        ]
+      },
+      "opaqueWhite": 15168,
+      "pixels": 30918,
+      "pixelSHA256": "b4125ddfe5e8d7a32a8764df818f16f0dcb492eb143e25df9acd59b2fd10447d"
+    },
+    {
+      "id": "colossus.walk.2",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        1122,
+        112,
+        1395,
+        336
+      ],
+      "region": [
+        4,
+        656,
+        273,
+        224
+      ],
+      "pivot": [
+        1259,
+        333
+      ],
+      "sockets": {
+        "muzzle": [
+          1133,
+          226
+        ],
+        "core": [
+          1244,
+          212
+        ],
+        "leftPod": [
+          1186,
+          165
+        ],
+        "rightPod": [
+          1329,
+          165
+        ]
+      },
+      "opaqueWhite": 14299,
+      "pixels": 33859,
+      "pixelSHA256": "aaffbb4ee5a15125b6f9640d5c4972b6268d6af1b99c2dbaa24113fd69fc0db0"
+    },
+    {
+      "id": "colossus.walk.3",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        48,
+        455,
+        310,
+        681
+      ],
+      "region": [
+        285,
+        656,
+        262,
+        226
+      ],
+      "pivot": [
+        178,
+        678
+      ],
+      "sockets": {
+        "muzzle": [
+          62,
+          571
+        ],
+        "core": [
+          170,
+          554
+        ],
+        "leftPod": [
+          113,
+          513
+        ],
+        "rightPod": [
+          252,
+          506
+        ]
+      },
+      "opaqueWhite": 14763,
+      "pixels": 30290,
+      "pixelSHA256": "9b7a02e790b51838fc68ef97aea725ad8a4706963cd27371c6cd4845b9201347"
+    },
+    {
+      "id": "colossus.fire",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        397,
+        453,
+        682,
+        680
+      ],
+      "region": [
+        555,
+        656,
+        285,
+        227
+      ],
+      "pivot": [
+        546,
+        677
+      ],
+      "sockets": {
+        "muzzle": [
+          410,
+          553
+        ],
+        "core": [
+          540,
+          546
+        ],
+        "leftPod": [
+          495,
+          502
+        ],
+        "rightPod": [
+          635,
+          530
+        ]
+      },
+      "opaqueWhite": 18078,
+      "pixels": 36083,
+      "pixelSHA256": "22da32c17c267f704edd215a2838bb5a1230adc1bbd1563cb47b8be8f64290f6"
+    },
+    {
+      "id": "colossus.stomp-tell",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        760,
+        450,
+        1037,
+        680
+      ],
+      "region": [
+        848,
+        656,
+        277,
+        230
+      ],
+      "pivot": [
+        902,
+        677
+      ],
+      "sockets": {
+        "muzzle": [
+          773,
+          552
+        ],
+        "core": [
+          890,
+          549
+        ],
+        "leftPod": [
+          839,
+          501
+        ],
+        "rightPod": [
+          983,
+          511
+        ]
+      },
+      "opaqueWhite": 16853,
+      "pixels": 34452,
+      "pixelSHA256": "2353af437b5a87f9722e38d1d5d0427ca36502a52183070d95c77ceb66f0ac97"
+    },
+    {
+      "id": "colossus.stomp",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        1118,
+        481,
+        1409,
+        680
+      ],
+      "region": [
+        1133,
+        656,
+        291,
+        199
+      ],
+      "pivot": [
+        1269,
+        677
+      ],
+      "sockets": {
+        "muzzle": [
+          1129,
+          591
+        ],
+        "core": [
+          1249,
+          585
+        ],
+        "leftPod": [
+          1186,
+          543
+        ],
+        "rightPod": [
+          1326,
+          540
+        ]
+      },
+      "opaqueWhite": 17780,
+      "pixels": 34821,
+      "pixelSHA256": "6792fac85f049de56e1b991efaeebee565b043e80904de1ca203308b679581d0"
+    },
+    {
+      "id": "colossus.charge",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        29,
+        804,
+        339,
+        1025
+      ],
+      "region": [
+        1432,
+        656,
+        310,
+        221
+      ],
+      "pivot": [
+        197,
+        1022
+      ],
+      "sockets": {
+        "muzzle": [
+          41,
+          900
+        ],
+        "core": [
+          195,
+          904
+        ],
+        "leftPod": [
+          132,
+          860
+        ],
+        "rightPod": [
+          286,
+          865
+        ]
+      },
+      "opaqueWhite": 18699,
+      "pixels": 36479,
+      "pixelSHA256": "3c2f59d9ee53b14b03da1cdc7daa126021a5cf2ecb84a88b2d45b2f0278d9c92"
+    },
+    {
+      "id": "colossus.damaged",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        403,
+        803,
+        683,
+        1025
+      ],
+      "region": [
+        1750,
+        656,
+        280,
+        222
+      ],
+      "pivot": [
+        548,
+        1022
+      ],
+      "sockets": {
+        "muzzle": [
+          417,
+          916
+        ],
+        "core": [
+          539,
+          902
+        ],
+        "leftPod": [
+          477,
+          864
+        ],
+        "rightPod": [
+          621,
+          870
+        ]
+      },
+      "opaqueWhite": 18100,
+      "pixels": 35544,
+      "pixelSHA256": "b9af3934e0d66b19f2adb41d0c549ff649e156761ac984d7084c763ad514f816"
+    },
+    {
+      "id": "colossus.collapse",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        751,
+        828,
+        1032,
+        1025
+      ],
+      "region": [
+        4,
+        894,
+        281,
+        197
+      ],
+      "pivot": [
+        900,
+        1022
+      ],
+      "sockets": {
+        "muzzle": [
+          763,
+          951
+        ],
+        "core": [
+          881,
+          932
+        ],
+        "leftPod": [
+          821,
+          887
+        ],
+        "rightPod": [
+          962,
+          877
+        ]
+      },
+      "opaqueWhite": 16540,
+      "pixels": 34026,
+      "pixelSHA256": "52abb36ff96167a95613975eea2137eeb1192de9efeaa9879b42a0c94960d868"
+    },
+    {
+      "id": "colossus.wreck",
+      "source": "art/source/v101/colossus.png",
+      "sourceSHA256": "b5f147d5a46ca5fe9b78f3416f4c9bfce49f3ac07b36bd785b0ab0e22f12c271",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "crop": [
+        1103,
+        864,
+        1408,
+        1024
+      ],
+      "region": [
+        293,
+        894,
+        305,
+        160
+      ],
+      "pivot": [
+        1263,
+        1021
+      ],
+      "sockets": {
+        "muzzle": [
+          1114,
+          994
+        ],
+        "core": [
+          1235,
+          973
+        ],
+        "leftPod": [
+          1164,
+          936
+        ],
+        "rightPod": [
+          1306,
+          899
+        ]
+      },
+      "opaqueWhite": 16056,
+      "pixels": 31557,
+      "pixelSHA256": "bf0b363690925d71730da21273c4cc8e17da57f407720590adeca748f9cde56a"
+    }
+  ]
+}

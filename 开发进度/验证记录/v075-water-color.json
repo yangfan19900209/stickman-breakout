@@ -1,0 +1,101 @@
+{
+  "method": "Median RGB in selected open-water screenshot rectangles; complements visual inspection",
+  "samples": [
+    {
+      "scene": "shore",
+      "region": [
+        700,
+        460,
+        950,
+        520
+      ],
+      "medianRGB": [
+        215,
+        232,
+        241
+      ],
+      "blueMinusRed": 26,
+      "screenshotSHA256": "da1b86fa1bb802b48c18847377468451102086b8e13730ea7876e588170d251d"
+    },
+    {
+      "scene": "shallow",
+      "region": [
+        100,
+        100,
+        400,
+        200
+      ],
+      "medianRGB": [
+        202,
+        227,
+        238
+      ],
+      "blueMinusRed": 36,
+      "screenshotSHA256": "e7f3b965f9cba03f6f1780acd592253aef5b212152b67081997bcb6af08ab363"
+    },
+    {
+      "scene": "reef",
+      "region": [
+        100,
+        100,
+        400,
+        200
+      ],
+      "medianRGB": [
+        202,
+        227,
+        238
+      ],
+      "blueMinusRed": 36,
+      "screenshotSHA256": "8b67455c8bcf79e96afacfd753bb7f52e00ccb9bfdd0ea91ef60e0fc2fee8d13"
+    },
+    {
+      "scene": "wreck",
+      "region": [
+        100,
+        100,
+        400,
+        200
+      ],
+      "medianRGB": [
+        202,
+        227,
+        238
+      ],
+      "blueMinusRed": 36,
+      "screenshotSHA256": "1c5a92a01f8948d8512e663a74be136e6fbb5ab313bad2f74be502f09262142d"
+    },
+    {
+      "scene": "deep",
+      "region": [
+        100,
+        100,
+        400,
+        200
+      ],
+      "medianRGB": [
+        202,
+        227,
+        238
+      ],
+      "blueMinusRed": 36,
+      "screenshotSHA256": "ffed34b49019e3de717667240e86d288bb834ea9cf3349cee3c8b0311a230dbd"
+    },
+    {
+      "scene": "pipeline",
+      "region": [
+        100,
+        100,
+        400,
+        200
+      ],
+      "medianRGB": [
+        202,
+        227,
+        238
+      ],
+      "blueMinusRed": 36,
+      "screenshotSHA256": "d2a74ad53dfba9608f4a0fe10ecde180ae6a741eb3a5c520011e49db4b8ca28f"
+    }
+  ]
+}

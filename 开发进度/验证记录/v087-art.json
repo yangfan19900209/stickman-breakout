@@ -1,0 +1,126 @@
+{
+  "tool": "image_gen.imagegen",
+  "atlas": {
+    "path": "assets/level02/combat-v087.png",
+    "width": 2048,
+    "height": 512,
+    "bytes": 503882,
+    "sha256": "b29a9623fa7f238e36fd79924e43ae47206cad9638527476e0ac825c5d4ab302"
+  },
+  "records": [
+    {
+      "id": "minisub.intact.0",
+      "source": "mini-submarine.png",
+      "sourceSHA256": "3fad4caee27e59801130e44471c58969da1d0d946827eeb18c26f9fff8710980",
+      "crop": [
+        50,
+        67,
+        684,
+        430
+      ],
+      "region": [
+        4,
+        4,
+        376,
+        237
+      ],
+      "opaqueWhite": 119072,
+      "pixels": 199797
+    },
+    {
+      "id": "minisub.intact.1",
+      "source": "mini-submarine.png",
+      "sourceSHA256": "3fad4caee27e59801130e44471c58969da1d0d946827eeb18c26f9fff8710980",
+      "crop": [
+        794,
+        66,
+        688,
+        431
+      ],
+      "region": [
+        388,
+        4,
+        378,
+        237
+      ],
+      "opaqueWhite": 120096,
+      "pixels": 200268
+    },
+    {
+      "id": "minisub.damaged",
+      "source": "mini-submarine.png",
+      "sourceSHA256": "3fad4caee27e59801130e44471c58969da1d0d946827eeb18c26f9fff8710980",
+      "crop": [
+        51,
+        542,
+        684,
+        432
+      ],
+      "region": [
+        774,
+        4,
+        376,
+        238
+      ],
+      "opaqueWhite": 118989,
+      "pixels": 201570
+    },
+    {
+      "id": "minisub.wreck",
+      "source": "mini-submarine.png",
+      "sourceSHA256": "3fad4caee27e59801130e44471c58969da1d0d946827eeb18c26f9fff8710980",
+      "crop": [
+        795,
+        541,
+        679,
+        434
+      ],
+      "region": [
+        1158,
+        4,
+        373,
+        239
+      ],
+      "opaqueWhite": 106497,
+      "pixels": 201845
+    },
+    {
+      "id": "shot.player.harpoon",
+      "source": "harpoon-darts.png",
+      "sourceSHA256": "270504db40fc9804e2cdd4c150719ca2de93b820dd41f12f6fb08c307057e5c7",
+      "crop": [
+        207,
+        116,
+        1057,
+        415
+      ],
+      "region": [
+        1539,
+        4,
+        190,
+        75
+      ],
+      "opaqueWhite": 104146,
+      "pixels": 230712
+    },
+    {
+      "id": "shot.enemy.harpoon",
+      "source": "harpoon-darts.png",
+      "sourceSHA256": "270504db40fc9804e2cdd4c150719ca2de93b820dd41f12f6fb08c307057e5c7",
+      "crop": [
+        207,
+        578,
+        1057,
+        418
+      ],
+      "region": [
+        1737,
+        4,
+        190,
+        75
+      ],
+      "opaqueWhite": 95560,
+      "pixels": 235588
+    }
+  ]
+}

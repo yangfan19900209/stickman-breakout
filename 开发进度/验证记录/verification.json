@@ -1,0 +1,32 @@
+{
+  "version": "1.0.6",
+  "checkedAt": "2026-11-13T09:39:35.400Z",
+  "passed": true,
+  "sourceSHA256": "3b75007e3ab22e6b3815090060a48d6551a69374428bb4a25a5cb21da5dfd1e5",
+  "logicTests": {
+    "tests": 516,
+    "passed": 516,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "web": {
+    "files": 434,
+    "bytes": 24258563,
+    "entryTime": 1794562408392.0393
+  },
+  "wechat": {
+    "files": 447,
+    "bytes": 20924702,
+    "entryTime": 1794562711317.2097
+  },
+  "browser": {
+    "targetedPassed": 2,
+    "scope": "Browser startup, both chapter resource loaders, real keyboard movement/fire and pause/resume; not a device or full-campaign test."
+  },
+  "route": {
+    "errors": []
+  },
+  "uploaded": false,
+  "published": false,
+  "deviceVerified": false
+}

@@ -1,0 +1,231 @@
+{
+  "version": "0.6.2",
+  "date": "2026-11-05",
+  "creator": "3.8.8",
+  "sourceSHA256": "34c89c3388eb3caf2cb4dd68494a47773ff263b6de92d95225ba8c7652d54107",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 162,
+    "passed": 162,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "passedUnique": 12,
+    "latestResults": [
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 844x390",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 852x393",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 932x430",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "V0.4 thumb layout, full viewport and touch at 1280x720",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "movement, fire, grenade, HUD priority and simultaneous release stay independent",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "viewport height changes retain fingers; browser blur signal clears input and pauses",
+        "file": "v04-mobile.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "real HUD tap and Q switch knife/gun atomically with cached visible sprites and no accidental shot",
+        "file": "v056-repairs.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "held ordinary attack plays three knife cuts, then a real enemy hit produces stop and recoil without firing",
+        "file": "v056-repairs.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "mobile ordinary button uses crouch and airborne knife sectors while jump/movement ownership survives",
+        "file": "v056-repairs.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      },
+      {
+        "title": "close-range attack cuts the opening crate and the enlarged drop stays above the road",
+        "file": "v062-supplies.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-presentation.json"
+      },
+      {
+        "title": "mobile attack automatically uses a knife on a nearby crate while preserving real rocket ammo",
+        "file": "v062-supplies.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-presentation.json"
+      },
+      {
+        "title": "real-input campaign completes with only authored need-based medical supplies",
+        "file": "v062-supplies.spec.ts",
+        "status": "passed",
+        "evidence": "reports/v062-browser-results.json"
+      }
+    ],
+    "runs": [
+      {
+        "report": "reports/v062-browser-results.json",
+        "startTime": "2026-11-05T10:46:06.572Z",
+        "duration": 261244.111,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      {
+        "report": "reports/v062-browser-presentation.json",
+        "startTime": "2026-11-05T10:51:21.253Z",
+        "duration": 34411.273,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    ]
+  },
+  "changes": {
+    "weaponPickupWidth": {
+      "before": 33,
+      "after": 76
+    },
+    "healthPickupWidth": {
+      "before": 33,
+      "after": 48
+    },
+    "grenadePickupWidth": {
+      "before": 33,
+      "after": 46
+    },
+    "medicalPoints": [
+      {
+        "id": "after-industry",
+        "x": 3756,
+        "y": 150,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-tank",
+        "x": 5460,
+        "y": 120,
+        "purpose": "before-boss"
+      },
+      {
+        "id": "after-freight",
+        "x": 8810,
+        "y": 130,
+        "purpose": "after-encounter"
+      },
+      {
+        "id": "before-colossus",
+        "x": 10780,
+        "y": 150,
+        "purpose": "before-boss"
+      }
+    ],
+    "medicalRule": "Missing at least two hearts; within 220 horizontal / 180 vertical units; at most one spawn per point per run; no nearby duplicate pack.",
+    "crateAttack": "Near wooden/steel/cargo crates, ordinary attack uses a quick knife cut. The held press protects ammunition through recovery and weapon pickup. Release or move away to resume firing."
+  },
+  "rocketCrate": {
+    "ammoBefore": 6,
+    "ammoAfter": 6,
+    "shotsBefore": 15,
+    "shotsAfter": 15
+  },
+  "campaign": {
+    "seconds": 78.05833333334152,
+    "health": 2,
+    "kills": 31,
+    "medicalSpawned": [
+      "after-industry",
+      "before-colossus"
+    ],
+    "supplyObservations": [
+      {
+        "id": "after-industry",
+        "time": 17.199999999999665,
+        "x": 3543.750000000016,
+        "health": 3,
+        "pickups": [
+          {
+            "kind": "health",
+            "x": 3756,
+            "y": 163.91666666666666,
+            "vy": 110,
+            "sourceId": "after-industry"
+          }
+        ]
+      },
+      {
+        "id": "before-colossus",
+        "time": 56.79999999999742,
+        "x": 10561.908730158782,
+        "health": 2,
+        "pickups": [
+          {
+            "kind": "rocket",
+            "x": 8248,
+            "y": 340,
+            "vy": 0
+          },
+          {
+            "kind": "health",
+            "x": 10780,
+            "y": 161.04166666666666,
+            "vy": 125,
+            "sourceId": "before-colossus"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "web": {
+    "files": 56,
+    "bytes": 6414116,
+    "sha256": "36b5c0420e57073b874472428c8936691d9624255cba70503821a701370470a3",
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "files": 55,
+    "bytes": 3577018,
+    "sha256": "ba04a5737dede6c427d79743986df491d754aa5915f45e0738ee1a318ad460df",
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "published": false,
+  "screenshots": [
+    "reports/v062-opening-knife.png",
+    "reports/v062-enlarged-drop.png",
+    "reports/v062-mobile-rocket-knife.png",
+    "reports/v062-medical-supply.png",
+    "reports/v062-complete.png"
+  ],
+  "limitations": [
+    "Browser keyboard and simulated touch verified; no physical mobile device or WeChat runtime verification.",
+    "Local builds only; no GitHub Pages or WeChat upload."
+  ]
+}

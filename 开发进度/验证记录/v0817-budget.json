@@ -1,0 +1,50 @@
+{
+  "version": "0.8.17",
+  "checkedAt": "2026-11-12T01:13:08.229Z",
+  "localBudget": {
+    "main": 4194304,
+    "total": 20971520
+  },
+  "budgetSource": "Existing project budgets, not a claim about current platform policy",
+  "mainBytes": 4189058,
+  "totalBytes": 20335982,
+  "mainRemaining": 5246,
+  "totalRemaining": 635538,
+  "subpackages": [
+    {
+      "name": "internal",
+      "root": "subpackages/internal/",
+      "bytes": 168275
+    },
+    {
+      "name": "main",
+      "root": "subpackages/main/",
+      "bytes": 650738
+    },
+    {
+      "name": "landart",
+      "root": "subpackages/landart/",
+      "bytes": 10303434
+    },
+    {
+      "name": "level02",
+      "root": "subpackages/level02/",
+      "bytes": 4340583
+    },
+    {
+      "name": "level03",
+      "root": "subpackages/level03/",
+      "bytes": 683894
+    }
+  ],
+  "runtimeImages": [
+    {
+      "file": "assets/level03/flight-atlas.png",
+      "bytes": 682668,
+      "sha256": "df3befbf9971e1fbf435f55ee7548ff613ace7e6dc3a761a9b216bd60babcf2d"
+    }
+  ],
+  "runtimeImageBytes": 682668,
+  "wechatRuntimeVerified": false,
+  "uploaded": false
+}

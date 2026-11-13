@@ -1,0 +1,2 @@
+// Whole V081 action poses from the existing cast atlas.
+export const FeedbackFrames = {"direct.player.hurt":{"atlas":[1910,304,94,128],"size":[94,128],"sourceSize":[69.377990430622,95.2153110047847],"anchor":[0.5351724137931037,0.01507537688442211]},"direct.knife.low-cut":{"atlas":[1415,304,123,107],"size":[123,107],"sourceSize":[90.9090909090909,79.42583732057416],"anchor":[0.48210526315789426,0.018072289156626505]}} as const;

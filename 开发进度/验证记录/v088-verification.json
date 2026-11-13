@@ -1,0 +1,573 @@
+{
+  "version": "0.8.8",
+  "checkedAt": "2026-11-10T11:50:57.691Z",
+  "sourceSHA256": "f78e860db542bb93959fef0ee83a728365ed2ad1662bad8f07dd6c8d72db25c3",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 289,
+    "passed": 289,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V088-20261110",
+    "protectedFiles": [
+      "assets/scripts/player/PlayerController.ts",
+      "assets/scripts/camera/CameraFollow.ts",
+      "assets/scripts/platform/CocosInputAdapter.ts",
+      "assets/scripts/ui/ControlLayout.ts",
+      "assets/scripts/level/TerrainProfile.ts",
+      "assets/landart/cast.png",
+      "assets/landart/controls.png",
+      "assets/landart/motion.png"
+    ],
+    "changed": [
+      "assets/scripts/combat/ProjectileManager.ts",
+      "assets/scripts/core/GameConfig.ts",
+      "assets/scripts/core/GameSession.ts",
+      "assets/scripts/enemy/ColossusBoss.ts",
+      "assets/scripts/enemy/EnemyController.ts",
+      "assets/scripts/enemy/TankBoss.ts",
+      "assets/scripts/GameManager.ts",
+      "assets/scripts/level/LevelData.ts",
+      "assets/scripts/ocean/OceanEnemyPose.ts",
+      "assets/scripts/ocean/OceanRenderer.ts",
+      "assets/scripts/platform/PlatformBridge.ts",
+      "assets/scripts/render/ColossusPresentation.ts",
+      "assets/scripts/render/CombatRenderer.ts",
+      "assets/scripts/render/ComicActorArt.ts",
+      "assets/scripts/render/ComicAssets.ts",
+      "assets/scripts/render/ComicFrames.ts",
+      "assets/scripts/render/LandDrawnPlan.ts",
+      "assets/scripts/render/StickmanRenderer.ts",
+      "assets/scripts/render/TerrainTiles.ts",
+      "assets/scripts/ui/HUDController.ts"
+    ],
+    "scope": "User-authorized L1 enemy, rifle, bosses, platforms and ground changes; L2 harpoon thickness only"
+  },
+  "browser": {
+    "land": {
+      "report": "reports/v088-land.json",
+      "health": 1,
+      "time": 102.55000000002768,
+      "bossFrames": [
+        "colossus.idle",
+        "colossus.damaged",
+        "colossus.fire",
+        "colossus.walk.0",
+        "colossus.walk.1",
+        "colossus.walk.2",
+        "colossus.stomp-tell",
+        "colossus.stomp",
+        "colossus.charge",
+        "colossus.walk.3",
+        "colossus.collapse",
+        "colossus.wreck"
+      ],
+      "movementTurns": 6
+    },
+    "mobileLand": {
+      "report": "reports/v088-land.json",
+      "state": "complete",
+      "health": 1,
+      "viewport": {
+        "width": 844,
+        "height": 390,
+        "dpr": 2
+      },
+      "movementTurns": 6,
+      "bossFrames": [
+        "colossus.idle",
+        "colossus.damaged",
+        "colossus.fire",
+        "colossus.walk.0",
+        "colossus.walk.1",
+        "colossus.walk.2",
+        "colossus.stomp-tell",
+        "colossus.stomp",
+        "colossus.charge",
+        "colossus.walk.3",
+        "colossus.collapse",
+        "colossus.wreck"
+      ]
+    },
+    "desktopAutoplay": {
+      "report": "reports/v088-land-desktop.json",
+      "state": "gameover",
+      "health": 0,
+      "stableClear": false
+    },
+    "mini": {
+      "report": "reports/v088-mini.json",
+      "health": 4,
+      "attacks": {
+        "bombard": 1,
+        "burst": 1,
+        "ram": 1,
+        "fan": 1
+      },
+      "frames": [
+        "rhino.idle",
+        "rhino.damaged",
+        "rhino.fire",
+        "rhino.ram-tell",
+        "rhino.ram",
+        "rhino.roll.1",
+        "rhino.roll.0",
+        "rhino.wreck"
+      ]
+    },
+    "sea": {
+      "report": "reports/v088-ocean.json",
+      "health": 3,
+      "time": 123.72500000004453
+    },
+    "touch": "reports/v088-controls.json",
+    "menu": "reports/v088-menu.json",
+    "applicationErrors": 0,
+    "failedRequests": 0
+  },
+  "web": {
+    "entryTime": 1794310756370.4954,
+    "sha256": "685f9cddc41e677eba506e06c7de5d5d3862e1f1d492b4391c1c120c1b6b44d1",
+    "bytes": 22658589,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794310819381.911,
+    "sha256": "cde75699e1f8db0456d0fb26a78c7fe4f329682dadd00ad7c40a9a5e95ba014c",
+    "bytes": 19512750,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 576437
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10238512
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "art": "reports/v088-art.json",
+  "skill": {
+    "report": "reports/v088-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v088-land-start.png",
+      "sha256": "d805c58188989a1b2fcc6e15deddd076cfe69a0a507414b9157b461e3add63f6"
+    },
+    {
+      "file": "reports/v088-land-terrain-1100.png",
+      "sha256": "38de33356833f64b0cdef9a5e5de8c43c002a391b957c3e18bbeeec81039dc80"
+    },
+    {
+      "file": "reports/v088-land-terrain-2300.png",
+      "sha256": "c094d6cb9b617c786c29d11e6ad663bb44fb387d3c010df3362d2da340ec20cf"
+    },
+    {
+      "file": "reports/v088-land-terrain-3950.png",
+      "sha256": "b5144bd72afa2990b742964a5d92d05d158275b9b43b35df680cf2b2475eecb6"
+    },
+    {
+      "file": "reports/v088-land-mini.png",
+      "sha256": "3dfc459a9417735d775a85e2867685191708136e6e0f8c2388c50424d5fecbf9"
+    },
+    {
+      "file": "reports/v088-land-mini-warning-bombard.png",
+      "sha256": "f0ab83aa84a86c0dca0fd50dd291d436317656ec6bc9107af4f3ae19d729b0f5"
+    },
+    {
+      "file": "reports/v088-land-terrain-5700.png",
+      "sha256": "d7e3999a1e43f7f2e1d82d2cf19582c614d4f232cedd755dafebeec5a8114f0c"
+    },
+    {
+      "file": "reports/v088-land-mini-wreck.png",
+      "sha256": "67a1e6eaecb7e8c6ab8e2e99f853318332b20209f0cea57546071d01e72fb099"
+    },
+    {
+      "file": "reports/v088-land-terrain-6550.png",
+      "sha256": "4c70a7063a31156d668c9e4708aa93f3b2b34c85d6672e9743fdc11cb9741ff9"
+    },
+    {
+      "file": "reports/v088-land-terrain-6800.png",
+      "sha256": "663836b8652ae690e0331b982b45878fa0680b55433fc1f2fc59a9b15f575f1b"
+    },
+    {
+      "file": "reports/v088-land-terrain-8190.png",
+      "sha256": "593e35caad35a9a7b426570c63d307ccfc3b45ab54af23985cf5c10a43826f45"
+    },
+    {
+      "file": "reports/v088-land-boss-salvo.png",
+      "sha256": "1c5793e31b74d25e703f7b82332bba58d19252e8cf7ae0b19670e9c139eaf2d3"
+    },
+    {
+      "file": "reports/v088-land-colossus.idle.png",
+      "sha256": "a8267c6476872d46c299237709c45edf1e69859396867af05d2dd24dcb97888d"
+    },
+    {
+      "file": "reports/v088-land-colossus.walk.0.png",
+      "sha256": "2751d53eb18e8023136e0a9f70a891e2589fd861b33fdd5f88471004a1bc8ff4"
+    },
+    {
+      "file": "reports/v088-land-colossus.walk.1.png",
+      "sha256": "658f2941b3b05dc5d05fb6109b7583d54f072a468299f18e7f6297174a9a2b6a"
+    },
+    {
+      "file": "reports/v088-land-colossus.walk.2.png",
+      "sha256": "5e16e386e2168c73a3aea7fdf86457175293d2af1948045a591029379a189f9d"
+    },
+    {
+      "file": "reports/v088-land-boss-stomp.png",
+      "sha256": "492c112eaf0e5bb1ee4202f534c467cee21744261b3c12658a73b57d9b561b9b"
+    },
+    {
+      "file": "reports/v088-land-boss-laser.png",
+      "sha256": "286e280595f33132ae502cf0ebf2ceda6f89b7ed9b71250ad390fbe5baed17b4"
+    },
+    {
+      "file": "reports/v088-land-colossus.walk.3.png",
+      "sha256": "e30acd6c4f1c1ff129a87e48aa6614b808fe5f2d5a932e476753f0183d4a71f1"
+    },
+    {
+      "file": "reports/v088-land-boss-missiles.png",
+      "sha256": "2dd424b54300582f4eed770679e0e2d0e920a9c73046366a34879562df6c86dd"
+    },
+    {
+      "file": "reports/v088-land-boss-sweep.png",
+      "sha256": "f467db232bf01920dfe6033a316cc669bf6b48ba0b55365de946dff3f22c9e1e"
+    },
+    {
+      "file": "reports/v088-land-boss-burst.png",
+      "sha256": "d221166e9f59583eb6e94bb1e40382dfd3e0a6b06239e023aa3b53bccc3f9b18"
+    },
+    {
+      "file": "reports/v088-land-boss-wreck.png",
+      "sha256": "69d3e8e93edff2bbf707fc5a47c1dbc65b4d27d3c9148cc84cb02b1cd60e7228"
+    },
+    {
+      "file": "reports/v088-land-result.png",
+      "sha256": "7cda6ba62f18061c3bc05d3e27c4964d9a587cc805ebde23ebb8b4898db0e547"
+    },
+    {
+      "file": "reports/v088-land-desktop-start.png",
+      "sha256": "672bfe422f8f0c65a1d3f61408fdfc4284be85d6a28e1d3ff70c77f418578d46"
+    },
+    {
+      "file": "reports/v088-land-desktop-terrain-1100.png",
+      "sha256": "4db60c535fff7c07c65f23306018f2c1de14e5abaa5a348aec61d335a50399af"
+    },
+    {
+      "file": "reports/v088-land-desktop-terrain-2300.png",
+      "sha256": "41e18221f42971454a6adc37a07a1bd70bb979b3414cc89e927ed6d883818604"
+    },
+    {
+      "file": "reports/v088-land-desktop-terrain-3950.png",
+      "sha256": "fda8fcef2834963cd2b6236a9ccfa0ccc4a820afe0d00d524da3b073973c83c3"
+    },
+    {
+      "file": "reports/v088-land-desktop-mini.png",
+      "sha256": "8ffe996a0ffe696394726aa660cb0242648f804788757acb608054f3a88d7eae"
+    },
+    {
+      "file": "reports/v088-land-desktop-mini-warning-bombard.png",
+      "sha256": "e88065d62a31e03f3af8303bad6accef10877dda4272bb6b17cb05f8ad491b74"
+    },
+    {
+      "file": "reports/v088-land-desktop-terrain-5700.png",
+      "sha256": "0ed6701c7355ec886d52a466186ea92198b7dfd9b5f2af33dec7a26c015a2210"
+    },
+    {
+      "file": "reports/v088-land-desktop-mini-wreck.png",
+      "sha256": "7a94e70c7b78da156836e7291474ad044bc635258a8c6cc16974432f283a05c2"
+    },
+    {
+      "file": "reports/v088-land-desktop-terrain-6550.png",
+      "sha256": "e65f44b5d48938b06bc0c388d9a4dbc969021b3fd692a60f126e5e26c73aede5"
+    },
+    {
+      "file": "reports/v088-land-desktop-terrain-6800.png",
+      "sha256": "f59cc74d16d0cd6d9ad76ba5451c0a9ae35af5f2327fa7984525417450f43b15"
+    },
+    {
+      "file": "reports/v088-land-desktop-terrain-8190.png",
+      "sha256": "79ff0df0c2d14d8c70628defb289f98fd574910e48c5956b6f46b3ec5fb8c159"
+    },
+    {
+      "file": "reports/v088-land-desktop-result.png",
+      "sha256": "90ff6b7455eb56ff95c2cd9d3e397b30e65299f27ff1b1f988d0a2935a30e7c2"
+    },
+    {
+      "file": "reports/v088-sea-slim-harpoon.png",
+      "sha256": "f0b6997952a704d06a9614cd1f54a4494502ebe6de0833b1bed33ce2377402c5"
+    },
+    {
+      "file": "reports/v088-sea-enemy-harpoon.png",
+      "sha256": "e110a33c8600b470ba7e22b8054746b5878a880476c2c4d670a3dd6bf6cf2672"
+    },
+    {
+      "file": "reports/v088-sea-evade.png",
+      "sha256": "4101bfe9357be43f85afe90c35a3309f3e263a9c76baa61ec3d21feeaeef3e43"
+    },
+    {
+      "file": "reports/v088-sea-fish-tell.png",
+      "sha256": "d7d407b4588e12d476f078eecfbaf6859a2992df97b97fad58cce02ca6b8b7ed"
+    },
+    {
+      "file": "reports/v088-sea-enemy-sonar.png",
+      "sha256": "aa46540b37bdc09f125f2671b59424430df0083e78399f3b02f3f930eb5eafc5"
+    },
+    {
+      "file": "reports/v088-sea-enemy-torpedo.png",
+      "sha256": "30642e8d6f29b8831109b3963c45c4b11f1f6146b7f5a9c7a0dced7d47ec17a0"
+    },
+    {
+      "file": "reports/v088-sea-fish-attack.png",
+      "sha256": "4fe50d67f9b8e7088979c05970a900557ffb2fe4118e4d4512b72e68f0cda804"
+    },
+    {
+      "file": "reports/v088-sea-mini-warning-torpedo.png",
+      "sha256": "f0f44a2f6a522a2ae954a02830f08f0124757fab4fdf68808b82f299882eede4"
+    },
+    {
+      "file": "reports/v088-sea-mini-torpedo.png",
+      "sha256": "38de56aacf0345d1da63be18e475b0da236c0b0d2f74bdc7b6642d4c0d4ecea0"
+    },
+    {
+      "file": "reports/v088-sea-mini-pilot.png",
+      "sha256": "2ec8f9c9eae7904f99e7315bec7dbeb92ac70a5b284df4c6e131567e4725559a"
+    },
+    {
+      "file": "reports/v088-sea-mini-warning-sonar.png",
+      "sha256": "f01c4362c87b4a5c03693035ddc18c407fafcbad0b77163701bfefa690f9c556"
+    },
+    {
+      "file": "reports/v088-sea-mini-sonar.png",
+      "sha256": "c0f2758acaa6e52bcdd9db87ebb40549f1f6e8a918191702356d489af4aaf983"
+    },
+    {
+      "file": "reports/v088-sea-mini-warning-dash.png",
+      "sha256": "414f525a37defd6a1bb7ed1179e9ef0559b76881ca43a8bfa6decb4ec58e8147"
+    },
+    {
+      "file": "reports/v088-sea-mini-dash.png",
+      "sha256": "f124e9ef8588a76f0c8e87641d7384b7b01ec021fb72aa3bd41743d0943f381c"
+    },
+    {
+      "file": "reports/v088-sea-mini-damaged.png",
+      "sha256": "1e1503c14f7a9d8d2425a4a8b4263be5a39c99cf271a54c0a4277b9686007e4f"
+    },
+    {
+      "file": "reports/v088-sea-mini-wreck.png",
+      "sha256": "d59fb85449f54dda1ff617cd2df71fb846f6fe91b321a10303a39a834a4b816b"
+    },
+    {
+      "file": "reports/v088-sea-trench.png",
+      "sha256": "b03f20a814ca23396f5ca3e8d47b7a8becc2cab32850b7e49b360e070236fc75"
+    },
+    {
+      "file": "reports/v088-sea-dock.png",
+      "sha256": "bf98209305cf758a5c220c5387109fe72f2eaa2b9c69efe8b862bd225c196c16"
+    },
+    {
+      "file": "reports/v088-sea-boss.png",
+      "sha256": "32ab087b06315f17f861d19e5ae66564e6b3eab0bd5d54e255af3bd13281439e"
+    },
+    {
+      "file": "reports/v088-sea-cheer.png",
+      "sha256": "e8b2e29b8bac492e9d3288a4a0cf7412700db5920ce94eadf42610446fb59a6d"
+    },
+    {
+      "file": "reports/v088-sea-complete.png",
+      "sha256": "ad9beba13c64af667688694701583a182c88c79826e304b2df3b92636debb0da"
+    },
+    {
+      "file": "reports/v088-mini-start.png",
+      "sha256": "4776c2962b64334ecb1f482e98e707d4de7b83bb8ee9bd44e8b7355dc344c28e"
+    },
+    {
+      "file": "reports/v088-mini-terrain-1100.png",
+      "sha256": "0b6331618bf9c04716d6c760fa2ca30f8ff690983e5deac3dfc03b580ec1c00a"
+    },
+    {
+      "file": "reports/v088-mini-terrain-2300.png",
+      "sha256": "165d5f449474687ccd5bfee5998a9b035eb71e9c9a3041018671340ec7b46906"
+    },
+    {
+      "file": "reports/v088-mini-terrain-3950.png",
+      "sha256": "44c2f5b934468f8c8a912f68c2c535a5147a0e2b35c9d87f4aa57f36e8b2b972"
+    },
+    {
+      "file": "reports/v088-mini-mini.png",
+      "sha256": "0428cc13ba81239224f1831a4387a10ac38d4ce01fdf38b8ebbc21e92ecbbef3"
+    },
+    {
+      "file": "reports/v088-mini-rhino.idle.png",
+      "sha256": "c759b8f5821dc7adfc896cf6c8f235a47c04fe0abfde252bd5aa646f6fa4644b"
+    },
+    {
+      "file": "reports/v088-mini-mini-warning-bombard.png",
+      "sha256": "ac80606a03627aad1a7e48acedd74b1a76d4df3ef9cce17de59c2ea32c0c292f"
+    },
+    {
+      "file": "reports/v088-mini-terrain-5700.png",
+      "sha256": "45ca6c93ca3dc4f4578d6315d0e9f063f74d6ff9fa0e859f3a3445b61895f045"
+    },
+    {
+      "file": "reports/v088-mini-rhino.damaged.png",
+      "sha256": "069da565bc1d07e8815a30fce803f390219b5d1f4d50f51448b1be4de0d4679b"
+    },
+    {
+      "file": "reports/v088-mini-rhino.fire.png",
+      "sha256": "56daf1386e71f6846d7af013842a1eb2f8c56f0977dfb182ce095af6914c91c5"
+    },
+    {
+      "file": "reports/v088-mini-mini-warning-ram.png",
+      "sha256": "00069247f4e3f5e81f4bf05d22fd02468d8f1015091466a2c70657e80d545bcf"
+    },
+    {
+      "file": "reports/v088-mini-rhino.ram-tell.png",
+      "sha256": "00069247f4e3f5e81f4bf05d22fd02468d8f1015091466a2c70657e80d545bcf"
+    },
+    {
+      "file": "reports/v088-mini-rhino.ram.png",
+      "sha256": "bd00f449ba4c99aa5b7f443c92f38575a7de147c3b067667a31d9ebe6e43bbc9"
+    },
+    {
+      "file": "reports/v088-mini-mini-warning-burst.png",
+      "sha256": "fbfb93eb2b4fdbdb8a5a5ddbddf93ff56e948532fc0c0b291b785d655537a03f"
+    },
+    {
+      "file": "reports/v088-mini-rhino.roll.1.png",
+      "sha256": "e33706eb029e82f6a9c469cdffd4e759133b182c9422e9be1a43b1f392e8fe35"
+    },
+    {
+      "file": "reports/v088-mini-rhino.roll.0.png",
+      "sha256": "3bb08034ae7333cfefa25dce9b75f07f77ad7d2906fa47d01dcb0aa374ed3427"
+    },
+    {
+      "file": "reports/v088-mini-mini-warning-fan.png",
+      "sha256": "7f1d15ff326a37a3e76913af4506c9301a1b8aa155920e7179539ad641bd306d"
+    },
+    {
+      "file": "reports/v088-mini-rhino.wreck.png",
+      "sha256": "d4acde7659931a6accfdc9b1abd9acdadcf0ecb0be7ff1722845f254bb0bf0d6"
+    },
+    {
+      "file": "reports/v088-mini-result.png",
+      "sha256": "d4acde7659931a6accfdc9b1abd9acdadcf0ecb0be7ff1722845f254bb0bf0d6"
+    },
+    {
+      "file": "reports/v088-controls-land-idle.png",
+      "sha256": "f068132abb7a5cb5d70e89822743b1c455295748dc89bedc3def6b48dc7f3c97"
+    },
+    {
+      "file": "reports/v088-controls-land-pressed.png",
+      "sha256": "63fd6cda94f0226fbfa54c05789250fae9915d93e3785dd0dd405bb9ac13827b"
+    },
+    {
+      "file": "reports/v088-controls-knife.png",
+      "sha256": "34e006072560447273bcf35e276705ed203151a93a18682ed07ce00f02a96af7"
+    },
+    {
+      "file": "reports/v088-controls-knife-recovery.png",
+      "sha256": "71eab568d608de142070e6684b66c9a2deda1da56e6e0785ed201dc7fa72923c"
+    },
+    {
+      "file": "reports/v088-controls-double-ready.png",
+      "sha256": "5ccf6e41bc021c709c490730a00da466fc59d7baf8173007afe5f8f2722f41df"
+    },
+    {
+      "file": "reports/v088-controls-double-spent.png",
+      "sha256": "0f6dd4d0a5763206aa180a9a227d637cab9d8de495dd8a681ab3147ba5687d6b"
+    },
+    {
+      "file": "reports/v088-controls-slide-ready.png",
+      "sha256": "eb52b2fdd38591d292d2c9b62930389a0a7d4c0b0df67bb1424fe8c7c7327f93"
+    },
+    {
+      "file": "reports/v088-controls-slide-pressed.png",
+      "sha256": "e314f463341f24a9acb85b81b76dcdb28c50ea6728b0d66b3b3e53cd7208b320"
+    },
+    {
+      "file": "reports/v088-controls-grenade-2.png",
+      "sha256": "57952b841d82af8435d1e1bf9c36e54d7037f3a0c58589f641dfc5f1d66bfdcb"
+    },
+    {
+      "file": "reports/v088-controls-grenade-1.png",
+      "sha256": "8fcd8170635604447c2f79bc77932c7d91d1e3191bfaab10d4c9ede261ab4c57"
+    },
+    {
+      "file": "reports/v088-controls-grenade-0.png",
+      "sha256": "c1a8fff4721e20f0d128128ccddeaa8699522effb440666ed2f633535e16b2aa"
+    },
+    {
+      "file": "reports/v088-controls-pause-panel.png",
+      "sha256": "74ec8edd73e15b32e438df6f22678bd03fac0e60b66983d5709f55a64e31bf9b"
+    },
+    {
+      "file": "reports/v088-controls-shore.png",
+      "sha256": "ee2a95fd7181d74a911d7727c2716ccd06f2218680aec6b65f6021f4ea2cc819"
+    },
+    {
+      "file": "reports/v088-controls-ocean-idle.png",
+      "sha256": "1b34d490cb45bda1d2a01ed56a531caa13a5ba7c3c041f7c4ecd8de0842cc561"
+    },
+    {
+      "file": "reports/v088-controls-ocean-multitouch.png",
+      "sha256": "7c1b0c62c8755a5ad4212defdf8f778da376dc384116b620ae6e59bd5a97a8be"
+    },
+    {
+      "file": "reports/v088-controls-ocean-boost-cooldown.png",
+      "sha256": "d9da0dbfb262d969e1b9f16fe3f96f9d123804839a43dc53156eb0302b6c0d4e"
+    },
+    {
+      "file": "reports/v088-controls-ocean-recovered.png",
+      "sha256": "f646a3e3d9090565015d9856e8c75ab50ef54f8f6965c61f41eea18f3c19121f"
+    },
+    {
+      "file": "reports/v088-menu-fallback.png",
+      "sha256": "d064957ef0681676485fd3e9f2d11930566395938623c51f66cdf1da8ac4d153"
+    },
+    {
+      "file": "reports/v088-menu-mobile.png",
+      "sha256": "89b5b8b233d46b9a6bf5d177df704db8630b1ccff4d9cc6f2cf26bcf02569b85"
+    },
+    {
+      "file": "reports/v088-menu-updated.png",
+      "sha256": "db3a9c52fc20ab51511dfc7ee38b05b68f49c489551bd072f430093484cb617d"
+    },
+    {
+      "file": "reports/v088-menu-compact.png",
+      "sha256": "5af82a9cdb47d96140f8df8a0a703f1fa3e810eb7ef9f65ef3975caadfcb15c9"
+    },
+    {
+      "file": "reports/v088-menu-ocean.png",
+      "sha256": "7f125ad6960f47a2069daec347f61aa98e2df3cdcbcc631849ca802dba8a2f7a"
+    }
+  ],
+  "limitations": [
+    "Chrome uses controlled time; no device FPS or average-player difficulty claim",
+    "Mobile-sized land and sea runs completed. Some normal-input autoplay runs lost, including the latest desktop run; stable automatic clearing is not claimed. Failed-run diagnostics are retained.",
+    "WeChat/iPhone real-device validation not performed; local packages only, no upload"
+  ]
+}

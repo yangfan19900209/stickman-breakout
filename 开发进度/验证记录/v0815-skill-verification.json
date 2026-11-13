@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-11-11T06:44:32.555Z",
+  "skillId": "yangfan-game-development",
+  "projectPath": "doc/skills/yangfan-game-development",
+  "officialValidator": "passed",
+  "filesMatched": 12,
+  "installedPath": "C:/Users/Administrator/.codex/skills/yangfan-game-development",
+  "changedFiles": [
+    "references/design-and-presentation.md",
+    "references/gameplay-and-physics.md"
+  ],
+  "mergedInstalledFiles": [],
+  "files": [
+    {
+      "file": "agents/openai.yaml",
+      "sha256": "8ceafc0bb2da4318ae778d55543df7fb2220e339ba7225a5031de0601a7c7c8c"
+    },
+    {
+      "file": "references/asset-prompts.md",
+      "sha256": "022b7a00aa317a8a9c62aec744f83c2e6907f894f74f14f86b1d38249e7bf206"
+    },
+    {
+      "file": "references/design-and-presentation.md",
+      "sha256": "f7d9bbba0a014841a742896ea9bcd043ba4f956f83134696faa6962eafc470c2"
+    },
+    {
+      "file": "references/gameplay-and-physics.md",
+      "sha256": "e71a94ffa33a9d1841e71c7de2939887b237788b5e753aa6ee2e0be928e7fe03"
+    },
+    {
+      "file": "references/performance-and-motion.md",
+      "sha256": "f29b94dcbe21a5bec19ae2cf45394db95d2ac4265ec772c628b5e2776a98fcca"
+    },
+    {
+      "file": "references/project-examples.md",
+      "sha256": "ab67f278c2e9da5c1c0fa6dcb43a2f8b36fb54d957e5cd65eef311ba0f2353c1"
+    },
+    {
+      "file": "references/skill-maintenance.md",
+      "sha256": "40873cb1acf5b169d0efd764d8fb333cdab652216f7614509e9f13045fc7a401"
+    },
+    {
+      "file": "references/skill-orchestration.md",
+      "sha256": "ebd71b463bf91b55f434b92cb473bde469becfa19d6a186a42e1d12ea8614547"
+    },
+    {
+      "file": "references/sprite-resource-pipeline.md",
+      "sha256": "b9e8eeff662d4af241c32bf9a2e2bcf97b09a5fa7f244ccc8907c3f58eac9159"
+    },
+    {
+      "file": "references/verification-and-delivery.md",
+      "sha256": "62ebe1b352311978faa035bff0058043758466b6cec5727f91f23e79b9a28bcb"
+    },
+    {
+      "file": "scripts/inspect_sprite.py",
+      "sha256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc"
+    },
+    {
+      "file": "SKILL.md",
+      "sha256": "7b802c37cd3ff820b5c7d3cc0b16b0b3e8edd8b0568ad838318871ccdc1f527e"
+    }
+  ]
+}

@@ -1,0 +1,3601 @@
+{
+  "chapter": 2,
+  "status": "generated-source-assets-not-integrated",
+  "tool": "built-in imagegen",
+  "checkedAt": "2026-11-06T07:25:41.183881+00:00",
+  "sources": 14,
+  "regions": 116,
+  "processing": "Crop only, native source resolution, RGBA pixels unchanged inside each selected rectangle; originals preserved.",
+  "limitations": [
+    "Cell gaps and crop alpha validated; animation timing, in-game scale, muzzle sockets and terrain seams await integration.",
+    "A source-candidate is not proof of a complete animation or playable level."
+  ],
+  "assets": [
+    {
+      "id": "hero-swim",
+      "role": "player",
+      "file": "../素材/游戏美术/source/level02/hero-swim.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "bytes": 1024037,
+      "sha256": "ebbc801bae63e724587ed33b9780ab25b0149d50f93d1eec6b3759919f28df41",
+      "alpha": {
+        "transparent": 1060761,
+        "partial": 509339,
+        "opaque": 3438
+      },
+      "grid": [
+        4,
+        2
+      ],
+      "reviewNote": "",
+      "frames": [
+        "diver.hover.0",
+        "diver.hover.1",
+        "diver.swim.0",
+        "diver.swim.1",
+        "diver.swim.2",
+        "diver.swim.3",
+        "diver.boost",
+        "diver.hit"
+      ]
+    },
+    {
+      "id": "submarine-hull",
+      "role": "boss",
+      "file": "../素材/游戏美术/source/level02/submarine-hull.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "bytes": 1350651,
+      "sha256": "0ce2c906f11964b0b32b275a43b8a04ae6688e3df810a5a6e36846f4cf5208f6",
+      "alpha": {
+        "transparent": 759507,
+        "partial": 810077,
+        "opaque": 3954
+      },
+      "grid": [
+        2,
+        2
+      ],
+      "reviewNote": "",
+      "frames": [
+        "submarine.assembled-reference",
+        "submarine.hull.intact",
+        "submarine.hull.damaged",
+        "submarine.hull.wreck"
+      ]
+    },
+    {
+      "id": "hero-combat",
+      "role": "player",
+      "file": "../素材/游戏美术/source/level02/hero-combat.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "bytes": 1269438,
+      "sha256": "ce32229ad242fd0436e6b5f08d7432211d3529834b827f194b224fefa2e7718f",
+      "alpha": {
+        "transparent": 976429,
+        "partial": 590990,
+        "opaque": 5109
+      },
+      "grid": [
+        4,
+        3
+      ],
+      "reviewNote": "",
+      "frames": [
+        "diver.sonar.fire",
+        "diver.sonar.up45",
+        "diver.sonar.up90",
+        "diver.sonar.down45",
+        "diver.sonar.down90",
+        "diver.charge.fire",
+        "diver.torpedo.fire",
+        "diver.torpedo.up45",
+        "diver.torpedo.down45",
+        "diver.knife.windup",
+        "diver.knife.strike",
+        "diver.death"
+      ]
+    },
+    {
+      "id": "diver-enemies",
+      "role": "enemy",
+      "file": "../素材/游戏美术/source/level02/diver-enemies.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "bytes": 1011267,
+      "sha256": "617b89dc2929976128bd17a547ef6d4c5db94b1f03e093cb08ab1aacd3d824de",
+      "alpha": {
+        "transparent": 1061796,
+        "partial": 508143,
+        "opaque": 3599
+      },
+      "grid": [
+        4,
+        2
+      ],
+      "reviewNote": "",
+      "frames": [
+        "enemy.diver.swim",
+        "enemy.diver.aim",
+        "enemy.diver.fire",
+        "enemy.diver.defeat",
+        "enemy.captain.idle",
+        "enemy.captain.charge",
+        "enemy.captain.dash",
+        "enemy.captain.defeat"
+      ]
+    },
+    {
+      "id": "submarine-modules",
+      "role": "boss-modules",
+      "file": "../素材/游戏美术/source/level02/submarine-modules.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "bytes": 1080578,
+      "sha256": "318ca4000536f5d26433016647113806a834e539b6abb5ecb531406d313f1601",
+      "alpha": {
+        "transparent": 881187,
+        "partial": 687712,
+        "opaque": 3629
+      },
+      "grid": [
+        4,
+        3
+      ],
+      "reviewNote": "",
+      "frames": [
+        "module.cannon.idle",
+        "module.cannon.aim",
+        "module.cannon.broken",
+        "module.laser.idle",
+        "module.laser.charge",
+        "module.laser.broken",
+        "module.torpedo.closed",
+        "module.torpedo.open",
+        "module.torpedo.broken",
+        "module.reactor.closed",
+        "module.reactor.open",
+        "module.propeller"
+      ]
+    },
+    {
+      "id": "hero-transition",
+      "role": "player-sequence",
+      "file": "../素材/游戏美术/source/level02/hero-transition.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "bytes": 1048843,
+      "sha256": "cc027d33a8e6806db115a445d98991d928eef5c0f3924a8124717d2279142b61",
+      "alpha": {
+        "transparent": 1023490,
+        "partial": 547223,
+        "opaque": 2825
+      },
+      "grid": [
+        4,
+        2
+      ],
+      "reviewNote": "Generated fifth pose is horizontal glide, not headfirst dive. Keep as extra glide; use hero-entry for actual entry.",
+      "frames": [
+        "diver.equip.mask",
+        "diver.equip.tank",
+        "diver.equip.ready",
+        "diver.cliff.leap",
+        "diver.water.glide",
+        "diver.surface",
+        "diver.cheer.0",
+        "diver.cheer.1"
+      ]
+    },
+    {
+      "id": "marine-life",
+      "role": "ecology",
+      "file": "../素材/游戏美术/source/level02/marine-life.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "bytes": 946779,
+      "sha256": "4709935cee25949012b2f9a850e1c02cbe8841fd5e3ad3dc02f532b151cf4b0c",
+      "alpha": {
+        "transparent": 1126006,
+        "partial": 442895,
+        "opaque": 3627
+      },
+      "grid": [
+        4,
+        3
+      ],
+      "reviewNote": "",
+      "frames": [
+        "fish.attack.idle",
+        "fish.attack.tell",
+        "fish.attack.dash",
+        "fish.attack.defeat",
+        "kelp.hostile.idle",
+        "kelp.hostile.tell",
+        "kelp.hostile.strike",
+        "kelp.hostile.cut",
+        "fish.ambient.0",
+        "fish.ambient.1",
+        "kelp.ambient.0",
+        "kelp.ambient.1"
+      ]
+    },
+    {
+      "id": "terrain",
+      "role": "terrain",
+      "file": "../素材/游戏美术/source/level02/terrain.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "bytes": 1052237,
+      "sha256": "21495a7b5bab01b8f60b6285c4d3422f9262978d067f3351c57f9f657b559a1f",
+      "alpha": {
+        "transparent": 888133,
+        "partial": 680680,
+        "opaque": 3715
+      },
+      "grid": [
+        4,
+        3
+      ],
+      "reviewNote": "Actual first two cells are left cap then middle; corrected semantic order. Seams and collision contours require integration validation.",
+      "frames": [
+        "terrain.seabed.left",
+        "terrain.seabed.middle",
+        "terrain.seabed.right",
+        "terrain.rock.pillar",
+        "terrain.rock.arch",
+        "terrain.rock.ceiling",
+        "terrain.cliff",
+        "terrain.coral.shelf",
+        "terrain.wreck.deck",
+        "terrain.wreck.wall",
+        "terrain.pipe.straight",
+        "terrain.pipe.elbow"
+      ]
+    },
+    {
+      "id": "props-weapons",
+      "role": "props",
+      "file": "../素材/游戏美术/source/level02/props-weapons.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "bytes": 1092224,
+      "sha256": "5df1be99b07c5548d14b4613af6c1352a9d01e1b1d40fff2ee75bf668cd9bc12",
+      "alpha": {
+        "transparent": 921749,
+        "partial": 645308,
+        "opaque": 5471
+      },
+      "grid": [
+        4,
+        3
+      ],
+      "reviewNote": "",
+      "frames": [
+        "item.sonar",
+        "item.charge-sonar",
+        "item.torpedo-launcher",
+        "item.knife",
+        "item.medkit",
+        "item.energy",
+        "item.torpedo-ammo",
+        "item.depth-charge",
+        "object.sealed-crate",
+        "object.crate-broken",
+        "object.anchored-mine",
+        "object.seabed-turret"
+      ]
+    },
+    {
+      "id": "combat-effects",
+      "role": "combat-effects",
+      "file": "../素材/游戏美术/source/level02/combat-effects.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "bytes": 863443,
+      "sha256": "5eb6a0798dc2fa17d14b698fc55d933731c5a2a5177280dfd4e7575ae85ce4a2",
+      "alpha": {
+        "transparent": 1099208,
+        "partial": 470398,
+        "opaque": 2922
+      },
+      "grid": [
+        4,
+        3
+      ],
+      "reviewNote": "",
+      "frames": [
+        "fx.sonar.0",
+        "fx.sonar.1",
+        "fx.sonar.2",
+        "fx.sonar.charged",
+        "projectile.micro-torpedo",
+        "projectile.enemy-torpedo",
+        "projectile.pressure-bolt",
+        "projectile.depth-charge",
+        "fx.laser-charge",
+        "fx.laser-beam",
+        "fx.pressure-gap-ring",
+        "fx.impact"
+      ]
+    },
+    {
+      "id": "water-effects",
+      "role": "water-effects",
+      "file": "../素材/游戏美术/source/level02/water-effects.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "bytes": 705774,
+      "sha256": "fce2eb89e458968872e126a4ff8e1be9ae54647b70463e95d97130bc88f1df54",
+      "alpha": {
+        "transparent": 1256459,
+        "partial": 313174,
+        "opaque": 2895
+      },
+      "grid": [
+        4,
+        3
+      ],
+      "reviewNote": "",
+      "frames": [
+        "fx.splash.0",
+        "fx.splash.1",
+        "fx.splash.2",
+        "fx.surface-ripple",
+        "fx.bubble.single",
+        "fx.bubble.trail",
+        "fx.bubble.burst",
+        "fx.boost.wake",
+        "fx.water-blast.0",
+        "fx.water-blast.1",
+        "fx.water-blast.2",
+        "fx.water-blast.3"
+      ]
+    },
+    {
+      "id": "hero-entry",
+      "role": "player-sequence",
+      "file": "../素材/游戏美术/source/level02/hero-entry.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1142329,
+      "sha256": "f5797a4edc005aa4b2aeb4f573874b77aeb9114e63090043164f7aa41e8bccdf",
+      "alpha": {
+        "transparent": 1211637,
+        "partial": 361227,
+        "opaque": 0
+      },
+      "grid": [
+        2,
+        1
+      ],
+      "reviewNote": "",
+      "frames": [
+        "diver.entry.diagonal",
+        "diver.entry.steep"
+      ]
+    },
+    {
+      "id": "coast-background",
+      "role": "background",
+      "file": "../素材/游戏美术/source/level02/coast-background.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1571954,
+      "sha256": "f1eddfa034df36f1aa6269bb4be2b4120be09a11457ca5dbeb0ca619b30c4195",
+      "alpha": {
+        "transparent": 0,
+        "partial": 0,
+        "opaque": 1573352
+      },
+      "grid": [
+        1,
+        1
+      ],
+      "reviewNote": "",
+      "frames": [
+        "background.coast"
+      ]
+    },
+    {
+      "id": "undersea-background",
+      "role": "background",
+      "file": "../素材/游戏美术/source/level02/undersea-background.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1598895,
+      "sha256": "d516351e2550a0f215c97ce199378caf1d1981575228544571b9bfd76641664d",
+      "alpha": {
+        "transparent": 0,
+        "partial": 0,
+        "opaque": 1573352
+      },
+      "grid": [
+        1,
+        1
+      ],
+      "reviewNote": "",
+      "frames": [
+        "background.undersea"
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "id": "diver.hover.0",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        82,
+        21,
+        293,
+        407
+      ],
+      "cellRect": [
+        0,
+        0,
+        448,
+        460
+      ],
+      "size": [
+        293,
+        407
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.hover.0.png",
+      "sha256": "79de57d1f9860d529a0400c80d95ca53ed1bd7e13be442cd3ce098e5a807b423",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.hover.1",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        521,
+        20,
+        305,
+        407
+      ],
+      "cellRect": [
+        448,
+        0,
+        415,
+        460
+      ],
+      "size": [
+        305,
+        407
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.hover.1.png",
+      "sha256": "8c641a0d32a582f9808cf6077a66358e94b4eaf873d7fe562137483509fa6931",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.swim.0",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        901,
+        61,
+        409,
+        354
+      ],
+      "cellRect": [
+        863,
+        0,
+        460,
+        460
+      ],
+      "size": [
+        409,
+        354
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.swim.0.png",
+      "sha256": "37c2392a0fb6cc8afd49cda8530132ae96c5b3006f7f0b165f130277782119e5",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.swim.1",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        1336,
+        61,
+        415,
+        355
+      ],
+      "cellRect": [
+        1323,
+        0,
+        451,
+        460
+      ],
+      "size": [
+        415,
+        355
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.swim.1.png",
+      "sha256": "b6512dccbf8b80549e02d80af3fc90ea15b9a8693a87a92694b2ee34e8107e45",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.swim.2",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        15,
+        507,
+        409,
+        335
+      ],
+      "cellRect": [
+        0,
+        460,
+        454,
+        427
+      ],
+      "size": [
+        409,
+        335
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.swim.2.png",
+      "sha256": "fe78e1ee44ab2c2ce64dd4a45d10a4b957a5b59f9d240a72ac53b98d81b738d6",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.swim.3",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        485,
+        506,
+        379,
+        343
+      ],
+      "cellRect": [
+        454,
+        460,
+        425,
+        427
+      ],
+      "size": [
+        379,
+        343
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.swim.3.png",
+      "sha256": "4f5ddbafdee68dff39cde2935f3f2292ac2e32ef5758f48ebf588cdac2862ffa",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.boost",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        895,
+        520,
+        431,
+        295
+      ],
+      "cellRect": [
+        879,
+        460,
+        492,
+        427
+      ],
+      "size": [
+        431,
+        295
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.boost.png",
+      "sha256": "1cb7335f65dc0e786f592fe0e7283a50f4e6758bda9e221ea3cce088ec8924ba",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.hit",
+      "sheet": "hero-swim",
+      "role": "player",
+      "sourceRect": [
+        1417,
+        492,
+        306,
+        366
+      ],
+      "cellRect": [
+        1371,
+        460,
+        403,
+        427
+      ],
+      "size": [
+        306,
+        366
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.hit.png",
+      "sha256": "a96395b32d5a9954770c719f41c2d8fffa76e0107cffc4a9f8325f35763a03d2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "submarine.assembled-reference",
+      "sheet": "submarine-hull",
+      "role": "boss",
+      "sourceRect": [
+        11,
+        21,
+        857,
+        409
+      ],
+      "cellRect": [
+        0,
+        0,
+        883,
+        447
+      ],
+      "size": [
+        857,
+        409
+      ],
+      "file": "../素材/游戏美术/slices/level02/submarine.assembled-reference.png",
+      "sha256": "118009908acc83e43d2e8add4861783bff2e6909d24d80ae047493b86fdb28f6",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "design-reference"
+    },
+    {
+      "id": "submarine.hull.intact",
+      "sheet": "submarine-hull",
+      "role": "boss",
+      "sourceRect": [
+        898,
+        21,
+        856,
+        398
+      ],
+      "cellRect": [
+        883,
+        0,
+        891,
+        447
+      ],
+      "size": [
+        856,
+        398
+      ],
+      "file": "../素材/游戏美术/slices/level02/submarine.hull.intact.png",
+      "sha256": "1610d9085ca68eed7b4f4fd6e1675f9caef86bb062c61eea6f7b998be461a59a",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "submarine.hull.damaged",
+      "sheet": "submarine-hull",
+      "role": "boss",
+      "sourceRect": [
+        11,
+        465,
+        856,
+        398
+      ],
+      "cellRect": [
+        0,
+        447,
+        883,
+        440
+      ],
+      "size": [
+        856,
+        398
+      ],
+      "file": "../素材/游戏美术/slices/level02/submarine.hull.damaged.png",
+      "sha256": "6d5e072a8ec4a379d14c5a98fd87f674c4670c0906655a105b7e74d49a5d2942",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "submarine.hull.wreck",
+      "sheet": "submarine-hull",
+      "role": "boss",
+      "sourceRect": [
+        900,
+        468,
+        849,
+        396
+      ],
+      "cellRect": [
+        883,
+        447,
+        891,
+        440
+      ],
+      "size": [
+        849,
+        396
+      ],
+      "file": "../素材/游戏美术/slices/level02/submarine.hull.wreck.png",
+      "sha256": "bfa84bcfd24bdb8f21fffa41924c290c790d97739754afd924dca39f73038fde",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.sonar.fire",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        67,
+        21,
+        262,
+        340
+      ],
+      "cellRect": [
+        0,
+        0,
+        383,
+        372
+      ],
+      "size": [
+        262,
+        340
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.sonar.fire.png",
+      "sha256": "0cbf4aa382d281b6604e4cdebf0c229816e683d41f5d03c6c2c14ed68981d95c",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.sonar.up45",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        437,
+        19,
+        244,
+        343
+      ],
+      "cellRect": [
+        383,
+        0,
+        348,
+        372
+      ],
+      "size": [
+        244,
+        343
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.sonar.up45.png",
+      "sha256": "249e4703fa653cf851ae878af30e65b5cbf6156473aa74c4ad92932a0ed65b79",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.sonar.up90",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        781,
+        8,
+        211,
+        355
+      ],
+      "cellRect": [
+        731,
+        0,
+        325,
+        372
+      ],
+      "size": [
+        211,
+        355
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.sonar.up90.png",
+      "sha256": "db489be5c38ed71beb64044923b1c30998c6a61597c3dff764f3fd0fda4d5933",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.sonar.down45",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        1121,
+        25,
+        238,
+        337
+      ],
+      "cellRect": [
+        1056,
+        0,
+        392,
+        372
+      ],
+      "size": [
+        238,
+        337
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.sonar.down45.png",
+      "sha256": "4e736a546689eccf3615f2439d30543fd873353781c90624916d74950e6f8170",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.sonar.down90",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        45,
+        386,
+        253,
+        318
+      ],
+      "cellRect": [
+        0,
+        372,
+        337,
+        349
+      ],
+      "size": [
+        253,
+        318
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.sonar.down90.png",
+      "sha256": "c76fd1ef4f3cce2da476f808b26a1e1834b42e4fe8da7fa9304822944f54771c",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.charge.fire",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        377,
+        389,
+        287,
+        320
+      ],
+      "cellRect": [
+        337,
+        372,
+        356,
+        349
+      ],
+      "size": [
+        287,
+        320
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.charge.fire.png",
+      "sha256": "70ed5d527a00a392694b17c4eae074dfb2705e9230d445ac078716ae342949e2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.torpedo.fire",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        722,
+        389,
+        309,
+        320
+      ],
+      "cellRect": [
+        693,
+        372,
+        369,
+        349
+      ],
+      "size": [
+        309,
+        320
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.torpedo.fire.png",
+      "sha256": "21900ba6db86bc2fc9c006dbe55a5b89c8c06e3a1b25bcefb057f14c7d14e2e0",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.torpedo.up45",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        1094,
+        382,
+        301,
+        329
+      ],
+      "cellRect": [
+        1062,
+        372,
+        386,
+        349
+      ],
+      "size": [
+        301,
+        329
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.torpedo.up45.png",
+      "sha256": "e5dc7e75faaca549500ae5dd714128468c252046b156e7c46a3730591afd720f",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.torpedo.down45",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        22,
+        732,
+        263,
+        327
+      ],
+      "cellRect": [
+        0,
+        721,
+        311,
+        365
+      ],
+      "size": [
+        263,
+        327
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.torpedo.down45.png",
+      "sha256": "fb2d802d637c8ab8c440f0d5c7c022eb0b07070323b2d49f2e030797faa3c806",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.knife.windup",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        338,
+        735,
+        276,
+        323
+      ],
+      "cellRect": [
+        311,
+        721,
+        347,
+        365
+      ],
+      "size": [
+        276,
+        323
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.knife.windup.png",
+      "sha256": "f802174019426263900ec9dda5c32218348191a93955f8a0e64f0aa09f1c36d5",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.knife.strike",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        686,
+        742,
+        390,
+        318
+      ],
+      "cellRect": [
+        658,
+        721,
+        440,
+        365
+      ],
+      "size": [
+        390,
+        318
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.knife.strike.png",
+      "sha256": "21857645bfebe11748f6de0395b6ccc4bff607c559248da7919977ce6fa6c9af",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.death",
+      "sheet": "hero-combat",
+      "role": "player",
+      "sourceRect": [
+        1120,
+        749,
+        289,
+        322
+      ],
+      "cellRect": [
+        1098,
+        721,
+        350,
+        365
+      ],
+      "size": [
+        289,
+        322
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.death.png",
+      "sha256": "4a16cc4abb6e4ad102b19f0a66bd9a25e56c5a368a8bdafab787bbc7a8b56be5",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.diver.swim",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        19,
+        98,
+        411,
+        300
+      ],
+      "cellRect": [
+        0,
+        0,
+        460,
+        446
+      ],
+      "size": [
+        411,
+        300
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.diver.swim.png",
+      "sha256": "79c0fa79ad481f7660765aa50f2cddde568552be9539a2347f8edcffa78e1553",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.diver.aim",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        490,
+        76,
+        285,
+        340
+      ],
+      "cellRect": [
+        460,
+        0,
+        356,
+        446
+      ],
+      "size": [
+        285,
+        340
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.diver.aim.png",
+      "sha256": "c9778d43479b97bd3aadaf2102afc6c745a59463142ed9e813f63cb976b276d8",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.diver.fire",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        858,
+        99,
+        412,
+        318
+      ],
+      "cellRect": [
+        816,
+        0,
+        540,
+        446
+      ],
+      "size": [
+        412,
+        318
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.diver.fire.png",
+      "sha256": "5694beb206cb8a6f7883f6d08b2dbdb0ac2530b801ec36964168892f2e999b7f",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.diver.defeat",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        1442,
+        107,
+        236,
+        297
+      ],
+      "cellRect": [
+        1356,
+        0,
+        418,
+        446
+      ],
+      "size": [
+        236,
+        297
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.diver.defeat.png",
+      "sha256": "c0e5ed79d0749e9aae49a6403866ac3b302162e1c545c00a5f37acbcd3462c64",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.captain.idle",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        36,
+        476,
+        351,
+        370
+      ],
+      "cellRect": [
+        0,
+        446,
+        420,
+        441
+      ],
+      "size": [
+        351,
+        370
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.captain.idle.png",
+      "sha256": "402d75c67ba5d2b47f12ec5935ed4003995afd18e08ccd0b72acc05ce219b739",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.captain.charge",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        453,
+        537,
+        339,
+        309
+      ],
+      "cellRect": [
+        420,
+        446,
+        421,
+        441
+      ],
+      "size": [
+        339,
+        309
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.captain.charge.png",
+      "sha256": "a3b55a5974ea24abc3e8df4f91220d9cc59c82629c600b82682ff5a6ed5f9920",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.captain.dash",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        891,
+        514,
+        440,
+        289
+      ],
+      "cellRect": [
+        841,
+        446,
+        517,
+        441
+      ],
+      "size": [
+        440,
+        289
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.captain.dash.png",
+      "sha256": "b5167e6cd7c5ec04294c1b187aa78ad5a638d3e615fae8c6273b02587202e8f4",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "enemy.captain.defeat",
+      "sheet": "diver-enemies",
+      "role": "enemy",
+      "sourceRect": [
+        1385,
+        517,
+        327,
+        325
+      ],
+      "cellRect": [
+        1358,
+        446,
+        416,
+        441
+      ],
+      "size": [
+        327,
+        325
+      ],
+      "file": "../素材/游戏美术/slices/level02/enemy.captain.defeat.png",
+      "sha256": "3ae4c5e4396a71cdb75e8f01724c5ee55423a04a455ecccf6332efaf32b62d0e",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.cannon.idle",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        36,
+        105,
+        304,
+        241
+      ],
+      "cellRect": [
+        0,
+        0,
+        361,
+        382
+      ],
+      "size": [
+        304,
+        241
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.cannon.idle.png",
+      "sha256": "ffe658986b4912243d381b6da269c5e25b48a37e5aa1dd87d25725dc5e51d847",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.cannon.aim",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        382,
+        42,
+        310,
+        303
+      ],
+      "cellRect": [
+        361,
+        0,
+        380,
+        382
+      ],
+      "size": [
+        310,
+        303
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.cannon.aim.png",
+      "sha256": "07a1391f00dbc31f07db2a0083a5c32e8a1238d6e499a789c22135dc1bd3a6d2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.cannon.broken",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        790,
+        106,
+        256,
+        239
+      ],
+      "cellRect": [
+        741,
+        0,
+        360,
+        382
+      ],
+      "size": [
+        256,
+        239
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.cannon.broken.png",
+      "sha256": "b60775e0ae422e643ba6d09d4d77165fc1e0f318bb77b10ab43b5d3740c271e2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.laser.idle",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        1157,
+        65,
+        232,
+        282
+      ],
+      "cellRect": [
+        1101,
+        0,
+        347,
+        382
+      ],
+      "size": [
+        232,
+        282
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.laser.idle.png",
+      "sha256": "56c9c318839018461191a1e51320442a8bcfc17a2bb475c72566e4447656eea2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.laser.charge",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        74,
+        417,
+        247,
+        285
+      ],
+      "cellRect": [
+        0,
+        382,
+        364,
+        350
+      ],
+      "size": [
+        247,
+        285
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.laser.charge.png",
+      "sha256": "a8a5da7dcc71b22f6344b67aacba9be897c5d16efcbe3023f78e5213787cc911",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.laser.broken",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        407,
+        441,
+        272,
+        260
+      ],
+      "cellRect": [
+        364,
+        382,
+        341,
+        350
+      ],
+      "size": [
+        272,
+        260
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.laser.broken.png",
+      "sha256": "cf047b738c2d5d1fab68cc52f870f5cef72e4435bf6cfa1260425d4be87786d7",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.torpedo.closed",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        731,
+        463,
+        343,
+        206
+      ],
+      "cellRect": [
+        705,
+        382,
+        379,
+        350
+      ],
+      "size": [
+        343,
+        206
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.torpedo.closed.png",
+      "sha256": "09d5d34e452ee233620c704e25bc62035a3c73c171eb8f50eb39deed5b2586f8",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.torpedo.open",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        1094,
+        463,
+        344,
+        206
+      ],
+      "cellRect": [
+        1084,
+        382,
+        364,
+        350
+      ],
+      "size": [
+        344,
+        206
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.torpedo.open.png",
+      "sha256": "1c511ddf7b86806270a67b982b29b4c263047d1c93914fe35e7be663bdc6054d",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.torpedo.broken",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        11,
+        804,
+        342,
+        211
+      ],
+      "cellRect": [
+        0,
+        732,
+        366,
+        354
+      ],
+      "size": [
+        342,
+        211
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.torpedo.broken.png",
+      "sha256": "90a57e899567ad6f753e3381f4aab33390ebe38fb5c66544637050456517b736",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.reactor.closed",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        379,
+        776,
+        330,
+        255
+      ],
+      "cellRect": [
+        366,
+        732,
+        358,
+        354
+      ],
+      "size": [
+        330,
+        255
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.reactor.closed.png",
+      "sha256": "95a79cc91c9899a362450e041b4d818d9e9ee81c7a8ef32a4fcf0e1b4510baa6",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.reactor.open",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        739,
+        776,
+        335,
+        255
+      ],
+      "cellRect": [
+        724,
+        732,
+        390,
+        354
+      ],
+      "size": [
+        335,
+        255
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.reactor.open.png",
+      "sha256": "20db7771bfd8a50b75ab8363f9a77f9f616c3298ac8260dd767907f2fe1fe059",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "module.propeller",
+      "sheet": "submarine-modules",
+      "role": "boss-modules",
+      "sourceRect": [
+        1154,
+        763,
+        204,
+        285
+      ],
+      "cellRect": [
+        1114,
+        732,
+        334,
+        354
+      ],
+      "size": [
+        204,
+        285
+      ],
+      "file": "../素材/游戏美术/slices/level02/module.propeller.png",
+      "sha256": "bfb13b6c170939a9d2b711f7e769447d042fb6504beee22aca86e174455f373d",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.equip.mask",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        118,
+        23,
+        216,
+        397
+      ],
+      "cellRect": [
+        0,
+        0,
+        427,
+        444
+      ],
+      "size": [
+        216,
+        397
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.equip.mask.png",
+      "sha256": "ebcf374f485617e326ede8b33627d356b3668cfd824b5137f3a11aec49fa744a",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.equip.tank",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        520,
+        24,
+        247,
+        402
+      ],
+      "cellRect": [
+        427,
+        0,
+        416,
+        444
+      ],
+      "size": [
+        247,
+        402
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.equip.tank.png",
+      "sha256": "d8f7d6cd6d570cbe9f3cf50fadd824001004bb51d4a61e465fbd7677397c5261",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.equip.ready",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        916,
+        56,
+        354,
+        370
+      ],
+      "cellRect": [
+        843,
+        0,
+        457,
+        444
+      ],
+      "size": [
+        354,
+        370
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.equip.ready.png",
+      "sha256": "0df289e3dfe2145232941515ad59689d79d583618ac64b4612c456a7b32d34b1",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.cliff.leap",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        1331,
+        39,
+        414,
+        378
+      ],
+      "cellRect": [
+        1300,
+        0,
+        474,
+        444
+      ],
+      "size": [
+        414,
+        378
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.cliff.leap.png",
+      "sha256": "aeb547751e9b7efa679dc6fc9d8ad0cee54e863dc844c1791a80b534f0ee6882",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.water.glide",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        28,
+        519,
+        412,
+        338
+      ],
+      "cellRect": [
+        0,
+        444,
+        470,
+        443
+      ],
+      "size": [
+        412,
+        338
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.water.glide.png",
+      "sha256": "c9173720ba04eed83a298775344bc9306d79fdafcd137f824a3dd18d1cbe2ceb",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.surface",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        500,
+        463,
+        323,
+        404
+      ],
+      "cellRect": [
+        470,
+        444,
+        429,
+        443
+      ],
+      "size": [
+        323,
+        404
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.surface.png",
+      "sha256": "ac99a560671f8fc7387978303fb99bbca2398d100eea1567420413815adf3649",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.cheer.0",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        975,
+        466,
+        268,
+        408
+      ],
+      "cellRect": [
+        899,
+        444,
+        416,
+        443
+      ],
+      "size": [
+        268,
+        408
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.cheer.0.png",
+      "sha256": "804578be80d84b26359d45551fa5b7b05dd197193e6d2953ef9933311041d65c",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.cheer.1",
+      "sheet": "hero-transition",
+      "role": "player-sequence",
+      "sourceRect": [
+        1387,
+        475,
+        301,
+        398
+      ],
+      "cellRect": [
+        1315,
+        444,
+        459,
+        443
+      ],
+      "size": [
+        301,
+        398
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.cheer.1.png",
+      "sha256": "8181339584d48eb1007bfa9e1e66f8a7f8ab30eb4396d41b7989ee0754934292",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fish.attack.idle",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        44,
+        82,
+        291,
+        216
+      ],
+      "cellRect": [
+        0,
+        0,
+        376,
+        352
+      ],
+      "size": [
+        291,
+        216
+      ],
+      "file": "../素材/游戏美术/slices/level02/fish.attack.idle.png",
+      "sha256": "67aeb9c81910a428cb2ef02eacd40e303ab8b4742ba074b8bd3065e7758e10ab",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fish.attack.tell",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        417,
+        81,
+        231,
+        224
+      ],
+      "cellRect": [
+        376,
+        0,
+        308,
+        352
+      ],
+      "size": [
+        231,
+        224
+      ],
+      "file": "../素材/游戏美术/slices/level02/fish.attack.tell.png",
+      "sha256": "e6237760506036c66cc6d47fd56cfc62b59f2bbe40225fbb3af9b9bc7de5e0ff",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fish.attack.dash",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        720,
+        99,
+        357,
+        186
+      ],
+      "cellRect": [
+        684,
+        0,
+        421,
+        352
+      ],
+      "size": [
+        357,
+        186
+      ],
+      "file": "../素材/游戏美术/slices/level02/fish.attack.dash.png",
+      "sha256": "879e60ce6f7555a5473256879a24f6fe6230d72bf3b62ac210aa2fed71da5397",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fish.attack.defeat",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        1133,
+        78,
+        265,
+        249
+      ],
+      "cellRect": [
+        1105,
+        0,
+        343,
+        352
+      ],
+      "size": [
+        265,
+        249
+      ],
+      "file": "../素材/游戏美术/slices/level02/fish.attack.defeat.png",
+      "sha256": "f2db3b105725da8ef0538545cfc6a28021b3875b221180f107b11266934c2341",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "kelp.hostile.idle",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        38,
+        377,
+        277,
+        325
+      ],
+      "cellRect": [
+        0,
+        352,
+        385,
+        373
+      ],
+      "size": [
+        277,
+        325
+      ],
+      "file": "../素材/游戏美术/slices/level02/kelp.hostile.idle.png",
+      "sha256": "8cbff2be04dd805057f0f3de3eb2d63f0649043bbf7b92c251f37f3fc1c99b38",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "kelp.hostile.tell",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        455,
+        400,
+        161,
+        302
+      ],
+      "cellRect": [
+        385,
+        352,
+        272,
+        373
+      ],
+      "size": [
+        161,
+        302
+      ],
+      "file": "../素材/游戏美术/slices/level02/kelp.hostile.tell.png",
+      "sha256": "92183de76960d27c5ee4843af456345393d7175328ea333eae4eef64dc8667a3",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "kelp.hostile.strike",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        685,
+        377,
+        396,
+        324
+      ],
+      "cellRect": [
+        657,
+        352,
+        470,
+        373
+      ],
+      "size": [
+        396,
+        324
+      ],
+      "file": "../素材/游戏美术/slices/level02/kelp.hostile.strike.png",
+      "sha256": "d6f75596f1fea61c0cbde2dbae8c4e5d17418f18d4229d0cdc23b1ef0dbbb148",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "kelp.hostile.cut",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        1174,
+        501,
+        188,
+        201
+      ],
+      "cellRect": [
+        1127,
+        352,
+        321,
+        373
+      ],
+      "size": [
+        188,
+        201
+      ],
+      "file": "../素材/游戏美术/slices/level02/kelp.hostile.cut.png",
+      "sha256": "d3c5bef922fc6e8947c55858261fae3fc5f14874419b99f4a4fe447d930f88b8",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fish.ambient.0",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        37,
+        790,
+        293,
+        245
+      ],
+      "cellRect": [
+        0,
+        725,
+        361,
+        361
+      ],
+      "size": [
+        293,
+        245
+      ],
+      "file": "../素材/游戏美术/slices/level02/fish.ambient.0.png",
+      "sha256": "2e7ad92f6c4fe20ab961f3e52b981cfcf0ce2f418179b6c3c3f92c1c0b360a5a",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fish.ambient.1",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        393,
+        784,
+        306,
+        252
+      ],
+      "cellRect": [
+        361,
+        725,
+        381,
+        361
+      ],
+      "size": [
+        306,
+        252
+      ],
+      "file": "../素材/游戏美术/slices/level02/fish.ambient.1.png",
+      "sha256": "667442a8c11ba49946300213b67310a0443612be177b59ff72a19afef3f3f7ba",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "kelp.ambient.0",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        785,
+        749,
+        239,
+        298
+      ],
+      "cellRect": [
+        742,
+        725,
+        340,
+        361
+      ],
+      "size": [
+        239,
+        298
+      ],
+      "file": "../素材/游戏美术/slices/level02/kelp.ambient.0.png",
+      "sha256": "004a3961e12cc7c32ba2a4a15cb26b3cfcf4611207ed71a04b6c64ca81d1edc2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "kelp.ambient.1",
+      "sheet": "marine-life",
+      "role": "ecology",
+      "sourceRect": [
+        1141,
+        779,
+        263,
+        267
+      ],
+      "cellRect": [
+        1082,
+        725,
+        366,
+        361
+      ],
+      "size": [
+        263,
+        267
+      ],
+      "file": "../素材/游戏美术/slices/level02/kelp.ambient.1.png",
+      "sha256": "14a806c607d13a5690bb0c9158d78dd8ea538c0c7e62c1426798b9144f969c99",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.seabed.left",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        32,
+        109,
+        310,
+        224
+      ],
+      "cellRect": [
+        0,
+        0,
+        365,
+        370
+      ],
+      "size": [
+        310,
+        224
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.seabed.left.png",
+      "sha256": "808f2c6af7f2d4bffec4b2fa7b9c1d4750e4f001bf684d291fd27cfead01881d",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.seabed.middle",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        389,
+        142,
+        309,
+        191
+      ],
+      "cellRect": [
+        365,
+        0,
+        358,
+        370
+      ],
+      "size": [
+        309,
+        191
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.seabed.middle.png",
+      "sha256": "b17f5dc43bdc30f92a496db2f21353c30d149d3a3a69bdb7b423bbc6e6d51454",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.seabed.right",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        748,
+        142,
+        305,
+        191
+      ],
+      "cellRect": [
+        723,
+        0,
+        378,
+        370
+      ],
+      "size": [
+        305,
+        191
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.seabed.right.png",
+      "sha256": "0e4e199398e209e6b8862b57ef08aa3968ee6f2f9ce74ae848b0b706c1b0c539",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.rock.pillar",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        1150,
+        27,
+        241,
+        319
+      ],
+      "cellRect": [
+        1101,
+        0,
+        347,
+        370
+      ],
+      "size": [
+        241,
+        319
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.rock.pillar.png",
+      "sha256": "1c00ddab9c1494e47d11113d31bbc9f4446581c566b1d9af0369dba7dbae3ee2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.rock.arch",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        10,
+        433,
+        350,
+        272
+      ],
+      "cellRect": [
+        0,
+        370,
+        367,
+        368
+      ],
+      "size": [
+        350,
+        272
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.rock.arch.png",
+      "sha256": "221f41c348403920c99509d39abbbef5c982b4629226e8f029acebcbbfe61b43",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.rock.ceiling",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        375,
+        465,
+        337,
+        166
+      ],
+      "cellRect": [
+        367,
+        370,
+        353,
+        368
+      ],
+      "size": [
+        337,
+        166
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.rock.ceiling.png",
+      "sha256": "e007b1d3288327a1241652ca8ebb6c8c047f07de46c975a081af7c9f6fb14150",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.cliff",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        728,
+        394,
+        344,
+        318
+      ],
+      "cellRect": [
+        720,
+        370,
+        365,
+        368
+      ],
+      "size": [
+        344,
+        318
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.cliff.png",
+      "sha256": "d9fd59ffae895435c67b9223b2abc1e52ced85aa6d2944e036d93b6d8ab7f78c",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.coral.shelf",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        1099,
+        520,
+        335,
+        189
+      ],
+      "cellRect": [
+        1085,
+        370,
+        363,
+        368
+      ],
+      "size": [
+        335,
+        189
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.coral.shelf.png",
+      "sha256": "64a626243d7879b06adba196824c2600660a3f9a13f13d5dbb40283961ca356b",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.wreck.deck",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        10,
+        840,
+        348,
+        214
+      ],
+      "cellRect": [
+        0,
+        738,
+        369,
+        348
+      ],
+      "size": [
+        348,
+        214
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.wreck.deck.png",
+      "sha256": "a0a929b717f9c6a9649dc3959301d864fdc15bed02028e9120b54d494b37d668",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.wreck.wall",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        380,
+        764,
+        330,
+        290
+      ],
+      "cellRect": [
+        369,
+        738,
+        349,
+        348
+      ],
+      "size": [
+        330,
+        290
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.wreck.wall.png",
+      "sha256": "523f192e46e3786f64a3dbae85750e144df2e3b5872a55103c2feb715130c9e0",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.pipe.straight",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        726,
+        843,
+        352,
+        165
+      ],
+      "cellRect": [
+        718,
+        738,
+        369,
+        348
+      ],
+      "size": [
+        352,
+        165
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.pipe.straight.png",
+      "sha256": "783e712976fa020abc0c1d741662d17e71b6bb9451bc5196593b1b782b38fac3",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "terrain.pipe.elbow",
+      "sheet": "terrain",
+      "role": "terrain",
+      "sourceRect": [
+        1096,
+        781,
+        327,
+        278
+      ],
+      "cellRect": [
+        1087,
+        738,
+        361,
+        348
+      ],
+      "size": [
+        327,
+        278
+      ],
+      "file": "../素材/游戏美术/slices/level02/terrain.pipe.elbow.png",
+      "sha256": "228fa512d1c8a18396c98bcd0b65b840d31887ab91977aeb3b7bea0cda38f564",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.sonar",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        61,
+        109,
+        261,
+        205
+      ],
+      "cellRect": [
+        0,
+        0,
+        345,
+        337
+      ],
+      "size": [
+        261,
+        205
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.sonar.png",
+      "sha256": "759c9e35b92a8d11d3707949ea80f9059ef0fb2ddd6ebe0f590416d601d98783",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.charge-sonar",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        368,
+        75,
+        323,
+        243
+      ],
+      "cellRect": [
+        345,
+        0,
+        363,
+        337
+      ],
+      "size": [
+        323,
+        243
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.charge-sonar.png",
+      "sha256": "72cc507928f3da16aee6441f31c2e854689e52bd09dd7295f05b371f0754c452",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.torpedo-launcher",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        726,
+        122,
+        353,
+        192
+      ],
+      "cellRect": [
+        708,
+        0,
+        387,
+        337
+      ],
+      "size": [
+        353,
+        192
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.torpedo-launcher.png",
+      "sha256": "67623b62ca9ff32bc440d234870e83b7db9782e5ce74a8bd682f16ee9e0b9b60",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.knife",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        1111,
+        141,
+        295,
+        115
+      ],
+      "cellRect": [
+        1095,
+        0,
+        353,
+        337
+      ],
+      "size": [
+        295,
+        115
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.knife.png",
+      "sha256": "5a0512c7e431f45b5e91739b22edbbdad558f7a3f0a7272141cc7dae37a2fa87",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.medkit",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        62,
+        392,
+        279,
+        275
+      ],
+      "cellRect": [
+        0,
+        337,
+        398,
+        356
+      ],
+      "size": [
+        279,
+        275
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.medkit.png",
+      "sha256": "eab09829d0a6f206a8fe44e0c5443bed59f4122bdd3536ea090fb41250044822",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.energy",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        457,
+        365,
+        180,
+        315
+      ],
+      "cellRect": [
+        398,
+        337,
+        296,
+        356
+      ],
+      "size": [
+        180,
+        315
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.energy.png",
+      "sha256": "347e3a982fc8af457e9ac12e102ada49215415d148e16bdd3a22628895b04f15",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.torpedo-ammo",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        751,
+        388,
+        284,
+        281
+      ],
+      "cellRect": [
+        694,
+        337,
+        378,
+        356
+      ],
+      "size": [
+        284,
+        281
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.torpedo-ammo.png",
+      "sha256": "e9e1e5df39f4b00f4fc791cee6b52100cf545b7e45c852152b45dad916b07de8",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "item.depth-charge",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        1109,
+        356,
+        288,
+        331
+      ],
+      "cellRect": [
+        1072,
+        337,
+        376,
+        356
+      ],
+      "size": [
+        288,
+        331
+      ],
+      "file": "../素材/游戏美术/slices/level02/item.depth-charge.png",
+      "sha256": "2ff7a40408395fd3dca5c70ab2ab7b9a4d3abd8601e9016fc43071a77ca2f8ea",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "object.sealed-crate",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        46,
+        769,
+        287,
+        281
+      ],
+      "cellRect": [
+        0,
+        693,
+        359,
+        393
+      ],
+      "size": [
+        287,
+        281
+      ],
+      "file": "../素材/游戏美术/slices/level02/object.sealed-crate.png",
+      "sha256": "5f67ad09ae21a550adc37a8d74b19aa6aea33b58dda8e7fe8f81e4a44368352a",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "object.crate-broken",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        385,
+        740,
+        319,
+        312
+      ],
+      "cellRect": [
+        359,
+        693,
+        371,
+        393
+      ],
+      "size": [
+        319,
+        312
+      ],
+      "file": "../素材/游戏美术/slices/level02/object.crate-broken.png",
+      "sha256": "d9d06e75c7e2e0fa4e965841577d7450001710403fbf6016b641ef41ac4a6b4b",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "object.anchored-mine",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        757,
+        699,
+        245,
+        367
+      ],
+      "cellRect": [
+        730,
+        693,
+        297,
+        393
+      ],
+      "size": [
+        245,
+        367
+      ],
+      "file": "../素材/游戏美术/slices/level02/object.anchored-mine.png",
+      "sha256": "e593e6ee395cc058950071325d2090b96bc727d8afe42d4c067ae7a2cb62eef2",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "object.seabed-turret",
+      "sheet": "props-weapons",
+      "role": "props",
+      "sourceRect": [
+        1053,
+        751,
+        360,
+        297
+      ],
+      "cellRect": [
+        1027,
+        693,
+        421,
+        393
+      ],
+      "size": [
+        360,
+        297
+      ],
+      "file": "../素材/游戏美术/slices/level02/object.seabed-turret.png",
+      "sha256": "f4d3b86de5318bb4e38706508a3061bd5dc0f89e76a77b1658cdc7814cf9a661",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.sonar.0",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        136,
+        127,
+        133,
+        170
+      ],
+      "cellRect": [
+        0,
+        0,
+        362,
+        398
+      ],
+      "size": [
+        133,
+        170
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.sonar.0.png",
+      "sha256": "45c8f06d39091ddc6f88bfa2ae7f9a2ee674cbbf241d3b2490a30c07e504d8fd",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.sonar.1",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        455,
+        91,
+        181,
+        236
+      ],
+      "cellRect": [
+        362,
+        0,
+        357,
+        398
+      ],
+      "size": [
+        181,
+        236
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.sonar.1.png",
+      "sha256": "14d42f3840099f3a1686a582e6c2700ad7f565daea4633b2a80b0d632762d89e",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.sonar.2",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        803,
+        66,
+        212,
+        294
+      ],
+      "cellRect": [
+        719,
+        0,
+        353,
+        398
+      ],
+      "size": [
+        212,
+        294
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.sonar.2.png",
+      "sha256": "d1f7e379ea16058568461a969b9c3425cc26530f958398b0b957cda1ebed27fd",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.sonar.charged",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        1130,
+        37,
+        290,
+        340
+      ],
+      "cellRect": [
+        1072,
+        0,
+        376,
+        398
+      ],
+      "size": [
+        290,
+        340
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.sonar.charged.png",
+      "sha256": "40f6c9733344c2c531fea776e146027801c1ca58f6fc8a8257f7d9e36dce8c04",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "projectile.micro-torpedo",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        16,
+        474,
+        349,
+        173
+      ],
+      "cellRect": [
+        0,
+        398,
+        383,
+        314
+      ],
+      "size": [
+        349,
+        173
+      ],
+      "file": "../素材/游戏美术/slices/level02/projectile.micro-torpedo.png",
+      "sha256": "e4f9e16b95c32fc52c92270cbfd1d9e2c3e08da43102d736da41ece473d454ad",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "projectile.enemy-torpedo",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        401,
+        475,
+        293,
+        174
+      ],
+      "cellRect": [
+        383,
+        398,
+        340,
+        314
+      ],
+      "size": [
+        293,
+        174
+      ],
+      "file": "../素材/游戏美术/slices/level02/projectile.enemy-torpedo.png",
+      "sha256": "350646cba96de6a9de3400c2eeb60d79f6db40800d896ed28dd6a18256efff50",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "projectile.pressure-bolt",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        752,
+        507,
+        308,
+        110
+      ],
+      "cellRect": [
+        723,
+        398,
+        383,
+        314
+      ],
+      "size": [
+        308,
+        110
+      ],
+      "file": "../素材/游戏美术/slices/level02/projectile.pressure-bolt.png",
+      "sha256": "ecc9a32b70983722db44a316242420c489a26b18cae272fc18708404ed7bf306",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "projectile.depth-charge",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        1153,
+        419,
+        230,
+        272
+      ],
+      "cellRect": [
+        1106,
+        398,
+        342,
+        314
+      ],
+      "size": [
+        230,
+        272
+      ],
+      "file": "../素材/游戏美术/slices/level02/projectile.depth-charge.png",
+      "sha256": "f670e2b155f0763c244f5eee5aa1d7fc0b45c7e605c370929f18b87b0cd046ed",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.laser-charge",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        74,
+        791,
+        229,
+        234
+      ],
+      "cellRect": [
+        0,
+        712,
+        336,
+        374
+      ],
+      "size": [
+        229,
+        234
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.laser-charge.png",
+      "sha256": "296df81f00be3b01d68aae9743f7f666e01969b5397e9f9d0043c4459ed5de3c",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.laser-beam",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        370,
+        859,
+        343,
+        86
+      ],
+      "cellRect": [
+        336,
+        712,
+        389,
+        374
+      ],
+      "size": [
+        343,
+        86
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.laser-beam.png",
+      "sha256": "29af4e042aed8a208bd15296d426f168eb0ff8ad7202ac14c455c6654c2d4244",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.pressure-gap-ring",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        737,
+        734,
+        324,
+        333
+      ],
+      "cellRect": [
+        725,
+        712,
+        348,
+        374
+      ],
+      "size": [
+        324,
+        333
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.pressure-gap-ring.png",
+      "sha256": "bb4c90465b981a936ffe5fe0d5a59dec44b5dbd3a1364c1482c53bffeeb2b08f",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.impact",
+      "sheet": "combat-effects",
+      "role": "combat-effects",
+      "sourceRect": [
+        1086,
+        762,
+        355,
+        276
+      ],
+      "cellRect": [
+        1073,
+        712,
+        375,
+        374
+      ],
+      "size": [
+        355,
+        276
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.impact.png",
+      "sha256": "a00e95ba0368057f9e661ed4e677dbf85753e612a77e5481edca9f4969e67ef3",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.splash.0",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        67,
+        198,
+        215,
+        133
+      ],
+      "cellRect": [
+        0,
+        0,
+        323,
+        371
+      ],
+      "size": [
+        215,
+        133
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.splash.0.png",
+      "sha256": "a56d1f608a955c3a528501585fcd4bcc1771d2e8694afd8429b7b324213f46a1",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.splash.1",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        364,
+        74,
+        321,
+        256
+      ],
+      "cellRect": [
+        323,
+        0,
+        383,
+        371
+      ],
+      "size": [
+        321,
+        256
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.splash.1.png",
+      "sha256": "dd3f9a816a93c5e9a1f4ea3f0e15d6c0162e50687c59b8c5f43388f2c111bcca",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.splash.2",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        728,
+        154,
+        303,
+        180
+      ],
+      "cellRect": [
+        706,
+        0,
+        349,
+        371
+      ],
+      "size": [
+        303,
+        180
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.splash.2.png",
+      "sha256": "5323be717532f6eac5c5e9885a500b2810ebf2ada5243c36d6633a921f4e34b3",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.surface-ripple",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        1079,
+        221,
+        337,
+        94
+      ],
+      "cellRect": [
+        1055,
+        0,
+        393,
+        371
+      ],
+      "size": [
+        337,
+        94
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.surface-ripple.png",
+      "sha256": "d1cc407232fccdae97951ce6cc20deb8c9fad2e36490363d19673974f1ff9894",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.bubble.single",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        62,
+        444,
+        217,
+        218
+      ],
+      "cellRect": [
+        0,
+        371,
+        362,
+        319
+      ],
+      "size": [
+        217,
+        218
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.bubble.single.png",
+      "sha256": "db0d41c996333b1676741076e9a9ff5167c5ce9f8c02dc3a5ddf24a36126a6ed",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.bubble.trail",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        446,
+        408,
+        123,
+        248
+      ],
+      "cellRect": [
+        362,
+        371,
+        293,
+        319
+      ],
+      "size": [
+        123,
+        248
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.bubble.trail.png",
+      "sha256": "4a7fcf931f0a0e72912434fa3bff8f7fd9c74194f2494fc6356b26e57c386fd5",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.bubble.burst",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        681,
+        408,
+        295,
+        256
+      ],
+      "cellRect": [
+        655,
+        371,
+        370,
+        319
+      ],
+      "size": [
+        295,
+        256
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.bubble.burst.png",
+      "sha256": "e6e2e91f51463870c9ffa00d9fbdb382169f6d88090fee3f8357d7bd3a684c8e",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.boost.wake",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        1059,
+        452,
+        348,
+        178
+      ],
+      "cellRect": [
+        1025,
+        371,
+        423,
+        319
+      ],
+      "size": [
+        348,
+        178
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.boost.wake.png",
+      "sha256": "baa12c8ce347ecfe733870af378e3fddac78e9757ea3bfdcd331bc9a678e4a26",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.water-blast.0",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        103,
+        840,
+        97,
+        96
+      ],
+      "cellRect": [
+        0,
+        690,
+        300,
+        396
+      ],
+      "size": [
+        97,
+        96
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.water-blast.0.png",
+      "sha256": "1384b2540068f06a62347fec10ccfee95cc2665f3d2be1c26088d0745480f705",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.water-blast.1",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        333,
+        777,
+        218,
+        219
+      ],
+      "cellRect": [
+        300,
+        690,
+        332,
+        396
+      ],
+      "size": [
+        218,
+        219
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.water-blast.1.png",
+      "sha256": "ed88dfad77d948cb464a7bc3c78df03106a5190cc755ab0514da5664154ba9ce",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.water-blast.2",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        634,
+        716,
+        364,
+        331
+      ],
+      "cellRect": [
+        632,
+        690,
+        402,
+        396
+      ],
+      "size": [
+        364,
+        331
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.water-blast.2.png",
+      "sha256": "2b50723ddaf6e6843510f46992d9634025a380a2448192b6f9c958cd8e4cba59",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "fx.water-blast.3",
+      "sheet": "water-effects",
+      "role": "water-effects",
+      "sourceRect": [
+        1071,
+        733,
+        314,
+        293
+      ],
+      "cellRect": [
+        1034,
+        690,
+        414,
+        396
+      ],
+      "size": [
+        314,
+        293
+      ],
+      "file": "../素材/游戏美术/slices/level02/fx.water-blast.3.png",
+      "sha256": "6dce5d6d54fe5fda8a97a0d06f2a81aae0cda56db3337ed3b724462b2dc5182f",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.entry.diagonal",
+      "sheet": "hero-entry",
+      "role": "player-sequence",
+      "sourceRect": [
+        24,
+        252,
+        750,
+        602
+      ],
+      "cellRect": [
+        0,
+        0,
+        830,
+        1024
+      ],
+      "size": [
+        750,
+        602
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.entry.diagonal.png",
+      "sha256": "c19f6b4fa4ae64ad4b04871de2bcd3acdc7b6dcea92cd9172a1c9939335d7a32",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "diver.entry.steep",
+      "sheet": "hero-entry",
+      "role": "player-sequence",
+      "sourceRect": [
+        887,
+        91,
+        536,
+        861
+      ],
+      "cellRect": [
+        830,
+        0,
+        706,
+        1024
+      ],
+      "size": [
+        536,
+        861
+      ],
+      "file": "../素材/游戏美术/slices/level02/diver.entry.steep.png",
+      "sha256": "c77cd2797e140a073281e39804ce7f0bf942089dfe523ca0e9dc2a15c8c55179",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "background.coast",
+      "sheet": "coast-background",
+      "role": "background",
+      "sourceRect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "cellRect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "size": [
+        1672,
+        941
+      ],
+      "file": "../素材/游戏美术/slices/level02/background.coast.png",
+      "sha256": "b0fb638c91ea2ffc793c9a34704f01467bb70dde06c4584bd90fa938a495d8f9",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    },
+    {
+      "id": "background.undersea",
+      "sheet": "undersea-background",
+      "role": "background",
+      "sourceRect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "cellRect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "size": [
+        1672,
+        941
+      ],
+      "file": "../素材/游戏美术/slices/level02/background.undersea.png",
+      "sha256": "3d95580a8a63df35d9c066faddd9fc7d3ee5b9b03c33c49ac53e7f8ee6eb348d",
+      "decodedRGBAEqualToSourceCrop": true,
+      "anchor": null,
+      "sockets": null,
+      "usage": "source-candidate"
+    }
+  ]
+}

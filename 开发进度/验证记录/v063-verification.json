@@ -1,0 +1,119 @@
+{
+  "version": "0.6.3",
+  "date": "2026-11-05",
+  "creator": "3.8.8",
+  "sourceSHA256": "4f7ecda8ec48a61cd6086d5e2b03f19d4782887c40e37fc0f513bc17e9133f38",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 169,
+    "passed": 169,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browserTests": {
+    "evidence": "reports/v063-browser-results.json",
+    "startTime": "2026-11-05T12:12:08.418Z",
+    "duration": 308913.19100000005,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "tests": [
+      {
+        "title": "poster fits 1280x720, starts and returns home without fullscreen controls",
+        "status": "passed"
+      },
+      {
+        "title": "poster fits 844x390, starts and returns home without fullscreen controls",
+        "status": "passed"
+      },
+      {
+        "title": "poster fits 1024x768, starts and returns home without fullscreen controls",
+        "status": "passed"
+      },
+      {
+        "title": "real campaign plays collapse, shake, pause-safe close-up cheer and animated results; restart clears them",
+        "status": "passed"
+      }
+    ]
+  },
+  "campaign": {
+    "seconds": 91.96666666668592,
+    "health": 2,
+    "kills": 30,
+    "errors": []
+  },
+  "presentation": {
+    "cover": "ink poster",
+    "fullscreenTools": false,
+    "explosionImpacts": 5,
+    "cheerFrames": [
+      "celebrate.0",
+      "celebrate.1",
+      "celebrate.2",
+      "celebrate.3"
+    ],
+    "bossFrames": [
+      "mech.damaged",
+      "mech.collapse",
+      "mech.wreck"
+    ],
+    "zoomBefore": 1.024000000000001,
+    "zoomAfter": 3.1499994002468727,
+    "mockedHapticRequests": [
+      18,
+      18,
+      18,
+      [
+        55,
+        40,
+        70
+      ],
+      18
+    ],
+    "pausedAndResumed": true,
+    "earlyRestartBlocked": true,
+    "resultsReady": true
+  },
+  "web": {
+    "files": 58,
+    "bytes": 7135273,
+    "sha256": "8333665769c241b7517ebd6ac26282d656d41d6b4df57af125a917799cc90c7e",
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "files": 70,
+    "bytes": 4288028,
+    "sha256": "ef2093741f750280dd19d4501dbb6fa16b7c9c67ac2622708c205fac8a017638",
+    "mainBytes": 3805037,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 314716
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "screenshots": [
+    "reports/v063-title-1280.png",
+    "reports/v063-title-844.png",
+    "reports/v063-title-1024.png",
+    "reports/v063-boss-explosions.png",
+    "reports/v063-boss-collapse.png",
+    "reports/v063-camera-push.png",
+    "reports/v063-hero-cheer.png",
+    "reports/v063-results.png",
+    "reports/v063-results-mobile.png"
+  ],
+  "limitations": [
+    "Browser keyboard and UI clicks verified; physical vibration and WeChat subpackage loading not device-verified.",
+    "Local builds only; not published or uploaded."
+  ]
+}

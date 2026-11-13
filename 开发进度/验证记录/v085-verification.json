@@ -1,0 +1,278 @@
+{
+  "version": "0.8.5",
+  "checkedAt": "2026-11-10T08:05:48.282Z",
+  "sourceSHA256": "dc066b9fa5d1dd5fb7229f8451429bfe435a280b195170aa3a0aca0d92b22d9b",
+  "typecheck": "passed",
+  "logicTests": {
+    "tests": 268,
+    "passed": 268,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "preview": "http://127.0.0.1:4190/",
+  "oceanPreview": "http://127.0.0.1:4190/level02.html",
+  "anchor": {
+    "id": "L1-V084-20261110",
+    "manifest": "reports/anchors/L1-V084-20261110/manifest.json",
+    "archivesVerified": 4,
+    "unchangedRuntimeFiles": 623,
+    "changed": [
+      "assets/scripts/GameManager.ts",
+      "assets/scripts/ocean/OceanSession.ts",
+      "assets/scripts/platform/AudioBridge.ts",
+      "assets/scripts/platform/PlatformBridge.ts",
+      "assets/scripts/ui/HUDController.ts"
+    ],
+    "additions": [
+      "assets/scripts/ui/ActionFeedback.ts",
+      "assets/scripts/ui/ActionFeedback.ts.meta",
+      "assets/scripts/ui/StatusBarCache.ts",
+      "assets/scripts/ui/StatusBarCache.ts.meta"
+    ],
+    "preserved": "Land level, physics, combat tuning, enemies, supplies, camera and all runtime art unchanged byte-for-byte"
+  },
+  "changes": [
+    "Actual knife and water-weapon cooldown feedback, including automatic ammo fallback",
+    "Boss health geometry cached by encounter, health and layout; warning labels remain live",
+    "Fatal water-hit sound, explicit audio restart and deferred-load disposal"
+  ],
+  "skillsReviewed": [
+    "game-ui-ux",
+    "performance-optimization",
+    "game-feel",
+    "audio-design",
+    "input-systems",
+    "camera-systems",
+    "level-design"
+  ],
+  "browser": {
+    "controls": "reports/v085-controls.json",
+    "capsule": "reports/v085-menu.json",
+    "applicationErrors": 0,
+    "failedRequests": 0,
+    "browserDiagnostics": [
+      {
+        "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+        "location": {
+          "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+          "line": 40431,
+          "column": 0,
+          "lineNumber": 40431,
+          "columnNumber": 0
+        }
+      },
+      {
+        "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.",
+        "location": {
+          "url": "http://127.0.0.1:4190/cocos-js/cc.js",
+          "line": 40431,
+          "column": 0,
+          "lineNumber": 40431,
+          "columnNumber": 0
+        }
+      }
+    ],
+    "campaigns": [
+      {
+        "chapter": 1,
+        "report": "reports/v085-chapter1-route.json",
+        "time": 91.84166666668582,
+        "health": 2,
+        "state": "complete",
+        "cooldownChecks": 0
+      },
+      {
+        "chapter": 2,
+        "report": "reports/v085-chapter2-route.json",
+        "time": 85.55000000001415,
+        "health": 3,
+        "state": "complete",
+        "cooldownChecks": 1596
+      }
+    ]
+  },
+  "workMeasurement": {
+    "scope": "Cocos HUD geometry regeneration in Chrome, same viewport and input strategy, ordinary complete routes with fixed clock; not CPU/GPU time or device FPS",
+    "baselineReport": "reports/v084-anchor-chapter2-route.json",
+    "baselineBuilds": 2727,
+    "afterBuilds": 81,
+    "afterVisibleUpdates": 1393,
+    "avoidedWithinNewRun": 1312
+  },
+  "web": {
+    "entryTime": 1794297053989.7751,
+    "sha256": "78774e7d698ad804f56abf3fc45e3d387f7ba7664d1476b6464ab2dc011e10f4",
+    "bytes": 17950714,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794297154261.3818,
+    "sha256": "ecd21793748e02b171cd1074a5110bc99ee9be1264ea4ab131093b8248668f46",
+    "bytes": 14833741,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 550812
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 6784682
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 3141029
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "art": {
+    "changed": false,
+    "atlas": "assets/landart/controls.png",
+    "atlasSHA256": "8dc1ec226deec5f7fa30f7827835721aace5db513a1075094dbf81e27857699f"
+  },
+  "skill": "reports/v085-skill-verification.json",
+  "screenshots": [
+    {
+      "file": "reports/v085-controls-land-idle.png",
+      "sha256": "75df85e8ee57b63b8b3c59dc3cebb0d3871adce14d15e4c078dbbf6ea8c14def"
+    },
+    {
+      "file": "reports/v085-controls-land-pressed.png",
+      "sha256": "c3fa6e7e3cb1aee5e1293588a3ea16ab3da5576974a3bc6e1f08e4f991c37745"
+    },
+    {
+      "file": "reports/v085-controls-knife.png",
+      "sha256": "a114325215ea3ef429e433702c504fd1312c44cf23a02444035fd4e4272379d9"
+    },
+    {
+      "file": "reports/v085-controls-knife-recovery.png",
+      "sha256": "50e331289dbc17256f8dc31f5e60e83c361b12e4478099b7e3255a31da397355"
+    },
+    {
+      "file": "reports/v085-controls-double-ready.png",
+      "sha256": "ebae2a2210fa35d92ac216a9b237cc9121b909ac43b4f9c8c733937622556a9f"
+    },
+    {
+      "file": "reports/v085-controls-double-spent.png",
+      "sha256": "bbf31a0d4f4e92ba3ccb0b624e5600d14a704a9cf8558e187fdf98f4ce462b03"
+    },
+    {
+      "file": "reports/v085-controls-slide-ready.png",
+      "sha256": "f55f41a72c98ed5d4dee513fddaba494cbf3a2224b99076757f9f3f52d2fe6c2"
+    },
+    {
+      "file": "reports/v085-controls-slide-pressed.png",
+      "sha256": "b87e5746bf35c2f54c63ef616edc229cb36a80569a60e435776addced4d25978"
+    },
+    {
+      "file": "reports/v085-controls-grenade-2.png",
+      "sha256": "e18da6b592625ee1cf1d2539f16dbd91b559a9ae740765005ed512bff079dd05"
+    },
+    {
+      "file": "reports/v085-controls-grenade-1.png",
+      "sha256": "c63fa4cb36655000ed0afc1dc0a9557ccc364b545737e3ca5cc75b4c476d4342"
+    },
+    {
+      "file": "reports/v085-controls-grenade-0.png",
+      "sha256": "1545aa9f616b9e0a41bfbd80ee0ee07607910990160e7a489c08e2e1fd8f7688"
+    },
+    {
+      "file": "reports/v085-controls-pause-panel.png",
+      "sha256": "74ec8edd73e15b32e438df6f22678bd03fac0e60b66983d5709f55a64e31bf9b"
+    },
+    {
+      "file": "reports/v085-controls-shore.png",
+      "sha256": "1b388cae78b68f805217de666e446528ebb2eedd86cad2bbb8762992214bb41f"
+    },
+    {
+      "file": "reports/v085-controls-ocean-idle.png",
+      "sha256": "7e3461b55b8fa0bf3cca546f45d1cd36540a0a7fe9582e1a15c7a8eeab04aafb"
+    },
+    {
+      "file": "reports/v085-controls-ocean-multitouch.png",
+      "sha256": "66e631c123df6119b72aaf7339cb21ce1c494fae3d65a9a9e0b973160bf88047"
+    },
+    {
+      "file": "reports/v085-controls-ocean-boost-cooldown.png",
+      "sha256": "5d16af5941f1e87c5bd7ec448d15b3504b51f32b256288c8f13a2d876e41cf79"
+    },
+    {
+      "file": "reports/v085-controls-ocean-recovered.png",
+      "sha256": "118276b5385cc3ebea87ceffad7c39f92f71e99a7f8462ecfc16f2f15f9cb23f"
+    },
+    {
+      "file": "reports/v085-menu-fallback.png",
+      "sha256": "0485b9c1d6c97ab4091bf48ddd787d3f32af863e23244ef24e2add897754d6b7"
+    },
+    {
+      "file": "reports/v085-menu-mobile.png",
+      "sha256": "befaab6b90aae439f1aca109ec8e284287660cf3386d9eab63a45ae6917e958c"
+    },
+    {
+      "file": "reports/v085-menu-updated.png",
+      "sha256": "a65bd497180c6854feb4e953f1e7b032775d3926adafd719a069abe9f47e845e"
+    },
+    {
+      "file": "reports/v085-menu-compact.png",
+      "sha256": "bb06ea042b2eaf8cd2b26156c7b06e6db3572028edb60d2420b4a3b9b7a9371a"
+    },
+    {
+      "file": "reports/v085-menu-ocean.png",
+      "sha256": "2f5b4d9e9987e602cbf450309d96bae5ec8525cc7dd33db8badf3d8e8c3fdcdd"
+    },
+    {
+      "file": "reports/v085-chapter1-start.png",
+      "sha256": "69192e51d6daf40aaa96ba1535ed9b6cae9936365ccfb0fc744f97494344fc30"
+    },
+    {
+      "file": "reports/v085-chapter1-mini.png",
+      "sha256": "705ad3c1cf858d8e24504ba864408bb5289a6ebaa948d5c023a9995d2d26940e"
+    },
+    {
+      "file": "reports/v085-chapter1-boss.png",
+      "sha256": "7c7b4ee1922c864eaf7758c3fc903b9f30e652c9b132d94e6e06f3c3bfbe58a8"
+    },
+    {
+      "file": "reports/v085-chapter1-cheer.png",
+      "sha256": "87a532d5029caa62e17c5071c71afb23898d0fbef0c77189eec9b43d64a5d710"
+    },
+    {
+      "file": "reports/v085-chapter1-complete.png",
+      "sha256": "70dff3381da65bbc2bbd900115718ed5ac89fcad3b5b92c4ff9b4ffaf23c3291"
+    },
+    {
+      "file": "reports/v085-chapter2-start.png",
+      "sha256": "5467eb938612b6b6067a562f5f5a52b0b30740d19af2abb6356141a153599288"
+    },
+    {
+      "file": "reports/v085-chapter2-mini.png",
+      "sha256": "0eb474686f80ef40f6cba8fbd8b022aeec2800a15c08dbde90594e04400a4c37"
+    },
+    {
+      "file": "reports/v085-chapter2-boss.png",
+      "sha256": "54863485dda0d4eca8b10980438af57c1de1c5cdf2474bfd7a22620ecf164a2e"
+    },
+    {
+      "file": "reports/v085-chapter2-cheer.png",
+      "sha256": "14e33cdbaea55615872c88e9c0d781437ec073f5ff01e839f1d14495be84323b"
+    },
+    {
+      "file": "reports/v085-chapter2-complete.png",
+      "sha256": "75386cf1f135caff1402026c0a563c23036063d4601dd564de26e7c383c1f4cb"
+    }
+  ],
+  "limitations": [
+    "WeChat and iPhone hardware not run. Capsule simulated in Chrome. No upload/publication.",
+    "Synthetic non-cancelable touchCancel browser diagnostics retained; input clearing passed. No device FPS or listening-quality claim."
+  ]
+}

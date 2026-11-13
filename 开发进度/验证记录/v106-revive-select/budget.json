@@ -1,0 +1,36 @@
+{
+  "mainBytes": 3864129,
+  "totalBytes": 20924374,
+  "subpackages": [
+    {
+      "name": "internal",
+      "root": "subpackages/internal/",
+      "bytes": 168275
+    },
+    {
+      "name": "main",
+      "root": "subpackages/main/",
+      "bytes": 742034
+    },
+    {
+      "name": "landart",
+      "root": "subpackages/landart/",
+      "bytes": 10487797
+    },
+    {
+      "name": "level02",
+      "root": "subpackages/level02/",
+      "bytes": 4978245
+    },
+    {
+      "name": "level03",
+      "root": "subpackages/level03/",
+      "bytes": 683894
+    }
+  ],
+  "localBudget": {
+    "main": 4194304,
+    "total": 20971520
+  },
+  "basis": "Existing project limits; not a claim of current platform policy"
+}

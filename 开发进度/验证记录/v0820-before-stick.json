@@ -1,0 +1,78 @@
+{
+  "version": "0.8.19",
+  "method": "Model fixture: full radial deflection on flat ground, no enemies or damage.",
+  "results": [
+    {
+      "angle": 0,
+      "axis": 1,
+      "crouch": false,
+      "speed": 280
+    },
+    {
+      "angle": -35,
+      "axis": 1,
+      "crouch": false,
+      "speed": 280
+    },
+    {
+      "angle": -45,
+      "axis": 1.0000000000000002,
+      "crouch": false,
+      "speed": 280.00000000000006
+    },
+    {
+      "angle": -55,
+      "axis": 1,
+      "crouch": false,
+      "speed": 280
+    },
+    {
+      "angle": -58,
+      "axis": 1,
+      "crouch": false,
+      "speed": 280
+    },
+    {
+      "angle": -60,
+      "axis": 1,
+      "crouch": true,
+      "speed": 115
+    },
+    {
+      "angle": -62,
+      "axis": 0.9389431255717817,
+      "crouch": true,
+      "speed": 107.9784594407549
+    },
+    {
+      "angle": -65,
+      "axis": 0.8452365234813989,
+      "crouch": true,
+      "speed": 97.20220020036088
+    },
+    {
+      "angle": -70,
+      "axis": 0.6840402866513376,
+      "crouch": true,
+      "speed": 78.66463296490383
+    },
+    {
+      "angle": -75,
+      "axis": 0.5176380902050415,
+      "crouch": true,
+      "speed": 59.52838037357977
+    },
+    {
+      "angle": -85,
+      "axis": 0.17431148549531628,
+      "crouch": true,
+      "speed": 20.04582083196137
+    },
+    {
+      "angle": -90,
+      "axis": 1.2246467991473532e-16,
+      "crouch": true,
+      "speed": 1.4083438190194563e-14
+    }
+  ]
+}

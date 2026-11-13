@@ -1,0 +1,44 @@
+{
+  "tool": "built-in imagegen",
+  "prompts": {
+    "land": "Create one production 2D side-view game prop atlas, 2 columns by 3 rows, with six isolated COMPLETE assets, generous transparent gutters. STRICT STYLE REFERENCE is the attached small soldier: friendly round black marker outlines, flat white/off-white interiors, a very small amount of pale gray shadow, big simple shapes and generous quiet areas. The terrain is in the SAME cartoon world as this soldier. NOT realistic engraving, NO stippling, NO dense hatching, NO photographic texture, NO thin scratchy detail. Outer contour should be heavy, inner lines medium, about 4:2 at final game scale. Exactly these six separate assets in reading order: (1) a low cluster of three rounded rocks, (2) three modest grass tufts together, (3) a horizontal industrial steel catwalk with a simple waist rail, stout rectangular beam, two triangular support braces, few bold rivets, (4) a small warehouse and round storage tank with a short simple crane, full intact building silhouette, (5) a grassy coastal cliff with a flat top plateau extending from left to right, clear right precipice, four broad rock faces with a few clean cracks, no countless strata or dangling vines, (6) a low broken concrete block with two bent rebar bars. Use original simple monochrome comic style of reference, visually polished, clean intentional line work, structurally believable. Orthographic gameplay elevation, very little perspective, no text, no cell outlines, no ground shadows, no extra soldiers. All six silhouettes entirely inside their cells, no overlap, opaque white materials and truly transparent background. 1536x1536 sheet.",
+    "sea": "Redraw the attached underwater environment atlas to match the attached SOLDIER reference in line-weight and simplicity, keeping the six types of complete objects and their recognizable layout: exactly 2 columns x3 rows, seabed strip, terraced coral reef, overhanging ceiling rock, broken ship deck, vertical ship bulkhead, valve and pipe pumping station. Friendly rounded black marker contours, simple flat white and very pale blue-gray planes, bold structural silhouettes and a restrained number of internal details. About 4:2 outer/inner line thickness at final game scale. Remove ALL speckle shading, dense hatching, gritty weathering, tiny repeated coral details and thin scratches. Keep the scene charming and finished through a few well-drawn coral fans, rounded stones, large rivets and strong readable supports. Avoid empty rectangles or pasted tiny icons. A solid object must remain a coherent complete object. Seabed: gently wavy horizontal surface over 5-7 chunky rounded rocks, only 3 small coral/seaweed clusters. Reef: broad connected rounded terraces. Ceiling: solid rock body narrowing into downward tips. Deck: strong straight flat top, structural rectangular beam with a few large plate joints/rivets, two broken braces and a hanging chain below. Bulkhead: solid ship-wall mass with one door and porthole, a few large structural ribs. Pump station: connected base with 2-3 readable pipes and a large wheel valve. Each fully contained in its own cell with generous transparent gutters. True transparent background, opaque white/blue-gray materials. No labels, text, grid, characters, vignette, drop shadows or background. Monochrome comic game art, blue-gray only as a very subtle flat secondary fill. Same family as soldier, not realistic illustration. 1536x1152.",
+    "water": "Edit this existing underwater panorama. Preserve its panoramic composition and sparse distant rock formations, wrecks and open swimming area. Replace ALL warm beige, cream, peach, brown and yellow tint with a coherent cool PALE BLUE-GRAY underwater palette. Main open water should look like #D9EAF0 in the shallows, gradually #C5DEE8 lower down, no saturated turquoise. Background rock and wreck outlines muted desaturated blue-gray, a few soft light rays. The aesthetic is a simple black-outline cartoon game, so scenery remains quiet and clean, less painterly texture, no gritty stippling. Keep the distant scenery light and low contrast so black-and-white soldiers stand out. No characters, UI, text, new large objects, grid or border. Opaque full-bleed wide image. This is water, it must never look like yellow paper. Keep the scene peaceful but clearly underwater."
+  },
+  "styleReference": "../素材/游戏美术/slices/v053/player.idle.0.png",
+  "landRef": "../素材/游戏美术/slices/v074/land.coast.png",
+  "seaRef": "../素材/游戏美术/source/v073/terrain.png",
+  "waterRef": "../素材/游戏美术/slices/level02/background.undersea.png",
+  "lineWeightRefinement": {
+    "originalCandidates": [
+      "../素材/游戏美术/source/v075/land.png",
+      "../素材/游戏美术/source/v075/sea.png"
+    ],
+    "selected": [
+      "../素材/游戏美术/source/v075/land-lines.png",
+      "../素材/游戏美术/source/v075/sea-lines.png"
+    ],
+    "use": "Sea modules selected. Initial land candidate and native geometry pass were rejected by user; final hand-drawn land resources are recorded in finalLandPass.",
+    "exactPrompt": "../素材/游戏美术/source/v075/line-refinement-prompt.txt",
+    "summary": "Precision line-weight correction only. Preserve layout and shapes. Outer lines approximately 4-5 source pixels and interior 2-3 pixels, about one third the initial candidate. At runtime about 0.6 scale beside 2-3 world-unit hero outlines. Keep true transparent background, opaque pale fills, no new detail."
+  },
+  "runtimeEncoding": "192-color palette quantization; water downsampled to 1254x706; lossy runtime copies, generated originals retained",
+  "finalLandPass": {
+    "prompts": "../素材/游戏美术/source/v075/handdrawn-prompts.json",
+    "fillRepairPrompt": "../素材/游戏美术/source/v075/fill-repeat-prompt.txt",
+    "manifest": "../素材/游戏美术/v075-drawn-manifest.json",
+    "selected": [
+      "../素材/游戏美术/source/v075/drawn-terrain.png",
+      "../素材/游戏美术/source/v075/drawn-fill-repeat.png"
+    ],
+    "rejectedFillCandidate": "../素材/游戏美术/source/v075/drawn-fill.png",
+    "reason": "Restore actual hand-drawn terrain and catwalks matching accepted second chapter; avoid blank geometric scene and mirrored material motifs.",
+    "simpleCatwalk": {
+      "source": "../素材/游戏美术/slices/v075/ink.steel.png",
+      "atlas": "assets/landart/ink.png",
+      "frame": "ink.steel",
+      "use": "One 512x263 drawing partitioned into intact rail/beam, two posts/braces, and feet. Only posts extend to the main road. No repeated supports. Rail, beam and feet keep uniform scale; physical thickness follows walk 89 / bottom 148. Mechanisms use the rail/beam with their actual guides/ropes."
+    },
+    "layout": "Flat main road at 150; optional decks at 320. Remove the unused stacked lookout. Real collision, actors, caches, ropes and lift targets move together."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "version": "0.8.10",
+  "checkedAt": "2026-11-11T01:16:58.531Z",
+  "sourceSHA256": "ed6fa53dbed1cc88863736d6f19dfdb3d911a22900cd307ae81822b4f62feff1",
+  "typecheck": "passed",
+  "logic": {
+    "tests": 301,
+    "passed": 301,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "report": "reports/v0810-pursuit-browser.json",
+    "scope": "Normal keyboard route followed by deliberate platform ascent and descent to observe pursuit; read-only snapshots, no health/position edits. This is a navigation demonstration, not continuous-fire combat evidence.",
+    "viewport": {
+      "width": 844,
+      "height": 390,
+      "dpr": 2
+    },
+    "health": 3,
+    "landed": true,
+    "descended": true,
+    "bossJumpCount": 1,
+    "bossFinalX": 5087.776305997026,
+    "ordinaryJumpers": 9,
+    "applicationErrors": 0,
+    "failedRequests": 0
+  },
+  "web": {
+    "entryTime": 1794359563446.836,
+    "sha256": "797584143cab422cd54d51226e52ec7c8780e72a43b08339d67fc3c3ec7c0f14",
+    "bytes": 22676380,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794359674053.331,
+    "sha256": "3169f7b3db1ef163b1ab5f03aea35c6df418ed469a5f05bbfda667b309907558",
+    "bytes": 19520832,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 584519
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10238512
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V0810-20261111",
+    "preservedFiles": [
+      "assets/scripts/player/PlayerController.ts",
+      "assets/scripts/combat/WeaponSystem.ts",
+      "assets/scripts/combat/ProjectileManager.ts",
+      "assets/scripts/combat/MeleeSystem.ts",
+      "assets/scripts/level/LevelController.ts",
+      "assets/scripts/level/LevelData.ts",
+      "assets/scripts/enemy/ColossusBoss.ts"
+    ]
+  },
+  "art": {
+    "unchangedFrom": "reports/v088-art.json",
+    "atlases": [
+      {
+        "path": "assets/landart/boss-v088.png",
+        "sha256": "3d24c20a114d85ace00339b19736aa9b994d0f41c937042689dc304b1d3343a9",
+        "bytes": 2657748
+      },
+      {
+        "path": "assets/landart/terrain-v088.png",
+        "sha256": "5138009c157bb07373907932dc1fcb25dd09c24a53db1f83c09f42f2b84e2c77",
+        "bytes": 795620
+      }
+    ]
+  },
+  "skill": {
+    "report": "reports/v0810-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v0810-pursuit-enemy-melee.png",
+      "sha256": "a39e8f3196d3978fe8d0037e04990aa0f29d8c46a3c46ca6678e267de3278b87"
+    },
+    {
+      "file": "reports/v0810-pursuit-enemy-ranged.png",
+      "sha256": "c20cb7e891c312a5a767719958695a29f160abc8bbdff99f783c73cc1e14e1f7"
+    },
+    {
+      "file": "reports/v0810-pursuit-enemy-shield.png",
+      "sha256": "34b2d7c6b3541db178e3448775c36823bbac0b6e0312dc433c497ab32e9773d1"
+    },
+    {
+      "file": "reports/v0810-pursuit-enemy-turret.png",
+      "sha256": "019aa2f25feb998c4c1f7da787cefba0b74b78201a397bda53bcb75bb6430189"
+    },
+    {
+      "file": "reports/v0810-pursuit-boss-anticipation.png",
+      "sha256": "70237c1d0c99e76a95b004812575d17c5f053263a4bcfb9ad394954f998e6fa1"
+    },
+    {
+      "file": "reports/v0810-pursuit-boss-rising.png",
+      "sha256": "7dfd0a18743348aeb418422f12c5f6fdc7ae47305302cf1f8895feb41133cb0d"
+    },
+    {
+      "file": "reports/v0810-pursuit-boss-falling.png",
+      "sha256": "694b91573232e77b9b3bba9d466f65807f23e3fc904d122c6c51cee2aae417ca"
+    },
+    {
+      "file": "reports/v0810-pursuit-boss-landed.png",
+      "sha256": "07e66ee4bc707c1e3c42425dd3e0303946ec4b56c8447d3938047c11561fe298"
+    },
+    {
+      "file": "reports/v0810-pursuit-boss-followed-down.png",
+      "sha256": "ecb7cead642e9a8bde3e4764468644fba96d1a20c5bd2059bca450ccb18d406d"
+    },
+    {
+      "file": "reports/v0810-pursuit-result.png",
+      "sha256": "ecb7cead642e9a8bde3e4764468644fba96d1a20c5bd2059bca450ccb18d406d"
+    }
+  ],
+  "limitations": [
+    "Browser uses a controlled clock and deliberate pursuit demonstration; no full browser campaign or continuous-fire claim this iteration",
+    "Input-only complete campaign and return-from-arena cases passed in model tests",
+    "WeChat real-device validation not performed; no upload"
+  ]
+}

@@ -1,0 +1,7 @@
+# V079 沙袋残片
+
+生成方式：内置 imagegen，透明背景。原图 `sandbag-debris.png`；生成后按四个象限的透明边界裁剪，4 倍预乘 alpha 平均降采样与留边打包，不进行轮廓重绘。接入脚本 `源码/scripts/pack-v079-sandbags.mjs`，帧表与 SHA 见 `素材/游戏美术/v079-sandbag-manifest.json`。
+
+提示词：
+
+Use case: illustration-story. Asset type: a small transparent game sprite sheet for a black-and-white hand-drawn side-scrolling soldier game. Create FOUR separate torn sandbag debris sprites in a clean 2 by 2 grid, with generous transparent space around EACH. Each sprite is one horizontal soft canvas sandbag with an irregular closed silhouette, side view, roughly 2.5 times wider than tall. Top left: plump bag with a short jagged split on its upper right and a few grains inside split. Top right: bag with split left tied end and one small attached cloth flap. Bottom left: slightly slouched bag with a torn zigzag seam across front. Bottom right: a crumpled empty sack still with substantial volume, ragged tied end. Thick confident rounded BLACK outer ink contour, white opaque fabric interiors, one small flat light-gray patch under each bag, just two or three simple crease strokes. Consistent stroke thickness, very low detail, like a cute bold cartoon soldier drawn with a marker. No stippling, no hatching, no fabric texture, no fine seams, no perspective ground plane, no shadow beneath sprites, no text, no UI, no scenery, no boxes, no disconnected clouds or sand piles. All four complete shapes must be well separated and uncut; actual transparent background. Sprite sheet square.

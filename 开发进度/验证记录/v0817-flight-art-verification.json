@@ -1,0 +1,166 @@
+{
+  "checkedAt": "2026-11-11T10:21:44.874Z",
+  "runtime": "assets/level03/flight-atlas.png",
+  "bytes": 682668,
+  "sha256": "df3befbf9971e1fbf435f55ee7548ff613ace7e6dc3a761a9b216bd60babcf2d",
+  "atlasSize": [
+    1024,
+    1152
+  ],
+  "alpha": {
+    "transparent": 872352,
+    "partial": 307258,
+    "opaque": 38
+  },
+  "frames": [
+    {
+      "id": "hero.rifle.hover.0",
+      "valid": true,
+      "visiblePixels": 10617
+    },
+    {
+      "id": "hero.rifle.hover.1",
+      "valid": true,
+      "visiblePixels": 10737
+    },
+    {
+      "id": "hero.rifle.fly",
+      "valid": true,
+      "visiblePixels": 10607
+    },
+    {
+      "id": "hero.hit",
+      "valid": true,
+      "visiblePixels": 11645
+    },
+    {
+      "id": "hero.rocket.hover",
+      "valid": true,
+      "visiblePixels": 11182
+    },
+    {
+      "id": "hero.rocket.fly",
+      "valid": true,
+      "visiblePixels": 11142
+    },
+    {
+      "id": "hero.knife.hover",
+      "valid": true,
+      "visiblePixels": 9963
+    },
+    {
+      "id": "hero.knife.slash",
+      "valid": true,
+      "visiblePixels": 11594
+    },
+    {
+      "id": "enemy.rifle.hover",
+      "valid": true,
+      "visiblePixels": 10986
+    },
+    {
+      "id": "enemy.rifle.fly",
+      "valid": true,
+      "visiblePixels": 10818
+    },
+    {
+      "id": "enemy.drone.0",
+      "valid": true,
+      "visiblePixels": 7798
+    },
+    {
+      "id": "enemy.drone.1",
+      "valid": true,
+      "visiblePixels": 7633
+    },
+    {
+      "id": "boss.falcon.0",
+      "valid": true,
+      "visiblePixels": 29781
+    },
+    {
+      "id": "boss.falcon.1",
+      "valid": true,
+      "visiblePixels": 29451
+    },
+    {
+      "id": "boss.falcon.2",
+      "valid": true,
+      "visiblePixels": 30097
+    },
+    {
+      "id": "boss.falcon.3",
+      "valid": true,
+      "visiblePixels": 30857
+    },
+    {
+      "id": "scenery.deck",
+      "valid": true,
+      "visiblePixels": 7739
+    },
+    {
+      "id": "scenery.roof",
+      "valid": true,
+      "visiblePixels": 18060
+    },
+    {
+      "id": "scenery.bridge",
+      "valid": true,
+      "visiblePixels": 6182
+    },
+    {
+      "id": "scenery.city",
+      "valid": true,
+      "visiblePixels": 11095
+    },
+    {
+      "id": "scenery.airship",
+      "valid": true,
+      "visiblePixels": 13625
+    },
+    {
+      "id": "supply.parachute",
+      "valid": true,
+      "visiblePixels": 5687
+    }
+  ],
+  "frameCount": 22,
+  "budget": {
+    "targetBytes": 716800,
+    "passed": true
+  },
+  "sourcePrompts": [
+    "art/level03-generation.json",
+    "art/level03-environment-generation.json",
+    "art/level03-environment-refinement.json"
+  ],
+  "method": "Cropped complete generated frames, uniform premultiplied bilinear downsampling, preserved alpha, no procedural pose replacement. Runtime scale is not lossless; original art retained.",
+  "refinement": {
+    "triggerScreenshots": [
+      "reports/v0817-flight-entry.png",
+      "reports/v0817-flight-mini-tell-burst.png"
+    ],
+    "scope": "Environment outlines and distant skyline layout only",
+    "unchangedActorAndBossFrames": 16,
+    "comparison": "Exact decoded RGBA equality against first web build for all sixteen actor and boss frame rectangles",
+    "nearCity": {
+      "scale": 0.72,
+      "alpha": 64
+    },
+    "farCity": {
+      "scale": 0.5,
+      "alpha": 45
+    },
+    "airship": {
+      "scale": 0.35,
+      "alpha": 55
+    },
+    "sourceForegroundStroke": "Measured deck cross-section 2 dark-gray source pixels, previously approximately 9 black source pixels",
+    "finalRuntimeScreenshot": [
+      "reports/v0817-flight-entry.png",
+      "reports/v0817-flight-patterns-mini-tell-dive.png",
+      "reports/v0817-flight-patterns-mini-charge-dive.png"
+    ]
+  },
+  "visualReview": "Final rebuilt screenshots viewed on 2026-11-12: environment lines are thinner and skyline smaller; entry, full helicopter warning silhouette and extraction shown. Flight uses fixed max zoom 1.15; before new attacks the complete silhouette fits below the header. Fast vertical evasion during an already locked warning can still put the rotor tip behind the top HUD briefly; the cabin remains visible and the committed world socket is preserved. This is a remaining presentation refinement, not verified as completely eliminated."
+}

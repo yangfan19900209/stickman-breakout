@@ -1,0 +1,1650 @@
+{
+  "startedAt": "2026-11-07T01:26:53.573Z",
+  "checkpoints": [
+    {
+      "zone": "浅海训练",
+      "time": 9.575000000000097,
+      "hp": 5,
+      "x": 843.989886288178
+    },
+    {
+      "zone": "水草暗礁",
+      "time": 16.091666666666395,
+      "hp": 4,
+      "x": 2408.690404707729
+    },
+    {
+      "zone": "沉船前哨",
+      "time": 23.783333333332624,
+      "hp": 4,
+      "x": 4310.2589710201355
+    },
+    {
+      "zone": "深水断层",
+      "time": 33.624999999998735,
+      "hp": 5,
+      "x": 6207.173203627809
+    },
+    {
+      "zone": "潜艇防线",
+      "time": 44.491666666664784,
+      "hp": 5,
+      "x": 8503.97063701288
+    },
+    {
+      "zone": "战前整备",
+      "time": 54.53333333333088,
+      "hp": 5,
+      "x": 10801.568117986213
+    },
+    {
+      "zone": "巨型潜艇",
+      "time": 55.974999999997465,
+      "hp": 5,
+      "x": 11230.333333333334
+    }
+  ],
+  "final": {
+    "chapter": 2,
+    "state": "complete",
+    "time": 74.64166666667214,
+    "clearTime": 74.64166666667214,
+    "stage": "swimming",
+    "introTime": 5.7,
+    "player": {
+      "x": 11383.425763642892,
+      "y": 645,
+      "vx": 0,
+      "vy": 0,
+      "health": 3,
+      "facing": 1,
+      "alive": true
+    },
+    "cameraX": 11227.599357156672,
+    "cameraY": 446.95487073627163,
+    "weapon": "sonar",
+    "ammo": 0,
+    "aim": 0.15534449059782302,
+    "muzzle": {
+      "x": 11414.644765464607,
+      "y": 693.7091748167513
+    },
+    "lastShotWeapon": "sonar",
+    "lastShotMuzzle": {
+      "x": 11414.757283425506,
+      "y": 336.6433562237499,
+      "angle": 0.14467156624053756
+    },
+    "aimTarget": "submarine",
+    "shots": 279,
+    "hits": 171,
+    "kills": 22,
+    "grenades": 5,
+    "depthThrown": 0,
+    "boostCooldown": 0,
+    "knifeSerial": 0,
+    "protectedPress": false,
+    "zone": "巨型潜艇",
+    "levelWidth": 12400,
+    "boss": {
+      "x": 11860,
+      "y": 357.9462581137575,
+      "hp": 0,
+      "maxHp": 180,
+      "active": true,
+      "phase": 3,
+      "attack": "laser",
+      "mode": "dead",
+      "timer": 0.7500000000000013,
+      "angle": -3.0817911425003817,
+      "serial": 5,
+      "laserHp": 30,
+      "torpedoHp": 32,
+      "cannonHp": 32,
+      "angleStart": 2.441592653589793,
+      "angleEnd": 3.061592653589793,
+      "ringRadius": 0,
+      "ringGap": 2.9581382262280234,
+      "ringHit": false,
+      "beamActive": false,
+      "hit": 0.12,
+      "attackCounts": {
+        "cannon": 1,
+        "sweep": 1,
+        "fan": 1,
+        "ring": 1
+      }
+    },
+    "miniBoss": {
+      "id": "sea-10",
+      "kind": "captain",
+      "x": 5860,
+      "y": 360,
+      "homeY": 360,
+      "vx": 0,
+      "vy": 0,
+      "hp": 0,
+      "maxHp": 40,
+      "active": true,
+      "mode": "dead",
+      "timer": 0.8333333333333353,
+      "angle": 3.0925416177699927,
+      "serial": 1,
+      "hit": 0,
+      "deadTime": 43.72499999999816
+    },
+    "enemies": [
+      {
+        "id": "sea-0",
+        "kind": "diver",
+        "x": 1450,
+        "y": 367.25950280405664,
+        "homeY": 350,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.10833333333333295,
+        "angle": -3.137717040185097,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 63.874999999997016
+      },
+      {
+        "id": "sea-1",
+        "kind": "fish",
+        "x": 2010,
+        "y": 300,
+        "homeY": 300,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.7866666666666673,
+        "angle": 3.125730744464779,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 61.38333333333049
+      },
+      {
+        "id": "sea-2",
+        "kind": "diver",
+        "x": 2550,
+        "y": 391.2308587757158,
+        "homeY": 400,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.34833333333333544,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 59.64166666666392
+      },
+      {
+        "id": "sea-3",
+        "kind": "kelp",
+        "x": 2900,
+        "y": 230,
+        "homeY": 230,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": -0.05666666666666379,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 57.55833333333071
+      },
+      {
+        "id": "sea-4",
+        "kind": "fish",
+        "x": 3220,
+        "y": 380,
+        "homeY": 380,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.7616666666666674,
+        "angle": 3.1017705967229823,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 56.66666666666409
+      },
+      {
+        "id": "sea-5",
+        "kind": "diver",
+        "x": 3480,
+        "y": 285.94900996149744,
+        "homeY": 280,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.41833333333333317,
+        "angle": 3.053396828482689,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 55.22499999999751
+      },
+      {
+        "id": "sea-6",
+        "kind": "kelp",
+        "x": 3880,
+        "y": 70,
+        "homeY": 70,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": -0.41833333333333195,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 53.13333333333096
+      },
+      {
+        "id": "sea-7",
+        "kind": "turret",
+        "x": 4630,
+        "y": 320,
+        "homeY": 320,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 10,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.46000000000000346,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 51.024999999997746
+      },
+      {
+        "id": "sea-8",
+        "kind": "diver",
+        "x": 5080,
+        "y": 394.26759404541417,
+        "homeY": 400,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.7850000000000015,
+        "angle": 3.1371769269761827,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 49.299999999997844
+      },
+      {
+        "id": "sea-9",
+        "kind": "fish",
+        "x": 5320,
+        "y": 350,
+        "homeY": 350,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.8950000000000002,
+        "angle": -3.1402827359298673,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 48.049999999997915
+      },
+      {
+        "id": "sea-10",
+        "kind": "captain",
+        "x": 5860,
+        "y": 360,
+        "homeY": 360,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 40,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.8333333333333353,
+        "angle": 3.0925416177699927,
+        "serial": 1,
+        "hit": 0,
+        "deadTime": 43.72499999999816
+      },
+      {
+        "id": "sea-11",
+        "kind": "fish",
+        "x": 6500,
+        "y": 420,
+        "homeY": 420,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.24333333333333615,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 41.18333333333164
+      },
+      {
+        "id": "sea-12",
+        "kind": "diver",
+        "x": 7160,
+        "y": 364.9023524774672,
+        "homeY": 365,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.5200000000000009,
+        "angle": 3.106611494529159,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 38.58333333333179
+      },
+      {
+        "id": "sea-13",
+        "kind": "kelp",
+        "x": 7470,
+        "y": 70,
+        "homeY": 70,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": -0.813333333333332,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 36.6083333333319
+      },
+      {
+        "id": "sea-14",
+        "kind": "fish",
+        "x": 7720,
+        "y": 380,
+        "homeY": 380,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.6316666666666683,
+        "angle": 3.091719679286017,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 35.73333333333195
+      },
+      {
+        "id": "sea-15",
+        "kind": "diver",
+        "x": 8240,
+        "y": 285.28711160207683,
+        "homeY": 300,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.9366666666666668,
+        "angle": 3.122748493903733,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 33.358333333332084
+      },
+      {
+        "id": "sea-16",
+        "kind": "turret",
+        "x": 8730,
+        "y": 220,
+        "homeY": 220,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 10,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.1333333333333338,
+        "angle": 2.9333093032224706,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 30.566666666665572
+      },
+      {
+        "id": "sea-17",
+        "kind": "mine",
+        "x": 9020,
+        "y": 330,
+        "homeY": 330,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 2,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.6450000000000011,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 31.049999999998878
+      },
+      {
+        "id": "sea-18",
+        "kind": "diver",
+        "x": 9470,
+        "y": 335.4771697227679,
+        "homeY": 320,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.09000000000000186,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 27.87499999999906
+      },
+      {
+        "id": "sea-19",
+        "kind": "mine",
+        "x": 9840,
+        "y": 400,
+        "homeY": 400,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 2,
+        "active": true,
+        "mode": "dead",
+        "timer": 1.0016666666666685,
+        "angle": 3.141592653589793,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 27.099999999999103
+      },
+      {
+        "id": "sea-20",
+        "kind": "turret",
+        "x": 10250,
+        "y": 250,
+        "homeY": 250,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 10,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.24999999999999947,
+        "angle": 2.9813546078791013,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 24.24166666666593
+      },
+      {
+        "id": "sea-21",
+        "kind": "diver",
+        "x": 10600,
+        "y": 436.35402213503994,
+        "homeY": 420,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 5,
+        "active": true,
+        "mode": "dead",
+        "timer": 0.518333333333334,
+        "angle": -3.132765331419533,
+        "serial": 0,
+        "hit": 0,
+        "deadTime": 22.349999999999373
+      }
+    ],
+    "objects": [
+      {
+        "x": 1180,
+        "y": 70,
+        "drop": "charge-sonar",
+        "id": "sea-crate-0",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 3270,
+        "y": 70,
+        "drop": "charge-sonar",
+        "id": "sea-crate-1",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 4800,
+        "y": 320,
+        "drop": "depth-charge",
+        "id": "sea-crate-2",
+        "hp": 0,
+        "vy": 0,
+        "deadTime": 50.39166666666445
+      },
+      {
+        "x": 6440,
+        "y": 70,
+        "drop": "torpedo",
+        "id": "sea-crate-3",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 9100,
+        "y": 70,
+        "drop": "charge-sonar",
+        "id": "sea-crate-4",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 10600,
+        "y": 70,
+        "drop": "torpedo",
+        "id": "sea-crate-5",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      },
+      {
+        "x": 11000,
+        "y": 70,
+        "drop": "depth-charge",
+        "id": "sea-crate-6",
+        "hp": 3,
+        "vy": 0,
+        "deadTime": 0
+      }
+    ],
+    "pickups": [],
+    "recoverySpawned": [
+      "captain-prep"
+    ],
+    "projectileStates": [],
+    "victory": {
+      "active": true,
+      "time": 6.58333333333345,
+      "phase": "settlement",
+      "focus": 1,
+      "cheerTime": 3.3333333333334503,
+      "resultProgress": 1,
+      "resultsReady": true,
+      "impactSerial": 5,
+      "haptic": "light",
+      "flash": 0
+    },
+    "bullets": 0,
+    "entryMode": "chapter02-preview",
+    "oceanArt": {
+      "loaded": true,
+      "error": "",
+      "playerFrame": "diver.cheer.0",
+      "playerSize": {
+        "width": 56.28,
+        "height": 85.67999999999999
+      },
+      "scenery": {
+        "fishSchools": 1,
+        "bubbles": 8,
+        "time": 81.2250000000056,
+        "terrain": "illustrated-solid"
+      }
+    },
+    "chapterLoading": false,
+    "playerShots": 279,
+    "audio": {
+      "loaded": 11,
+      "played": 298,
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "active": "ocean",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "diver.cheer.0"
+    },
+    "visibleChunks": 12,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 5,
+        "supported": true
+      }
+    },
+    "presentation": {
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 245,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": true,
+      "resultProgress": 1,
+      "resultReady": true
+    },
+    "display": {
+      "width": 1280,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 2.2999979109720745,
+      "worldVisibleWidth": 556.5222446045697,
+      "cameraY": 446.95487073627163,
+      "frameWidth": 1280,
+      "frameHeight": 720,
+      "orientationPaused": false
+    },
+    "controls": {
+      "shootHeld": false,
+      "hudHeight": 52,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "joystick": {
+          "x": 98,
+          "y": 94,
+          "r": 58,
+          "baseR": 78,
+          "knobR": 38,
+          "hit": 156,
+          "unit": 1
+        },
+        "jump": {
+          "x": 1072,
+          "y": 129.92000000000002,
+          "r": 38,
+          "hit": 88
+        },
+        "shoot": {
+          "x": 1194,
+          "y": 94,
+          "r": 61,
+          "hit": 136
+        },
+        "grenade": {
+          "x": 1200,
+          "y": 209,
+          "r": 33,
+          "hit": 78
+        },
+        "pause": {
+          "x": 1248,
+          "y": 690,
+          "hit": 48
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 330,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    }
+  },
+  "errors": [],
+  "failed": [],
+  "captures": [
+    "shore",
+    "walk-0",
+    "walk-1",
+    "walk-2",
+    "walk-3",
+    "walk-4",
+    "equip",
+    "equip-tank",
+    "dive",
+    "shallow",
+    "shallow-animated",
+    "zone-1",
+    "zone-2",
+    "reef",
+    "zone-3",
+    "wreck",
+    "zone-4",
+    "deep",
+    "zone-5",
+    "pipeline",
+    "zone-6",
+    "zone-7",
+    "boss-cannon",
+    "boss-sweep",
+    "boss-fan",
+    "boss-ring",
+    "boss-laser",
+    "collapse",
+    "cheer",
+    "result"
+  ],
+  "presentation": [
+    {
+      "name": "shore",
+      "time": 0.016666666666666666,
+      "stage": "shore",
+      "player": {
+        "x": 110,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.idle.0",
+        "playerSize": {
+          "width": 60.800000000000004,
+          "height": 83.84
+        },
+        "scenery": {
+          "fishSchools": 1,
+          "bubbles": 5,
+          "time": 0.016666666666666666,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "walk-0",
+      "time": 0.14166666666666666,
+      "stage": "shore",
+      "player": {
+        "x": 145.00000000000003,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.3",
+        "playerSize": {
+          "width": 60.160000000000004,
+          "height": 80
+        },
+        "scenery": {
+          "fishSchools": 1,
+          "bubbles": 5,
+          "time": 0.14166666666666666,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "walk-1",
+      "time": 0.26666666666666666,
+      "stage": "shore",
+      "player": {
+        "x": 180.00000000000017,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.6",
+        "playerSize": {
+          "width": 53.120000000000005,
+          "height": 79.36
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 0.26666666666666666,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "walk-2",
+      "time": 0.4000000000000004,
+      "stage": "shore",
+      "player": {
+        "x": 217.33333333333366,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.1",
+        "playerSize": {
+          "width": 58.24,
+          "height": 78.72
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 0.4000000000000004,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "walk-3",
+      "time": 0.5250000000000006,
+      "stage": "shore",
+      "player": {
+        "x": 252.3333333333338,
+        "y": 720,
+        "vx": 280.00000000000114,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.4",
+        "playerSize": {
+          "width": 64,
+          "height": 79.36
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 0.5250000000000006,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "walk-4",
+      "time": 0.6500000000000001,
+      "stage": "shore",
+      "player": {
+        "x": 287.33333333333354,
+        "y": 720,
+        "vx": 279.9999999999977,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "player.run.7",
+        "playerSize": {
+          "width": 55.68,
+          "height": 76.16
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 4,
+          "time": 0.6500000000000001,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "equip",
+      "time": 1.4083333333333308,
+      "stage": "equipping",
+      "player": {
+        "x": 450.66666666666555,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.equip.mask",
+        "playerSize": {
+          "width": 43.2,
+          "height": 79.4
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 4,
+          "time": 1.4083333333333308,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "equip-tank",
+      "time": 2.2999999999999945,
+      "stage": "equipping",
+      "player": {
+        "x": 450.66666666666555,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.equip.tank",
+        "playerSize": {
+          "width": 49.400000000000006,
+          "height": 80.4
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 5,
+          "time": 2.2999999999999945,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "dive",
+      "time": 4.7916666666666945,
+      "stage": "diving",
+      "player": {
+        "x": 582.3307291666655,
+        "y": 687.1280851504781,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.entry.diagonal",
+        "playerSize": {
+          "width": 112.5,
+          "height": 90.3
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 8,
+          "time": 4.7916666666666945,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "shallow",
+      "time": 8.30000000000017,
+      "stage": "swimming",
+      "player": {
+        "x": 840,
+        "y": 360,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.hover.0",
+        "playerSize": {
+          "width": 61.53,
+          "height": 85.47
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 25,
+          "time": 8.30000000000017,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "shallow-animated",
+      "time": 9.500000000000101,
+      "stage": "swimming",
+      "player": {
+        "x": 840,
+        "y": 360,
+        "vx": 0,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.hover.1",
+        "playerSize": {
+          "width": 64.05,
+          "height": 85.47
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 24,
+          "time": 9.500000000000101,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "zone-1",
+      "time": 9.575000000000097,
+      "stage": "swimming",
+      "player": {
+        "x": 843.989886288178,
+        "y": 360,
+        "vx": 126.33274189367266,
+        "vy": 0,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 24,
+          "time": 9.575000000000097,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "zone-2",
+      "time": 16.091666666666395,
+      "stage": "swimming",
+      "player": {
+        "x": 2408.690404707729,
+        "y": 348.12064135566555,
+        "vx": 279.99108184674213,
+        "vy": -0.02147889360347871,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 2,
+          "bubbles": 28,
+          "time": 16.091666666666395,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "reef",
+      "time": 17.574999999999644,
+      "stage": "swimming",
+      "player": {
+        "x": 2807.1366571512244,
+        "y": 388.88625318601237,
+        "vx": 277.487716897756,
+        "vy": 6.065187937158391,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 19,
+          "time": 17.574999999999644,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "zone-3",
+      "time": 23.783333333332624,
+      "stage": "swimming",
+      "player": {
+        "x": 4310.2589710201355,
+        "y": 344.82574036180574,
+        "vx": 247.2534733459363,
+        "vy": 79.0350601909835,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 24,
+          "time": 23.783333333332624,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "wreck",
+      "time": 24.32499999999926,
+      "stage": "swimming",
+      "player": {
+        "x": 4459.334831625528,
+        "y": 351.0787550756821,
+        "vx": 279.95076758839434,
+        "vy": 0.11882440711046562,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 25,
+          "time": 24.32499999999926,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "zone-4",
+      "time": 33.624999999998735,
+      "stage": "swimming",
+      "player": {
+        "x": 6207.173203627809,
+        "y": 417.4489972070461,
+        "vx": 212.84905272102787,
+        "vy": -161.52408496289272,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.torpedo.fire",
+        "playerSize": {
+          "width": 77.25,
+          "height": 80
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 21,
+          "time": 33.624999999998735,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "deep",
+      "time": 36.18333333333192,
+      "stage": "swimming",
+      "player": {
+        "x": 6805.765421377835,
+        "y": 446.22175056904746,
+        "vx": 198.038489584147,
+        "vy": -66.54976413417415,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 25,
+          "time": 36.18333333333192,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "zone-5",
+      "time": 44.491666666664784,
+      "stage": "swimming",
+      "player": {
+        "x": 8503.97063701288,
+        "y": 357.08921386551117,
+        "vx": 277.69567243526177,
+        "vy": 2.981380211920761e-8,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 19,
+          "time": 44.491666666664784,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "pipeline",
+      "time": 45.574999999998056,
+      "stage": "swimming",
+      "player": {
+        "x": 8807.121384830629,
+        "y": 357.0892138678733,
+        "vx": 279.99999479146067,
+        "vy": 6.738901366395854e-14,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 19,
+          "time": 45.574999999998056,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "zone-6",
+      "time": 54.53333333333088,
+      "stage": "swimming",
+      "player": {
+        "x": 10801.568117986213,
+        "y": 340.6641577354164,
+        "vx": 279.99997227388695,
+        "vy": -0.00006693464651812,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 24,
+          "time": 54.53333333333088,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "zone-7",
+      "time": 55.974999999997465,
+      "stage": "swimming",
+      "player": {
+        "x": 11230.333333333334,
+        "y": 340.6641524317765,
+        "vx": 279.9999999999992,
+        "vy": -2.052846314434349e-12,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 24,
+          "time": 55.974999999997465,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "boss-cannon",
+      "time": 57.48333333333071,
+      "stage": "swimming",
+      "player": {
+        "x": 11387.865725715936,
+        "y": 340.6641524317765,
+        "vx": 6.817902824273943e-7,
+        "vy": -1.014433131977377e-23,
+        "health": 5,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 35,
+          "time": 57.48333333333071,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "boss-sweep",
+      "time": 60.82499999999719,
+      "stage": "swimming",
+      "player": {
+        "x": 11376.45648145479,
+        "y": 349.99540947542175,
+        "vx": -9.948427379555544e-8,
+        "vy": 0.000011586576518861795,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 36,
+          "time": 60.82499999999719,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "boss-fan",
+      "time": 65.38333333333144,
+      "stage": "swimming",
+      "player": {
+        "x": 11376.45648144691,
+        "y": 188.97616290429332,
+        "vx": -3.2971647323341655e-45,
+        "vy": -1.3727785325203516e-32,
+        "health": 4,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 3,
+          "bubbles": 36,
+          "time": 65.38333333333144,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "boss-ring",
+      "time": 68.72500000000076,
+      "stage": "swimming",
+      "player": {
+        "x": 11383.425763275567,
+        "y": 350.7732772257467,
+        "vx": 0.000007994246377622214,
+        "vy": 0.000006517244835002756,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 35,
+          "time": 68.72500000000076,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "boss-laser",
+      "time": 74.28333333333852,
+      "stage": "swimming",
+      "player": {
+        "x": 11383.425763642892,
+        "y": 364.154183646923,
+        "vx": 7.16690004614105e-54,
+        "vy": 3.336220537407235,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.sonar.fire",
+        "playerSize": {
+          "width": 65.5,
+          "height": 85
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 35,
+          "time": 74.28333333333852,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "collapse",
+      "time": 74.64166666667214,
+      "stage": "swimming",
+      "player": {
+        "x": 11383.425763642892,
+        "y": 285.96668693702134,
+        "vx": 0,
+        "vy": 0,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.hover.1",
+        "playerSize": {
+          "width": 64.05,
+          "height": 85.47
+        },
+        "scenery": {
+          "fishSchools": 4,
+          "bubbles": 35,
+          "time": 74.68333333333881,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "cheer",
+      "time": 74.64166666667214,
+      "stage": "swimming",
+      "player": {
+        "x": 11383.425763642892,
+        "y": 528.6333536036911,
+        "vx": 0,
+        "vy": 0,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.cheer.1",
+        "playerSize": {
+          "width": 63.21,
+          "height": 83.58
+        },
+        "scenery": {
+          "fishSchools": 1,
+          "bubbles": 14,
+          "time": 78.37500000000546,
+          "terrain": "illustrated-solid"
+        }
+      }
+    },
+    {
+      "name": "result",
+      "time": 74.64166666667214,
+      "stage": "swimming",
+      "player": {
+        "x": 11383.425763642892,
+        "y": 645,
+        "vx": 0,
+        "vy": 0,
+        "health": 3,
+        "facing": 1,
+        "alive": true
+      },
+      "art": {
+        "loaded": true,
+        "error": "",
+        "playerFrame": "diver.cheer.0",
+        "playerSize": {
+          "width": 56.28,
+          "height": 85.67999999999999
+        },
+        "scenery": {
+          "fishSchools": 1,
+          "bubbles": 8,
+          "time": 81.2250000000056,
+          "terrain": "illustrated-solid"
+        }
+      }
+    }
+  ]
+}

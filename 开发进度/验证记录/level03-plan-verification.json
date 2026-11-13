@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-11-11T09:38:09.537Z",
+  "scope": "Chapter 3 design D0.1 only; no playable chapter 3 added",
+  "plan": "doc/LEVEL-03-DESIGN.md",
+  "runtimeVersion": "0.8.16",
+  "confirmedFlightMode": "Free flight: joystick up/down/left/right, attack and dodge",
+  "runtimeBaseline": {
+    "capturedAt": "2026-11-11T09:32:09.630Z",
+    "sha256": "08bcdfa35b2ddcd9f9df6b1aed86d542fc5b7f786c53fd740b677e3e843163f9"
+  },
+  "runtimeCheck": {
+    "fileCount": 280,
+    "scope": [
+      "assets/scripts",
+      "package.json",
+      "package-lock.json",
+      "web-shell",
+      "build-config"
+    ],
+    "sha256": "08bcdfa35b2ddcd9f9df6b1aed86d542fc5b7f786c53fd740b677e3e843163f9",
+    "unchanged": true
+  },
+  "links": {
+    "checked": 14,
+    "missing": []
+  },
+  "entryDocuments": [
+    "doc/README.md",
+    "doc/PROJECT.md",
+    "doc/DEVELOPMENT.md"
+  ],
+  "implementationStatus": "planned, not implemented",
+  "gameplayTestsRun": false,
+  "gameBuildRun": false,
+  "skillMaintenance": "No new verified reusable method; project and installed skill unchanged"
+}

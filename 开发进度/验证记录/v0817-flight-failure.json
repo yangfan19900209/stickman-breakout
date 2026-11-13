@@ -1,0 +1,1217 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted.'\n+ ]\n- []\n",
+  "startedAt": "2026-11-11T10:13:12.875Z",
+  "errors": [
+    "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted."
+  ],
+  "failed": [],
+  "checks": [
+    "neutral hover",
+    "horizontal reversal",
+    "vertical movement",
+    "pause and resume",
+    "three-finger diagonal attack/dodge and cancellation"
+  ],
+  "controlsFinal": {
+    "chapter": 3,
+    "buildStage": "P0/P1-flight-slice",
+    "state": "playing",
+    "time": 2.916666666666659,
+    "clearTime": 0,
+    "stage": "flying",
+    "introTime": 3.2,
+    "player": {
+      "x": 377.9593987519478,
+      "y": 561.5287700227876,
+      "vx": 0,
+      "vy": 0,
+      "health": 5,
+      "facing": -1,
+      "alive": true
+    },
+    "cameraX": 0,
+    "cameraY": 236.8936326022716,
+    "furthestX": 377.9593987519478,
+    "retreatLimit": 0,
+    "weapon": "rifle",
+    "storedWeapon": "rifle",
+    "ammo": 0,
+    "grenades": 3,
+    "aim": 3.141592653589793,
+    "aimTarget": "",
+    "muzzle": {
+      "x": 335.9593987519478,
+      "y": 605.5287700227876,
+      "angle": 3.141592653589793,
+      "originX": 377.9593987519478,
+      "originY": 605.5287700227876
+    },
+    "lastShotWeapon": "rifle",
+    "lastShotMuzzle": {
+      "x": 219.52835039486803,
+      "y": 489.09777022212313,
+      "angle": 3.141592653589793,
+      "originX": 261.528350394868,
+      "originY": 489.09777022212313
+    },
+    "shots": 2,
+    "hits": 0,
+    "kills": 0,
+    "collected": 0,
+    "airburstThrown": 0,
+    "knifeSerial": 0,
+    "dodgeCooldown": 1.2416666666666687,
+    "dodgeTime": 0,
+    "dodgeSerial": 1,
+    "controls": {
+      "dodgeRemaining": 1.2416666666666687,
+      "dodgeDuration": 1.8,
+      "enabled": true,
+      "shootHeld": false,
+      "hudHeight": 95.26717557251908,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "systemMenu": null,
+        "systemReservedLeft": null,
+        "safeInsets": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1330.0763358778622,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 1227.480916030534,
+          "secondRow": false,
+          "objectiveX": 926.1068702290074,
+          "objectiveWidth": 522.1374045801523
+        },
+        "joystick": {
+          "x": 171.6412213740458,
+          "y": 164.31297709923663,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 228.46809160305344,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 164.31297709923663,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 365.5062595419847,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1505.9541984732823,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      },
+      "floating": {
+        "originX": 171.6412213740458,
+        "originY": 164.31297709923666,
+        "baseX": 171.6412213740458,
+        "baseY": 164.31297709923666,
+        "owners": []
+      }
+    },
+    "attackCooldown": {
+      "remaining": 0,
+      "duration": 0.22
+    },
+    "zone": "甲板试飞",
+    "levelWidth": 6500,
+    "boss": {
+      "id": "falcon",
+      "kind": "helicopter",
+      "x": 4750,
+      "y": 390,
+      "vx": 0,
+      "vy": 0,
+      "hp": 64,
+      "maxHp": 64,
+      "active": false,
+      "alive": true,
+      "mode": "approach",
+      "attack": "burst",
+      "angle": 3.141592653589793,
+      "timer": 0.9,
+      "facing": -1,
+      "phase": 1,
+      "travel": 0,
+      "attackCounts": {},
+      "bounds": {
+        "x": 4640,
+        "y": 390,
+        "w": 220,
+        "h": 150
+      }
+    },
+    "miniBoss": {
+      "id": "falcon",
+      "kind": "helicopter",
+      "x": 4750,
+      "y": 390,
+      "vx": 0,
+      "vy": 0,
+      "hp": 64,
+      "maxHp": 64,
+      "active": false,
+      "alive": true,
+      "mode": "approach",
+      "attack": "burst",
+      "angle": 3.141592653589793,
+      "timer": 0.9,
+      "facing": -1,
+      "phase": 1,
+      "travel": 0,
+      "attackCounts": {},
+      "bounds": {
+        "x": 4640,
+        "y": 390,
+        "w": 220,
+        "h": 150
+      }
+    },
+    "enemies": [
+      {
+        "id": "air-rifle-1",
+        "kind": "rifle",
+        "x": 1000,
+        "y": 320,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 983,
+          "y": 323,
+          "w": 34,
+          "h": 65
+        }
+      },
+      {
+        "id": "air-drone-1",
+        "kind": "drone",
+        "x": 1750,
+        "y": 570,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 1715,
+          "y": 570,
+          "w": 70,
+          "h": 48
+        }
+      },
+      {
+        "id": "air-rifle-2",
+        "kind": "rifle",
+        "x": 2350,
+        "y": 330,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 2333,
+          "y": 333,
+          "w": 34,
+          "h": 65
+        }
+      },
+      {
+        "id": "air-drone-2",
+        "kind": "drone",
+        "x": 2810,
+        "y": 600,
+        "vx": 0,
+        "vy": 0,
+        "hp": 3,
+        "maxHp": 3,
+        "active": false,
+        "alive": true,
+        "mode": "approach",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0.9,
+        "facing": -1,
+        "phase": 1,
+        "travel": 0,
+        "attackCounts": {},
+        "bounds": {
+          "x": 2775,
+          "y": 600,
+          "w": 70,
+          "h": 48
+        }
+      }
+    ],
+    "flightBounds": {
+      "floor": 80,
+      "ceiling": 780
+    },
+    "obstacles": [
+      {
+        "id": "launch-deck",
+        "kind": "deck",
+        "x": 0,
+        "y": 80,
+        "w": 660,
+        "h": 90
+      },
+      {
+        "id": "roof-a",
+        "kind": "roof",
+        "x": 1040,
+        "y": 80,
+        "w": 390,
+        "h": 120
+      },
+      {
+        "id": "bridge-a",
+        "kind": "bridge",
+        "x": 1700,
+        "y": 450,
+        "w": 310,
+        "h": 32
+      },
+      {
+        "id": "roof-b",
+        "kind": "roof",
+        "x": 2240,
+        "y": 80,
+        "w": 350,
+        "h": 160
+      },
+      {
+        "id": "bridge-b",
+        "kind": "bridge",
+        "x": 2810,
+        "y": 480,
+        "w": 330,
+        "h": 32
+      },
+      {
+        "id": "return-deck",
+        "kind": "deck",
+        "x": 6040,
+        "y": 80,
+        "w": 460,
+        "h": 90
+      },
+      {
+        "x": 5860,
+        "y": 80,
+        "w": 30,
+        "h": 700
+      }
+    ],
+    "pickups": [
+      {
+        "x": 1500,
+        "y": 320,
+        "kind": "airburst",
+        "source": "trial-airburst",
+        "active": true,
+        "age": 2.674999999999993
+      },
+      {
+        "x": 3430,
+        "y": 350,
+        "kind": "medkit",
+        "source": "trial-preboss-health",
+        "active": true,
+        "age": 2.674999999999993
+      },
+      {
+        "x": 3590,
+        "y": 350,
+        "kind": "rocket",
+        "source": "trial-preboss-rockets",
+        "active": true,
+        "age": 2.674999999999993
+      }
+    ],
+    "recoverySpawned": [],
+    "effects": [],
+    "airbursts": [],
+    "projectileStates": [
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "tier": "standard",
+        "x": -414.0867174363185,
+        "y": 431.81605961305013,
+        "vx": -760,
+        "vy": 9.307315673519884e-14,
+        "age": 0.7583333333333331,
+        "homing": false,
+        "radius": 2
+      },
+      {
+        "owner": "player",
+        "kind": "bullet",
+        "tier": "standard",
+        "x": -185.80498293846546,
+        "y": 489.09777022212313,
+        "vx": -760,
+        "vy": 9.307315673519884e-14,
+        "age": 0.5333333333333339,
+        "homing": false,
+        "radius": 2
+      }
+    ],
+    "victory": {
+      "active": false,
+      "time": 0,
+      "phase": "idle",
+      "focus": 0,
+      "cheerTime": 0,
+      "resultProgress": 0,
+      "resultsReady": false,
+      "impactSerial": 0,
+      "haptic": "light",
+      "flash": 0
+    },
+    "impact": {
+      "hitStop": 0,
+      "shakeTime": 0,
+      "shakePower": 0,
+      "blastCount": 0
+    },
+    "bullets": 2,
+    "entryMode": "chapter03-preview",
+    "flightArt": {
+      "loaded": true,
+      "error": "",
+      "playerFrame": "hero.rifle.hover.0",
+      "playerSize": {
+        "width": 90.5,
+        "height": 90.5
+      },
+      "renderedMuzzle": {
+        "x": 335.9593987519478,
+        "y": 605.5287700227876,
+        "angle": 3.141592653589793
+      },
+      "scenery": {
+        "theme": "coastal-sky",
+        "imageFrames": 22,
+        "obstacles": 2,
+        "parallax": true
+      },
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "bullet",
+          "tier": "standard",
+          "width": 86,
+          "height": 19,
+          "fullWidth": 86,
+          "x": -414.0867174363185,
+          "y": 431.81605961305013
+        },
+        {
+          "owner": "player",
+          "kind": "bullet",
+          "tier": "standard",
+          "width": 86,
+          "height": 19,
+          "fullWidth": 86,
+          "x": -185.80498293846546,
+          "y": 489.09777022212313
+        }
+      ],
+      "enemies": [],
+      "generatedFrames": 22
+    },
+    "oceanArt": null,
+    "chapterLoading": false,
+    "chapterAssets": {
+      "oceanLoaded": false,
+      "oceanFrames": 0,
+      "flightLoaded": true
+    },
+    "playerShots": 2,
+    "audio": {
+      "loaded": 9,
+      "played": 2,
+      "byEffect": {
+        "rifle": 2
+      },
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "active": "flight",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "hero.rifle.hover.0",
+      "playerSize": {
+        "width": 90.5,
+        "height": 90.5
+      },
+      "renderedMuzzle": {
+        "x": 335.9593987519478,
+        "y": 605.5287700227876,
+        "angle": 3.141592653589793
+      },
+      "scenery": {
+        "theme": "coastal-sky",
+        "imageFrames": 22,
+        "obstacles": 2,
+        "parallax": true
+      },
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "bullet",
+          "tier": "standard",
+          "width": 86,
+          "height": 19,
+          "fullWidth": 86,
+          "x": -414.0867174363185,
+          "y": 431.81605961305013
+        },
+        {
+          "owner": "player",
+          "kind": "bullet",
+          "tier": "standard",
+          "width": 86,
+          "height": 19,
+          "fullWidth": 86,
+          "x": -185.80498293846546,
+          "y": 489.09777022212313
+        }
+      ],
+      "enemies": [],
+      "generatedFrames": 22
+    },
+    "visibleChunks": 9,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 0,
+        "supported": false
+      }
+    },
+    "presentation": {
+      "chapter": 3,
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": false,
+      "resultProgress": 0,
+      "resultReady": false,
+      "resultPrimary": "再飞一次  →",
+      "resultCaption": "云端突围 · 第一版样段完成",
+      "skipIntroVisible": false,
+      "bossBar": {
+        "visible": false,
+        "bottom": 565.7557251908397,
+        "builds": 0,
+        "samples": 0
+      },
+      "controls": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "dodge",
+        "guide": "摇杆自由飞行 · 松手悬停 · 闪避短喷",
+        "guideVisible": true,
+        "damageVisible": false,
+        "paints": {
+          "actions": 28,
+          "joystick": 4
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 6,
+            "label": "闪避",
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 0,
+            "label": "攻击",
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "label": "空爆弹",
+            "frame": "ui.grenade"
+          }
+        ]
+      },
+      "objective": {
+        "visible": true,
+        "text": "甲板试飞 · 云端第一版 →",
+        "x": 926.1068702290074,
+        "y": 674.1984732824427
+      }
+    },
+    "display": {
+      "width": 1560.9160305343512,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 1.4,
+      "worldVisibleWidth": 1114.940021810251,
+      "cameraY": 236.8936326022716,
+      "worldY": 0,
+      "worldX": 0,
+      "bossCeiling": 557.7557251908397,
+      "frameWidth": 852,
+      "frameHeight": 393,
+      "orientationPaused": false
+    }
+  },
+  "final": {
+    "chapter": 3,
+    "buildStage": "P0/P1-flight-slice",
+    "state": "complete",
+    "time": 32.23333333333215,
+    "clearTime": 32.23333333333215,
+    "stage": "flying",
+    "introTime": 3.2,
+    "player": {
+      "x": 6281.39515005628,
+      "y": 313.6462994055409,
+      "vx": 0,
+      "vy": 0,
+      "health": 5,
+      "facing": 1,
+      "alive": true
+    },
+    "cameraX": 5385.059978189747,
+    "cameraY": 195.36058511982668,
+    "furthestX": 6281.39515005628,
+    "retreatLimit": 4781.39515005628,
+    "weapon": "rifle",
+    "storedWeapon": "rifle",
+    "ammo": 0,
+    "grenades": 4,
+    "aim": 0,
+    "aimTarget": "",
+    "muzzle": {
+      "x": 6323.39515005628,
+      "y": 357.6462994055409,
+      "angle": 0,
+      "originX": 6281.39515005628,
+      "originY": 357.6462994055409
+    },
+    "lastShotWeapon": "rifle",
+    "lastShotMuzzle": {
+      "x": 6270.89515005628,
+      "y": 357.6462994055409,
+      "angle": 0,
+      "originX": 6228.89515005628,
+      "originY": 357.6462994055409
+    },
+    "shots": 123,
+    "hits": 28,
+    "kills": 5,
+    "collected": 2,
+    "airburstThrown": 1,
+    "knifeSerial": 0,
+    "dodgeCooldown": 0,
+    "dodgeTime": 0,
+    "dodgeSerial": 1,
+    "controls": {
+      "dodgeRemaining": 0,
+      "dodgeDuration": 1.8,
+      "enabled": false,
+      "shootHeld": false,
+      "hudHeight": 95.26717557251908,
+      "stick": {
+        "x": 0,
+        "y": 0,
+        "axis": 0,
+        "vertical": 0,
+        "owner": null
+      },
+      "layout": {
+        "systemMenu": null,
+        "systemReservedLeft": null,
+        "safeInsets": {
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "top": 0
+        },
+        "hud": {
+          "levelX": 1330.0763358778622,
+          "levelWidth": 241.83206106870227,
+          "trackWidth": 205.19083969465646,
+          "trackX": 1227.480916030534,
+          "secondRow": false,
+          "objectiveX": 926.1068702290074,
+          "objectiveWidth": 522.1374045801523
+        },
+        "joystick": {
+          "x": 171.6412213740458,
+          "y": 164.31297709923663,
+          "r": 95.76,
+          "baseR": 135,
+          "knobR": 64.8,
+          "hit": 270,
+          "unit": 1.83206106870229
+        },
+        "jump": {
+          "x": 1192.1770992366414,
+          "y": 228.46809160305344,
+          "r": 64.8,
+          "hit": 151.58473282442748
+        },
+        "shoot": {
+          "x": 1407.114503816794,
+          "y": 164.31297709923663,
+          "r": 107.99999999999999,
+          "hit": 241.64885496183203
+        },
+        "grenade": {
+          "x": 1418.1068702290077,
+          "y": 365.5062595419847,
+          "r": 54.72,
+          "hit": 131.42473282442748
+        },
+        "pause": {
+          "x": 1505.9541984732823,
+          "y": 668.7022900763359,
+          "hit": 80.61068702290076
+        }
+      },
+      "floating": {
+        "originX": 0,
+        "originY": 5.4961832061069344,
+        "baseX": 0,
+        "baseY": 0,
+        "owners": []
+      }
+    },
+    "attackCooldown": {
+      "remaining": 0.04500000000000004,
+      "duration": 0.22
+    },
+    "zone": "接应甲板",
+    "levelWidth": 6500,
+    "boss": {
+      "id": "falcon",
+      "kind": "helicopter",
+      "x": 3921.670509895788,
+      "y": 438.6351092737379,
+      "vx": 0,
+      "vy": 0,
+      "hp": 0,
+      "maxHp": 64,
+      "active": true,
+      "alive": false,
+      "mode": "dead",
+      "attack": "sweep",
+      "angle": 3.141592653589793,
+      "timer": 0,
+      "facing": -1,
+      "phase": 2,
+      "travel": 1006.0833333333271,
+      "attackCounts": {
+        "burst": 1,
+        "missiles": 1,
+        "sweep": 1
+      },
+      "bounds": {
+        "x": 3811.670509895788,
+        "y": 438.6351092737379,
+        "w": 220,
+        "h": 150
+      }
+    },
+    "miniBoss": {
+      "id": "falcon",
+      "kind": "helicopter",
+      "x": 3921.670509895788,
+      "y": 438.6351092737379,
+      "vx": 0,
+      "vy": 0,
+      "hp": 0,
+      "maxHp": 64,
+      "active": true,
+      "alive": false,
+      "mode": "dead",
+      "attack": "sweep",
+      "angle": 3.141592653589793,
+      "timer": 0,
+      "facing": -1,
+      "phase": 2,
+      "travel": 1006.0833333333271,
+      "attackCounts": {
+        "burst": 1,
+        "missiles": 1,
+        "sweep": 1
+      },
+      "bounds": {
+        "x": 3811.670509895788,
+        "y": 438.6351092737379,
+        "w": 220,
+        "h": 150
+      }
+    },
+    "enemies": [
+      {
+        "id": "air-rifle-1",
+        "kind": "rifle",
+        "x": 906.3350381580196,
+        "y": 368.1900955574251,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 3,
+        "active": true,
+        "alive": false,
+        "mode": "dead",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0,
+        "facing": -1,
+        "phase": 1,
+        "travel": 106.3750000000006,
+        "attackCounts": {},
+        "bounds": {
+          "x": 889.3350381580196,
+          "y": 371.1900955574251,
+          "w": 34,
+          "h": 65
+        }
+      },
+      {
+        "id": "air-drone-1",
+        "kind": "drone",
+        "x": 1656.568595719006,
+        "y": 538.8048911121651,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 3,
+        "active": true,
+        "alive": false,
+        "mode": "dead",
+        "attack": "dive",
+        "angle": -3.1194814081115223,
+        "timer": 0,
+        "facing": -1,
+        "phase": 1,
+        "travel": 104.45833333333277,
+        "attackCounts": {
+          "dive": 1
+        },
+        "bounds": {
+          "x": 1621.568595719006,
+          "y": 538.8048911121651,
+          "w": 70,
+          "h": 48
+        }
+      },
+      {
+        "id": "air-rifle-2",
+        "kind": "rifle",
+        "x": 2316.665299317962,
+        "y": 326.31220232400347,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 3,
+        "active": true,
+        "alive": false,
+        "mode": "dead",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0,
+        "facing": -1,
+        "phase": 1,
+        "travel": 33.54166666666533,
+        "attackCounts": {},
+        "bounds": {
+          "x": 2299.665299317962,
+          "y": 329.31220232400347,
+          "w": 34,
+          "h": 65
+        }
+      },
+      {
+        "id": "air-drone-2",
+        "kind": "drone",
+        "x": 2718.9027165892094,
+        "y": 552.5780278083072,
+        "vx": 0,
+        "vy": 0,
+        "hp": 0,
+        "maxHp": 3,
+        "active": true,
+        "alive": false,
+        "mode": "dead",
+        "attack": "burst",
+        "angle": 3.141592653589793,
+        "timer": 0,
+        "facing": -1,
+        "phase": 1,
+        "travel": 105.4166666666666,
+        "attackCounts": {},
+        "bounds": {
+          "x": 2683.9027165892094,
+          "y": 552.5780278083072,
+          "w": 70,
+          "h": 48
+        }
+      }
+    ],
+    "flightBounds": {
+      "floor": 80,
+      "ceiling": 780
+    },
+    "obstacles": [
+      {
+        "id": "launch-deck",
+        "kind": "deck",
+        "x": 0,
+        "y": 80,
+        "w": 660,
+        "h": 90
+      },
+      {
+        "id": "roof-a",
+        "kind": "roof",
+        "x": 1040,
+        "y": 80,
+        "w": 390,
+        "h": 120
+      },
+      {
+        "id": "bridge-a",
+        "kind": "bridge",
+        "x": 1700,
+        "y": 450,
+        "w": 310,
+        "h": 32
+      },
+      {
+        "id": "roof-b",
+        "kind": "roof",
+        "x": 2240,
+        "y": 80,
+        "w": 350,
+        "h": 160
+      },
+      {
+        "id": "bridge-b",
+        "kind": "bridge",
+        "x": 2810,
+        "y": 480,
+        "w": 330,
+        "h": 32
+      },
+      {
+        "id": "return-deck",
+        "kind": "deck",
+        "x": 6040,
+        "y": 80,
+        "w": 460,
+        "h": 90
+      }
+    ],
+    "pickups": [
+      {
+        "x": 3430,
+        "y": 350,
+        "kind": "medkit",
+        "source": "trial-preboss-health",
+        "active": true,
+        "age": 32.06666666666549
+      },
+      {
+        "x": 3921.670509895788,
+        "y": 493.6351092737379,
+        "kind": "medkit",
+        "source": "after-falcon",
+        "active": true,
+        "age": 9.433333333333438
+      }
+    ],
+    "recoverySpawned": [
+      "after-falcon"
+    ],
+    "effects": [],
+    "airbursts": [],
+    "projectileStates": [],
+    "victory": {
+      "active": true,
+      "time": 6.5750000000001165,
+      "phase": "settlement",
+      "focus": 1,
+      "cheerTime": 3.3250000000001165,
+      "resultProgress": 1,
+      "resultsReady": true,
+      "impactSerial": 5,
+      "haptic": "light",
+      "flash": 0
+    },
+    "impact": {
+      "hitStop": 0,
+      "shakeTime": 0,
+      "shakePower": 0,
+      "blastCount": 7
+    },
+    "bullets": 0,
+    "entryMode": "chapter03-preview",
+    "flightArt": {
+      "loaded": true,
+      "error": "",
+      "playerFrame": "hero.rifle.hover.1",
+      "playerSize": {
+        "width": 90.5,
+        "height": 90.5
+      },
+      "renderedMuzzle": {
+        "x": 6323.39515005628,
+        "y": 357.6462994055409,
+        "angle": 0
+      },
+      "scenery": {
+        "theme": "coastal-sky",
+        "imageFrames": 22,
+        "obstacles": 1,
+        "parallax": true
+      },
+      "projectiles": [],
+      "enemies": [],
+      "generatedFrames": 22
+    },
+    "oceanArt": null,
+    "chapterLoading": false,
+    "chapterAssets": {
+      "oceanLoaded": false,
+      "oceanFrames": 0,
+      "flightLoaded": true
+    },
+    "playerShots": 123,
+    "audio": {
+      "loaded": 9,
+      "played": 159,
+      "byEffect": {
+        "rifle": 117,
+        "melee-hit": 27,
+        "pickup": 2,
+        "rocket": 6,
+        "blast": 7
+      },
+      "muted": false,
+      "loadErrors": []
+    },
+    "art": {
+      "active": "flight",
+      "loaded": true,
+      "error": "",
+      "playerFrame": "hero.rifle.hover.1",
+      "playerSize": {
+        "width": 90.5,
+        "height": 90.5
+      },
+      "renderedMuzzle": {
+        "x": 6323.39515005628,
+        "y": 357.6462994055409,
+        "angle": 0
+      },
+      "scenery": {
+        "theme": "coastal-sky",
+        "imageFrames": 22,
+        "obstacles": 1,
+        "parallax": true
+      },
+      "projectiles": [],
+      "enemies": [],
+      "generatedFrames": 22
+    },
+    "visibleChunks": 9,
+    "platform": {
+      "mode": "browser",
+      "fullscreen": false,
+      "fullscreenSupported": true,
+      "ios": false,
+      "haptics": {
+        "requests": 5,
+        "supported": true
+      }
+    },
+    "presentation": {
+      "chapter": 3,
+      "cover": "unified-battlefield-v064",
+      "title": {
+        "artReady": true,
+        "scene": "unified-battlefield-v064",
+        "sourceSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "start": {
+          "x": 287.13740458015263,
+          "y": 234,
+          "width": 300,
+          "height": 80
+        }
+      },
+      "fullscreenTools": false,
+      "cinematicVisible": true,
+      "resultProgress": 1,
+      "resultReady": true,
+      "resultPrimary": "再飞一次  →",
+      "resultCaption": "云端突围 · 第一版样段完成",
+      "skipIntroVisible": false,
+      "bossBar": {
+        "visible": false,
+        "bottom": 565.7557251908397,
+        "builds": 16,
+        "samples": 470
+      },
+      "controls": {
+        "style": "generated-comic-v084",
+        "artLoaded": true,
+        "jumpMode": "dodge",
+        "guide": "摇杆自由飞行 · 松手悬停 · 闪避短喷",
+        "guideVisible": false,
+        "damageVisible": false,
+        "paints": {
+          "actions": 42,
+          "joystick": 2
+        },
+        "buttons": [
+          {
+            "action": "jump",
+            "held": false,
+            "cooldown": 0,
+            "label": "闪避",
+            "frame": "ui.dash"
+          },
+          {
+            "action": "shoot",
+            "held": false,
+            "cooldown": 2,
+            "label": "攻击",
+            "frame": "ui.attack"
+          },
+          {
+            "action": "grenade",
+            "held": false,
+            "cooldown": 0,
+            "label": "空爆弹",
+            "frame": "ui.grenade"
+          }
+        ]
+      },
+      "objective": {
+        "visible": false,
+        "text": "接应甲板 · 云端第一版 →",
+        "x": 926.1068702290074,
+        "y": 674.1984732824427
+      }
+    },
+    "display": {
+      "width": 1560.9160305343512,
+      "height": 720,
+      "portrait": false,
+      "zoom": 1.4,
+      "combatZoom": 1.4,
+      "worldVisibleWidth": 1114.940021810251,
+      "cameraY": 195.36058511982668,
+      "worldY": 0,
+      "worldX": 0,
+      "bossCeiling": 557.7557251908397,
+      "frameWidth": 852,
+      "frameHeight": 393,
+      "orientationPaused": false
+    }
+  },
+  "captures": [
+    "reports/v0817-flight-entry.png",
+    "reports/v0817-flight-touch-dodge.png",
+    "reports/v0817-flight-combat.png",
+    "reports/v0817-flight-mini-tell-burst.png",
+    "reports/v0817-flight-mini-fire-burst.png",
+    "reports/v0817-flight-mini-tell-missiles.png",
+    "reports/v0817-flight-mini-fire-missiles.png",
+    "reports/v0817-flight-mini-tell-sweep.png",
+    "reports/v0817-flight-mini-charge-sweep.png",
+    "reports/v0817-flight-mini-reward.png",
+    "reports/v0817-flight-complete.png"
+  ]
+}

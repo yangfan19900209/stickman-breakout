@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-11-10T02:04:47.087Z",
+  "officialValidator": "passed",
+  "filesMatched": 11,
+  "installedPath": "C:/Users/Administrator/.codex/skills/cocos-2d-action-games",
+  "changedFiles": [
+    "references/design-and-presentation.md",
+    "references/project-examples.md",
+    "references/gameplay-and-physics.md"
+  ],
+  "files": [
+    {
+      "file": "agents/openai.yaml",
+      "sha256": "97f227a02eb924aa591c233add91960114b2511573fa284a2182f285962df1c2"
+    },
+    {
+      "file": "references/asset-prompts.md",
+      "sha256": "4e27383d87d72e4d28cc8ceb823d6d42a6bfbe3629349935f6ee1bcf5fe4b668"
+    },
+    {
+      "file": "references/design-and-presentation.md",
+      "sha256": "fbcf6f2374ec9f1b064beccc028869b6354c372073f24b79d06c5c6b755be0f7"
+    },
+    {
+      "file": "references/gameplay-and-physics.md",
+      "sha256": "2ab6bd2e86a4f0f50f3ce10811ae65983951403ecde0f382e91c8454184a6999"
+    },
+    {
+      "file": "references/performance-and-motion.md",
+      "sha256": "6ee07fe9d30512f79548f7d9326ddb58c952c20c8ea2fcdc9b152fa1be85e568"
+    },
+    {
+      "file": "references/project-examples.md",
+      "sha256": "e7781624f23114e48044dbed8fcef6ac675fc2b55e4146eba486a378f85b8f7b"
+    },
+    {
+      "file": "references/skill-maintenance.md",
+      "sha256": "b7b574b7b9587c9034e8f3dd2f56131f73fc8834e2db466917a8f74c8c8fdd64"
+    },
+    {
+      "file": "references/sprite-resource-pipeline.md",
+      "sha256": "23a464c8b8bc2cbc71298afbcfc1e6602795743e1f1ea8e5185cca64ae1b1995"
+    },
+    {
+      "file": "references/verification-and-delivery.md",
+      "sha256": "d6ffed671cc08115b10838f693033e9d72b99adeb1852622d95e89f04557f5e1"
+    },
+    {
+      "file": "scripts/inspect_sprite.py",
+      "sha256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc"
+    },
+    {
+      "file": "SKILL.md",
+      "sha256": "ce8578490d5c26b75ae6b6692d5809f73131a1fcf6a426894235d5da9757faa5"
+    }
+  ]
+}

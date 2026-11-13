@@ -1,0 +1,467 @@
+{
+  "source": {
+    "file": "../素材/游戏美术/source/v071/rifle-actions.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "e27f9f8807bbcef8a38b0e44bb391db0f6cb013a98be2f1943ce41ffb0e8e587"
+  },
+  "runtime": {
+    "file": "assets/resources/comic/rifle-actions.png",
+    "size": [
+      1024,
+      512
+    ],
+    "bytes": 17593,
+    "sha256": "79c160ccd0adb5eeffd150f0a956019fecae54bf3c73e21a329f67731ee8b613"
+  },
+  "processing": "Original RGBA source and whole-body crops retained. Runtime uniform half-resolution, 32-color quantization (lossy). Transparent gutters retained.",
+  "worldScale": 0.3,
+  "frames": [
+    {
+      "id": "direct.rifle.jump.0",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.jump.0.png",
+      "sha256": "c8a1b59937c84b1b2e853d756a16ee0fef05b60068fa98f87a5880a998930141",
+      "crop": [
+        82,
+        62,
+        330,
+        316
+      ],
+      "pivotSource": [
+        193,
+        337
+      ],
+      "muzzleSource": [
+        320,
+        176
+      ],
+      "atlas": [
+        4,
+        4,
+        124,
+        127
+      ],
+      "anchor": [
+        0.4475806451612903,
+        -0.08267716535433078
+      ],
+      "sourceSize": [
+        248,
+        254
+      ],
+      "size": [
+        124,
+        127
+      ]
+    },
+    {
+      "id": "direct.rifle.jump.1",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.jump.1.png",
+      "sha256": "d885b4a764459becbed5cca861ada0ffd8f56d69b46586497a52758ccaa5b75b",
+      "crop": [
+        438,
+        62,
+        684,
+        304
+      ],
+      "pivotSource": [
+        553,
+        337
+      ],
+      "muzzleSource": [
+        674,
+        176
+      ],
+      "atlas": [
+        136,
+        4,
+        123,
+        121
+      ],
+      "anchor": [
+        0.46747967479674796,
+        -0.13636363636363646
+      ],
+      "sourceSize": [
+        246,
+        242
+      ],
+      "size": [
+        123,
+        121
+      ]
+    },
+    {
+      "id": "direct.rifle.fall.0",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.fall.0.png",
+      "sha256": "6689c9a64cd4228ebf253e0d89ea1ace117beaad4a825f73f681e26491b9df55",
+      "crop": [
+        802,
+        64,
+        1040,
+        326
+      ],
+      "pivotSource": [
+        909,
+        337
+      ],
+      "muzzleSource": [
+        1031,
+        184
+      ],
+      "atlas": [
+        267,
+        4,
+        119,
+        131
+      ],
+      "anchor": [
+        0.4495798319327731,
+        -0.041984732824427384
+      ],
+      "sourceSize": [
+        238,
+        262
+      ],
+      "size": [
+        119,
+        131
+      ]
+    },
+    {
+      "id": "direct.rifle.fall.1",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.fall.1.png",
+      "sha256": "08e6851ffb51b1548e7516ef6904f4cb3aef6b24090dac999d852bf45d559f35",
+      "crop": [
+        1160,
+        64,
+        1398,
+        332
+      ],
+      "pivotSource": [
+        1265,
+        337
+      ],
+      "muzzleSource": [
+        1389,
+        181
+      ],
+      "atlas": [
+        394,
+        4,
+        119,
+        134
+      ],
+      "anchor": [
+        0.4411764705882353,
+        -0.018656716417910557
+      ],
+      "sourceSize": [
+        238,
+        268
+      ],
+      "size": [
+        119,
+        134
+      ]
+    },
+    {
+      "id": "direct.rifle.up-stand",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.up-stand.png",
+      "sha256": "54828509b4254cfb18402d9b7c5921cf2e6d7ac45c9132c687b740799d1e90c4",
+      "crop": [
+        102,
+        392,
+        258,
+        698
+      ],
+      "pivotSource": [
+        181,
+        694
+      ],
+      "muzzleSource": [
+        227,
+        403
+      ],
+      "atlas": [
+        521,
+        4,
+        78,
+        153
+      ],
+      "anchor": [
+        0.5064102564102564,
+        0.013071895424836555
+      ],
+      "sourceSize": [
+        156,
+        306
+      ],
+      "size": [
+        78,
+        153
+      ]
+    },
+    {
+      "id": "direct.rifle.up-crouch",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.up-crouch.png",
+      "sha256": "af84b726ff468e58d57b0fa46a36fbf385fafed986351a4262cac0427cb8aa16",
+      "crop": [
+        454,
+        434,
+        618,
+        698
+      ],
+      "pivotSource": [
+        537,
+        694
+      ],
+      "muzzleSource": [
+        594,
+        443
+      ],
+      "atlas": [
+        607,
+        4,
+        82,
+        132
+      ],
+      "anchor": [
+        0.5060975609756098,
+        0.015151515151515138
+      ],
+      "sourceSize": [
+        164,
+        264
+      ],
+      "size": [
+        82,
+        132
+      ]
+    },
+    {
+      "id": "direct.rifle.up-jump",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.up-jump.png",
+      "sha256": "e0365fa8e534fd5fc953fce78d1c75acfea64dcd8523cf89f7dd8a18fc90aace",
+      "crop": [
+        818,
+        394,
+        970,
+        674
+      ],
+      "pivotSource": [
+        899,
+        694
+      ],
+      "muzzleSource": [
+        947,
+        403
+      ],
+      "atlas": [
+        697,
+        4,
+        76,
+        140
+      ],
+      "anchor": [
+        0.5328947368421053,
+        -0.0714285714285714
+      ],
+      "sourceSize": [
+        152,
+        280
+      ],
+      "size": [
+        76,
+        140
+      ]
+    },
+    {
+      "id": "direct.rifle.up-fall",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.up-fall.png",
+      "sha256": "d4d0c2521bf5ce52bde49d337f0e81ad81a127582c99e62a14884b7cd5e0de0d",
+      "crop": [
+        1184,
+        394,
+        1368,
+        692
+      ],
+      "pivotSource": [
+        1262,
+        694
+      ],
+      "muzzleSource": [
+        1307,
+        403
+      ],
+      "atlas": [
+        781,
+        4,
+        92,
+        149
+      ],
+      "anchor": [
+        0.42391304347826086,
+        -0.006711409395973256
+      ],
+      "sourceSize": [
+        184,
+        298
+      ],
+      "size": [
+        92,
+        149
+      ]
+    },
+    {
+      "id": "direct.rifle.diagonal-stand",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.diagonal-stand.png",
+      "sha256": "02daa809359751ad9e1c0c1f544a65321a9338dd6e801d153ed612800b1f6192",
+      "crop": [
+        96,
+        790,
+        304,
+        1046
+      ],
+      "pivotSource": [
+        187,
+        1041
+      ],
+      "muzzleSource": [
+        291,
+        816
+      ],
+      "atlas": [
+        881,
+        4,
+        104,
+        128
+      ],
+      "anchor": [
+        0.4375,
+        0.01953125
+      ],
+      "sourceSize": [
+        208,
+        256
+      ],
+      "size": [
+        104,
+        128
+      ]
+    },
+    {
+      "id": "direct.rifle.diagonal-crouch",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.diagonal-crouch.png",
+      "sha256": "91759c23f1287b72f551a5ad7a8c195dbd92adfaf3e721a6cbd23eeebe7e1989",
+      "crop": [
+        434,
+        822,
+        648,
+        1046
+      ],
+      "pivotSource": [
+        540,
+        1041
+      ],
+      "muzzleSource": [
+        633,
+        842
+      ],
+      "atlas": [
+        4,
+        165,
+        107,
+        112
+      ],
+      "anchor": [
+        0.4953271028037383,
+        0.022321428571428603
+      ],
+      "sourceSize": [
+        214,
+        224
+      ],
+      "size": [
+        107,
+        112
+      ]
+    },
+    {
+      "id": "direct.rifle.diagonal-jump",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.diagonal-jump.png",
+      "sha256": "890b1ed398c85bed7cdc33287b4f46112aeb7be0828db3687b1cab302c1c89ca",
+      "crop": [
+        802,
+        776,
+        1022,
+        1022
+      ],
+      "pivotSource": [
+        903,
+        1056
+      ],
+      "muzzleSource": [
+        1008,
+        799
+      ],
+      "atlas": [
+        119,
+        165,
+        110,
+        123
+      ],
+      "anchor": [
+        0.4590909090909091,
+        -0.1382113821138211
+      ],
+      "sourceSize": [
+        220,
+        246
+      ],
+      "size": [
+        110,
+        123
+      ]
+    },
+    {
+      "id": "direct.rifle.diagonal-fall",
+      "file": "../素材/游戏美术/slices/v071/direct.rifle.diagonal-fall.png",
+      "sha256": "c2d9eae786f8a156448da898b14f080431071e0a0b6af091b7139f947496a8d6",
+      "crop": [
+        1166,
+        780,
+        1382,
+        1048
+      ],
+      "pivotSource": [
+        1267,
+        1060
+      ],
+      "muzzleSource": [
+        1368,
+        807
+      ],
+      "atlas": [
+        237,
+        165,
+        108,
+        134
+      ],
+      "anchor": [
+        0.4675925925925926,
+        -0.04477611940298498
+      ],
+      "sourceSize": [
+        216,
+        268
+      ],
+      "size": [
+        108,
+        134
+      ]
+    }
+  ]
+}

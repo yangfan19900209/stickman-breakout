@@ -1,0 +1,88 @@
+{
+  "version": "1.0.3",
+  "passed": true,
+  "startedAt": "2026-11-13T04:41:14.846Z",
+  "method": "Actual Cocos build and real touch/keyboard input; real isolated open-domain source executed against explicitly fictional WeChat fixtures. No message sent and no real friend/account access. Does not establish WeChat device acceptance.",
+  "cases": [
+    {
+      "name": "wide-phone",
+      "passed": true,
+      "checks": [
+        "consent reject/grant",
+        "three actual isolated rendered boards",
+        "pagination",
+        "network retry",
+        "explicit art share",
+        "modal input",
+        "elapsed clock/pause/background",
+        "persistent reload"
+      ]
+    },
+    {
+      "name": "small-phone",
+      "passed": true,
+      "checks": [
+        "consent reject/grant",
+        "three actual isolated rendered boards",
+        "pagination",
+        "network retry",
+        "explicit art share",
+        "modal input",
+        "elapsed clock/pause/background",
+        "persistent reload"
+      ]
+    },
+    {
+      "name": "desktop",
+      "passed": true,
+      "checks": [
+        "consent reject/grant",
+        "three actual isolated rendered boards",
+        "pagination",
+        "network retry",
+        "explicit art share",
+        "modal input",
+        "elapsed clock/pause/background",
+        "persistent reload"
+      ]
+    },
+    {
+      "name": "cold-and-warm-invites-no-skip",
+      "passed": true
+    },
+    {
+      "name": "browser-personal-fallback",
+      "passed": true
+    }
+  ],
+  "captures": [
+    "reports/v103-social/wide-phone-title.png",
+    "reports/v103-social/wide-phone-personal.png",
+    "reports/v103-social/wide-phone-privacy.png",
+    "reports/v103-social/wide-phone-progress.png",
+    "reports/v103-social/wide-phone-level1.png",
+    "reports/v103-social/wide-phone-level2.png",
+    "reports/v103-social/portrait-records.png",
+    "reports/v103-social/wide-phone-offline.png",
+    "reports/v103-social/small-phone-title.png",
+    "reports/v103-social/small-phone-personal.png",
+    "reports/v103-social/small-phone-privacy.png",
+    "reports/v103-social/small-phone-progress.png",
+    "reports/v103-social/small-phone-level1.png",
+    "reports/v103-social/small-phone-level2.png",
+    "reports/v103-social/small-phone-offline.png",
+    "reports/v103-social/desktop-title.png",
+    "reports/v103-social/desktop-personal.png",
+    "reports/v103-social/desktop-privacy.png",
+    "reports/v103-social/desktop-progress.png",
+    "reports/v103-social/desktop-level1.png",
+    "reports/v103-social/desktop-level2.png",
+    "reports/v103-social/desktop-offline.png",
+    "reports/v103-social/cold-invite.png",
+    "reports/v103-social/retained-target.png",
+    "reports/v103-social/warm-invite.png",
+    "reports/v103-social/browser-fallback.png"
+  ],
+  "errors": [],
+  "failed": []
+}

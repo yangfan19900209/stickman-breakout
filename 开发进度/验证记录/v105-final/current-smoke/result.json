@@ -1,0 +1,27 @@
+{
+  "version": "1.0.5",
+  "startedAt": "2026-11-13T09:38:38.461Z",
+  "finishedAt": "2026-11-13T09:38:47.614Z",
+  "passed": true,
+  "scope": "Browser startup, both chapter resource loaders, real keyboard movement/fire and pause/resume; not a device or full-campaign test.",
+  "chapters": [
+    {
+      "chapter": 1,
+      "loaded": true,
+      "moved": true,
+      "pauseResume": true,
+      "beforeX": 110,
+      "afterX": 125.22222222222223
+    },
+    {
+      "chapter": 2,
+      "loaded": true,
+      "moved": true,
+      "pauseResume": true,
+      "beforeX": 130.99999999999997,
+      "afterX": 152.00000000000006
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

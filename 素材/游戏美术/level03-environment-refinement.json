@@ -1,0 +1,23 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "../素材/游戏美术/source/level03/sky-structures.png",
+  "candidates": [
+    {
+      "file": "../素材/游戏美术/source/level03/sky-structures-thin.png",
+      "prompt": "Edit this exact 1536x1024 six-asset transparent sprite sheet. Preserve the exact six silhouettes, object positions, proportions, 2x3 layout, cell spacing, and all meaningful small structural details. ONLY change their drawing weight and fill treatment: every outer contour and inner line must be drawn with crisp restrained FINELINER strokes approximately 1.5 to 2 source pixels thick. The current 8-12 pixel heavy icon borders must become about one FIFTH of their current thickness. The outlines must feel delicate hand-drawn architectural comic linework, not bold app icons. Front deck/building/bridge and parachute use charcoal lines and opaque nearly white paper fill, no yellow tint. Distant skyline and cargo blimp use thin LIGHT GRAY lines and very pale near-white fill. Keep rivets/windows/cables/trusses/canopy intact and readable, but no solid heavy black blobs. Strictly no glow, haze, gradients, shadow, black background or background pattern. Background and gaps between structural members remain fully transparent. Do not resize, reposition, redesign or omit any object; the existing atlas source rectangles must still contain the same objects."
+    }
+  ],
+  "selected": {
+    "file": "../素材/游戏美术/source/level03/sky-structures-final.png",
+    "prompt": "Refine this exact transparent six-object environment sprite sheet one final time. Preserve every object's position, dimensions, silhouette, proportions, detail and the 1536x1024 canvas exactly. The current foreground strokes are still about 3 pixels wide: reduce ALL contours and detail strokes by HALF to very fine 1 to 1.5 pixel architectural pen lines, including rivets, beam ends, doorway and windows. Use clean dark gray ink, not heavy black borders. Preserve flat opaque near-white fills. Distant skyline and airship use even lighter gray fine lines. The objects will be enlarged in-game beside a small soldier, so fine source strokes are essential. Absolutely no added shadow/glow/haze/background; transparent exterior and gaps. Do not move or redraw geometry. Only thin and slightly soften line contrast."
+  },
+  "reason": "Initial in-game screenshot showed foreground line weights and distant-city scale overpowering the hero. Environment-only ink refinement; actor and boss source images preserved.",
+  "layout": {
+    "nearCityScale": 0.72,
+    "nearCityAlpha": 64,
+    "farCityScale": 0.5,
+    "farCityAlpha": 45,
+    "airshipScale": 0.35,
+    "airshipAlpha": 55
+  }
+}

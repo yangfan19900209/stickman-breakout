@@ -1,0 +1,133 @@
+{
+  "version": "0.8.13",
+  "method": "CDP real touch events for movement and down+jump; normal keyboard partial campaign, read-only Cocos Sprite inspection, launcher deliberately left alive for gait capture",
+  "cases": [
+    {
+      "angle": 0,
+      "dx": 112.08333333333371,
+      "vx": 280,
+      "crouched": false,
+      "aim": 0
+    },
+    {
+      "angle": 45,
+      "dx": 112.08333333333371,
+      "vx": 279.99999999999994,
+      "crouched": false,
+      "aim": 0.7853981633974483
+    },
+    {
+      "angle": -45,
+      "dx": 107.41666666666703,
+      "vx": 280,
+      "crouched": false,
+      "aim": 0
+    }
+  ],
+  "downJump": true,
+  "gaitEvidence": [
+    {
+      "time": 20.82499999999946,
+      "enemies": [
+        {
+          "id": "turret-B",
+          "x": 3624.9487951574574,
+          "y": 278.4166666666667,
+          "grounded": false,
+          "jumpCount": 1,
+          "health": 3,
+          "state": "Chase",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "recover"
+        }
+      ],
+      "drawn": {
+        "frame": "direct.rocket.stride.0",
+        "x": 1106.551607505607,
+        "y": 278.4166666666667
+      }
+    },
+    {
+      "time": 21.46666666666609,
+      "enemies": [
+        {
+          "id": "turret-B",
+          "x": 3604.1062094185963,
+          "y": 216.875,
+          "grounded": true,
+          "jumpCount": 1,
+          "health": 3,
+          "state": "Chase",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "approach"
+        }
+      ],
+      "drawn": {
+        "frame": "direct.rocket.stride.1",
+        "x": 1005.2330766111204,
+        "y": 216.875
+      }
+    },
+    {
+      "time": 21.67499999999941,
+      "enemies": [
+        {
+          "id": "turret-B",
+          "x": 3586.397876085259,
+          "y": 216.875,
+          "grounded": true,
+          "jumpCount": 1,
+          "health": 3,
+          "state": "Chase",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "approach"
+        }
+      ],
+      "drawn": {
+        "frame": "direct.rocket.stride.2",
+        "x": 986.8745167815869,
+        "y": 216.875
+      }
+    },
+    {
+      "time": 21.8499999999994,
+      "enemies": [
+        {
+          "id": "turret-B",
+          "x": 3571.522876085256,
+          "y": 216.875,
+          "grounded": true,
+          "jumpCount": 1,
+          "health": 3,
+          "state": "Chase",
+          "kind": "turret",
+          "shield": 0,
+          "windup": 0,
+          "action": "approach"
+        }
+      ],
+      "drawn": {
+        "frame": "direct.rocket.stride.4",
+        "x": 971.8847837459998,
+        "y": 216.875
+      }
+    }
+  ],
+  "captures": [
+    "reports/v0813-joystick-0.png",
+    "reports/v0813-joystick-45.png",
+    "reports/v0813-joystick--45.png",
+    "reports/v0813-crouch-jump.png",
+    "reports/v0813-launcher-gait-1.png",
+    "reports/v0813-launcher-gait-2.png",
+    "reports/v0813-launcher-gait-3.png",
+    "reports/v0813-launcher-gait-4.png"
+  ],
+  "errors": []
+}

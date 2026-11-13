@@ -1,0 +1,61 @@
+{
+  "filesMatched": 11,
+  "officialValidator": "passed",
+  "installedPath": "C:/Users/Administrator/.codex/skills/cocos-2d-action-games",
+  "changedFiles": [
+    "SKILL.md",
+    "references/performance-and-motion.md"
+  ],
+  "files": [
+    {
+      "file": "SKILL.md",
+      "sha256": "ce8578490d5c26b75ae6b6692d5809f73131a1fcf6a426894235d5da9757faa5"
+    },
+    {
+      "file": "agents/openai.yaml",
+      "sha256": "97f227a02eb924aa591c233add91960114b2511573fa284a2182f285962df1c2"
+    },
+    {
+      "file": "references/asset-prompts.md",
+      "sha256": "4e27383d87d72e4d28cc8ceb823d6d42a6bfbe3629349935f6ee1bcf5fe4b668"
+    },
+    {
+      "file": "references/design-and-presentation.md",
+      "sha256": "92a6ad405c787568a166c89438a3200fd14aee6e0c4ad6963f442565ccccb28d"
+    },
+    {
+      "file": "references/gameplay-and-physics.md",
+      "sha256": "d2ed315dd031006b07acd1a2dc6e6da0beeafd7d437521a4e4db173a3c79e44a"
+    },
+    {
+      "file": "references/performance-and-motion.md",
+      "sha256": "6ee07fe9d30512f79548f7d9326ddb58c952c20c8ea2fcdc9b152fa1be85e568"
+    },
+    {
+      "file": "references/project-examples.md",
+      "sha256": "8fe631d1b67d19b71bfb15fa62e1f8fd1a5c6751674f53137f52df5d165df064"
+    },
+    {
+      "file": "references/skill-maintenance.md",
+      "sha256": "b7b574b7b9587c9034e8f3dd2f56131f73fc8834e2db466917a8f74c8c8fdd64"
+    },
+    {
+      "file": "references/sprite-resource-pipeline.md",
+      "sha256": "2aeaba0342822bd8ac008b81a8df3da109d260e565b028d00a23ad022bcbb9b3"
+    },
+    {
+      "file": "references/verification-and-delivery.md",
+      "sha256": "d6ffed671cc08115b10838f693033e9d72b99adeb1852622d95e89f04557f5e1"
+    },
+    {
+      "file": "scripts/inspect_sprite.py",
+      "sha256": "b5f21513f638f2b61ee3c16564bd6bdb3c9f69983ad7a1b372c7473ce7198acc"
+    }
+  ],
+  "checkedAt": "2026-11-09T03:20:46.0218996Z",
+  "projectSource": "C:\\Users\\Administrator\\Desktop\\线条突围\\doc\\skills\\cocos-2d-action-games",
+  "validationScope": "Performance baselines, local collision candidates, platform-specific batching, read-only render interpolation",
+  "allowImplicitInvocation": true,
+  "skill": "cocos-2d-action-games",
+  "comparisonBeforeUpdate": "Installed prior file hashes matched the last synchronized record"
+}

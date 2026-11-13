@@ -1,0 +1,179 @@
+{
+  "version": "0.8.9",
+  "checkedAt": "2026-11-10T12:30:49.557Z",
+  "sourceSHA256": "bdd95b1a576fb5ee6f2824d279045d79e6ed6e62a933868932e8b9e6986d9967",
+  "typecheck": "passed",
+  "logic": {
+    "tests": 293,
+    "passed": 293,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "report": "reports/v089-mobile.json",
+    "scope": "Normal-input phone-sized route through the screenshot bridge, lift and mini-boss encounter; no complete-campaign claim this iteration",
+    "viewport": {
+      "width": 844,
+      "height": 390,
+      "dpr": 2
+    },
+    "health": 3,
+    "fightDuration": 16.51666666666573,
+    "continuousFire": true,
+    "attacks": {
+      "bombard": 1,
+      "burst": 2,
+      "ram": 2,
+      "fan": 2
+    },
+    "movementTurns": 8,
+    "travelSpan": 480,
+    "rigs": {
+      "bridge-B": {
+        "samples": 75,
+        "maxSegmentHeight": 24.87272727272727,
+        "kind": "bridge"
+      },
+      "lift-C": {
+        "samples": 188,
+        "maxSegmentHeight": 24.867469879518072,
+        "kind": "lift"
+      }
+    },
+    "applicationErrors": 0,
+    "failedRequests": 0
+  },
+  "web": {
+    "entryTime": 1794313528048.5632,
+    "sha256": "c25027c9f572788fd63d8665790b36e63bdbdff80a8f39c96054bb4b8adaca60",
+    "bytes": 22663625,
+    "runtimeVerified": true
+  },
+  "wechat": {
+    "entryTime": 1794313591175.5928,
+    "sha256": "21e2bf3d256896842d222395704ec262fe2e23417e68d6d23bcca31b71d989e8",
+    "bytes": 19515003,
+    "mainBytes": 4188943,
+    "subpackages": [
+      {
+        "name": "internal",
+        "root": "subpackages/internal/",
+        "bytes": 168275
+      },
+      {
+        "name": "main",
+        "root": "subpackages/main/",
+        "bytes": 578690
+      },
+      {
+        "name": "landart",
+        "root": "subpackages/landart/",
+        "bytes": 10238512
+      },
+      {
+        "name": "level02",
+        "root": "subpackages/level02/",
+        "bytes": 4340583
+      }
+    ],
+    "runtimeVerified": false,
+    "uploaded": false
+  },
+  "baseline": {
+    "accepted": "L1-V084-20261110",
+    "archivesVerified": 4,
+    "checkpoint": "PRE-V089-20261110",
+    "checkpointScope": "Scoped recovery checkpoint before user-requested platform render bug and mini-boss iteration; not user-accepted baseline"
+  },
+  "art": {
+    "unchangedFrom": "reports/v088-art.json",
+    "atlases": [
+      {
+        "path": "assets/landart/boss-v088.png",
+        "sha256": "3d24c20a114d85ace00339b19736aa9b994d0f41c937042689dc304b1d3343a9",
+        "bytes": 2657748
+      },
+      {
+        "path": "assets/landart/terrain-v088.png",
+        "sha256": "5138009c157bb07373907932dc1fcb25dd09c24a53db1f83c09f42f2b84e2c77",
+        "bytes": 795620
+      }
+    ]
+  },
+  "skill": {
+    "report": "reports/v089-skill-verification.json",
+    "filesMatched": 12,
+    "linksChecked": 16
+  },
+  "screenshots": [
+    {
+      "file": "reports/v089-mobile-bridge-B-intact.png",
+      "sha256": "40abf4cb3254bd70734098ac180a84096db40b4aa9abfe0b34340fc40554c655"
+    },
+    {
+      "file": "reports/v089-mobile-screenshot-location.png",
+      "sha256": "5310c39c15364ce75ae8409f33d70b09bfdf0ca487fb551513193a5e2bf43952"
+    },
+    {
+      "file": "reports/v089-mobile-lift-C-intact.png",
+      "sha256": "53a1b270c2cd7df9c487cbd0e8e45b02825e8d6eb6e2c56fc4496c334a2b976d"
+    },
+    {
+      "file": "reports/v089-mobile-rhino.idle.png",
+      "sha256": "a23323cbb5cd3daefdce75bf6280868b2bdb1c103a6a06eda221ef1771aafe89"
+    },
+    {
+      "file": "reports/v089-mobile-rhino.roll.0.png",
+      "sha256": "62d7998dc4af6498c31540176b9c6ba394ec1865031b08922aeba4f14f7c63d1"
+    },
+    {
+      "file": "reports/v089-mobile-rhino.roll.1.png",
+      "sha256": "ad553c03259101b431019a2f03b50f51ef23c9e866d17b5b9b991ffae5aaf579"
+    },
+    {
+      "file": "reports/v089-mobile-rhino.damaged.png",
+      "sha256": "a720aab03bef8811de3b7a2796bd083913c2205ff5dd20086f87161fa26e3516"
+    },
+    {
+      "file": "reports/v089-mobile-tell-burst.png",
+      "sha256": "0f56c0b2f2a7de5e6d5e39a5aa9787d1cbfcbce89bd745811c14c5e1831697c4"
+    },
+    {
+      "file": "reports/v089-mobile-rhino.fire.png",
+      "sha256": "be1d23438bd5fb5db00c357ccba07c971dfcdb9021da08fc3e661dba0de3327a"
+    },
+    {
+      "file": "reports/v089-mobile-rhino.ram-tell.png",
+      "sha256": "b5d04c89a6a0e36dfcae139be4430b0649b64bb9f6ce6eb6804c09197cdce2a9"
+    },
+    {
+      "file": "reports/v089-mobile-tell-ram.png",
+      "sha256": "b5d04c89a6a0e36dfcae139be4430b0649b64bb9f6ce6eb6804c09197cdce2a9"
+    },
+    {
+      "file": "reports/v089-mobile-rhino.ram.png",
+      "sha256": "8b5ec1c619e7594a1a295131f3e3ed9c7920f1f00512dc7ebfc7c07503a425fd"
+    },
+    {
+      "file": "reports/v089-mobile-tell-fan.png",
+      "sha256": "3c82e66b5b65449b01b05800db2af37c62017f22c9fdffba27182e06315864bf"
+    },
+    {
+      "file": "reports/v089-mobile-tell-bombard.png",
+      "sha256": "10322c3fc168f3a207e78c4450054fdccdf7ee45107ba85118dadd38fa358575"
+    },
+    {
+      "file": "reports/v089-mobile-wreck.png",
+      "sha256": "e6680d5f895a099b2757ccf523d32e7ec7aac9edb940169ef6c099d5bcb1e856"
+    },
+    {
+      "file": "reports/v089-mobile-result.png",
+      "sha256": "e6680d5f895a099b2757ccf523d32e7ec7aac9edb940169ef6c099d5bcb1e856"
+    }
+  ],
+  "limitations": [
+    "Controlled browser clock; no human difficulty/FPS claim",
+    "WeChat real-device validation not performed; no upload",
+    "Static model fixtures isolate rules; continuous-fire browser evidence uses real keyboard input without state edits"
+  ]
+}

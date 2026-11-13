@@ -1,0 +1,123 @@
+{
+  "startedAt": "2026-11-09T03:33:16.869Z",
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "captures": [
+    {
+      "x": 1600,
+      "player": {
+        "x": 1604.9444444444323,
+        "y": 237.5,
+        "vx": 280,
+        "vy": -440,
+        "health": 5,
+        "grounded": false,
+        "facing": 1,
+        "animation": "Fall",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "objects": [
+        {
+          "id": "rocket-cache",
+          "frame": "crate.debris",
+          "width": 68.75,
+          "height": 25,
+          "alive": false,
+          "y": 318
+        },
+        {
+          "id": "hanging-01",
+          "frame": "crate.debris",
+          "width": 67.5,
+          "height": 24.96,
+          "alive": false,
+          "y": 148
+        },
+        {
+          "id": "crate-02",
+          "frame": "crate.intact",
+          "width": 69,
+          "height": 59.07194244604317,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "sandbags-01",
+          "frame": "cover.sandbags",
+          "width": 150,
+          "height": 66.875,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "barrel-03",
+          "frame": "barrel.intact",
+          "width": 39.78260869565217,
+          "height": 61,
+          "alive": true,
+          "y": 150
+        }
+      ]
+    },
+    {
+      "x": 3700,
+      "player": {
+        "x": 3703.013888888966,
+        "y": 206.875,
+        "vx": 280,
+        "vy": -150,
+        "health": 4,
+        "grounded": false,
+        "facing": 1,
+        "animation": "Fall",
+        "crouched": false,
+        "aimPitch": 0,
+        "airJumpsRemaining": 1,
+        "jumpCount": 0,
+        "canJump": true
+      },
+      "objects": [
+        {
+          "id": "sandbags-B",
+          "frame": "cover.sandbags",
+          "width": 150,
+          "height": 66.875,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "cargo-B",
+          "frame": "crate.intact",
+          "width": 67.74789915966386,
+          "height": 58,
+          "alive": true,
+          "y": 440
+        },
+        {
+          "id": "concrete-C",
+          "frame": "cover.concrete",
+          "width": 153,
+          "height": 64.38749999999999,
+          "alive": true,
+          "y": 150
+        },
+        {
+          "id": "hidden-rockets",
+          "frame": "crate.intact",
+          "width": 59.57142857142857,
+          "height": 51,
+          "alive": true,
+          "y": 320
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

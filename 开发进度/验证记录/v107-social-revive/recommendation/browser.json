@@ -1,0 +1,106 @@
+{
+  "version": "1.0.7",
+  "passed": true,
+  "startedAt": "2026-11-13T10:14:55.269Z",
+  "finishedAt": "2026-11-13T10:16:06.244Z",
+  "method": "Actual Cocos build, normal touch and keyboard input, simulated WeChat PageManager and platform lifecycle. No real recommendation, rating, sharing or WeChat device result.",
+  "cases": [
+    {
+      "name": "touch-layout-and-return",
+      "viewport": {
+        "width": 667,
+        "height": 375
+      },
+      "minimumTouchHeight": 45.833333333333336,
+      "passed": true
+    },
+    {
+      "name": "touch-layout-and-return",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "minimumTouchHeight": 47.666666666666664,
+      "passed": true
+    },
+    {
+      "name": "touch-layout-and-return",
+      "viewport": {
+        "width": 932,
+        "height": 430
+      },
+      "minimumTouchHeight": 52.55555555555556,
+      "passed": true
+    },
+    {
+      "name": "touch-layout-and-return",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "minimumTouchHeight": 88,
+      "passed": true
+    },
+    {
+      "name": "old",
+      "passed": true,
+      "preloadInstances": 0
+    },
+    {
+      "name": "missing-api",
+      "passed": true,
+      "preloadInstances": 0
+    },
+    {
+      "name": "show-failure",
+      "passed": true,
+      "preloadInstances": 1
+    },
+    {
+      "name": "pending-load",
+      "passed": true,
+      "preloadInstances": 1
+    },
+    {
+      "name": "preload-failure",
+      "passed": true,
+      "preloadInstances": 1
+    },
+    {
+      "name": "cleanup-failure",
+      "passed": true,
+      "preloadInstances": 1
+    },
+    {
+      "name": "normal",
+      "passed": true,
+      "preloadInstances": 1
+    },
+    {
+      "name": "invitation-queue-orientation-and-return",
+      "passed": true
+    },
+    {
+      "name": "web-hidden",
+      "passed": true
+    }
+  ],
+  "captures": [
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\home-667x375.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\home-844x390.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\opening-cancellable.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\home-932x430.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\home-1280x720.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\old.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\missing-api.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\show-failure.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\cleanup-failure.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\timeout.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\native-open-portrait.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\home-portrait.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\waiting-portrait.png",
+    "C:\\Users\\Administrator\\Desktop\\线条突围\\开发进度\\验证记录\\v107-social-revive\\recommendation\\web-no-wechat-entry.png"
+  ],
+  "errors": [],
+  "failed": []
+}

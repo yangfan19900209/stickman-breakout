@@ -1,0 +1,185 @@
+{
+  "version": "1.0.5",
+  "createdAt": "2026-11-13T09:32:43.401Z",
+  "base": "PRE-V105-OCEAN-20261113",
+  "reason": "Concurrent 1.0.6 revival/chapter-select and recommendation work in the shared source/build directories. Live work was preserved; only this isolated release excludes those later features.",
+  "overlays": [
+    {
+      "file": "源码/assets/scripts/ocean/SwimNavigation.ts",
+      "sha256": "18584fa124cbefc46b7fd49c40b11471acc338006e8524a406be283dedfa5647"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/SwimNavigation.ts.meta",
+      "sha256": "b31390741bcd3a757cb82a70220a098cad0045ff7d1390ad5d9e33a5252d9cb2"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanFish.ts",
+      "sha256": "a5f1c54df34fe01d9b59b1cda2a2d46245bdac986c81abe7e9253068a6a1431f"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanFish.ts.meta",
+      "sha256": "18961415d2487a4019c981ac34455c5c889790c212de27c87bf16b8230a6d1c5"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanSession.ts",
+      "sha256": "9ad61fe983ce6ebb561b541e3eedbec8782f4ab291754a348047cc0c809510f7"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanSession.ts.meta",
+      "sha256": "fbbde07b9903068aa22cd3dcb4d733644da4819b7b7299e1236977b8aa66db3f"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanCombatTuning.ts",
+      "sha256": "ff1f52b9a4ddd45ff1e02c9eab9540d75d6049dffb6d1ea2630b81a505c8073c"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanCombatTuning.ts.meta",
+      "sha256": "4c2cd320d1edb0c9e67c2d6053cd541b45a35db3f9bdb323f5c9e2f80bffd271"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanRenderer.ts",
+      "sha256": "62601b5bce61d861097a4c5ebb122424fa30062bc0b2a80b2638df68fe9ea99e"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanRenderer.ts.meta",
+      "sha256": "57cf891a603e39b153a5e502eb923fba67ed150c7cc28d6c3c8ea8884e54e0d1"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanPose.ts",
+      "sha256": "268f9f3525593274fe6c3a04a37771aaa145477c4b97789f626474c8d3d2f7a0"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanPose.ts.meta",
+      "sha256": "9b2d1c5353d3e7103f5f7e5d6366b8891e866e3374491ebf6b465fe5b2e6d8b5"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanFrames.ts",
+      "sha256": "33abe682428b74bd5da716281984e2d4ad4af29bef62003f54cecca45b3a1c81"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanFrames.ts.meta",
+      "sha256": "4f34e855d6b2d713ab6d89daffb02e0167883bb35a2ef06e5bbb7fa3d3bd4239"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanAssets.ts",
+      "sha256": "0b7e618d7024dffc6eaee3c7f52a2bb9d3396f425acf111a382039918c50851d"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanAssets.ts.meta",
+      "sha256": "8605a6e6ebc329643a87d16e5de16a2b5f3c6a94fcfd45a032e71cc402731d63"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanUpdateFrames.ts",
+      "sha256": "db0ea6586540457718f513fc07e93a76c50e4746077d3630d418b877ad56541f"
+    },
+    {
+      "file": "源码/assets/scripts/ocean/OceanUpdateFrames.ts.meta",
+      "sha256": "084e36951faf55348743b2d00c32fbcf9537a8b228e1f20bb28ba95a800fc950"
+    },
+    {
+      "file": "源码/assets/level02/ocean-v105.png",
+      "sha256": "004bd6eb46e79519612d423659994d23c38056e69c7fff9b22f8201d07eebb38"
+    },
+    {
+      "file": "源码/assets/level02/ocean-v105.png.meta",
+      "sha256": "264080a329af749a23a4df5792c6360617663c60e762afd211e7379978584e83"
+    },
+    {
+      "file": "源码/scripts/pack-ocean-v105.mjs",
+      "sha256": "e23fde8cf3880d09a30898ec8794fc3d61faecca500cf1fec54ee54cd1b5c12a"
+    },
+    {
+      "file": "源码/scripts/ocean-brain.cjs",
+      "sha256": "a1f663038ea710c5fb3c82bdcad1cebb5157b71596b00160b67e94d8ff43f88d"
+    },
+    {
+      "file": "源码/scripts/verify-ocean-current.mjs",
+      "sha256": "3dc2e81056abc00d17b4c6ee9c5c7e77c4ade7cf8d7c3050b806c0bbe6c00270"
+    },
+    {
+      "file": "源码/scripts/verify-v104-budget.mjs",
+      "sha256": "e00e0a72b206388119cb846866c154699a807fbd4cd03b9bcffc33296df32b84"
+    },
+    {
+      "file": "源码/scripts/build-cocos.ps1",
+      "sha256": "572f6e6e3c486c5c366e8517da1b20338f85b5390a71ce5db3710863e6c19029"
+    },
+    {
+      "file": "源码/tests/v070-ocean.test.cjs",
+      "sha256": "d02710d5aaa39680c4f0d4ae5576ee9b911f500714d8b47ff0c1b07925fb6386"
+    },
+    {
+      "file": "源码/tests/v073-ocean-combat.test.cjs",
+      "sha256": "934d9fd9d63d4503316626e086503bf983d7aa79e95f2aa25fecdf26fc4fe97a"
+    },
+    {
+      "file": "源码/tests/v0816-jump-ocean-parity.test.cjs",
+      "sha256": "e1b945b0e09123f94a16b032dc7ce1356ec6253856329268d90398c2e13379d7"
+    },
+    {
+      "file": "源码/tests/v0818-ocean-combat.test.cjs",
+      "sha256": "d3b757d294056a5e70367a4ba71103eff7aa82eba946171f9364af722cbac784"
+    },
+    {
+      "file": "源码/tests/v105-ocean-fixes.test.cjs",
+      "sha256": "f6785a90db8468ecbe7b79b97500078af2fc14a0b135e0a1e18b53c09ffc7d69"
+    },
+    {
+      "file": "素材/游戏美术/source/v105/GENERATION.md",
+      "sha256": "b5ee6c0c5f20ba6bafcf14009ef39454af70ff090e5c6dbfed7d4e9e8b6ff146"
+    },
+    {
+      "file": "素材/游戏美术/source/v105/predator-fish.png",
+      "sha256": "3196460054c69529afa6ee75325220b961b8c468edc648ba02443abea78db57b"
+    },
+    {
+      "file": "素材/游戏美术/source/v105/sonar-swim.png",
+      "sha256": "f4e9de3aa42d50e18bb82867aeded6f6596beba776edc2be490f7f2cc1e8d35c"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/diver.sonar.swim.0.png",
+      "sha256": "1e44bdbd007897add91183af253e1f151cf8e0d2aea903552353d7b1a19ae151"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/diver.sonar.swim.1.png",
+      "sha256": "59bc4ac91ba261c611f583ada151d923213b5d26172d40973e8f3ef481d1fa8c"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/diver.sonar.swim.2.png",
+      "sha256": "9e2e2eee62cb69f02a99c9548e2391f80592713d6cb76d6c57609c8f03ec9ad9"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/diver.sonar.swim.3.png",
+      "sha256": "cd79738da4c19aec6bd34ea8aae6c93d6591d799c87edfa0146444fdea89bf9b"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/fish.predator.dash.png",
+      "sha256": "7e8dac06ae63a4e7f3e13c7bddb46c23711805b2a3a330ec708f403b3685e87b"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/fish.predator.defeat.png",
+      "sha256": "a29bb4d52a95529f83c8c75062a51fcd317d3fa1cd58faf23fd95fec618ab36c"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/fish.predator.recover.png",
+      "sha256": "f95d054c2a812db9b51c488b64a745f24eca184863e8e54589f82cebed908795"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/fish.predator.swim.0.png",
+      "sha256": "0596b331e181d6075cc2bc1d2cec10843123ab6dab91a679411d525f846712da"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/fish.predator.swim.1.png",
+      "sha256": "b05307b6bbf345451c8ad6f5ea03664aa51a299c3986a48ad012bd8d909470e7"
+    },
+    {
+      "file": "素材/游戏美术/slices/v105/fish.predator.tell.png",
+      "sha256": "42ec651ecbd7d8511f7ecc5601740c3cfb4ba74ba0cb680c354a105180fc1b72"
+    },
+    {
+      "file": "素材/游戏美术/v105-manifest.json",
+      "sha256": "c7acf4d1e064cb96c9afb3d90c6cb11aa946123df06d72a5101feece921b296f"
+    }
+  ],
+  "isolatedOceanSessionSHA256": "b5f9744e30b9c8f1841626ff7fc71d2e38b1c7db24d12fba759b38bad2ff72ea"
+}
