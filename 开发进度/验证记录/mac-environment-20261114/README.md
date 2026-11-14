@@ -39,6 +39,14 @@
 
 原始日志、机器路径快照、构建产物和缓存留在本机。GitHub 保存可复用脚本、必要说明、公开验证摘要及 Windows 保留清单，不上传账户状态或私钥。
 
+## GitHub 上传完成
+
+Mac 适配已通过 [提交 acba1b2](https://github.com/yangfan19900209/stickman-breakout/commit/acba1b204a99f32383b4cad49cfbb682c8002419) 更新到 `main`。重新读取远端主分支确认提交一致、改动范围为预定 32 个文件，并核对远端 `package.json` 与本地内容一致。用户已明确确认目标分支；更新采用非强制快进和预期基准校验。
+
+完整回执见 [GitHub 上传成功记录](github-upload-success.json)。原有 94 个受保护文件和 17 条 npm 命令保持不变；随后仅补存本文、验证摘要和计划/进度中的上传状态。
+
+本次通过 GitHub 连接完成提交；本地 `.git` 受执行环境限制，HEAD 尚未同步到远端。本机 Cocos 登录状态和服务配置仍只保留在本地。GitHub 上传成功不代表微信开发版本上传、CLI 全流程或真机验收通过。
+
 ## GitHub 同步范围与上传过程
 
 本轮选择 32 个文件保存 Mac 开发入口、独立脚本、测试和验证记录，不包含本机 Cocos 账号配置、构建缓存或产物。Windows 保留范围按上表与 `validation.json` 核对。

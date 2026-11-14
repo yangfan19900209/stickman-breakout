@@ -629,15 +629,14 @@
     "deviceVerified": false
   },
   "githubUploadAttempt": {
-    "recordType": "upload_attempt_snapshot",
-    "status": "awaiting_target_branch_confirmation",
-    "httpStatus": null,
-    "attempts": 3,
+    "status": "uploaded",
     "writeAccessRestored": true,
     "commitCreated": true,
-    "createdCommit": "3b0260ff01d8863a013fff9ea6347defc8b48a43",
-    "branchUpdated": false,
-    "uploaded": false,
-    "receipt": "github-upload-attempt.json"
+    "uploadedCommit": "acba1b204a99f32383b4cad49cfbb682c8002419",
+    "branchUpdated": true,
+    "remoteHeadVerified": true,
+    "uploaded": true,
+    "receipt": "github-upload-success.json",
+    "priorAttemptsReceipt": "github-upload-attempt.json"
   }
 }

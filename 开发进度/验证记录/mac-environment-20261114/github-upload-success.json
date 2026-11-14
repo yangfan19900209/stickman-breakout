@@ -1,0 +1,222 @@
+{
+  "verifiedAt": "2026-11-14T04:53:14.954113+00:00",
+  "repository": "yangfan19900209/stickman-breakout",
+  "branch": "main",
+  "status": "uploaded",
+  "codeCommit": "acba1b204a99f32383b4cad49cfbb682c8002419",
+  "codeCommitUrl": "https://github.com/yangfan19900209/stickman-breakout/commit/acba1b204a99f32383b4cad49cfbb682c8002419",
+  "previousMain": "7f19bd47578286cd8b267b5624ffda59bd62a1c7",
+  "codeTree": "a91efe2d802b332c50cd642a1c5e056f10e5f1f0",
+  "userConfirmedTargetBranch": true,
+  "branchUpdated": true,
+  "remoteHeadVerified": true,
+  "force": false,
+  "uploadedFileCount": 32,
+  "fileManifestScope": "Content in codeCommit, before this success receipt and follow-up documentation.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "133c0aa94960d80e628dc39969373ba6232a8c459e6b7f93a9433b8e79f4884c",
+      "mode": "100644",
+      "bytes": 2615
+    },
+    {
+      "path": "doc/PROJECT.md",
+      "sha256": "19ea7e189d6c06f2f9da4a1467f649d1e0f2ed2e128ed7c03b4389ed8232a8a3",
+      "mode": "100644",
+      "bytes": 4983
+    },
+    {
+      "path": "doc/README.md",
+      "sha256": "cdeaa980e4d338c074159ac347fe82117c4e62e7e57075e72670a69aadfb7aeb",
+      "mode": "100644",
+      "bytes": 1361
+    },
+    {
+      "path": "doc/MAC-DEVELOPMENT.md",
+      "sha256": "c060f467fd2f43fd0bbd95c4ee74d7e8fb0958a7c1776fc80264d56a03bf213e",
+      "mode": "100644",
+      "bytes": 8095
+    },
+    {
+      "path": "开发计划/README.md",
+      "sha256": "32aa6d69d9e4ceabd4c62eb3d0ce74bb19cd2a7250c7c952cdb303d98ab8a08f",
+      "mode": "100644",
+      "bytes": 2905
+    },
+    {
+      "path": "开发进度/当前进度.md",
+      "sha256": "5d1dac1e95809a5363a46cd0ad0d0871cffae361e1000f6030a4d9740109ebc9",
+      "mode": "100644",
+      "bytes": 3365
+    },
+    {
+      "path": "源码/README.md",
+      "sha256": "b47f042379e8eb63374c3c5f6900d1501f1c59f2541bc2133abd742868da3946",
+      "mode": "100644",
+      "bytes": 1799
+    },
+    {
+      "path": "源码/package.json",
+      "sha256": "bd89a743fd44225b1b2b2234c3e799e2a39a25cc99fcf07ef7600c76ad00da9f",
+      "mode": "100644",
+      "bytes": 2129
+    },
+    {
+      "path": "Mac开发.command",
+      "sha256": "04a6032ec4a1fb7ca91970a62183f58590f7cef0bd44c4d64aa82f92a4179ade",
+      "mode": "100755",
+      "bytes": 484
+    },
+    {
+      "path": "源码/tests/mac/workflow.test.mjs",
+      "sha256": "67059208456d01efefbd443708c188f6414fa060d0e59e799f9c2fd0d1f6a864",
+      "mode": "100644",
+      "bytes": 7766
+    },
+    {
+      "path": "源码/scripts/mac/artifact-links.mjs",
+      "sha256": "3456c87d189800fe0e0886d17b2d35c9c485f5092c1fc6d16e0af0525a2504a0",
+      "mode": "100644",
+      "bytes": 1699
+    },
+    {
+      "path": "源码/scripts/mac/build.mjs",
+      "sha256": "16b3e02645d7770cc76e6c907efd0062d4bc82a45f26fc174190959c26dd019f",
+      "mode": "100644",
+      "bytes": 5895
+    },
+    {
+      "path": "源码/scripts/mac/common.mjs",
+      "sha256": "049bbc687bc81a7485dabd1bb5b1cd606bf2b9611981a82fd387900185071559",
+      "mode": "100644",
+      "bytes": 4656
+    },
+    {
+      "path": "源码/scripts/mac/doctor.mjs",
+      "sha256": "5921f689b0373ad6f8130334f23e5f10fcf8d31e3da157cc62c41ae597b739ec",
+      "mode": "100644",
+      "bytes": 2782
+    },
+    {
+      "path": "源码/scripts/mac/env.sh",
+      "sha256": "f59ef711ef39e0c30a339992b02eda59497b27103f36684ec1f97abdcf369688",
+      "mode": "100755",
+      "bytes": 1307
+    },
+    {
+      "path": "源码/scripts/mac/run.sh",
+      "sha256": "f1c4e15f07f499de66c4c8f7fe0eff80b84006c7cf4e8a598d5c4a961d1e03b9",
+      "mode": "100755",
+      "bytes": 1198
+    },
+    {
+      "path": "源码/scripts/mac/serve.mjs",
+      "sha256": "546e6b708aa352fdb1ccde57456e4e635405641cd6de900250152c719339eb04",
+      "mode": "100644",
+      "bytes": 3280
+    },
+    {
+      "path": "源码/scripts/mac/setup.sh",
+      "sha256": "f34f18ebce1bba1f315612efeb2c1b15d668b563f0f462a7883cabdf26e91a72",
+      "mode": "100755",
+      "bytes": 2565
+    },
+    {
+      "path": "源码/scripts/mac/verify-project.mjs",
+      "sha256": "59c1ff1931e8e4341c3bc80ac9031e3079e85cf8159e58ebc4f084124ef81f32",
+      "mode": "100644",
+      "bytes": 3744
+    },
+    {
+      "path": "源码/scripts/mac/wechat-package.mjs",
+      "sha256": "2f73f1281eb053770b2c3c6f14a406ce00a3a9ef179c47816969fce7e908ab32",
+      "mode": "100644",
+      "bytes": 9994
+    },
+    {
+      "path": "源码/scripts/mac/workflow.mjs",
+      "sha256": "f4802e1cb5eb7672e74d398c0c368968db1157268dc99397540d8397b4fc2bda",
+      "mode": "100644",
+      "bytes": 7045
+    },
+    {
+      "path": "开发进度/验证记录/mac-20261114/README.md",
+      "sha256": "31651578cb89594568b1988414816f67baec9c011a051807959e6154ba7c873f",
+      "mode": "100644",
+      "bytes": 4858
+    },
+    {
+      "path": "开发进度/验证记录/mac-20261114/validation-local.json",
+      "sha256": "96918f88f718ce507252624f1accdc13a11adfae743aec0e3a8891c6dca1aa93",
+      "mode": "100644",
+      "bytes": 1303
+    },
+    {
+      "path": "开发进度/验证记录/mac-20261114/dependencies.json",
+      "sha256": "288b1312054479928d0f176bca63ec39c603609ef87266d18069f1214ce031aa",
+      "mode": "100644",
+      "bytes": 849
+    },
+    {
+      "path": "开发进度/验证记录/mac-20261114/wechat-package-local.json",
+      "sha256": "7e31c7e2875a4315363ab1ca0c3bdbe6e9711f1628e0a82758b693316b7f1af0",
+      "mode": "100644",
+      "bytes": 1112
+    },
+    {
+      "path": "开发进度/验证记录/mac-workflow-20261114/README.md",
+      "sha256": "fac3013cf11f304e68172d98bea36c283bc5a88660e2c3d14b0aa16dfcc04941",
+      "mode": "100644",
+      "bytes": 5075
+    },
+    {
+      "path": "开发进度/验证记录/mac-workflow-20261114/logic-results.json",
+      "sha256": "49a4a70731ba8b70e0bebb26544aab29db9b2f8e28134e852e6b3e5f14600e91",
+      "mode": "100644",
+      "bytes": 67
+    },
+    {
+      "path": "开发进度/验证记录/mac-workflow-20261114/preview-fixture.json",
+      "sha256": "cbb2b23d10caa7d0437760c99830c7491117775a2245213382bd8e1542def4fc",
+      "mode": "100644",
+      "bytes": 242
+    },
+    {
+      "path": "开发进度/验证记录/mac-environment-20261114/README.md",
+      "sha256": "d96d1b12adfebcbedfa38b7448abf4a161f5aec326aebec597d5ea2e7a0715d9",
+      "mode": "100644",
+      "bytes": 4619
+    },
+    {
+      "path": "开发进度/验证记录/mac-environment-20261114/validation.json",
+      "sha256": "51c89bb4ba84c84f468f648dba54ac07b14a75bbc09c9d6de0777248e467cdd9",
+      "mode": "100644",
+      "bytes": 22387
+    },
+    {
+      "path": "开发进度/验证记录/mac-environment-20261114/tooling-results.json",
+      "sha256": "3629d6b6c08bd71041b78f6f311382137573139bdafaa9bcc59626c018016b08",
+      "mode": "100644",
+      "bytes": 946
+    },
+    {
+      "path": "开发进度/验证记录/mac-environment-20261114/github-upload-attempt.json",
+      "sha256": "cc4d362904d69a8c844067bb619d164b57c86e6abf7072e690c43cf217ea2f38",
+      "mode": "100644",
+      "bytes": 2024
+    }
+  ],
+  "remotePackageBlobMatched": true,
+  "windowsProtectedFilesUnchanged": 94,
+  "originalNpmCommandsUnchanged": 17,
+  "macNpmCommandsAdded": 12,
+  "localGit": {
+    "head": "7f19bd47578286cd8b267b5624ffda59bd62a1c7",
+    "metadataSynced": false,
+    "reason": "Current session cannot write local Git metadata; publication was completed through the GitHub connection."
+  },
+  "wechatUploaded": false,
+  "wechatPublished": false,
+  "deviceVerified": false
+}
