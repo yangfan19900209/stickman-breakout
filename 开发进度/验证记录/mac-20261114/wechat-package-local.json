@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-11-14T03:21:34.250Z",
+  "version": "1.0.7",
+  "passed": true,
+  "creator": "3.8.8",
+  "buildMethod": "Creator UI, imported build-config/wechatgame.json",
+  "buildInputSHA256": "4bddf4f5fc4b731f7e811efff0b49a3aac1aa59a762b02930aa16578f0fd0311",
+  "buildInputsUnchanged": true,
+  "appid": "wx7d2aae02691fc088",
+  "orientation": "landscape",
+  "files": 449,
+  "totalBytes": 20948598,
+  "mainBytes": 3885697,
+  "subpackages": [
+    {
+      "name": "internal",
+      "root": "subpackages/internal/",
+      "bytes": 168275
+    },
+    {
+      "name": "main",
+      "root": "subpackages/main/",
+      "bytes": 744690
+    },
+    {
+      "name": "landart",
+      "root": "subpackages/landart/",
+      "bytes": 10487797
+    },
+    {
+      "name": "level02",
+      "root": "subpackages/level02/",
+      "bytes": 4978245
+    },
+    {
+      "name": "level03",
+      "root": "subpackages/level03/",
+      "bytes": 683894
+    }
+  ],
+  "openDataContext": "openDataContext",
+  "rawFileSizesOnly": true,
+  "uploadSizeNotVerified": true,
+  "uploaded": false,
+  "published": false,
+  "deviceVerified": false
+}

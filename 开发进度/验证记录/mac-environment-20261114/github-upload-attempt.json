@@ -1,0 +1,53 @@
+{
+  "attemptedAt": "2026-11-14T04:47:46.090622+00:00",
+  "repository": "yangfan19900209/stickman-breakout",
+  "branch": "main",
+  "baseCommit": "7f19bd47578286cd8b267b5624ffda59bd62a1c7",
+  "attemptedFileCount": 32,
+  "stage": "update_ref_approval",
+  "status": "awaiting_target_branch_confirmation",
+  "httpStatus": null,
+  "message": "GitHub write access restored; approval review requires explicit confirmation of target branch main.",
+  "commitCreated": true,
+  "branchUpdated": false,
+  "uploaded": false,
+  "attempts": [
+    {
+      "attemptedAt": "2026-11-14T04:20:46.897Z",
+      "attemptedFileCount": 31,
+      "status": "blocked",
+      "httpStatus": 403,
+      "message": "Resource not accessible by integration"
+    },
+    {
+      "attemptedAt": "2026-11-14T04:24:47.179Z",
+      "attemptedFileCount": 32,
+      "status": "blocked",
+      "httpStatus": 403,
+      "message": "Resource not accessible by integration"
+    },
+    {
+      "attemptedAt": "2026-11-14T04:47:46.090622+00:00",
+      "attemptedFileCount": 32,
+      "stage": "update_ref_approval",
+      "status": "awaiting_target_branch_confirmation",
+      "treeCreated": true,
+      "commitCreated": true,
+      "createdCommit": "3b0260ff01d8863a013fff9ea6347defc8b48a43",
+      "branchUpdated": false,
+      "message": "GitHub write access restored; approval review requires explicit confirmation of target branch main."
+    }
+  ],
+  "recordType": "upload_attempt_snapshot",
+  "recordedAt": "2026-11-14T04:47:46.090622+00:00",
+  "snapshotNote": "此文件记录分支确认前的上传尝试；后续发布结果以远端分支及本地发布回执为准。",
+  "createdCommit": "3b0260ff01d8863a013fff9ea6347defc8b48a43",
+  "createdTree": "227deb66d8bf60bb4b86a29bb4f761937524ff78",
+  "approvalReview": {
+    "action": "update refs/heads/main",
+    "status": "rejected",
+    "reason": "需要用户明确确认目标分支；本次不是 GitHub 403 拒绝。",
+    "force": false,
+    "expectedSha": "7f19bd47578286cd8b267b5624ffda59bd62a1c7"
+  }
+}

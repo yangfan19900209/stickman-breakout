@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-11-14T03:26:38.302Z",
+  "version": "1.0.7",
+  "typecheck": {
+    "exitCode": 0,
+    "typescript": "5.8.2",
+    "creatorTypes": "3.8.8-121517",
+    "dependencyInstall": "offline-reused-not-npm-ci"
+  },
+  "logic": {
+    "tests": 524,
+    "passed": 524,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "editorBuild": {
+    "passed": true,
+    "durationSeconds": 38,
+    "inputSHA256": "4bddf4f5fc4b731f7e811efff0b49a3aac1aa59a762b02930aa16578f0fd0311"
+  },
+  "postBuildInputChanges": [
+    "package.json"
+  ],
+  "changedPackageFields": [
+    "scripts.build:web",
+    "scripts.build:wechat"
+  ],
+  "runtimeInputsUnchanged": true,
+  "packageFilesUnchangedAfterCLIFailure": true,
+  "cli": {
+    "syntaxChecked": true,
+    "dryRunPassed": true,
+    "realLaunchPassed": false,
+    "signal": "SIGABRT",
+    "wrapperExitCode": 1,
+    "lockReleased": true,
+    "windowsBranchTested": false,
+    "scriptSHA256": "eb6dc809aec656bbf1cae316e32d677531d94a1735148d4eec2f17d2e56fda71"
+  },
+  "wechatDevtools": {
+    "version": "2.02.2609250",
+    "baseLibrary": "3.18.0",
+    "startupObserved": true,
+    "firstChapterObserved": true,
+    "fullInputRegressionPassed": false,
+    "startupErrors": 0,
+    "startupWarnings": 2
+  },
+  "trueDeviceVerified": false,
+  "uploaded": false,
+  "published": false
+}

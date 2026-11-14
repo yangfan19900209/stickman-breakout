@@ -1,0 +1,643 @@
+{
+  "checkedAt": "2026-11-14T04:15:07.532Z",
+  "version": "1.0.7",
+  "baselineCommit": "7f19bd47578286cd8b267b5624ffda59bd62a1c7",
+  "skill": {
+    "name": "yangfan-game-development",
+    "installedLocally": true,
+    "files": 14,
+    "identical": true,
+    "filesSHA256": "10b16ea908bbcb97b8b65ce9fb1a73f4b391eed703120406da796b6f5bbbb956"
+  },
+  "windows": {
+    "allExistingNpmCommandsUnchanged": true,
+    "addedCommands": [
+      "mac:setup",
+      "mac:doctor",
+      "mac:test",
+      "mac:build:web",
+      "mac:build:wechat",
+      "mac:dev",
+      "mac:verify",
+      "mac:package:wechat",
+      "mac:open:wechat",
+      "mac:upload:check",
+      "mac:upload:wechat",
+      "mac:test:tooling"
+    ],
+    "packageMetadataAndDependenciesUnchanged": true,
+    "protectedFiles": [
+      {
+        "file": ".gitattributes",
+        "sha256": "4260be2f2812e9521af40b5f61c3de6a32d5f959ff4ec7afa174eb326869e23e",
+        "unchanged": true
+      },
+      {
+        "file": "开发进度/验证记录/project-structure.json",
+        "sha256": "eb8e4f914be073ba4c96b89c19efd069e65765ac3a6ecf65395064af6d904e04",
+        "unchanged": true
+      },
+      {
+        "file": "源码/build-config/web-mobile.json",
+        "sha256": "47e784c3a800ff7c5660357f2f6c4c53a7728b674f1cfe50f244e110320b25e1",
+        "unchanged": true
+      },
+      {
+        "file": "源码/build-config/wechatgame.json",
+        "sha256": "23a7a152563f00e34888f2784f1e37befb18634e41b84f15607da987e2ee6e7a",
+        "unchanged": true
+      },
+      {
+        "file": "源码/build-templates/web-mobile/index.ejs",
+        "sha256": "5034bc8f1d5147dc5403103a71a121156e84d993138b99e397b7e12584eec808",
+        "unchanged": true
+      },
+      {
+        "file": "源码/build-templates/wechatgame/openDataContext/index.js",
+        "sha256": "b95df7be64c8e214a80a3fddab7c09cf6dc5e63736feb65166be709b7f93a5ff",
+        "unchanged": true
+      },
+      {
+        "file": "源码/build-templates/wechatgame/openDataContext/store.js",
+        "sha256": "4fd313420a38fdbc0253aac23df505893ee649cee93d2be39b9ca6ab62ca8640",
+        "unchanged": true
+      },
+      {
+        "file": "源码/package-lock.json",
+        "sha256": "c5e3cde85da36d666694b424ddc6be5b42a38465239b39e75202643f4fd6c199",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/Main.scene.template.json",
+        "sha256": "a604f8f0c0e05530931eb541e17a7ebbe712d16edf2d95db3c2c2813a17de029",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/audit-game-route.mjs",
+        "sha256": "93832787e44cb1b580e9b7430bf5655a9ee92784adc9c8491fb9fa51b7de9e6e",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/build-cocos.ps1",
+        "sha256": "572f6e6e3c486c5c366e8517da1b20338f85b5390a71ce5db3710863e6c19029",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/bypass-brain.cjs",
+        "sha256": "50a893dced951089b78f179a22884dc3716f8c58e478838c5398320ff2b0c97c",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/check-pages.mjs",
+        "sha256": "172bceec697c7bc00a71c0ed99d933d879cfbc1202d455fbc0a8c8bcf00ee78c",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/combat-sprites.mjs",
+        "sha256": "b96ce590599ec5ed62140ab08a3fa27160c58af9dd429df9d831f66f35e61cfb",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/create-app-icons.mjs",
+        "sha256": "4027b28ed66f1f673bf6c181dcc185ca50700910d012945bbb73c44a07e05c5a",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/create-checkpoint.mjs",
+        "sha256": "6dc3df64dd71c667147750b2b48787323b32b75703dd2bf50e36d0d101a0d7b7",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/deck-traversal.cjs",
+        "sha256": "a0a6b4180176e81cf3cc7ad81100a6b09893aa7c97d6201f1ad778e1c8bb7aec",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/flight-brain.cjs",
+        "sha256": "35f6ec69a8c88653751ef9e30c45c79ee9a11192b4e438e822bfeee6cff543ff",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/freeze-v106.mjs",
+        "sha256": "6b8a0226e174cc7fdac6ade766543df116ab0371fb6556f2b9afdaf00c0eb3c6",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/freeze-v107.mjs",
+        "sha256": "1e658f020c7421cfb6e0ead0bd81988e4791848db60df83f3547e155a562ca9c",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/github-pages.json",
+        "sha256": "239086628d49f47cf6fb0073ac40cd5fe784a85d89ad8a8e133a4c469d2e9746",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/make-v080-water-audio.mjs",
+        "sha256": "f5cb4ba75629060c316034ac54c1dbcc30a3d9abd2c7c043c3874a2f5cc3cdaf",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/meta.mjs",
+        "sha256": "5800a2ecc96e226ab3902f574b1768800b1ebd80a6560d71f7c8cf9fa17fa1ed",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/normalize-terrain.py",
+        "sha256": "6e3575da77d9a2a85e86b06d86f494bd565202f5bc33d1a4b24607f59c8e7dba",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/ocean-brain.cjs",
+        "sha256": "a1f663038ea710c5fb3c82bdcad1cebb5157b71596b00160b67e94d8ff43f88d",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-flight-art.mjs",
+        "sha256": "a40fc22f65eef70ddfdfed35f9efb2ebee7dfab5043c2bc45ba1f55c7ba5147d",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-level02.py",
+        "sha256": "2f0409f3586b063d7a2468e72e3cb50d0a165ee953d8508caacbad11d7ab3bf7",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-ocean-combat.py",
+        "sha256": "513f650996450a53f514457bc051eb66ebafbe9d8920f9a2a4185442fc2757de",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-ocean-v105.mjs",
+        "sha256": "e23fde8cf3880d09a30898ec8794fc3d61faecca500cf1fec54ee54cd1b5c12a",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v073.py",
+        "sha256": "d1a236565cdd92b52abb413ec0137e65de94ec2c6a5962982d1079d7f23eb023",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v074.py",
+        "sha256": "2f7da3e0dc5dc8442318d6a63f1b647cce115052aeafff79bf2e1fae98cb2023",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v075-drawn.py",
+        "sha256": "1d4a36cb8acfcfd149664259f272e47d9208f3116aac9e7d4c7c42424be876f2",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v075.py",
+        "sha256": "192753dcf7ddfd7151f503b9e379d9fd5cd585a579f0f0218ffa009fc7457e50",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v079-sandbags.mjs",
+        "sha256": "071d9338c52a92df61bf2f7e664a31eace7eef94c3cdc2ea7f06b6e389cde4a4",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v080-art.mjs",
+        "sha256": "b6729d32b94438868a308e307d64fc5db75775007211472f4ab5c32632747567",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v081-art.mjs",
+        "sha256": "290732f679122278c0b8afa8b40d0b7f8fa7c4c8f288363b2fcf0f203e6a9b5b",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v0814-shield.mjs",
+        "sha256": "ca8148f4d56617b826b1a9cc19de5199e876ca86ac8f3adb62b733ba78957997",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v0818-ocean.mjs",
+        "sha256": "ed9d10df111323c306f543c4e94ffbdf231fdfbbdedcf0bc2b257275585bf4da",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v083-motion.mjs",
+        "sha256": "ac44f693eea109262bb4b4c24104f5bd1dd405cf68799551487cdcefa312a85f",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v084-controls.mjs",
+        "sha256": "32c145c6346f57dffec3b4fc1326e786ae48c9b0d99210dbef8bbe5be1ff9167",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v086-combat.mjs",
+        "sha256": "73a0706e15f1e6541cd59f5c3233294cfb9817782b972fa54e0dd73b47435e88",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v087-combat.mjs",
+        "sha256": "c29123c6ef87b02b4810106ea2a7fb893a1f79e74f3e9f9c482a9f50eb15f40c",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v088-art.mjs",
+        "sha256": "0d61c7cc1d7ec0e5d86cf3aa05ec27f9924b742d59ed6ace02665d1081ac90ac",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/pack-v101-boss.mjs",
+        "sha256": "1eef470297ef77b9f014c41ef29407421da002c728499198b2f3793bc7063c64",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/package-fixed-release.mjs",
+        "sha256": "cbaadb1ac223167315ceb63b4ad9c2e0353fc5eb6bb3e8f6e5f50d1665056d08",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/package-recommendation.mjs",
+        "sha256": "6171e6565fb4db3e6175ad155156c3d4d73c996ae0410bcae564d83e1d376f7a",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/package-v106.mjs",
+        "sha256": "56110d8cb5005001d439895b50f497ed3786d0d894568ba63637784a3cc02142",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/package-v107.mjs",
+        "sha256": "f58944c1561dc93e201724a54b85c1a18d93d79886b45603fac9c837429addbf",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/playtest-brain.cjs",
+        "sha256": "9e3c53838ee59b78edae322710821cf9ad660684eafc2a0c444cce112da9e4ff",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/playtest-model.cjs",
+        "sha256": "3591e93126763cdb7f8a163080a016ca1cd62157d4cc1651743549fb4f876d97",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-comic-art.py",
+        "sha256": "5ac510e7bf87eba15551f52889f3c9f358bb2a0da4077c80d7e8e4e081f031da",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-comic-v053.py",
+        "sha256": "2c4c77e65a393eb80756c217737cb55b32752f4f5ce28e247e15f5250772d305",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-comic-v055.py",
+        "sha256": "0203d26bfad6217fd1f03cf71032c103639c44de5e165570b62485a583e26ef8",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-comic-v057.py",
+        "sha256": "be658093ff10cf59623e676ee4c5aac5a65bd182d7a1e5c9a16428d67ea978e6",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-comic-v058.py",
+        "sha256": "1d52fadc1ae0eb54b775a612687967b596efdb6193d37cc362fa80df2cc10137",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-comic-v059.py",
+        "sha256": "b5f059e6f5bbe1a89dde0b4eb35c7d716aeef93c7a2f5c3f2374c6767cd072bb",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-level02-assets.py",
+        "sha256": "273ea815cd7e6d5a29a2273d74163dffb0e384e0bb0a1f6bb3ce26cb258845b5",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-pages.mjs",
+        "sha256": "5582ad32ef4c157e462f9b59f9c7d4115ac70b2d141ddf03af23bff8eccca54f",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-rifle-actions.py",
+        "sha256": "dd68e4154d27883d2c31c890e8a9bf55140033234ac3c17962f45c919e9f1a83",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-rocket-aim.py",
+        "sha256": "a41973ec5918812f83dd8bf2786e13ff689295f8d1dc9262981fac02cd7d27ce",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-web-shell.mjs",
+        "sha256": "effcc336c2a87a2f8efc02e2ca80b5823b12eed406e123b6ef7b1ee236d593aa",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/prepare-wechat-social.mjs",
+        "sha256": "fa5efce8c95db5ff34b9dd886c10f0d855cfd3448adeecb81b3cec8f7f28b3ec",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/project-paths.mjs",
+        "sha256": "0bec25acce085782319e1e92f05012ddec3fc22211d1baecbd0f80541194ceda",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/serve-v106.mjs",
+        "sha256": "c0184283edfb8b92d15d6be1a2af89d74674309ebbd17ebd6780c0efb72c3811",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/serve-v107.mjs",
+        "sha256": "1814f0b9f2b45c0ca6467819457c8d51100d86cd3eab158e36d7d163a7e7da61",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/serve.mjs",
+        "sha256": "3e7c0e26239ea4a4dfe61b46c655d2f1f9279b3bbfe530ac0bbfea0190017811",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/sound-assets.mjs",
+        "sha256": "7c8531ce2e742ba491bffd3a2f53a0d933e5f096ccd18d2aadf693e08e75c7bd",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/sync-game-skill.mjs",
+        "sha256": "9cf05d8de010404b0b91f37cdd50a86646b9158c53cf90216e2e1e6b3905fab5",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/test.mjs",
+        "sha256": "810d6060cef839def397200e5620652c4ed99ee890d425f8352e48773a0d68ed",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/upload-wechat.mjs",
+        "sha256": "378012a8951d27b3cbe4f9a78aab20b86d32c35f226baddae649e324b3af79b4",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/v106-build-inputs.mjs",
+        "sha256": "281ec0cd99d84df6cd5e9792adad93cafc9935daf2614f426467dc06f1734425",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/v107-build-inputs.mjs",
+        "sha256": "0f65fe8656f482a856738fe3cec03b3f72da742518f07113d18b6343d099da8f",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-delivery.mjs",
+        "sha256": "f4263764e2b5353dfd77f12650cf3f12bb0bc885eb9e45b5467c742ea9096862",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-game-club.mjs",
+        "sha256": "73515749376f8b26b58b8b784786cf0e8b757f3f629c20561d1d65e3dfdf6a4b",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-level02-assets.mjs",
+        "sha256": "5ed2bdc17d6725e9b608fbaf14a038adf3a45b87b14eb335bc51a63e8989ce38",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-ocean-current.mjs",
+        "sha256": "1f688acc56fbd682d9f90ec02caaf954e4c1a4b35b3fbd2bd283fa7ffcf530ce",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-project.mjs",
+        "sha256": "9d9d9b154019fa0cf38355ef428852044b91688ff8c7bdc70c3d55984a3fea40",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-recommendation.mjs",
+        "sha256": "9a1963e0c5d34fbdb0bf10603b5dff867d6e4484c4feff7343a9c0d0a74fe710",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-rocket-muzzle.mjs",
+        "sha256": "fed6ff965c0844869a2600ce075f9fa7925433d1767c01b01692e9103944db61",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-smoke.mjs",
+        "sha256": "e0aa4be94d42324296f1ad5f6960652cfa2b1dd816411ed1e49c517a2e779363",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-underpass.mjs",
+        "sha256": "78fcb8f923c4cbb1acc28735af3ac9895ee510b2a465e5630e145a14e564ad84",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v104-budget.mjs",
+        "sha256": "e2d08f0093db76e1dc9224649c640292542fc3b46c23240de03aede583fbda60",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v104-campaign.mjs",
+        "sha256": "6f1c5cb80d9091c779f3baac9986b3f7859a889056a4cec4171ea35bafba129c",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v104-share.mjs",
+        "sha256": "25c41f83acc754fd414f05ed81ff3aec00d42a93110f4054b86010e11ae290b0",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v106-campaign.mjs",
+        "sha256": "785a180732a84d80abf4e34d3f637bc59244f7b9f7c858af4d657f134608f7ea",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v106-share.mjs",
+        "sha256": "8814f784738a665ac945479e3c4f9d5b7be4fe2a6acaba05986ce204e8658f20",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v106-ui.mjs",
+        "sha256": "94270a9634df79a8bfced92beca8190468a9f01f0ec1b3f9d4a94e232642a22d",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v107-recommendation.mjs",
+        "sha256": "acdd4142ce53857c9eb9866c5b6681cbccbc66254a4a292034dc039e0f8a2571",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v107-revive.mjs",
+        "sha256": "363a3e963c1b23ba3c83659a706297d025d043c362b93c023be295200635e082",
+        "unchanged": true
+      },
+      {
+        "file": "源码/scripts/verify-v107-share.mjs",
+        "sha256": "a7cc65093de9f79d331985db7f0495c75a1c2ca7bdb1f12220f5e0e1c6812341",
+        "unchanged": true
+      },
+      {
+        "file": "源码/tsconfig.check.json",
+        "sha256": "130a3afadae5097fbc224846342d5b940c427fc9922190264e997c88106a31a1",
+        "unchanged": true
+      },
+      {
+        "file": "源码/tsconfig.json",
+        "sha256": "e50571d726e2812d510f23258f69d75f8e811a8b2708fbf7f6e82349e9079dd1",
+        "unchanged": true
+      },
+      {
+        "file": "第二关测试.cmd",
+        "sha256": "76eae49ec4c1fc7503a40c2dd9af31b00e9aede35fb67e1e495ca3d9b0d18a8a",
+        "unchanged": true
+      },
+      {
+        "file": "试玩.cmd",
+        "sha256": "48e3e52106570041efecdeeed80e20b90acda56e2d3d6ad64aaa61dee345de78",
+        "unchanged": true
+      }
+    ],
+    "runtimeAssetsAndWebShellUnchanged": true,
+    "remoteCreatorSettingsPreserved": true,
+    "excludedLocalSettings": [
+      "源码/settings/v2/packages/information.json",
+      "源码/settings/v2/packages/cocos-service.json"
+    ],
+    "windowsMachineRetested": false
+  },
+  "mac": {
+    "syntaxFiles": [
+      "scripts/mac/artifact-links.mjs",
+      "scripts/mac/build.mjs",
+      "scripts/mac/common.mjs",
+      "scripts/mac/doctor.mjs",
+      "scripts/mac/serve.mjs",
+      "scripts/mac/verify-project.mjs",
+      "scripts/mac/wechat-package.mjs",
+      "scripts/mac/workflow.mjs",
+      "tests/mac/workflow.test.mjs",
+      "../Mac开发.command",
+      "scripts/mac/env.sh",
+      "scripts/mac/setup.sh",
+      "scripts/mac/run.sh"
+    ],
+    "syntaxPassed": true,
+    "tooling": {
+      "checkedAt": "2026-11-14T04:15:07.512Z",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "names": [
+        "Creator success requires matching platform marker, allowed code, fresh output and valid scripts",
+        "postprocess contents and all five subpackages are required",
+        "metadata does not invalidate a payload, but a secret in excluded metadata is rejected",
+        "modified or extra game files cannot pass a saved build fingerprint",
+        "symlinks cannot escape a package directory",
+        "ZIP roundtrip preserves unicode/spaces, refuses overwrite and detects later tampering",
+        "build input snapshot covers runtime package, assets and web shell, excluding account UI state",
+        "source-only check exempts only git-ignored artifacts, not missing docs, source or tracked artifacts"
+      ],
+      "testFile": "源码/tests/mac/workflow.test.mjs",
+      "testSHA256": "67059208456d01efefbd443708c188f6414fa060d0e59e799f9c2fd0d1f6a864"
+    },
+    "projectStructure": {
+      "uuidCount": 374,
+      "imports": 556,
+      "missing": [],
+      "unavailableHistoricalArtifacts": 233
+    },
+    "dryRunPassed": true,
+    "environment": {
+      "platform": "darwin",
+      "node": "24.22.1",
+      "creator": "3.8.8",
+      "dependencies": [
+        {
+          "name": "@cocos/creator-types",
+          "expected": "3.8.8",
+          "actual": "3.8.8-121517",
+          "passed": false
+        },
+        {
+          "name": "@playwright/test",
+          "expected": "1.63.0",
+          "actual": null,
+          "passed": false
+        },
+        {
+          "name": "miniprogram-ci",
+          "expected": "2.1.31",
+          "actual": null,
+          "passed": false
+        },
+        {
+          "name": "pngjs",
+          "expected": "3.4.0",
+          "actual": "3.4.0",
+          "passed": true
+        },
+        {
+          "name": "prettier",
+          "expected": "3.6.2",
+          "actual": null,
+          "passed": false
+        },
+        {
+          "name": "typescript",
+          "expected": "5.9.3",
+          "actual": "5.8.2",
+          "passed": false
+        }
+      ],
+      "ready": false
+    },
+    "priorLogic": {
+      "tests": 524,
+      "passed": 524,
+      "failed": 0,
+      "exitCode": 0,
+      "rerunThisIsolationStep": false,
+      "evidence": "../mac-workflow-20261114/logic-results.json"
+    },
+    "priorOfflineTypecheck": {
+      "passed": true,
+      "typescript": "5.8.2",
+      "creatorTypes": "3.8.8-121517",
+      "lockfileEnvironment": false
+    },
+    "priorEditorBuild": {
+      "passed": true,
+      "durationSeconds": 38,
+      "inputSHA256": "4bddf4f5fc4b731f7e811efff0b49a3aac1aa59a762b02930aa16578f0fd0311"
+    },
+    "priorWechatStartup": {
+      "version": "2.02.2609250",
+      "baseLibrary": "3.18.0",
+      "startupObserved": true,
+      "firstChapterObserved": true,
+      "fullInputRegressionPassed": false,
+      "startupErrors": 0,
+      "startupWarnings": 2
+    },
+    "creatorCLIComplete": false,
+    "previewServerBlocked": "listen EPERM 127.0.0.1",
+    "browserFullFlowVerified": false,
+    "wechatUploaded": false,
+    "wechatPublished": false,
+    "deviceVerified": false
+  },
+  "githubUploadAttempt": {
+    "recordType": "upload_attempt_snapshot",
+    "status": "awaiting_target_branch_confirmation",
+    "httpStatus": null,
+    "attempts": 3,
+    "writeAccessRestored": true,
+    "commitCreated": true,
+    "createdCommit": "3b0260ff01d8863a013fff9ea6347defc8b48a43",
+    "branchUpdated": false,
+    "uploaded": false,
+    "receipt": "github-upload-attempt.json"
+  }
+}

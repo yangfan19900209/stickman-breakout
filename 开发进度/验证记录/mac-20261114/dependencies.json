@@ -1,0 +1,23 @@
+{
+  "createdAt": "2026-11-14T02:52:05.061282+00:00",
+  "mode": "offline-installed-editor-dependencies",
+  "note": "Not npm ci; package-lock.json is unchanged. Uses installed Creator compiler and declarations.",
+  "node": "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node",
+  "dependencies": [
+    {
+      "name": "typescript",
+      "version": "5.8.2",
+      "source": "/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar.unpacked/node_modules/typescript"
+    },
+    {
+      "name": "pngjs",
+      "version": "3.4.0",
+      "source": "/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar"
+    },
+    {
+      "name": "@cocos/creator-types",
+      "version": "3.8.8-121517",
+      "source": "/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar"
+    }
+  ]
+}

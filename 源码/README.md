@@ -22,4 +22,6 @@ npm run preview
 
 构建与交付的完整用法见[运行与构建](../doc/PROJECT.md)。美术源文件在[素材](../素材/README.md)，验证结果写入[开发进度/验证记录](../开发进度/验证记录)。
 
+Mac 使用仓库根目录的 [Mac开发.command](../Mac开发.command)，或在这里运行 `bash scripts/mac/run.sh menu`。首次运行 `bash scripts/mac/setup.sh` 安装项目独立 Node/npm 和锁定依赖；不要求预先安装 Homebrew。日常使用 `bash scripts/mac/run.sh dev`、`build wechatgame`、`package`，完整步骤见 [Mac 开发说明](../doc/MAC-DEVELOPMENT.md)。Windows 原来的 `build:web`、`build:wechat` 和上传命令保持不变。
+
 旧版编号不代表测试或图集已经无用。当前逻辑测试仍覆盖早期修复；浏览器旧专项按适用版本选用，当前启动验证使用 `npm run test:smoke`。已归档的一次性旧版工具不再列为现行命令。

@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-14T04:15:07.512Z",
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "names": [
+    "Creator success requires matching platform marker, allowed code, fresh output and valid scripts",
+    "postprocess contents and all five subpackages are required",
+    "metadata does not invalidate a payload, but a secret in excluded metadata is rejected",
+    "modified or extra game files cannot pass a saved build fingerprint",
+    "symlinks cannot escape a package directory",
+    "ZIP roundtrip preserves unicode/spaces, refuses overwrite and detects later tampering",
+    "build input snapshot covers runtime package, assets and web shell, excluding account UI state",
+    "source-only check exempts only git-ignored artifacts, not missing docs, source or tracked artifacts"
+  ],
+  "testFile": "源码/tests/mac/workflow.test.mjs",
+  "testSHA256": "67059208456d01efefbd443708c188f6414fa060d0e59e799f9c2fd0d1f6a864"
+}

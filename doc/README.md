@@ -5,6 +5,7 @@
 | 入口 | 用途 |
 | --- | --- |
 | [运行与构建](PROJECT.md) | Creator 工程位置、依赖、命令和平台验证 |
+| [Mac 开发入口](MAC-DEVELOPMENT.md) | 独立初始化、命令行构建、试玩、固定打包与开发版本上传 |
 | [已认可体验基准](BASELINES.md) | V0.8.4 认可范围、后续授权调整及不可覆盖的恢复材料 |
 | [开发方法](skills/yangfan-game-development/SKILL.md) | 按实际问题组合方法并自动维护 |
 | [开发计划](../开发计划/README.md) | 优先级、关卡、功能和设计原型 |

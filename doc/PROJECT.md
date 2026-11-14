@@ -1,6 +1,6 @@
 # 运行与构建
 
-本地开发版本 1.0.4，Cocos Creator 3.8.8。当前开放前两关，第三关样段继续保留但未开放。功能进展见[当前进度](../开发进度/当前进度.md)，本文件只维护现行操作方法。
+本地开发版本 1.0.7，Cocos Creator 3.8.8。当前开放前两关，第三关样段继续保留但未开放。功能进展见[当前进度](../开发进度/当前进度.md)，本文件只维护现行操作方法。
 
 ## 工程位置
 
@@ -24,13 +24,28 @@ npm run preview
 
 ## 生成游戏包
 
+Windows 设置引擎路径后，继续使用原有 PowerShell 构建流程：
+
 ```powershell
 $env:COCOS_CREATOR = '你的安装目录\CocosCreator.exe'
 npm run build:web
 npm run build:wechat
 ```
 
+macOS 使用独立的 [Mac开发.command](../Mac开发.command)，首次选 `1`；或者在 `源码/` 执行下列命令。无需先打开 Creator 编辑器窗口。Windows 原有命令保持不变，详细入口、依赖安装与上传步骤见 [Mac 开发说明](MAC-DEVELOPMENT.md)。
+
+```sh
+bash scripts/mac/setup.sh
+bash scripts/mac/run.sh build wechatgame
+# 只检查启动参数，不执行构建：
+bash scripts/mac/run.sh build wechatgame --dry-run
+```
+
+不要同时从编辑器和命令行构建同一工程。Mac 命令行使用工程内独占锁，构建结束后释放；异常中断留下锁时，先确认原进程已退出再清理。启动器要求新的入口文件、构建完成标记且无缺失脚本报错，然后执行平台后处理，不能把残留旧包当成成功产物。
+
 结果在 `源码/build/web-mobile/` 和 `源码/build/wechatgame/`，构建日志在 `开发进度/验证记录/构建日志/`。`build/`、`library/`、`temp/`、`.test-build/` 是可重建内容，不是素材原件；不提交依赖和缓存。
+
+2026-11-14 本机验证：受限自动化进程启动 Creator 时在应用初始化阶段收到 `SIGABRT`，普通终端的完整 CLI 构建仍待验证。已通过编辑器完成微信构建及后处理，首页和第一关启动有记录；不能据此宣称命令行或完整操作回归通过。新 Mac 入口独立验证见[适配记录](../开发进度/验证记录/mac-workflow-20261114/README.md)，此前编辑器构建见[本地微信验证](../开发进度/验证记录/mac-20261114/README.md)。
 
 Web 构建完成并启动试玩服务后：
 
@@ -43,7 +58,7 @@ npm run verify:delivery
 
 ## 固定交付与发布
 
-`源码/build/` 随构建更新；`交付/版本/<版本号>/` 为已固定的交付包，不覆盖历史版本。每次实际发布前关联本轮测试、更新说明和新包哈希。当前固定 1.0.4 包保持整理前的字节内容，见[交付入口](../交付/README.md)。
+`源码/build/` 随构建更新；`交付/版本/<版本号>/` 为已固定的交付包，不覆盖历史版本。每次实际发布前关联本轮测试、更新说明和新包哈希。历史固定包保持原字节内容，见[交付入口](../交付/README.md)。本次 Mac 构建输出不覆盖原有 1.0.7 固定交付。
 
 GitHub Pages 使用根目录 `docs/`，配置保存在 `源码/scripts/github-pages.json`。`npm run pages:prepare` 在验证通过后生成该目录；此命令会更换本地 Pages 文件，不代表已经发布。`npm run pages:check` 对配置的网站执行只读核验。当前本地 Pages 快照是 0.5.9，不应与 1.0.4 包混用。
 
