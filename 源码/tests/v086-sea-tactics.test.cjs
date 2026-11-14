@@ -122,7 +122,7 @@ test("diver reacts after delay, makes one bounded dodge, remains vulnerable and 
   tick(s, 30);
   assert.ok(Math.hypot(e.x - start.x, e.y - start.y) < 110);
   assert.equal(e.dodges, 1);
-  assert.ok(e.dodgeCooldown > 2);
+  assert.ok(e.dodgeCooldown > .9);
   Object.assign(e, {
     mode: "tell",
     timer: 0.5,
@@ -150,7 +150,7 @@ test("actor scale is fixed across movement, tells, fire, evasions and death; pro
     const p = oceanShotVisual(kind, "player"),
       e = oceanShotVisual(kind, "enemy");
     assert.equal(p.width, e.width);
-    assert.ok(p.width >= 34);
+    assert.ok(Math.max(p.width, p.height) >= 34);
     assert.ok((FeedbackRegions[p.id] || CombatRegions[p.id]) && (FeedbackRegions[e.id] || CombatRegions[e.id]));
   }
 });

@@ -88,7 +88,7 @@ test("twin torpedoes leave two visible tubes on both headings; sonar uses the no
       s.fireEnemy(e);
       const shots = s.projectiles.filter((p) => p.active),
         pose = miniSubPose(e, 0);
-      assert.equal(shots.length, attack === "torpedo" ? 2 : 3);
+      assert.equal(shots.length, attack === "torpedo" ? 2 : 5);
       shots.forEach((p, i) => {
         const m = pose.sockets[attack === "torpedo" ? i + 1 : 0];
         assert.equal(p.kind, attack);
@@ -101,17 +101,18 @@ test("twin torpedoes leave two visible tubes on both headings; sonar uses the no
       }
     }
 });
-test("mini submarine cycles three readable committed attacks without a humanoid harpoon burst", () => {
+test("mini submarine cycles five readable committed attacks without a humanoid harpoon burst", () => {
   const { s, e } = scene();
   s.player.health = 100;
   s.player.maxHealth = 100;
-  for (let i = 0; i < 2200; i++) {
+  s.terrainIndex = new StaticRectIndex([]);
+  for (let i = 0; i < 4200; i++) {
     s.player.x = e.x - 355;
-    s.player.y = e.y + 10;
+    s.player.y = 350;
     s.camera.x = e.x - 600;
     s.updateEnemy(e, 1 / 120);
   }
-  for (const k of ["torpedo", "sonar", "dash"])
+  for (const k of ["torpedo", "sweep", "dive", "sonar", "dash"])
     assert.ok(e.attackCounts[k] > 0, JSON.stringify(e.attackCounts));
   assert.equal(e.attackCounts.harpoon, undefined);
   Object.assign(e, {
@@ -161,7 +162,8 @@ test("mini wreck stages two secondary bursts and awards its reward exactly once"
   for (let i = 0; i < 25; i++) s.updateEnemy(e, 0.1);
   s.damageEnemy(e, 999);
   assert.equal(s.kills, before + 1);
-  assert.equal(s.drops.filter((d) => d.source === e.id).length, 1);
+  assert.equal(s.drops.filter(d=>d.source===e.id+"-recovery").length,1);
+  assert.equal(s.drops.filter((d) => d.source === e.id).length, 0);
   assert.equal(s.effects.filter((f) => f.kind === "blast").length, 3);
   assert.equal(miniSubPose(e, s.time).id, "minisub.wreck");
   assert.ok(e.deadTime > MINI_SUB.deathDuration);

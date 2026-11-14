@@ -1,0 +1,131 @@
+{
+  "recordedAt": "2026-11-14T11:38:04.563Z",
+  "runtimeInputSHA256": "4c9d0675dd6557e0621edcc8e5296cc3bc2a23b134a3de3e880247ea33a5174d",
+  "logic": {
+    "tests": 569,
+    "passed": 569,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "passed": true,
+    "typescript": "5.8.2",
+    "creatorTypes": "3.8.8-121517",
+    "scope": "existing offline dependencies"
+  },
+  "macTooling": {
+    "tests": 9,
+    "passed": 9,
+    "failed": 0
+  },
+  "windowsScriptsAndLockUnchanged": true,
+  "original100bpmPreserved": true,
+  "audio": {
+    "generated": "2026-11-14",
+    "runtimeFolder": "源码/assets/bgm",
+    "files": [
+      {
+        "file": "turkish-march-80bpm.mp3",
+        "bytes": 576889,
+        "seconds": 48,
+        "bpm": 80,
+        "gainDb": -1.9,
+        "sha256": "9b09517dde8d48717e115ddf6d635f66ad6106239357d249b161678564c05c86",
+        "integratedLufs": -16,
+        "truePeakDbfs": -4.7
+      },
+      {
+        "file": "turkish-march-120bpm.mp3",
+        "bytes": 384733,
+        "seconds": 32,
+        "bpm": 120,
+        "gainDb": -1.4,
+        "sha256": "d44ecb6adb1520e4d213c97b121eb92805f8943404234cc5f994bddc48aee191",
+        "integratedLufs": -16,
+        "truePeakDbfs": -4.2
+      },
+      {
+        "file": "canon-80bpm.mp3",
+        "bytes": 576881,
+        "seconds": 48,
+        "bpm": 80,
+        "gainDb": -3.2,
+        "sha256": "294b6479432a7bd5f03b1d1fa01b21ed7d5de546a899838e65fec0fe9900f3a8",
+        "integratedLufs": -16,
+        "truePeakDbfs": -6
+      },
+      {
+        "file": "canon-120bpm.mp3",
+        "bytes": 384725,
+        "seconds": 32,
+        "bpm": 120,
+        "gainDb": -2.9,
+        "sha256": "cc8091dbfec39d09b9bab0c0af3879e756c66067f31cf2af572e5e4a9c327f8b",
+        "integratedLufs": -16,
+        "truePeakDbfs": -5.8
+      }
+    ],
+    "totalCompressedBytes": 1923228,
+    "measurement": "FFmpeg ebur128; WAV exact frame count; runtime SHA-256 match"
+  },
+  "editorBuild": {
+    "completedAtLocal": "2026-11-14 19:13:27",
+    "deliverable": false,
+    "reason": "Missing bgm subpackage and all four MP3 assets"
+  },
+  "cliBuild": {
+    "exitCode": 1,
+    "signal": "SIGABRT",
+    "stage": "AppKit _RegisterApplication, before Creator build",
+    "report": "../mac/builds/2026-11-14T11-20-20-260Z-wechatgame-66655/result.json"
+  },
+  "packageGuard": {
+    "testedAgainstIncompleteOutput": true,
+    "rejectedMissingMusic": true
+  },
+  "fixedPackageCreated": true,
+  "uploaded": false,
+  "deviceVerified": false,
+  "testInputSHA256": "aed80b37be7201aa28cf4874fc3ba61ccb6f0f78a02d6cd0259ee4ac2193e0c5",
+  "creatorImportChanges": {
+    "files": [
+      "assets/bgm.meta",
+      "assets/bgm/canon-120bpm.mp3.meta",
+      "assets/bgm/canon-80bpm.mp3.meta",
+      "assets/bgm/credits.json.meta",
+      "assets/bgm/turkish-march-120bpm.mp3.meta",
+      "assets/bgm/turkish-march-80bpm.mp3.meta",
+      "assets/scripts/platform/MusicBridge.ts.meta",
+      "assets/scripts/platform/MusicCue.ts.meta"
+    ],
+    "removed": [],
+    "scope": "Only Creator .meta imports changed after logic/type/tooling validation; runtime scripts and MP3 bytes unchanged"
+  },
+  "userTerminalBuild": {
+    "status": "built",
+    "startedAt": "2026-11-14T11:32:37.719Z",
+    "completedAt": "2026-11-14T11:32:55.835Z",
+    "exitCode": 36,
+    "runDir": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T11-32-37-719Z-wechatgame-68642",
+    "inputSHA256": "4c9d0675dd6557e0621edcc8e5296cc3bc2a23b134a3de3e880247ea33a5174d",
+    "payloadSHA256": "0e499f730f29a4cdee3b82e299c61cde734dcc6408e8e3eff138bcb05fc0b0da",
+    "currentInputMatches": true,
+    "musicAssetHashesMatch": true
+  },
+  "fixedPackage": {
+    "directory": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-mac-2026-11-14T11-37-21-211Z-70230",
+    "project": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-mac-2026-11-14T11-37-21-211Z-70230/wechatgame",
+    "zip": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-mac-2026-11-14T11-37-21-211Z-70230/stickman-breakout-1.0.7-wechat.zip",
+    "archive": {
+      "sha256": "85e73cc715bd27110b05175a653db73b8e144332e6f627c4887a85bb5fc3ebdc",
+      "bytes": 20801217
+    },
+    "files": 459,
+    "totalBytes": 22894212,
+    "mainBytes": 3883949,
+    "sizeBasis": "raw files; not WeChat upload compressed size",
+    "payloadSHA256": "0e499f730f29a4cdee3b82e299c61cde734dcc6408e8e3eff138bcb05fc0b0da",
+    "zipRoundTripPassed": true,
+    "verifiedAt": "2026-11-14T11:38:04.567Z"
+  }
+}

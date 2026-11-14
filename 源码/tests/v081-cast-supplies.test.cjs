@@ -10,7 +10,7 @@ const base={animation:'Idle',animationTime:.12,deadTime:.2,recoil:0,vx:0,stride:
 test('both boss approaches are the only rocket sources and normal routes contain no shotgun or rocket refills',()=>{
  const drops=AbandonedBase.objects.filter(o=>o.drop==='rocket');assert.equal(drops.length,2);
  assert.deepEqual(drops.map(o=>o.id),['rocket-before-tank','rocket-before-colossus']);
- for(const [i,kind]of ['guard','colossus'].entries()){const boss=AbandonedBase.enemies.find(e=>e.kind===kind);assert.ok(drops[i].x<boss.x&&boss.x-drops[i].x<1300);assert.equal(drops[i].y,150);assert.equal(drops[i].dropChance,1);}
+ for(const [i,kind]of ['guard','colossus'].entries()){const boss=AbandonedBase.enemies.find(e=>e.kind===kind);assert.ok(drops[i].x<boss.x&&boss.x-drops[i].x<(i===0?2300:1300));assert.equal(drops[i].y,150);assert.equal(drops[i].dropChance,1);}
  assert.ok(drops[0].x+drops[0].w+120<AbandonedBase.enemies.find(e=>e.kind==='guard').x-740,'tank supply must be reachable before its activation radius');
  assert.ok(AbandonedBase.objects.every(o=>o.drop!=='shotgun'&&o.drop!=='ammo'));
  const {GameSession}=load('core/GameSession'),s=new GameSession();s.reset();s.spawner.miniBoss.active=true;s.spawner.miniBoss.takeDamage(999,1,'explosion');assert.equal(s.spawner.miniBoss.health,0);s.update(1/120,{axis:0,shoot:false,jump:false});assert.equal(s.pickups.items.filter(p=>p.active&&p.kind==='rocket').length,0);

@@ -27,7 +27,8 @@ test("three complete encounters separate the tank from the relocated final arena
     assert.ok(level.solids.some((s) => s.kind === 'platform' && s.x >= zone.start && s.x < zone.end));
     // Recovery is now placed at the end of the costly stretch / before a boss,
     // rather than requiring a health-filled crate at every zone entrance.
-    assert.ok(level.recoveryPoints.some((p) => p.x >= zone.start && p.x <= zone.end + 220));
+    if(zone.name === '封锁哨线')assert.ok(!level.recoveryPoints.some(p=>p.x>=zone.start&&p.x<=zone.end));
+    else assert.ok(level.recoveryPoints.some((p) => p.x >= zone.start && p.x <= zone.end + 220));
     assert.ok(level.objects.some((o) => o.x >= zone.start && o.x < zone.end && o.kind === 'barrel'));
   }
   assert.ok(final.x > level.arena.start && final.x < level.arena.end);

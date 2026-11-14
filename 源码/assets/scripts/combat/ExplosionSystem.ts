@@ -33,6 +33,7 @@ export class ExplosionSystem {
   private head = 0;
   private count = 0;
   total = 0;
+  heavyTotal = 0;
   dropped = 0;
   private pending = Array.from({ length: 32 }, () => ({
     active: false,
@@ -97,6 +98,7 @@ export class ExplosionSystem {
       radius: number,
       damage: number,
       owner: DamageOwner,
+      style: BlastStyle,
     ) => void,
   ): void {
     let budget = 64;
@@ -118,7 +120,8 @@ export class ExplosionSystem {
           style,
         });
       this.total++;
-      apply(x, y, radius, damage, owner);
+      if (style === "rocket" || style === "cannon" || style === "boss") this.heavyTotal++;
+      apply(x, y, radius, damage, owner, style);
     }
   }
   update(dt: number): void {
@@ -138,5 +141,6 @@ export class ExplosionSystem {
     for (const b of this.items) b.active = false;
     for (const p of this.pending) p.active = false;
     this.head = this.count = this.total = this.dropped = 0;
+    this.heavyTotal = 0;
   }
 }

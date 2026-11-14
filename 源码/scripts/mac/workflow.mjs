@@ -106,7 +106,10 @@ try {
     case 'upload': uploadWechat(); break;
     case 'inspect': {
       const config = readJSON(path.join(sourceRoot, 'build-config/wechatgame.json'));
-      const result = inspectPackage(path.join(sourceRoot, 'build/wechatgame'), { appid: config.packages.wechatgame.appid, cover: path.join(sourceRoot, 'assets/landart/title-cover.jpg') });
+      const musicDirectory = path.join(sourceRoot, 'assets/bgm');
+      const result = inspectPackage(path.join(sourceRoot, 'build/wechatgame'), { appid: config.packages.wechatgame.appid, cover: path.join(sourceRoot, 'assets/landart/title-cover.jpg'),
+        effectsDirectory: path.join(sourceRoot, 'assets/resources/audio'),
+        ...(fs.existsSync(musicDirectory) ? { musicDirectory } : {}) });
       writeJSON(path.join(macReports, 'package-inspection.json'), result);
       console.log(JSON.stringify({ ...result, files: result.files.length, sourceFreshnessVerified: false, uploaded: false }, null, 2)); break;
     }

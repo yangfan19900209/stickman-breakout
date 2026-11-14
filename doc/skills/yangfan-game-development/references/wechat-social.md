@@ -11,6 +11,22 @@
 
 来源：[关系链](https://developers.weixin.qq.com/minigame/dev/guide/open-ability/open-data.html)、[好友成绩](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getFriendCloudStorage.html)、[候选好友](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getPotentialFriendList.html)、[同玩互动好友](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getRelationFriendList.html)、[小游戏隐私](https://developers.weixin.qq.com/minigame/dev/guide/open-ability/privacy.html)。
 
+## 授权失败、设置入口与返回恢复
+
+不能把 `wx.authorize.fail` 一律解释为用户拒绝。保留调用阶段、错误码与有限长度的 `errMsg`，区分隐私声明、接口能力、网络失败和真正的拒绝；诊断不包含好友资料。只有重新读取到目标 `authSetting[scope] === false` 才提供设置入口，缺字段不是拒绝，也不能当作已授权。隐私授权失败同样不能统一改成“用户未同意”。
+
+平台错误码应结合具体原文解释。真机已出现 `1026` 与 `please go to mp to announce your privacy usage` 的组合，这类明确的隐私声明指引优先于“隐私接口受限”的宽泛分类；处理后台声明并验证生效，不靠重复构建解决，不根据错误码宣称账号受到处罚。后台尚未读取时，不断言是缺项、未提交还是未生效；声明完成也不能提前记为好友榜恢复。
+
+需要微信原生隐私弹窗时，不注册 `onNeedPrivacyAuthorization`；在玩家主动操作后调用 `requirePrivacyAuthorize`，成功后再查询或申请朋友信息权限。微信官方 [RequirePrivacyAuthorize 说明](https://github.com/wechat-miniprogram/minigame-tuanjie-transform-sdk/blob/main/Runtime/WX.cs)区分平台统一弹窗和监听事件后自行绘制的流程；已同意的用户可能直接成功，不保证每次弹窗。后台声明错误可能先于弹窗返回，需保留原始错误诊断，不能仅凭游戏内归类文案认定具体后台问题。
+
+`getPrivacySetting.needAuthorization === false` 也可能表示后台尚未声明隐私收集类型，不能解释为后台已配置或用户已授予朋友权限；后续仍须独立查询/申请目标 scope。依据微信官方[小游戏类型定义](https://github.com/wechat-miniprogram/minigame-api-typings/blob/master/types/wx/lib.wx.api.d.ts)的 `GetPrivacySettingSuccessCallbackResult`。反复真机失败时，先取得实际阶段和错误码；测试包应提供可截图的有限错误信息与包标识，不只把原文留在调试控制台，也不要靠更换同义提示反复宣称修复。区分声明缺项、平台限制、用户拒绝和网络失败，未知错误不确定归因。
+
+`wx.openSetting` 放在玩家点击回调内直接调用，不在它前面串联异步的隐私/权限查询。微信官方 [SDK 中的 OpenSetting 说明](https://github.com/wechat-miniprogram/minigame-tuanjie-transform-sdk/blob/main/Runtime/WX.cs)要求用户点击行为；实际设置返回缺少目标 scope 时，退回可重试状态，不能让用户反复进入没有开关的设置页。
+
+打开好友页、从后台返回和主动刷新时，可以静默复查已有隐私同意与朋友授权；已授权直接加载，未知状态保留明确的授权按钮，不自动弹授权窗口。设置/隐私窗口的 `onShow` 与结果回调顺序不能假设固定：交互请求进行时不另起复查抢占它；返回后重新校验，不把已经成功的授权无条件降成未连接。每一层异步回调都校验请求代次，关闭后的迟到结果不能上传或展示，异步回调内部的宿主同步异常也要退出等待态。
+
+回归应包含真实的未知 scope、无设置开关、隐私声明失败、延迟回调、前台事件先于/后于设置结果，以及撤销授权。此方法在项目中通过宿主故障模拟和重新构建验证；实际账号能力、后台声明和双账号好友榜仍需真机核验，不能据模拟通过宣布线上故障已消失。
+
 ## 单向通信决定状态归属
 
 主域可以给开放数据域发消息，子域不能向主域发消息。排行榜的好友资料、排序与自己名次留在子域绘制；主域只持有本人的游戏状态、卡片及界面命令。不要规划回传好友数组、子域 ready 回执或云端上传成功回执。
@@ -68,6 +84,8 @@ Cocos 3.8 优先按当前官方 `SubContextView` 文档设计，再核对实际�
 推荐能力指南将事件及 `destroy.isRecommended` 的支持起点标为基础库 3.8.6；2026-11-13 核对的[官方小游戏类型定义](https://github.com/wechat-miniprogram/minigame-api-typings/blob/master/types/wx/lib.wx.api.d.ts)将通用 PageManager 创建及 `load/show/on/off/destroy` 标为 3.6.7。两处说明的能力范围不同，不能把推荐回调门槛扩写成所有 PageManager 方法的最早版本。项目可保守要求推荐回调门槛，并检测实际方法；`off(event, callback)` 有官方定义，但兼容缺失时仍应靠实例身份隔离迟到事件。
 
 `isRecommended` 表示关闭时的推荐状态，不能证明这次新增推荐、打了几星或分享已送达。仅接受合法布尔值，缺字段保留未知；`ready`、`show`、Promise 返回和重回前台都不是推荐完成证据。主动清理与用户关闭分开处理，防止析构事件误报成功。
+
+串联推荐、评价和社区内容时，分别核对导航、用户确认、发布及查询四类能力。官方 `getGameClubData` 将发帖数量和最近推荐时间列为不同指标，读取统计不等于获得发布接口，也不能证明本次具体帖子已提交。PageManager 的 `query/extraData` 只有在相应渠道说明给出参数时才有依据；不要从通用类型推导评分编辑、预填文字或自动发布能力。公开资料未给出入口时记录“未核验”，再检查当前原生页面是否自带步骤，不把“没有找到”写成永久不支持。方法依据：[官方小游戏类型定义](https://github.com/wechat-miniprogram/minigame-api-typings/blob/master/types/wx/lib.wx.api.d.ts)与[官方游戏圈按钮示例](https://github.com/wechat-miniprogram/minigame-demo/blob/master/miniprogram/js/api/abilityOpen/createGameClubButton/index.js)。
 
 组合 `game-ui-ux` 的层级和模态方法时，先提供自愿固定入口，再按产品需要考虑可关闭的结算提示；默认不绑定奖励或先筛满意度，用户明确选择奖励时不得将其实现为代用户推荐或打星。频控参数属于具体项目设计，本机历史状态也不等于当前账号实时状态。预加载不阻塞启动，失败不强弹提示；实例关闭后复用、销毁回调次序和异步点击兼容需目标微信版本确认，不能把设计原型当成原生组件实测。
 

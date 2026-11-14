@@ -109,7 +109,7 @@ export class EnemyTactics {
       return cover?.kind === "sandbag" || cover?.category === "indestructible";
     });
     if (e.kind === "melee") {
-      this.melee(e, dt, p, dx, dy, level);
+      this.melee(e, dt, p, dx, dy, level, shots);
       return;
     }
     if (this.action === "recover" && this.timer > 0) {
@@ -189,6 +189,7 @@ export class EnemyTactics {
         e.windup = Math.max(0, e.windup - dt);
         if (e.windup === 0) {
           if (this.action === "bash") {
+            shots.audio.emit("enemy-melee", e.x, e.y + 40);
             if (dist < 66 && Math.abs(dy) < 50 && this.canStrike(e, p, level))
               p.takeDamage(1, e.facing);
           } else {
@@ -260,6 +261,7 @@ export class EnemyTactics {
     dx: number,
     dy: number,
     level: LevelController,
+    shots: ProjectileManager,
   ): void {
     const dist = Math.abs(dx),
       cfg = C.enemies.melee;
@@ -275,6 +277,7 @@ export class EnemyTactics {
       e.windup = Math.max(0, e.windup - dt);
       if (e.windup === 0) {
         this.action = "charge";
+        shots.audio.emit("enemy-melee", e.x, e.y + 40);
         this.timer = 0.42;
       }
       return;
@@ -298,6 +301,7 @@ export class EnemyTactics {
       e.vx = 0;
       e.windup = Math.max(0, e.windup - dt);
       if (e.windup === 0) {
+        shots.audio.emit("enemy-melee", e.x, e.y + 40);
         if (
           dist < cfg.range + 10 &&
           Math.abs(dy) < 50 &&

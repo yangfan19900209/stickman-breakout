@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-11-14T12:08:48.436Z",
+  "inputSHA256": "9910a55b1c48187ba307c25e7285de078add04ac9deb2aa84c573a20d9adc7c0",
+  "logic": {
+    "tests": 577,
+    "passed": 577,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "passed": true,
+    "typescript": "5.8.2",
+    "scope": "existing offline dependencies"
+  },
+  "macTooling": {
+    "tests": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "audio": {
+    "files": 10,
+    "runtimeHashMatch": true,
+    "pcmClipping": false,
+    "deviceAudition": false
+  },
+  "windowsScriptsAndLockUnchanged": true,
+  "build": {
+    "platform": "wechatgame",
+    "version": "1.0.7",
+    "status": "failed",
+    "startedAt": "2026-11-14T12:04:56.571Z",
+    "runDir": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T12-04-56-571Z-wechatgame-76784",
+    "completedAt": "2026-11-14T12:04:57.088Z",
+    "error": "Creator failed (exit=null, signal=SIGABRT)."
+  },
+  "oldOutputGuard": {
+    "rejected": true,
+    "reason": "音效未进入资源索引：beam.wav"
+  },
+  "previousMusicPackageUnchanged": true,
+  "fixedPackageCreated": false,
+  "uploaded": false,
+  "published": false,
+  "deviceVerified": false
+}

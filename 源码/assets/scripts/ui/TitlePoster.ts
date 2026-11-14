@@ -118,9 +118,10 @@ export class TitlePoster {
     }
     if (onRecords) {
       const width = onRecommend ? 142 : 300, height = onRecommend ? buttonHeight : 58;
-      const records = this.records = node(this.root, "纪录与好友榜", onRecommend ? -474 : -395, onRecommend ? -312 : onGameClub ? -305 : -306, width, height);
+      const recordsLabel = ReleaseConfig.friendLeaderboard ? onRecommend ? "纪录榜" : "纪录与好友榜" : "个人纪录";
+      const records = this.records = node(this.root, recordsLabel, onRecommend ? -474 : -395, onRecommend ? -312 : onGameClub ? -305 : -306, width, height);
       ControlArt.sprite(records, "Generated records button", "menu", width, height);
-      const text = label(records, onRecommend ? "纪录榜" : "纪录与好友榜", -width / 2 + 10, 0, onRecommend ? 24 : 22, width - 20);
+      const text = label(records, recordsLabel, -width / 2 + 10, 0, onRecommend ? 24 : 22, width - 20);
       text.horizontalAlign = Label.HorizontalAlign.CENTER;
       adapter.registerUI(records, onRecords);
     }

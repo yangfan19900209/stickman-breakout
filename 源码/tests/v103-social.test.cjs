@@ -80,20 +80,21 @@ test('sharing prepares bounded public challenge parameters with explicit artwork
  assert.ok(!('success'in card));share.prepare(2,0);share.request();assert.equal(parseInvite(Object.fromEntries(new URLSearchParams(card.query))).kind,'progress');
 });
 function socialFixture({privacy=false,scope,upload=true}={}){
- const messages=[],invites=[],calls={authorize:0,settings:0,offShow:0,offPrivacy:0};let shown,need,privacyRequest,delayed;
+ const messages=[],invites=[],calls={authorize:0,settings:0,offShow:0,offPrivacy:0,nativePrivacy:0,customPrivacy:0};let shown,privacyRequest;
  const api={getOpenDataContext:()=>({canvas:{},postMessage:m=>messages.push(copy(m))}),getPrivacySetting:o=>o.success({needAuthorization:privacy}),
  getSetting:o=>o.success({authSetting:scope===undefined?{}:{'scope.WxFriendInteraction':scope}}),
- requirePrivacyAuthorize:o=>{privacyRequest=o;need(data=>{if(data.event==='agree'){privacy=false;o.success({});}if(data.event==='disagree')o.fail({});});},
- onNeedPrivacyAuthorization:f=>need=f,offNeedPrivacyAuthorization:()=>calls.offPrivacy++,
+ requirePrivacyAuthorize:o=>{calls.nativePrivacy++;privacyRequest=o;},
+ onNeedPrivacyAuthorization:()=>calls.customPrivacy++,offNeedPrivacyAuthorization:()=>calls.offPrivacy++,
  authorize:o=>{calls.authorize++;scope=true;o.success({});},openSetting:o=>{calls.settings++;scope=true;o.success({authSetting:{'scope.WxFriendInteraction':true}});},
  getLaunchOptionsSync:()=>({query:{from:'invite',sv:'1'}}),onShow:f=>shown=f,offShow:()=>calls.offShow++};
  const bridge=new SocialBridge(()=>true,()=>upload,()=>api);bridge.onInvite=i=>invites.push(i);bridge.install();
- return{bridge,api,messages,invites,calls,show:o=>shown(o),scope:v=>scope=v};
+ return{bridge,api,messages,invites,calls,show:o=>shown(o),scope:v=>scope=v,answerPrivacy:agree=>{if(agree){privacy=false;privacyRequest.success({});}else privacyRequest.fail({errMsg:'requirePrivacyAuthorize:fail user deny'});}};
 }
 test('social consent is lazy; privacy and friend authorization are separate, reject keeps all records untouched',()=>{
  const f=socialFixture({privacy:true});assert.equal(f.messages.length,0);assert.equal(f.calls.authorize,0);
- f.bridge.show('progress');f.bridge.authorize();assert.equal(f.bridge.state,'privacy');f.bridge.agreePrivacy(false);assert.equal(f.calls.authorize,0);assert.equal(f.messages.length,0);
- f.bridge.authorize();f.bridge.agreePrivacy(true);assert.equal(f.calls.authorize,1);assert.equal(f.bridge.state,'ready');assert.ok(f.messages.some(m=>m.action==='show'));
+ f.bridge.show('progress');f.bridge.authorize();assert.equal(f.bridge.state,'checking');assert.equal(f.calls.nativePrivacy,1);assert.equal(f.calls.customPrivacy,0);
+ f.answerPrivacy(false);assert.equal(f.bridge.state,'idle');assert.equal(f.calls.authorize,0);assert.equal(f.messages.length,0);
+ f.bridge.authorize();f.answerPrivacy(true);assert.equal(f.calls.authorize,1);assert.equal(f.bridge.state,'ready');assert.ok(f.messages.some(m=>m.action==='show'));
 });
 test('explicit permission denial offers settings and a granted scope allows direct loading',()=>{
  const f=socialFixture({scope:false});f.bridge.show('level1');f.bridge.authorize();assert.equal(f.bridge.state,'denied');assert.equal(f.calls.authorize,0);
@@ -106,16 +107,16 @@ test('debug host never uploads scores; main messages contain no invented readine
 test('closing or destroying during asynchronous consent prevents stale upload and display',()=>{
  const f=socialFixture();let pending;f.api.getSetting=o=>pending=o;f.bridge.show('progress');f.bridge.authorize();f.bridge.hide();
  pending.success({authSetting:{'scope.WxFriendInteraction':true}});assert.ok(!f.messages.some(m=>m.action==='show'||m.action==='records'));
- f.bridge.destroy();assert.equal(f.calls.offShow,1);assert.equal(f.calls.offPrivacy,1);
+ f.bridge.destroy();assert.equal(f.calls.offShow,1);assert.equal(f.calls.offPrivacy,0);
 });
 test('invitation callbacks handle cold and warm entry once; return invalidates visible cached friend authorization',()=>{
  const f=socialFixture({scope:true});assert.equal(f.invites.length,1);f.show({query:{from:'invite',sv:'1'}});assert.equal(f.invites.length,1);
  f.show({query:{from:'challenge',sv:'1',rule:'r1',level:'1',targetMs:'1234'}});assert.equal(f.invites.length,2);
- f.bridge.show('progress');f.bridge.authorize();f.scope(false);f.show({});assert.equal(f.bridge.state,'idle');assert.equal(f.bridge.snapshot().allowed,false);
+ f.bridge.show('progress');f.bridge.authorize();f.scope(false);f.show({});assert.equal(f.bridge.state,'denied');assert.equal(f.bridge.snapshot().allowed,false);
 });
 test('unsupported and misconfigured privacy APIs are recoverable personal-record states',()=>{
- const f=socialFixture();delete f.api.requirePrivacyAuthorize;f.bridge.show('progress');f.bridge.authorize();assert.equal(f.bridge.state,'unsupported');
- const g=socialFixture();g.api.getPrivacySetting=o=>o.fail({errno:112});g.bridge.show('progress');g.bridge.authorize();assert.equal(g.bridge.state,'error');assert.match(g.bridge.message,/配置/);
+ const f=socialFixture({privacy:true});delete f.api.requirePrivacyAuthorize;f.bridge.show('progress');f.bridge.authorize();assert.equal(f.bridge.state,'unsupported');
+ const g=socialFixture();g.api.getPrivacySetting=o=>o.fail({errno:112});g.bridge.show('progress');g.bridge.authorize();assert.equal(g.bridge.state,'error');assert.equal(g.bridge.snapshot().lastFailure.kind,'configuration');
 });
 test('cloud writer reads before writing, merges old bests and serializes a better score arriving mid-write',()=>{
  const {createStore}=openModule('store');let read,write;const output=[];

@@ -1,0 +1,48 @@
+{
+  "generated": "2026-11-14",
+  "runtimeFolder": "\u6e90\u7801/assets/bgm",
+  "files": [
+    {
+      "file": "turkish-march-80bpm.mp3",
+      "bytes": 576889,
+      "seconds": 48,
+      "bpm": 80,
+      "gainDb": -1.9,
+      "sha256": "9b09517dde8d48717e115ddf6d635f66ad6106239357d249b161678564c05c86",
+      "integratedLufs": -16.0,
+      "truePeakDbfs": -4.7
+    },
+    {
+      "file": "turkish-march-120bpm.mp3",
+      "bytes": 384733,
+      "seconds": 32,
+      "bpm": 120,
+      "gainDb": -1.4,
+      "sha256": "d44ecb6adb1520e4d213c97b121eb92805f8943404234cc5f994bddc48aee191",
+      "integratedLufs": -16.0,
+      "truePeakDbfs": -4.2
+    },
+    {
+      "file": "canon-80bpm.mp3",
+      "bytes": 576881,
+      "seconds": 48,
+      "bpm": 80,
+      "gainDb": -3.2,
+      "sha256": "294b6479432a7bd5f03b1d1fa01b21ed7d5de546a899838e65fec0fe9900f3a8",
+      "integratedLufs": -16.0,
+      "truePeakDbfs": -6.0
+    },
+    {
+      "file": "canon-120bpm.mp3",
+      "bytes": 384725,
+      "seconds": 32,
+      "bpm": 120,
+      "gainDb": -2.9,
+      "sha256": "cc8091dbfec39d09b9bab0c0af3879e756c66067f31cf2af572e5e4a9c327f8b",
+      "integratedLufs": -16.0,
+      "truePeakDbfs": -5.8
+    }
+  ],
+  "totalCompressedBytes": 1923228,
+  "measurement": "FFmpeg ebur128; WAV exact frame count; runtime SHA-256 match"
+}

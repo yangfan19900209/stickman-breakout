@@ -40,6 +40,8 @@ test('a visible supply is collected at body height but cannot be taken through a
 test('concrete roof excludes lifting rings and loose edge stones for both facing directions',()=>{
  for(const facing of [-1,1]){
   const l=new LevelController(),o=l.objects.objects.find(o=>o.id==='concrete-C'),v=objectPresentation(o),p=new PlayerController();
+  // Isolate this roof: the relocated ammo crate now occupies its right-hand approach.
+  l.objects.reset(l.data.objects.filter(q=>q.id==='concrete-C'));l.refreshSolids();
   p.reset(o.x+o.w/2,o.y+v.height+8);p.facing=facing;
   for(let n=0;n<100;n++)p.update(dt,idle,l);
   assert.ok(p.grounded);assert.ok(Math.abs(p.y-(o.y+v.height*85/101))<1e-6);assert.ok(p.y<o.y+v.height-8);

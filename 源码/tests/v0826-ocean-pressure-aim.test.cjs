@@ -30,27 +30,27 @@ test('submarine tracks early in warning then commits both its hull and aim befor
  s.pause();const frozen={...b};s.update(1,idle);assert.deepEqual(b,frozen);
 });
 
-test('attack cursor keeps all six patterns across health phases without reviving destroyed modules',()=>{
+test('attack cursor keeps all five patterns across health phases without reviving destroyed modules',()=>{
  const s=boss(),b=s.boss,seen=[];let last=0;
  for(let n=0;n<120*35;n++){
   s.updateBoss(dt);s.player.x=b.x-550;
-  if(b.serial!==last){seen.push(b.attack);last=b.serial;if(seen.length===1)b.hp=110;if(seen.length===3)b.hp=55;}
+  if(b.serial!==last){seen.push(b.attack);last=b.serial;if(seen.length===1)b.hp=b.maxHp*.6;if(seen.length===3)b.hp=b.maxHp*.3;}
   for(const p of s.projectiles)p.active=false;
  }
- assert.deepEqual(seen.slice(0,6),['torpedo','laser','fan','sweep','cannon','ring']);
+ assert.deepEqual(seen.slice(0,5),['torpedo','laser','fan','sweep','cannon']);
  b.laserHp=b.torpedoHp=b.cannonHp=0;b.mode='rest';b.timer=0;
- for(let n=0;n<120*12;n++){s.updateBoss(dt);s.player.x=b.x-550;if(b.mode==='tell')assert.equal(b.attack,'ring');}
- assert.equal(b.hp,55);assert.equal(b.maxHp,180);
+ for(let n=0;n<120*12;n++){s.updateBoss(dt);s.player.x=b.x-550;assert.equal(b.mode,'rest');assert.equal(b.beamActive,false);assert.equal(b.volleyRemaining,0);}
+ assert.equal(b.hp,b.maxHp*.3);assert.equal(b.maxHp,140);
 });
 
 test('boss volleys are staggered, aim remains committed, and breaking the source cancels the follow-up',()=>{
  for(const destroy of [false,true]){
-  const s=boss(),b=s.boss;b.hp=90;
+  const s=boss(),b=s.boss;b.hp=b.maxHp*.5;
   while(b.mode!=='fire')s.updateBoss(dt);
   assert.equal(b.attack,'torpedo');const first=s.projectiles.filter(p=>p.active);assert.equal(first.length,3);
   const a=b.angle;s.player.y=520;s.updateBoss(.2);assert.equal(s.projectiles.filter(p=>p.active).length,3);
   if(destroy)s.damageBoss(b.torpedoHp,b.x,b.y,'torpedoHp');
-  s.updateBoss(.23);assert.equal(s.projectiles.filter(p=>p.active).length,destroy?3:6);assert.equal(b.angle,a);
+  s.updateBoss(.31);assert.equal(s.projectiles.filter(p=>p.active).length,destroy?3:6);assert.equal(b.angle,a);
   s.reset();assert.equal(s.boss.volleyRemaining,0);assert.equal(s.boss.volleyCount,0);assert.equal(s.boss.locked,false);
  }
 });
@@ -72,10 +72,10 @@ test('boss and mini torpedoes stop steering after the initial chase window',()=>
 });
 
 test('damaged mini submarine adds a delayed twin volley, retaining normal HP and its visible tube sockets',()=>{
- const s=sea(),e=s.mini;Object.assign(e,{x:1450,y:330,hp:40,maxHp:84,active:true,mode:'tell',attack:'torpedo',angle:Math.PI,locked:true,timer:0});
+ const s=sea(),e=s.mini;Object.assign(e,{x:1450,y:330,hp:29,maxHp:60,active:true,mode:'tell',attack:'torpedo',angle:Math.PI,locked:true,timer:0});
  s.updateMiniSub(e,dt);assert.equal(s.projectiles.filter(p=>p.active).length,2);
  s.updateMiniSub(e,.2);assert.equal(s.projectiles.filter(p=>p.active).length,2);
- s.updateMiniSub(e,.2);assert.equal(s.projectiles.filter(p=>p.active).length,4);
- assert.equal(e.hp,40);assert.equal(e.maxHp,84);assert.equal(e.burstLeft,0);
- s.reset();assert.equal(s.mini.burstLeft,0);assert.equal(s.mini.hp,84);
+ s.updateMiniSub(e,.27);assert.equal(s.projectiles.filter(p=>p.active).length,4);
+ assert.equal(e.hp,29);assert.equal(e.maxHp,60);assert.equal(e.burstLeft,0);
+ s.reset();assert.equal(s.mini.burstLeft,0);assert.equal(s.mini.hp,70);
 });

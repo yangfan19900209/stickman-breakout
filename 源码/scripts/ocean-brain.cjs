@@ -16,7 +16,6 @@ class OceanBrain {
         (e) =>
           e.hp > 0 &&
           !OceanLevel.obstacles.some(r=>segmentRect({x:p.x,y:p.y+35},{x:e.x,y:e.y+32},r)!==null) &&
-          e.kind !== "kelp" &&
           e.kind !== "mine" &&
           !(p.x > 9100 && p.x < 9750 && p.y < 420 && e.y >= 480) &&
           e.x > p.x - 30 &&
@@ -52,15 +51,11 @@ class OceanBrain {
         if(s.boss.locked&&this.bossDodgeSerial!==s.boss.serial){
           this.bossDodgeSerial=s.boss.serial;
           this.bossDodgeY=Math.sin(s.boss.angle)<0?600:85;
-          this.bossDodgeUntil=s.time+s.boss.timer+1.5;
+          this.bossDodgeUntil=s.time+s.boss.timer+(s.boss.attack==='fan'?2.5:1.7);
         }
       }
       if(s.time<this.bossDodgeUntil)targetY=this.bossDodgeY;
       if (s.boss.attack === "sweep") targetY = s.boss.angleStart > Math.PI ? 510 : 190;
-      if (s.boss.attack === "ring") {
-        const dx = p.x - (s.boss.x - 220);
-        targetY = s.boss.y + Math.tan(s.boss.ringGap) * dx - 35;
-      }
     }
     // Use authored recovery drops with ordinary movement. Ignoring medical
     // breaks made visual regression runs depend on the phase of one late shot.
@@ -70,13 +65,21 @@ class OceanBrain {
       axis=Math.abs(medical.x-p.x)>24?Math.sign(medical.x-p.x):0;
       targetY=medical.y-30;
     }
+    // Visit the two sonar crates and authored torpedo crates through movement and the
+    // normal close-range box attack, then collect their actual drops.
+    const prep=!s.boss.active&&s.objects?.find(c=>[1180,4190,9100,10600,15000].includes(c.x)&&
+      Math.abs(c.x-p.x)<360&&(c.hp>0||s.pickups?.some(d=>d.active&&d.source===c.id)));
+    if(prep){
+      axis=Math.abs(prep.x-30-p.x)>20?Math.sign(prep.x-30-p.x):0;
+      targetY=prep.y;
+    }
     targetY = Math.max(80, Math.min(s.boss.active?600:530, targetY));
     // Steer around authored solid decks, rather than teleporting through the map.
     if (p.x > 4280 && p.x < 4920) targetY = Math.max(350, targetY);
     if (p.x > 6500 && p.x < 6980) targetY = Math.max(370, targetY);
     if (p.x > 7160 && p.x < 7660) targetY = Math.min(390, targetY);
     if (p.x > 9100 && p.x < 9750) targetY = Math.min(350, targetY);
-    if (p.x > 10750 && p.x < 11490) targetY = Math.max(335, targetY);
+    if (p.x > 11000 && p.x < 11490) targetY = Math.max(335, targetY);
     if (p.x > 11380 && p.x < 12100) targetY = Math.min(370, targetY);
     if (p.x > 12000 && p.x < 12760) targetY = Math.max(355, targetY);
     if (p.x > 12850 && p.x < 13500) targetY = Math.min(285, targetY);
@@ -85,13 +88,13 @@ class OceanBrain {
     // A defeated shooter leaves its projectile in flight. React to visible
     // approaching shots as well as the living enemy's warning; input only.
     if(!s.boss.active) {
-      let nearest=.55, threat;
+      let nearest=.85, threat;
       for(const shot of s.projectileStates??[]) {
-        if(shot.owner!=='enemy'||Math.abs(shot.x-p.x)>280)continue;
+        if(shot.owner!=='enemy'||Math.abs(shot.x-p.x)>400)continue;
         const dx=p.x-shot.x,dy=p.y+35-shot.y,v2=shot.vx**2+shot.vy**2;
         const t=(dx*shot.vx+dy*shot.vy)/v2;
         if(t<.08||t>=nearest)continue;
-        if(Math.hypot(dx-shot.vx*t,dy-shot.vy*t)>35)continue;
+        if(Math.hypot(dx-shot.vx*t,dy-shot.vy*t)>(shot.kind==='torpedo'?70:40))continue;
         nearest=t;threat=shot;
       }
       if(threat){
@@ -105,6 +108,13 @@ class OceanBrain {
       }
       if(s.time<this.shotDodgeUntil)targetY=this.shotDodgeY;
     }
+    // A shooter above the final deck can pin a distance-keeping policy below it.
+    // Swim beyond the real right edge before turning upward; this uses movement only.
+    if(!s.boss.active && p.x>14500 && p.x<14670 && enemy?.y>=480){axis=1;targetY=Math.min(targetY,355);}
+    // Back away from the wreck wall's protruding ink outline before rising above it.
+    // Holding a diagonal into that overhang cannot move the full player body upward.
+    if(p.x>13530&&p.x<13595&&p.y<290)this.wallRise=true;
+    if(this.wallRise){axis=p.x>13515?-1:0;targetY=330;if(p.y>305)this.wallRise=false;}
     const vertical =
       Math.abs(targetY - p.y) < 14 ? 0 : Math.sign(targetY - p.y);
     // A released/re-pressed trigger is an ordinary player's transition from
@@ -117,7 +127,8 @@ class OceanBrain {
       return {axis:face,vertical,shoot:false,jump:false};
     const heavy=(enemy?.kind==='captain'&&Math.abs(enemy.x-p.x)<480)||(s.boss.active&&s.boss.hp>0);
     const grenade=heavy&&s.grenades>0&&Math.floor(s.time/1.4)%2===0;
-    return { axis, vertical, shoot: !finishedBox, grenade, jump: false };
+    const targetInSight=!!s.aimTarget||s.objects?.some(c=>c.hp>0&&Math.hypot(c.x-p.x,c.y+25-p.y-35)<112);
+    return { axis, vertical, shoot: !finishedBox&&targetInSight, grenade, jump: false };
   }
 }
 module.exports = { OceanBrain };

@@ -95,6 +95,9 @@ export class EnemyController {
     kind: DamageKind = "bullet",
   ): boolean {
     if (!this.alive) return false;
+    // Ordinary enemies are executed by a connected player knife strike.
+    // Boss subclasses own their separate damage rules.
+    if (kind === "melee" && this.kind !== "guard" && this.kind !== "colossus") amount = this.health;
     const blocked =
       this.kind === "shield" &&
       this.shieldHealth > 0 &&

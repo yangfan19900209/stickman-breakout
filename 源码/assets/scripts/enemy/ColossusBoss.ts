@@ -53,7 +53,7 @@ const enragedPattern: readonly ColossusAttack[] = [
 ];
 
 export class ColossusBoss extends EnemyController {
-  readonly playerBulletDamageMultiplier = C.colossus.playerBulletDamageMultiplier;
+  readonly playerBulletDamageMultiplier = C.playerBossDamage.bullet / C.weapons.rifle.damage;
   active = false;
   mode:
     | "dormant"
@@ -380,6 +380,7 @@ export class ColossusBoss extends EnemyController {
         this.attackCounts[this.attack]++;
         if (this.attack === "charge") {
           this.mode = "charging";
+          shots.audio.emit("charge", this.x, this.y + 70);
           this.chargeTime = C.colossus.chargeDuration;
         } else if (this.attack === "leap") {
           this.mode = "leaping";
@@ -518,6 +519,7 @@ export class ColossusBoss extends EnemyController {
       p.takeDamage(1, p.x < this.x ? -1 : 1);
   }
   private waves(shots: ProjectileManager) {
+    shots.audio.emit("slam", this.x, this.y + 15);
     for (const d of [-1, 1] as const)
       shots.spawn({
         owner: "enemy",
@@ -543,6 +545,7 @@ export class ColossusBoss extends EnemyController {
         C.colossus.laserRange,
         C.colossus.laserDuration,
       );
+      shots.audio.emit("beam", this.muzzle.x, this.muzzle.y);
       this.impactSerial++;
       return;
     }

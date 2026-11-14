@@ -16,13 +16,13 @@ test('knife has a windup, hits once per swing, respects front reach and solid co
   m.update(1/120,p,[front,rear,high],[],true,false,fx);
   assert.equal(front.health,20);assert.equal(m.swings,1);
   for(let i=0;i<35;i++)m.update(1/120,p,[front,rear,high],[],false,false,fx);
-  assert.equal(front.health,16);assert.equal(rear.health,20);assert.equal(high.health,20);assert.equal(m.hits,1);
-  m.reset();const wall=[{x:130,y:150,w:12,h:90}];
+  assert.equal(front.health,0);assert.equal(rear.health,20);assert.equal(high.health,20);assert.equal(m.hits,1);
+  front.health=20;m.reset();const wall=[{x:130,y:150,w:12,h:90}];
   for(let i=0;i<36;i++)m.update(1/120,p,[front],wall,true,false,fx);
-  assert.equal(m.swings,0);assert.equal(front.health,16);
+  assert.equal(m.swings,0);assert.equal(front.health,20);
   m.update(1/120,p,[front],wall,false,true,fx);
   for(let i=0;i<36;i++)m.update(1/120,p,[front],wall,false,false,fx);
-  assert.equal(front.health,16);assert.equal(m.swings,1);
+  assert.equal(front.health,20);assert.equal(m.swings,1);
 });
 test('close ordinary fire switches to knife without spending ammo; pause and restart clear correctly',()=>{
   const s=new GameSession();s.reset();const e=s.spawner.enemies[0];e.x=170;e.y=150;e.health=3;
@@ -36,7 +36,7 @@ test('close ordinary fire switches to knife without spending ammo; pause and res
 test('a knife bypasses shield damage mitigation from either side',()=>{
   const front=soldier(160,'shield'),rear=soldier(160,'shield');rear.facing=1;
   front.takeDamage(4,1,'melee');rear.takeDamage(4,1,'melee');
-  assert.equal(front.shieldHealth,3);assert.equal(front.health,rear.health);assert.equal(rear.shieldHealth,3);
+  assert.equal(front.shieldHealth,0);assert.equal(front.health,rear.health);assert.equal(rear.shieldHealth,0);
 });
 test('tracking rocket turns at a bounded rate and actually hits an elevated enemy',()=>{
   const q=new ProjectileManager(new ParticlePool()),p=new PlayerController(),target=soldier(380,'ranged',235);

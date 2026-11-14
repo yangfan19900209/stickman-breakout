@@ -4,6 +4,7 @@ import { ParticlePool } from "./ParticlePool";
 import type { BlastStyle } from "./ExplosionSystem";
 import {projectileProfile} from './ProjectileProfile';
 import { blocksShot } from "./ShotObstruction";
+import { CombatAudioEvents } from "./CombatAudioEvents";
 export interface Projectile {
   active: boolean;
   owner: "player" | "enemy";
@@ -54,6 +55,7 @@ export interface ProjectileSpawn {
   tier?:Projectile['tier'];
 }
 export class ProjectileManager {
+  readonly audio = new CombatAudioEvents();
   readonly marks = Array.from({ length: 36 }, () => ({
     active: false,
     x: 0,
@@ -103,6 +105,7 @@ export class ProjectileManager {
   private playerTargets: Damageable[] = [];
   constructor(readonly particles: ParticlePool) {}
   reset(): void {
+    this.audio.reset();
     for (const m of this.marks) m.active = false;
     this.markCursor = 0;
     for (const p of this.items) p.active = false;
@@ -146,6 +149,9 @@ export class ProjectileManager {
       launchRemaining: s.launchPitch === undefined ? 0 : Math.abs((s.pitch ?? 0)-s.launchPitch)/C.rocketLaunch.turnRate,
     });
     this.fired++;
+    if (s.owner === "enemy" && s.kind !== "shockwave")
+      this.audio.emit(s.kind === "rocket" ? "rocket" : s.kind === "cannon" ? "cannon"
+        : s.tier === "mini" || s.tier === "boss" ? "boss-shot" : "enemy-shot", s.x, s.y);
     this.peak = Math.max(this.peak, this.items.filter((p) => p.active).length);
     return true;
   }

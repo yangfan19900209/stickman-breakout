@@ -110,13 +110,13 @@ test("contextual knife protects the entire held press across crate destruction a
 });
 test("medical drops are conditional, unique and settle on actual support", () => {
   const s = swim();
-  s.player.x = 4050;
+  s.player.x = 8410;
   tick(s, 1);
   assert.equal(s.recoveryUsed.size, 0);
   s.player.health = 3;
   tick(s, 1);
   assert.equal(s.recoveryUsed.size, 1);
-  s.player.x = 4250;
+  s.player.x = 8610;
   tick(s, 500);
   assert.equal(s.drops.filter((d) => d.kind === "medkit").length, 1);
   const d = s.drops.find((d) => d.kind === "medkit");
@@ -187,7 +187,7 @@ test("victory clears threats, freezes clear time, pauses and cannot consume held
   assert.equal(s.player.grenades, 3);
   assert.equal(s.victory.impactSerial, 5);
 });
-test("submarine cycles through six warned attacks and collision blocks both sides without teleportation", () => {
+test("submarine cycles through five warned attacks and collision blocks both sides without teleportation", () => {
   const s = swim();
   s.player.x = OceanLevel.arena + 100;
   s.player.y = 220;
@@ -195,7 +195,7 @@ test("submarine cycles through six warned attacks and collision blocks both side
   s.boss.active = true;
   s.boss.hp = 55;
   tick(s, 120 * 45);
-  for (const attack of ["cannon", "fan", "torpedo", "laser", "sweep", "ring"])
+  for (const attack of ["cannon", "fan", "torpedo", "laser", "sweep"])
     assert.ok(s.boss.attackCounts[attack] > 0, attack);
   s.boss.timer = 100;
   s.boss.mode = "rest";
@@ -227,7 +227,7 @@ test("the last torpedo retains its held pose and spawn socket when ammunition fa
   );
 });
 test("fixed sea enemies share the actual visible supporting surface",()=>{
-  const s=swim();for(const e of s.enemies.filter(e=>e.kind==='kelp'||e.kind==='turret'))assert.ok(Math.abs(e.y-s.supportY(e.x,e.y))<1e-7,e.id);
+  const s=swim();for(const e of s.enemies.filter(e=>e.kind==='turret'))assert.ok(Math.abs(e.y-s.supportY(e.x,e.y))<1e-7,e.id);
 });
 test("chapter has full-length encounters and is completable with normal input only", () => {
   assert.equal(OceanLevel.width, 16400);

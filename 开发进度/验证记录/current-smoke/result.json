@@ -1,27 +1,149 @@
 {
-  "version": "1.0.7",
-  "startedAt": "2026-11-13T10:16:29.890Z",
-  "finishedAt": "2026-11-13T10:16:37.742Z",
+  "version": "1.0.8",
+  "startedAt": "2026-11-14T15:38:42.451Z",
   "passed": true,
-  "scope": "Browser startup, both chapter resource loaders, real keyboard movement/fire and pause/resume; not a device or full-campaign test.",
+  "inputSHA256": "6b8cd9af1ab1941be4364b38e1e4dd2b64105b3a55922f97f3b06cbbae9cc80e",
+  "buildRun": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T15-37-38-842Z-web-mobile-97356",
+  "environment": {
+    "node": "v24.22.1",
+    "playwright": "1.62.1",
+    "browser": "system Google Chrome, headless"
+  },
+  "scope": "Browser: both chapter loaders, real keyboard movement/fire, pause/resume, audio loading and Web Audio start calls. Not full-campaign, WeChat, device or listening validation.",
   "chapters": [
     {
       "chapter": 1,
       "loaded": true,
       "moved": true,
+      "fired": true,
       "pauseResume": true,
       "beforeX": 110,
-      "afterX": 121.91666666666667
+      "afterX": 127.75000000000001,
+      "audio": {
+        "loaded": 17,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "turkish-march",
+          "requested": {
+            "theme": "turkish-march",
+            "tempo": 80,
+            "mode": "playing"
+          },
+          "track": "turkish-march-80bpm",
+          "playing": true,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "pausedAudio": {
+        "loaded": 17,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "turkish-march",
+          "requested": {
+            "theme": "turkish-march",
+            "tempo": 80,
+            "mode": "paused"
+          },
+          "track": "turkish-march-80bpm",
+          "playing": false,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "webAudio": {
+        "starts": 2,
+        "running": 2
+      }
     },
     {
       "chapter": 2,
       "loaded": true,
       "moved": true,
+      "fired": true,
       "pauseResume": true,
-      "beforeX": 121.66666666666664,
-      "afterX": 135.66666666666666
+      "beforeX": 840,
+      "afterX": 852.4962194045057,
+      "audio": {
+        "loaded": 19,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "canon",
+          "requested": {
+            "theme": "canon",
+            "tempo": 80,
+            "mode": "playing"
+          },
+          "track": "canon-80bpm",
+          "playing": true,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "pausedAudio": {
+        "loaded": 19,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "canon",
+          "requested": {
+            "theme": "canon",
+            "tempo": 80,
+            "mode": "paused"
+          },
+          "track": "canon-80bpm",
+          "playing": false,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "webAudio": {
+        "starts": 2,
+        "running": 2
+      }
     }
   ],
   "errors": [],
-  "failed": []
+  "failed": [],
+  "base": "http://127.0.0.1:54121",
+  "finishedAt": "2026-11-14T15:38:59.198Z"
 }

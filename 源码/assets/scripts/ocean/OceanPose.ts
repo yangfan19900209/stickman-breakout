@@ -93,8 +93,8 @@ export function oceanHeldPose(
       ]
     : OceanGunPoses[weapon];
 }
-export function oceanGunTransform(aim: number) {
-  const flip = Math.cos(aim) >= 0 ? 1 : -1;
+export function oceanGunTransform(aim: number, facing?: 1 | -1) {
+  const flip = facing ?? (Math.cos(aim) >= 0 ? 1 : -1);
   // Mirrored art rotates around the same body pivot; the tube remains coaxial.
   const angle = flip === 1 ? aim : aim - Math.PI;
   return { flip, angle };
@@ -111,9 +111,10 @@ export function oceanMuzzle(
   weapon: OceanWeapon,
   pose: ReturnType<typeof oceanHeldPose> = OceanGunPoses[weapon],
   recoil = 0,
+  facing?: 1 | -1,
 ) {
   const d = pose,
-    { flip, angle } = oceanGunTransform(aim);
+    { flip, angle } = oceanGunTransform(aim, facing);
   const dx = (d.muzzle[0] - d.pivot[0]) * d.scale * flip,
     dy = (d.pivot[1] - d.muzzle[1]) * d.scale;
   const origin=oceanGunOrigin(x,y,aim,recoil,weapon);

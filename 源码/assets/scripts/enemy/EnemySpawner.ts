@@ -18,9 +18,9 @@ export class EnemySpawner {
     );
     this.guard.onSummon = (x) => {
       const count = this.enemies.filter(
-        (e) => e.alive && e.id.startsWith("reinforce"),
+        (e) => e.id.startsWith("reinforce"),
       ).length;
-      if (count >= 4) return;
+      if (count >= 2) return;
       for (let i = 0; i < 2; i++)
         this.enemies.push(
           new EnemyController({

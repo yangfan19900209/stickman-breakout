@@ -6,6 +6,7 @@ import { canEnterChapter } from "../social/ChapterAccess";
 import { formatTime } from "../social/RunRecords";
 import { SafeInsets } from "./ControlLayout";
 import { ControlArt } from "./ControlSkin";
+import { GameConfig } from "../core/GameConfig";
 
 const ink=new Color(34,32,29), muted=new Color(108,102,93), paper=new Color(246,241,232);
 /** Formal campaign entry, independent of developer preview and invitation parameters. */
@@ -65,7 +66,7 @@ export class ChapterSelectPanel {
       label.string=`${r.cleared>=index+1?"已通关":"已解锁"}\n${best?`最快 ${formatTime(best.ms)}`:"暂无竞速纪录"}`;
     });
     this.buttons[1].getComponentInChildren(Label)!.string=r.cleared>=2?"重玩第二关":"进入第二关";
-    this.status.string="每关首次免费复活 · 微信分享或推荐可继续获得 · 复活不计最快纪录\n"+
+    this.status.string=`微信内每条视频得 1 次复活 · 每关最多 ${GameConfig.revive.videoLimit} 次 · 复活不计最快纪录\n`+
       (this.personal.saved?"第三关筹备中":"本机保存失败，退出后进度可能丢失");
   }
   private async choose(chapter:1|2):Promise<void> {

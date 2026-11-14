@@ -1,0 +1,114 @@
+{
+  "width": 1536,
+  "height": 1024,
+  "frames": [
+    {
+      "id": "jellyfish.swim.0",
+      "atlas": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "alphaAbove20": 98254,
+      "peak": 254,
+      "bounds": [
+        78,
+        63,
+        439,
+        464
+      ],
+      "edge": 0
+    },
+    {
+      "id": "jellyfish.swim.1",
+      "atlas": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "alphaAbove20": 90320,
+      "peak": 254,
+      "bounds": [
+        61,
+        81,
+        443,
+        447
+      ],
+      "edge": 0
+    },
+    {
+      "id": "jellyfish.tell",
+      "atlas": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "alphaAbove20": 74657,
+      "peak": 254,
+      "bounds": [
+        94,
+        116,
+        424,
+        451
+      ],
+      "edge": 0
+    },
+    {
+      "id": "jellyfish.sting",
+      "atlas": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "alphaAbove20": 95777,
+      "peak": 254,
+      "bounds": [
+        30,
+        78,
+        446,
+        448
+      ],
+      "edge": 0
+    },
+    {
+      "id": "jellyfish.recover",
+      "atlas": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "alphaAbove20": 100629,
+      "peak": 254,
+      "bounds": [
+        70,
+        60,
+        439,
+        461
+      ],
+      "edge": 0
+    },
+    {
+      "id": "jellyfish.defeat",
+      "atlas": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "alphaAbove20": 80177,
+      "peak": 254,
+      "bounds": [
+        65,
+        112,
+        431,
+        447
+      ],
+      "edge": 0
+    }
+  ]
+}

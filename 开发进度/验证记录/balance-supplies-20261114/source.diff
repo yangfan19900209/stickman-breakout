@@ -1,0 +1,419 @@
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/ocean/OceanCombatTuning.ts
++++ 源码/assets/scripts/ocean/OceanCombatTuning.ts
+@@ -1,3 +1,5 @@
++import { GameConfig as C } from "../core/GameConfig";
++
+ /** The tutorial keeps its generous timing; pressure grows through composition
+  * and recovery windows, while every committed attack retains its warning. */
+ export function oceanPressure(x:number):number { return x<2400?0:x<6200?.45:1; }
+@@ -13,7 +15,9 @@
+   if(source === "turret")return [0,-.16,.16];
+   return kind === "sonar" && x>=2400 ? [0,-.22,.22] : [0];
+ }
+-export const OceanWeaponDamage = { harpoon:1, sonar:2, torpedo:12 } as const;
++export const OceanWeaponDamage = { harpoon:1, sonar:2, torpedo:C.playerBossDamage.rocket } as const;
++export const OceanBossWeaponDamage = { harpoon:C.playerBossDamage.bullet, sonar:C.playerBossDamage.sonar, torpedo:C.playerBossDamage.rocket } as const;
++export const OceanWeaponAmmo = { sonar:24, torpedo:C.weapons.rocket.ammo } as const;
+ 
+ export type OceanShotTier = "standard" | "mini" | "boss";
+ /** Both owners share the same silhouette and swept hit radius; tier scales both. */
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/ocean/OceanLevel.ts
++++ 源码/assets/scripts/ocean/OceanLevel.ts
+@@ -62,21 +62,18 @@
+     { x: 11840, y: 90, w: 360, h: 300, vx: 40, vy: 45 },
+   ],
+   recovery: [
+-    { id: "kelp-rest", x: 4050 },
+     { id: "captain-prep", x: 5580 },
+     { id: "abyss-rest", x: 8410 },
+     { id: "defense-rest", x: 10800 },
+-    { id: "trench-rest", x: 12720 },
+     { id: "sub-prep", x: 14970 },
+   ],
+   crates: [
+     { x: 1180, y: 82, drop: "sonar" },
+-    { x: 3270, y: 95, drop: "sonar" },
++    // The captain's former death reward is consolidated into this pre-fight supply.
+     { x: 4800, y: 325, drop: "torpedo" },
+     { x: 6440, y: 82, drop: "depth-charge" },
+     { x: 9100, y: 82, drop: "sonar" },
+     { x: 10600, y: 82, drop: "torpedo" },
+-    { x: 11980, y: 82, drop: "sonar" },
+     { x: 14040, y: 82, drop: "depth-charge" },
+     { x: 15000, y: 82, drop: "torpedo" },
+   ],
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/ocean/OceanSession.ts
++++ 源码/assets/scripts/ocean/OceanSession.ts
+@@ -28,7 +28,7 @@
+ import { OCEAN_FISH, oceanFishBounds } from "./OceanFish";
+ import { StaticRectIndex } from "../core/StaticRectIndex";
+ import { CombatAudioEvents } from "../combat/CombatAudioEvents";
+-import { oceanPressure, oceanAttackBudget, oceanNearLockRange, oceanBurstCount, oceanVolleyCount, oceanVolleyOffsets, oceanShotProfile, OceanShotTier, OceanWeaponDamage,
++import { oceanPressure, oceanAttackBudget, oceanNearLockRange, oceanBurstCount, oceanVolleyCount, oceanVolleyOffsets, oceanShotProfile, OceanShotTier, OceanWeaponDamage, OceanBossWeaponDamage, OceanWeaponAmmo,
+   oceanBossTuning as B } from "./OceanCombatTuning";
+ 
+ export interface SeaEnemy {
+@@ -188,8 +188,8 @@
+     vx: 0,
+     vy: 0,
+     travel: 0,
+-    hp: 180,
+-    maxHp: 180,
++    hp: C.enemies.colossus.health as number,
++    maxHp: C.enemies.colossus.health as number,
+     active: false,
+     phase: 1,
+     attack: "cannon" as Attack,
+@@ -223,6 +223,7 @@
+     r: number;
+     damage: number;
+     owner: "player" | "enemy";
++    kind?: SeaShot["kind"];
+   }[] = [];
+   constructor() {
+     this.reset();
+@@ -276,7 +277,7 @@
+       const shielded = kind === "diver" && L.enemies[i][4] === true;
+       // Three ordinary hits, or five including the two-hit shield; encounter
+       // pressure changes tactics, never silently adds extra health again.
+-      const hp = kind === "captain" ? 84 : kind === "mine" ? 2 : shielded ? 5 : 3;
++      const hp = kind === "captain" ? C.boss.miniHealth : kind === "mine" ? 2 : shielded ? 5 : 3;
+       if (kind === "kelp" || kind === "turret") y = this.supportY(x, y + 100);
+       return {
+         id: `sea-${i}`,
+@@ -347,8 +348,8 @@
+       vx: 0,
+       vy: 0,
+       travel: 0,
+-      hp: 180,
+-      maxHp: 180,
++      hp: C.enemies.colossus.health,
++      maxHp: C.enemies.colossus.health,
+       active: false,
+       phase: 1,
+       attack: "cannon",
+@@ -942,7 +943,7 @@
+         hit(e.x, e.y + 30) &&
+         this.lineClear({ x: p.x, y: p.y + 35 }, { x: e.x, y: e.y + 30 })
+       )
+-        this.damageEnemy(e, 4);
++        this.damageEnemy(e, e.kind === "captain" ? 4 : e.hp);
+     if (this.boss.active && hit(this.boss.x - 300, this.boss.y))
+       this.damageBoss(3, this.boss.x - 300, this.boss.y);
+   }
+@@ -967,7 +968,7 @@
+       y,
+       vx,
+       vy,
+-      damage,
++      damage: owner === "enemy" && kind === "torpedo" ? C.projectileDamage.enemyRocket : damage,
+       tier,
+       r: oceanShotProfile(kind, tier).radius,
+       life,
+@@ -1045,6 +1046,8 @@
+         }
+       }
+       const targets: { id: string; r: Rect; damage: () => void }[] = [];
++      const bossDamage = s.kind === "harpoon" || s.kind === "sonar" || s.kind === "torpedo"
++        ? OceanBossWeaponDamage[s.kind] : s.damage;
+       if (s.owner === "player") {
+         for (const e of this.enemies)
+           if (e.hp > 0 && e.active && !s.hits.has(e.id))
+@@ -1068,7 +1071,7 @@
+                 r: part,
+                 damage: () =>
+                   this.damageBoss(
+-                    s.damage,
++                    bossDamage,
+                     part.x + part.w / 2,
+                     part.y + part.h / 2,
+                     part.id,
+@@ -1077,14 +1080,14 @@
+           targets.push({
+             id: "submarine",
+             r: this.bossBounds(),
+-            damage: () => this.damageBoss(s.damage, s.x, s.y),
++            damage: () => this.damageBoss(bossDamage, s.x, s.y),
+           });
+         }
+       } else
+         targets.push({
+           id: "player",
+           r: p.bounds,
+-          damage: () => p.takeDamage(1, s.vx > 0 ? 1 : -1),
++          damage: () => p.takeDamage(s.damage, s.vx > 0 ? 1 : -1),
+         });
+       const impacts = targets
+         .map((target) => ({ target, t: segmentRect(from, to, target.r, s.r) }))
+@@ -1102,6 +1105,7 @@
+             r: 95,
+             damage: s.damage,
+             owner: s.owner,
++            kind: s.kind,
+           });
+           s.active = false;
+           break;
+@@ -1131,6 +1135,7 @@
+             r: 100,
+             damage: s.damage,
+             owner: s.owner,
++            kind: s.kind,
+           });
+         else this.effect(s.x, s.y, "hit", 20);
+       }
+@@ -1138,7 +1143,9 @@
+   }
+   private damageEnemy(e: SeaEnemy, amount: number, kind?: SeaShot["kind"], x = e.x, y = e.y + 32, angle = this.aim) {
+     if (e.hp <= 0) return;
+-    if (kind === "harpoon" || kind === "sonar") amount = OceanWeaponDamage[kind];
++    if (kind === "harpoon" || kind === "sonar")
++      amount = e.kind === "captain" ? OceanBossWeaponDamage[kind] : OceanWeaponDamage[kind];
++    if (kind === "torpedo") amount = e.kind === "captain" ? OceanBossWeaponDamage.torpedo : e.hp;
+     e.hp = Math.max(0, e.hp - amount);
+     e.hit = .24;
+     e.hitDirection = Math.cos(angle) >= 0 ? 1 : -1;
+@@ -1169,12 +1176,13 @@
+           damage: 6,
+           owner: "player",
+         });
+-      if (e.kind === "diver" && (e.role === "torpedo" || e.role === "sonar")) {
++      // Sonar is obtainable only from the two authored supply crates.
++      if (e.kind === "diver" && e.role === "torpedo") {
+         this.drops.push({
+           x: e.x,
+           y: e.y + 30,
+           vy: 20,
+-          kind: e.role === "torpedo" ? "torpedo" : "sonar",
++          kind: "torpedo",
+           source: e.id,
+           active: true,
+         });
+@@ -1184,14 +1192,6 @@
+         this.messageTime = 4;
+         this.drops.push({ x: e.x - 140, y: e.y + 30, vy: 0,
+           kind: "medkit", source: `${e.id}-recovery`, active: true });
+-        this.drops.push({
+-          x: e.x - 70,
+-          y: e.y,
+-          vy: 0,
+-          kind: "torpedo",
+-          source: e.id,
+-          active: true,
+-        });
+       }
+       this.effect(
+         e.x,
+@@ -1257,7 +1257,7 @@
+         for (const e of this.enemies) {
+           const body=this.enemyBounds(e);
+           if (e.hp > 0 && visible(clamp(b.x,body.x,body.x+body.w),clamp(b.y,body.y,body.y+body.h)))
+-            this.damageEnemy(e, b.damage);
++            this.damageEnemy(e, b.damage, b.kind);
+         }
+         for (const c of this.crates)
+           if (c.hp > 0 && visible(c.x, c.y + 25)) this.damageCrate(c, b.damage);
+@@ -1268,9 +1268,9 @@
+           (p) => this.boss[p.id] > 0 && visible(p.x + p.w / 2, p.y + p.h / 2),
+         );
+         if (part || visible(x, y))
+-          this.damageBoss(b.damage, b.x, b.y, part?.id);
++          this.damageBoss(b.kind === "torpedo" ? OceanBossWeaponDamage.torpedo : b.damage, b.x, b.y, part?.id);
+       } else if (visible(this.player.x, this.player.y + 35))
+-        this.player.takeDamage(1, b.x < this.player.x ? 1 : -1);
++        this.player.takeDamage(b.damage, b.x < this.player.x ? 1 : -1);
+     }
+     this.blastQueue = [];
+   }
+@@ -2019,11 +2019,8 @@
+         this.message = "水下手雷 +2";
+       } else {
+         const weapon = d.kind as OceanWeapon;
+-        const capacity = weapon === "torpedo" ? 8 : 24;
+-        const amount =
+-          d.source.startsWith("sea-") && !d.source.startsWith("sea-crate")
+-            ? capacity / 2
+-            : capacity;
++        const capacity = weapon === "torpedo" ? OceanWeaponAmmo.torpedo : OceanWeaponAmmo.sonar;
++        const amount = capacity;
+         this.ammo =
+           this.storedWeapon === weapon
+             ? Math.min(capacity, this.ammo + amount)
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/core/GameConfig.ts
++++ 源码/assets/scripts/core/GameConfig.ts
+@@ -47,6 +47,7 @@
+   homing: { turnRate: 2.5, acquireRange: 680, cone: 1.05, delay: 0.08 },
+   rocketLaunch: { turnRate: 14, exposedNose: 10, visualLength: 116 },
+   projectileDamage: { enemyRocket: 2 },
++  playerBossDamage: { bullet: 2, sonar: 3, rocket: 5 },
+   weapons: {
+     knife: {
+       id: "knife", name: "战术刀", interval: .26, speed: 0, damage: 4, range: 94,
+@@ -90,13 +91,13 @@
+       name: "追踪火箭筒",
+       interval: 0.95,
+       speed: 460,
+-      damage: 9,
++      damage: 5,
+       range: 1150,
+       muzzleHeight: 44,
+       pellets: 1,
+       spread: 0,
+       recoil: 1.9,
+-      ammo: 6,
++      ammo: 8,
+       muzzleLength: 26,
+       blastRadius: 160,
+       knockback: 240,
+@@ -164,7 +165,7 @@
+       damage: 2,
+     },
+     colossus: {
+-      health: 150,
++      health: 120,
+       speed: 0,
+       range: 1100,
+       interval: 1.4,
+@@ -173,7 +174,7 @@
+     },
+   },
+   boss: {
+-    miniHealth: 68,
++    miniHealth: 60,
+     miniWindup: 0.8,
+     miniEnragedWindup: 0.66,
+     miniRecovery: 0.8,
+@@ -200,7 +201,6 @@
+     fanSpread: 0.18,
+   },
+   colossus: {
+-    playerBulletDamageMultiplier: 2,
+     sizeScale: 1,
+     halfWidth: 86,
+     height: 200,
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/core/GameSession.ts
++++ 源码/assets/scripts/core/GameSession.ts
+@@ -7,7 +7,7 @@
+ import { ParticlePool } from "../combat/ParticlePool";
+ import { ProjectileManager } from "../combat/ProjectileManager";
+ import { WeaponSystem } from "../combat/WeaponSystem";
+-import { ExplosionSystem } from "../combat/ExplosionSystem";
++import { ExplosionSystem, BlastStyle } from "../combat/ExplosionSystem";
+ import { GrenadeSystem } from "../combat/GrenadeSystem";
+ import { PickupSystem } from "../world/PickupSystem";
+ import { DestructibleObject } from "../world/DestructibleObject";
+@@ -234,8 +234,8 @@
+         e.deathEffectPlayed = true;
+         this.explosions.enqueue(e.x, e.y + 35, 85, 0, "player");
+       }
+-    this.explosions.flush((x, y, radius, damage, owner) =>
+-      this.applyBlast(x, y, radius, damage, owner),
++    this.explosions.flush((x, y, radius, damage, owner, style) =>
++      this.applyBlast(x, y, radius, damage, owner, style),
+     );
+     this.explosions.update(dt);
+     for (const e of this.spawner.enemies) if (e.shieldBreakEvent) {
+@@ -601,6 +601,7 @@
+     radius: number,
+     damage: number,
+     owner: DamageOwner,
++    style?: BlastStyle,
+   ): void {
+     this.particles.blast(x, y, radius, this.level.groundY(x));
+     this.shakeTime = Math.max(this.shakeTime, 0.28);
+@@ -615,6 +616,7 @@
+         takeDamage: (n: number, d: -1 | 1, k?: "explosion") => boolean;
+       },
+       amount: number,
++      falloff = true,
+     ) => {
+       if (!target.alive) return false;
+       const r = target.bounds,
+@@ -624,7 +626,7 @@
+       return (
+         distance <= radius &&
+         target.takeDamage(
+-          amount * (1 - (0.35 * distance) / radius),
++          amount * (falloff ? 1 - (0.35 * distance) / radius : 1),
+           r.x + r.w / 2 >= x ? 1 : -1,
+           "explosion",
+         )
+@@ -636,13 +638,10 @@
+         if (
+           hit(
+             e,
+-            damage *
+-              (damage >= 9 &&
+-              ((e.kind === "guard" && e !== this.spawner.miniBoss) ||
+-                e.kind === "turret" ||
+-                e.kind === "colossus")
+-                ? 1.5
+-                : 1),
++            owner === "player" && style === "rocket"
++              ? e.kind === "guard" || e.kind === "colossus" ? C.playerBossDamage.rocket : e.health
++              : damage,
++            !(owner === "player" && style === "rocket"),
+           )
+         ) {
+           // Heavy bosses own their movement commitments. Explosion damage
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/combat/ExplosionSystem.ts
++++ 源码/assets/scripts/combat/ExplosionSystem.ts
+@@ -98,6 +98,7 @@
+       radius: number,
+       damage: number,
+       owner: DamageOwner,
++      style: BlastStyle,
+     ) => void,
+   ): void {
+     let budget = 64;
+@@ -120,7 +121,7 @@
+         });
+       this.total++;
+       if (style === "rocket" || style === "cannon" || style === "boss") this.heavyTotal++;
+-      apply(x, y, radius, damage, owner);
++      apply(x, y, radius, damage, owner, style);
+     }
+   }
+   update(dt: number): void {
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/enemy/TankBoss.ts
++++ 源码/assets/scripts/enemy/TankBoss.ts
+@@ -24,6 +24,7 @@
+ 
+ /** Four readable commitments; relocation and ram remain real colliding movement. */
+ export class TankBoss extends EnemyController {
++  readonly playerBulletDamageMultiplier = C.playerBossDamage.bullet / C.weapons.rifle.damage;
+   active = false;
+   warningX = 0;
+   warningTime = 0;
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/enemy/ColossusBoss.ts
++++ 源码/assets/scripts/enemy/ColossusBoss.ts
+@@ -53,7 +53,7 @@
+ ];
+ 
+ export class ColossusBoss extends EnemyController {
+-  readonly playerBulletDamageMultiplier = C.colossus.playerBulletDamageMultiplier;
++  readonly playerBulletDamageMultiplier = C.playerBossDamage.bullet / C.weapons.rifle.damage;
+   active = false;
+   mode:
+     | "dormant"
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/enemy/EnemyController.ts
++++ 源码/assets/scripts/enemy/EnemyController.ts
+@@ -95,6 +95,9 @@
+     kind: DamageKind = "bullet",
+   ): boolean {
+     if (!this.alive) return false;
++    // Ordinary enemies are executed by a connected player knife strike.
++    // Boss subclasses own their separate damage rules.
++    if (kind === "melee" && this.kind !== "guard" && this.kind !== "colossus") amount = this.health;
+     const blocked =
+       this.kind === "shield" &&
+       this.shieldHealth > 0 &&
+--- 开发进度/验证记录/balance-supplies-20261114/before/源码/assets/scripts/level/LevelData.ts
++++ 源码/assets/scripts/level/LevelData.ts
+@@ -235,7 +235,6 @@
+     { id: "after-industry", x: 3756, y: roadHeight(3756), purpose: "after-encounter" },
+     { id: "before-tank", x: 4590, y: roadHeight(4590), purpose: "before-boss" },
+     { id: "after-freight", x: 8810, y: roadHeight(8810), purpose: "after-encounter" },
+-    { id: "after-blockade", x: 10800, y: roadHeight(10800), purpose: "after-encounter" },
+     { id: "before-colossus", x: 13180, y: roadHeight(13180), purpose: "before-boss" },
+   ],
+ };

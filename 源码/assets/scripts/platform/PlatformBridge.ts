@@ -24,13 +24,14 @@ export class PlatformBridge {
   private onHide?: () => void;
   private onShow?: () => void;
   install(onHide: () => void, snapshot: () => unknown, onShow: () => void = () => {}): void {
-    this.onHide = () => { this.adapter.gameClub.setBackground(true); this.adapter.recommendation.setBackground(true); onHide(); };
-    this.onShow = () => { this.adapter.gameClub.setBackground(false); this.adapter.recommendation.setBackground(false); onShow(); };
+    this.onHide = () => { this.adapter.gameClub.setBackground(true); this.adapter.recommendation.setBackground(true); this.adapter.rewardedVideo.setBackground(true); onHide(); };
+    this.onShow = () => { this.adapter.gameClub.setBackground(false); this.adapter.recommendation.setBackground(false); this.adapter.rewardedVideo.setBackground(false); onShow(); };
     game.on(Game.EVENT_HIDE, this.onHide);
     game.on(Game.EVENT_SHOW, this.onShow);
     this.unsubscribe = this.adapter.subscribeInactive(this.onHide);
     this.adapter.share.install();
     this.adapter.social.install();
+    this.adapter.rewardedVideo.preload();
     if (DEBUG)
       (
         globalThis as typeof globalThis & { __BREAKOUT__?: DebugHandle }
@@ -43,6 +44,7 @@ export class PlatformBridge {
     this.adapter.gameClub.destroy();
     this.adapter.share.destroy();
     this.adapter.recommendation.destroy();
+    this.adapter.rewardedVideo.destroy();
     this.adapter.social.destroy();
     if (DEBUG)
       delete (globalThis as typeof globalThis & { __BREAKOUT__?: DebugHandle })

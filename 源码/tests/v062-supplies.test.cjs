@@ -14,11 +14,11 @@ function fixture(kind='wood',facing=1,drop,wall=false) {
 }
 
 test('health is limited to costly stretches and the two boss approaches, with no random crates or immediate tank heal',()=>{
-  assert.equal(AbandonedBase.recoveryPoints.length,5);
+  assert.equal(AbandonedBase.recoveryPoints.length,4);
   assert.equal(AbandonedBase.objects.filter(o=>o.drop==='health').length,0);
   const points=AbandonedBase.recoveryPoints,bosses=AbandonedBase.enemies.filter(e=>e.encounter);
-  for(const boss of bosses) assert.ok(points.some(p=>p.purpose==='before-boss'&&p.x<boss.x&&boss.x-p.x<1400));
-  assert.equal(points.filter(p=>p.purpose==='after-encounter').length,3);
+  for(const boss of bosses) assert.ok(points.some(p=>p.purpose==='before-boss'&&p.x<boss.x&&boss.x-p.x<1800));
+  assert.equal(points.filter(p=>p.purpose==='after-encounter').length,2);
   for(const p of points) assert.ok(AbandonedBase.solids.some(r=>(r.kind==='ground'||r.kind==='platform')&&p.x>=r.x&&p.x<=r.x+r.w&&Math.abs(surfaceY(r,p.x)-p.y)<.01));
   const s=new GameSession();s.reset();s.spawner.miniBoss.takeDamage(999,1,'bullet');s.update(dt,idle);
   assert.equal(s.pickups.items.filter(p=>p.active&&p.kind==='health').length,0);

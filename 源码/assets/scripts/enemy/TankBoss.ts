@@ -24,6 +24,7 @@ export const TankAttackNames: Record<TankAttack, string> = {
 
 /** Four readable commitments; relocation and ram remain real colliding movement. */
 export class TankBoss extends EnemyController {
+  readonly playerBulletDamageMultiplier = C.playerBossDamage.bullet / C.weapons.rifle.damage;
   active = false;
   warningX = 0;
   warningTime = 0;
@@ -504,6 +505,7 @@ export class TankBoss extends EnemyController {
         this.attackCounts[this.attack]++;
         if (this.attack === "ram") {
           this.mode = "ramming";
+          shots.audio.emit("charge", this.x, this.y + 50);
           this.ramTime = C.boss.ramDuration;
         } else {
           if (this.attack === "burst") {

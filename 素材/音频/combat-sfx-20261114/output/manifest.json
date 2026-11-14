@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-14",
+  "source": "Original deterministic oscillator/noise synthesis; no sampled recordings",
+  "sampleRate": 22050,
+  "channels": 1,
+  "bits": 16,
+  "files": [
+    {
+      "file": "rocket.wav",
+      "seconds": 0.62,
+      "bytes": 27386,
+      "sha256": "58d34833e7e0e990a513d4b4a3ebdf6aa9013e4e869a3b578154b17afcb6f705",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -14.323983569645229
+    },
+    {
+      "file": "rocket-blast.wav",
+      "seconds": 0.86,
+      "bytes": 37970,
+      "sha256": "235afef8e6b552d68afb3ba1ddd945f156fb247c1b05ed0c75e1e995d62fc72c",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -15.257663066553281
+    },
+    {
+      "file": "enemy-shot.wav",
+      "seconds": 0.10498866213151928,
+      "bytes": 4674,
+      "sha256": "874c72194dad778d9323c5016465a623f50316d984a5670ba5efd43d99e39774",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -16.808719153185663
+    },
+    {
+      "file": "boss-shot.wav",
+      "seconds": 0.18,
+      "bytes": 7982,
+      "sha256": "9fcccc292eb4b683c9d032963d28480993e08ff5eb83539ab356dc80c25ae6ed",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -16.21776174383274
+    },
+    {
+      "file": "cannon.wav",
+      "seconds": 0.32,
+      "bytes": 14156,
+      "sha256": "fa1f0c46d0698f80dcd9875c98f6cb429cdbef18f8dccb33be90973cec073728",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -16.46514781929668
+    },
+    {
+      "file": "beam.wav",
+      "seconds": 0.8500226757369614,
+      "bytes": 37530,
+      "sha256": "212d686fb51b3a7751c4a0ef2ebdfc63bfcf0508fbff9beb7a6522b654415b6a",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -9.560009011957694
+    },
+    {
+      "file": "slam.wav",
+      "seconds": 0.5500226757369614,
+      "bytes": 24300,
+      "sha256": "57fa187350753a8274ab0998424bbfa52ef196b1d8d99a4070090af81c217c30",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -16.11860869336
+    },
+    {
+      "file": "charge.wav",
+      "seconds": 0.46,
+      "bytes": 20330,
+      "sha256": "720c1dbc5954c43911cd0064bc17c8f607b7c7aa9741c5a88872d8801865f320",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -9.769474925441271
+    },
+    {
+      "file": "enemy-melee.wav",
+      "seconds": 0.22,
+      "bytes": 9746,
+      "sha256": "877ccf267650865287354da7f2ef94d4c7d3bcc18b6654885081f1d3f401f0a0",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -9.748334641066078
+    },
+    {
+      "file": "enemy-sonar.wav",
+      "seconds": 0.52,
+      "bytes": 22976,
+      "sha256": "e55c5bd5923bd0204d8a787a22d631773c2b910c44f90b8e81efb2ac9583c9cd",
+      "peakDbfs": -1.938200260161128,
+      "rmsDbfs": -11.630692257140627
+    }
+  ],
+  "totalRuntimeBytes": 207050
+}

@@ -100,15 +100,18 @@ export const AbandonedBase: LevelDefinition = {
     { id: "shield-B", kind: "shield", x: 2810, y: 150, patrol: 45 },
     { id: "turret-B", kind: "turret", x: 3600, y: 150, patrol: 0 },
     { id: "shield-C", kind: "shield", x: 4100, y: 150, patrol: 45 },
+    { id: "turret-C", kind: "turret", x: 4510, y: 150, patrol: 0 },
     { id: "charge-C", kind: "melee", x: 4650, y: 150, patrol: 40 },
     { id: "rifle-C1", kind: "ranged", x: 4790, y: 150, patrol: 45 },
     { id: "rifle-E0", kind: "ranged", x: 7140, y: 150, patrol: 35 },
     { id: "rifle-E1", kind: "ranged", x: 7480, y: 308, patrol: 75 },
     { id: "charge-E1", kind: "melee", x: 7760, y: 150, patrol: 60 },
+    { id: "turret-E", kind: "turret", x: 7980, y: 150, patrol: 0 },
     { id: "shield-E", kind: "shield", x: 8120, y: 150, patrol: 50 },
     { id: "rifle-E2", kind: "ranged", x: 8380, y: 330, patrol: 60 },
     { id: "rifle-E3", kind: "ranged", x: 8640, y: 150, patrol: 35 },
     { id: "charge-F0", kind: "melee", x: 8925, y: 150, patrol: 40 },
+    { id: "turret-F0", kind: "turret", x: 9040, y: 150, patrol: 0 },
     { id: "rifle-F1", kind: "ranged", x: 9160, y: 336, patrol: 60 },
     { id: "shield-F", kind: "shield", x: 9410, y: 150, patrol: 40 },
     { id: "charge-F", kind: "melee", x: 9760, y: 150, patrol: 50 },
@@ -233,9 +236,8 @@ export const AbandonedBase: LevelDefinition = {
   // They appear only when the player is nearby and missing at least two hearts.
   recoveryPoints: [
     { id: "after-industry", x: 3756, y: roadHeight(3756), purpose: "after-encounter" },
-    { id: "before-tank", x: 5110, y: roadHeight(5110), purpose: "before-boss" },
+    { id: "before-tank", x: 4590, y: roadHeight(4590), purpose: "before-boss" },
     { id: "after-freight", x: 8810, y: roadHeight(8810), purpose: "after-encounter" },
-    { id: "after-blockade", x: 10800, y: roadHeight(10800), purpose: "after-encounter" },
     { id: "before-colossus", x: 13180, y: roadHeight(13180), purpose: "before-boss" },
   ],
 };
@@ -268,7 +270,8 @@ AbandonedBase.objects.push(
   {
     id: "rocket-before-tank",
     kind: "wood",
-    x: 4880,
+    // Collected before the shield, new launcher and two infantry in the approach.
+    x: 4020,
     y: 150,
     w: 53,
     h: 48,
@@ -351,11 +354,23 @@ for (const m of AbandonedBase.mechanisms ?? []) {
 }
 // Keep tall cover outside the full-height passage beneath the decks.
 AbandonedBase.objects.find(o=>o.id === "barrel-03")!.x = 2230;
-AbandonedBase.objects.find(o=>o.id === "barrel-C1")!.x = 5330;
-AbandonedBase.objects.find(o=>o.id === "barrel-C2")!.x = 5420;
+// The high deck leaves room to jump over these barrels. Keep both blasts
+// within reach of the tank, with a clear gap before its initial hull.
+AbandonedBase.objects.find(o=>o.id === "barrel-C1")!.x = 5930;
+AbandonedBase.objects.find(o=>o.id === "barrel-C2")!.x = 6020;
 AbandonedBase.objects.find(o=>o.id === "cargo-C")!.x = 6600;
 // The new first high link must not land on a shot-down cargo crate mid-jump.
 AbandonedBase.objects.find(o=>o.id === "hanging-01")!.x = 2110;
+
+// Every timber crate uses the entry crate's size, including caches and cargo.
+// Keep its authored center and foot so resizing cannot shift the route/drop.
+for (const o of AbandonedBase.objects) {
+  if (o.kind !== "wood" && o.kind !== "hanging") continue;
+  const center = o.x + o.w / 2;
+  o.w = 55;
+  o.h = 50;
+  o.x = center - o.w / 2;
+}
 
 // Readable chest-high cover, with the same visible and physical envelope.
 for(const o of AbandonedBase.objects){

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-11-14",
+  "url": "https://github.com/wechat-miniprogram/minigame-api-typings/blob/master/types/wx/lib.wx.api.d.ts",
+  "checkedDefinitions": [
+    "CreateRewardedVideoAdOption",
+    "RewardedVideoAd",
+    "RewardedVideoAdOnCloseListenerResult"
+  ],
+  "decisions": [
+    "strict isEnded === true",
+    "one show/load/show retry",
+    "same-function off listeners",
+    "multiton instance isolation",
+    "disableFallbackSharePage requires SDK 3.7.1"
+  ],
+  "adUnitIdSource": "user code and screenshot in this task",
+  "serverRewardCallbackImplemented": false
+}

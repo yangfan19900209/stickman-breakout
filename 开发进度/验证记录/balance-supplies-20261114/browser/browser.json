@@ -1,0 +1,149 @@
+{
+  "version": "1.0.7",
+  "startedAt": "2026-11-14T14:18:02.020Z",
+  "passed": true,
+  "inputSHA256": "a6c762b77b830b8b8e5fa9ea41f5e7e457ac42444915a34520b9361af07168f1",
+  "buildRun": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T14-15-43-997Z-web-mobile-89741",
+  "environment": {
+    "node": "v24.22.1",
+    "playwright": "1.62.1",
+    "browser": "system Google Chrome, headless"
+  },
+  "scope": "Browser: both chapter loaders, real keyboard movement/fire, pause/resume, audio loading and Web Audio start calls. Not full-campaign, WeChat, device or listening validation.",
+  "chapters": [
+    {
+      "chapter": 1,
+      "loaded": true,
+      "moved": true,
+      "fired": true,
+      "pauseResume": true,
+      "beforeX": 110,
+      "afterX": 124.08333333333334,
+      "audio": {
+        "loaded": 17,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "turkish-march",
+          "requested": {
+            "theme": "turkish-march",
+            "tempo": 80,
+            "mode": "playing"
+          },
+          "track": "turkish-march-80bpm",
+          "playing": true,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "pausedAudio": {
+        "loaded": 17,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "turkish-march",
+          "requested": {
+            "theme": "turkish-march",
+            "tempo": 80,
+            "mode": "paused"
+          },
+          "track": "turkish-march-80bpm",
+          "playing": false,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "webAudio": {
+        "starts": 2,
+        "running": 2
+      }
+    },
+    {
+      "chapter": 2,
+      "loaded": true,
+      "moved": true,
+      "fired": true,
+      "pauseResume": true,
+      "beforeX": 840,
+      "afterX": 850.8656725656342,
+      "audio": {
+        "loaded": 19,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "canon",
+          "requested": {
+            "theme": "canon",
+            "tempo": 80,
+            "mode": "playing"
+          },
+          "track": "canon-80bpm",
+          "playing": true,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "pausedAudio": {
+        "loaded": 19,
+        "played": 1,
+        "byEffect": {
+          "rifle": 1
+        },
+        "muted": false,
+        "music": {
+          "theme": "canon",
+          "requested": {
+            "theme": "canon",
+            "tempo": 80,
+            "mode": "paused"
+          },
+          "track": "canon-80bpm",
+          "playing": false,
+          "blocked": false,
+          "muted": false,
+          "loaded": 2,
+          "pending": 0,
+          "starts": 1,
+          "volume": 0.27,
+          "loadErrors": []
+        },
+        "loadErrors": []
+      },
+      "webAudio": {
+        "starts": 2,
+        "running": 2
+      }
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "base": "http://127.0.0.1:49160",
+  "finishedAt": "2026-11-14T14:18:17.948Z"
+}

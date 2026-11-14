@@ -2,13 +2,14 @@ import { sys, view } from "cc";
 import type { SafeInsets } from "../ui/ControlLayout";
 import { VictoryHaptics } from "./VictoryHaptics";
 import { MenuApi, readMenuRect } from "./MenuSafeArea";
-import { isChapterAvailable } from "../core/ReleaseConfig";
+import { ReleaseConfig, isChapterAvailable } from "../core/ReleaseConfig";
 import { GameClubBridge } from "./GameClubBridge";
 import { ShareBridge } from "./ShareBridge";
 import { DEBUG } from "cc/env";
 import { SocialBridge } from "./SocialBridge";
 import { RecordStore } from "./RecordStore";
 import { RecommendationBridge } from "./RecommendationBridge";
+import { RewardedVideoBridge } from "./RewardedVideoBridge";
 export interface PlatformStatus {
   mode: "browser" | "standalone" | "wechat-mini-game" | "native";
   fullscreen: boolean;
@@ -31,7 +32,9 @@ export class PlatformAdapter {
   readonly gameClub = new GameClubBridge(() => this.status().mode === "wechat-mini-game");
   readonly share = new ShareBridge(() => this.status().mode === "wechat-mini-game");
   readonly recommendation = new RecommendationBridge(() => this.status().mode === "wechat-mini-game");
-  readonly social = new SocialBridge(() => this.status().mode === "wechat-mini-game", () => this.canUpload());
+  readonly rewardedVideo = new RewardedVideoBridge(() => this.status().mode === "wechat-mini-game");
+  readonly social = new SocialBridge(() => this.status().mode === "wechat-mini-game", () => this.canUpload(),
+    undefined, () => ReleaseConfig.friendLeaderboard);
   canUpload(): boolean {
     const wx = (globalThis as any).wx;
     return !DEBUG && sys.platform === sys.Platform.WECHAT_GAME && wx?.getSystemInfoSync?.().platform !== "devtools";

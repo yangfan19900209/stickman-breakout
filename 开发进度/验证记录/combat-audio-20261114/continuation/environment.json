@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-11-14T12:25:17.295Z",
+  "platform": "darwin",
+  "node": {
+    "version": "24.22.1",
+    "path": "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node",
+    "passed": true
+  },
+  "npm": {
+    "version": null,
+    "passed": false
+  },
+  "creator": {
+    "path": "/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator",
+    "expected": "3.8.8",
+    "actual": "3.8.8",
+    "passed": true
+  },
+  "wechat": {
+    "path": "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
+    "installed": true
+  },
+  "chrome": {
+    "installed": true
+  },
+  "dependencies": [
+    {
+      "name": "@cocos/creator-types",
+      "expected": "3.8.8",
+      "actual": "3.8.8-121517",
+      "passed": false
+    },
+    {
+      "name": "@playwright/test",
+      "expected": "1.63.0",
+      "actual": null,
+      "passed": false
+    },
+    {
+      "name": "miniprogram-ci",
+      "expected": "2.1.31",
+      "actual": null,
+      "passed": false
+    },
+    {
+      "name": "pngjs",
+      "expected": "3.4.0",
+      "actual": "3.4.0",
+      "passed": true
+    },
+    {
+      "name": "prettier",
+      "expected": "3.6.2",
+      "actual": null,
+      "passed": false
+    },
+    {
+      "name": "typescript",
+      "expected": "5.9.3",
+      "actual": "5.8.2",
+      "passed": false
+    }
+  ],
+  "ready": false
+}

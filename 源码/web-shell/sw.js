@@ -1,4 +1,4 @@
-const CACHE = "stickman-breakout-v1.0.7";
+const CACHE = "stickman-breakout-v1.0.8";
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches

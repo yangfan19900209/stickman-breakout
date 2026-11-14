@@ -374,7 +374,11 @@ class PlaytestBrain {
     // from the ledge. Use an ordinary grenade over the cover instead of waiting
     // in its cannon lane; this is playtest input policy, not a game-state edit.
     if (enemy?.kind === "turret" && Math.abs(enemy.x-p.x)<430 &&
-        Math.abs(enemy.y-p.y)<180 && s.grenades>0 &&
+        Math.abs(enemy.y-p.y)<180 && s.grenades>0 && s.weapon!=="rocket" &&
+        (enemy.y<p.y-38 || s.terrain?.some(r=>r.entityId&&
+          s.objects?.some(o=>o.id===r.entityId&&o.kind==='concrete')&&
+          r.x<Math.max(p.x,enemy.x)&&r.x+r.w>Math.min(p.x,enemy.x)&&
+          r.y<p.y+44&&r.y+r.h>p.y+44)) &&
         p.facing===Math.sign(enemy.x-p.x) && time-this.lastGrenade>2.5) {
       grenade=true;this.lastGrenade=time;
     }

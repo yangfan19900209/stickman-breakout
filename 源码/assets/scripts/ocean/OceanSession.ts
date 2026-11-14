@@ -25,9 +25,11 @@ import { oceanMuzzle, oceanHeldPose } from "./OceanPose";
 import { OceanEntry as E, entryPhase } from "./OceanEntry";
 import { swimMove } from "./SwimCollision";
 import { SwimNavigation } from "./SwimNavigation";
+import { OCEAN_JELLY, oceanJellyBounds } from "./OceanJellyfish";
 import { OCEAN_FISH, oceanFishBounds } from "./OceanFish";
 import { StaticRectIndex } from "../core/StaticRectIndex";
-import { oceanPressure, oceanAttackBudget, oceanShotProfile, OceanShotTier, OceanWeaponDamage,
+import { CombatAudioEvents } from "../combat/CombatAudioEvents";
+import { oceanPressure, oceanAttackBudget, oceanNearLockRange, oceanVolleyCount, oceanVolleyOffsets, oceanRangedRest, oceanShotProfile, OceanShotTier, OceanWeaponDamage, OceanBossWeaponDamage, OceanWeaponAmmo, OceanFireInterval,
   oceanBossTuning as B } from "./OceanCombatTuning";
 
 export interface SeaEnemy {
@@ -40,6 +42,7 @@ export interface SeaEnemy {
   role: OceanEnemyWeapon;
   burstLeft: number;
   burstTimer: number;
+  volleysLeft: number;
   attack: string;
   attackCounts: Record<string, number>;
   vx: number;
@@ -110,7 +113,7 @@ export interface SeaCrate {
   vy: number;
   deadTime: number;
 }
-type Attack = "cannon" | "fan" | "torpedo" | "laser" | "sweep" | "ring";
+type Attack = "cannon" | "fan" | "torpedo" | "laser" | "sweep";
 export class OceanSession {
   readonly chapter = 2;
   readonly revival = new Revival();
@@ -161,6 +164,7 @@ export class OceanSession {
   aimLockAge = 0;
   shooting = false;
   shots = 0;
+  readonly attackAudio = new CombatAudioEvents();
   hits = 0;
   kills = 0;
   collected = 0;
@@ -185,8 +189,8 @@ export class OceanSession {
     vx: 0,
     vy: 0,
     travel: 0,
-    hp: 180,
-    maxHp: 180,
+    hp: B.health as number,
+    maxHp: B.health as number,
     active: false,
     phase: 1,
     attack: "cannon" as Attack,
@@ -200,6 +204,8 @@ export class OceanSession {
     volleyTimer: 0,
     volleyIndex: 0,
     volleyCount: 0,
+    summons: 0,
+    summonTimer: 10,
     laserHp: 30,
     torpedoHp: 32,
     cannonHp: 36,
@@ -220,14 +226,62 @@ export class OceanSession {
     r: number;
     damage: number;
     owner: "player" | "enemy";
+    kind?: SeaShot["kind"];
   }[] = [];
   constructor() {
     this.reset();
+  }
+  private createEnemy(data: (typeof L.enemies)[number], id: string, i = 0): SeaEnemy {
+    const [kind, x, startY] = data;
+    let y = startY;
+      const shielded = kind === "diver" && data[4] === true;
+      // Three ordinary hits, or five including the two-hit shield; encounter
+      // pressure changes tactics, never silently adds extra health again.
+      const hp = kind === "captain" ? C.boss.miniHealth : kind === "mine" ? 2 : shielded ? 5 : 3;
+      if (kind === "turret") y = this.supportY(x, y + 100);
+      return {
+        id,
+        kind,
+        x,
+        y,
+        homeY: y,
+        homeX: x,
+        role: data[3] ?? "harpoon",
+        burstLeft: 0,
+        burstTimer: 0,
+        volleysLeft: 0,
+        attack: "",
+        attackCounts: {},
+        vx: 0,
+        vy: 0,
+        hp,
+        maxHp: hp,
+        active: false,
+        mode: "idle",
+        timer: 0.7 + (i % 4) * 0.27,
+        angle: Math.PI,
+        serial: 0,
+        hit: 0,
+        deadTime: 0,
+        staggered: false,
+        tellDuration: 0,
+        dodgeCooldown: .75 + (i % 3) * .18,
+        reaction: 0,
+        dodges: 0,
+        dodgeX: 0,
+        dodgeY: 0,
+        dashDuration: 0,
+        locked: false,
+        shielded,
+        shieldHp: shielded ? 2 : 0,
+        hitDirection: 1,
+      };
   }
   reset(state: GameState = "playing"): void {
     this.revival.reset(); this.reviveAnchor=undefined; this.deathOrigin=undefined; this.anchorTime=0;
     this.swimRoutes.clear();
     this.swimDetours.clear();
+    this.attackAudio.reset();
     this.state = state;
     this.time = this.clearTime = 0;
     this.furthestX = this.retreatLimit = 0;
@@ -268,49 +322,7 @@ export class OceanSession {
     this.effects = [];
     this.drops = [];
     this.blastQueue = [];
-    this.enemies = L.enemies.map(([kind, x, y], i) => {
-      const shielded = kind === "diver" && L.enemies[i][4] === true;
-      // Three ordinary hits, or five including the two-hit shield; encounter
-      // pressure changes tactics, never silently adds extra health again.
-      const hp = kind === "captain" ? 84 : kind === "mine" ? 2 : shielded ? 5 : 3;
-      if (kind === "kelp" || kind === "turret") y = this.supportY(x, y + 100);
-      return {
-        id: `sea-${i}`,
-        kind,
-        x,
-        y,
-        homeY: y,
-        homeX: x,
-        role: L.enemies[i][3] ?? "harpoon",
-        burstLeft: 0,
-        burstTimer: 0,
-        attack: "",
-        attackCounts: {},
-        vx: 0,
-        vy: 0,
-        hp,
-        maxHp: hp,
-        active: false,
-        mode: "idle",
-        timer: 0.7 + (i % 4) * 0.27,
-        angle: Math.PI,
-        serial: 0,
-        hit: 0,
-        deadTime: 0,
-        staggered: false,
-        tellDuration: 0,
-        dodgeCooldown: 1.25 + (i % 3) * 0.25,
-        reaction: 0,
-        dodges: 0,
-        dodgeX: 0,
-        dodgeY: 0,
-        dashDuration: 0,
-        locked: false,
-        shielded,
-        shieldHp: shielded ? 2 : 0,
-        hitDirection: 1,
-      };
-    });
+    this.enemies = L.enemies.map((data, i) => this.createEnemy(data, `sea-${i}`, i));
     this.crates = L.crates.map((c, i) => ({
       ...c,
       id: `sea-crate-${i}`,
@@ -342,8 +354,8 @@ export class OceanSession {
       vx: 0,
       vy: 0,
       travel: 0,
-      hp: 180,
-      maxHp: 180,
+      hp: B.health,
+      maxHp: B.health,
       active: false,
       phase: 1,
       attack: "cannon",
@@ -357,6 +369,8 @@ export class OceanSession {
       volleyTimer: 0,
       volleyIndex: 0,
       volleyCount: 0,
+    summons: 0,
+    summonTimer: 10,
       laserHp: 30,
       torpedoHp: 32,
       cannonHp: 36,
@@ -387,7 +401,7 @@ export class OceanSession {
     this.boostTime=this.knifeTime=this.grenadeThrowTime=this.hitStop=this.shakeTime=this.shakePower=0;
     this.knifeHit=this.protectedPress=this.grenadePressed=this.shooting=false; this.protectedCrate=undefined;
     this.aimTarget=""; this.aimPoint=undefined; this.aimHold=this.aimLockAge=0;
-    for(const e of this.enemies)if(e.hp>0){e.mode="rest";e.timer=1;e.burstLeft=e.burstTimer=e.dashDuration=e.dodgeX=e.dodgeY=e.vx=e.vy=0;e.locked=false;e.fireFlash=0;}
+    for(const e of this.enemies)if(e.hp>0){e.mode="rest";e.timer=1;e.volleysLeft=e.burstLeft=e.burstTimer=e.dashDuration=e.dodgeX=e.dodgeY=e.vx=e.vy=0;e.locked=false;e.fireFlash=0;}
     const b=this.boss;
     if(b.hp>0){b.mode=b.active?"rest":"idle";b.timer=1.2;b.volleyRemaining=b.volleyTimer=b.ringRadius=b.vx=b.vy=0;b.beamActive=b.locked=b.ringHit=false;}
     this.message="恢复操作后保护 3 秒";this.messageTime=3;
@@ -730,11 +744,12 @@ export class OceanSession {
   enemyBounds(e: SeaEnemy): Rect {
     if (e.kind === "captain") return miniSubBounds(e);
     if (e.kind === "fish") return oceanFishBounds(e);
+    if (e.kind === "jellyfish") return oceanJellyBounds(e);
     return {
       x: e.x - 23,
       y: e.y,
       w: 46,
-      h: e.kind === "kelp" ? 105 : 58,
+      h: 58,
     };
   }
   bossBounds(): Rect {
@@ -786,20 +801,20 @@ export class OceanSession {
             x: part.x + part.w / 2,
             y: part.y + part.h / 2,
           });
+      const hull = this.bossBounds();
       candidates.push({
         id: "submarine",
-        x: this.boss.x - 260,
-        y: this.boss.y,
+        x: clamp(from.x, hull.x + 20, hull.x + hull.w - 20),
+        y: clamp(from.y, hull.y + 20, hull.y + hull.h - 20),
       });
     }
     const allowed = candidates.filter((e) => {
       const dx = (e.x - p.x) * p.facing,
         dy = e.y - from.y;
+      const distance = Math.hypot(dx, dy);
       return (
-        dx > -20 &&
-        dx < 650 &&
-        Math.hypot(dx, dy) < 690 &&
-        Math.abs(dy) < dx * 1.5 + 90 &&
+        (distance <= oceanNearLockRange ||
+          (dx > -20 && dx < 650 && distance < 690 && Math.abs(dy) < dx * 1.5 + 90)) &&
         e.x > this.camera.x &&
         e.x < this.camera.x + this.camera.visibleWidth &&
         e.y > this.camera.y + 15 &&
@@ -819,10 +834,11 @@ export class OceanSession {
       this.aimHold = 0.18;
     }
     if (target) {
+      this.aimPoint = { x: target.x, y: target.y };
       this.aim = Math.atan2(target.y - from.y, target.x - from.x);
       // The actual held frame's socket is off the body centre. Solve the ray
       // from that same socket so the reticle describes the emitted projectile.
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 6; i++) {
         const m = this.muzzle();
         this.aim = Math.atan2(target.y - m.y, target.x - m.x);
       }
@@ -856,6 +872,12 @@ export class OceanSession {
   get heldWeapon(): OceanWeapon {
     return this.player.recoil > 0 && this.weapon !== "knife" ? this.lastShotWeapon : this.weapon;
   }
+  get gunFacing(): 1 | -1 {
+    // Hold the mirrored pose while solving its offset muzzle. Choosing a new
+    // mirror from every trial angle oscillates when aiming straight down.
+    const dx = this.aimPoint ? this.aimPoint.x - this.player.x : Math.cos(this.aim);
+    return Math.abs(dx) < 1e-6 ? this.player.facing : dx > 0 ? 1 : -1;
+  }
   muzzle(weapon = this.heldWeapon, recoil = this.player.recoil) {
     return oceanMuzzle(
       this.player.x,
@@ -864,6 +886,7 @@ export class OceanSession {
       weapon,
       this.heldPose(weapon),
       recoil,
+      this.gunFacing,
     );
   }
   heldPose(weapon = this.weapon) {
@@ -900,7 +923,7 @@ export class OceanSession {
     shot.homing = kind === "torpedo" ? 0.75 : 0;
     this.shots++;
     this.player.recoil = 1;
-    this.cooldown = kind === "torpedo" ? 0.68 : kind === "sonar" ? 0.36 : 0.3;
+    this.cooldown = OceanFireInterval[kind];
     this.attackCooldownDuration = this.cooldown;
     if (this.weapon !== "harpoon" && --this.ammo <= 0) {
       this.weapon = this.storedWeapon = "harpoon";
@@ -929,7 +952,7 @@ export class OceanSession {
         hit(e.x, e.y + 30) &&
         this.lineClear({ x: p.x, y: p.y + 35 }, { x: e.x, y: e.y + 30 })
       )
-        this.damageEnemy(e, 4);
+        this.damageEnemy(e, e.kind === "captain" ? 4 : e.hp);
     if (this.boss.active && hit(this.boss.x - 300, this.boss.y))
       this.damageBoss(3, this.boss.x - 300, this.boss.y);
   }
@@ -954,7 +977,7 @@ export class OceanSession {
       y,
       vx,
       vy,
-      damage,
+      damage: owner === "enemy" && kind === "torpedo" ? C.projectileDamage.enemyRocket : damage,
       tier,
       r: oceanShotProfile(kind, tier).radius,
       life,
@@ -964,6 +987,9 @@ export class OceanSession {
       homing: 0,
     });
     shot.hits.clear();
+    if (owner === "enemy")
+      this.attackAudio.emit(kind === "torpedo" ? "rocket" : kind === "bomb" ? "cannon"
+        : kind === "sonar" ? "enemy-sonar" : tier === "standard" ? "enemy-shot" : "boss-shot", x, y);
     return shot;
   }
   private updateShots(dt: number) {
@@ -976,7 +1002,7 @@ export class OceanSession {
         // Underwater hand throw: forward momentum, isotropic water drag, no gravity.
         const drag = Math.exp(-.65 * dt); s.vx *= drag; s.vy *= drag;
       }
-      if (s.homing > 0 && (s.owner !== "enemy" || s.tier === "standard" || s.age < 1.25)) {
+      if (s.homing > 0 && (s.owner !== "enemy" || s.age < 1.25)) {
         let target: Vec | undefined;
         if (s.owner === "enemy") target = { x: p.x, y: p.y + 35 };
         else {
@@ -989,7 +1015,8 @@ export class OceanSession {
                 y: e.y + (e.kind === "captain" ? MINI_SUB.centerY : 30),
               }
             : this.boss.active && this.boss.hp > 0
-              ? { x: this.boss.x - 260, y: this.boss.y }
+              ? { x: clamp(s.x, this.boss.x - 280, this.boss.x + 280),
+                  y: clamp(s.y, this.boss.y - 85, this.boss.y + 85) }
               : undefined;
         }
         if (target) {
@@ -1028,6 +1055,8 @@ export class OceanSession {
         }
       }
       const targets: { id: string; r: Rect; damage: () => void }[] = [];
+      const bossDamage = s.kind === "harpoon" || s.kind === "sonar" || s.kind === "torpedo"
+        ? OceanBossWeaponDamage[s.kind] : s.damage;
       if (s.owner === "player") {
         for (const e of this.enemies)
           if (e.hp > 0 && e.active && !s.hits.has(e.id))
@@ -1051,7 +1080,7 @@ export class OceanSession {
                 r: part,
                 damage: () =>
                   this.damageBoss(
-                    s.damage,
+                    bossDamage,
                     part.x + part.w / 2,
                     part.y + part.h / 2,
                     part.id,
@@ -1060,14 +1089,14 @@ export class OceanSession {
           targets.push({
             id: "submarine",
             r: this.bossBounds(),
-            damage: () => this.damageBoss(s.damage, s.x, s.y),
+            damage: () => this.damageBoss(bossDamage, s.x, s.y),
           });
         }
       } else
         targets.push({
           id: "player",
           r: p.bounds,
-          damage: () => p.takeDamage(1, s.vx > 0 ? 1 : -1),
+          damage: () => p.takeDamage(s.damage, s.vx > 0 ? 1 : -1),
         });
       const impacts = targets
         .map((target) => ({ target, t: segmentRect(from, to, target.r, s.r) }))
@@ -1085,6 +1114,7 @@ export class OceanSession {
             r: 95,
             damage: s.damage,
             owner: s.owner,
+            kind: s.kind,
           });
           s.active = false;
           break;
@@ -1114,6 +1144,7 @@ export class OceanSession {
             r: 100,
             damage: s.damage,
             owner: s.owner,
+            kind: s.kind,
           });
         else this.effect(s.x, s.y, "hit", 20);
       }
@@ -1121,7 +1152,9 @@ export class OceanSession {
   }
   private damageEnemy(e: SeaEnemy, amount: number, kind?: SeaShot["kind"], x = e.x, y = e.y + 32, angle = this.aim) {
     if (e.hp <= 0) return;
-    if (kind === "harpoon" || kind === "sonar") amount = OceanWeaponDamage[kind];
+    if (kind === "harpoon" || kind === "sonar")
+      amount = e.kind === "captain" ? OceanBossWeaponDamage[kind] : OceanWeaponDamage[kind];
+    if (kind === "torpedo") amount = e.kind === "captain" ? OceanBossWeaponDamage.torpedo : e.hp;
     e.hp = Math.max(0, e.hp - amount);
     e.hit = .24;
     e.hitDirection = Math.cos(angle) >= 0 ? 1 : -1;
@@ -1152,29 +1185,12 @@ export class OceanSession {
           damage: 6,
           owner: "player",
         });
-      if (e.kind === "diver" && (e.role === "torpedo" || e.role === "sonar")) {
-        this.drops.push({
-          x: e.x,
-          y: e.y + 30,
-          vy: 20,
-          kind: e.role === "torpedo" ? "torpedo" : "sonar",
-          source: e.id,
-          active: true,
-        });
-      }
+      // Ammunition comes only from authored crates; ordinary enemies drop none.
       if (e.kind === "captain") {
         this.message = "铁壳号已击破 · 向深水断层前进";
         this.messageTime = 4;
         this.drops.push({ x: e.x - 140, y: e.y + 30, vy: 0,
           kind: "medkit", source: `${e.id}-recovery`, active: true });
-        this.drops.push({
-          x: e.x - 70,
-          y: e.y,
-          vy: 0,
-          kind: "torpedo",
-          source: e.id,
-          active: true,
-        });
       }
       this.effect(
         e.x,
@@ -1240,7 +1256,7 @@ export class OceanSession {
         for (const e of this.enemies) {
           const body=this.enemyBounds(e);
           if (e.hp > 0 && visible(clamp(b.x,body.x,body.x+body.w),clamp(b.y,body.y,body.y+body.h)))
-            this.damageEnemy(e, b.damage);
+            this.damageEnemy(e, b.damage, b.kind);
         }
         for (const c of this.crates)
           if (c.hp > 0 && visible(c.x, c.y + 25)) this.damageCrate(c, b.damage);
@@ -1251,9 +1267,9 @@ export class OceanSession {
           (p) => this.boss[p.id] > 0 && visible(p.x + p.w / 2, p.y + p.h / 2),
         );
         if (part || visible(x, y))
-          this.damageBoss(b.damage, b.x, b.y, part?.id);
+          this.damageBoss(b.kind === "torpedo" ? OceanBossWeaponDamage.torpedo : b.damage, b.x, b.y, part?.id);
       } else if (visible(this.player.x, this.player.y + 35))
-        this.player.takeDamage(1, b.x < this.player.x ? 1 : -1);
+        this.player.takeDamage(b.damage, b.x < this.player.x ? 1 : -1);
     }
     this.blastQueue = [];
   }
@@ -1269,8 +1285,8 @@ export class OceanSession {
   }
   private fireMiniSub(e: SeaEnemy) {
     const pose = miniSubPose(e, this.time),
-      kind = e.attack === "sonar" ? "sonar" : "torpedo";
-    const count = kind === "torpedo" ? 2 : e.hp < e.maxHp * .5 ? 5 : 3;
+      kind = e.attack === "torpedo" ? "torpedo" : "sonar";
+    const count = kind === "torpedo" ? 2 : e.attack === "sweep" ? 3 : e.hp < e.maxHp * .5 ? 7 : 5;
     let live = this.projectiles.filter(
       (s) => s.active && s.owner === "enemy",
     ).length;
@@ -1293,10 +1309,11 @@ export class OceanSession {
       );
       if (shot) {
         live++;
-        shot.homing = kind === "torpedo" ? 0.35 : 0;
+        shot.homing = kind === "torpedo" ? 0.5 : 0;
       }
     }
-    e.burstLeft = 0;
+    e.burstLeft = Math.max(0, e.burstLeft - 1);
+    e.burstTimer = e.attack === "sweep" ? .40 : .46;
   }
   private steerSwimmer(e: SeaEnemy, target: Vec, dt: number, hw: number, height: number, speed: number) {
     let route=this.swimRoutes.get(e.id);
@@ -1325,7 +1342,8 @@ export class OceanSession {
     if (e.mode === "idle" || e.mode === "rest") {
       e.angle = dx < 0 ? Math.PI : 0;
       const next = enemyPattern(e),
-        targetY = p.y + (next === "torpedo" ? 6 : -23);
+        targetY = clamp(p.y + (next === "dive" ? (p.y < 310 ? 145 : -145) : next === "torpedo" ? 6 : -23),
+          L.floor + 12, L.surface - MINI_SUB.height - 14);
       const occluded=!this.lineClear({x:e.x,y:e.y+MINI_SUB.centerY},{x:p.x,y:p.y+35});
       if(occluded)this.swimDetours.add(e.id);
       else if(Math.abs(e.y-targetY)<80)this.swimDetours.delete(e.id);
@@ -1354,39 +1372,40 @@ export class OceanSession {
       ) {
         e.attack = next;
         e.mode = "tell";
-        e.tellDuration = next === "dash" ? .95 : .8;
+        e.tellDuration = next === "dash" || next === "dive" ? 1 : next === "sweep" ? .9 : .8;
         e.timer = e.tellDuration;
         e.locked = false;
         e.vx = e.vy = 0;
       }
     } else if (e.mode === "tell") {
-      // The whole hull remains horizontal. Once the nose direction locks, a vertical dodge is safe.
+      // The hull stays horizontal; the warning commits the whole charge path.
       if (!e.locked) {
-        e.angle = dx < 0 ? Math.PI : 0;
+        e.angle = e.attack === "dive" ? Math.atan2(p.y + 35 - (e.y + 62), dx) : dx < 0 ? Math.PI : 0;
         if (e.timer <= e.tellDuration * 0.6) e.locked = true;
       }
       if (e.timer > 0) return;
       e.mode = "attack";
       e.locked = true;
       e.attackCounts[e.attack] = (e.attackCounts[e.attack] ?? 0) + 1;
-      if (e.attack === "dash") {
-        e.dashDuration = clamp((Math.abs(dx) + 110) / 470, 0.5, 1.3);
+      if (e.attack === "dash" || e.attack === "dive") {
+        e.dashDuration = clamp((Math.hypot(dx, e.attack === "dive" ? p.y + 35 - (e.y + 62) : 0) + 110) / 470, 0.5, 1.3);
+        this.attackAudio.emit("charge", e.x, e.y + 62);
         e.timer = e.dashDuration;
         e.vx = Math.cos(e.angle) * 470;
-        e.vy = 0;
+        e.vy = Math.sin(e.angle) * 470;
       } else {
-        e.timer = 0.75;
+        e.timer = e.attack === "sweep" ? 1.1 : e.attack === "torpedo" ? .95 : .75;
+        e.burstLeft = e.attack === "sweep" ? 3 : e.attack === "torpedo" ? 2 : 1;
+        e.vy = e.attack === "sweep" ? (e.y > 300 ? -140 : 140) : 0;
         this.fireMiniSub(e);
-        if(e.attack === "torpedo" && e.hp < e.maxHp * .5){
-          e.burstLeft=1;e.burstTimer=.38;e.timer=.95;
-        }
       }
     } else if (e.mode === "attack") {
+      if (e.attack === "sweep") this.moveBody(e, 0, e.vy * dt, MINI_SUB.halfWidth, MINI_SUB.height);
       if(e.burstLeft>0){e.burstTimer-=dt;if(e.burstTimer<=0)this.fireMiniSub(e);}
-      if (e.attack === "dash") {
+      if (e.attack === "dash" || e.attack === "dive") {
         const before = { x: e.x, y: e.y + 62 },
-          mx = e.vx * dt;
-        this.moveBody(e, mx, 0, MINI_SUB.halfWidth, MINI_SUB.height);
+          mx = e.vx * dt, my = e.vy * dt;
+        this.moveBody(e, mx, my, MINI_SUB.halfWidth, MINI_SUB.height);
         const after = { x: e.x, y: e.y + 62 };
         // Swept rectangular hull, not the old diver-sized circular contact radius.
         const target = {
@@ -1397,7 +1416,7 @@ export class OceanSession {
         };
         if (segmentRect(before, after, target) !== null)
           p.takeDamage(1, dx > 0 ? 1 : -1);
-        if (Math.abs(after.x - before.x - mx) > 1) this.enemyRecover(e, .8);
+        if (Math.abs(after.x - before.x - mx) > 1 || Math.abs(after.y - before.y - my) > 1) this.enemyRecover(e, .8);
       }
       if (overlaps(miniSubBounds(e), p.bounds))
         p.takeDamage(1, dx > 0 ? 1 : -1);
@@ -1415,10 +1434,8 @@ export class OceanSession {
         : e.attack === "sonar"
           ? "sonar"
           : "harpoon";
-    const speed =
-      (kind === "harpoon" ? 360 : kind === "sonar" ? 255 : 205) *
-      (1 + oceanPressure(e.homeX) * 0.14);
-    const count = 1;
+    const speed = kind === "harpoon" ? 360 : kind === "sonar" ? 255 : 205;
+    const offsets = oceanVolleyOffsets(e.kind);
     const origin =
       e.kind === "diver"
         ? oceanEnemyPose(e, this.time).muzzle
@@ -1429,8 +1446,8 @@ export class OceanSession {
     let live = 0;
     for (const s of this.projectiles)
       if (s.active && s.owner === "enemy") live++;
-    for (let i = 0; i < count && live < 14; i++) {
-      const a = e.angle;
+    for (let i = 0; i < offsets.length && live < 14; i++) {
+      const a = e.angle + offsets[i];
       if (!this.lineClear({ x: e.x, y: e.y + 32 }, origin)) continue;
       const shot = this.spawnShot(
         "enemy",
@@ -1444,17 +1461,19 @@ export class OceanSession {
       );
       if (shot) {
         live++;
-        if (kind === "torpedo") shot.homing = 0.18;
+        if (kind === "torpedo") shot.homing = 0.6;
         e.fireFlash = .12;
       }
     }
-    e.burstLeft--;
-    e.burstTimer = 0.23;
+    // A regular enemy fires once per warning. The next shot requires a new
+    // recovery/movement/aim cycle, never an automatic twin or delayed fan.
+    e.burstLeft = e.burstTimer = 0;
   }
   private enemyRecover(e: SeaEnemy, delay?: number) {
     e.mode = "rest";
     e.serial++;
     e.burstLeft = 0;
+    e.volleysLeft = 0;
     e.vx = e.vy = 0;
     e.reaction = 0;
     e.timer =
@@ -1462,13 +1481,13 @@ export class OceanSession {
       (e.kind === "captain"
         ? 0.9
         : e.kind === "fish"
-          ? 1.15
-          : 1.05 + (e.homeX % 3) * 0.12 - oceanPressure(e.homeX) * 0.2);
+          ? 1.0
+          : (e.kind === "jellyfish" ? OCEAN_JELLY.recovery : e.kind === "diver" || e.kind === "turret" ? oceanRangedRest.afterSequence : 1.05) + (e.homeX % 3) * 0.12);
   }
   private tryEnemyDodge(e: SeaEnemy, dt: number): boolean {
-    if (e.kind !== "diver" || e.dodgeCooldown > 0) return false;
+    if (e.kind !== "diver" || e.dodgeCooldown > 0 || (e.mode !== "idle" && e.mode !== "rest")) return false;
     let threat: SeaShot | undefined,
-      nearest = 0.5;
+      nearest = 0.65;
     for (const s of this.projectiles) {
       if (
         !s.active ||
@@ -1481,7 +1500,7 @@ export class OceanSession {
         dy = e.y + 32 - s.y,
         v2 = s.vx * s.vx + s.vy * s.vy,
         t = (dx * s.vx + dy * s.vy) / v2;
-      if (t <= 0.06 || t >= nearest || dx * dx + dy * dy > 280 * 280) continue;
+      if (t <= 0.06 || t >= nearest || dx * dx + dy * dy > 360 * 360) continue;
       if (Math.hypot(dx - s.vx * t, dy - s.vy * t) > 36 + s.r) continue;
       if (!this.lineClear({ x: s.x, y: s.y }, { x: e.x, y: e.y + 32 }))
         continue;
@@ -1493,27 +1512,33 @@ export class OceanSession {
       return false;
     }
     e.reaction += dt;
-    if (e.reaction < 0.14) return false;
+    if (e.reaction < 0.10) return false;
     const speed = Math.hypot(threat.vx, threat.vy),
       nx = -threat.vy / speed,
       ny = threat.vx / speed;
     const sign = e.y > 340 ? (ny > 0 ? -1 : 1) : ny > 0 ? 1 : -1;
-    let choice = 0;
-    for (const dir of [sign, -sign]) {
-      const target = { x: e.x + nx * dir * 90, y: e.y + 32 + ny * dir * 90 };
-      if (target.y < 120 || target.y > 560) continue;
-      if (this.lineClear({ x: e.x, y: e.y + 32 }, target)) {
-        choice = dir;
-        break;
-      }
+    let choice: Vec | undefined, best = -Infinity;
+    // Sideways first, with diagonals available near a reef or another projectile lane.
+    for (const dir of [sign, -sign]) for (const tilt of [0, -.48, .48]) {
+      const c=Math.cos(tilt),sn=Math.sin(tilt);
+      const vx=(nx*c-ny*sn)*dir*300,vy=(nx*sn+ny*c)*dir*300;
+      const target={x:e.x+vx*.3,y:e.y+vy*.3};
+      if (target.y<L.floor+15 || target.y>L.surface-110 || Math.abs(target.x-e.homeX)>330) continue;
+      const probe={x:e.x,y:e.y};this.moveBody(probe,vx*.3,vy*.3,23,58);
+      if(Math.hypot(probe.x-target.x,probe.y-target.y)>1)continue;
+      let clearance=300;
+      for(const shot of this.projectiles)if(shot.active&&shot.owner==='player')
+        clearance=Math.min(clearance,Math.hypot(target.x-shot.x-shot.vx*.3,target.y+32-shot.y-shot.vy*.3)-shot.r);
+      const score=clearance-Math.abs(tilt)*8-Math.abs(target.y-300)*.03;
+      if(score>best){best=score;choice={x:vx,y:vy};}
     }
     e.reaction = 0;
-    e.dodgeCooldown = 2.8 + oceanPressure(e.homeX) * 0.2;
+    e.dodgeCooldown = choice ? 1.8 - oceanPressure(e.homeX) * .2 : .45;
     if (!choice) return false;
     e.mode = "dodge";
-    e.timer = 0.3;
-    e.dodgeX = nx * choice * 255;
-    e.dodgeY = ny * choice * 255;
+    e.timer = .3;
+    e.dodgeX = choice.x;
+    e.dodgeY = choice.y;
     e.dodges++;
     return true;
   }
@@ -1541,13 +1566,14 @@ export class OceanSession {
     }
     const p = this.player,
       dx = p.x - e.x,
-      dy = p.y + 35 - (e.y + 32),
+      dy = p.y + 35 - (e.y + (e.kind === "jellyfish" ? OCEAN_JELLY.centerY : 32)),
       distance = Math.hypot(dx, dy);
-    e.active = Math.abs(dx) < 720;
+    e.active = Math.abs(dx) < (e.kind === "fish" ? 820 : 720);
     if (!e.active) {
       e.mode = "rest";
       e.timer = 0.25;
       e.burstLeft = 0;
+      e.volleysLeft = 0;
       e.reaction = 0;
       e.vx = e.vy = 0;
       return;
@@ -1576,14 +1602,15 @@ export class OceanSession {
                 ? 320
                 : 370;
         const pressure = oceanPressure(e.homeX),
-          pace = 62 + pressure * 24;
+          pace = 74 + pressure * 26;
         const moveX =
           distance > keep + 60
             ? Math.sign(dx) * pace
             : distance < keep - 65
               ? -Math.sign(dx) * pace
               : 0;
-        const lane = e.role === "sonar" ? -85 : 70;
+        const lane = e.homeX < 2400 ? (e.role === "sonar" ? -85 : 70)
+          : (e.role === "sonar" ? -110 : 100) * (e.serial % 2 ? -1 : 1);
         const targetY =
           e.kind === "fish"
             ? p.y + 15
@@ -1592,7 +1619,7 @@ export class OceanSession {
                 e.homeY - 160,
                 e.homeY + 160,
               );
-        const moveY = clamp((targetY - e.y) * 2, -85, 85),
+        const moveY = clamp((targetY - e.y) * 2, -100, 100),
           x = e.x,
           y = e.y;
         if(e.kind === "fish") {
@@ -1601,7 +1628,7 @@ export class OceanSession {
           else if(Math.abs(e.y-targetY)<65)this.swimDetours.delete(e.id);
           const blocked=this.swimDetours.has(e.id);
           const targetX=blocked?p.x:distance>keep+60||distance<keep-65?p.x-Math.sign(dx||1)*keep:e.x;
-          this.steerSwimmer(e,{x:targetX,y:targetY},dt,OCEAN_FISH.halfLength,64,110);
+          this.steerSwimmer(e,{x:targetX,y:targetY},dt,OCEAN_FISH.halfLength,64,OCEAN_FISH.swimSpeed);
         } else {
           this.moveBody(e, moveX * dt, moveY * dt, 23, 58);
           e.x = clamp(e.x,e.homeX-330,e.homeX+330);
@@ -1610,10 +1637,17 @@ export class OceanSession {
           e.vy = (e.y - y) / dt;
         }
       }
-      e.angle = Math.atan2(p.y + 35 - (e.y + 32), p.x - e.x);
+      if (e.kind === "jellyfish") {
+        // Swim around real terrain until a short, telegraphed sting can reach.
+        const side = Math.sign(dx || 1);
+        const target = {x: p.x - side * 120, y: p.y + 35 - OCEAN_JELLY.centerY};
+        this.steerSwimmer(e, target, dt, OCEAN_JELLY.halfWidth, OCEAN_JELLY.height,
+          OCEAN_JELLY.swimSpeed * (.85 + .15 * Math.sin(this.time * 5 + e.homeX)));
+      }
+      e.angle = Math.atan2(p.y + 35 - (e.y + (e.kind === "jellyfish" ? OCEAN_JELLY.centerY : 32)), p.x - e.x);
       const range =
-        e.kind === "kelp"
-          ? 175
+        e.kind === "jellyfish"
+          ? OCEAN_JELLY.range
           : e.kind === "mine"
             ? 110
             : e.kind === "fish"
@@ -1637,12 +1671,16 @@ export class OceanSession {
         this.lineClear({ x: e.x, y: e.y + 32 }, { x: p.x, y: p.y + 35 })
       ) {
         e.attack = enemyPattern(e);
+        if (e.volleysLeft === 0)
+          e.volleysLeft = e.kind === "diver" || e.kind === "turret" ? oceanVolleyCount(e.homeX) : 1;
         e.mode = "tell";
         e.staggered = false;
         e.locked = false;
         e.vx = e.vy = 0;
         e.tellDuration =
-          e.kind === "fish"
+          e.kind === "jellyfish"
+            ? OCEAN_JELLY.tell
+            : e.kind === "fish"
             ? OCEAN_FISH.tell
             : e.attack === "torpedo"
               ? 1.05
@@ -1674,48 +1712,40 @@ export class OceanSession {
           damage: 1,
           owner: "enemy",
         });
-      } else if (e.attack === "dash") {
-        const speed = OCEAN_FISH.speed;
-        e.dashDuration = clamp((distance + 65) / speed, 0.38, 0.94);
+      } else if (e.attack === "dash" || e.attack === "sting") {
+        const jelly = e.kind === "jellyfish", speed = jelly ? OCEAN_JELLY.stingSpeed : OCEAN_FISH.speed;
+        this.attackAudio.emit("enemy-melee", e.x, e.y + OCEAN_FISH.centerY);
+        e.dashDuration = clamp((distance + (jelly ? 35 : 65)) / speed, 0.38, jelly ? .82 : .94);
         e.timer = e.dashDuration;
         e.vx = Math.cos(e.angle) * speed;
         e.vy = Math.sin(e.angle) * speed;
-      } else if (e.attack !== "lash") {
-        e.burstLeft = e.attack === "harpoon" ? 2 : 1;
+
+      } else {
         this.fireEnemy(e);
       }
     } else if (e.mode === "attack") {
-      if (e.burstLeft > 0) {
-        e.burstTimer -= dt;
-        if (e.burstTimer <= 0) this.fireEnemy(e);
-      }
-      if (e.attack === "dash") {
-        const before = { x: e.x, y: e.y + OCEAN_FISH.centerY },
+      if (e.attack === "dash" || e.attack === "sting") {
+        const centerY = e.kind === "jellyfish" ? OCEAN_JELLY.centerY : OCEAN_FISH.centerY;
+        const before = { x: e.x, y: e.y + centerY },
           mx = e.vx * dt,
           my = e.vy * dt;
-        const bounds=oceanFishBounds(e),hw=bounds.w/2,hh=bounds.h/2;
+        const bounds=e.kind === "jellyfish" ? oceanJellyBounds(e) : oceanFishBounds(e),hw=bounds.w/2,hh=bounds.h/2;
         const body={x:e.x,y:bounds.y};
         this.moveBody(body,mx,clamp(my,L.floor+4-body.y,L.surface-4-bounds.h-body.y),hw,bounds.h);
-        e.x=body.x;e.y=body.y+hh-OCEAN_FISH.centerY;
-        const after = { x: e.x, y: e.y + OCEAN_FISH.centerY };
+        e.x=body.x;e.y=body.y+hh-centerY;
+        const after = { x: e.x, y: e.y + centerY };
         const target={x:p.bounds.x-hw,y:p.bounds.y-hh,w:p.bounds.w+hw*2,h:p.bounds.h+hh*2};
         if (segmentRect(before, after, target) !== null && this.lineClear(after,{x:p.x,y:p.y+35}))
           p.takeDamage(1, dx > 0 ? 1 : -1);
         if (Math.hypot(after.x - before.x - mx, after.y - before.y - my) > 1)
           this.enemyRecover(e);
-      } else if (e.attack === "lash") {
-        const tip = {
-          x: e.x + Math.cos(e.angle) * 150,
-          y: e.y + 45 + Math.sin(e.angle) * 150,
-        };
-        if (
-          this.lineClear({ x: e.x, y: e.y + 45 }, tip) &&
-          segmentRect({ x: e.x, y: e.y + 45 }, tip, p.bounds, 14) !== null
-        )
-          p.takeDamage(1, dx > 0 ? 1 : -1);
       } else if (overlaps(this.enemyBounds(e), p.bounds))
         p.takeDamage(1, dx > 0 ? 1 : -1);
-      if (e.mode === "attack" && e.timer <= 0) this.enemyRecover(e);
+      if (e.mode === "attack" && e.timer <= 0) {
+        const followUps = Math.max(0, e.volleysLeft - 1);
+        this.enemyRecover(e, followUps > 0 ? oceanRangedRest.betweenAttacks : undefined);
+        e.volleysLeft = followUps;
+      }
     }
   }
 
@@ -1754,9 +1784,7 @@ export class OceanSession {
       ? this.bossModuleTransform("laserHp").muzzle
       : attack === "torpedo"
         ? { x: b.x - 125, y: b.y - 116 }
-        : attack === "ring"
-          ? { x: b.x - 220, y: b.y }
-          : this.bossModuleTransform("cannonHp").muzzle;
+        : this.bossModuleTransform("cannonHp").muzzle;
   }
   beamEnd(): Vec {
     const o = this.bossOrigin(),
@@ -1806,17 +1834,18 @@ export class OceanSession {
     const b = this.boss;
     if(!this.bossWeaponReady()){b.volleyRemaining=0;return;}
     const o=this.bossOrigin(),count=b.attack === "torpedo" ? (b.phase===1?2:3)
-      : b.attack === "fan" ? (b.phase===1?5:7) : 3;
+      : b.attack === "fan" ? B.sonarOffsets.length : 3;
     let live=this.projectiles.filter(s=>s.active&&s.owner==='enemy').length;
     for(let i=0;i<count&&live<18;i++){
-      const spread=b.attack === "fan" ? .18 : .105;
-      const angle=b.angle+(i-(count-1)/2)*spread+(b.volleyIndex%2?spread*.5:0);
+      const spread=.105;
+      // Repeated sonar volleys keep the same three lanes, leaving the gaps open.
+      const angle=b.angle+(b.attack === "fan" ? B.sonarOffsets[i] : (i-(count-1)/2)*spread+(b.volleyIndex%2?spread*.5:0));
       const speed=b.attack === "torpedo" ? 255 : b.attack === "fan" ? 285 : 320+i*12;
       const shot=this.spawnShot('enemy',b.attack==='torpedo'?'torpedo':b.attack==='fan'?'sonar':'bomb',
         o.x,o.y,Math.cos(angle)*speed,Math.sin(angle)*speed,1,4.3,'boss');
       if(shot){live++;if(b.attack==='torpedo')shot.homing=.48;}
     }
-    b.volleyIndex++;b.volleyCount++;b.volleyRemaining--;b.volleyTimer=.42;
+    b.volleyIndex++;b.volleyCount++;b.volleyRemaining--;b.volleyTimer=b.attack === "fan" ? B.sonarVolleyInterval : .50;
   }
   private updateBoss(dt: number) {
     const b = this.boss,
@@ -1830,6 +1859,21 @@ export class OceanSession {
     }
     b.vx = b.vy = 0;
     if (!b.active || b.hp <= 0) return;
+    b.summonTimer -= dt;
+    if (b.summons === 0 && b.summonTimer <= 0) {
+      // One two-person wave for the entire fight, including after phase changes.
+      const candidates = [clamp(b.x - 430, L.arena + 80, L.width - 80),
+        clamp(b.x + 430, L.arena + 80, L.width - 80)];
+      const x = candidates.sort((a,c) => Math.abs(c-p.x)-Math.abs(a-p.x))[0];
+      for (let i=0;i<2;i++) {
+        const e = this.createEnemy(["diver", x, i === 0 ? 140 : 510, i === 0 ? "harpoon" : "sonar"], `sea-reinforce-${i}`, i);
+        e.mode = "rest"; e.timer = 1.2 + i * .5;
+        this.enemies.push(e);
+      }
+      b.summons = 2;
+      this.message = "潜艇呼叫增援 · 两名潜水兵接近";
+      this.messageTime = 2.5;
+    }
     b.phase = b.hp > b.maxHp * 0.7 ? 1 : b.hp > b.maxHp * 0.35 ? 2 : 3;
     b.timer -= dt;
     if (b.mode === "idle" || b.mode === "rest") {
@@ -1841,8 +1885,8 @@ export class OceanSession {
       if (b.timer <= 0) {
         // One cursor survives phase changes, so damage cannot keep skipping
         // the distinctive attacks before the encounter ends.
-        const pattern: Attack[] = ["torpedo", "laser", "fan", "sweep", "cannon", "ring"];
-        let chosen: Attack = "ring";
+        const pattern: Attack[] = ["torpedo", "laser", "fan", "sweep", "cannon"];
+        let chosen: Attack | undefined;
         for (let i = 0; i < pattern.length; i++) {
           const attack = pattern[(b.serial + i) % pattern.length];
           if (!this.bossWeaponReady(attack)) continue;
@@ -1850,31 +1894,26 @@ export class OceanSession {
           b.serial += i;
           break;
         }
+        // Destroyed weapons stay disabled. A disarmed hull cannot resurrect the removed arc.
+        if (!chosen) { b.mode = "rest"; b.timer = B.recovery[b.phase-1]; return; }
         b.attack = chosen;
         b.serial++;
         b.mode = "tell";
-        b.tellDuration = chosen === "sweep" || chosen === "ring" ? 1.25 : 1;
+        b.tellDuration = chosen === "sweep" ? 1.25 : 1;
         b.timer = b.tellDuration;
-        b.locked = chosen === "sweep" || chosen === "ring";
+        b.locked = chosen === "sweep";
         b.volleyRemaining = b.volleyIndex = 0;
         const o = this.bossOrigin();
         b.angle = Math.atan2(p.y + 35 - o.y, p.x - o.x);
         // Alternate the occupied half between cycles, always leaving a full
         // escape lane and showing both sector edges before any beam damage.
         if (chosen === "sweep") {
-          const lower = Math.floor(b.serial / 6) % 2 === 1;
+          const lower = Math.floor(b.serial / pattern.length) % 2 === 1;
           const left = p.x < b.x, base = left ? Math.PI : 0;
           const sign = (lower ? 1 : -1) * (left ? 1 : -1);
           b.angleStart = base + sign * 0.7;
           b.angleEnd = base + sign * 0.08;
           b.angle = b.angleStart;
-        }
-        if (chosen === "ring") {
-          b.ringRadius = 0;
-          b.ringHit = false;
-          // Preview an upper/lower escape lane instead of granting a safe gap
-          // exactly through the stationary swimmer on every ring.
-          b.ringGap = Math.atan2((p.y < 330 ? 470 : 210) - o.y, p.x - o.x);
         }
       }
     } else if (b.mode === "tell") {
@@ -1886,16 +1925,16 @@ export class OceanSession {
       b.mode = "fire";
       b.locked = true;
       b.timer =
-        b.attack === "ring"
-          ? 3
-          : b.attack === "laser" || b.attack === "sweep"
+        b.attack === "laser" || b.attack === "sweep"
             ? 1.5
             : 1.05;
       b.attackCounts[b.attack] = (b.attackCounts[b.attack] ?? 0) + 1;
-      if (b.attack === "laser" || b.attack === "sweep")
+      if (b.attack === "laser" || b.attack === "sweep") {
         b.beamActive = b.laserHp > 0;
-      else if (b.attack !== "ring") {
-        b.volleyRemaining = b.attack === "fan" && b.phase === 1 ? 1 : 2;
+        if (b.beamActive) { const o = this.bossOrigin(); this.attackAudio.emit("beam", o.x, o.y); }
+
+      } else {
+        b.volleyRemaining = 2;
         this.fireBossVolley();
       }
     } else if (b.mode === "fire") {
@@ -1910,26 +1949,9 @@ export class OceanSession {
         segmentRect(this.bossOrigin(), this.beamEnd(), p.bounds, 9) !== null
       )
         p.takeDamage(1, -1);
-      if (b.attack === "ring") {
-        b.ringRadius += 225 * dt;
-        const o = this.bossOrigin(),
-          dx = p.x - o.x,
-          dy = p.y + 35 - o.y,
-          a = Math.atan2(dy, dx),
-          gap = Math.abs(
-            Math.atan2(Math.sin(a - b.ringGap), Math.cos(a - b.ringGap)),
-          );
-        if (
-          !b.ringHit &&
-          Math.abs(Math.hypot(dx, dy) - b.ringRadius) < 30 &&
-          gap > 0.52
-        ) {
-          b.ringHit = p.takeDamage(1, -1);
-        }
-      }
       if (b.timer <= 0) {
         b.mode = "rest";
-        b.timer = b.phase === 3 ? .5 : b.phase === 2 ? .65 : .85;
+        b.timer = B.recovery[b.phase-1];
         b.volleyRemaining = 0;
         b.beamActive = false;
         b.ringRadius = 0;
@@ -1986,11 +2008,8 @@ export class OceanSession {
         this.message = "水下手雷 +2";
       } else {
         const weapon = d.kind as OceanWeapon;
-        const capacity = weapon === "torpedo" ? 8 : 24;
-        const amount =
-          d.source.startsWith("sea-") && !d.source.startsWith("sea-crate")
-            ? capacity / 2
-            : capacity;
+        const capacity = weapon === "torpedo" ? OceanWeaponAmmo.torpedo : OceanWeaponAmmo.sonar;
+        const amount = capacity;
         this.ammo =
           this.storedWeapon === weapon
             ? Math.min(capacity, this.ammo + amount)

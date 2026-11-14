@@ -45,6 +45,8 @@ function knifeSetup(kind='ranged',x=165,health=30){
 }
 test('knife performs three distinct cuts once per target, with a stronger lifting finisher and no bullets',()=>{
  const {p,enemy,m,fx}=knifeSetup();const stages=new Set();
+ // Durable training target isolates combo geometry; real enemies are executed in balance-supplies.
+ enemy.takeDamage=(amount)=>{enemy.health-=amount;return true;};
  for(let i=0;i<130;i++){m.update(1/120,p,[enemy],[],true,false,fx);if(m.time>0)stages.add(m.stage);}
  assert.deepEqual([...stages],[1,2,3]);assert.equal(m.swings,3);assert.equal(m.hits,3);assert.equal(enemy.health,15);
  assert.equal(enemy.vy,180);assert.ok(enemy.vx>=250);assert.equal(m.heavyHits,1);
@@ -70,7 +72,7 @@ test('knife lunges advance through real collision handling and cannot push the p
 });
 test('shield retains metal impact feedback without reducing knife damage; rocket soldiers lose windup and bosses retain attack control',()=>{
  const shield=knifeSetup('shield');for(let i=0;i<30;i++)shield.m.update(1/120,shield.p,[shield.enemy],[],true,false,shield.fx);
- assert.ok(shield.m.blockedHits>0);assert.equal(shield.enemy.vy,0);assert.equal(shield.enemy.shieldHealth,3);
+ assert.ok(shield.m.blockedHits>0);assert.equal(shield.enemy.vy,0);assert.equal(shield.enemy.shieldHealth,0);assert.equal(shield.enemy.health,0);
  const rocket=knifeSetup('turret');rocket.enemy.windup=.7;rocket.enemy.state='Attack';
  for(let i=0;i<25;i++)rocket.m.update(1/120,rocket.p,[rocket.enemy],[],true,false,rocket.fx);
  assert.equal(rocket.enemy.windup,0);assert.ok(rocket.enemy.hitTime>0);assert.equal(rocket.enemy.vx,0);

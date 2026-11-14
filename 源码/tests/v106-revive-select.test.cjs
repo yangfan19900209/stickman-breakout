@@ -7,6 +7,7 @@ const {PersonalRecords}=load('social/PersonalRecords'),{emptyRecords,cloudValues
 const {canEnterChapter}=load('social/ChapterAccess');
 const idle={axis:0,jump:false,shoot:false};
 function die(s){s.player.health=0;for(let i=0;i<240&&s.state!=='gameover';i++)s.update(1/120,idle);assert.equal(s.state,'gameover');}
+function earn(s){assert.equal(s.revival.rewardVideo()(true),true);}
 function prepare(s){for(let i=0;i<120;i++)s.update(1/120,{axis:1,shoot:true,jump:true,grenade:true});assert.equal(s.state,'playing');}
 
 test('land revival preserves battle, inventory, consumed loot and run counters, clears queued damage',()=>{
@@ -15,7 +16,7 @@ test('land revival preserves battle, inventory, consumed loot and run counters, 
  const object=s.level.objects.objects[0];object.health=0;
  s.pickups.recoveryIds; s.pickups.offerBossSupply('already-given',200,160,'rocket');
  s.grenades.thrown=4;s.weapon.shots=7;s.time=8;
- die(s);const before={kills:s.spawner.kills,hp:boss.health,shots:s.weapon.shots,objects:s.level.objects.objects.length,time:s.time,ammo:s.weapon.ammo};
+ die(s);earn(s);const before={kills:s.spawner.kills,hp:boss.health,shots:s.weapon.shots,objects:s.level.objects.objects.length,time:s.time,ammo:s.weapon.ammo};
  s.explosions.schedule(s.player.x,s.player.y,100,5,'enemy');s.explosions.enqueue(s.player.x,s.player.y,100,5,'enemy');
  s.projectiles.items[0].active=true;s.grenades.items[0].active=true;
  assert.equal(s.revive(),true);assert.equal(s.revive(),false);assert.equal(s.state,'reviving');
@@ -27,15 +28,15 @@ test('land revival preserves battle, inventory, consumed loot and run counters, 
  assert.equal(s.pickups.offerBossSupply('already-given',200,160,'rocket'),false);
 });
 test('one-second preparation freezes world/input; pause freezes preparation; protection starts on actual play',()=>{
- const s=new GameSession();s.reset();die(s);assert.ok(s.revive());const x=s.player.x,time=s.time;
+ const s=new GameSession();s.reset();die(s);earn(s);assert.ok(s.revive());const x=s.player.x,time=s.time;
  s.update(.4,{axis:1,shoot:true,jump:true,grenade:true});assert.equal(s.player.x,x);assert.equal(s.time,time);assert.equal(s.player.invincible,3);
  s.pause();s.update(60,idle);assert.equal(s.revival.preparation,.6);s.resume();assert.equal(s.state,'reviving');
  s.update(.6,idle);assert.equal(s.state,'playing');assert.equal(s.player.invincible,3);
  assert.equal(s.player.takeDamage(2,1),false);s.update(1/120,idle);assert.ok(s.player.invincible<3);
 });
-test('land second death cannot revive; restart restores exactly one entitlement',()=>{
- const s=new GameSession();s.reset();die(s);assert.ok(s.revive());prepare(s);die(s);
- assert.equal(s.revive(),false);assert.equal(s.revival.remaining,0);s.reset();assert.equal(s.revival.remaining,1);
+test('land second death needs another video; restart resets the ten-video allowance without a free credit',()=>{
+ const s=new GameSession();s.reset();die(s);earn(s);assert.ok(s.revive());prepare(s);die(s);
+ assert.equal(s.revive(),false);assert.equal(s.revival.remaining,0);s.reset();assert.equal(s.revival.remaining,0);assert.ok(s.revival.canWatchVideo);
  assert.equal(s.revive(),false);s.state='complete';assert.equal(s.revive(),false);
 });
 test('land safety resolves a pit, avoids boss and barrel footprints, respects reached/retreat limits',()=>{
@@ -55,7 +56,7 @@ test('land support anchors follow moving geometry, reject vanished supports and 
  assert.equal(landRevivePoint({x:160,y:120},[support,{x:100,y:240,w:120,h:30}],[],{...area,top:300},anchor),undefined);
 });
 test('no legal revival point consumes no life and leaves dead body/world intact',()=>{
- const s=new GameSession();s.reset();die(s);s.level.solids.length=0;
+ const s=new GameSession();s.reset();die(s);earn(s);s.level.solids.length=0;
  const old={x:s.player.x,y:s.player.y,time:s.time};assert.equal(s.revive(),false);
  assert.equal(s.revival.remaining,1);assert.equal(s.state,'gameover');assert.equal(s.player.health,0);assert.ok(s.revival.error);
  assert.deepEqual({x:s.player.x,y:s.player.y,time:s.time},old);
@@ -74,7 +75,7 @@ test('both land bosses cancel pending salvos, contact charges and beams without 
 test('water revival retains weapons/ammo, boss modules, kills and supplies, cancels active attack chains',()=>{
  const s=new OceanSession();s.finishEntry();s.weapon='torpedo';s.storedWeapon='sonar';s.ammo=3;s.player.grenades=1;
  s.kills=8;s.recoveryUsed.add('kelp-rest');s.crates[0].hp=0;s.boss.hp=120;s.boss.laserHp=0;
- die(s);s.boss.mode='fire';s.boss.volleyRemaining=3;s.boss.beamActive=true;s.boss.ringRadius=200;
+ die(s);earn(s);s.boss.mode='fire';s.boss.volleyRemaining=3;s.boss.beamActive=true;s.boss.ringRadius=200;
  s.blastQueue.push({x:s.player.x,y:s.player.y,r:100,damage:5,owner:'enemy'});
  s.mini.burstLeft=2;s.mini.dashDuration=1;s.mini.locked=true;
  assert.ok(s.revive());assert.equal(s.player.health,5);assert.equal(s.player.grenades,1);assert.equal(s.weapon,'torpedo');assert.equal(s.storedWeapon,'sonar');assert.equal(s.ammo,3);
@@ -93,7 +94,7 @@ test('water search avoids full terrain and boss hulls, including narrow crevices
 });
 test('water revival stays in the current zone behind reached progress and obeys retreat boundary',()=>{
  const s=new OceanSession();s.finishEntry();s.player.x=8100;s.player.y=430;s.furthestX=8140;s.retreatLimit=7500;
- die(s);assert.ok(s.revive());assert.ok(s.player.x>=7520 && s.player.x<=8140);assert.ok(s.player.y>=74 && s.player.y<=600);
+ die(s);earn(s);assert.ok(s.revive());assert.ok(s.player.x>=7520 && s.player.x<=8140);assert.ok(s.player.y>=74 && s.player.y<=600);
  for(const r of s.level.obstacles)assert.equal(overlaps({x:s.player.x-18,y:s.player.y+.1,w:36,h:73.9},r),false);
 });
 test('assisted clear preserves old PB, unlocks chapter two, resumes same clock and cannot submit a faster cloud record',()=>{

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "createdAt": "2026-11-14T10:13:36.751Z",
+  "version": "1.0.7",
+  "appid": "wx7d2aae02691fc088",
+  "directory": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-隐藏好友榜-20261114",
+  "project": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-隐藏好友榜-20261114/wechatgame",
+  "zip": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-隐藏好友榜-20261114/stickman-breakout-1.0.7-hidden-leaderboard.zip",
+  "archive": {
+    "sha256": "b77ce4ada3fe729381084611fdb6dd9b0e6aa160fd3b8414ec99e264c8bd8fe5",
+    "bytes": 18893062
+  },
+  "inputSHA256": "5d420a9dd31f3c12a3375fa26c81ba3f49f6bac10f42ea2fa152bd6d09049dab",
+  "payloadSHA256": "1b86df1adb5f31c67de040ba250c802a09e189db57992537078fa2f71af26be4",
+  "totalBytes": 20948697,
+  "mainBytes": 3882680,
+  "sizeBasis": "raw files; not WeChat upload compressed size",
+  "buildMethod": "Cocos Creator 3.8.8 macOS GUI rebuild",
+  "buildLog": "/Users/yangfan/Desktop/线条突围/stickman-breakout/源码/temp/builder/log/wechatgame11-14-2026 11-15.log",
+  "features": {
+    "friendLeaderboard": false,
+    "personalRecords": true,
+    "shareInvites": true
+  },
+  "verification": {
+    "tests": {
+      "tests": 541,
+      "passed": 541,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "dependencyMode": "existing offline installation",
+      "typescript": "5.8.2",
+      "creatorTypes": "3.8.8-121517"
+    }
+  },
+  "uploaded": false,
+  "published": false,
+  "deviceVerified": false
+}

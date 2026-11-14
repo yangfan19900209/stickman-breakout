@@ -66,8 +66,8 @@ test('the longer post-tank route adds staggered encounters, continuous terrain a
  assert.equal(level.width,14800);assert.ok(boss.x-mini.x>=8200);
  const route=level.zones.filter(z=>['E','F','G'].includes(z.id));
  const regular=level.enemies.filter(e=>e.x>=route[0].start&&e.x<route.at(-1).end);
- assert.equal(regular.length,18);assert.ok(18/6600>10/4200&&18/6600<10/4200*1.2);
- for(const z of route)assert.equal(regular.filter(e=>e.x>=z.start&&e.x<z.end).length,6);
+ assert.equal(regular.length,20);
+ for(const z of route)assert.equal(regular.filter(e=>e.x>=z.start&&e.x<z.end).length,z.id==='G'?6:7);
  const ground=level.solids.filter(s=>s.kind==='ground');assert.equal(ground.length,1);
  assert.equal(ground[0].x+ground[0].w,level.width);
  assert.ok(level.exit.x>boss.x&&level.exit.x<level.width);

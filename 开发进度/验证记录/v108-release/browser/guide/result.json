@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "views": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "layout": {
+        "width": 1280,
+        "viewport": 1280,
+        "heads": 28,
+        "tables": 38,
+        "rows": 193,
+        "blankCells": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "layout": {
+        "width": 390,
+        "viewport": 390,
+        "heads": 28,
+        "tables": 38,
+        "rows": 193,
+        "blankCells": 0
+      }
+    }
+  ],
+  "errors": []
+}

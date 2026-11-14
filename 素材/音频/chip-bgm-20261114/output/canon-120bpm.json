@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-14",
+  "song": "canon",
+  "bpm": 120,
+  "sampleRate": 44100,
+  "bits": 16,
+  "channels": 2,
+  "selection": "Violin I beats [8,72), circular imitations at 8/16 beats, original repeating bass",
+  "sourceSha256": "953b73e270117d388e9ef1a76f8b9e97ff640d1400768849f41a3cf71c59cbc1",
+  "sourceNoteCounts": [
+    0,
+    593,
+    577,
+    561,
+    225
+  ],
+  "selectedNoteCounts": [
+    0,
+    121,
+    112,
+    80,
+    64
+  ],
+  "loopBeats": 64,
+  "loopSeconds": 32,
+  "samplePeakDbfs": -2.383728154384173,
+  "rmsDbfs": -14.587303358608052,
+  "loopBoundaryStep": {
+    "left": 0.02006005379371345,
+    "right": 0.018037126399576664
+  },
+  "outputs": [
+    {
+      "file": "canon-120bpm.wav",
+      "seconds": 32,
+      "bytes": 5644844,
+      "sha256": "4091ddf90fc2adddfee90810b6cfd32825da6f6fc155533ebf4bf672424f7b07"
+    }
+  ],
+  "scope": "Loop master; encoded MP3 is installed as the Cocos bgm bundle"
+}

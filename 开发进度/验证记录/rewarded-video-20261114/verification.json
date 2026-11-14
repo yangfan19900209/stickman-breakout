@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "createdAt": "2026-11-14T10:37:40.852Z",
+  "version": "1.0.7",
+  "appid": "wx7d2aae02691fc088",
+  "directory": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-视频复活-20261114",
+  "project": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-视频复活-20261114/wechatgame",
+  "zip": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-视频复活-20261114/stickman-breakout-1.0.7-video-revival.zip",
+  "archive": {
+    "sha256": "b086882cf9d64be8524adaa2304c1ccc797dda747db7983e119f4f67b448ae40",
+    "bytes": 18896728
+  },
+  "description": "接入视频广告原地复活：每完整观看一条视频获得1次机会，每关每次挑战最多10次；取消、未看完或加载失败不发放、不消耗额度。取消免费及分享/推荐领取复活。保留战斗进度、武器弹药和满血保护，复活通关可解锁选关、不计最快纪录。暂时隐藏好友榜，保留个人纪录、普通分享邀请、推荐游戏和游戏圈。开放第一、二关。",
+  "inputSHA256": "c60156e69ce64fff3eadea3749839d24f1707699cdc830ecb78e47dfcfd19e05",
+  "payloadSHA256": "97ea41a89cab8033fdd34bc3f27e560bbc94a37a33e243837d360c22ddbf6e58",
+  "totalBytes": 20959864,
+  "mainBytes": 3893012,
+  "sizeBasis": "raw files; not WeChat upload compressed size",
+  "buildMethod": "Cocos Creator 3.8.8 macOS GUI rebuild",
+  "buildLog": "/Users/yangfan/Desktop/线条突围/stickman-breakout/源码/temp/builder/log/wechatgame11-14-2026 11-15.log",
+  "rules": {
+    "adUnitId": "adunit-d647515c81ac9f11",
+    "completedVideoLimitPerChapterAttempt": 10,
+    "creditsPerCompletedVideo": 1,
+    "creditsCanStack": false,
+    "completion": "onClose.isEnded === true",
+    "resume": "separate player tap",
+    "freeOrSocialRevival": false,
+    "friendLeaderboard": false
+  },
+  "verification": {
+    "tests": {
+      "tests": 558,
+      "passed": 558,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "dependencyMode": "existing offline installation",
+      "typescript": "5.8.2",
+      "creatorTypes": "3.8.8-121517"
+    }
+  },
+  "uploaded": false,
+  "published": false,
+  "deviceVerified": false,
+  "realAdPlaybackVerified": false
+}

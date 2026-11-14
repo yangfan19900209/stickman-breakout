@@ -1,0 +1,128 @@
+{
+  "sampleRate": 22050,
+  "bits": 16,
+  "channels": 1,
+  "files": [
+    {
+      "file": "rocket.wav",
+      "duration": 0.62,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -14.324249731940474,
+      "sha256": "58d34833e7e0e990a513d4b4a3ebdf6aa9013e4e869a3b578154b17afcb6f705",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "rocket-blast.wav",
+      "duration": 0.86,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -15.25792980219668,
+      "sha256": "235afef8e6b552d68afb3ba1ddd945f156fb247c1b05ed0c75e1e995d62fc72c",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "enemy-shot.wav",
+      "duration": 0.10498866213151928,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -16.80897846244725,
+      "sha256": "874c72194dad778d9323c5016465a623f50316d984a5670ba5efd43d99e39774",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "boss-shot.wav",
+      "duration": 0.18,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -16.218025127371565,
+      "sha256": "9fcccc292eb4b683c9d032963d28480993e08ff5eb83539ab356dc80c25ae6ed",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "cannon.wav",
+      "duration": 0.32,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -16.465409358732924,
+      "sha256": "fa1f0c46d0698f80dcd9875c98f6cb429cdbef18f8dccb33be90973cec073728",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "beam.wav",
+      "duration": 0.8500226757369614,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -9.560275393187297,
+      "sha256": "212d686fb51b3a7751c4a0ef2ebdfc63bfcf0508fbff9beb7a6522b654415b6a",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "slam.wav",
+      "duration": 0.5500226757369614,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -16.11887471872964,
+      "sha256": "57fa187350753a8274ab0998424bbfa52ef196b1d8d99a4070090af81c217c30",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "charge.wav",
+      "duration": 0.46,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -9.769734795955875,
+      "sha256": "720c1dbc5954c43911cd0064bc17c8f607b7c7aa9741c5a88872d8801865f320",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "enemy-melee.wav",
+      "duration": 0.22,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -9.748598569807168,
+      "sha256": "877ccf267650865287354da7f2ef94d4c7d3bcc18b6654885081f1d3f401f0a0",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "enemy-sonar.wav",
+      "duration": 0.52,
+      "peakDbfs": -1.9383327973301165,
+      "rmsDbfs": -11.630953070530815,
+      "sha256": "e55c5bd5923bd0204d8a787a22d631773c2b910c44f90b8e81efb2ac9583c9cd",
+      "runtimeMatches": true,
+      "edgeSamples": [
+        0,
+        0
+      ]
+    }
+  ],
+  "speakerAuditionVerified": false
+}

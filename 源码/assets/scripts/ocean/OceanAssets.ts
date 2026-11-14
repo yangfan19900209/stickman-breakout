@@ -17,6 +17,8 @@ import { CombatRegions } from "./OceanCombatFrames";
 import { MiniRegions } from "./OceanMiniFrames";
 import { FeedbackRegions } from "./OceanFeedbackFrames";
 import { OceanUpdateRegions } from "./OceanUpdateFrames";
+import { OceanJellyfishRegions } from "./OceanJellyfishFrames";
+import { OceanSonarRegions } from "./OceanSonarFrames";
 export class OceanAssets {
   static ready = false;
   static error = "";
@@ -90,7 +92,7 @@ export class OceanAssets {
           Object.entries(OceanFrames).map(async ([id, d]) => {
             // Browser already packs small sprites dynamically. Mini games
             // discard source images, so use the prepacked combat texture there.
-            const current = OceanUpdateRegions[id] ?? FeedbackRegions[id] ?? MiniRegions[id] ?? CombatRegions[id];
+            const current = OceanJellyfishRegions[id] ?? OceanSonarRegions[id] ?? OceanUpdateRegions[id] ?? FeedbackRegions[id] ?? MiniRegions[id] ?? CombatRegions[id];
             const region =
               current ??
               (macro.CLEANUP_IMAGE_CACHE ? OceanCombatAtlas[id] : undefined);

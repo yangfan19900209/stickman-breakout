@@ -1,0 +1,20 @@
+{
+  "url": "https://github.com/wechat-miniprogram/minigame-api-typings/blob/master/types/wx/lib.wx.api.d.ts",
+  "blobSHA": "5836246e7bc0b36ceb819dfc3514b74e890861b4",
+  "checkedAt": "2026-11-14T05:40:27.155Z",
+  "excerpts": [
+    {
+      "name": "privacySetting",
+      "text": "interface GetPrivacySettingSuccessCallbackResult {\n        /** 是否需要用户授权隐私协议（如果开发者没有在「MP后台-设置-服务内容声明-用户隐私保护指引」中声明隐私收集类型则会返回false；如果开发者声明了隐私收集，且用户之前同意过隐私协议则会返回false；如果开发者声明了隐私收集，且用户还没同意过则返回true；如果用户之前同意过、但后来小程序又新增了隐私收集类型也会返回true） */\n        needAuthorization: boolean\n        /** 隐私授权协议的名称 */\n        privacyContractName: string\n        errMsg: string\n    }\n    interface GetRandomValuesOption {\n        /** 整数，生成随机数的字节数，最大 1048576 */\n        length: number\n        /** 接口调用结束的回调函数（调用成功、失败都会执行） */\n        complete?: GetRandomValuesCompleteCallback\n        /** 接口调用失败的回调函数 */\n        fail?: GetRandomValuesFailCallback\n        /** 接口调用成功的回调函数 */\n        success?: GetRandomValuesSuc"
+    },
+    {
+      "name": "friendScope",
+      "text": "interface AuthSetting {\n        /** 是否授权使用你的微信朋友信息，对应开放数据域内的 [wx.getFriendCloudStorage](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getFriendCloudStorage.html) 、[wx.getGroupCloudStorage](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getGroupCloudStorage.html) 、[wx.getGroupInfo](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getGroupInfo.html) 、[wx.getPotentialFriendList](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getPotentialFriendList.html) 、[wx.getUserCloudStorageKeys](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getUserCloudStorageKeys.html) 、[wx.getUserInfo](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/OpenDataContext-wx.getUserInfo.html)  、[GameServerManager.getFriendsStateData](https://developers.weixin.qq.com/minigame/dev/api/game-server-manager/GameServerManager.getFriendsStateData.html) 接口，以及主域内的 [wx.getUserInteractiveStorage](https://developers.weixin.qq.com/minigame/dev/api/open-api/data/wx.getUserInteractiveStorage."
+    },
+    {
+      "name": "errorCodeReference",
+      "context": "VKSessionStartCallback status documentation; reference only, not a device error receipt",
+      "text": "* - 112: 接口未在隐私协议中声明;\n         * - 1025: 小程序隐私接口被封禁，[解决方案参考链接](https://developers.weixin.qq.com/community/develop/doc/00062a6d514c88baacdf52e8a56009);\n         * - 1026: 小游戏隐私接口被封禁，[解决方案参考链接](https://developers.weixin.qq.com/community/minigame/doc/0004c84925817819b7ffd8b2356008);\n         * - 2000001: 参数错误;\n         * - 2003000: 会话不可用;\n         * - 2000000: 系统错误;\n         * - 2000002: 设备不支持;\n         * - 2000003: 系统不支持;\n         * - 2000004: 设备不支持;\n         * - 2003001: 未开启系统相机权限;\n         * - 2003002: 未开启小程序相机权限; */\n       "
+    }
+  ]
+}

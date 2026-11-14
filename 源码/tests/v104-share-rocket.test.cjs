@@ -57,9 +57,9 @@ test('one player rocket kills ordinary soldiers and shield soldiers through the 
 test('ordinary and shield soldiers also die to one edge-of-radius rocket blast, while heavy bosses keep their own HP rules',()=>{
  for(const kind of ['melee','ranged','turret','shield']){
   const s=new GameSession();s.reset();const e=new EnemyController({id:'edge',kind,x:500,y:150});s.spawner.enemies=[e];
-  s.applyBlast(e.bounds.x-C.weapons.rocket.blastRadius,180,C.weapons.rocket.blastRadius,C.weapons.rocket.damage,'player');assert.equal(e.alive,false,kind);
+  s.applyBlast(e.bounds.x-C.weapons.rocket.blastRadius,180,C.weapons.rocket.blastRadius,C.weapons.rocket.damage,'player','rocket');assert.equal(e.alive,false,kind);
  }
- const s=new GameSession();s.reset();for(const b of [s.spawner.miniBoss,s.spawner.guard]){b.active=true;const before=b.health;s.applyBlast(b.x,b.y+40,160,9,'player');assert.ok(b.alive&&b.health<before);}
+ const s=new GameSession();s.reset();for(const b of [s.spawner.miniBoss,s.spawner.guard]){b.active=true;const before=b.health;s.applyBlast(b.x,b.y+40,160,C.weapons.rocket.damage,'player','rocket');assert.ok(b.alive&&b.health<before);}
 });
 test('mini tank and final boss cannon/rocket emission consume the unified damage rule; burst bullets remain one',()=>{
  const s=new GameSession();s.reset();const q=s.projectiles,m=s.spawner.miniBoss,b=s.spawner.guard;

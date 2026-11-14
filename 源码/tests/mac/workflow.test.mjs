@@ -65,6 +65,37 @@ test('metadata does not invalidate a payload, but a secret in excluded metadata 
   assert.throws(() => inspectPackage(project), /密钥文件/);
 });
 
+test('music builds require the bgm package, resource paths, exact audio bytes and credits', t => {
+  const root = fixture(t), project = gameFixture(root), musicDirectory = path.join(root, 'music');
+  put(musicDirectory, 'canon-80bpm.mp3', 'fixture-audio');
+  assert.throws(() => inspectPackage(project, { musicDirectory }), /缺少音乐 bgm 分包/);
+  const config = JSON.parse(fs.readFileSync(path.join(project, 'game.json'), 'utf8'));
+  config.subpackages.push({ name: 'bgm', root: 'subpackages/bgm/' });
+  writeJSON(path.join(project, 'game.json'), config);
+  put(project, 'subpackages/bgm/index.js');
+  assert.throws(() => inspectPackage(project, { musicDirectory }), /音乐来源/);
+  put(project, 'AUDIO-CREDITS.txt', 'fixture-credit');
+  writeJSON(path.join(project, 'subpackages/bgm/config.json'), { paths: { 0: ['canon-80bpm', 0] } });
+  assert.throws(() => inspectPackage(project, { musicDirectory }), /音乐未打包/);
+  put(project, 'subpackages/bgm/native/fixture.mp3', 'fixture-audio');
+  assert.doesNotThrow(() => inspectPackage(project, { musicDirectory }));
+  put(project, 'subpackages/bgm/native/fixture.mp3', 'stale-audio');
+  assert.throws(() => inspectPackage(project, { musicDirectory }), /音乐未打包/);
+});
+
+test('new or redesigned combat sounds require current index entries and exact WAV bytes', t => {
+  const root = fixture(t), project = gameFixture(root), effectsDirectory = path.join(root, 'sounds');
+  put(effectsDirectory, 'rocket.wav', 'new-rocket');
+  assert.throws(() => inspectPackage(project, { effectsDirectory }), /缺少音效资源索引/);
+  writeJSON(path.join(project, 'assets/resources/config.json'), { paths: {} });
+  assert.throws(() => inspectPackage(project, { effectsDirectory }), /音效未进入资源索引/);
+  writeJSON(path.join(project, 'assets/resources/config.json'), { paths: { 0: ['audio/rocket', 0] } });
+  put(project, 'assets/resources/native/rocket.wav', 'old-rocket');
+  assert.throws(() => inspectPackage(project, { effectsDirectory }), /音效未打包或不是当前版本/);
+  put(project, 'assets/resources/native/rocket.wav', 'new-rocket');
+  assert.doesNotThrow(() => inspectPackage(project, { effectsDirectory }));
+});
+
 test('modified or extra game files cannot pass a saved build fingerprint', t => {
   const project = gameFixture(fixture(t));
   const receipt = inspectPackage(project);

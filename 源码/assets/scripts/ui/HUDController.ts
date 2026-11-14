@@ -9,7 +9,7 @@ import {
   Vec2,
 } from "cc";
 import { GameConfig as C } from "../core/GameConfig";
-import { nextCampaignChapter } from "../core/ReleaseConfig";
+import { ReleaseConfig, nextCampaignChapter } from "../core/ReleaseConfig";
 import { GameSession } from "../core/GameSession";
 import { InputManager } from "../core/InputManager";
 import { GameState, InputAction, Rect } from "../core/Types";
@@ -100,8 +100,6 @@ export class HUDController {
   private reviveButton: Node;
   private reviveNote: Label;
   private reviveCountdown: Label;
-  private reviveRecommend?: Node;
-  private failedRecords?: Node;
   private touchButtons: {
     action: InputAction;
     node: Node;
@@ -238,7 +236,6 @@ export class HUDController {
     onRevive?: () => void,
     onTitle?: () => void,
     onRecommend?: () => void,
-    onReviveRecommend?: () => void,
   ) {
     const button = (
       p: Node,
@@ -378,19 +375,18 @@ export class HUDController {
     if (onGameClub)
       this.pauseGameClub = button(paused, "游戏圈", 153, -204, 280, 80, onGameClub);
     if (onShare) button(paused, "分享邀请", onRecords ? -153 : 0, -294, 280, 56, onShare);
-    if (onRecords) button(paused, "纪录与好友榜", onShare ? 153 : 0, -294, 280, 56, onRecords);
+    if (onRecords) button(paused, ReleaseConfig.friendLeaderboard ? "纪录与好友榜" : "个人纪录", onShare ? 153 : 0, -294, 280, 56, onRecords);
     const failed = panel("gameover");
     text(failed, "突围失败", 0, 204, 54);
     this.resultStats.push(text(failed, "", 0, 143, 22, colors.muted));
-    this.reviveButton=button(failed, "免费原地复活 · 1 次", 0, 49, 530, 96, ()=>{
+    this.reviveButton=button(failed, "看视频 · 得 1 次复活", 0, 49, 530, 96, ()=>{
       if(this.reviveAvailable && onRevive)onRevive();else onStart();
     }, true);
     this.reviveNote=text(failed, "", 0, -36, 23, colors.muted, 1080);
     button(failed, "重新开始", onShare?-276:-150, -134, onShare?254:280, 92, onStart);
     button(failed, "返回首页", onShare?0:150, -134, onShare?254:280, 92, onHome);
     if(onShare)button(failed, "分享邀请", 276, -134, 254, 92, onShare);
-    if(onReviveRecommend)this.reviveRecommend=button(failed, "推荐游戏 · 得复活", -224, -247, 420, 92, onReviveRecommend);
-    if(onRecords)this.failedRecords=button(failed, "纪录与好友榜", 0, -247, 420, 92, onRecords);
+    if(onRecords)button(failed, ReleaseConfig.friendLeaderboard ? "纪录与好友榜" : "个人纪录", 0, -247, 420, 92, onRecords);
     const preparing=panel("reviving");
     this.panelInk.get("reviving")!.clear();
     this.panelInk.get("reviving")!.rect(-370,-84,740,176,colors.ink,colors.paper,3);
@@ -456,7 +452,7 @@ export class HUDController {
       49,
       onHome,
     );
-    if (onRecords) button(this.successActions, "纪录榜", onShare ? -82 : 0, -250, onShare ? 150 : 310, 49, onRecords);
+    if (onRecords) button(this.successActions, ReleaseConfig.friendLeaderboard ? "纪录榜" : "个人纪录", onShare ? -82 : 0, -250, onShare ? 150 : 310, 49, onRecords);
     if (onShare) button(this.successActions, "分享挑战", 82, -250, 150, 49, onShare);
     this.cinematicInk = new Ink(
       node(parent, "Victory letterbox and impact flash"),
@@ -529,15 +525,14 @@ export class HUDController {
   }
   updateRevival(s: GameSession | OceanSession | FlightSession, wechat = false): void {
     const revival="revival" in s?s.revival:undefined;
-    this.reviveAvailable=!!revival && (!!revival.remaining || wechat);
+    this.reviveAvailable=!!revival && (!!revival.remaining || wechat && revival.canWatchVideo);
     this.reviveButton.getComponentInChildren(Label)!.string=revival?.remaining
-      ? revival.used===0?"免费原地复活 · 1 次":"原地复活 · 满血继续"
-      : revival && wechat?"分享邀请 · 得复活":"重新开始  →";
-    this.reviveNote.string=revival?.error || (revival?.remaining?"满血继续 · 使用复活不计最快纪录"
-      : wechat?"每次分享或推荐得 1 次复活 · 不限次数":"免费复活已用完 · 微信内可分享或推荐获得更多次数");
-    const recommend=!!revival && !revival.remaining && wechat;
-    if(this.reviveRecommend)this.reviveRecommend.active=recommend;
-    if(this.failedRecords)this.failedRecords.setPosition(recommend && this.reviveRecommend?224:0,-247);
+      ? "原地复活 · 满血继续"
+      : revival && wechat && revival.canWatchVideo?"看视频 · 得 1 次复活":"重新开始  →";
+    this.reviveNote.string=revival?.error || (revival?.remaining?"已获得 1 次机会 · 满血继续 · 使用复活不计最快纪录"
+      : revival && wechat?revival.canWatchVideo?`每看完一条视频得 1 次 · 本关已领取 ${revival.videos}/${revival.videoLimit} 次`
+        : `本关 ${revival.videoLimit} 次视频复活已用完，可重新开始`
+      : "视频复活请在微信内体验，也可以重新开始");
     this.reviveCountdown.string=`准备继续 · ${Math.max(1,Math.ceil(revival?.preparation ?? 1))}`;
     this.titlePoster.setUnlocked(this.personal?.records.cleared ?? 0);
   }

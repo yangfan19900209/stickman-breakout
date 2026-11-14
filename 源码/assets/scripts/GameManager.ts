@@ -26,6 +26,7 @@ import { CocosInputAdapter } from "./platform/CocosInputAdapter";
 import { HUDController } from "./ui/HUDController";
 import { ObjectRenderer } from "./render/ObjectRenderer";
 import { AudioBridge } from "./platform/AudioBridge";
+import { selectMusicCue } from "./platform/MusicCue";
 import { Node } from "cc";
 import { viewportLayout } from "./ui/ViewportLayout";
 import { ComicAssets } from "./render/ComicAssets";
@@ -47,6 +48,7 @@ import { ChapterSelectPanel } from "./ui/ChapterSelectPanel";
 import { canEnterChapter } from "./social/ChapterAccess";
 import { RecordsPanel } from "./ui/RecordsPanel";
 import { RecommendationPanel } from "./ui/RecommendationPanel";
+import { RewardedVideoPanel } from "./ui/RewardedVideoPanel";
 const { ccclass } = _decorator;
 @ccclass("GameManager")
 export class GameManager extends Component {
@@ -73,7 +75,8 @@ export class GameManager extends Component {
   private recordsPanel!: RecordsPanel;
   private chapterSelect!: ChapterSelectPanel;
   private recommendationPanel!: RecommendationPanel;
-  private get externalUiBusy(): boolean { return this.platform.adapter.recommendation.blocking; }
+  private rewardedVideoPanel!: RewardedVideoPanel;
+  private get externalUiBusy(): boolean { return this.platform.adapter.recommendation.blocking || this.platform.adapter.rewardedVideo.blocking; }
   private pendingInvite?: Invite;
   private lastShare = "";
   private adapter!: CocosInputAdapter;
@@ -199,7 +202,6 @@ export class GameManager extends Component {
       () => this.revive(),
       () => this.titleStart(),
       this.platform.adapter.status().mode === "wechat-mini-game" ? () => this.openRecommendation() : undefined,
-      this.platform.adapter.status().mode === "wechat-mini-game" ? () => this.recommendRevive() : undefined,
     );
     this.hud.personal = this.personal;
     this.recordsPanel = new RecordsPanel(board, this.adapter, this.platform.adapter.social, this.personal,
@@ -209,6 +211,7 @@ export class GameManager extends Component {
       }, this.platform.adapter.status().mode === "wechat-mini-game" ? () => this.shareGame() : undefined);
     this.chapterSelect=new ChapterSelectPanel(board,this.adapter,this.personal,chapter=>this.selectChapter(chapter));
     this.recommendationPanel = new RecommendationPanel(board, this.adapter, this.platform.adapter.recommendation);
+    this.rewardedVideoPanel = new RewardedVideoPanel(board, this.adapter, this.platform.adapter.rewardedVideo);
     this.platform.adapter.share.configure();
     this.platform.adapter.social.onInvite = invite => { this.pendingInvite = invite; };
     this.platform.adapter.gameClub.onOpenRequest = () => {
@@ -217,13 +220,16 @@ export class GameManager extends Component {
       this.adapter.clear();
       this.activeSession.pause();
       this.accumulator = 0;
+      this.syncMusic();
     };
     this.platform.adapter.share.onOpenRequest = this.platform.adapter.gameClub.onOpenRequest;
     this.platform.adapter.recommendation.onOpenRequest = () => {
       this.personal.active(false); this.orientationPaused = false;
       this.adapter.clear(); this.activeSession.pause(); this.accumulator = 0;
       this.platform.adapter.gameClub.hide();
+      this.syncMusic();
     };
+    this.platform.adapter.rewardedVideo.onOpenRequest = this.platform.adapter.recommendation.onOpenRequest;
     this.platform.install(
       () => {
         this.personal.active(false);
@@ -232,6 +238,7 @@ export class GameManager extends Component {
         this.adapter.hidden();
         this.activeSession.pause();
         this.accumulator = 0;
+        this.syncMusic();
       },
       () => ({
         ...this.activeSession.snapshot(),
@@ -291,6 +298,7 @@ export class GameManager extends Component {
           share: this.platform.adapter.share.status(),
           social: this.platform.adapter.social.snapshot(),
           recommendation: this.platform.adapter.recommendation.snapshot(),
+          rewardedVideo: this.platform.adapter.rewardedVideo.snapshot(),
           haptics: {
             requests: this.platform.adapter.victoryHaptics.requests,
             supported: this.platform.adapter.victoryHaptics.supported,
@@ -301,6 +309,7 @@ export class GameManager extends Component {
         recordsPanel: this.recordsPanel.snapshot(),
         chapterSelect: this.chapterSelect.snapshot(),
         recommendationPanel: this.recommendationPanel.snapshot(),
+        rewardedVideoPanel: this.rewardedVideoPanel.snapshot(),
         display: {
           ...this.display,
           combatZoom: this.activeSession.camera.zoom,
@@ -339,7 +348,7 @@ export class GameManager extends Component {
           },
         },
       }),
-      () => { this.adapter.clear(); this.accumulator = 0; },
+      () => { this.adapter.clear(); this.accumulator = 0; this.syncMusic(); },
     );
   }
   private enter(): void {
@@ -397,13 +406,15 @@ export class GameManager extends Component {
     const active=this.ocean ?? this.session;
     if(active.state!=="gameover")return;
     if(!active.revival.remaining){
-      if(this.platform.adapter.status().mode==="wechat-mini-game")this.shareGame();else this.startRun();
+      if(this.platform.adapter.status().mode==="wechat-mini-game" && active.revival.canWatchVideo)this.watchRevivalVideo();
+      else this.startRun();
       return;
     }
     this.adapter.clear();this.accumulator=0;this.personal.active(false);
     if(!active.revive())return;
     this.personal.markRevived();this.platform.adapter.gameClub.hide();
     this.playerPose.capture();this.cameraPose.capture();
+    this.syncMusic();
   }
   private startRun(): void {
     if (this.externalUiBusy) return;
@@ -414,6 +425,7 @@ export class GameManager extends Component {
     this.activeSession.reset();
     this.beginRecord();
     this.audio.reset();
+    this.syncMusic();
     this.victorySeen = false;
     console.info(`[Breakout] New run: ${this.flight ? "Cloud Breakout" : this.ocean ? "Deep Sea" : "Abandoned Base"}.`);
   }
@@ -436,6 +448,7 @@ export class GameManager extends Component {
     const previous = this.activeSession,
       wasPlaying = previous.state === "playing";
     previous.pause();
+    this.syncMusic();
     this.hud.setChapterLoading(chapter === 3
       ? "正在装载飞行器与云端战场…" : "正在装载潜水装备与海底战场…");
     try {
@@ -582,6 +595,7 @@ export class GameManager extends Component {
     this.accumulator = 0;
     this.activeSession.resume();
     this.personal.active(!this.ocean?.introActive && this.activeSession.state === "playing");
+    this.syncMusic();
   }
   private togglePause(): void {
     if (this.externalUiBusy) return;
@@ -592,31 +606,30 @@ export class GameManager extends Component {
       this.activeSession.pause();
       this.adapter.clear();
       this.accumulator = 0;
+      this.syncMusic();
     }
   }
   private beginRecord(): void {
+    this.platform.adapter.rewardedVideo.preload();
     this.personal.begin(this.flight ? 3 : this.ocean ? 2 : 1, !this.platform.adapter.previewChapter());
     this.personal.active(!this.externalUiBusy && this.activeSession.state === "playing" && !this.ocean?.introActive && !this.portrait);
   }
   private shareGame(): void {
     if (this.externalUiBusy || this.portrait || this.loadingChapter) return;
-    const active=this.ocean ?? this.session;
-    const reward=!this.flight && active.state==="gameover" && !this.recordsPanel.visible
-      ? active.revival.reward("share") : undefined;
-    const requested=this.platform.adapter.share.request();
-    if(this.activeSession===active && active.state==="gameover") {
-      reward?.(requested);
-      if(!requested && !active.revival.remaining)active.revival.error="分享未能打开，请重试或选择推荐游戏";
-    }
+    this.platform.adapter.share.request();
   }
-  private recommendRevive(): void {
+  private watchRevivalVideo(): void {
     if(this.externalUiBusy || this.portrait || this.loadingChapter || this.recordsPanel.visible || this.chapterSelect.visible || this.flight)return;
     const active=this.ocean ?? this.session;
-    if(active.state!=="gameover" || active.revival.remaining)return;
-    const reward=active.revival.reward("recommendation");
-    this.platform.adapter.recommendation.request("revival",recommended=>{
-      if(this.activeSession!==active || active.state!=="gameover")return;
-      reward(recommended===true);
+    if(active.state!=="gameover" || !active.revival.canWatchVideo)return;
+    const reward=active.revival.rewardVideo(), attempt=active.revival.attemptId, used=active.revival.used;
+    active.revival.error="";
+    this.platform.adapter.rewardedVideo.request(result=>{
+      if(this.activeSession!==active || active.state!=="gameover" || active.revival.attemptId!==attempt || active.revival.used!==used)return;
+      reward(result.completed);
+      if(!result.completed)active.revival.error=result.message;
+      this.adapter.clear();this.accumulator=0;this.personal.active(false);
+      // A completed video grants one opportunity. The player taps again to resume safely.
     });
   }
   private openRecommendation(): void {
@@ -629,6 +642,7 @@ export class GameManager extends Component {
     this.personal.active(false); this.orientationPaused = false;
     this.activeSession.pause(); this.accumulator = 0;
     this.platform.adapter.gameClub.hide(); this.recordsPanel.open();
+    this.syncMusic();
   }
   private updateSocial(dt: number): void {
     if (this.pendingInvite && !this.externalUiBusy && !this.portrait && !this.loadingChapter && !this.recordsPanel.visible && !this.chapterSelect.visible &&
@@ -638,11 +652,18 @@ export class GameManager extends Component {
     this.recordsPanel.update(dt, this.display.width, this.display.height, this.portrait);
     this.chapterSelect.update(this.display.width,this.display.height,this.portrait,this.platform.safeInsets(this.display.width,this.display.height));
     this.recommendationPanel.update(dt, this.display.width, this.display.height, this.platform.safeInsets(this.display.width, this.display.height));
+    this.rewardedVideoPanel.update(this.display.width, this.display.height, this.platform.safeInsets(this.display.width, this.display.height));
     this.hud.updateRevival(this.activeSession,this.platform.adapter.status().mode==="wechat-mini-game");
     const chapter = this.activeSession.state === "title" ? undefined : this.ocean ? 2 : 1;
     const ms = this.personal.result?.valid && this.activeSession.victory.active ? this.personal.result.ms : undefined;
     const key = `${chapter ?? 0}:${ms ?? 0}`;
     if (key !== this.lastShare) { this.lastShare = key; this.platform.adapter.share.prepare(chapter, ms); }
+  }
+  private syncMusic(dt = 0): void {
+    if (!this.audio) return;
+    this.audio.music.update(selectMusicCue(this.session, this.ocean, this.flight),
+      this.portrait || this.loadingChapter || this.externalUiBusy
+        || !!this.recordsPanel?.visible || !!this.chapterSelect?.visible, dt);
   }
   update(dt: number): void {
     if (!this.ready) return;
@@ -708,6 +729,7 @@ export class GameManager extends Component {
       }
     }
     if (this.portrait) {
+      this.syncMusic(dt);
       this.personal.active(false);
       this.updateSocial(dt);
       this.adapter.hidden();
@@ -753,6 +775,7 @@ export class GameManager extends Component {
     if (active.victory.active && active.player.health > 0) this.personal.win();
     else if (active.state !== "playing") this.personal.active(false);
     this.updateSocial(dt);
+    this.syncMusic(dt);
     if (this.flight) {
       this.drawFlight(dt);
       return;
@@ -870,6 +893,7 @@ export class GameManager extends Component {
     this.personal?.cancel();
     this.recordsPanel?.destroy();
     this.recommendationPanel?.destroy();
+    this.rewardedVideoPanel?.destroy();
     this.disposeOcean();
     this.disposeFlight();
     this.adapter?.destroy();

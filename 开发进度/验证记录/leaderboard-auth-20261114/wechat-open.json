@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-11-14T05:18:20.712110+00:00",
+  "command": "WeChat CLI open",
+  "project": "/Users/yangfan/Desktop/线条突围/stickman-breakout/源码/build/wechatgame",
+  "realDeviceVerified": false,
+  "exitCode": 255,
+  "output": "[1114/131820.814167:ERROR:electron/shell/common/mac/codesign_util.cc:109] SecCodeCheckValidity: Error Domain=NSOSStatusErrorDomain Code=-2147409622 \"(null)\" (-2147409622)\n- initialize\n\n(node:31789) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `Electron --trace-deprecation ...` to show where the warning was created)\n✖ initialize error: Error: listen EPERM: operation not permitted 127.0.0.1:3799, Error: listen EPERM: operation not permitted 127.0.0.1:3799\n    at Server.setupListenHandle [as _listen2] (node:net:1917:21)\n    at listenInCluster (node:net:1996:12)\n    at node:net:2205:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n"
+}

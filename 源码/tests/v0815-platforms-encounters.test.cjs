@@ -53,7 +53,7 @@ test('drop respects solid ledges, landing surfaces and actor-local collision, an
  assert.equal(l.dropSurfaces(p).length,0);p.update(dt,{...idle,crouch:true,jump:true,jumpHeld:true},l);assert.ok(p.vy>0);
 });
 
-test('ordinary player bullets deal two to the final boss, one to the mini boss and soldier, without changing other projectile rules',()=>{
+test('ordinary player bullets deal two to both bosses and one to a soldier, without changing other projectile rules',()=>{
  const shoot=(target,kind='bullet',owner='player')=>{
   const shots=new ProjectileManager(new ParticlePool()),hp=target.health;
   shots.spawn({owner,kind,x:target.bounds.x-50,y:target.bounds.y+30,direction:1,speed:1000,damage:1,range:1000});
@@ -62,7 +62,7 @@ test('ordinary player bullets deal two to the final boss, one to the mini boss a
  };
  const boss=new ColossusBoss({id:'b',kind:'colossus',x:1500,y:150,patrol:0});boss.active=true;
  const mini=new TankBoss({id:'m',kind:'guard',encounter:'mini',x:1500,y:150,patrol:0});mini.active=true;
- assert.equal(shoot(boss),2);assert.equal(shoot(mini),1);assert.equal(shoot(new EnemyController({id:'r',kind:'ranged',x:1500,y:150,patrol:0})),1);
+ assert.equal(shoot(boss),2);assert.equal(shoot(mini),2);assert.equal(shoot(new EnemyController({id:'r',kind:'ranged',x:1500,y:150,patrol:0})),1);
  assert.equal(shoot(boss,'pellet'),1.5);assert.equal(shoot(boss,'bullet','enemy'),1);
  const hp=boss.health;boss.takeDamage(9,1,'explosion');assert.equal(hp-boss.health,9);assert.equal(C.weapons.rifle.damage,1);
 });

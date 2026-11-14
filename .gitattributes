@@ -1,2 +1,6 @@
 # Pages verification compares the deployed files with the Creator output byte for byte.
 docs/** -text whitespace=cr-at-eol
+
+# Preserve patch evidence and original third-party score source byte for byte.
+*.diff -whitespace
+素材/音频/turkish-march-100bpm/source/*.ly -whitespace

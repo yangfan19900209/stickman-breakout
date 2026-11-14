@@ -55,6 +55,8 @@ export async function build(platform, { dryRun = false } = {}) {
     if (platform === 'wechatgame') inspectPackage(path.join(sourceRoot, 'build/wechatgame'), {
       appid: readJSON(path.join(sourceRoot, 'build-config/wechatgame.json')).packages.wechatgame.appid,
       cover: path.join(sourceRoot, 'assets/landart/title-cover.jpg'),
+      effectsDirectory: path.join(sourceRoot, 'assets/resources/audio'),
+      ...(fs.existsSync(path.join(sourceRoot, 'assets/bgm')) ? { musicDirectory: path.join(sourceRoot, 'assets/bgm') } : {}),
     });
     const files = manifest(path.join(sourceRoot, 'build', platform), payloadFile);
     Object.assign(receipt, { status: 'built', completedAt: new Date().toISOString(), exitCode: result.status, inputSHA256: inputs.sha256, payloadSHA256: manifestHash(files), files });

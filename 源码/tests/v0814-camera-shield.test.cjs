@@ -28,11 +28,11 @@ test('shield soldier has exactly two more HP, breaks on the third front hit, and
  const event=e.shieldBreakEvent;e.takeDamage(100,1,'explosion');assert.equal(e.shieldBreakCount,1);assert.equal(e.shieldBreakEvent,event);
 });
 
-test('rear hits and lethal explosives shatter a remaining shield once, while a knife deals its full unchanged damage',()=>{
+test('rear hits and lethal explosives shatter a remaining shield once, while a knife executes the shield soldier',()=>{
  const rear=make();for(let n=0;n<4;n++)rear.takeDamage(1,-1,'bullet');assert.equal(rear.shieldHealth,3);
  rear.takeDamage(1,-1,'bullet');assert.equal(rear.shieldHealth,0);assert.equal(rear.shieldBreakCount,1);
  const rocket=make();rocket.takeDamage(C.weapons.rocket.damage,1,'explosion');assert.equal(rocket.alive,false);assert.equal(rocket.shieldBreakCount,1);
- const knife=make();knife.takeDamage(C.melee.damage,1,'melee');assert.equal(knife.health,5-C.melee.damage);
+ const knife=make();knife.takeDamage(C.melee.damage,1,'melee');assert.equal(knife.health,0);
 });
 
 test('session emits one break animation after damage, freezes it in pause and clears it on restart',()=>{

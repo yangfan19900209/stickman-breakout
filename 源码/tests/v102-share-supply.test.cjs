@@ -38,34 +38,41 @@ function fight(side=-1){
  s.player.reset(b.x+side*500,150);s.level.arenaVisited=true;
  return{s,b,step:()=>s.update(dt,idle),drops:()=>s.pickups.items.filter(p=>p.active&&p.sourceId==='colossus-half-rockets')};
 }
-test('final boss has 150 HP; crossing half health creates exactly one rocket drop toward either player side',()=>{
+test('final boss has 120 HP but crossing half health no longer grants rockets on either side',()=>{
  for(const side of [-1,1]){
-  const f=fight(side);assert.equal(f.b.maxHealth,150);f.b.takeDamage(74,1);f.step();assert.equal(f.drops().length,0);
-  f.b.takeDamage(1,1);f.step();assert.equal(f.drops().length,1);
-  const p=f.drops()[0];assert.equal(p.kind,'rocket');assert.ok((p.x-f.b.x)*side>f.b.halfWidth+75);
-  assert.ok(p.x>=f.s.level.retreatLimit+40);f.b.takeDamage(10,1);for(let i=0;i<20;i++)f.step();assert.equal(f.drops().length,1);
+  const f=fight(side);assert.equal(f.b.maxHealth,120);f.b.takeDamage(f.b.maxHealth/2-1,1);f.step();assert.equal(f.drops().length,0);
+  f.b.takeDamage(1,1);f.step();assert.equal(f.drops().length,0);
+  f.b.takeDamage(10,1);for(let i=0;i<20;i++)f.step();assert.equal(f.drops().length,0);
+  assert.ok(!f.s.pickups.recoveryIds.includes('colossus-half-rockets'));
+  assert.ok(!f.s.pickups.items.some(p=>p.active&&p.kind==='rocket'));
  }
 });
-test('supply survives a full pool, ignores pause and death, and resets on a new run',()=>{
+test('removed mid-fight rocket supply cannot reappear after pool space, pause, death or restart',()=>{
  const f=fight();for(let i=0;i<32;i++)f.s.pickups.spawn(50,160,'ammo');f.b.takeDamage(80,1);f.step();assert.equal(f.drops().length,0);
  f.s.pause();f.s.pickups.items[0].active=false;f.step();assert.equal(f.drops().length,0);
- f.s.resume();f.step();assert.equal(f.drops().length,1);f.s.reset();assert.ok(!f.s.pickups.recoveryIds.includes('colossus-half-rockets'));
+ f.s.resume();f.step();assert.equal(f.drops().length,0);f.s.reset();assert.ok(!f.s.pickups.recoveryIds.includes('colossus-half-rockets'));
  const killed=fight();killed.b.takeDamage(999,1);killed.step();assert.equal(killed.drops().length,0);
  const dead=fight();dead.b.takeDamage(80,1);dead.s.player.health=0;dead.step();assert.equal(dead.drops().length,0);
 });
-test('rocket drop equips rifle and knife users, refills existing rockets, persists if art is unavailable',()=>{
+function authoredRocket(){
+ const s=new GameSession();s.reset();const box=s.level.objects.objects.find(o=>o.id==='rocket-before-colossus');
+ box.takeDamage(999,1);s.update(dt,idle);
+ const p=s.pickups.items.find(p=>p.active&&p.kind==='rocket');assert.ok(p,'pre-fight crate remains available');
+ return{s,p};
+}
+test('pre-fight rocket crate still equips rifle/knife users, refills rockets and waits for art',()=>{
  for(const weapon of ['rifle','knife','rocket']){
-  const f=fight();f.b.takeDamage(80,1);f.step();const p=f.drops()[0];
+  const f=authoredRocket(),p=f.p;
   f.s.weapon.equip(weapon,weapon==='rocket'?1:undefined);f.s.player.reset(p.x,p.y-10);
   f.s.weapon.canPresent=()=>false;f.s.pickups.update(dt,f.s.player,f.s.weapon,[]);assert.ok(p.active);
   f.s.weapon.canPresent=()=>true;f.s.pickups.update(dt,f.s.player,f.s.weapon,[]);
-  assert.equal(f.s.weapon.id,'rocket');assert.equal(f.s.weapon.ammo,6);assert.equal(p.active,false);
-  f.step();assert.equal(f.drops().length,0);
+  assert.equal(f.s.weapon.id,'rocket');assert.equal(f.s.weapon.ammo,8);assert.equal(p.active,false);
+  f.s.update(dt,idle);assert.ok(!p.active);
  }
 });
-test('drop lands on authored surfaces and remains reachable after the boss changes side',()=>{
- const f=fight();f.b.takeDamage(80,1);f.step();const p=f.drops()[0];
+test('pre-fight rocket drop still lands on authored surfaces without duplicating itself',()=>{
+ const f=authoredRocket(),p=f.p;
  for(let i=0;i<300;i++)f.s.pickups.update(dt,f.s.player,f.s.weapon,f.s.level.solids);
  assert.ok(p.active);assert.ok(p.support);assert.ok(Math.abs(p.y-p.supportTop-10)<.01);
- const x=p.x;f.b.x=f.s.player.x-500;f.step();assert.equal(f.drops().length,1);assert.equal(p.x,x);
+ const x=p.x;f.s.update(dt,idle);assert.equal(f.s.pickups.items.filter(p=>p.active&&p.kind==='rocket').length,1);assert.equal(p.x,x);
 });

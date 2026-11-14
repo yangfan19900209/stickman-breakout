@@ -20,9 +20,9 @@ test('a completely blocked swimming route caches failure instead of repeating a 
  nav.next(start,goal,48,100,solids,100,100,.7);assert.equal(searches,2);
 });
 
-test('mini hull pursues beyond its former home clamp and routes above the real wreck wall without penetration',()=>{
- for(const [px,py] of [[6900,370],[5100,105]]){
-  const s=scene(),e=s.mini;Object.assign(e,{x:5860,y:py,hp:84,mode:'rest',timer:100,active:true});
+test('mini hull pursues beyond its former home clamp and routes above the remaining real rock pillar without penetration',()=>{
+ for(const [px,py,startX] of [[6900,370,5860],[6300,105,7300]]){
+  const s=scene(),e=s.mini;Object.assign(e,{x:startX,y:py,hp:84,mode:'rest',timer:100,active:true});
   s.player.x=px;s.player.y=py;let travel=0,maxY=e.y;
   for(let i=0;i<120*16;i++){
    const x=e.x,y=e.y;s.time+=dt;s.updateEnemy(e,dt);travel+=Math.hypot(e.x-x,e.y-y);maxY=Math.max(maxY,e.y);
@@ -30,7 +30,7 @@ test('mini hull pursues beyond its former home clamp and routes above the real w
    assert.ok(Math.hypot(e.x-x,e.y-y)<2,'movement never teleports');
   }
   assert.ok(travel>450);assert.ok(Math.abs(e.x-px)<440,`${px}: ${e.x},${e.y}`);
-  if(px<5860){assert.ok(maxY>250);assert.ok(e.x<5360);}
+  if(px<startX){assert.ok(maxY>330);assert.ok(e.x<6720);}
   else assert.ok(e.x>e.homeX+430);
  }
 });

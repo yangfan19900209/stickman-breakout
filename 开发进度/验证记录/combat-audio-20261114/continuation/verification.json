@@ -1,0 +1,95 @@
+{
+  "verifiedAt": "2026-11-14T12:30:52.549Z",
+  "passed": true,
+  "version": "1.0.7",
+  "inputSHA256": "9910a55b1c48187ba307c25e7285de078add04ac9deb2aa84c573a20d9adc7c0",
+  "execution": "Formal require_escalated execution approved for Creator CLI and local browser verification; no Terminal or editor UI used.",
+  "checks": {
+    "typecheck": {
+      "passed": true,
+      "typescript": "5.8.2",
+      "creatorTypes": "3.8.8-121517",
+      "log": "typecheck.log"
+    },
+    "logic": {
+      "tests": 577,
+      "passed": 577,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "tooling": {
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "log": "tooling.log"
+    },
+    "browser": {
+      "passed": true,
+      "chapters": 2,
+      "report": "browser.json",
+      "visualScreenshotsReviewed": true
+    },
+    "projectStructure": {
+      "passed": true,
+      "report": "project-structure.json"
+    },
+    "delivery": {
+      "passed": true,
+      "report": "delivery.json"
+    }
+  },
+  "builds": [
+    {
+      "platform": "wechatgame",
+      "status": "built",
+      "exitCode": 36,
+      "startedAt": "2026-11-14T12:25:28.327Z",
+      "completedAt": "2026-11-14T12:25:47.840Z",
+      "seconds": 19.513,
+      "runDir": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T12-25-28-326Z-wechatgame-80387",
+      "payloadSHA256": "b8b5ad6a173f23a7462f4a35a1ea67250127b3864027cd5d701c89fb93269559",
+      "files": 477
+    },
+    {
+      "platform": "web-mobile",
+      "status": "built",
+      "exitCode": 36,
+      "startedAt": "2026-11-14T12:26:16.834Z",
+      "completedAt": "2026-11-14T12:26:52.722Z",
+      "seconds": 35.888,
+      "runDir": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T12-26-16-834Z-web-mobile-80760",
+      "payloadSHA256": "913c2cacf21077fa88efb38fc8094a25afe609c42bb3aa8c56432de3625fcb3f",
+      "files": 463
+    }
+  ],
+  "package": {
+    "directory": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-mac-2026-11-14T12-28-10-970Z-81318",
+    "project": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-mac-2026-11-14T12-28-10-970Z-81318/wechatgame",
+    "zip": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-mac-2026-11-14T12-28-10-970Z-81318/stickman-breakout-1.0.7-wechat.zip",
+    "archive": {
+      "sha256": "5e677f66c48cc41d3ecc5be849bd34fe1e67f53873054c1438ed1d8da55758dd",
+      "bytes": 20995426
+    },
+    "payloadSHA256": "b8b5ad6a173f23a7462f4a35a1ea67250127b3864027cd5d701c89fb93269559",
+    "files": 477,
+    "totalBytes": 23097941,
+    "mainBytes": 4084144,
+    "wavSources": 18,
+    "musicSources": 4,
+    "zipRoundTripVerified": true
+  },
+  "firstBrowserAttempt": {
+    "passed": false,
+    "reason": "The test held keys across the chapter 2 entry transition, which correctly clears input. Retry waited for swimming via normal movement and pressed fresh keys; game code unchanged.",
+    "report": "browser-first-attempt.json"
+  },
+  "limitations": {
+    "lockedDependencySetupVerified": false,
+    "fullCampaignVerifiedThisRun": false,
+    "wechatSimulatorVerifiedThisRun": false,
+    "deviceVerified": false,
+    "listeningVerified": false,
+    "uploaded": false,
+    "published": false
+  }
+}

@@ -7,6 +7,7 @@ import { comicPose } from "../render/ComicPose";
 import { OceanAssets, OceanBatch } from "./OceanAssets";
 import { OceanFrames } from "./OceanFrames";
 import { MINI_SUB } from "./OceanMiniSub";
+import { OCEAN_JELLY } from "./OceanJellyfish";
 import { OCEAN_FISH } from "./OceanFish";
 import { OceanSession } from "./OceanSession";
 import { OceanLevel as L } from "./OceanLevel";
@@ -14,7 +15,7 @@ import { OceanGunPoses, oceanGunTransform, oceanGunOrigin } from "./OceanPose";
 import { bulletCrop } from "../render/RocketPresentation";
 import { clamp } from "../core/Types";
 import { OceanEntry as E, entryPhase } from "./OceanEntry";
-import { oceanBlastVisual, oceanReticleStyle } from "./OceanCombatTuning";
+import { oceanBlastVisual, oceanReticleStyle, oceanVolleyOffsets, oceanBossTuning as B } from "./OceanCombatTuning";
 import { CombatPalette, attackEffectTint, waterBlastTint } from '../render/CombatPalette';
 
 const bossWarning=new Color(...CombatPalette.warning),bossAttack=new Color(...CombatPalette.fire);
@@ -210,6 +211,11 @@ export class OceanRenderer {
             );
           }
         }
+      for (const [i, kelp] of L.ambientKelp.entries()) if (inView(kelp.x)) {
+        const id = `kelp.ambient.${i % 2}`, d = OceanFrames[id];
+        put(id, kelp.x, kelp.y, 72, 72 * d.sourceSize[1] / d.sourceSize[0],
+          Math.sin(s.time * 1.2 + i) * 3, 1, 180, [.5, 0]);
+      }
       for (const c of s.crates)
         if (inView(c.x) && (c.hp > 0 || c.deadTime < 4))
           put(
@@ -280,9 +286,9 @@ export class OceanRenderer {
             id = `fish.predator.${dead ? "defeat" : e.mode === "tell" ? "tell" : e.mode === "attack" ? "dash" : e.mode === "rest" && e.timer>.8 ? "recover" : `swim.${Math.floor(s.time*6)%2}`}`;
             scale=OCEAN_FISH.scale;
           }
-          if (e.kind === "kelp") {
-            id = `kelp.hostile.${dead ? "cut" : e.mode === "tell" ? "tell" : e.mode === "attack" ? "strike" : "idle"}`;
-            scale = 0.32;
+          if (e.kind === "jellyfish") {
+            id = `jellyfish.${dead ? "defeat" : e.mode === "tell" ? "tell" : e.mode === "attack" ? "sting" : e.mode === "rest" && e.timer > .8 ? "recover" : `swim.${Math.floor(s.time * 5) % 2}`}`;
+            scale = OCEAN_JELLY.scale;
           }
           if (e.kind === "turret") {
             id = "object.seabed-turret";
@@ -302,13 +308,13 @@ export class OceanRenderer {
               );
           }
           const d = OceanFrames[id],
-            flip = e.kind === "fish" ? (Math.cos(e.angle)<0?1:-1) : e.x > p.x ? 1 : -1;
+            flip = e.kind === "fish" || e.kind === "jellyfish" ? (Math.cos(e.angle)<0?1:-1) : e.x > p.x ? 1 : -1;
           const aimed =
             e.kind === "fish" && (e.mode === "tell" || e.mode === "attack");
           put(
             id,
             e.x,
-            e.y + (e.kind === "fish" ? OCEAN_FISH.centerY : aimed ? 29 : 0),
+            e.y + (e.kind === "jellyfish" ? OCEAN_JELLY.centerY : e.kind === "fish" ? OCEAN_FISH.centerY : aimed ? 29 : 0),
             d.sourceSize[0] * scale,
             d.sourceSize[1] * scale,
             dead
@@ -316,36 +322,37 @@ export class OceanRenderer {
               : aimed
                 ? ((e.angle - (flip === 1 ? Math.PI : 0)) * 180) / Math.PI
                 : 0,
-            e.kind === "kelp" ? 1 : flip,
+            flip,
             alpha,
-            [0.5, e.kind === "fish" ? .5 : aimed ? 29 / (d.sourceSize[1] * scale) : 0],
+            [0.5, e.kind === "fish" || e.kind === "jellyfish" ? .5 : aimed ? 29 / (d.sourceSize[1] * scale) : 0],
           );
           this.enemyVisuals.push({
             id: e.id,
             frame: id,
             scale,
             mode: e.mode,
-            muzzle: { x: e.x, y: e.y + 32 },
+            muzzle: { x: e.x, y: e.y + (e.kind === "jellyfish" ? OCEAN_JELLY.centerY : 32) },
           });
         }
         if (e.mode === "tell") {
           const origin =
             e.kind === "diver" || e.kind === "captain"
               ? oceanEnemyPose(e, s.time).muzzle
-              : { x: e.x, y: e.y + 32 };
+              : { x: e.x, y: e.y + (e.kind === "jellyfish" ? OCEAN_JELLY.centerY : 32) };
           const length =
-            e.attack === "dash"
-              ? Math.min(460, Math.hypot(p.x - e.x, p.y - e.y) + 60)
+            e.attack === "sting" ? OCEAN_JELLY.range : e.attack === "dash" || e.attack === "dive"
+              ? Math.min(e.kind === "fish" ? OCEAN_FISH.range + 60 : 460, Math.hypot(p.x - e.x, p.y - e.y) + 60)
               : e.attack === "torpedo"
                 ? 200
                 : e.attack === "sonar"
                   ? 110
                   : 170;
-          this.fx.segment(
+          const offsets = e.kind === "captain" ? [0] : oceanVolleyOffsets(e.kind);
+          for (const offset of offsets) this.fx.segment(
             origin.x - cx,
             origin.y - cy,
-            origin.x - cx + Math.cos(e.angle) * length,
-            origin.y - cy + Math.sin(e.angle) * length,
+            origin.x - cx + Math.cos(e.angle + offset) * length,
+            origin.y - cy + Math.sin(e.angle + offset) * length,
             e.locked ? 2 : 1.2,
             e.kind === "captain" ? bossWarning : colors.mid,
           );
@@ -428,27 +435,6 @@ export class OceanRenderer {
           const o = s.bossOrigin(),
             end = s.beamEnd();
           if (b.mode === "tell") {
-            if (b.attack === "ring") {
-              this.fx.g.lineWidth = 2;
-              this.fx.g.strokeColor = bossWarning;
-              this.fx.g.arc(
-                o.x - cx,
-                o.y - cy,
-                120,
-                b.ringGap + 0.55,
-                b.ringGap + Math.PI * 2 - 0.55,
-                false,
-              );
-              this.fx.g.stroke();
-              this.fx.segment(
-                o.x - cx,
-                o.y - cy,
-                o.x - cx + Math.cos(b.ringGap) * 180,
-                o.y - cy + Math.sin(b.ringGap) * 180,
-                2,
-                bossWarning,
-              );
-            } else {
               this.fx.segment(
                 o.x - cx,
                 o.y - cy,
@@ -468,13 +454,12 @@ export class OceanRenderer {
                     bossWarning,
                   );
               if (b.attack === "fan" || b.attack === "torpedo") {
-                const spread = b.attack === "fan" ? .65 : .2;
+                const spread = b.attack === "fan" ? B.sonarOffsets[2] : .2;
                 for(const edge of [-spread,spread])this.fx.segment(o.x-cx,o.y-cy,
                   o.x-cx+Math.cos(b.angle+edge)*600,o.y-cy+Math.sin(b.angle+edge)*600,1.5,bossWarning);
               }
               put("fx.laser-charge", o.x, o.y, 32 + Math.sin(s.time * 22) * 6);
               this.sprites.tintLast(CombatPalette.fire);
-            }
           }
           if (b.beamActive) {
             this.fx.segment(
@@ -494,19 +479,6 @@ export class OceanRenderer {
               colors.white,
             );
           }
-          if (b.ringRadius > 0) {
-            this.fx.g.lineWidth = 9;
-            this.fx.g.strokeColor = bossAttack;
-            this.fx.g.arc(
-              o.x - cx,
-              o.y - cy,
-              b.ringRadius,
-              b.ringGap + 0.55,
-              b.ringGap + Math.PI * 2 - 0.55,
-              false,
-            );
-            this.fx.g.stroke();
-          }
         }
       }
       const flash =
@@ -524,7 +496,7 @@ export class OceanRenderer {
       ) {
         const weapon = s.heldWeapon;
         const d = s.heldPose(weapon),
-          { flip, angle } = oceanGunTransform(s.aim),
+          { flip, angle } = oceanGunTransform(s.aim, s.gunFacing),
           origin = oceanGunOrigin(p.x,p.y,s.aim,p.recoil,weapon);
         this.playerFrame = d.frame;
         this.playerSize = {
@@ -609,7 +581,7 @@ export class OceanRenderer {
           visual = oceanShotVisual(shot.kind, shot.owner, shot.tier);
         const full=OceanAssets.frames.get(visual.id)!,
           crop=bulletCrop(shot.distance,full.rect.width,full.rect.height,visual.width),
-          width=shot.kind === "bomb" ? visual.width : visual.width*crop[2]/full.rect.width;
+          width=shot.kind === "bomb" || shot.kind === "sonar" ? visual.width : visual.width*crop[2]/full.rect.width;
         this.projectileVisuals.push({
           owner: shot.owner,
           kind: shot.kind,
@@ -629,7 +601,7 @@ export class OceanRenderer {
               undefined,
               1,
             );
-        if(shot.kind !== "bomb")this.sprites.putRegion(visual.id,shot.x-cx,shot.y-cy,width,visual.height,a*180/Math.PI,crop);
+        if(shot.kind !== "bomb" && shot.kind !== "sonar")this.sprites.putRegion(visual.id,shot.x-cx,shot.y-cy,width,visual.height,a*180/Math.PI,crop);
         else put(
           visual.id,
           shot.x,

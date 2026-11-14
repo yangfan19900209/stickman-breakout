@@ -6,7 +6,7 @@ export const GameConfig = {
   fps: 60,
   fixedStep: 1 / 120,
   maxFrameDelta: 0.1,
-  revive: { limit: 1, preparation: 1, protection: 3 },
+  revive: { videoLimit: 10, preparation: 1, protection: 3 },
   progression: { retreatDistance: 960, arenaRetreatMargin: 140 },
   input: {
     joystickRadius: 92,
@@ -47,6 +47,7 @@ export const GameConfig = {
   homing: { turnRate: 2.5, acquireRange: 680, cone: 1.05, delay: 0.08 },
   rocketLaunch: { turnRate: 14, exposedNose: 10, visualLength: 116 },
   projectileDamage: { enemyRocket: 2 },
+  playerBossDamage: { bullet: 2, sonar: 3, rocket: 5 },
   weapons: {
     knife: {
       id: "knife", name: "战术刀", interval: .26, speed: 0, damage: 4, range: 94,
@@ -90,13 +91,13 @@ export const GameConfig = {
       name: "追踪火箭筒",
       interval: 0.95,
       speed: 460,
-      damage: 9,
+      damage: 5,
       range: 1150,
       muzzleHeight: 44,
       pellets: 1,
       spread: 0,
       recoil: 1.9,
-      ammo: 6,
+      ammo: 8,
       muzzleLength: 26,
       blastRadius: 160,
       knockback: 240,
@@ -164,7 +165,7 @@ export const GameConfig = {
       damage: 2,
     },
     colossus: {
-      health: 150,
+      health: 120,
       speed: 0,
       range: 1100,
       interval: 1.4,
@@ -173,7 +174,7 @@ export const GameConfig = {
     },
   },
   boss: {
-    miniHealth: 68,
+    miniHealth: 70,
     miniWindup: 0.8,
     miniEnragedWindup: 0.66,
     miniRecovery: 0.8,
@@ -200,7 +201,6 @@ export const GameConfig = {
     fanSpread: 0.18,
   },
   colossus: {
-    playerBulletDamageMultiplier: 2,
     sizeScale: 1,
     halfWidth: 86,
     height: 200,
@@ -218,7 +218,7 @@ export const GameConfig = {
     walkDuration: 0.7,
     strideLength: 128,
     summonInterval: 15,
-    maxSummons: 4,
+    maxSummons: 2,
     shellFlight: 1.05,
     waveSpeed: 400,
     laserWindup:1.3,

@@ -1,0 +1,89 @@
+{
+  "version": "1.0.7",
+  "checkedAt": "2026-11-14T13:08:51.122369+00:00",
+  "passed": true,
+  "inputSHA256": "4970080a4f4a22e5edd2d9e63b996a1a83f91eca524c1be3444f991aa3ceeebd",
+  "logic": {
+    "tests": 587,
+    "passed": 587,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "passed": true
+  },
+  "builds": {
+    "web-mobile": {
+      "passed": true,
+      "runDir": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T13-03-28-168Z-web-mobile-84334",
+      "inputSHA256": "4970080a4f4a22e5edd2d9e63b996a1a83f91eca524c1be3444f991aa3ceeebd",
+      "fileCount": 465
+    },
+    "wechatgame": {
+      "passed": true,
+      "runDir": "/Users/yangfan/Desktop/线条突围/stickman-breakout/开发进度/验证记录/mac/builds/2026-11-14T13-03-59-697Z-wechatgame-84551",
+      "inputSHA256": "4970080a4f4a22e5edd2d9e63b996a1a83f91eca524c1be3444f991aa3ceeebd",
+      "fileCount": 479
+    }
+  },
+  "browser": {
+    "campaign": {
+      "passed": true,
+      "time": 120.5916666667087,
+      "health": 3,
+      "finalState": "complete"
+    },
+    "mini": {
+      "passed": true,
+      "time": 47.74999999999793,
+      "health": 3,
+      "finalState": "playing",
+      "attacks": {
+        "torpedo": 1,
+        "sweep": 1,
+        "dive": 1,
+        "sonar": 1,
+        "dash": 1
+      }
+    },
+    "sonar": {
+      "passed": true,
+      "time": 12.766666666666582,
+      "health": 5,
+      "finalState": "playing"
+    },
+    "land": {
+      "passed": true,
+      "time": 19.92499999999951,
+      "health": 2,
+      "finalState": "playing",
+      "renderedCrates": 7
+    },
+    "smoke": {
+      "passed": true,
+      "chapters": 2
+    }
+  },
+  "package": {
+    "directory": "/Users/yangfan/Desktop/线条突围/stickman-breakout/交付/版本/1.0.7-mac-2026-11-14T13-07-11-416Z-85465",
+    "fileCount": 479,
+    "archive": {
+      "sha256": "1e3ddf5e1703fcedf6cf387162ed1b1cf48173c4ff84c63555fe4b88af9aab2f",
+      "bytes": 21029282
+    }
+  },
+  "platformLimits": [
+    "WeChat developer-tools runtime not exercised in this round",
+    "iPhone/Android touch and subjective difficulty not yet accepted",
+    "No upload or publication"
+  ],
+  "documentationCheck": {
+    "runtimeImportsAndMetadataPassed": true,
+    "uuidCount": 396,
+    "imports": 576,
+    "fullDocumentationCheckPassed": false,
+    "missingHistoricalArtifacts": 228,
+    "sameUnavailableArtifactsAsPreviousRun": true,
+    "newMissingLinks": []
+  }
+}

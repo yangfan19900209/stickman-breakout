@@ -1,31 +1,37 @@
 import { GameConfig as C } from "./GameConfig";
 import { Rect, Vec, clamp, overlaps, surfaceY } from "./Types";
 
-/** One free revival per attempt, then one non-stacking credit per social action. */
+/** Up to ten individually completed videos per chapter attempt; no free or social credits. */
 export class Revival {
   used = 0;
-  shared = 0;
-  recommended = 0;
+  videos = 0;
   preparation = 0;
   error = "";
   private attempt = 0;
-  get remaining(): number { return Math.max(0, C.revive.limit + this.shared + this.recommended - this.used); }
-  reset(): void { this.attempt++; this.used = this.shared = this.recommended = this.preparation = 0; this.error = ""; }
+  get attemptId(): number { return this.attempt; }
+  get remaining(): number { return Math.max(0, this.videos - this.used); }
+  get videoLimit(): number { return C.revive.videoLimit; }
+  get canWatchVideo(): boolean { return this.videos < this.videoLimit && this.remaining === 0; }
+  reset(): void { this.attempt++; this.used = this.videos = this.preparation = 0; this.error = ""; }
   /** Bind a reward to this death/attempt. Duplicate or late results cannot credit a new life. */
-  reward(source: "share" | "recommendation"): (accepted: boolean) => boolean {
-    const attempt = this.attempt, used = this.used, eligible = this.remaining === 0;
-    return accepted => {
-      if (!accepted || !eligible || attempt !== this.attempt || used !== this.used || this.remaining) return false;
-      if (source === "share") this.shared++; else this.recommended++;
+  rewardVideo(): (completed: boolean) => boolean {
+    const attempt = this.attempt, used = this.used, eligible = this.canWatchVideo;
+    let settled = false;
+    return completed => {
+      if (settled) return false;
+      settled = true;
+      if (completed !== true || !eligible || attempt !== this.attempt || used !== this.used || !this.canWatchVideo) return false;
+      this.videos++;
       this.error = ""; return true;
     };
   }
-  begin(): void { this.used++; this.preparation = C.revive.preparation; this.error = ""; }
+  begin(): void { if (this.remaining) { this.used++; this.preparation = C.revive.preparation; this.error = ""; } }
   advance(dt: number): boolean {
     this.preparation = Math.max(0, this.preparation - dt);
     return this.preparation < 1e-6;
   }
-  snapshot() { return { used: this.used, shared: this.shared, recommended: this.recommended, remaining: this.remaining, preparation: this.preparation, error: this.error }; }
+  snapshot() { return { used: this.used, videos: this.videos, videoLimit: this.videoLimit, canWatchVideo: this.canWatchVideo,
+    remaining: this.remaining, preparation: this.preparation, error: this.error }; }
 }
 export interface RevivalArea { left: number; right: number; bottom: number; top: number }
 export interface LandAnchor { support: Rect; offset: number }

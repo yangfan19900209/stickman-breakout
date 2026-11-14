@@ -7,7 +7,7 @@ import { EnemySpawner } from "../enemy/EnemySpawner";
 import { ParticlePool } from "../combat/ParticlePool";
 import { ProjectileManager } from "../combat/ProjectileManager";
 import { WeaponSystem } from "../combat/WeaponSystem";
-import { ExplosionSystem } from "../combat/ExplosionSystem";
+import { ExplosionSystem, BlastStyle } from "../combat/ExplosionSystem";
 import { GrenadeSystem } from "../combat/GrenadeSystem";
 import { PickupSystem } from "../world/PickupSystem";
 import { DestructibleObject } from "../world/DestructibleObject";
@@ -234,8 +234,8 @@ export class GameSession {
         e.deathEffectPlayed = true;
         this.explosions.enqueue(e.x, e.y + 35, 85, 0, "player");
       }
-    this.explosions.flush((x, y, radius, damage, owner) =>
-      this.applyBlast(x, y, radius, damage, owner),
+    this.explosions.flush((x, y, radius, damage, owner, style) =>
+      this.applyBlast(x, y, radius, damage, owner, style),
     );
     this.explosions.update(dt);
     for (const e of this.spawner.enemies) if (e.shieldBreakEvent) {
@@ -245,19 +245,8 @@ export class GameSession {
     }
     this.level.refreshSolids();
     const mini = this.spawner.miniBoss;
-    // A single real pickup on the player's side, never inside the pursuing mech.
-    // Retry a full pool; reset clears the claim together with the encounter.
-    if (finalBoss instanceof ColossusBoss && finalBoss.active && finalBoss.alive &&
-        finalBoss.phase === 2 && this.player.alive) {
-      const side = Math.sign(this.player.x - finalBoss.x) || -finalBoss.facing;
-      const x = clamp(finalBoss.x + side * (finalBoss.halfWidth + 140),
-        this.level.retreatLimit + 40, this.level.data.width - 40);
-      const y = Math.max(this.level.groundY(x), Math.min(finalBoss.y + 80, this.player.y + 60));
-      if (this.pickups.offerBossSupply("colossus-half-rockets", x, y, "rocket")) {
-        this.pickups.lastMessage = "装甲脱落 · 火箭补给 ×6";
-        this.pickups.messageTime = 4;
-      }
-    }
+    // Final-boss phase changes no longer grant extra rockets. Authored pre-fight
+    // supplies and the mini-boss health recovery keep their existing rules.
     if (mini && !mini.alive) {
       this.pickups.offerBossRecovery("after-tank", mini.x, mini.y);
       this.spawner.releaseAfterMini();
@@ -612,6 +601,7 @@ export class GameSession {
     radius: number,
     damage: number,
     owner: DamageOwner,
+    style?: BlastStyle,
   ): void {
     this.particles.blast(x, y, radius, this.level.groundY(x));
     this.shakeTime = Math.max(this.shakeTime, 0.28);
@@ -626,6 +616,7 @@ export class GameSession {
         takeDamage: (n: number, d: -1 | 1, k?: "explosion") => boolean;
       },
       amount: number,
+      falloff = true,
     ) => {
       if (!target.alive) return false;
       const r = target.bounds,
@@ -635,7 +626,7 @@ export class GameSession {
       return (
         distance <= radius &&
         target.takeDamage(
-          amount * (1 - (0.35 * distance) / radius),
+          amount * (falloff ? 1 - (0.35 * distance) / radius : 1),
           r.x + r.w / 2 >= x ? 1 : -1,
           "explosion",
         )
@@ -647,13 +638,10 @@ export class GameSession {
         if (
           hit(
             e,
-            damage *
-              (damage >= 9 &&
-              ((e.kind === "guard" && e !== this.spawner.miniBoss) ||
-                e.kind === "turret" ||
-                e.kind === "colossus")
-                ? 1.5
-                : 1),
+            owner === "player" && style === "rocket"
+              ? e.kind === "guard" || e.kind === "colossus" ? C.playerBossDamage.rocket : e.health
+              : damage,
+            !(owner === "player" && style === "rocket"),
           )
         ) {
           // Heavy bosses own their movement commitments. Explosion damage

@@ -1,0 +1,398 @@
+{
+  "passed": true,
+  "unchanged": "Crate centers, feet, drops and all non-crate props, enemies, terrain, mechanisms, zones and recovery points.",
+  "crateCount": 17,
+  "comparisons": [
+    {
+      "id": "entry-crate",
+      "kind": "wood",
+      "centerX": 327.5,
+      "footY": 150,
+      "drop": null,
+      "before": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "crate-01",
+      "kind": "wood",
+      "centerX": 458,
+      "footY": 150,
+      "drop": null,
+      "before": {
+        "w": 76,
+        "h": 54,
+        "visual": {
+          "width": 57.802816901408455,
+          "height": 57
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "upper-crate-A",
+      "kind": "wood",
+      "centerX": 1377.5,
+      "footY": 260,
+      "drop": null,
+      "before": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "hanging-01",
+      "kind": "hanging",
+      "centerX": 2137,
+      "footY": 410,
+      "drop": null,
+      "before": {
+        "w": 54,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "crate-02",
+      "kind": "wood",
+      "centerX": 1782,
+      "footY": 150,
+      "drop": null,
+      "before": {
+        "w": 64,
+        "h": 64,
+        "visual": {
+          "width": 67.94366197183098,
+          "height": 67
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "crate-03",
+      "kind": "wood",
+      "centerX": 2746,
+      "footY": 150,
+      "drop": null,
+      "before": {
+        "w": 72,
+        "h": 60,
+        "visual": {
+          "width": 63.887323943661976,
+          "height": 63
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "cargo-B",
+      "kind": "hanging",
+      "centerX": 3622.5,
+      "footY": 440,
+      "drop": null,
+      "before": {
+        "w": 65,
+        "h": 55,
+        "visual": {
+          "width": 58.816901408450704,
+          "height": 58
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "upper-crate-C",
+      "kind": "wood",
+      "centerX": 4448,
+      "footY": 260,
+      "drop": null,
+      "before": {
+        "w": 56,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "rocket-before-tank",
+      "kind": "wood",
+      "centerX": 4906.5,
+      "footY": 150,
+      "drop": "rocket",
+      "before": {
+        "w": 53,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "cargo-C",
+      "kind": "hanging",
+      "centerX": 6628,
+      "footY": 425,
+      "drop": null,
+      "before": {
+        "w": 56,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "rocket-before-colossus",
+      "kind": "wood",
+      "centerX": 13299,
+      "footY": 150,
+      "drop": "rocket",
+      "before": {
+        "w": 58,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "grenades-E",
+      "kind": "wood",
+      "centerX": 6977.5,
+      "footY": 150,
+      "drop": "grenades",
+      "before": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "upper-crate-E",
+      "kind": "wood",
+      "centerX": 8248,
+      "footY": 266,
+      "drop": null,
+      "before": {
+        "w": 56,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "upper-crate-F",
+      "kind": "wood",
+      "centerX": 9096.5,
+      "footY": 260,
+      "drop": null,
+      "before": {
+        "w": 53,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "crate-F",
+      "kind": "wood",
+      "centerX": 10358,
+      "footY": 150,
+      "drop": null,
+      "before": {
+        "w": 56,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "crate-G",
+      "kind": "wood",
+      "centerX": 12038,
+      "footY": 150,
+      "drop": null,
+      "before": {
+        "w": 56,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    },
+    {
+      "id": "grenades-before-final",
+      "kind": "wood",
+      "centerX": 13116.5,
+      "footY": 150,
+      "drop": "grenades",
+      "before": {
+        "w": 53,
+        "h": 48,
+        "visual": {
+          "width": 51.718309859154935,
+          "height": 51
+        }
+      },
+      "after": {
+        "w": 55,
+        "h": 50,
+        "visual": {
+          "width": 53.74647887323944,
+          "height": 53
+        }
+      }
+    }
+  ]
+}

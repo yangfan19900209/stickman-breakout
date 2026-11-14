@@ -70,7 +70,7 @@ test("melee charge has a stationary tell, locked direction and recovery window; 
 test("mini tank and final colossus are separate; all eight final attacks have a warning and phase transition", () => {
   const s = new GameSession();
   s.reset();
-  assert.equal(s.spawner.miniBoss.maxHealth, 68);
+  assert.equal(s.spawner.miniBoss.maxHealth, 70);
   const boss = s.spawner.guard;
   assert.ok(boss instanceof ColossusBoss);
   // Compact V101 artwork is still larger than the mini, with its own attack set.

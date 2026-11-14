@@ -12,7 +12,7 @@ export function payloadFile(file) {
     && file !== 'project.private.config.json';
 }
 
-export function inspectPackage(directory, { appid, cover } = {}) {
+export function inspectPackage(directory, { appid, cover, musicDirectory, effectsDirectory } = {}) {
   const files = manifest(directory, payloadFile);
   const names = new Set(files.map(item => item.file));
   for (const file of ['game.js', 'game.json', 'project.config.json', 'openDataContext/index.js', 'openDataContext/store.js', 'openDataContext/records.js', 'subpackages/landart/share-cover.jpg']) {
@@ -26,18 +26,44 @@ export function inspectPackage(directory, { appid, cover } = {}) {
   assert.equal(game.deviceOrientation, 'landscape');
   assert.equal(game.openDataContext, 'openDataContext');
   const expected = ['internal', 'main', 'landart', 'level02', 'level03'];
+  if (game.subpackages.some(item => item.name === 'bgm')) expected.push('bgm');
   assert.deepEqual(game.subpackages.map(item => item.name).sort(), expected.sort(), '分包列表不一致');
   for (const item of game.subpackages) {
     assert.equal(item.root.replace(/\/$/, ''), `subpackages/${item.name}`, '分包路径错误');
     assert.ok(files.some(file => file.file.startsWith(`subpackages/${item.name}/`)), `空分包：${item.name}`);
   }
   if (cover) assert.equal(hash(fs.readFileSync(path.join(directory, 'subpackages/landart/share-cover.jpg'))), hash(fs.readFileSync(cover)), '分享封面不是当前资源');
+  if (musicDirectory) {
+    assert.ok(game.subpackages.some(item => item.name === 'bgm'), '缺少音乐 bgm 分包，需刷新资源后重新构建');
+    assert.ok(names.has('AUDIO-CREDITS.txt'), '缺少音乐来源与授权说明');
+    const configFile = path.join(directory, 'subpackages/bgm/config.json');
+    assert.ok(fs.existsSync(configFile), '缺少音乐资源索引');
+    const paths = Object.values(readJSON(configFile).paths ?? {}).map(value => value[0]);
+    const packed = new Set(files.filter(file => file.file.startsWith('subpackages/bgm/') && file.file.endsWith('.mp3')).map(file => file.sha256));
+    for (const file of fs.readdirSync(musicDirectory).filter(file => file.endsWith('.mp3'))) {
+      assert.ok(paths.includes(path.basename(file, '.mp3')), `音乐未进入资源索引：${file}`);
+      assert.ok(packed.has(hash(fs.readFileSync(path.join(musicDirectory, file)))), `音乐未打包或不是当前版本：${file}`);
+    }
+  }
+  if (effectsDirectory) {
+    const configFile = path.join(directory, 'assets/resources/config.json');
+    assert.ok(fs.existsSync(configFile), '缺少音效资源索引');
+    const paths = Object.values(readJSON(configFile).paths ?? {}).map(value => value[0]);
+    const packed = new Set(files.filter(file => file.file.startsWith('assets/resources/') && file.file.endsWith('.wav')).map(file => file.sha256));
+    for (const file of fs.readdirSync(effectsDirectory).filter(file => file.endsWith('.wav'))) {
+      assert.ok(paths.includes(`audio/${path.basename(file, '.wav')}`), `音效未进入资源索引：${file}`);
+      assert.ok(packed.has(hash(fs.readFileSync(path.join(effectsDirectory, file)))), `音效未打包或不是当前版本：${file}`);
+    }
+  }
   const totalBytes = files.reduce((sum, item) => sum + item.bytes, 0);
   return { appid: project.appid, files, payloadSHA256: manifestHash(files), totalBytes, mainBytes: files.filter(item => !item.file.startsWith('subpackages/')).reduce((sum, item) => sum + item.bytes, 0), sizeBasis: 'raw files; not WeChat upload compressed size' };
 }
 
 function projectOptions() {
-  return { appid: readJSON(path.join(sourceRoot, 'build-config/wechatgame.json')).packages.wechatgame.appid, cover: path.join(sourceRoot, 'assets/landart/title-cover.jpg') };
+  const musicDirectory = path.join(sourceRoot, 'assets/bgm');
+  return { appid: readJSON(path.join(sourceRoot, 'build-config/wechatgame.json')).packages.wechatgame.appid, cover: path.join(sourceRoot, 'assets/landart/title-cover.jpg'),
+    effectsDirectory: path.join(sourceRoot, 'assets/resources/audio'),
+    ...(fs.existsSync(musicDirectory) ? { musicDirectory } : {}) };
 }
 
 export function assertPayload(receipt, inspection) {

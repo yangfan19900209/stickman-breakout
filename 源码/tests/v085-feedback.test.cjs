@@ -21,7 +21,7 @@ test('knife recovery and contextual cuts show actual melee recovery without alte
 });
 
 test('water cooldown follows all four actual attacks, final-ammo fallback, pause and restart', () => {
-  for(const [weapon,duration] of [['harpoon',.3],['sonar',.36],['torpedo',.68],['knife',.45]]){
+  for(const [weapon,duration] of [['harpoon',.36],['sonar',.43],['torpedo',.80],['knife',.45]]){
     const s = new OceanSession();s.finishEntry();s.weapon=weapon;s.ammo=1;
     s.update(1/120,{...idle,shoot:true});
     assert.equal(s.attackCooldownDuration,duration);
@@ -52,7 +52,7 @@ const Module = require('node:module'), oldLoad = Module._load;
 const cc = {
   AudioClip:class{}, AudioSource:class{},
   resources:{load:(name,type,done)=>done(null,{name:name.split('/').at(-1)})},
-  assetManager:{getBundle:()=>({load:(name,type,done)=>done(null,{name})}),releaseAsset:()=>{}},
+  assetManager:{getBundle:()=>({load:(name,type,done)=>done(null,{name,addRef(){return this;},decRef(){}})}),releaseAsset:()=>{}},
 };
 Module._load=function(name,...args){return name==='cc'?cc:oldLoad.call(this,name,...args);};
 const { AudioBridge } = load('platform/AudioBridge');
@@ -87,7 +87,7 @@ test('ocean clip completed after disposal is released without playback',async()=
   cc.assetManager.getBundle=()=>({load:(name,type,done)=>pending.push(()=>done(null,{name}))});
   cc.assetManager.releaseAsset=clip=>released.push(clip.name);
   try{
-    const b=new AudioBridge({addComponent:()=>({isValid:true,stop(){},playOneShot(){throw Error('disposed sound');}})});
+    const b=new AudioBridge({addComponent:()=>({isValid:true,stop(){},destroy(){this.isValid=false;},playOneShot(){throw Error('disposed sound');}})});
     const done=b.loadOcean();b.destroy();for(const resolve of pending)resolve();await done;
     assert.deepEqual(released.sort(),['sonar','water-blast']);assert.equal(b.status().loaded,0);
   }finally{cc.assetManager.getBundle=originalBundle;cc.assetManager.releaseAsset=originalRelease;}

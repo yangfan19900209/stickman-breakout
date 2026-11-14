@@ -1,0 +1,69 @@
+{
+  "checkedDate": "2026-11-14",
+  "timezone": "Asia/Shanghai",
+  "scope": "read-only research; no game changes or external posting",
+  "sources": [
+    {
+      "id": "wechat-api-types",
+      "url": "https://github.com/wechat-miniprogram/minigame-api-typings/blob/master/types/wx/lib.wx.api.d.ts",
+      "blobSHA": "5836246e7bc0b36ceb819dfc3514b74e890861b4",
+      "records": [
+        {
+          "id": "gameClubOptions",
+          "startLine": 1260,
+          "excerpt": "interface CreateGameClubButtonOption {\n        /** 游戏圈按钮的图标，仅当 object.type 参数为 image 时有效。\n         *\n         * 可选值：\n         * - 'green': 绿色的图标;\n         * - 'white': 白色的图标;\n         * - 'dark': 有黑色圆角背景的白色图标;\n         * - 'light': 有白色圆角背景的绿色图标; */\n        icon: 'green' | 'white' | 'dark' | 'light'\n        /** 按钮的样式 */\n        style: OptionStyle\n        /** 按钮的类型。\n         *\n         * 可选值：\n         * - 'text': 可以设置背景色和文本的按钮;\n         * - 'image': 只能设置背景贴图的按钮，背景贴图会直接拉伸到按钮的宽高; */\n        type: 'text' | 'image'\n        /** 按钮的背景图片，仅当 type 为 `image` 时有效 */\n        image?: string\n        /** 需要基础库： `2.30.3`\n         *\n         * 当传递了openlink值时，此字段生效，决定创建的按钮是否需要拥有红点，默认为true */\n        hasRedDot?: boolean\n        /** 需要基础库： `2.30.3`\n         *\n         * 设置后可以跳到对应的活动页面，具体进入「MP后台-能力地图-游戏圈」-由帖子的\"游戏内跳转ID\"生成 */\n        openlink?: string\n        /** 按钮上的文本，仅当 type 为 `text` 时有效 */\n        text?: string\n    }\n    interface CreateGameRecorderShareButtonOption {\n        /** 对局回放的分享参数。 */\n        shar"
+        },
+        {
+          "id": "openPageOptions",
+          "startLine": 7909,
+          "excerpt": "interface ShowOption {\n        /** 选填，部分活动、功能允许额外提供参数数据，具体使用请根据渠道说明，默认可不填 */\n        extraData?: IAnyObject\n        /** 从不同渠道获得的OPENLINK字符串 */\n        openlink?: string\n        /** 选填，部分活动、功能允许接收自定义query参数，请参阅渠道说明，默认可不填 */\n        query?: IAnyObject\n    }\n    interface ShowShareImageMenuOption {\n        /** 要分享的图片地址，必须为本地路径或临时路径 */\n        path: string\n        /** 接口调用结束的回调函数（调用成功、失败都会执行） */\n        complete?: ShowShareImageMe"
+        },
+        {
+          "id": "openPageManager",
+          "startLine": 13745,
+          "excerpt": "interface PageManager {\n        /** [PageManager.destroy()](https://developers.weixin.qq.com/minigame/dev/api/open-api/openlink/PageManager.destroy.html)\n         *\n         * 需要基础库： `3.6.7`\n         *\n         * 销毁开放页面实例。 */\n        destroy(): void\n        /** [PageManager.off(string eventName, function callback)](https://developers.weixin.qq.com/minigame/dev/api/open-api/openlink/PageManager.off.html)\n         *\n         * 需要基础库： `3.6.7`\n         *\n         * 取消监听来自活动、功能向开发者产生的某些事件。 */\n        off(\n            /** 取消的事件名称，如果仅填写事件名称则注销该名称下所有的监听 */\n            eventName: string,\n            /** 取消的事件名称及其对应的回调函数指针，可缺省，若填写则仅注销该事件名称下的单个回调函数 */\n            callback?: (...args: any[]) => any\n        ): void\n        /** [PageManager.on(string eventName, function callback)](https://developers.weixin.qq.com/minigame/dev/api/open-api/openlink/PageManager.on.html)\n         *\n         * 需要基础库： `3.6.7`\n         *\n         * 监听来自活动、功能向开发者产生的某些事件。 */\n        on(\n            /** 事件名称，由渠道获得需要监听的事件名称 */\n            eventName: string,\n            /** 发生某种事件时的回调函数指针 */\n            callback: (...args: any[]) => any\n        ): void\n        /** [Promise PageManager.load(Object object)](https://developers.weixin.qq.com/minigame/dev/api/open-api/openlink/PageManager.load.html)\n         *\n         * 需要基础库： `3.6.7`\n         *\n         * 提供OPENLINK加载活动、功能信息。 */\n        load(option: LoadOption): Promise<any>\n        /** [Promise PageManager.show(Object object)](https://developers.weixin.qq.com/minigame/dev/api/open-api/openlink/PageManager.show.html)\n         *\n         * 需要基础库： `3.6.7`\n         *\n         * 显示已经成功加载信息的开放页面活动、功能。如果调用前未执行 `.load({ ... })` 将自动调用1次并返回加载信息结果。 */\n        show(\n            /** 选填，如果已经执行 `.load({ ... })` 无需填写，也允许使用 `.show({ ... })` 连贯执行 */\n            option?: ShowOption\n        ): Promise<any>\n    }\n    interface Performance {\n        /** [number Performance.now()](https://developers.weixin.qq.com/minigame/dev/api/base/performance/Performance.now.html)\n         *\n         * 可以获取当前时间以微秒为单位的时间戳 */\n        now(): number\n    }\n    interface PreDownloadSubpackageTask {\n        /** [PreDownloadSubpackageTask.onProgressUpdate(function listener)](https://developers.weix"
+        },
+        {
+          "id": "gameClubDataResult",
+          "startLine": 3074,
+          "excerpt": "interface GetGameClubDataSuccessCallbackResult {\n        /** 敏感数据对应的云 ID，开通云开发的小程序才会返回，可通过[云调用直接获取开放数据](https://developers.weixin.qq.com/minigame/dev/guide/open-ability/signature.html) */\n        cloudID: string\n        /** 包括 GameClubData 在内的加密数据，详见[加密数据解密算法](https://developers.weixin.qq.com/minigame/dev/guide/open-ability/signature.html) */\n        encryptedData: string\n        /** 加密算法的初始向量 */\n        iv: string\n        /** 使用 sha1( rawData + sessionkey ) 得到字符串，用于校验用户信息 */\n        signature: string\n        errMsg: string\n    }\n    /** 配置参数对象 */\n    interface GetGameExptInfoOption {\n        /** 实验参数数组，不填则获取所有实验参数 */\n        keyList: string[]\n        /** 接口调用结束的回调函数（调用成功、失败都会执行） */\n        complete?: GetGameEx"
+        },
+        {
+          "id": "gameClubDataTypes",
+          "startLine": 17427,
+          "excerpt": "* 获取游戏圈数据。\n         *\n         * **type说明**\n         *\n         * | type取值 | 说明                                   | subKey  | GameClubDataByType.value |\n         * | ------- | -------------------------------------- | -------- | -------- |\n         * | 1   | 加入该游戏圈时间                            | 无需传入 | 秒级Unix时间戳 |\n         * | 3   | 用户禁言状态                                | 无需传入  | 0：正常 1：禁言  |\n         * | 4   | 当天(自然日)点赞贴子数                       | 无需传入  |  |\n         * | 5   | 当天(自然日)评论贴子数                        | 无需传入  |  |\n         * | 6   | 当天(自然日)发表贴子数                       | 无需传入  |  |\n         * | 7   | 当天(自然日)发表视频贴子数                    | 无需传入  |  |\n         * | 8   | 当天(自然日)赞官方贴子数                      | 无需传入  |  |\n         * | 9   | 当天(自然日)评论官方贴子数                     | 无需传入  |  |\n         * | 10   | 当天(自然日)发表到本圈子话题的贴子数           | 传入话题id，从mp-游戏圈话题管理处获取  |  |\n         * | 11  | 用户最近一次推荐游戏时间                      | 无需传入  | 秒级时间戳 |  |\n         *\n         * **encryptedData 解密后得到的 GameClubData 的结构**\n         *\n         * | 属性 | 类型 | 说明                                   |\n         * | ------- | ------- | -------------------------------------- |\n         * |  dataList   | Array\\<GameClubDataByType\\> | 游戏圈相关数据的对象数组           |\n         *\n         * **GameClubDataByType 的结构**\n         *\n         * | 属性 | 类型 | 说明                                   |\n         * | ------- |------- |  -------------------------------------- |\n         * |  dataType   | number | 与输入的 dataType 一致          |\n         * |  value   | number | 不同type返回的value含义不同，见type表格说明           | */\n        getGameClubData(option: GetGameClubDataOption): void\n        /** [wx.getGameExptInfo(Object options)](https://developers.weixin.qq.com/minigame/dev/api/data-analysis/wx.getGameExptInfo.html)\n*\n* 需要基础库： `3.8.8`\n*\n* 给定实验参数数组，获取对应的实验参数值\n*\n* **示例代码**\n*\n* ```js\nwx.getGameExptInfo({\n  keyList: ['experiment_key1', 'experiment_key2'],\n  success(res) {\n    res.list.fo"
+        }
+      ]
+    },
+    {
+      "id": "wechat-game-club-example",
+      "url": "https://github.com/wechat-miniprogram/minigame-demo/blob/master/miniprogram/js/api/abilityOpen/createGameClubButton/index.js",
+      "blobSHA": "c72902613ff6204a968911336fad08f43ef2fdb2",
+      "conclusion": "Native game club button opens the game's game club; no text publish in this example"
+    },
+    {
+      "id": "wechat-page-manager-sdk",
+      "url": "https://github.com/wechat-miniprogram/minigame-tuanjie-transform-sdk/blob/915d4bf4f60ef0cd1c29316a8d67257185d609a7/Runtime/WXBase.cs",
+      "blobSHA": "7f7718edd8400228a8604251783dd1766a380ab4",
+      "conclusion": "OPENLINK values and activity-specific results come from the capability's documented channel"
+    },
+    {
+      "id": "prior-evaluation-guide",
+      "projectRecord": "开发计划/功能/WECHAT-EVALUATION-PLAN.md",
+      "basis": "2026-11-13 user-provided official text and images; not freshly fetched this turn"
+    }
+  ],
+  "repositorySearch": {
+    "repo": "wechat-miniprogram/minigame-demo",
+    "treeSHA": "de1c8edf16cf8bf3d9432f83e1f0d397598e70a3",
+    "completeTree": true,
+    "checked": "game club, recommend, recorder, evaluation, rating, openlink",
+    "result": "No rating editor or automatic text post entry found in reviewed example paths; recommendation examples there are game promotion components, not proof of rating support"
+  },
+  "limitations": [
+    "Public typings do not exhaust all channel-specific PageManager pages",
+    "No verified rating-editor OPENLINK or post-composer parameter",
+    "No current native recommendation page screenshot or real-device flow examined",
+    "No backend access; user-reported filing/networked-game prerequisite recorded for this account only"
+  ]
+}

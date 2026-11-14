@@ -3,7 +3,6 @@ mkdirSync("assets/resources/audio", { recursive: true });
 const specs = {
   rifle: [190, 0.06],
   shotgun: [95, 0.13],
-  rocket: [75, 0.19],
   blast: [52, 0.45],
   hit: [260, 0.12],
   step: [130, 0.065],
@@ -51,4 +50,7 @@ for (const [name, [freq, duration]] of Object.entries(specs)) {
   }
   writeFileSync(`assets/resources/audio/${name}.wav`, buffer);
 }
-console.log("Generated seven original mono PCM effects (22.05kHz).");
+console.log("Generated original legacy mono PCM effects (22.05kHz).");
+// Keep the redesigned rocket and enemy/Boss effects when regenerating assets.
+const { buildCombatSounds } = await import("../../素材/音频/combat-sfx-20261114/render.mjs");
+buildCombatSounds();

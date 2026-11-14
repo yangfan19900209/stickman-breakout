@@ -95,15 +95,15 @@ test('ocean retreat edge stops the camera before the swimmer and does not depend
  for(let n=0;n<30;n++)s.movePlayer(dt,{...idle,axis:1});assert.ok(s.player.x>s.retreatLimit+18);
 });
 
-test('harpoon and sonar retain the same one/two damage on submarine and mini boss',()=>{
+test('harpoon and sonar deal two/three damage on submarine and mini boss',()=>{
  for(const kind of ['harpoon','sonar']){
   const s=sea();s.boss.active=true;
-  const damage=kind==='harpoon'?1:2;
+  const damage=kind==='harpoon'?2:3;
   s.spawnShot('player',kind,s.boss.x-325,s.boss.y,720,0,damage,2);s.updateShots(.1);
-  assert.equal(180-s.boss.hp,damage);
+  assert.equal(s.boss.maxHp-s.boss.hp,damage);
  }
- const s=sea(),e=s.mini;e.hp=84;e.active=true;
- s.spawnShot('player','harpoon',e.x-160,e.y+60,720,0,1,2);s.updateShots(.15);assert.equal(e.hp,83);
+ const s=sea(),e=s.mini;e.hp=e.maxHp;e.active=true;
+ s.spawnShot('player','harpoon',e.x-160,e.y+60,720,0,1,2);s.updateShots(.15);assert.equal(e.hp,e.maxHp-2);
 });
 
 test('mini submarine drops exactly one persistent two-heart recovery even if defeated at full health',()=>{

@@ -8,6 +8,10 @@
 **/playwright-report/
 **/.test-build/
 **/__pycache__/
+**/.DS_Store
+**/.creator/
+/源码/settings/v2/packages/information.json
+/源码/settings/v2/packages/cocos-service.json
 /tmp/
 *.log
 *.key
@@ -34,5 +38,6 @@
 /开发进度/验证记录/**/*.js
 /开发进度/验证记录/v077-baseline-model/
 /开发进度/验证记录/**/build-workspace/
+/开发进度/验证记录/**/before*/
 !/开发进度/验证记录/v107-social-revive/chapter-1-social-options.png
 !/开发进度/验证记录/v107-social-revive/chapter-2-credit-ready.png

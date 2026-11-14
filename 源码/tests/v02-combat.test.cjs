@@ -150,7 +150,7 @@ test("rocket travels slowly and its impact is a real area explosion", () => {
   tick(s, 120);
   assert.ok(s.explosions.total > 0);
   assert.equal(e.alive, false);
-  assert.equal(s.weapon.ammo, 5);
+  assert.equal(s.weapon.ammo, 7);
 });
 test("grenades are limited, use ballistic gravity, bounce and explode", () => {
   const s = new GameSession();

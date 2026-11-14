@@ -1,0 +1,1178 @@
+{
+  "checkedAt": "2026-11-14T03:55:08.419Z",
+  "mode": "source-only",
+  "sourceRoot": "源码",
+  "uuidCount": 374,
+  "imports": 556,
+  "documents": 103,
+  "links": 924,
+  "htmlReferences": 740,
+  "missing": [],
+  "unavailableArtifacts": [
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/L1-V084-20261110/manifest.json",
+      "resolved": "历史归档/体验锚点/L1-V084-20261110/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/L1-V084-20261110/RECOVER.txt",
+      "resolved": "历史归档/体验锚点/L1-V084-20261110/RECOVER.txt"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/L1-V084-20261110/source.zip",
+      "resolved": "历史归档/体验锚点/L1-V084-20261110/source.zip"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/L1-V084-20261110/web-mobile.zip",
+      "resolved": "历史归档/体验锚点/L1-V084-20261110/web-mobile.zip"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/L1-V084-20261110/wechatgame.zip",
+      "resolved": "历史归档/体验锚点/L1-V084-20261110/wechatgame.zip"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/L1-V084-20261110/evidence.zip",
+      "resolved": "历史归档/体验锚点/L1-V084-20261110/evidence.zip"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V102-20261113/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V102-20261113/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V101-20261113/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V101-20261113/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V100-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V100-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0826-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0826-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0825-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0825-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0824-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0824-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0823-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0823-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0822-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0822-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0821-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0821-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0820-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0820-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0819-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0819-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0818-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0818-20261112/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0817-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0817-20261111/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0816-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0816-20261111/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0813-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0813-20261111/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0812-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0812-20261111/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0811-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0811-20261111/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V0810-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0810-20261111/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V089-20261110/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V089-20261110/manifest.json"
+    },
+    {
+      "file": "doc/BASELINES.md",
+      "target": "../历史归档/体验锚点/PRE-V088-20261110/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V088-20261110/manifest.json"
+    },
+    {
+      "file": "素材/说明/LEVEL-02-ASSETS.md",
+      "target": "../../开发进度/验证记录/level02-assets-overview.png",
+      "resolved": "开发进度/验证记录/level02-assets-overview.png"
+    },
+    {
+      "file": "素材/说明/README.md",
+      "target": "../../历史归档/整理前源码-20261113.zip",
+      "resolved": "历史归档/整理前源码-20261113.zip"
+    },
+    {
+      "file": "素材/说明/V053-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v053-first-screen.png",
+      "resolved": "开发进度/验证记录/v053-first-screen.png"
+    },
+    {
+      "file": "素材/说明/V053-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v053-second-zone.png",
+      "resolved": "开发进度/验证记录/v053-second-zone.png"
+    },
+    {
+      "file": "素材/说明/V053-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v053-rocket-soldier.png",
+      "resolved": "开发进度/验证记录/v053-rocket-soldier.png"
+    },
+    {
+      "file": "素材/说明/V053-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v053-explosion.png",
+      "resolved": "开发进度/验证记录/v053-explosion.png"
+    },
+    {
+      "file": "素材/说明/V053-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v053-crouch-walk.png",
+      "resolved": "开发进度/验证记录/v053-crouch-walk.png"
+    },
+    {
+      "file": "素材/说明/V054-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v054-touch-knife.png",
+      "resolved": "开发进度/验证记录/v054-touch-knife.png"
+    },
+    {
+      "file": "素材/说明/V054-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v054-terraces.png",
+      "resolved": "开发进度/验证记录/v054-terraces.png"
+    },
+    {
+      "file": "素材/说明/V054-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v054-tracking.png",
+      "resolved": "开发进度/验证记录/v054-tracking.png"
+    },
+    {
+      "file": "素材/说明/V055-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v055-first-screen.png",
+      "resolved": "开发进度/验证记录/v055-first-screen.png"
+    },
+    {
+      "file": "素材/说明/V055-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v055-shotgun.png",
+      "resolved": "开发进度/验证记录/v055-shotgun.png"
+    },
+    {
+      "file": "素材/说明/V055-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v055-rocket.png",
+      "resolved": "开发进度/验证记录/v055-rocket.png"
+    },
+    {
+      "file": "素材/说明/V055-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v055-second-zone.png",
+      "resolved": "开发进度/验证记录/v055-second-zone.png"
+    },
+    {
+      "file": "素材/说明/V056-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v056-first-screen.png",
+      "resolved": "开发进度/验证记录/v056-first-screen.png"
+    },
+    {
+      "file": "素材/说明/V056-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v056-platform.png",
+      "resolved": "开发进度/验证记录/v056-platform.png"
+    },
+    {
+      "file": "素材/说明/V056-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v056-shotgun.png",
+      "resolved": "开发进度/验证记录/v056-shotgun.png"
+    },
+    {
+      "file": "素材/说明/V056-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v056-rocket.png",
+      "resolved": "开发进度/验证记录/v056-rocket.png"
+    },
+    {
+      "file": "素材/说明/V056-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v056-knife-hold.png",
+      "resolved": "开发进度/验证记录/v056-knife-hold.png"
+    },
+    {
+      "file": "素材/说明/V056-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v056-knife-3.png",
+      "resolved": "开发进度/验证记录/v056-knife-3.png"
+    },
+    {
+      "file": "素材/说明/V056-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v056-knife-hit.png",
+      "resolved": "开发进度/验证记录/v056-knife-hit.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-up-rocket-right.png",
+      "resolved": "开发进度/验证记录/v057-up-rocket-right.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-up-rocket-right-flight.png",
+      "resolved": "开发进度/验证记录/v057-up-rocket-right-flight.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-up-rocket-left.png",
+      "resolved": "开发进度/验证记录/v057-up-rocket-left.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-up-rocket-left-flight.png",
+      "resolved": "开发进度/验证记录/v057-up-rocket-left-flight.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-first-screen.png",
+      "resolved": "开发进度/验证记录/v057-first-screen.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-platform.png",
+      "resolved": "开发进度/验证记录/v057-platform.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-rocket.png",
+      "resolved": "开发进度/验证记录/v057-rocket.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-rocket-detail.png",
+      "resolved": "开发进度/验证记录/v057-rocket-detail.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-knife-hold.png",
+      "resolved": "开发进度/验证记录/v057-knife-hold.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-knife-1.png",
+      "resolved": "开发进度/验证记录/v057-knife-1.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-knife-2.png",
+      "resolved": "开发进度/验证记录/v057-knife-2.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-knife-3.png",
+      "resolved": "开发进度/验证记录/v057-knife-3.png"
+    },
+    {
+      "file": "素材/说明/V057-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v057-second-zone.png",
+      "resolved": "开发进度/验证记录/v057-second-zone.png"
+    },
+    {
+      "file": "素材/说明/V057-UNDERPASS-FIX.md",
+      "target": "../../开发进度/验证记录/v057-underpass-left.png",
+      "resolved": "开发进度/验证记录/v057-underpass-left.png"
+    },
+    {
+      "file": "素材/说明/V057-UNDERPASS-FIX.md",
+      "target": "../../开发进度/验证记录/v057-underpass-right.png",
+      "resolved": "开发进度/验证记录/v057-underpass-right.png"
+    },
+    {
+      "file": "素材/说明/V057-UNDERPASS-FIX.md",
+      "target": "../../开发进度/验证记录/v057-underpass-exit.png",
+      "resolved": "开发进度/验证记录/v057-underpass-exit.png"
+    },
+    {
+      "file": "素材/说明/V058-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v058-shotgun-stand-fire.png",
+      "resolved": "开发进度/验证记录/v058-shotgun-stand-fire.png"
+    },
+    {
+      "file": "素材/说明/V058-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v058-shotgun-crouch-walk.png",
+      "resolved": "开发进度/验证记录/v058-shotgun-crouch-walk.png"
+    },
+    {
+      "file": "素材/说明/V058-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v058-shotgun-jump.png",
+      "resolved": "开发进度/验证记录/v058-shotgun-jump.png"
+    },
+    {
+      "file": "素材/说明/V059-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v059-crate-damage-1.png",
+      "resolved": "开发进度/验证记录/v059-crate-damage-1.png"
+    },
+    {
+      "file": "素材/说明/V059-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v059-boss-laser.png",
+      "resolved": "开发进度/验证记录/v059-boss-laser.png"
+    },
+    {
+      "file": "素材/说明/V059-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v059-boss-missiles.png",
+      "resolved": "开发进度/验证记录/v059-boss-missiles.png"
+    },
+    {
+      "file": "素材/说明/V059-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v059-boss-wreck.png",
+      "resolved": "开发进度/验证记录/v059-boss-wreck.png"
+    },
+    {
+      "file": "素材/说明/V064-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v064-cover-1280.png",
+      "resolved": "开发进度/验证记录/v064-cover-1280.png"
+    },
+    {
+      "file": "素材/说明/V064-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v064-cover-844.png",
+      "resolved": "开发进度/验证记录/v064-cover-844.png"
+    },
+    {
+      "file": "素材/说明/V064-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v064-cover-1024.png",
+      "resolved": "开发进度/验证记录/v064-cover-1024.png"
+    },
+    {
+      "file": "素材/说明/V064-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v064-cover-932.png",
+      "resolved": "开发进度/验证记录/v064-cover-932.png"
+    },
+    {
+      "file": "素材/说明/V065-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v065-up-right.png",
+      "resolved": "开发进度/验证记录/v065-up-right.png"
+    },
+    {
+      "file": "素材/说明/V065-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v065-up-left-flight.png",
+      "resolved": "开发进度/验证记录/v065-up-left-flight.png"
+    },
+    {
+      "file": "素材/说明/V065-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v065-diagonal-right.png",
+      "resolved": "开发进度/验证记录/v065-diagonal-right.png"
+    },
+    {
+      "file": "素材/说明/V065-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v065-jump-up.png",
+      "resolved": "开发进度/验证记录/v065-jump-up.png"
+    },
+    {
+      "file": "素材/说明/V065-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v065-touch-up.png",
+      "resolved": "开发进度/验证记录/v065-touch-up.png"
+    },
+    {
+      "file": "素材/说明/V070-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v070-boss-cannon.png",
+      "resolved": "开发进度/验证记录/v070-boss-cannon.png"
+    },
+    {
+      "file": "素材/说明/V070-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v070-mobile-touch.png",
+      "resolved": "开发进度/验证记录/v070-mobile-touch.png"
+    },
+    {
+      "file": "素材/说明/V070-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v070-result.png",
+      "resolved": "开发进度/验证记录/v070-result.png"
+    },
+    {
+      "file": "素材/说明/V071-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v071-rifle-up-right-rise.png",
+      "resolved": "开发进度/验证记录/v071-rifle-up-right-rise.png"
+    },
+    {
+      "file": "素材/说明/V071-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v071-rifle-flat-right-fall.png",
+      "resolved": "开发进度/验证记录/v071-rifle-flat-right-fall.png"
+    },
+    {
+      "file": "素材/说明/V072-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v072-reef.png",
+      "resolved": "开发进度/验证记录/v072-reef.png"
+    },
+    {
+      "file": "素材/说明/V072-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v072-wreck.png",
+      "resolved": "开发进度/验证记录/v072-wreck.png"
+    },
+    {
+      "file": "素材/说明/V072-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v072-equip-tank.png",
+      "resolved": "开发进度/验证记录/v072-equip-tank.png"
+    },
+    {
+      "file": "素材/说明/V072-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v072-dive.png",
+      "resolved": "开发进度/验证记录/v072-dive.png"
+    },
+    {
+      "file": "素材/说明/V073-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v073-wreck.png",
+      "resolved": "开发进度/验证记录/v073-wreck.png"
+    },
+    {
+      "file": "素材/说明/V073-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v073-pipeline.png",
+      "resolved": "开发进度/验证记录/v073-pipeline.png"
+    },
+    {
+      "file": "素材/说明/V073-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v073-torpedo-flight.png",
+      "resolved": "开发进度/验证记录/v073-torpedo-flight.png"
+    },
+    {
+      "file": "素材/说明/V073-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v073-torpedo-blast.png",
+      "resolved": "开发进度/验证记录/v073-torpedo-blast.png"
+    },
+    {
+      "file": "素材/说明/V074-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v074-land-start.png",
+      "resolved": "开发进度/验证记录/v074-land-start.png"
+    },
+    {
+      "file": "素材/说明/V074-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v074-land-4300.png",
+      "resolved": "开发进度/验证记录/v074-land-4300.png"
+    },
+    {
+      "file": "素材/说明/V074-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v074-land-7350.png",
+      "resolved": "开发进度/验证记录/v074-land-7350.png"
+    },
+    {
+      "file": "素材/说明/V074-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v074-entry-open.png",
+      "resolved": "开发进度/验证记录/v074-entry-open.png"
+    },
+    {
+      "file": "素材/说明/V074-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v074-entry-take.png",
+      "resolved": "开发进度/验证记录/v074-entry-take.png"
+    },
+    {
+      "file": "素材/说明/V074-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v074-torpedo-fire-swim-0.png",
+      "resolved": "开发进度/验证记录/v074-torpedo-fire-swim-0.png"
+    },
+    {
+      "file": "素材/说明/V074-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v074-enemy-projectile.png",
+      "resolved": "开发进度/验证记录/v074-enemy-projectile.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-land-850.png",
+      "resolved": "开发进度/验证记录/v075-land-850.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-land-4300.png",
+      "resolved": "开发进度/验证记录/v075-land-4300.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-shore.png",
+      "resolved": "开发进度/验证记录/v075-shore.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-entry-open.png",
+      "resolved": "开发进度/验证记录/v075-entry-open.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-reef.png",
+      "resolved": "开发进度/验证记录/v075-reef.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-wreck.png",
+      "resolved": "开发进度/验证记录/v075-wreck.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-contact-landed.png",
+      "resolved": "开发进度/验证记录/v075-contact-landed.png"
+    },
+    {
+      "file": "素材/说明/V075-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v075-contact-up.png",
+      "resolved": "开发进度/验证记录/v075-contact-up.png"
+    },
+    {
+      "file": "素材/说明/V078-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v078-underpass-right.png",
+      "resolved": "开发进度/验证记录/v078-underpass-right.png"
+    },
+    {
+      "file": "素材/说明/V078-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v078-single-jump.png",
+      "resolved": "开发进度/验证记录/v078-single-jump.png"
+    },
+    {
+      "file": "素材/说明/V079-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v079-land-8050.png",
+      "resolved": "开发进度/验证记录/v079-land-8050.png"
+    },
+    {
+      "file": "素材/说明/V079-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v079-sandbag-scatter.png",
+      "resolved": "开发进度/验证记录/v079-sandbag-scatter.png"
+    },
+    {
+      "file": "素材/说明/V080-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v080-concrete-contact.png",
+      "resolved": "开发进度/验证记录/v080-concrete-contact.png"
+    },
+    {
+      "file": "素材/说明/V080-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v080-land-1200.png",
+      "resolved": "开发进度/验证记录/v080-land-1200.png"
+    },
+    {
+      "file": "素材/说明/V080-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v080-torpedo-blast.png",
+      "resolved": "开发进度/验证记录/v080-torpedo-blast.png"
+    },
+    {
+      "file": "素材/说明/V082-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v082-menu-mobile.png",
+      "resolved": "开发进度/验证记录/v082-menu-mobile.png"
+    },
+    {
+      "file": "素材/说明/V082-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v082-menu-compact.png",
+      "resolved": "开发进度/验证记录/v082-menu-compact.png"
+    },
+    {
+      "file": "素材/说明/V082-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v082-bridge-released.png",
+      "resolved": "开发进度/验证记录/v082-bridge-released.png"
+    },
+    {
+      "file": "素材/说明/V082-DELIVERY.md",
+      "target": "../../开发进度/验证记录/v082-land-11400.png",
+      "resolved": "开发进度/验证记录/v082-land-11400.png"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/申请资料草稿.txt",
+      "resolved": "运营/提交素材/创意小游戏申请/申请资料草稿.txt"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/上传说明.txt",
+      "resolved": "运营/提交素材/创意小游戏申请/上传说明.txt"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/创意材料配套说明.txt",
+      "resolved": "运营/提交素材/创意小游戏申请/创意材料配套说明.txt"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/线条突围_创意小游戏申请_7张图片.zip",
+      "resolved": "运营/提交素材/创意小游戏申请/线条突围_创意小游戏申请_7张图片.zip"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/制作记录/generation.json",
+      "resolved": "运营/提交素材/创意小游戏申请/制作记录/generation.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/制作记录/verification.json",
+      "resolved": "运营/提交素材/创意小游戏申请/制作记录/verification.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/制作记录/visual-review.json",
+      "resolved": "运营/提交素材/创意小游戏申请/制作记录/visual-review.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-CREATIVE-APPLICATION-20261112.md",
+      "target": "../../运营/提交素材/创意小游戏申请/制作记录/desktop-delivery.json",
+      "resolved": "运营/提交素材/创意小游戏申请/制作记录/desktop-delivery.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12",
+      "resolved": "运营/提交素材/2026-11-12"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/素材预览.jpg",
+      "resolved": "运营/提交素材/2026-11-12/素材预览.jpg"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/提交文案.txt",
+      "resolved": "运营/提交素材/2026-11-12/提交文案.txt"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/使用说明.md",
+      "resolved": "运营/提交素材/2026-11-12/使用说明.md"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/原图与记录/generation.json",
+      "resolved": "运营/提交素材/2026-11-12/原图与记录/generation.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/原图与记录/generation-v2.json",
+      "resolved": "运营/提交素材/2026-11-12/原图与记录/generation-v2.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/原图与记录/generation-v3.json",
+      "resolved": "运营/提交素材/2026-11-12/原图与记录/generation-v3.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/原图与记录/desktop-delivery-v3.json",
+      "resolved": "运营/提交素材/2026-11-12/原图与记录/desktop-delivery-v3.json"
+    },
+    {
+      "file": "素材/说明/WECHAT-PROMO-20261112.md",
+      "target": "../../运营/提交素材/2026-11-12/原图与记录/verification.json",
+      "resolved": "运营/提交素材/2026-11-12/原图与记录/verification.json"
+    },
+    {
+      "file": "素材/游戏美术/source/v084/GENERATION.md",
+      "target": "../../../../历史归档/废弃美术候选-20261113.zip",
+      "resolved": "历史归档/废弃美术候选-20261113.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/V0810-ENEMY-PURSUIT.md",
+      "target": "../../历史归档/体验锚点/PRE-V0810-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0810-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0810-ENEMY-PURSUIT.md",
+      "target": "../验证记录/v0810-pursuit-boss-rising.png",
+      "resolved": "开发进度/验证记录/v0810-pursuit-boss-rising.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0810-ENEMY-PURSUIT.md",
+      "target": "../验证记录/v0810-pursuit-boss-landed.png",
+      "resolved": "开发进度/验证记录/v0810-pursuit-boss-landed.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0810-ENEMY-PURSUIT.md",
+      "target": "../验证记录/v0810-pursuit-boss-followed-down.png",
+      "resolved": "开发进度/验证记录/v0810-pursuit-boss-followed-down.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0810-ENEMY-PURSUIT.md",
+      "target": "../验证记录/v0810-pursuit-enemy-turret.png",
+      "resolved": "开发进度/验证记录/v0810-pursuit-enemy-turret.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0811-PROJECTILES-COLOSSUS.md",
+      "target": "../../历史归档/体验锚点/PRE-V0811-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0811-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0811-PROJECTILES-COLOSSUS.md",
+      "target": "../验证记录/v0811-mobile-tell-charge.png",
+      "resolved": "开发进度/验证记录/v0811-mobile-tell-charge.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0811-PROJECTILES-COLOSSUS.md",
+      "target": "../验证记录/v0811-mobile-leaping.png",
+      "resolved": "开发进度/验证记录/v0811-mobile-leaping.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0811-PROJECTILES-COLOSSUS.md",
+      "target": "../验证记录/v0811-mobile-projectile-enemy-boss-rocket.png",
+      "resolved": "开发进度/验证记录/v0811-mobile-projectile-enemy-boss-rocket.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0811-PROJECTILES-COLOSSUS.md",
+      "target": "../验证记录/v0811-mobile-result.png",
+      "resolved": "开发进度/验证记录/v0811-mobile-result.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0812-IPHONE-LAYOUT-PROGRESSION.md",
+      "target": "../../历史归档/体验锚点/PRE-V0812-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0812-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0813-PURSUIT-CAMERA-INPUT.md",
+      "target": "../../历史归档/体验锚点/PRE-V0813-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0813-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0813-PURSUIT-CAMERA-INPUT.md",
+      "target": "../验证记录/v0813-before-hud-fix.png",
+      "resolved": "开发进度/验证记录/v0813-before-hud-fix.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0814-CAMERA-SHIELD.md",
+      "target": "../../历史归档/体验锚点/PRE-V0814-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0814-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0815-PLATFORMS-ENCOUNTERS.md",
+      "target": "../../历史归档/体验锚点/PRE-V0815-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0815-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0816-JUMP-BOSS-OCEAN.md",
+      "target": "../../历史归档/体验锚点/PRE-V0816-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0816-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0817-FLIGHT-SLICE.md",
+      "target": "../../历史归档/体验锚点/PRE-V0817-20261111/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0817-20261111/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0817-FLIGHT-SLICE.md",
+      "target": "../验证记录/v0817-typecheck.log",
+      "resolved": "开发进度/验证记录/v0817-typecheck.log"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../../历史归档/体验锚点/PRE-V0818-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0818-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-shot-harpoon.png",
+      "resolved": "开发进度/验证记录/v0818-shot-harpoon.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-aim-locked.png",
+      "resolved": "开发进度/验证记录/v0818-aim-locked.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-shield-swim.png",
+      "resolved": "开发进度/验证记录/v0818-shield-swim.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-shield-hit.png",
+      "resolved": "开发进度/验证记录/v0818-shield-hit.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-shield-break.png",
+      "resolved": "开发进度/验证记录/v0818-shield-break.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-grenade-forward.png",
+      "resolved": "开发进度/验证记录/v0818-grenade-forward.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-grenade-left.png",
+      "resolved": "开发进度/验证记录/v0818-grenade-left.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0818-OCEAN-AIM-SHIELD.md",
+      "target": "../验证记录/v0818-ocean-complete.png",
+      "resolved": "开发进度/验证记录/v0818-ocean-complete.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0819-EXPLOSION-ENDING-ENTRY.md",
+      "target": "../../历史归档/体验锚点/PRE-V0819-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0819-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0819-EXPLOSION-ENDING-ENTRY.md",
+      "target": "../验证记录/v0819-mobile-barrel-first-frames.png",
+      "resolved": "开发进度/验证记录/v0819-mobile-barrel-first-frames.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0819-EXPLOSION-ENDING-ENTRY.md",
+      "target": "../验证记录/v0819-mobile-ending-cheer.png",
+      "resolved": "开发进度/验证记录/v0819-mobile-ending-cheer.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0819-EXPLOSION-ENDING-ENTRY.md",
+      "target": "../验证记录/v0819-entry-open.png",
+      "resolved": "开发进度/验证记录/v0819-entry-open.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0819-EXPLOSION-ENDING-ENTRY.md",
+      "target": "../验证记录/v0819-entry-swimming.png",
+      "resolved": "开发进度/验证记录/v0819-entry-swimming.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0820-EXPLOSION-MOVEMENT.md",
+      "target": "../验证记录/v0820-after-no-atlas-webgl1/sequence.png",
+      "resolved": "开发进度/验证记录/v0820-after-no-atlas-webgl1/sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0820-EXPLOSION-MOVEMENT.md",
+      "target": "../验证记录/v0820-before-default/sequence.png",
+      "resolved": "开发进度/验证记录/v0820-before-default/sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0820-EXPLOSION-MOVEMENT.md",
+      "target": "../验证记录/v0820-before-no-atlas/sequence.png",
+      "resolved": "开发进度/验证记录/v0820-before-no-atlas/sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0820-EXPLOSION-MOVEMENT.md",
+      "target": "../../历史归档/体验锚点/PRE-V0820-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0820-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0821-OCEAN-MOTION-EXPLOSIONS.md",
+      "target": "../验证记录/v0821-before-packed-webgl1/sequence.png",
+      "resolved": "开发进度/验证记录/v0821-before-packed-webgl1/sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0821-OCEAN-MOTION-EXPLOSIONS.md",
+      "target": "../验证记录/v0821-after-packed-webgl1/sequence.png",
+      "resolved": "开发进度/验证记录/v0821-after-packed-webgl1/sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0821-OCEAN-MOTION-EXPLOSIONS.md",
+      "target": "../验证记录/v0821-ocean-complete.png",
+      "resolved": "开发进度/验证记录/v0821-ocean-complete.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0821-OCEAN-MOTION-EXPLOSIONS.md",
+      "target": "../../历史归档/体验锚点/PRE-V0821-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0821-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0822-MOVEMENT-FIRE-CONTROLS.md",
+      "target": "../验证记录/v0822-rifle-fire-sequence.png",
+      "resolved": "开发进度/验证记录/v0822-rifle-fire-sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0822-MOVEMENT-FIRE-CONTROLS.md",
+      "target": "../../历史归档/体验锚点/PRE-V0822-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0822-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0823-OCEAN-FLIGHT-FIRE.md",
+      "target": "../验证记录/v0823-chapter2-fire-sequence.png",
+      "resolved": "开发进度/验证记录/v0823-chapter2-fire-sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0823-OCEAN-FLIGHT-FIRE.md",
+      "target": "../验证记录/v0823-chapter3-fire-sequence.png",
+      "resolved": "开发进度/验证记录/v0823-chapter3-fire-sequence.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0823-OCEAN-FLIGHT-FIRE.md",
+      "target": "../../历史归档/体验锚点/PRE-V0823-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0823-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0824-CONTROLS-BOSS-COLOR.md",
+      "target": "../验证记录/v0824-chapter1-ready-controls.png",
+      "resolved": "开发进度/验证记录/v0824-chapter1-ready-controls.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0824-CONTROLS-BOSS-COLOR.md",
+      "target": "../验证记录/v0824-up-after-fire.png",
+      "resolved": "开发进度/验证记录/v0824-up-after-fire.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0824-CONTROLS-BOSS-COLOR.md",
+      "target": "../验证记录/v0824-mobile-colored-boss-blast-4.png",
+      "resolved": "开发进度/验证记录/v0824-mobile-colored-boss-blast-4.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0824-CONTROLS-BOSS-COLOR.md",
+      "target": "../验证记录/v0824-water-colored-blast-3.png",
+      "resolved": "开发进度/验证记录/v0824-water-colored-blast-3.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0824-CONTROLS-BOSS-COLOR.md",
+      "target": "../验证记录/v0824-flight-patterns-colored-missile-blast-4.png",
+      "resolved": "开发进度/验证记录/v0824-flight-patterns-colored-missile-blast-4.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0824-CONTROLS-BOSS-COLOR.md",
+      "target": "../../历史归档/体验锚点/PRE-V0824-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0824-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0825-MONOCHROME-EFFECTS.md",
+      "target": "../验证记录/v0825-shot-sonar.png",
+      "resolved": "开发进度/验证记录/v0825-shot-sonar.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0825-MONOCHROME-EFFECTS.md",
+      "target": "../验证记录/v0825-water-colored-blast-3.png",
+      "resolved": "开发进度/验证记录/v0825-water-colored-blast-3.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0825-MONOCHROME-EFFECTS.md",
+      "target": "../验证记录/v0825-flight-patterns-monochrome-missile.png",
+      "resolved": "开发进度/验证记录/v0825-flight-patterns-monochrome-missile.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0825-MONOCHROME-EFFECTS.md",
+      "target": "../验证记录/v0825-flight-patterns-colored-missile-blast-4.png",
+      "resolved": "开发进度/验证记录/v0825-flight-patterns-colored-missile-blast-4.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V0825-MONOCHROME-EFFECTS.md",
+      "target": "../../历史归档/体验锚点/PRE-V0825-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0825-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V0826-OCEAN-LOCK-PRESSURE.md",
+      "target": "../../历史归档/体验锚点/PRE-V0826-20261112/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V0826-20261112/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V085-SKILL-AUDIT.md",
+      "target": "../../历史归档/整理前源码-20261113.zip",
+      "resolved": "历史归档/整理前源码-20261113.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/V085-SKILL-AUDIT.md",
+      "target": "../../历史归档/整理前源码-20261113.zip",
+      "resolved": "历史归档/整理前源码-20261113.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/V085-SKILL-AUDIT.md",
+      "target": "../../历史归档/整理前源码-20261113.zip",
+      "resolved": "历史归档/整理前源码-20261113.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/V088-BOSSES-COMBAT-TERRAIN.md",
+      "target": "../../历史归档/体验锚点/PRE-V088-20261110/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V088-20261110/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V089-PLATFORM-MINIBOSS.md",
+      "target": "../../历史归档/体验锚点/PRE-V089-20261110/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V089-20261110/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V089-PLATFORM-MINIBOSS.md",
+      "target": "../验证记录/v089-mobile-screenshot-location.png",
+      "resolved": "开发进度/验证记录/v089-mobile-screenshot-location.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V089-PLATFORM-MINIBOSS.md",
+      "target": "../验证记录/v089-mobile-tell-ram.png",
+      "resolved": "开发进度/验证记录/v089-mobile-tell-ram.png"
+    },
+    {
+      "file": "开发进度/迭代记录/V101-THUMB-BOSS.md",
+      "target": "../../历史归档/体验锚点/PRE-V101-20261113/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V101-20261113/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V101-THUMB-BOSS.md",
+      "target": "../../交付/版本/1.0.1/wechatgame",
+      "resolved": "交付/版本/1.0.1/wechatgame"
+    },
+    {
+      "file": "开发进度/迭代记录/V102-SHARE-BOSS-SUPPLY.md",
+      "target": "../../历史归档/体验锚点/PRE-V102-20261113/manifest.json",
+      "resolved": "历史归档/体验锚点/PRE-V102-20261113/manifest.json"
+    },
+    {
+      "file": "开发进度/迭代记录/V102-SHARE-BOSS-SUPPLY.md",
+      "target": "../../交付/版本/1.0.2/wechatgame",
+      "resolved": "交付/版本/1.0.2/wechatgame"
+    },
+    {
+      "file": "开发进度/迭代记录/V104-DIRECT-SHARE-ROCKET.md",
+      "target": "../../交付/版本/1.0.4/wechatgame",
+      "resolved": "交付/版本/1.0.4/wechatgame"
+    },
+    {
+      "file": "开发进度/迭代记录/V104-DIRECT-SHARE-ROCKET.md",
+      "target": "../../交付/版本/1.0.4/线条突围-微信小游戏-1.0.4.zip",
+      "resolved": "交付/版本/1.0.4/线条突围-微信小游戏-1.0.4.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/V104-DIRECT-SHARE-ROCKET.md",
+      "target": "../../交付/版本/1.0.4/线条突围-Web-1.0.4.zip",
+      "resolved": "交付/版本/1.0.4/线条突围-Web-1.0.4.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/V107-SOCIAL-REVIVAL.md",
+      "target": "../../交付/版本/1.0.7-社交复活/wechatgame",
+      "resolved": "交付/版本/1.0.7-社交复活/wechatgame"
+    },
+    {
+      "file": "开发进度/迭代记录/V107-SOCIAL-REVIVAL.md",
+      "target": "../../交付/版本/1.0.7-社交复活/线条突围-微信小游戏-1.0.7.zip",
+      "resolved": "交付/版本/1.0.7-社交复活/线条突围-微信小游戏-1.0.7.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/V107-SOCIAL-REVIVAL.md",
+      "target": "../../交付/版本/1.0.7-社交复活/线条突围-Web-1.0.7.zip",
+      "resolved": "交付/版本/1.0.7-社交复活/线条突围-Web-1.0.7.zip"
+    },
+    {
+      "file": "开发进度/迭代记录/WECHAT-RECOMMENDATION-P0.md",
+      "target": "../验证记录/recommendation-20261113/home-667x375.png",
+      "resolved": "开发进度/验证记录/recommendation-20261113/home-667x375.png"
+    },
+    {
+      "file": "开发进度/迭代记录/WECHAT-RECOMMENDATION-P0.md",
+      "target": "../验证记录/recommendation-20261113/old.png",
+      "resolved": "开发进度/验证记录/recommendation-20261113/old.png"
+    },
+    {
+      "file": "开发进度/迭代记录/WECHAT-RECOMMENDATION-P0.md",
+      "target": "../验证记录/recommendation-20261113/waiting-portrait.png",
+      "resolved": "开发进度/验证记录/recommendation-20261113/waiting-portrait.png"
+    },
+    {
+      "file": "开发进度/迭代记录/WECHAT-RECOMMENDATION-P0.md",
+      "target": "../../交付/版本/1.0.6-推荐接入/wechatgame",
+      "resolved": "交付/版本/1.0.6-推荐接入/wechatgame"
+    },
+    {
+      "file": "开发进度/迭代记录/WECHAT-RECOMMENDATION-P0.md",
+      "target": "../../交付/版本/1.0.6-推荐接入/线条突围-微信小游戏-1.0.6-推荐接入.zip",
+      "resolved": "交付/版本/1.0.6-推荐接入/线条突围-微信小游戏-1.0.6-推荐接入.zip"
+    },
+    {
+      "file": "README.md",
+      "target": "交付/版本/1.0.7-社交复活/wechatgame",
+      "resolved": "交付/版本/1.0.7-社交复活/wechatgame"
+    },
+    {
+      "file": "README.md",
+      "target": "交付/版本/1.0.7-社交复活/线条突围-微信小游戏-1.0.7.zip",
+      "resolved": "交付/版本/1.0.7-社交复活/线条突围-微信小游戏-1.0.7.zip"
+    },
+    {
+      "file": "运营/README.md",
+      "target": "提交素材/2026-11-12",
+      "resolved": "运营/提交素材/2026-11-12"
+    },
+    {
+      "file": "运营/README.md",
+      "target": "提交素材/创意小游戏申请",
+      "resolved": "运营/提交素材/创意小游戏申请"
+    },
+    {
+      "file": "运营/README.md",
+      "target": "备案截图",
+      "resolved": "运营/备案截图"
+    },
+    {
+      "file": "开发进度/当前进度.md",
+      "target": "../交付/版本/1.0.6-推荐接入/wechatgame",
+      "resolved": "交付/版本/1.0.6-推荐接入/wechatgame"
+    },
+    {
+      "file": "开发进度/当前进度.md",
+      "target": "../交付/版本/1.0.7-社交复活/wechatgame",
+      "resolved": "交付/版本/1.0.7-社交复活/wechatgame"
+    },
+    {
+      "file": "交付/README.md",
+      "target": "版本/1.0.7-社交复活/wechatgame",
+      "resolved": "交付/版本/1.0.7-社交复活/wechatgame"
+    },
+    {
+      "file": "交付/README.md",
+      "target": "版本/1.0.7-社交复活/线条突围-微信小游戏-1.0.7.zip",
+      "resolved": "交付/版本/1.0.7-社交复活/线条突围-微信小游戏-1.0.7.zip"
+    },
+    {
+      "file": "交付/README.md",
+      "target": "版本/1.0.7-社交复活/线条突围-Web-1.0.7.zip",
+      "resolved": "交付/版本/1.0.7-社交复活/线条突围-Web-1.0.7.zip"
+    },
+    {
+      "file": "交付/README.md",
+      "target": "版本/1.0.6-复活选关/wechatgame",
+      "resolved": "交付/版本/1.0.6-复活选关/wechatgame"
+    },
+    {
+      "file": "交付/README.md",
+      "target": "版本/1.0.6-复活选关/线条突围-微信小游戏-1.0.6.zip",
+      "resolved": "交付/版本/1.0.6-复活选关/线条突围-微信小游戏-1.0.6.zip"
+    },
+    {
+      "file": "交付/README.md",
+      "target": "版本/1.0.6-复活选关/线条突围-Web-1.0.6.zip",
+      "resolved": "交付/版本/1.0.6-复活选关/线条突围-Web-1.0.6.zip"
+    },
+    {
+      "file": "历史归档/README.md",
+      "target": "体验锚点",
+      "resolved": "历史归档/体验锚点"
+    },
+    {
+      "file": "历史归档/README.md",
+      "target": "整理前源码-20261113.zip",
+      "resolved": "历史归档/整理前源码-20261113.zip"
+    },
+    {
+      "file": "历史归档/README.md",
+      "target": "废弃美术候选-20261113.zip",
+      "resolved": "历史归档/废弃美术候选-20261113.zip"
+    },
+    {
+      "file": "历史归档/README.md",
+      "target": "工程整理过程-20261113.zip",
+      "resolved": "历史归档/工程整理过程-20261113.zip"
+    },
+    {
+      "file": "开发计划/原型/wechat-evaluation.html",
+      "target": "../../开发进度/验证记录/v103-mobile-ending-settlement.png",
+      "resolved": "开发进度/验证记录/v103-mobile-ending-settlement.png"
+    }
+  ]
+}

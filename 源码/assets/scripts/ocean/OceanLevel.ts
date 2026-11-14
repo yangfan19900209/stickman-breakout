@@ -3,7 +3,7 @@ import { Rect } from "../core/Types";
 export type OceanEnemyKind =
   | "diver"
   | "fish"
-  | "kelp"
+  | "jellyfish"
   | "turret"
   | "mine"
   | "captain";
@@ -41,8 +41,8 @@ export const OceanLevel = {
     { x: 2820, y: 70, w: 250, h: 160, art: "terrain.coral.shelf" },
     { x: 3650, y: 490, w: 300, h: 190, art: "terrain.rock.ceiling" },
     { x: 4450, y: 270, w: 420, h: 50, art: "terrain.wreck.deck" },
-    { x: 4950, y: 480, w: 360, h: 45, art: "terrain.wreck.deck" },
-    { x: 5360, y: 70, w: 190, h: 180, art: "terrain.wreck.wall" },
+    // Open water around the mini submarine leaves room for circling and diving.
+    // The approach deck remains; removed wrecks have no residual collision.
     { x: 6720, y: 70, w: 180, h: 260, art: "terrain.rock.pillar" },
     { x: 7350, y: 480, w: 250, h: 200, art: "terrain.rock.ceiling" },
     { x: 7930, y: 70, w: 180, h: 210, art: "terrain.rock.pillar" },
@@ -61,22 +61,24 @@ export const OceanLevel = {
     { x: 8100, y: 430, w: 350, h: 210, vx: -60, vy: -25 },
     { x: 11840, y: 90, w: 360, h: 300, vx: 40, vy: 45 },
   ],
+  // Former hostile kelp is scenery only: no hitbox, targeting, damage or kill credit.
+  ambientKelp: [
+    { x: 2900, y: 230 }, { x: 3880, y: 70 },
+    { x: 7470, y: 70 }, { x: 12060, y: 70 },
+  ],
   recovery: [
-    { id: "kelp-rest", x: 4050 },
-    { id: "captain-prep", x: 5580 },
+    { id: "captain-prep", x: 4800 },
     { id: "abyss-rest", x: 8410 },
     { id: "defense-rest", x: 10800 },
-    { id: "trench-rest", x: 12720 },
     { id: "sub-prep", x: 14970 },
   ],
   crates: [
     { x: 1180, y: 82, drop: "sonar" },
-    { x: 3270, y: 95, drop: "sonar" },
-    { x: 4800, y: 325, drop: "depth-charge" },
-    { x: 6440, y: 82, drop: "torpedo" },
+    // The captain's former death reward is consolidated into this pre-fight supply.
+    { x: 4190, y: 82, drop: "torpedo" },
+    { x: 6440, y: 82, drop: "depth-charge" },
     { x: 9100, y: 82, drop: "sonar" },
     { x: 10600, y: 82, drop: "torpedo" },
-    { x: 11980, y: 82, drop: "sonar" },
     { x: 14040, y: 82, drop: "depth-charge" },
     { x: 15000, y: 82, drop: "torpedo" },
   ],
@@ -85,11 +87,11 @@ export const OceanLevel = {
     ["fish", 2010, 300],
     ["diver", 2550, 400, "sonar"],
     ["diver", 2700, 280, "harpoon", true],
-    ["kelp", 2900, 230],
+    ["jellyfish", 2900, 340],
     ["fish", 3220, 380],
     ["diver", 3480, 280, "harpoon"],
     ["diver", 4020, 440, "sonar"],
-    ["kelp", 3880, 70],
+    ["jellyfish", 3880, 290],
     ["turret", 4630, 320],
     ["diver", 4840, 170, "harpoon"],
     ["diver", 5080, 400, "torpedo"],
@@ -100,7 +102,7 @@ export const OceanLevel = {
     ["diver", 6940, 480, "harpoon", true],
     ["diver", 7160, 365, "sonar"],
     ["fish", 7250, 210],
-    ["kelp", 7470, 70],
+    ["jellyfish", 7470, 285],
     ["fish", 7720, 380],
     ["diver", 8240, 300, "torpedo"],
     ["diver", 8380, 490, "harpoon"],
@@ -117,7 +119,7 @@ export const OceanLevel = {
     ["diver", 11770, 250, "sonar"],
     ["fish", 12060, 430],
     ["diver", 12460, 460, "harpoon"],
-    ["kelp", 12060, 70],
+    ["jellyfish", 12060, 240],
     ["diver", 13000, 240, "sonar"],
     ["turret", 13220, 440],
     ["fish", 13540, 330],

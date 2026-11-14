@@ -19,7 +19,7 @@ export function miniSubPose(e: SeaEnemy, time: number) {
     ? "minisub.wreck"
     : e.hp < e.maxHp * 0.4
       ? "minisub.damaged"
-      : `minisub.intact.${Math.floor(time * (e.mode === "attack" && e.attack === "dash" ? 14 : 7)) % 2}`;
+      : `minisub.intact.${Math.floor(time * (e.mode === "attack" && (e.attack === "dash" || e.attack === "dive") ? 14 : 7)) % 2}`;
   const d = MiniPoses[id],
     scale = MINI_SUB.scale,
     flip = Math.cos(e.angle) <= 0 ? 1 : -1;

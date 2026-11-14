@@ -4,7 +4,7 @@ const {OceanSession}=load('ocean/OceanSession'),{InputManager}=load('core/InputM
 const {OceanLevel:L}=load('ocean/OceanLevel'),{StaticRectIndex}=load('core/StaticRectIndex');
 const dt=1/120,idle={axis:0,vertical:0,jump:false,shoot:false};
 function scene(){const s=new OceanSession();s.finishEntry();s.player.x=1100;s.player.y=350;s.camera.x=700;s.camera.visibleWidth=1400;s.crates=[];for(const e of s.enemies){e.hp=0;e.deadTime=3;}return s;}
-function target(s,kind='diver'){const e=s.enemies.find(e=>e.kind===kind);Object.assign(e,{x:1450,y:350,homeX:1450,homeY:350,hp:3,maxHp:3,shieldHp:0,active:true,mode:'rest',timer:100,deadTime:0});return e;}
+function target(s,kind='diver'){const e=s.enemies.find(e=>e.kind===kind);Object.assign(e,{x:1450,y:350,homeX:1450,homeY:350,hp:3,maxHp:3,shieldHp:0,active:true,mode:'rest',timer:100,dodgeCooldown:100,deadTime:0});return e;}
 
 test('swim input retains full radial speed through diagonal/down sectors, with or without firing',()=>{
  for(const shoot of [false,true])for(const angle of [0,45,60,65,90,135,180,225,270,300]){
@@ -20,7 +20,7 @@ test('swim input retains full radial speed through diagonal/down sectors, with o
 
 test('swimming through actual harpoon hits and a kill never stalls the world clock or drops speed',()=>{
  const s=scene(),e=target(s);let contacts=0,reacted=false;
- for(let n=0;n<160&&e.hp>0;n++){
+ for(let n=0;n<240&&e.hp>0;n++){
   const hits=s.hits;s.update(dt,{...idle,axis:1,shoot:true});assert.equal(s.hitStop,0);
   if(s.hits>hits){contacts++;reacted ||= e.hit>0;assert.ok(s.player.vx>260);}
  }

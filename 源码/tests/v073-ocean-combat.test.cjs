@@ -87,7 +87,7 @@ test("harpoon stops at one target, sonar crosses three targets with exactly one 
     );
   }
 });
-test("harpoon diver warns then fires two spaced darts in a committed direction", () => {
+test("harpoon diver warns then fires one dart in a committed direction without an automatic second shot", () => {
   const s = scene(),
     e = foe(s, 1450);
   tick(s, 1);
@@ -102,12 +102,11 @@ test("harpoon diver warns then fires two spaced darts in a committed direction",
   s.player.y += 90;
   tick(s, 27);
   const shots = s.projectiles.filter((p) => p.active && p.owner === "enemy");
-  assert.equal(shots.length, 2);
+  assert.equal(shots.length, 1);
   assert.ok(
     shots.every((p) => Math.abs(Math.atan2(p.vy, p.vx) - locked) < 1e-6),
   );
-  const ages = shots.map((p) => p.age).sort((a, b) => a - b);
-  assert.ok(ages[1] - ages[0] >= 0.15);
+  assert.equal(e.burstLeft, 0);
   tick(s, 45);
   assert.equal(e.mode, "rest");
   assert.equal(e.attackCounts.harpoon, 1);
@@ -133,7 +132,7 @@ test("sonar and torpedo divers telegraph their actual weapons; torpedoes have bo
       tick(s, 12);
       const b = Math.atan2(shot.vy, shot.vx);
       assert.ok(
-        Math.abs(Math.atan2(Math.sin(b - a), Math.cos(b - a))) <= 0.02801,
+        Math.abs(Math.atan2(Math.sin(b - a), Math.cos(b - a))) <= 0.06001,
       );
     }
   }
@@ -147,18 +146,18 @@ test("attack budget caps overlapping warnings and captain cycles charge, spread 
     2,
   );
   assert.deepEqual(
-    [0, 1, 2, 3].map((serial) => enemyPattern({ ...s.mini, serial })),
-    ["torpedo", "sonar", "dash", "torpedo"],
+    [0, 1, 2, 3, 4, 5].map((serial) => enemyPattern({ ...s.mini, serial })),
+    ["torpedo", "sweep", "dive", "sonar", "dash", "torpedo"],
   );
 });
-test("weapon roles drop upgrades once; hit flash expires while the explosion expands and then clears", () => {
+test("ordinary weapon roles drop no ammunition; hit flash expires while the explosion expands and then clears", () => {
   const s = scene(),
     e = foe(s, 1400, "torpedo");
   s.damageEnemy(e, 100);
   s.damageEnemy(e, 100);
   assert.equal(
     s.drops.filter((d) => d.source === e.id && d.kind === "torpedo").length,
-    1,
+    0,
   );
   const blast = s.effects.find((f) => f.kind === "blast");
   assert.ok(blast && blast.size >= 85);

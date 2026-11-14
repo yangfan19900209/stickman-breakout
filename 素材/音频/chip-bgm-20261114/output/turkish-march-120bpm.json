@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-14",
+  "song": "turkish-march",
+  "bpm": 120,
+  "sampleRate": 44100,
+  "bits": 16,
+  "channels": 2,
+  "selection": "Source beats [0,64), opening A minor and A major themes",
+  "sourceSha256": "c14299cbdd34c8b2081da84dc06519ef8a52a0d589ee53c758d28b8e3d727d1c",
+  "sourceNoteCounts": [
+    0,
+    838,
+    776
+  ],
+  "selectedNoteCounts": [
+    0,
+    207,
+    172
+  ],
+  "loopBeats": 64,
+  "loopSeconds": 32,
+  "samplePeakDbfs": -2.383728154384173,
+  "rmsDbfs": -16.402819318474915,
+  "loopBoundaryStep": {
+    "left": 0.0002501402050256729,
+    "right": 0.0001255474053323269
+  },
+  "outputs": [
+    {
+      "file": "turkish-march-120bpm.wav",
+      "seconds": 32,
+      "bytes": 5644844,
+      "sha256": "cd5d8572faf6fcb930e23a68da67eaa95bf5accb13dbd6aa95aa9abc7204f26e"
+    }
+  ],
+  "scope": "Loop master; encoded MP3 is installed as the Cocos bgm bundle"
+}

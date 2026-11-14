@@ -125,18 +125,8 @@ try{
    if(drawn?.visible&&(b.x-s.cameraX)*s.display.combatZoom<s.display.width-drawn.width*s.display.combatZoom)await capture('boss-size');
   }
   if(n%300===0){writeFileSync('../开发进度/验证记录/v104-campaign-progress.json',JSON.stringify({n,time:s.time,state:s.state,player:s.player,boss:b,weapon:s.weapon,ammo:s.ammo,progression:s.progression,input:f}));if(b.active)console.log(JSON.stringify({n,time:s.time,hp:s.player.health,bhp:s.guardHealth,bx:b.x,by:b.y,px:s.player.x,py:s.player.y,mode:b.mode}));}
-  if(s.recoverySpawned.includes('colossus-half-rockets')&&!before.recoverySpawned.includes('colossus-half-rockets')){
-    halfSupply.push({event:'spawn',time:s.time,bossHealth:s.guardHealth,maxHealth:b.maxHealth,
-      before:{weapon:before.weapon,ammo:before.ammo},after:{weapon:s.weapon,ammo:s.ammo},
-      drop:s.pickups.find(p=>p.sourceId==='colossus-half-rockets')??null});
-    await capture('half-rockets-triggered');
-  }
-  if(s.pickups.some(p=>p.sourceId==='colossus-half-rockets'))await capture('half-rockets-dropped');
-  if(s.recoverySpawned.includes('colossus-half-rockets')&&
-     !s.pickups.some(p=>p.sourceId==='colossus-half-rockets')&&s.weapon==='rocket'&&s.ammo>=4&&!seen.has('half-rockets-equipped')){
-    halfSupply.push({event:'collected',time:s.time,bossHealth:s.guardHealth,weapon:s.weapon,ammo:s.ammo});
-    await capture('half-rockets-equipped');
-  }
+  assert.ok(!s.recoverySpawned.includes('colossus-half-rockets'), 'removed mid-fight rocket supply returned');
+  assert.ok(!s.pickups.some(p=>p.sourceId==='colossus-half-rockets'));
   if(s.player.x>lastMark+2000){lastMark=s.player.x;const item={time:s.time,x:lastMark,hp:s.player.health};milestones.push(item);console.log(JSON.stringify(item));}
   if(projectileOnly&&projectileCoverage())break;
  }
@@ -155,9 +145,7 @@ try{
   assert.ok(Object.values(s.boss.attackCounts).filter(n=>n>0).length>=2);
   assert.ok(encounter.lockedSamples>100&&encounter.released&&encounter.reward);assert.equal(s.miniBoss.maxHealth,68);assert.ok(report.miniFightDuration>5&&report.miniFightDuration<30);
   assert.ok(seen.has('leaping')&&seen.has('enrage'));
-  assert.ok(seen.has('half-rockets-triggered')&&seen.has('half-rockets-equipped'));
-  assert.equal(halfSupply.filter(e=>e.event==='spawn').length,1);
-  assert.ok(halfSupply[0].bossHealth<=75&&halfSupply[0].bossHealth>0);
+  assert.equal(halfSupply.length,0,'final boss no longer grants mid-fight rockets');
   assert.ok(framing.samples>100&&framing.minHeadClearance>0,JSON.stringify(framing));
  }
  assert.equal(paletteEvidence.length,2);assert.ok(bossBlastSequence.length>=5);
